@@ -62,7 +62,7 @@ pagination:
     after: 2
 
 # multilang
-languages: ['ko', 'en', 'ja']
+languages: ['ja', 'ko', 'en']
 default_lang: 'ja'
 exclude_from_localization: ['javascript', 'images', 'css']
-parallel_localization: true
+parallel_localization: false
