@@ -9,5 +9,4 @@ package.json
 .sass-cache/
 .jekyll-metadata
 .jekyll
-Gemfile
 Gemfile.lock
