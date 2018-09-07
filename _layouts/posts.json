@@ -1,0 +1,16 @@
+[
+  {% assign posts = site.posts | where_exp:"item", "item.categories contains page.target" %}
+  {% assign index = 0 %}
+  {% for post in posts %}
+  {% assign page = index | divided_by: 6 %}
+  {
+      "title": "{{ post.title | xml_escape }}",
+      "description": "{{ post.description | xml_escape }}",
+      "url": "{{ site.url }}{{ post.url }}",
+      "date": "{{ post.date | date_to_xmlschema }}",
+      "page": "{{ page | plus:1 }}"
+  }
+  {% unless forloop.last %},{% endunless %}
+  {% assign index = index | plus:1 %}
+  {% endfor %}
+]

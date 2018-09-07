@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+  {% for lang in site.languages %}
+    <url>
+      {% if lang == site.default_lang %}
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% else %}
+      <loc>{{ site.url }}/{{lang}}{{ post.url }}</loc>
+      {% endif %}
+      {% for lang in site.languages %}
+      {% if lang == site.default_lang %}
+      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}{{post.permalink}}"/>
+      {% else %}
+      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{post.permalink}}"/>
+      {% endif %}
+      {% endfor %}
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
+  {% endfor %}
+</urlset>

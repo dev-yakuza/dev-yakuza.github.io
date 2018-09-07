@@ -1,0 +1,13 @@
+## MacOS
+*.DS_Store
+.bundle
+.sass-cache
+node_modules
+package.json
+
+## Jekyll stuff
+.sass-cache/
+.jekyll-metadata
+.jekyll
+Gemfile
+Gemfile.lock
