@@ -82,6 +82,8 @@ footer .copyright { font-size: 14px; margin-bottom: 0; text-align: center; }
 
 .btn-lg { font-size: 16px; padding: 25px 35px; }
 
+body, h1, h2, h3, h4, h5, h6, header.masthead .page-heading .subheading, header.masthead .site-heading .subheading, header.masthead .post-heading .subheading, #mainNav, .btn { font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif; }
+
 .logo { height: 16px; margin-right: 8px; }
 
 pre code { border-radius: 4px; }
