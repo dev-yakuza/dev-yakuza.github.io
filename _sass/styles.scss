@@ -1,6 +1,20 @@
 // Import Core Clean Blog SCSS
 @import '../assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss';
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading,
+header.masthead .post-heading .subheading,
+#mainNav,
+.btn {
+  font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
+}
 .logo {
   height: 16px;
   margin-right: 8px;
