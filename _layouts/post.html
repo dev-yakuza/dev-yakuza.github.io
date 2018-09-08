@@ -65,7 +65,7 @@ layout: default
       </div>
       <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function() {
-        var lang = "{{page.lang}}" !== "/{{default_lang}}" ? "" : "/{{page.lang}}";
+        var lang = "{{page.lang}}" === "{{ site.default_lang }}" ? "" : "/{{page.lang}}";
 
         $.get( lang + "/api/{{page.categories}}/posts.json", function(data, status){
           if(data.length > 0) {
@@ -112,7 +112,7 @@ layout: default
                 $('.post-list-container .footer .page-item--next').before(paginationItem);
               }
 
-              if(post.page >= 1) {
+              if(post.page > 1) {
                 $('.footer').css('display', 'flex');
                 $('.post-list-container .body').css('height', '340px');
               }
@@ -153,7 +153,6 @@ layout: default
 
           paginationContainer.find('.page-item').removeClass('active');
           paginationContainer.find('.page-link[data-page="' + pageNum + '"]').closest('.page-item').addClass('active');
-          console.log(this);
         })
       });
       </script>
@@ -161,20 +160,28 @@ layout: default
       {% if page.comments %}
       <div id="disqus_thread"></div>
       <script>
-        var disqus_config = function () {
-          this.page.url = 'https://kokosoft0527.github.io';
-          this.page.identifier = '{{page.url}}';
-        };
-        (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://testblog-xjrwavefuy.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
+
+      var disqus_config = function () {
+        this.page.url = 'https://dev-yakuza.github.io{{page.url}}';
+        this.page.identifier = '{{page.url}}';
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      {% if site.active_lang == 'ko' %}
+      s.src = 'https://https-dev-yakuza-github-io-ko.disqus.com/embed.js';
+      {% elsif site.active_lang == 'en' %}
+      s.src = 'https://https-dev-yakuza-github-io-en.disqus.com/embed.js';
+      {% else %}
+      s.src = 'https://https-dev-yakuza-github-io.disqus.com/embed.js';
+      {% endif %}
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       {% endif %}
-
 
     </div>
   </div>

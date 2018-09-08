@@ -14,6 +14,11 @@ header.masthead .post-heading .subheading,
 #mainNav,
 .btn {
   font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+header.masthead {
+  margin-bottom: 0px;
 }
 .logo {
   height: 16px;
@@ -29,6 +34,7 @@ pre code {
     border-bottom: 1px solid lightgray;
     padding-bottom: 8px;
     margin-bottom: 8px;
+    margin-top: 56px;
     &.subheading {
       border: 0;
     }
@@ -47,11 +53,13 @@ pre code {
   ul {
     margin: 0;
   }
-  p {
+  p,
+  li {
     font-size: 13pt;
     line-height: 21pt;
     font-weight: 100;
-    word-break: break-all;
+  }
+  p {
     margin-bottom: 16px;
     &:first-letter {
       margin-left: 16px;
@@ -76,6 +84,8 @@ pre code {
     margin-top: 16px;
     margin-bottom: 16px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
     & .overlay {
       position: absolute;
       top: 0;
@@ -274,6 +284,7 @@ pre code {
   border: 1px solid lightgray;
   border-radius: 4px;
   padding: 16px;
+  margin-top: 40px;
   display: none;
   & .list-group-item {
     padding: 8px 16px;
