@@ -82,23 +82,26 @@ footer .copyright { font-size: 14px; margin-bottom: 0; text-align: center; }
 
 .btn-lg { font-size: 16px; padding: 25px 35px; }
 
-body, h1, h2, h3, h4, h5, h6, header.masthead .page-heading .subheading, header.masthead .site-heading .subheading, header.masthead .post-heading .subheading, #mainNav, .btn { font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif; }
+body, h1, h2, h3, h4, h5, h6, header.masthead .page-heading .subheading, header.masthead .site-heading .subheading, header.masthead .post-heading .subheading, #mainNav, .btn { font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif; word-break: keep-all; word-wrap: break-word; }
+
+header.masthead { margin-bottom: 0px; }
 
 .logo { height: 16px; margin-right: 8px; }
 
 pre code { border-radius: 4px; }
 
-.container h2 { border-bottom: 1px solid lightgray; padding-bottom: 8px; margin-bottom: 8px; }
+.container h2 { border-bottom: 1px solid lightgray; padding-bottom: 8px; margin-bottom: 8px; margin-top: 56px; }
 .container h2.subheading { border: 0; }
 .container .heading-date { margin-top: 16px; border-bottom: 1px solid #fff; }
 .container h3, .container h4, .container h5, .container h6 { margin-top: 24px; }
 .container p, .container ul { margin: 0; }
-.container p { font-size: 13pt; line-height: 21pt; font-weight: 100; word-break: break-all; margin-bottom: 16px; }
+.container p, .container li { font-size: 13pt; line-height: 21pt; font-weight: 100; }
+.container p { margin-bottom: 16px; }
 .container p:first-letter { margin-left: 16px; }
 
 .card-container { margin-bottom: 16px; }
 @media (max-width: 768px) { .card-container h2 { text-align: center; } }
-.card-container .card-content-container { position: relative; display: flex; border: 1px solid lightgray; border-radius: 8px; overflow: hidden; max-width: 300px; margin-top: 16px; margin-bottom: 16px; background-size: cover; }
+.card-container .card-content-container { position: relative; display: flex; border: 1px solid lightgray; border-radius: 8px; overflow: hidden; max-width: 300px; margin-top: 16px; margin-bottom: 16px; background-size: cover; background-repeat: no-repeat; background-size: 100%; }
 .card-container .card-content-container .overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: #212529; opacity: 0.5; }
 .card-container .card-content-container .card-content { position: relative; width: 100%; }
 .card-container .card-content-container .card-content .card-header { height: 136px; display: flex; flex-direction: column; justify-content: center; }
@@ -140,7 +143,7 @@ pre code { border-radius: 4px; }
 .page-item .page-link { color: #e83e8c; }
 .page-item.active .page-link { background-color: #e83e8c; border-color: #e83e8c; }
 
-.post-list-container { border: 1px solid lightgray; border-radius: 4px; padding: 16px; display: none; }
+.post-list-container { border: 1px solid lightgray; border-radius: 4px; padding: 16px; margin-top: 40px; display: none; }
 .post-list-container .list-group-item { padding: 8px 16px; }
 .post-list-container .list-group-item.active { background-color: #e83e8c; border-color: #e83e8c; }
 .post-list-container .body { font-size: 16px; margin-bottom: 8px; }

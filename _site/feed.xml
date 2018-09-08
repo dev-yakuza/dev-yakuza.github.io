@@ -1,1 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-08T14:00:00+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-08T22:51:55+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry><title type="html">Install/common/check_jekyll</title><link href="http://localhost:4000/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/install/common/check_jekyll</id><content type="html" xml:base="http://localhost:4000/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="ja"><title type="html">jekyllインストール</title><link href="http://localhost:4000/jekyll/installation/" rel="alternate" type="text/html" title="jekyllインストール" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-ja</id><content type="html" xml:base="http://localhost:4000/jekyll/installation/">&lt;h2 id=&quot;インストール&quot;&gt;インストール&lt;/h2&gt;
+&lt;p&gt;jekyllはMac, Windows, Ubuntuへインストールが出来ます。私たちは主にMacとWindowsを使うので、ここにはMacとWindowsへインストールする方法を紹介します。&lt;/p&gt;
+
+&lt;p&gt;MacとwindowsはRubyをインストールする方法が違うだけで、他の部分は同じです。詳しく内容は&lt;a href=&quot;https://jekyllrb-ko.github.io/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyllホームページ&lt;/a&gt;で確認してください。&lt;/p&gt;
+
+&lt;h2 id=&quot;バージョン&quot;&gt;バージョン&lt;/h2&gt;
+&lt;p&gt;現在ブログを作成する時点で使ってるバージョンは下記の通りです。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ruby: &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.5.1p57&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll 3.7.3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rubyインストール&quot;&gt;Rubyインストール&lt;/h2&gt;
+&lt;p&gt;jekyllは一つのRuby Gemなので、Rubyをインストールしなきゃならないです&lt;/p&gt;
+
+&lt;h3 id=&quot;macへrubyをインストール&quot;&gt;MacへRubyをインストール&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;windowsへrubyをインストール&quot;&gt;WindowsへRubyをインストール&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ruby installerを使いましょう.&lt;/li&gt;
+  &lt;li&gt;ダウンロードサイト: &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;RubyInstaller for Windows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ruby + Devkitのバージョンが2.4以上の物をダウンロードしてインストールしましょう。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rubyインストール確認&quot;&gt;Rubyインストール確認&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll-ruby-gemインストール&quot;&gt;jekyll Ruby Gemインストール&lt;/h2&gt;
+&lt;p&gt;Rubyをインストールしたら、Rubyを使ってjekyll Gemをインストールしてください。&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-ruby-gemインストール-1&quot;&gt;jekyll Ruby Gemインストール&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jekyll-ruby-gemインストール確認&quot;&gt;jekyll Ruby Gemインストール確認&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll-gemを使って基本プロジェクトを生成&quot;&gt;jekyll Gemを使って基本プロジェクトを生成&lt;/h2&gt;
+&lt;h3 id=&quot;プロジェクト生成&quot;&gt;プロジェクト生成&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new [プロジェクト名]&lt;/code&gt;のコマンドを使ってjekyllプロジェクト生成&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new dev-yakuza.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;プロジェクトフォルダ確認&quot;&gt;プロジェクトフォルダ確認&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// cd dev-yakuza.github.io
+
+|-- _posts
+|   |-- 2018-09-08-welcome-to-jekyll.markdown
+|-- .gitignore
+|-- 404.html
+|-- about.md
+|-- index.md
+|-- Gemfile
+|-- Gemfile.lock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;参考サイト&quot;&gt;参考サイト&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;jekyllホームページ: &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb-ko.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">インストール jekyllはMac, Windows, Ubuntuへインストールが出来ます。私たちは主にMacとWindowsを使うので、ここにはMacとWindowsへインストールする方法を紹介します。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/1.jpg" /></entry></feed>

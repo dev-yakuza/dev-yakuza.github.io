@@ -1,1 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/en/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/en/" rel="alternate" type="text/html" /><updated>2018-09-08T14:00:06+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/en/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/en/" rel="alternate" type="text/html" /><updated>2018-09-08T22:52:00+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry><title type="html">Install/common/check_jekyll</title><link href="http://localhost:4000/en/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/install/common/check_jekyll</id><content type="html" xml:base="http://localhost:4000/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="en"><title type="html">jekyll installation</title><link href="http://localhost:4000/en/jekyll/installation/" rel="alternate" type="text/html" title="jekyll installation" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-en</id><content type="html" xml:base="http://localhost:4000/jekyll/installation/">&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;jekyll can be installed on Mac, Windows, Ubuntu. Here is how to install jekyll only on Mac and Windows, because we mainly use it on Mac and Windows.&lt;/p&gt;
+
+&lt;p&gt;There is difference only in Ruby installation between Mac and Windows, other process is same. If you wanna get more info, you can check &lt;a href=&quot;https://jekyllrb-ko.github.io/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyll homepage&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;version&quot;&gt;Version&lt;/h2&gt;
+&lt;p&gt;current blog use the following version.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ruby: &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.5.1p57&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll 3.7.3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ruby-installation&quot;&gt;Ruby installation&lt;/h2&gt;
+&lt;p&gt;jekyll is one of Ruby Gem, so we need to install Ruby.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-ruby-on-mac&quot;&gt;Install Ruby on Mac&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;install-ruby-on-windows&quot;&gt;Install Ruby on Windows&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use Ruby installer.&lt;/li&gt;
+  &lt;li&gt;Download: &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;RubyInstaller for Windows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Install Ruby + Devkit version 2.4 or higher.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;check-ruby-installed&quot;&gt;Check Ruby installed&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll-ruby-gem-installation&quot;&gt;jekyll Ruby Gem Installation&lt;/h2&gt;
+&lt;p&gt;If you installed Ruby, you can install jekyll Gem by using Ruby.&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-ruby-gem-installation-1&quot;&gt;jekyll Ruby Gem Installation&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;check-jekyll-ruby-gem-installed&quot;&gt;Check jekyll Ruby Gem installed&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;create-a-basic-project-by-jekyll-gem&quot;&gt;Create a basic project by jekyll Gem&lt;/h2&gt;
+&lt;h3 id=&quot;create-a-project&quot;&gt;Create a project&lt;/h3&gt;
+&lt;p&gt;You can create jekyll project by &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new [project name]&lt;/code&gt; command&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new dev-yakuza.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;check-the-project-folder&quot;&gt;Check the project folder&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// cd dev-yakuza.github.io
+
+|-- _posts
+|   |-- 2018-09-08-welcome-to-jekyll.markdown
+|-- .gitignore
+|-- 404.html
+|-- about.md
+|-- index.md
+|-- Gemfile
+|-- Gemfile.lock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;jekyll homepage: &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb-ko.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Installation jekyll can be installed on Mac, Windows, Ubuntu. Here is how to install jekyll only on Mac and Windows, because we mainly use it on Mac and Windows.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/1.jpg" /></entry></feed>
