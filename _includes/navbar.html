@@ -16,9 +16,7 @@
               Category
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% for category in site.category_front %} {% if category.lang == page.lang %}
-              <a class="dropdown-item" href="{{ category.permalink }}">{{ category.title }}</a>
-              {% endif %} {% endfor %}
+            {% include parts/nav_category_item.html %}
             </div>
           </li>
           <li class="nav-item">
@@ -56,13 +54,7 @@
             Category
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% assign frontEndCategories = site.pages | where_exp:"item", "item.categories contains 'front_end'" %} {% for frontEndCategory
-            in frontEndCategories %} {% assign urlSize = frontEndCategory.permalink | replace: 'index.html', '' | split:
-            '/' | size %} {% if urlSize == 2 %}
-            <a class="dropdown-item" href="{{frontEndCategory.permalink | replace: 'index.html', ''}}">{{ frontEndCategory.title
-              }}
-            </a>
-            {% endif %} {% endfor %}
+          {% include parts/nav_category_item.html %}
           </div>
         </li>
         <li class="nav-item">

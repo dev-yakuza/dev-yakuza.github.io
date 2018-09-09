@@ -1,0 +1,7 @@
+{% assign categories = site.pages | where_exp:"item", "item.categories contains 'service'" %}
+{% for category in categories %}
+{% assign urlSize = category.permalink | replace: 'index.html', '' | split: '/' | size %}
+{% if urlSize == 2 %}
+<a class="dropdown-item" href="{{ category.permalink | replace: 'index.html', ''}}">{{ category.title }}</a>
+{% endif %}
+{% endfor %}
