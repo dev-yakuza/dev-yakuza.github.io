@@ -1,8 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://dev-yakuza.github.io/en/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dev-yakuza.github.io/en/" rel="alternate" type="text/html" /><updated>2018-09-09T09:42:52+09:00</updated><id>https://dev-yakuza.github.io/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry><title type="html">Install/common/check_jekyll</title><link href="https://dev-yakuza.github.io/en/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/2018/install/common/check_jekyll</id><content type="html" xml:base="https://dev-yakuza.github.io/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="en"><title type="html">jekyll installation</title><link href="https://dev-yakuza.github.io/en/jekyll/installation/" rel="alternate" type="text/html" title="jekyll installation" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/jekyll/index-en</id><content type="html" xml:base="https://dev-yakuza.github.io/jekyll/installation/">&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/en/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/en/" rel="alternate" type="text/html" /><updated>2018-09-09T17:02:23+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="en"><title type="html">Theme settings</title><link href="http://localhost:4000/en/jekyll/theme/" rel="alternate" type="text/html" title="Theme settings" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-en</id><content type="html" xml:base="http://localhost:4000/jekyll/theme/">&lt;h2 id=&quot;jekyll-theme&quot;&gt;jekyll theme&lt;/h2&gt;
+&lt;p&gt;before setting jekyll theme, jekyll have to be installed and a basic project must be created. If you don’t install jekyll or create the project, check the previous blog post &lt;a href=&quot;http://localhost:4000/jekyll/installation/&quot;&gt;jekyll installation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;jekyll has basically theme setting function like wordpress. Here is introducing how to set a theme via how to set the theme to our blog.&lt;/p&gt;
+
+&lt;h2 id=&quot;find-a-theme&quot;&gt;Find a theme&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;First, let’s find a theme which you like.&lt;/li&gt;
+  &lt;li&gt;Free theme site: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Theme which we use: &lt;a href=&quot;http://jekyllthemes.org/themes/clean-blog/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;theme-installation&quot;&gt;Theme installation&lt;/h2&gt;
+&lt;p&gt;There are two ways to install a theme&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Install via Gem&lt;/li&gt;
+  &lt;li&gt;Download a theme file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;install-via-gem&quot;&gt;Install via Gem&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; file
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-theme-clean-blog&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-clean-blog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install the theme
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Check it
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;If you run jekyll, you can see the new theme blog.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;download-a-theme-file&quot;&gt;Download a theme file&lt;/h3&gt;
+&lt;p&gt;You can set the theme by installing it via Gem. However we wanted to make it more freely, so we decided to use the way to download theme files.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the theme github page:
+&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;startbootstrap-clean-blog-jekyll theme&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt; button for downloading.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unzip it and copy files to your project.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check it&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;If you run jekyll, you can see the new theme blog.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-to-use-the-theme&quot;&gt;How to use the theme&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Install via Gem
+    &lt;ul&gt;
+      &lt;li&gt;If you install the theme by Gem, see the detail how to use the theme in the theme site(&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll#installation--setup&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;)&lt;/li&gt;
+      &lt;li&gt;Almost themes introduce how to install and use, so if you want to make quickly, use Gem installation.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Download a theme file
+    &lt;ul&gt;
+      &lt;li&gt;We set our project by downloading the theme file way to edit it more freely.&lt;/li&gt;
+      &lt;li&gt;Check next blog post &lt;a href=&quot;http://localhost:4000/jekyll/folder_structure/&quot;&gt;Folder structure&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Free theme site: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Clean Blog: &lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll homepage: &lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/docs/structure/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll theme before setting jekyll theme, jekyll have to be installed and a basic project must be created. If you don’t install jekyll or create the project, check the previous blog post jekyll installation.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/2.jpg" /></entry><entry><title type="html">Install/common/check_jekyll</title><link href="http://localhost:4000/en/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/install/common/check_jekyll</id><content type="html" xml:base="http://localhost:4000/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="en"><title type="html">jekyll installation</title><link href="http://localhost:4000/en/jekyll/installation/" rel="alternate" type="text/html" title="jekyll installation" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-en</id><content type="html" xml:base="http://localhost:4000/jekyll/installation/">&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 &lt;p&gt;jekyll can be installed on Mac, Windows, Ubuntu. Here is how to install jekyll only on Mac and Windows, because we mainly use it on Mac and Windows.&lt;/p&gt;
 
-&lt;p&gt;There is difference only in Ruby installation between Mac and Windows, other process is same. If you wanna get more info, you can check &lt;a href=&quot;https://jekyllrb-ko.github.io/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyll homepage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is difference only in Ruby installation between Mac and Windows, other process is same. If you wanna get more info, you can check &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyll homepage&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;version&quot;&gt;Version&lt;/h2&gt;
 &lt;p&gt;current blog use the following version.&lt;/p&gt;
@@ -59,7 +142,12 @@
 |-- Gemfile.lock
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;start-jekyll&quot;&gt;start jekyll&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Open a browser and access to &lt;a href=&quot;http://127.0.0.1:4000&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;jekyll homepage: &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb-ko.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Installation jekyll can be installed on Mac, Windows, Ubuntu. Here is how to install jekyll only on Mac and Windows, because we mainly use it on Mac and Windows.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/jekyll/1.jpg" /></entry></feed>
+  &lt;li&gt;jekyll homepage: &lt;a href=&quot;https://jekyllrb.com/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Installation jekyll can be installed on Mac, Windows, Ubuntu. Here is how to install jekyll only on Mac and Windows, because we mainly use it on Mac and Windows.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/1.jpg" /></entry></feed>

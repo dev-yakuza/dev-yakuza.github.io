@@ -1,8 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://dev-yakuza.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dev-yakuza.github.io/" rel="alternate" type="text/html" /><updated>2018-09-09T09:42:47+09:00</updated><id>https://dev-yakuza.github.io/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry><title type="html">Install/common/check_jekyll</title><link href="https://dev-yakuza.github.io/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/2018/install/common/check_jekyll</id><content type="html" xml:base="https://dev-yakuza.github.io/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="ja"><title type="html">jekyllインストール</title><link href="https://dev-yakuza.github.io/jekyll/installation/" rel="alternate" type="text/html" title="jekyllインストール" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/jekyll/index-ja</id><content type="html" xml:base="https://dev-yakuza.github.io/jekyll/installation/">&lt;h2 id=&quot;インストール&quot;&gt;インストール&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-09T17:02:18+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ja"><title type="html">テーマ設定</title><link href="http://localhost:4000/jekyll/theme/" rel="alternate" type="text/html" title="テーマ設定" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-ja</id><content type="html" xml:base="http://localhost:4000/jekyll/theme/">&lt;h2 id=&quot;jekyllテーマ&quot;&gt;jekyllテーマ&lt;/h2&gt;
+&lt;p&gt;jekyllのテーマを設定する前、jekyllのインストールと基本プロジェクトの生成が必要です。まだ、jekyllがインストールされてない方、プロジェクトを生成してない方は以前のブログ&lt;a href=&quot;http://localhost:4000/jekyll/installation/&quot;&gt;jekyllインストール&lt;/a&gt;を確認してください。&lt;/p&gt;
+
+&lt;p&gt;jekyllはwordpressみたいに基本的にテーマの設定が可能です。ここには私たちが使ったテーマを設定する方法を紹介することにより、jekyllのテーマを設定する方法を説明します。&lt;/p&gt;
+
+&lt;h2 id=&quot;テーマ検索&quot;&gt;テーマ検索&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;まず、好きなテーマを探す。&lt;/li&gt;
+  &lt;li&gt;無料テーマサイト: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;私たちが使ってるテーマ: &lt;a href=&quot;http://jekyllthemes.org/themes/clean-blog/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;テーマインストール&quot;&gt;テーマインストール&lt;/h2&gt;
+&lt;p&gt;テーマをインストールする方法を大きく二つがあります。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Gemを通じてインストール&lt;/li&gt;
+  &lt;li&gt;ファイルダウンロード&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;gemを通じてインストール&quot;&gt;Gemを通じてインストール&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; ファイル修正
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-theme-clean-blog&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; ファイル修正
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-clean-blog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;テーマインストール
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;確認
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;jekyllを実行して見ると、新たに適用されたテーマとを確認することが出来ます。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ファイルダウンロード&quot;&gt;ファイルダウンロード&lt;/h3&gt;
+&lt;p&gt;Gemを通じてインストールすることが出来ますが私たちはもっと自由にテーマを修正したいので、テーマファイルをダウンロードして適用する方法を選べった。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;テーマのgithubページへ移動:
+&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;startbootstrap-clean-blog-jekyllテーマ&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt; ボタンを押してダウンロード&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;圧縮を解除してファイル内容を自分のプロジェクトにコピペする。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;確認&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;jekyllを実行して見ると、新たに適用されたテーマとを確認することが出来ます。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;テーマ使用法&quot;&gt;テーマ使用法&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Gemを通じてインストールした場合
+    &lt;ul&gt;
+      &lt;li&gt;Gemを通じてテーマをインストールした場合は、テーマのサイト(&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll#installation--setup&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;)を参考して使ってください。&lt;/li&gt;
+      &lt;li&gt;ほとんどのテーマはインストールする方法と使用する方法を紹介してるので、早めに始めたい方はGemを通じてインストールすることをおすすめします。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ファイルダウンロード
+    &lt;ul&gt;
+      &lt;li&gt;私たちはテーマをもっと自由に使うためにファイルダウンロード方式でプロジェクトを構成した。&lt;/li&gt;
+      &lt;li&gt;次のブログである&lt;a href=&quot;http://localhost:4000/jekyll/folder_structure/&quot;&gt;フォルダ構造&lt;/a&gt;を通じてテーマの活用を説明します。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;参考サイト&quot;&gt;参考サイト&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;無料テーマサイト: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Clean Blog: &lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jekyllホームページ: &lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/docs/structure/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyllテーマ jekyllのテーマを設定する前、jekyllのインストールと基本プロジェクトの生成が必要です。まだ、jekyllがインストールされてない方、プロジェクトを生成してない方は以前のブログjekyllインストールを確認してください。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/2.jpg" /></entry><entry><title type="html">Install/common/check_jekyll</title><link href="http://localhost:4000/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/install/common/check_jekyll</id><content type="html" xml:base="http://localhost:4000/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="ja"><title type="html">jekyllインストール</title><link href="http://localhost:4000/jekyll/installation/" rel="alternate" type="text/html" title="jekyllインストール" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-ja</id><content type="html" xml:base="http://localhost:4000/jekyll/installation/">&lt;h2 id=&quot;インストール&quot;&gt;インストール&lt;/h2&gt;
 &lt;p&gt;jekyllはMac, Windows, Ubuntuへインストールが出来ます。私たちは主にMacとWindowsを使うので、ここにはMacとWindowsへインストールする方法を紹介します。&lt;/p&gt;
 
-&lt;p&gt;MacとwindowsはRubyをインストールする方法が違うだけで、他の部分は同じです。詳しく内容は&lt;a href=&quot;https://jekyllrb-ko.github.io/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyllホームページ&lt;/a&gt;で確認してください。&lt;/p&gt;
+&lt;p&gt;MacとwindowsはRubyをインストールする方法が違うだけで、他の部分は同じです。詳しく内容は&lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyllホームページ&lt;/a&gt;で確認してください。&lt;/p&gt;
 
 &lt;h2 id=&quot;バージョン&quot;&gt;バージョン&lt;/h2&gt;
 &lt;p&gt;現在ブログを作成する時点で使ってるバージョンは下記の通りです。&lt;/p&gt;
@@ -59,7 +142,12 @@
 |-- Gemfile.lock
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;jekyllスタート&quot;&gt;jekyllスタート&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;ブラウザで&lt;a href=&quot;http://127.0.0.1:4000&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000&lt;/a&gt;を開いて確認する。&lt;/p&gt;
+
 &lt;h2 id=&quot;参考サイト&quot;&gt;参考サイト&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;jekyllホームページ: &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb-ko.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">インストール jekyllはMac, Windows, Ubuntuへインストールが出来ます。私たちは主にMacとWindowsを使うので、ここにはMacとWindowsへインストールする方法を紹介します。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/jekyll/1.jpg" /></entry></feed>
+  &lt;li&gt;jekyllホームページ: &lt;a href=&quot;https://jekyllrb.com/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">インストール jekyllはMac, Windows, Ubuntuへインストールが出来ます。私たちは主にMacとWindowsを使うので、ここにはMacとWindowsへインストールする方法を紹介します。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/1.jpg" /></entry></feed>

@@ -7,7 +7,6 @@ pagination:
   enabled: true
   category: 'jekyll'
   permalink: '/:num/'
-  per_page: 1
 
 title: 'jekyll blog'
 description: 'jekyll(ジキル)ブログの始まり。今見てるブログの構築方法を記録した内容です。 ギットハーブページへjekyllで作ったサイトをアップロードしてブログを始めましょう。'

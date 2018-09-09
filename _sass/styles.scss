@@ -287,6 +287,7 @@ pre code {
   margin-top: 40px;
   display: none;
   & .list-group-item {
+    text-decoration: none;
     padding: 8px 16px;
     &.active {
       background-color: #e83e8c;
@@ -328,4 +329,18 @@ pre code {
   border-bottom: 1px solid lightgray;
   padding-bottom: 4px;
   margin-bottom: 8px;
+}
+
+a,
+a:hover {
+  color: #e83e8c;
+  text-decoration: underline;
+}
+
+#mainNav a {
+  text-decoration: none;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  margin-top: 0;
 }

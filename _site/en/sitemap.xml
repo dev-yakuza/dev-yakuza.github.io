@@ -7,23 +7,21 @@
   
   
   
-  
-  
     <url>
       
-      <loc>https://dev-yakuza.github.io/jekyll/installation/</loc>
+      <loc>http://localhost:4000/jekyll/theme/</loc>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/theme/"/>
       
       
       <priority>0.5</priority>
@@ -31,19 +29,19 @@
   
     <url>
       
-      <loc>https://dev-yakuza.github.io/ko/jekyll/installation/</loc>
+      <loc>http://localhost:4000/ko/jekyll/theme/</loc>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/theme/"/>
       
       
       <priority>0.5</priority>
@@ -51,19 +49,85 @@
   
     <url>
       
-      <loc>https://dev-yakuza.github.io/en/jekyll/installation/</loc>
+      <loc>http://localhost:4000/en/jekyll/theme/</loc>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/theme/"/>
       
       
       
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/jekyll/installation/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/theme/"/>
+      
+      
+      <priority>0.5</priority>
+    </url>
+  
+  
+  
+  
+  
+  
+  
+    <url>
+      
+      <loc>http://localhost:4000/jekyll/installation/</loc>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/installation/"/>
+      
+      
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      
+      <loc>http://localhost:4000/ko/jekyll/installation/</loc>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/installation/"/>
+      
+      
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      
+      <loc>http://localhost:4000/en/jekyll/installation/</loc>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ja" href="http://localhost:4000/en/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/installation/"/>
+      
+      
+      
+      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/installation/"/>
       
       
       <priority>0.5</priority>

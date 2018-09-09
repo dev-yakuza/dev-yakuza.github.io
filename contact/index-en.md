@@ -18,4 +18,5 @@ input_message: 'message'
 input_message_error: 'Enter a message'
 ---
 
+## Contact us
 If you want to ask something to us, please contact us with below form.

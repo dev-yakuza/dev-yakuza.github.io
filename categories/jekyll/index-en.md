@@ -7,7 +7,6 @@ pagination:
   enabled: true
   category: 'jekyll'
   permalink: '/:num/'
-  per_page: 1
 
 title: 'jekyll blog'
 description: The beginning of jekyll blog. This is how to build jekyll blog which you see now. Let's start a blog by uploading the site made by jekyll to Github page.

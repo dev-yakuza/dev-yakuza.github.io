@@ -1,8 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://dev-yakuza.github.io/ko/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dev-yakuza.github.io/ko/" rel="alternate" type="text/html" /><updated>2018-09-09T09:42:49+09:00</updated><id>https://dev-yakuza.github.io/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry><title type="html">Install/common/check_jekyll</title><link href="https://dev-yakuza.github.io/ko/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/2018/install/common/check_jekyll</id><content type="html" xml:base="https://dev-yakuza.github.io/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="ko"><title type="html">jekyll 설치</title><link href="https://dev-yakuza.github.io/ko/jekyll/installation/" rel="alternate" type="text/html" title="jekyll 설치" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>https://dev-yakuza.github.io/jekyll/index-ko</id><content type="html" xml:base="https://dev-yakuza.github.io/jekyll/installation/">&lt;h2 id=&quot;설치&quot;&gt;설치&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/ko/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ko/" rel="alternate" type="text/html" /><updated>2018-09-09T17:02:20+09:00</updated><id>http://localhost:4000/</id><title type="html">프로그래밍으로 예술을 꿈꾼다</title><subtitle>우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다. 무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로 무에서 유를 창조하는 예술가가 되기를 바란다.</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ko"><title type="html">테마 설정</title><link href="http://localhost:4000/ko/jekyll/theme/" rel="alternate" type="text/html" title="테마 설정" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-ko</id><content type="html" xml:base="http://localhost:4000/jekyll/theme/">&lt;h2 id=&quot;jekyll-테마&quot;&gt;jekyll 테마&lt;/h2&gt;
+&lt;p&gt;jekyll의 테마를 설정하기 전에 jekyll의 설치 및 기본 프로젝트가 생성되있어야 한다. 아직 jekyll이 설치가 안되어있거나 프로젝트가 생성되지 않았다면, 이전 블로그인 &lt;a href=&quot;http://localhost:4000/jekyll/installation/&quot;&gt;jekyll 설치&lt;/a&gt;를 확인하자.&lt;/p&gt;
+
+&lt;p&gt;jekyll은 wordpress처럼 기본적으로 테마 설정이 가능하다. 여기에서는 우리가 사용한 테마를 설정하는 방법을 통해 jekyll의 테마 설정을 설명하도록 하겠다.&lt;/p&gt;
+
+&lt;h2 id=&quot;테마-검색&quot;&gt;테마 검색&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선 마음에 드는 테마를 찾자.&lt;/li&gt;
+  &lt;li&gt;무료 테마 사이트: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;우리가 사용한 테마: &lt;a href=&quot;http://jekyllthemes.org/themes/clean-blog/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;테마-설치&quot;&gt;테마 설치&lt;/h2&gt;
+&lt;p&gt;테마를 설치하는 방법은 크게 두가지가 있다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Gem을 통한 설치&lt;/li&gt;
+  &lt;li&gt;파일 다운로드&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;gem을-통한-설치&quot;&gt;Gem을 통한 설치&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; 파일 수정
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-theme-clean-blog&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일 수정
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-clean-blog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;테마 설치
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;확인
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;jekyll을 실행해보면 새롭게 적용된 테마를 확인할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;파일-다운로드&quot;&gt;파일 다운로드&lt;/h3&gt;
+&lt;p&gt;Gem 파일을 이용해 테마를 설치할 수 있다. 하지만 우리는 좀 더 자유롭게 테마를 수정하고 싶기 때문에, 테마 파일을 다운로드하여 적용하는 방식을 사용하기로 결정했다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;테마의 github 페이지 이동:
+&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;startbootstrap-clean-blog-jekyll 테마&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt; 버튼을 통해 다운로드&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;압축을 해제하고 파일 내용을 자신의 프로젝트로 복사한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;확인&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;jekyll을 실행해보면 새롭게 적용된 테마를 확인할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;테마-사용법&quot;&gt;테마 사용법&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Gem을 통한 설치
+    &lt;ul&gt;
+      &lt;li&gt;Gem을 통해 테마를 설치했다면 테마 사이트(&lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll#installation--setup&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Clean Blog&lt;/a&gt;)를 참고하여 사용하길 바란다.&lt;/li&gt;
+      &lt;li&gt;대부분의 테마 파일은 설치 방법과 사용 방법을 소개하고 있으므로 빠르게 시작하고 싶은 사람은 Gem을 통한 설치를 추천한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;파일 다운로드
+    &lt;ul&gt;
+      &lt;li&gt;우리는 테마를 좀 더 자유롭게 사용하기 위해 파일 다운로드 방식으로 프로젝트를 구성했다.&lt;/li&gt;
+      &lt;li&gt;다음 블로그인 &lt;a href=&quot;http://localhost:4000/jekyll/folder_structure/&quot;&gt;폴더 구조&lt;/a&gt;를 통해 테마의 활용을 설명하도록 하겠다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;무료 테마 사이트: &lt;a href=&quot;http://jekyllthemes.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Clean Blog: &lt;a href=&quot;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll 홈페이지: &lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/docs/structure/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll 테마 jekyll의 테마를 설정하기 전에 jekyll의 설치 및 기본 프로젝트가 생성되있어야 한다. 아직 jekyll이 설치가 안되어있거나 프로젝트가 생성되지 않았다면, 이전 블로그인 jekyll 설치를 확인하자.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/2.jpg" /></entry><entry><title type="html">Install/common/check_jekyll</title><link href="http://localhost:4000/ko/2018/09/" rel="alternate" type="text/html" title="Install/common/check_jekyll" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/install/common/check_jekyll</id><content type="html" xml:base="http://localhost:4000/2018/09/">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">jekyll -v</summary></entry><entry xml:lang="ko"><title type="html">jekyll 설치</title><link href="http://localhost:4000/ko/jekyll/installation/" rel="alternate" type="text/html" title="jekyll 설치" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/index-ko</id><content type="html" xml:base="http://localhost:4000/jekyll/installation/">&lt;h2 id=&quot;설치&quot;&gt;설치&lt;/h2&gt;
 &lt;p&gt;jekyll은 Mac, Windows, Ubuntu에 설치할 수 있다. 우리는 주로 Mac과 Windows를 사용하기 때문에 여기에는 Mac과 Windows에 설치하는 방법만 소개하겠다.&lt;/p&gt;
 
-&lt;p&gt;Mac과 windows는 Ruby를 설치하는 방법만 다를 뿐, 다른 부분은 동일하다. 자세한 내용은 &lt;a href=&quot;https://jekyllrb-ko.github.io/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyll 홈페이지&lt;/a&gt;에서 확인하길 바란다.&lt;/p&gt;
+&lt;p&gt;Mac과 windows는 Ruby를 설치하는 방법만 다를 뿐, 다른 부분은 동일하다. 자세한 내용은 &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;jekyll 홈페이지&lt;/a&gt;에서 확인하길 바란다.&lt;/p&gt;
 
 &lt;h2 id=&quot;사용-버전&quot;&gt;사용 버전&lt;/h2&gt;
 &lt;p&gt;현재 블로그를 작성하는 시점에 사용하는 버전은 아래와 같다.&lt;/p&gt;
@@ -59,7 +142,12 @@
 |-- Gemfile.lock
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;jekyll-시작하기&quot;&gt;jekyll 시작하기&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;브라우저에서 &lt;a href=&quot;http://127.0.0.1:4000&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000&lt;/a&gt; 접속하여 확인하자&lt;/p&gt;
+
 &lt;h2 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;jekyll 홈페이지: &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb-ko.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">설치 jekyll은 Mac, Windows, Ubuntu에 설치할 수 있다. 우리는 주로 Mac과 Windows를 사용하기 때문에 여기에는 Mac과 Windows에 설치하는 방법만 소개하겠다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/jekyll/1.jpg" /></entry></feed>
+  &lt;li&gt;jekyll 홈페이지: &lt;a href=&quot;https://jekyllrb.com/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://jekyllrb.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">설치 jekyll은 Mac, Windows, Ubuntu에 설치할 수 있다. 우리는 주로 Mac과 Windows를 사용하기 때문에 여기에는 Mac과 Windows에 설치하는 방법만 소개하겠다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/1.jpg" /></entry></feed>
