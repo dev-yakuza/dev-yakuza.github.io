@@ -6,65 +6,6 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml" >
   
   
-    <url>
-      
-      <loc>https://dev-yakuza.github.io/2018/09/</loc>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/2018/09/"/>
-      
-      
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      
-      <loc>https://dev-yakuza.github.io/ko/2018/09/</loc>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/2018/09/"/>
-      
-      
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      
-      <loc>https://dev-yakuza.github.io/en/2018/09/</loc>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ja" href="https://dev-yakuza.github.io/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="ko" href="https://dev-yakuza.github.io/ko/2018/09/"/>
-      
-      
-      
-      <xhtml:link rel="alternate" hreflang="en" href="https://dev-yakuza.github.io/en/2018/09/"/>
-      
-      
-      <priority>0.5</priority>
-    </url>
   
   
   
@@ -127,6 +68,7 @@
       
       <priority>0.5</priority>
     </url>
+  
   
   
 </urlset>
