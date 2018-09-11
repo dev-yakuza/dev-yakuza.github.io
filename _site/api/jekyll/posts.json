@@ -4,10 +4,23 @@
   
   
   {
+      "title": "フォルダ構造",
+      "description": "jekyllは基本的なフォルダ構造を持ってます。フォルダ構造を使ってブログを体系的に管理しましょう。",
+      
+      "url": "http://localhost:4000/jekyll/directory_structure/",
+      
+      "date": "2018-09-10T00:00:00+09:00",
+      "page": "1"
+  }
+  ,
+  
+  
+  
+  {
       "title": "テーマ設定",
       "description": "jekyllのテーマを設定して、もっと素敵なブログを作ってみよう。",
       
-      "url": "https://dev-yakuza.github.io/jekyll/theme/",
+      "url": "http://localhost:4000/jekyll/theme/",
       
       "date": "2018-09-08T00:00:00+09:00",
       "page": "1"
@@ -20,7 +33,7 @@
       "title": "jekyllインストール",
       "description": "jekyllブログを始めるため、Mac/Widowsへjekyllをインストールして基本プロジェクトを生成しましょう。",
       
-      "url": "https://dev-yakuza.github.io/jekyll/installation/",
+      "url": "http://localhost:4000/jekyll/installation/",
       
       "date": "2018-09-08T00:00:00+09:00",
       "page": "1"

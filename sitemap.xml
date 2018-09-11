@@ -23,9 +23,37 @@ layout: null
       <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{post.permalink}}"/>
       {% endif %}
       {% endfor %}
-      <priority>0.5</priority>
+      <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+      <priority>1.0</priority>
     </url>
   {% endfor %}
   {% endif %}
   {% endfor %}
+
+  {% for page in site.pages %}
+  {% if page.lang %}
+  {% for lang in site.languages %}
+    {% if page.permalink contains '.json' %}
+    {% else %}
+    <url>
+      {% if lang == site.default_lang %}
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      {% else %}
+      <loc>{{ site.url }}/{{lang}}{{ page.url }}</loc>
+      {% endif %}
+      {% for lang in site.languages %}
+      {% if lang == site.default_lang %}
+      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}{{page.permalink | replace: 'index.html', ''}}"/>
+      {% else %}
+      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{page.permalink | replace: 'index.html', ''}}"/>
+      {% endif %}
+      {% endfor %}
+      <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+      <priority>0.5</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+
 </urlset>

@@ -337,10 +337,37 @@ a:hover {
   text-decoration: underline;
 }
 
-#mainNav a {
+#mainNav a,
+.card-footer {
   text-decoration: none;
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   margin-top: 0;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 8px 16px;
+    font-size: 13pt;
+    line-height: 21pt;
+  }
+  th {
+    background-color: #e0e0e0;
+    &:first-child {
+      width: 130px;
+    }
+  }
+  td {
+    text-align: left;
+    vertical-align: top;
+  }
+}
+h3 {
+  padding-left: 8px;
+  border-left: 6px solid rgb(232, 62, 140);
 }
