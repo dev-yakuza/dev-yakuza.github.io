@@ -4,8 +4,8 @@
   
   
   {
-      "title": "폴더 구조",
-      "description": "jekyll는 기본적인 폴더 구조를 가지고 있습니다. jekyll의 폴더 구조를 이용하여 블로그를 체계적으로 작성해 봅시다.",
+      "title": "Directory Structure",
+      "description": "jekyll basically has a direcotry structure. Let's use the directory structure for managing the blog.",
       
       "url": "https://dev-yakuza.github.io/en/jekyll/directory_structure/",
       
