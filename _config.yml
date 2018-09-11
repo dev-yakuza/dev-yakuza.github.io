@@ -54,7 +54,6 @@ pagination:
   sort_reverse: true
   limit: 0
   sort_field: 'date'
-  debug: true
   permalink: '/page/:num/'
   title: ':title'
   trail:
