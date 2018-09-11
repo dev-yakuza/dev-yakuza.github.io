@@ -84,6 +84,8 @@ footer .copyright { font-size: 14px; margin-bottom: 0; text-align: center; }
 
 body, h1, h2, h3, h4, h5, h6, header.masthead .page-heading .subheading, header.masthead .site-heading .subheading, header.masthead .post-heading .subheading, #mainNav, .btn { font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif; word-break: keep-all; word-wrap: break-word; }
 
+h3 { padding-left: 8px; border-left: 6px solid #e83e8c; }
+
 header.masthead { margin-bottom: 0px; }
 
 .logo { height: 16px; margin-right: 8px; }
@@ -108,7 +110,7 @@ pre code { border-radius: 4px; }
 .card-container .card-content-container .card-content .card-header .card-logo { padding-top: 32px; text-align: center; }
 .card-container .card-content-container .card-content .card-header .card-logo object { height: 40px; }
 .card-container .card-content-container .card-content .card-header .card-title { margin: 0; }
-.card-container .card-content-container .card-content .card-header .card-title h3 { margin: 0; text-align: center; margin: 16px; text-align: center; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-container .card-content-container .card-content .card-header .card-title h3 { padding-left: 0; border-left: 0; margin: 0; text-align: center; margin: 16px; text-align: center; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .card-container .card-content-container .card-content .card-body { background-color: #fff; font-size: 16px; padding: 16px; height: 152px; overflow: hidden; display: flex; flex-direction: column; }
 .card-container .card-content-container .card-content .card-body .card-body-content { font-size: 12pt; line-height: 18pt; font-weight: 100; overflow: hidden; }
 .card-container .card-content-container .card-content .card-body .card-body-content:first-letter { margin-left: 8px; }
@@ -166,5 +168,3 @@ table th, table td { border: 1px solid #333; padding: 8px 16px; font-size: 13pt;
 table th { background-color: #e0e0e0; }
 table th:first-child { width: 150px; }
 table td { text-align: left; vertical-align: top; }
-
-h3 { padding-left: 8px; border-left: 6px solid #e83e8c; }
