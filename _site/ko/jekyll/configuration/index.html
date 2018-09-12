@@ -8,27 +8,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <meta http-equiv="Content-Language" content="ko">
-<link rel="alternate" hreflang="ja" href=" http://localhost:4000/jekyll/theme/"/>
-<link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/theme/"/>
-<link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/theme/"/>
+<link rel="alternate" hreflang="ja" href=" http://localhost:4000/jekyll/configuration/"/>
+<link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/jekyll/configuration/"/>
+<link rel="alternate" hreflang="en" href="http://localhost:4000/en/jekyll/configuration/"/>
 
 
-  <title>테마 설정 - jekyll의 테마를 설정하여, 블로그를 좀 더 멋있게 만들어 보자.</title>
+  <title>jekyll 설정 - jekyll의 기본 설정을 설명합니다. _config.xml파일에 대해 설명하고 jekyll안에서 사용 가능한 변수들에 대해서 설명합니다.</title>
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="테마 설정" />
+<meta property="og:title" content="jekyll 설정" />
 <meta name="author" content="dev.yakuza@gmail.com" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="jekyll의 테마를 설정하여, 블로그를 좀 더 멋있게 만들어 보자." />
-<meta property="og:description" content="jekyll의 테마를 설정하여, 블로그를 좀 더 멋있게 만들어 보자." />
-<link rel="canonical" href="http://localhost:4000/ko/jekyll/theme/" />
-<meta property="og:url" content="http://localhost:4000/jekyll/theme/" />
+<meta name="description" content="jekyll의 기본 설정을 설명합니다. _config.xml파일에 대해 설명하고 jekyll안에서 사용 가능한 변수들에 대해서 설명합니다." />
+<meta property="og:description" content="jekyll의 기본 설정을 설명합니다. _config.xml파일에 대해 설명하고 jekyll안에서 사용 가능한 변수들에 대해서 설명합니다." />
+<link rel="canonical" href="http://localhost:4000/ko/jekyll/configuration/" />
+<meta property="og:url" content="http://localhost:4000/jekyll/configuration/" />
 <meta property="og:site_name" content="프로그래밍으로 예술을 꿈꾼다" />
-<meta property="og:image" content="http://localhost:4000/assets/images/category/jekyll/theme.jpg" />
+<meta property="og:image" content="http://localhost:4000/assets/images/category/jekyll/configuration.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-09-08T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-09-12T00:00:00+09:00" />
 <script type="application/ld+json">
-{"image":"http://localhost:4000/assets/images/category/jekyll/theme.jpg","url":"http://localhost:4000/jekyll/theme/","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"description":"jekyll의 테마를 설정하여, 블로그를 좀 더 멋있게 만들어 보자.","headline":"테마 설정","datePublished":"2018-09-08T00:00:00+09:00","dateModified":"2018-09-08T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/theme/"},"@context":"http://schema.org"}</script>
+{"image":"http://localhost:4000/assets/images/category/jekyll/configuration.jpg","url":"http://localhost:4000/jekyll/configuration/","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"description":"jekyll의 기본 설정을 설명합니다. _config.xml파일에 대해 설명하고 jekyll안에서 사용 가능한 변수들에 대해서 설명합니다.","headline":"jekyll 설정","datePublished":"2018-09-12T00:00:00+09:00","dateModified":"2018-09-12T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/configuration/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -50,7 +50,7 @@
     });
   </script>
 
-  <meta name="description" content="jekyll 테마 jekyll의 테마를 설정하기 전에 jekyll의 설치 및 기본 프로젝트가 생성되있어야 한다. 아직 jekyll이 설치가 안되어있거나 프로젝트가 생성되지 않았다면, 이전 블로그인 jekyll 설치를 확인하자.">
+  <meta name="description" content="jekyll 설정 jekyll은 매우 유연한 시스템으로 사이트를 제작하기 위한 많은 설정 옵션들을 제공하고 있습니다. 설정은 _config.xml 파일에 작성합니다. 여기에서는 우리가 사용한 옵션들만 설명합니다.">
 
   
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
@@ -61,7 +61,7 @@
   <link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/ko/assets/main.css?v=20180912">
-  <link rel="canonical" href="http://localhost:4000/ko/jekyll/theme/">
+  <link rel="canonical" href="http://localhost:4000/ko/jekyll/configuration/">
   <link rel="alternate" type="application/rss+xml" title="프로그래밍으로 예술을 꿈꾼다" href="/ko/feed.xml">
 
   <link rel="stylesheet" href="/ko/assets/highlight/railscasts.css">
@@ -109,9 +109,9 @@
           <i class="fa fa-language" aria-hidden="true"></i>
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item menu-ko" href="/ko/jekyll/theme/">한국어</a>
-          <a class="dropdown-item menu-en" href="/en/jekyll/theme/">English</a>
-          <a class="dropdown-item menu-ja" href="/ko/jekyll/theme/">日本語</a>
+          <a class="dropdown-item menu-ko" href="/ko/jekyll/configuration/">한국어</a>
+          <a class="dropdown-item menu-en" href="/en/jekyll/configuration/">English</a>
+          <a class="dropdown-item menu-ja" href="/ko/jekyll/configuration/">日本語</a>
         </div>
       </div>
 
@@ -181,20 +181,20 @@
 
     <!-- Page Header -->
 
-<header class="masthead" style="background-image: url('/assets/images/category/jekyll/theme.jpg')">
+<header class="masthead" style="background-image: url('/assets/images/category/jekyll/configuration.jpg')">
 
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h1>테마 설정</h1>
+          <h1>jekyll 설정</h1>
           <div class="heading-date">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            2018-09-08
+            2018-09-12
           </div>
           
-          <h2 class="subheading">jekyll의 테마를 설정하여, 블로그를 좀 더 멋있게 만들어 보자.</h2>
+          <h2 class="subheading">jekyll의 기본 설정을 설명합니다. _config.xml파일에 대해 설명하고 jekyll안에서 사용 가능한 변수들에 대해서 설명합니다.</h2>
           
         </div>
       </div>
@@ -206,88 +206,105 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
 
-      <h2 id="jekyll-테마">jekyll 테마</h2>
-<p>jekyll의 테마를 설정하기 전에 jekyll의 설치 및 기본 프로젝트가 생성되있어야 한다. 아직 jekyll이 설치가 안되어있거나 프로젝트가 생성되지 않았다면, 이전 블로그인 <a href="http://localhost:4000/ko/jekyll/installation/">jekyll 설치</a>를 확인하자.</p>
+      <h2 id="jekyll-설정">jekyll 설정</h2>
+<p>jekyll은 매우 유연한 시스템으로 사이트를 제작하기 위한 많은 설정 옵션들을 제공하고 있습니다. 설정은 <code class="highlighter-rouge">_config.xml</code> 파일에 작성합니다. 여기에서는 우리가 사용한 옵션들만 설명합니다.</p>
 
-<p>jekyll은 wordpress처럼 기본적으로 테마 설정이 가능하다. 여기에서는 우리가 사용한 테마를 설정하는 방법을 통해 jekyll의 테마 설정을 설명하도록 하겠다.</p>
-
-<h2 id="테마-검색">테마 검색</h2>
+<h2 id="jekyll-기본-설정">jekyll 기본 설정</h2>
 <ul>
-  <li>우선 마음에 드는 테마를 찾자.</li>
-  <li>무료 테마 사이트: <a href="http://jekyllthemes.org/" rel="nofollow" target="_blank">http://jekyllthemes.org/</a></li>
-  <li>우리가 사용한 테마: <a href="http://jekyllthemes.org/themes/clean-blog/" rel="nofollow" target="_blank">Clean Blog</a></li>
+  <li>jekyll 홈페이지에 모든 설정 옵션에 대해 설명이 나와있습니다.</li>
+  <li>jekyll 홈페이지: <a href="https://jekyllrb.com/docs/configuration/" rel="nofollow" target="_blank">https://jekyllrb.com/docs/configuration/</a></li>
+  <li>여기에서는 우리가 주로 사용하는 설정 옵션들을 설명합니다.</li>
 </ul>
 
-<h2 id="테마-설치">테마 설치</h2>
-<p>테마를 설치하는 방법은 크게 두가지가 있다.</p>
-<ol>
-  <li>Gem을 통한 설치</li>
-  <li>파일 다운로드</li>
-</ol>
+<h2 id="글로벌-변수">글로벌 변수</h2>
+<p>설정 파일 내용을 설명하기 앞서, 이해를 돕기 위해 jekyll이 기본적으로 가지고 있는 변수에 대해서 간단히 설명하겠습니다. 자세한 내용은 <a href="https://jekyllrb.com/docs/variables/" rel="nofollow" target="_blank">jekyll 홈페이지</a>를 참고하세요.</p>
 
-<h3 id="gem을-통한-설치">Gem을 통한 설치</h3>
-<ol>
-  <li><code class="highlighter-rouge">Gemfile</code> 파일 수정
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="s2">"jekyll-theme-clean-blog"</span>
-</code></pre></div>    </div>
-  </li>
-  <li><code class="highlighter-rouge">_config.yml</code> 파일 수정
-    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s">jekyll-theme-clean-blog</span>
-</code></pre></div>    </div>
-  </li>
-  <li>테마 설치
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
-</code></pre></div>    </div>
-  </li>
-  <li>확인
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
-</code></pre></div>    </div>
-    <p>jekyll을 실행해보면 새롭게 적용된 테마를 확인할 수 있다.</p>
-  </li>
-</ol>
+<h3 id="전역-변수">전역 변수</h3>
+<ul>
+  <li>site: 사이트 전반에 대한 정보입니다. <code class="highlighter-rouge">_config.xml</code>에 설정한 정보 및 기본적으로 jekyll이 제공하는 정보가 포함되어 있습니다.</li>
+  <li>page: 현재 페이지에 대한 정보를 가지고 있습니다. 페이지 상단에서 제공한 <code class="highlighter-rouge">yml</code>형식에 정보가 포함되어 있습니다.</li>
+  <li>content: <code class="highlighter-rouge">_layouts</code> 폴더에 있는 layout 파일에서 사용되는 변수입니다. page에 작성된 내용이 page가 참고하는 layout에 전달됩니다.</li>
+</ul>
 
-<h3 id="파일-다운로드">파일 다운로드</h3>
-<p>Gem 파일을 이용해 테마를 설치할 수 있다. 하지만 우리는 좀 더 자유롭게 테마를 수정하고 싶기 때문에, 테마 파일을 다운로드하여 적용하는 방식을 사용하기로 결정했다.</p>
+<h3 id="site-변수">site 변수</h3>
+<p>전역 변수 <code class="highlighter-rouge">site</code>가 가지고 있는 변수들중 우리가 자주 사용하는 변수들만 설명합니다. <code class="highlighter-rouge">_config.xml</code>에 원하는 변수를 선언하여 사용할 수 있습니다. 상단히 많은 플로그인들이 <code class="highlighter-rouge">_config.xml</code>에 플러그인에 필요한 변수들을 선언하고 사용하고 있습니다. (참고: <a href="http://localhost:4000/ko/jekyll/plugin_multi_language/" target="_blank">다국어 플러그인</a>)</p>
 
-<ol>
-  <li>
-    <p>테마의 github 페이지 이동:
-<a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll" rel="nofollow" target="_blank">startbootstrap-clean-blog-jekyll 테마</a></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">Clone or download</code> 버튼을 통해 다운로드</p>
-  </li>
-  <li>
-    <p>압축을 해제하고 파일 내용을 자신의 프로젝트로 복사한다.</p>
-  </li>
-  <li>
-    <p>확인</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
-</code></pre></div>    </div>
-    <p>jekyll을 실행해보면 새롭게 적용된 테마를 확인할 수 있다.</p>
-  </li>
-</ol>
+<ul>
+  <li>site.time: jekyll 명령을 실행한 시간입니다. 우리는 <code class="highlighter-rouge">sitemap.xml</code>에서 갱신된 시간을 표시하기 위해서, <code class="highlighter-rouge">head.html</code>에 포함된 css의 캐시를 방지하기 위한 버전으로 사용하고 있습니다..</li>
+  <li>site.pages: <code class="highlighter-rouge">_posts</code>폴더 이외에 모든 페이지. 우리는 역시 <code class="highlighter-rouge">sitemap.xml</code>에서 post 이외에 페이지들을 표시하기 위해 사용되며, <a href="http://localhost:4000" target="_blank">Top</a> 하단에 표시하는 카테고리 페이지를 표시하기 위해 사용합니다.</li>
+  <li>site.posts: <code class="highlighter-rouge">_posts</code>폴더에 있는 모든 post 페이지를 가지고 있습니다. 우리는 <code class="highlighter-rouge">sitemap.xml</code>에서 사용하며, 지금 보고 계신 페이지 하단에 있는 posts를 표시하기 위한 json에서 사용합니다.</li>
+  <li>site.url</li>
+</ul>
 
-<h2 id="테마-사용법">테마 사용법</h2>
-<ol>
-  <li>Gem을 통한 설치
-    <ul>
-      <li>Gem을 통해 테마를 설치했다면 테마 사이트(<a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll#installation--setup" rel="nofollow" target="_blank">Clean Blog</a>)를 참고하여 사용하길 바란다.</li>
-      <li>대부분의 테마 파일은 설치 방법과 사용 방법을 소개하고 있으므로 빠르게 시작하고 싶은 사람은 Gem을 통한 설치를 추천한다.</li>
-    </ul>
-  </li>
-  <li>파일 다운로드
-    <ul>
-      <li>우리는 테마를 좀 더 자유롭게 사용하기 위해 파일 다운로드 방식으로 프로젝트를 구성했다.</li>
-      <li>다음 블로그인 <a href="http://localhost:4000/ko/jekyll/folder_structure/">폴더 구조</a>를 통해 테마의 활용을 설명하도록 하겠다.</li>
-    </ul>
-  </li>
-</ol>
+<h3 id="page-변수">page 변수</h3>
+<p>전역 변수 page가 가지고 있는 변수들로써 page 상단에 <code class="highlighter-rouge">yml</code> 형식으로 작성한 내용들이 변수로 들어있습니다. 공식적인 변수들과 우리가 사용하는 변수들을 설명하겠습니다.</p>
+
+<h4 id="공식적인-변수">공식적인 변수</h4>
+<ul>
+  <li>page.title: 해당 페이지에 제목을 나타냅니다. 우리는 <code class="highlighter-rouge">&lt;head&gt;</code> 태그안에 <code class="highlighter-rouge">&lt;title&gt;</code>태그에서 사용하고 있으며, <a href="http://localhost:4000/ko/jekyll/" target="_blank">category 페이지</a>에서 post의 리스트를 표시할때도 사용하고 있습니다.</li>
+  <li>page.url: 해당 페이지의 url입니다. <code class="highlighter-rouge">sitemap.xml</code> 등 페이지의 링크가 필요한 곳에서 사용하고 있습니다.</li>
+  <li>page.date</li>
+  <li>page.categories</li>
+</ul>
+
+<h3 id="기본-설정-파일-내용">기본 설정 파일 내용</h3>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> 
+<span class="na">email</span><span class="pi">:</span> <span class="s1">'</span><span class="s">dev.yakuza@gmail.com'</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;-</span> <span class="c1"># this means to ignore newlines until "baseurl:"</span>
+  <span class="no">우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다.</span>
+  <span class="no">무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로</span>
+  <span class="no">무에서 유를 창조하는 예술가가 되기를 바란다.</span>
+<span class="err">b</span><span class="no">aseurl: # the subpath of your site, e.g. /blog</span>
+<span class="err">u</span><span class="no">rl: https://dev-yakuza.github.io # the base hostname &amp; protocol for your site, e.g. http://example.com</span>
+<span class="err">t</span><span class="no">witter_username: jekyllrb</span>
+<span class="err">g</span><span class="no">ithub_username: jekyll</span>
+<span class="err">a</span><span class="no">uthor: dev.yakuza@gmail.com</span>
+
+<span class="err">#</span><span class="no"> Build settings</span>
+<span class="err">m</span><span class="no">arkdown: kramdown</span>
+<span class="err">p</span><span class="no">lugins:</span>
+  <span class="no">- jekyll-feed</span>
+  <span class="no">- jekyll-paginate-v2</span>
+  <span class="no">- jekyll-polyglot</span>
+  <span class="no">- jekyll-seo-tag</span>
+
+<span class="err">#</span><span class="no"> Exclude from processing.</span>
+<span class="err">#</span><span class="no"> The following items will not be processed, by default. Create a custom list</span>
+<span class="err">#</span><span class="no"> to override the default setting.</span>
+<span class="err">e</span><span class="no">xclude:</span>
+  <span class="no">- Gemfile</span>
+  <span class="no">- Gemfile.lock</span>
+<span class="err">#</span><span class="no">   - node_modules</span>
+<span class="err">#</span><span class="no">   - vendor/bundle/</span>
+<span class="err">#</span><span class="no">   - vendor/cache/</span>
+<span class="err">#</span><span class="no">   - vendor/gems/</span>
+<span class="err">#</span><span class="no">   - vendor/ruby/</span>
+
+<span class="err">p</span><span class="no">ermalink: /:year/:month/</span>
+
+<span class="err">#</span><span class="no"> pagination</span>
+<span class="err">p</span><span class="no">agination:</span>
+  <span class="no">enabled: true</span>
+  <span class="no">per_page: 12</span>
+  <span class="no">sort_reverse: true</span>
+  <span class="no">limit: 0</span>
+  <span class="no">sort_field: 'date'</span>
+  <span class="no">permalink: '/page/:num/'</span>
+  <span class="no">title: ':title'</span>
+  <span class="no">trail:</span>
+    <span class="no">before: 2</span>
+    <span class="no">after: 2</span>
+
+<span class="err">#</span><span class="no"> multilang</span>
+<span class="err">l</span><span class="no">anguages: ['ja', 'ko', 'en']</span>
+<span class="err">d</span><span class="no">efault_lang: 'ja'</span>
+<span class="err">e</span><span class="no">xclude_from_localization: ['javascript', 'images', 'css']</span>
+<span class="err">p</span><span class="no">arallel_localization: false</span>
+
+</code></pre></div></div>
 
 <h2 id="참고-사이트">참고 사이트</h2>
 <ul>
-  <li>무료 테마 사이트: <a href="http://jekyllthemes.org/" rel="nofollow" target="_blank">http://jekyllthemes.org/</a></li>
-  <li>Clean Blog: <a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll" rel="nofollow" target="_blank">https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll</a></li>
   <li>jekyll 홈페이지: <a href="https://jekyllrb.com/docs/structure/" rel="nofollow" target="_blank">https://jekyllrb.com/docs/structure/</a></li>
 </ul>
 
@@ -421,8 +438,8 @@
       <script>
 
       var disqus_config = function () {
-        this.page.url = 'https://dev-yakuza.github.io/jekyll/theme/';
-        this.page.identifier = '/jekyll/theme/';
+        this.page.url = 'https://dev-yakuza.github.io/jekyll/configuration/';
+        this.page.identifier = '/jekyll/configuration/';
       };
       (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -456,7 +473,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <ul class="list-inline text-center">
           <li class="list-inline-item">
-            <a href="https://twitter.com/intent/tweet?text=테마 설정&url=http://localhost:4000/jekyll/theme/" rel="nofollow" target="_blank">
+            <a href="https://twitter.com/intent/tweet?text=jekyll 설정&url=http://localhost:4000/jekyll/configuration/" rel="nofollow" target="_blank">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -465,7 +482,7 @@
           </li>
 
           <li class="list-inline-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/jekyll/theme/" rel="nofollow" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/jekyll/configuration/" rel="nofollow" target="_blank">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
