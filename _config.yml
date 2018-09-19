@@ -21,8 +21,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   무에서 유를 창조하는 예술가가 되기를 바란다.
 baseurl: # the subpath of your site, e.g. /blog
 url: https://dev-yakuza.github.io # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: jekyll
+twitter_username: # twitter user name
+github_username: # github user name
 author: dev.yakuza@gmail.com
 
 # Build settings
@@ -46,16 +46,13 @@ exclude:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-permalink: /:year/:month/
-
 # pagination
+permalink: /:year/:month/
 pagination:
   enabled: true
   per_page: 12
   sort_reverse: true
-  limit: 0
   sort_field: 'date'
-  permalink: '/page/:num/'
   title: ':title'
   trail:
     before: 2

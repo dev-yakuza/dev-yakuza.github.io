@@ -1,17 +1,13 @@
 ```yml
-title: {{ post.titl }}
+title: ...
 email: 'dev.yakuza@gmail.com'
-description: >- # this means to ignore newlines until "baseurl:"
-  우리는 프로그래밍으로 예술을 꿈꾸는 프로그래밍 예술가들이다.
-  무에서 유를 창조하는 예술가들 처럼 우리도 프로그래밍이라는 툴로
-  무에서 유를 창조하는 예술가가 되기를 바란다.
-baseurl: # the subpath of your site, e.g. /blog
-url: https://dev-yakuza.github.io # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: jekyll
+description: ...
+baseurl: ...
+url: https://dev-yakuza.github.io
+twitter_username: ...
+github_username: ...
 author: dev.yakuza@gmail.com
 
-# Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
@@ -19,21 +15,12 @@ plugins:
   - jekyll-polyglot
   - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
   - Gemfile
   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-permalink: /:year/:month/
 
 # pagination
+permalink: /:year/:month/
 pagination:
   enabled: true
   per_page: 12
