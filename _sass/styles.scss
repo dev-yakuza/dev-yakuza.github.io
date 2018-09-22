@@ -374,3 +374,14 @@ table {
     vertical-align: top;
   }
 }
+
+.breadcrumb {
+  background-color: initial;
+  & .breadcrumb-item {
+    font-size: 12pt;
+    & a,
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

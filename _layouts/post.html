@@ -5,184 +5,216 @@ layout: default
 <!-- Page Header -->
 {% if page.image %}
 <header class="masthead" style="background-image: url('{{ page.image | prepend: site.baseurl | replace: '//', '/' }}')">
-{% else %}
-<header class="masthead">
-{% endif %}
-  <div class="overlay"></div>
+  {% else %}
+  <header class="masthead">
+    {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ page.title }}</h1>
+            <div class="heading-date">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              {{ page.date | date: "%Y-%m-%d" }}
+            </div>
+            {% if page.description %}
+            <h2 class="subheading">{{ page.description }}</h2>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-heading">
-          <h1>{{ page.title }}</h1>
-          <div class="heading-date">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-            {{ page.date | date: "%Y-%m-%d" }}
-          </div>
-          {% if page.description %}
-          <h2 class="subheading">{{ page.description }}</h2>
-          {% endif %}
-        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}">
+                <span itemprop="name">Home</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            {% assign categories = site.pages | where_exp:"item", "item.categories contains 'service'" %}
+            {% for category in categories %}
+            {% if category.pagination.category == page.categories[0] and category.lang == page.lang %}
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ category.url | replace: 'index.html', '' }}">
+                <span itemprop="name">{{ category.title }}</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            {% endif %}
+            {% endfor %}
+            <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+                <span itemprop="name">{{ page.title }}</span>
+              </a>
+              <meta itemprop="position" content="3" />
+            </li>
+          </ol>
+        </nav>
       </div>
     </div>
-  </div>
-</header>
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-
-      {{ content }}
+        {{ content }}
 
 
-      <div class="post-list-container">
-        <div class="header">
-          <div class="header-title">Posts</div>
-        </div>
+        <div class="post-list-container">
+          <div class="header">
+            <div class="header-title">Posts</div>
+          </div>
 
-        <div class="body">
-          <div class="list-group">
+          <div class="body">
+            <div class="list-group">
 
+            </div>
+          </div>
+
+          <div class="footer">
+            <ul class="pagination">
+              <li class="page-item page-item--previous">
+                <div class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </div>
+              </li>
+
+              <li class="page-item page-item--next">
+                <div class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
+        <script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function () {
+            var lang = "{{page.lang}}" === "{{ site.default_lang }}" ? "" : "/{{page.lang}}";
 
-        <div class="footer">
-          <ul class="pagination">
-            <li class="page-item page-item--previous">
-              <div class="page-link" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </div>
-            </li>
+            $.get(lang + "/api/{{page.categories}}/posts.json", function (data, status) {
+              if (data.length > 0) {
+                $('.post-list-container').show();
 
-            <li class="page-item page-item--next">
-              <div class="page-link" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function() {
-        var lang = "{{page.lang}}" === "{{ site.default_lang }}" ? "" : "/{{page.lang}}";
+                data.forEach(function (post, index) {
+                  var container = $('.post-list-container .body .list-group');
+                  var page = container.find('.page-' + post.page);
 
-        $.get( lang + "/api/{{page.categories}}/posts.json", function(data, status){
-          if(data.length > 0) {
-            $('.post-list-container').show();
+                  var active = post.url.indexOf(location.pathname) >= 0 ? 'active' : '';
 
-            data.forEach(function(post, index) {
-              var container = $('.post-list-container .body .list-group');
-              var page = container.find('.page-' + post.page);
+                  // post item in page
+                  var item = '';
+                  item += '<a href="' + post.url + '" class="list-group-item list-group-item-action flex-column align-items-start ' + active + '">';
+                  item += '  <div class="d-flex w-100 justify-content-between">';
+                  item += '    <div class="mb-1">' + post.title + '</div>';
+                  item += '  </div>';
+                  item += '  <div class="body-text">' + post.description + '</div>';
+                  item += '</a>';
 
-              var active = post.url.indexOf(location.pathname) >= 0 ? 'active' : '';
+                  if (page.length > 0) {
+                    // page already exists
+                    page.addClass(active);
+                    page.append(item);
+                  }
+                  else {
+                    // new page
+                    var temp = '';
+                    temp += '<div class="page page-' + post.page + ' ' + active + '">';
+                    temp += item;
+                    temp += '</div>';
+                    container.append(temp);
+                  }
 
-              // post item in page
-              var item = '';
-              item += '<a href="' + post.url + '" class="list-group-item list-group-item-action flex-column align-items-start ' + active + '">';
-              item += '  <div class="d-flex w-100 justify-content-between">';
-              item += '    <div class="mb-1">' + post.title + '</div>';
-              item += '  </div>';
-              item += '  <div class="body-text">' + post.description + '</div>';
-              item += '</a>';
+                  // pagination
+                  var paginationItem = '';
+                  paginationItem += '<li class="page-item page-item--link ' + active + '" data-page="' + post.page + '">';
+                  paginationItem += '  <div class="page-link" data-page="' + post.page + '">';
+                  paginationItem += post.page;
+                  paginationItem += '  </div>';
+                  paginationItem += '</li>';
 
-              if(page.length > 0) {
-                // page already exists
-                page.addClass(active);
-                page.append(item);
-              }
-              else {
-                // new page
-                var temp = '';
-                temp += '<div class="page page-' + post.page + ' ' + active + '">';
-                temp += item;
-                temp += '</div>';
-                container.append(temp);
-              }
+                  if ($('.post-list-container .footer .page-item[data-page="' + post.page + '"]').length === 0) {
+                    $('.post-list-container .footer .page-item--next').before(paginationItem);
+                  }
 
-              // pagination
-              var paginationItem = '';
-              paginationItem += '<li class="page-item page-item--link ' + active + '" data-page="' + post.page + '">';
-              paginationItem += '  <div class="page-link" data-page="' + post.page + '">';
-              paginationItem +=     post.page;
-              paginationItem += '  </div>';
-              paginationItem += '</li>';
-
-              if($('.post-list-container .footer .page-item[data-page="' + post.page + '"]').length === 0) {
-                $('.post-list-container .footer .page-item--next').before(paginationItem);
-              }
-
-              if(post.page > 1) {
-                $('.footer').css('display', 'flex');
-                $('.post-list-container .body').css('height', '340px');
+                  if (post.page > 1) {
+                    $('.footer').css('display', 'flex');
+                    $('.post-list-container .body').css('height', '340px');
+                  }
+                });
               }
             });
-          }
-        });
 
-        $('body').on('click', '.page-link', function(e) {
-          var pageContainer = $('.post-list-container .body .list-group');
-          var paginationContainer = $('.footer .pagination');
-          var currentItem = paginationContainer.find('.page-item.active');
-          var currentPageNum = currentItem.find('.page-link').data('page');
-          var pageNum = $(this).data('page');
+            $('body').on('click', '.page-link', function (e) {
+              var pageContainer = $('.post-list-container .body .list-group');
+              var paginationContainer = $('.footer .pagination');
+              var currentItem = paginationContainer.find('.page-item.active');
+              var currentPageNum = currentItem.find('.page-link').data('page');
+              var pageNum = $(this).data('page');
 
-          if($(this).closest('.page-item').hasClass('page-item--previous')) {
-            if(currentPageNum > 1) {
-              pageNum = currentPageNum - 1;
-            }
-            else {
-              pageNum = 1;
-            }
-          }
-          else if($(this).closest('.page-item').hasClass('page-item--next')) {
-            var total = paginationContainer.find('.page-item--link').length;
-            if(currentPageNum < total) {
-              pageNum = currentPageNum + 1;
-            }
-            else {
-              pageNum = total;
-            }
-          }
-          else {
-            var pageNum = $(this).data('page');
-          }
+              if ($(this).closest('.page-item').hasClass('page-item--previous')) {
+                if (currentPageNum > 1) {
+                  pageNum = currentPageNum - 1;
+                }
+                else {
+                  pageNum = 1;
+                }
+              }
+              else if ($(this).closest('.page-item').hasClass('page-item--next')) {
+                var total = paginationContainer.find('.page-item--link').length;
+                if (currentPageNum < total) {
+                  pageNum = currentPageNum + 1;
+                }
+                else {
+                  pageNum = total;
+                }
+              }
+              else {
+                var pageNum = $(this).data('page');
+              }
 
-          pageContainer.find('.page').removeClass('active');
-          pageContainer.find('.page-' + pageNum).addClass('active')
+              pageContainer.find('.page').removeClass('active');
+              pageContainer.find('.page-' + pageNum).addClass('active')
 
-          paginationContainer.find('.page-item').removeClass('active');
-          paginationContainer.find('.page-link[data-page="' + pageNum + '"]').closest('.page-item').addClass('active');
-        })
-      });
-      </script>
-      <hr/>
-      {% if page.comments %}
-      <div id="disqus_thread"></div>
-      <script>
+              paginationContainer.find('.page-item').removeClass('active');
+              paginationContainer.find('.page-link[data-page="' + pageNum + '"]').closest('.page-item').addClass('active');
+            })
+          });
+        </script>
+        <hr />
+        {% if page.comments %}
+        <div id="disqus_thread"></div>
+        <script>
 
-      var disqus_config = function () {
-        this.page.url = 'https://dev-yakuza.github.io{{page.url}}';
-        this.page.identifier = '{{page.url}}';
-      };
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
+          var disqus_config = function () {
+            this.page.url = 'https://dev-yakuza.github.io{{page.url}}';
+            this.page.identifier = '{{page.url}}';
+          };
+          (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
 
-      {% if site.active_lang == 'ko' %}
-      s.src = 'https://https-dev-yakuza-github-io-ko.disqus.com/embed.js';
-      {% elsif site.active_lang == 'en' %}
-      s.src = 'https://https-dev-yakuza-github-io-en.disqus.com/embed.js';
-      {% else %}
-      s.src = 'https://https-dev-yakuza-github-io.disqus.com/embed.js';
-      {% endif %}
+            {% if site.active_lang == 'ko' %}
+            s.src = 'https://https-dev-yakuza-github-io-ko.disqus.com/embed.js';
+            {% elsif site.active_lang == 'en' %}
+            s.src = 'https://https-dev-yakuza-github-io-en.disqus.com/embed.js';
+            {% else %}
+            s.src = 'https://https-dev-yakuza-github-io.disqus.com/embed.js';
+            {% endif %}
 
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      {% endif %}
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        {% endif %}
 
+      </div>
     </div>
   </div>
-</div>
