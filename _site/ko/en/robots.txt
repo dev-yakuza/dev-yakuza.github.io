@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://dev-yakuza.github.io/sitemap.xml
