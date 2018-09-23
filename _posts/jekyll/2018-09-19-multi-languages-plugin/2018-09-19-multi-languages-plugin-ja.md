@@ -13,9 +13,9 @@ image: '/assets/images/category/jekyll/multi-languages-plugin.jpg'
 
 
 ## 多言語プラグイン
-jekyllの多言語を対応するためにプラグインのインストールと設定に関して紹介します。様々な多言語プラグインがありますが、ここには[jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow" target="_blank"}を紹介します。
+jekyllの多言語を対応するためにプラグインのインストールと設定に関して紹介します。様々な多言語プラグインがありますが、ここには[jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow noreferrer" target="_blank"}を紹介します。
 
-他の多言語プラグインが知りたい方は[awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow" target="_blank"}をご参考してください。
+他の多言語プラグインが知りたい方は[awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow noreferrer" target="_blank"}をご参考してください。
 
 ## プラグインインストール
 - コンソールへ下記のコマンドを打ちてプラグインをインストールします。

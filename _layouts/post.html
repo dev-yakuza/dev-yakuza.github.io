@@ -187,6 +187,28 @@ layout: default
             })
           });
         </script>
+        <script type="application/ld+json">
+          {
+            "@context":"http://schema.org",
+            "@type":"ItemList",
+            "itemListElement":[
+              {% for subPost in site.posts reversed %}
+              {% if subPost.lang == page.lang and subPost.categories[0] == page.categories[0] %}
+              {
+                "@type":"ListItem",
+                "position":{{ forloop.index }},
+                {% if subPost.lang == site.default_lang %}
+                "url": "{{ site.url }}{{ subPost.url }}"
+                {% else %}
+                "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
+                {% endif %}
+              }
+              {% endif %}
+              {% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]
+          }
+          </script>
         <hr />
         {% if page.comments %}
         <div id="disqus_thread"></div>
