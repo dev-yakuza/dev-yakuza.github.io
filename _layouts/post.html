@@ -49,6 +49,17 @@ layout: default
             </li>
             {% endif %}
             {% endfor %}
+            {% assign categories = site.pages | where_exp:"item", "item.categories contains 'development'" %}
+            {% for category in categories %}
+            {% if category.pagination.category == page.categories[0] and category.lang == page.lang %}
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ category.url | replace: 'index.html', '' }}">
+                <span itemprop="name">{{ category.title }}</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            {% endif %}
+            {% endfor %}
             <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
               <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
                 <span itemprop="name">{{ page.title }}</span>
