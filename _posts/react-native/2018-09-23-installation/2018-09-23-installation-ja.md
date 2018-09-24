@@ -12,7 +12,7 @@ image: '/assets/images/category/react-native/installation.jpg'
 ---
 
 
-## 설치
+## インストール
 react-native（RN）をインストールしてプロジェクトが起動するか確認します。
 
 [create-react-native-app](https://github.com/react-community/create-react-native-app){:rel="nofollow noreferrer" target="_blank"}使ってプロジェクトを作れますが、ここでは [react-native-cli](https://github.com/facebook/react-native#readme){:rel="nofollow noreferrer" target="_blank"}を使って作ります。
