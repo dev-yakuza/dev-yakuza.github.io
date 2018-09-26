@@ -60,7 +60,7 @@ install react-native-cli using npm.
 
 ## create new project
 
-{% include_relative common/create_new_project.md %}
+{% include react-native/create_new_project.md %}
 
 ## check new project
 

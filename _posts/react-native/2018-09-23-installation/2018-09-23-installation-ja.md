@@ -60,7 +60,7 @@ npmを使ってreact-native-cliをインストールします。
 
 ## プロジェクト生成
 
-{% include_relative common/create_new_project.md %}
+{% include react-native/create_new_project.md %}
 
 ## プロジェクト確認
 

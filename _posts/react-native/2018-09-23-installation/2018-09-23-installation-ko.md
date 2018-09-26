@@ -60,7 +60,7 @@ npm을 이용하여 react-native-cli를 설치합니다.
 
 ## 프로젝트 생성
 
-{% include_relative common/create_new_project.md %}
+{% include react-native/create_new_project.md %}
 
 ## 프로젝트 확인
 

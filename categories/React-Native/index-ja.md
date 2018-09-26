@@ -9,7 +9,7 @@ pagination:
   permalink: '/:num/'
 
 title: 'react-native'
-description: 'react-native(RN)を使ってアプリを開発した時の記録です。ライブラリなど共有ができるものを記録しました。'
+description: 'react-native(RN)を使ってアプリを開発した時の記録です。react-nativeや関連があるライブラリをどう使うかに関して共有します。'
 image: '/assets/images/category/react-native/background.jpg'
 see_more: 'もっと見る'
 ---
