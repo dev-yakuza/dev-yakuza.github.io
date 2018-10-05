@@ -17,17 +17,17 @@ create RN project with below command.
 
 {% include react-native/create_new_project.md %}
 
-## install required modules for typescript
-install required modules for applying typescript to the project.
+## install required libraries for typescript
+install required libraries for applying typescript to the project.
 
 {% include_relative common/install_modules.md %}
 
-### typescript modules
+### typescript libraries
 - typescript: intsall typescript.
 - @types/react: intsll react types for typescript.
 - @types/react-native: intall RN type for typescript.
 
-### automatically build module
+### automatically build library
 - react-native-typescript-transformer: this helps to build typescript when project is running.
 
 ## typescript configuration

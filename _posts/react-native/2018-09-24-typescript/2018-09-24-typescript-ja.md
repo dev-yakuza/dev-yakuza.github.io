@@ -17,18 +17,18 @@ image: '/assets/images/category/react-native/typescript.jpg'
 
 {% include react-native/create_new_project.md %}
 
-## typescriptへ必要なモジュールをインストール
-typescriptが動作出来るようにするため必要なモジュールをインストールします。
+## typescriptへ必要なライブラリをインストール
+typescriptが動作出来るようにするため必要なライブラリをインストールします。
 
 {% include_relative common/install_modules.md %}
 
-### typescript モジュール
+### typescript ライブラリ
 - typescript: typescriptをインストール。
 - @types/react: typescriptへ必要なreactのtypeをインストール。
 - @types/react-native: typescriptへ必要なreact-nativeのtypeをインストール。
 
-### ビルド自動化のためのモジュール
-- react-native-typescript-transformer: typescriptをランタイム中に、自動にビルドするためのモジュール
+### ビルド自動化のためのライブラリ
+- react-native-typescript-transformer: typescriptをランタイム中に、自動にビルドするためのライブラリ
 
 ## typescript設定
 typescriptを設定してreact-nativeが動作出来るようにします。
@@ -52,7 +52,7 @@ typescriptの開発を便利にするためtslintを適用します。下記の�
 - [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" target="_blank"}
 
 ### rn-cli.config.jsを作る
-typescriptをランタイム中に認識できることを助けてくれるモジュールの設定ファイルです。プロジェクトのrootフォルダへ```rn-cli.config.js```ファイルへ下記の内容を作成します。
+typescriptをランタイム中に認識できることを助けてくれるライブラリの設定ファイルです。プロジェクトのrootフォルダへ```rn-cli.config.js```ファイルへ下記の内容を作成します。
 
 {% include_relative common/rn_cli_config.md %}
 

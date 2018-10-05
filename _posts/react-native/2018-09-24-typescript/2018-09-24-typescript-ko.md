@@ -17,18 +17,18 @@ image: '/assets/images/category/react-native/typescript.jpg'
 
 {% include react-native/create_new_project.md %}
 
-## typescript에 필요한 모듈 설치
-typescript가 동작할 수 있도록 필요한 모듈을 설치합니다.
+## typescript에 필요한 라이브러리 설치
+typescript가 동작할 수 있도록 필요한 라이브러리을 설치합니다.
 
 {% include_relative common/install_modules.md %}
 
-### typescript 모듈
+### typescript 라이브러리
 - typescript: typescript를 설치한다.
 - @types/react: typescript에 필요한 react의 type을 설치한다.
 - @types/react-native: typescript에 필요한 react-native의 type을 설치한다.
 
-### 빌드 자동화를 위한 모듈
-- react-native-typescript-transformer: typescript를 런타임중에 자동으로 빌드하기 위한 모듈.
+### 빌드 자동화를 위한 라이브러리
+- react-native-typescript-transformer: typescript를 런타임중에 자동으로 빌드하기 위한 라이브러리.
 
 ## typescript 설정
 typescript를 설정하여 react-native가 동작하도록 만듭니다.
@@ -52,7 +52,7 @@ typescript 개발을 편리하게 하기 위해 tslint를 적용합니다. 아�
 - [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" target="_blank"}
 
 ### rn-cli.config.js 만들기
-typescript를 런타임중에 인식할 수 있게 도와주는 모듈을 위한 설정 파일입니다. 프로젝트 root폴더에 ```rn-cli.config.js``` 파일에 아래에 내용을 작성합니다.
+typescript를 런타임중에 인식할 수 있게 도와주는 라이브러리을 위한 설정 파일입니다. 프로젝트 root폴더에 ```rn-cli.config.js``` 파일에 아래에 내용을 작성합니다.
 
 {% include_relative common/rn_cli_config.md %}
 
