@@ -3,6 +3,7 @@ layout: 'category'
 permalink: '/jekyll/'
 lang: 'en'
 categories: 'service'
+is_main_category: true
 pagination:
   enabled: true
   category: 'jekyll'

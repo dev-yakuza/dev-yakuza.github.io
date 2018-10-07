@@ -1,4 +1,4 @@
-{% assign categories = site.pages | where_exp:"item", "item.categories contains 'service'" %}
+{% assign categories = site.pages | where_exp:"item", "item.is_main_category == true" %}
 {% for category in categories %}
 {% assign urlSize = category.permalink | replace: 'index.html', '' | split: '/' | size %}
 {% if urlSize == 2 %}

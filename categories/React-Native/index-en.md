@@ -3,6 +3,7 @@ layout: 'category'
 permalink: '/react-native/'
 lang: 'en'
 categories: 'development'
+is_main_category: true
 pagination:
   enabled: true
   category: 'react-native'
