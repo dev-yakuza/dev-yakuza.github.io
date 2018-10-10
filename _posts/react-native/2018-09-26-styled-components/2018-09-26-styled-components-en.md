@@ -8,7 +8,7 @@ comments: true
 
 title: 'styled-components'
 description: 'this blog is about how to use styled-component library for react-native styling.'
-image: '/assets/images/category/react-native/typescript.jpg'
+image: '/assets/images/category/react-native/styled-components.jpg'
 ---
 
 

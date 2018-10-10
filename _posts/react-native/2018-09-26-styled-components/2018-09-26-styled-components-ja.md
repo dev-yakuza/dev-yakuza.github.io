@@ -8,7 +8,7 @@ comments: true
 
 title: 'styled-components'
 description: 'react-nativeスタイリングのためstyled-componentsライブラリを活用する方法について説明します。'
-image: '/assets/images/category/react-native/typescript.jpg'
+image: '/assets/images/category/react-native/styled-components.jpg'
 ---
 
 

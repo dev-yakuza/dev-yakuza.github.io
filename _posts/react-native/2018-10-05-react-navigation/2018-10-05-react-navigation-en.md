@@ -8,7 +8,7 @@ comments: true
 
 title: 'react-navigation'
 description: 'use react-navigation for developing an application.'
-image: '/assets/images/category/react-native/typescript.jpg'
+image: '/assets/images/category/react-native/react-navigation.jpg'
 ---
 
 

@@ -8,7 +8,7 @@ comments: true
 
 title: 'react-navigation'
 description: 'react-navigation을 활용하여 어플을 개발해 보자.'
-image: '/assets/images/category/react-native/typescript.jpg'
+image: '/assets/images/category/react-native/react-navigation.jpg'
 ---
 
 
