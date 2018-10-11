@@ -6,6 +6,8 @@
   {% I18n_Headers %}
 
   <title>{{page.title}} - {{page.description}}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
   {% seo title=false %}
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -26,8 +28,6 @@
     });
   </script>
 
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-
   {% if site.active_lang == 'ko' %}
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
   {% elsif site.active_lang == 'ja' %}
@@ -41,7 +41,6 @@
   <link rel="stylesheet" href="{{"/assets/vendor/font-awesome/css/font-awesome.min.css" | relative_url }}">
 
   <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}?v={{site.time | date: '%Y%m%d'}}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
   <link rel="stylesheet" href="/assets/highlight/railscasts.css">

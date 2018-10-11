@@ -43,7 +43,7 @@ jekyll에 다국어를 지원하기 위한 플러그인 설치와 설정에 대�
 {% include_relative common/folder_structure.md %}
 
 - 2018-09-19-multi-languages-plugin: 관리를 위해 ```_posts``` 폴더 하위에 포스트 제목으로 폴더를 만듭니다.
-- common: 다국어 파일에서 공통으로 사용할 파일을 저장합니다. 예를 들어 지금 보고 있는 디렉토리 구조는 ```folder_structre.md```에 작성하고 ```{ % include_relative common/folder_structure.md % }```을 이용하여 표시합니다.
+- common: 다국어 파일에서 공통으로 사용할 파일을 저장합니다. 예를 들어 지금 보고 있는 디렉토리 구조는 ```folder_structre.md```에 작성하고 ```{% raw %}{% include_relative common/folder_structure.md %}{% endraw %}```을 이용하여 표시합니다.
 - 2018-09-19-multi-languages-plugin-[언어].md: ```_config.yml```의 ```languages```에 설정한 언어별 페이지를 작성합니다.
 - 각 언어별 페이지 상단에 해당 페이지의 언어를 설정합니다.
 

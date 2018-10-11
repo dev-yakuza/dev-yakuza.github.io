@@ -43,7 +43,7 @@ configure below options on ```_config.yml``` file.
 {% include_relative common/folder_structure.md %}
 
 - 2018-09-19-multi-languages-plugin: make the folder which is set same post name under the ```_posts``` folder for managment.
-- common: save common files which multi-languages file use. For example, the directory structure which you see now on, write to ```folder_structure.md``` and use ```{ % include_relative common/folder_structure.md % }``` on multi-languages files for displaying it.
+- common: save common files which multi-languages file use. For example, the directory structure which you see now on, write to ```folder_structure.md``` and use ```{% raw %}{% include_relative common/folder_structure.md %}{% endraw %}``` on multi-languages files for displaying it.
 - 2018-09-19-multi-languages-plugin-[language].md: make each multi-languages pages per ```languages``` configurations in ```_config.yml```.
 - set specific page language at the top of each language pages.
 

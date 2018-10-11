@@ -43,7 +43,7 @@ jekyllの多言語を対応するためにプラグインのインストール�
 {% include_relative common/folder_structure.md %}
 
 - 2018-09-19-multi-languages-plugin: 管理のために```_posts```フォルダ下へポストタイトルでフォルダを作ります。
-- common: 多言語ファイルで共通で使うファイルを保存します。例えば、今見てるフォルダ構造は```folder_structure.md```へ作成して```{ % include_relative common/folder_structure.md % }```を使って表示してます。
+- common: 多言語ファイルで共通で使うファイルを保存します。例えば、今見てるフォルダ構造は```folder_structure.md```へ作成して```{% raw %}{% include_relative common/folder_structure.md % }{% endraw %}```を使って表示してます。
 - 2018-09-19-multi-languages-plugin-[言語].md: ```_config.yml```の```languages```へ設定した言語別ページを作成します。
 - 各言語ページ上部へ各ページの言語を設定します。
 
