@@ -28,6 +28,9 @@ header.masthead {
   height: 16px;
   margin-right: 8px;
 }
+img {
+  width: 100%;
+}
 
 pre code {
   border-radius: 4px;
@@ -384,4 +387,22 @@ table {
       text-decoration: none;
     }
   }
+}
+
+.navbar-brand {
+  position: relative;
+  margin-left: 40px;
+  & img {
+    width: auto;
+    height: 40px;
+    position: absolute;
+    left: -44px;
+    top: -2px;
+  }
+}
+
+.brand-icon {
+  width: 200px;
+  display: inherit;
+  margin: auto;
 }

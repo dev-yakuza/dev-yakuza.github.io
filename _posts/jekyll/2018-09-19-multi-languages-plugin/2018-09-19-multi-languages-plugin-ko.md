@@ -13,9 +13,9 @@ image: '/assets/images/category/jekyll/multi-languages-plugin.jpg'
 
 
 ## 다국어 플러그인
-jekyll에 다국어를 지원하기 위한 플러그인 설치와 설정에 대해 알아봅니다. 여러 다국어 플러그인이 있지만 여기에서는 [jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow noreferrer" target="_blank"}를 소개합니다.
+jekyll에 다국어를 지원하기 위한 플러그인 설치와 설정에 대해 알아봅니다. 여러 다국어 플러그인이 있지만 여기에서는 [jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow noreferrer" :target="_blank"}를 소개합니다.
 
-다른 다국어 플러그인에 대해 궁금하신 분은 [awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow noreferrer" target="_blank"}을 참고하세요.
+다른 다국어 플러그인에 대해 궁금하신 분은 [awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow noreferrer" :target="_blank"}을 참고하세요.
 
 ## 플러그인 설치
 - 콘솔에서 아래에 명령어를 통해 플러그인을 설치합니다.

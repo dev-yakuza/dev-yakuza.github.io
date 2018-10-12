@@ -41,8 +41,8 @@ styled-componentsは全般的なスタイルを管理するため```theme```の�
 
 ### Themeを使う方法
 公式サイトにはtypescriptを使ってthemeを使う方法が詳しく書いております。
-- 公式サイト: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" target="_blank"}
-- 参考サイト: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}
+- 公式サイト: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" :target="_blank"}
+- 参考サイト: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}
 
 公式サイトと参考サイトを見たらstyled-componentsを使うためには相対パスを使う問題点があります。
 
@@ -51,5 +51,5 @@ styled-componentsは全般的なスタイルを管理するため```theme```の�
 {% include_relative common/theme_usage.md %}
 
 ## 参考
-- styled-components公式サイト: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" target="_blank"}
-- 参考サイト: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}
+- styled-components公式サイト: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" :target="_blank"}
+- 参考サイト: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}

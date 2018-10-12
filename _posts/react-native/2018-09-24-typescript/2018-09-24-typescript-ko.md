@@ -39,8 +39,8 @@ typescript를 설정하여 react-native가 동작하도록 만듭니다.
 {% include_relative common/tsconfig_json.md %}
 
 자세한 내용은 공식 홈페이지를 참조하세요.
-- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
-- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
+- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" :target="_blank"}
+- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" :target="_blank"}
 
 ### tslint.json 만들기
 typescript 개발을 편리하게 하기 위해 tslint를 적용합니다. 아래에 내용을 프로젝트 root폴더에 ```tslint.json```을 생성하고 복사합니다.
@@ -48,8 +48,8 @@ typescript 개발을 편리하게 하기 위해 tslint를 적용합니다. 아�
 {% include_relative common/tslint_json.md %}
 
 자세한 내용은 공식 홈페이지를 참조하세요.
-- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" target="_blank"}
-- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" target="_blank"}
+- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" :target="_blank"}
+- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" :target="_blank"}
 
 ### rn-cli.config.js 만들기
 typescript를 런타임중에 인식할 수 있게 도와주는 라이브러리을 위한 설정 파일입니다. 프로젝트 root폴더에 ```rn-cli.config.js``` 파일에 아래에 내용을 작성합니다.

@@ -13,9 +13,9 @@ image: '/assets/images/category/jekyll/multi-languages-plugin.jpg'
 
 
 ## Multi-languages plugin
-Let's see how to install and configure multi-languages plugin to make jekyll support multi-languages. There are many plugins for multi-languages but we introduce [jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow noreferrer" target="_blank"} at here.
+Let's see how to install and configure multi-languages plugin to make jekyll support multi-languages. There are many plugins for multi-languages but we introduce [jekyll-polyglot](https://github.com/untra/polyglot){:rel="nofollow noreferrer" :target="_blank"} at here.
 
-If you wanna know other multi-languages plugin, see [awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow noreferrer" target="_blank"}.
+If you wanna know other multi-languages plugin, see [awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins#multi-language--multi-lingual){:rel="nofollow noreferrer" :target="_blank"}.
 
 ## Install the plugin
 - execute below command on console for installing the plugin.

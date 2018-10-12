@@ -39,8 +39,8 @@ typescriptを設定してreact-nativeが動作出来るようにします。
 {% include_relative common/tsconfig_json.md %}
 
 詳しい内容は公式ホームページを参考してください。
-- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
-- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
+- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" :target="_blank"}
+- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" :target="_blank"}
 
 ### tslint.jsonを作る
 typescriptの開発を便利にするためtslintを適用します。下記の内容をプロジェクトのrootフォルダへ```tslint.json```を作ってコピペします。
@@ -48,8 +48,8 @@ typescriptの開発を便利にするためtslintを適用します。下記の�
 {% include_relative common/tslint_json.md %}
 
 詳しい内容は公式ホームページを参考してください。
-- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" target="_blank"}
-- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" target="_blank"}
+- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" :target="_blank"}
+- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" :target="_blank"}
 
 ### rn-cli.config.jsを作る
 typescriptをランタイム中に認識できることを助けてくれるライブラリの設定ファイルです。プロジェクトのrootフォルダへ```rn-cli.config.js```ファイルへ下記の内容を作成します。

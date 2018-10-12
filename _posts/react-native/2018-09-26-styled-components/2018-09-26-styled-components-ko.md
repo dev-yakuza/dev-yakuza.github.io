@@ -41,8 +41,8 @@ styled-components는 전체 스타일을 관리하기 위한 ```theme``` 기능�
 
 ### Theme 사용법
 공식 사이트에는 typescript를 이용하여 theme을 사용하는 방법이 자세히 나와있습니다.
-- 공식 사이트: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" target="_blank"}
-- 예제 참고 사이트: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}
+- 공식 사이트: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" :target="_blank"}
+- 예제 참고 사이트: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}
 
 공식 사이트와 예제 사이트를 참고하면 styled-components를 사용하기 위해서는 상대 경로로 지정해야하는 문제가 있다.
 
@@ -51,5 +51,5 @@ styled-components는 전체 스타일을 관리하기 위한 ```theme``` 기능�
 {% include_relative common/theme_usage.md %}
 
 ## 참고
-- styled-components 공식 사이트: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" target="_blank"}
-- 예제 참고 사이트: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}
+- styled-components 공식 사이트: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" :target="_blank"}
+- 예제 참고 사이트: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}
