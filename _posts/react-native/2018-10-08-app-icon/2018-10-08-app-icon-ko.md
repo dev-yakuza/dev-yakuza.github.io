@@ -16,7 +16,7 @@ image: '/assets/images/category/react-native/app-icon.jpg'
 mac osx에서 [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }를 사용하여 앱 아이콘을 만드는 방법을 설명하겠습니다.
 
 ## 이미지 준비하기
-앱 아이콘으로 사용할 1024x1024px 사이즈의 이미지를 준비합니다.
+앱 아이콘으로 사용할 1024x1024px 사이즈에 이미지를 준비합니다.
 
 ## 라이브러리 설치
 아래의 명령어로 라이브러리를 설치합니다.
