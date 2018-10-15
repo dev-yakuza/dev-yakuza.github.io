@@ -14,7 +14,11 @@
         "noImplicitThis": true,
         "noImplicitAny": false,
         "moduleResolution": "node",
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "@types"
+        ]
     },
     "exclude": [
         "node_modules",

@@ -39,5 +39,13 @@ react-navigation를 사용하는 여러가지 방법들이 공식 홈페이지�
 - ```this.props.navigation.navigate```를 사용하여 화면 전환을 합니다.
 - ```this.props.navigation.goBack```을 이용하여 이전 페이지로 돌아갑니다.
 
+## Navigation bar 숨기기
+아래에 코드로 navigation bar를 숨길 수 있습니다.
+
+{% include_relative common/hide-navigation-bar.md %}
+
+- static navigationOptions: 네비게이션의 옵션을 설정합니다.
+- { header: null }: navigation header bar를 비활성화합니다.
+
 ## 참고
 - 공식 홈페이지: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }

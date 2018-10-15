@@ -41,5 +41,13 @@ this is how to use basic stack navigation.
 - use ```this.props.navigation.navigate``` for switching screens.
 - use ```this.props.navigation.goBack``` for going to the previous screen.
 
+## hide Navigation bar
+you can hide navigation bar with below code
+
+{% include_relative common/hide-navigation-bar.md %}
+
+- static navigationOptions: you can set navigation options via this variable.
+- { header: null }: hide navigation header bar.
+
 ## reference
 - official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
