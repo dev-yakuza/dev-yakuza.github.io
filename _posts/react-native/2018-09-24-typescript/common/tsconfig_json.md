@@ -1,37 +1,28 @@
 ```json
 {
-    "compilerOptions": {
-        "importHelpers": true,
-        "target": "es2015",
-        "lib": ["es6", "dom"],
-        "module": "commonjs",
-        "noResolve": false,
-        "allowJs": true,
-        "strict": true,
-        "jsx": "react",
-        "noEmit": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noImplicitAny": false,
-        "moduleResolution": "node",
-        "strictNullChecks": true,
-        "typeRoots": [
-            "node_modules/@types",
-            "@types"
-        ]
-    },
-    "exclude": [
-        "node_modules",
-        "dest",
-        "android",
-        "ios",
-        "acceptance-tests",
-        ".jest",
-        "src/setupTests.ts",
-        "./node_modules/**/*"
-    ],
-    "types": [
-        "typePatches"
-    ]
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "allowJs": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./nodenode_modules/@types", "./src/@types"]
+  },
+  "exclude": [
+    "node_modules",
+    "dest",
+    "android",
+    "ios",
+    "acceptance-tests",
+    ".jest",
+    "src/setupTests.ts",
+    "./node_modules/**/*"
+  ],
+  "include": ["./nodenode_modules/@types", "./src/**/*", "./src/@types"]
 }
+
 ```
