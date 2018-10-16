@@ -30,5 +30,20 @@ RNプロジェクトへmaterial ui componentsである[NativeBase](https://nativ
 使い方を詳しく知りたい方は公式サイトを見てください。
 - 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
 
+## ActionSheet
+ActionSheetを使うためにはプロジェクト全体をNativeBaseの```<Root>``` component中に入れる必要があります。
+
+{% include_relative common/action_sheet-1.md %}
+
+ActionSheetを表示する部分へ下記のようにコーディングします。
+
+{% include_relative common/action_sheet-2.md %}
+
+- options: stringタイプのリスト(string[])やアイコンが含まれたリスト(Array<{ text: string, icon?: string, iconColor?: string }>)の形式を対応します。
+- cancelButtonIndex: キャンセルボタンの位置です。
+- destructiveButtonIndex: 削除ボタンの位置です。(赤文字ボタンを表示するための部分の位置です。)
+- title: ActionSheetのタイトルです。
+- (buttonIndex: number) => { alert(buttonIndex); }: 選択されたボタンのindexを貰えます。
+
 ## 参考
 - 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }

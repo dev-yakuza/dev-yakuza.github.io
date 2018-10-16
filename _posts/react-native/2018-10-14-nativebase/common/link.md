@@ -1,3 +1,3 @@
 ```bash
-react-native link
+react-native link native-base
 ```

@@ -28,7 +28,7 @@ RN 프로젝트에 벡터 아이콘을 사용하기 위해 [react-native-vector-
 우리는 기본적으로 사용한적이 있는 경우만 블로그로 작성합니다. 따라서 여기에 작성된 내용은 우리가 사용할 때마다 추가될 것입니다.
 
 사용법에 대한 자세한 사항은 공식 홈페이지를 참조하세요.
-- 공식 사이트: [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
+- 공식 사이트: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
 
 ## Material icons
 Material icon을 사용하는 방법

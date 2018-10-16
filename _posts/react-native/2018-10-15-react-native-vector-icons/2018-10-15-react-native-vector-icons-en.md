@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/react-native-vector-icons.jpg'
 
 
 ## outline
-we introduce how to use [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }  for displaying vector icons.
+we introduce how to use [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }  for displaying vector icons.
 
 ## library installation
 install react-native-vector-icons libaray with below code.
@@ -28,7 +28,7 @@ after installation, link the libaray to the project with below code.
 we only write a blog post if we have used libraries. so we will add contents to here when we use.
 
 if you want to knwo how to use, see official site.
-- official site: [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
 
 ## Material icons
 how to use Material icon
