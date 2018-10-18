@@ -7,7 +7,7 @@ pagination:
 
 title: 'Dreams the art through programming'
 # 우리는 코드로 말한다.
-description: '『Programming Artisth ヤクザ』'
+description: '『Programming Artist ヤクザ』'
 image: '/assets/images/main.jpg'
 
 see_more: '보러가기'
