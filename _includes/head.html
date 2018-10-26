@@ -4,13 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta http-equiv="Content-Language" content="{{site.active_lang}}">
-    {% assign default_lang_url = site.url | append: page.permalink | replace: 'index.html', '' %}
-    <link rel="alternate" hreflang="{{site.default_lang}}" href="{{ default_lang_url }}" />
+
+    <link rel="alternate" hreflang="{{site.default_lang}}" href="https://dev-yakuza.github.io{{page.permalink}}" />
     {% for lang in site.languages %}
     {% if lang == site.default_lang %}
     {% continue %}
     {% endif %}
-    <link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{page.permalink | replace: 'index.html', '' }}" />
+    <link rel="alternate" hreflang="{{lang}}" href="https://dev-yakuza.github.io/{{lang}}{{page.permalink | replace: 'index.html', '' }}" />
     {% endfor %}
 
 
