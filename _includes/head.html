@@ -3,14 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta http-equiv="Content-Language" content="{{site.active_lang}}">
-  <link rel="alternate" hreflang="{{site.default_lang}}" href="{{site.url}}{{page.permalink | replace: 'index.html', '' }}" />
-  {% for lang in site.languages %}
-  {% if lang == site.default_lang %}
-  {% continue %}
-  {% endif %}
-  <link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{page.permalink | replace: 'index.html', '' }}" />
-  {% endfor %}
+  {% I18n_Headers %}
 
 
   <meta name="twitter:title" content="{{page.title}}" />
