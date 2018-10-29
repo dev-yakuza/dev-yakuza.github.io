@@ -16,13 +16,7 @@ layout: null
       {% else %}
       <loc>{{ site.url }}/{{lang}}{{ post.url }}</loc>
       {% endif %}
-      {% for lang in site.languages %}
-      {% if lang == site.default_lang %}
-      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}{{post.permalink}}"/>
-      {% else %}
-      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{post.permalink}}"/>
-      {% endif %}
-      {% endfor %}
+
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <priority>1.0</priority>
     </url>
