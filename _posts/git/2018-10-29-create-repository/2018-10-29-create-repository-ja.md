@@ -75,3 +75,14 @@ dir /ah
 ```
 
 表示してるリストへ```.git```フォルダが見えたらgitリポジトリ(Repository)の生成が成功したことを意味します。```.git```フォルダはgitを使ってソースコードバージョンを管理したらそこに関する情報が保存される場所です。```.git```フォルダを削除したらgitのリポジトリ(Repository)へ保存した内容が全部削除されるので削除しないように気をつけてください。
+
+## ユーザー設定
+新しく生成されたgitのリポジトリ(Repository)でバージョン管理時使うユーザーを設定します。このユーザーは実際バージョン管理時誰がファイルを修正したかを分かるようにします。
+
+```bash
+# git config --global user.name [user name]
+git config --global user.name dev.yakuza
+
+# git config --global user.email [user email]
+git config --global user.email dev.yakuza@gmail.com
+```

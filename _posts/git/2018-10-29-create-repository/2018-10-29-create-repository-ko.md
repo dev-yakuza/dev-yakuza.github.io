@@ -76,3 +76,14 @@ dir /ah
 ```
 
 표시되는 리스트에 ```.git```폴더가 보이면 git 저장소(Repository) 생성에 성공한 것입니다. ```.git``` 폴더는 git을 사용하여 소스 코드 버전을 관리하면 그에 해당 되는 정보들이 저장되는 장소입니다. ```.git``` 폴더를 삭제하면 git 저장소(Repository)에 저장한 내용이 전부 삭제되므로 삭제하지 않도록 주의해 주세요.
+
+## 사용자 설정
+이제 새롭게 생성된 git 저장소(Repository)에 버전 관리시 사용할 유저를 등록합니다. 이 유저는 실제 버전 관리시 누가 파일을 수정하였는지를 알 수 있게 도와줍니다.
+
+```bash
+# git config --global user.name [user name]
+git config --global user.name dev.yakuza
+
+# git config --global user.email [user email]
+git config --global user.email dev.yakuza@gmail.com
+```

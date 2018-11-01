@@ -75,3 +75,14 @@ dir /ah
 ```
 
 if you can see ```.git``` folder in folder list, you are succeed to create git repository. ```.git``` folder stores informations about source code edit histories when you use git to manage them. if you delete ```.git``` folder, you delete also all histories and git repository so please be careful not to delete it.
+
+## configure user
+add user to new git repository for managing source code version. we can recognize who edit source code if git user is set.
+
+```bash
+# git config --global user.name [user name]
+git config --global user.name dev.yakuza
+
+# git config --global user.email [user email]
+git config --global user.email dev.yakuza@gmail.com
+```

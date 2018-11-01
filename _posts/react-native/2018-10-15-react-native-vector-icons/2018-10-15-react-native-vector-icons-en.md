@@ -36,4 +36,4 @@ how to use Material icon
 {% include_relative common/usage.md %}
 
 ## reference
-- official site: [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }

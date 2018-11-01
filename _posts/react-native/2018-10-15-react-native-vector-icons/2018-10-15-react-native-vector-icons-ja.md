@@ -36,4 +36,4 @@ Material iconを使う方法
 {% include_relative common/usage.md %}
 
 ## 参考
-- 公式サイト: [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }

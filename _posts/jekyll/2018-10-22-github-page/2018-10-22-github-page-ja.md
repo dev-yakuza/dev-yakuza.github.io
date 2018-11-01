@@ -7,7 +7,7 @@ categories: 'jekyll'
 comments: true
 
 title: 'github page'
-description: '今まで作ったjekyllのプロジェクトをgithub pagedへアップロードしてブログサービスを始めてみましょう。'
+description: '今まで作ったjekyllのプロジェクトをgithub pageへアップロードしてブログサービスを始めてみましょう。'
 image: '/assets/images/category/jekyll/github-page.jpg'
 ---
 

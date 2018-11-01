@@ -36,4 +36,4 @@ Material icon을 사용하는 방법
 {% include_relative common/usage.md %}
 
 ## 참고
-- 공식 사이트: [react-native-vector-icons]https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
+- 공식 사이트: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons){:rel="nofollow noreferrer" :target="_blank" }
