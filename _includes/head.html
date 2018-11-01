@@ -12,13 +12,13 @@
   <title>{{page.title}} - {{page.description}}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  {% seo title=false og:url=false %}
-
   {% if site.active_lang == site.default_lang %}
-  <meta name="og:url" content="{{site.url}}{{page.permalink | replace: 'index.html', ''}}" />
+  <meta property="og:url" content="{{site.url}}{{page.permalink | replace: 'index.html', ''}}" />
   {% else %}
-  <meta name="og:url" content="{{site.url}}/{{site.active_lang}}{{page.permalink | replace: 'index.html', ''}}" />
+  <meta property="og:url" content="{{site.url}}/{{site.active_lang}}{{page.permalink | replace: 'index.html', ''}}" />
   {% endif %}
+
+  {% seo title=false og:url=false %}
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script>
