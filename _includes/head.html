@@ -9,7 +9,11 @@
   <meta name="twitter:site" content="@DevYakuza" />
   <meta name="twitter:creator" content="@DevYakuza" />
 
+  {% if site.active_lang == site.default_lang %}
+  <meta name="og:url" content="{{site.url}}{{page.permalink | replace: 'index.html', ''}}" />
+  {% else %}
   <meta name="og:url" content="{{site.url}}/{{site.active_lang}}{{page.permalink | replace: 'index.html', ''}}" />
+  {% endif %}
   <title>{{page.title}} - {{page.description}}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
