@@ -1,5 +1,6 @@
 ---
 layout: 'post'
+canonical_url: ' '
 permalink: '/git/create-repository/'
 paginate_path: '/git/:num/create-repository/'
 lang: 'en'
