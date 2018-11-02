@@ -116,7 +116,7 @@ layout: default
                 data.forEach(function (post, index) {
                   var container = $('.post-list-container .body .list-group');
                   var page = container.find('.page-' + post.page);
-
+                  debugger;
                   var active = post.url.indexOf(location.pathname) >= 0 ? 'active' : '';
 
                   // post item in page
@@ -152,6 +152,10 @@ layout: default
 
                   if ($('.post-list-container .footer .page-item[data-page="' + post.page + '"]').length === 0) {
                     $('.post-list-container .footer .page-item--next').before(paginationItem);
+                  }
+
+                  if (active === 'active') {
+                    $('li[data-page=' + post.page + ']').addClass(active);
                   }
 
                   if (post.page > 1) {

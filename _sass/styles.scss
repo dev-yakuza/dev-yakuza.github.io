@@ -1,6 +1,10 @@
 // Import Core Clean Blog SCSS
 @import '../assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss';
 
+body {
+  overflow-x: hidden;
+}
+
 body,
 h1,
 h2,
@@ -304,7 +308,6 @@ pre code {
     }
   }
   & .body {
-    overflow-x: hidden;
     font-size: 16px;
     margin-bottom: 8px;
 
@@ -411,4 +414,8 @@ table {
   width: auto;
   display: inherit;
   margin: auto;
+}
+
+a {
+  cursor: pointer;
 }
