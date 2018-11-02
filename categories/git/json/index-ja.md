@@ -1,6 +1,6 @@
 ---
 layout: 'posts'
-permalink: '/api/jekyll/posts.json'
+permalink: '/api/git/posts.json'
 lang: 'ja'
-target: 'jekyll'
+target: 'git'
 ---
