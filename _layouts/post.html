@@ -202,6 +202,14 @@ layout: default
           });
         </script>
         <script type="application/ld+json">
+          {
+            "@context":"http://schema.org",
+            "@type": "Organization",
+            "url": "{{ site.url }}",
+            "logo": "{{ site.logo }}"
+          }
+        </script>
+        <script type="application/ld+json">
           {%- assign posts = site.posts | where_exp:"item", "item.categories[0] == page.categories[0]" | where_exp:"item", "item.lang == page.lang" -%}
           {
             "@context":"http://schema.org",
