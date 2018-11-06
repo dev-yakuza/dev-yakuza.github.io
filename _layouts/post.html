@@ -211,34 +211,11 @@ layout: default
               {
                 "@type":"ListItem",
                 "position":{{ forloop.index }},
-                "item": {
-                  "@type": "Article",
-                  "name": "{{ subPost.title }}",
-                  "headline":"{{ subPost.title }}",
-                  "image": "{{site.url}}{{ subPost.image }}",
-                  "author": {
-                    "@type":"Person",
-                    "name":"dev.yakuza@gmail.com"
-                  },
-                  "publisher":{
-                      "@type":"Organization",
-                      "logo":{
-                          "@type":"ImageObject",
-                          "url":"{{site.url}}/assets/images/icon.png"
-                      },
-                      "name":"dev.yakuza@gmail.com"
-                  },
-                  "datePublished": "{{ subPost.date }}",
-                  "dateModified": "{{ site.time }}",
-                  "description": "{{ subPost.description }}",
-                  {%- if subPost.lang == site.default_lang -%}
-                  "url": "{{ site.url }}{{ subPost.url }}",
-                  "mainEntityOfPage": "{{ site.url }}{{ subPost.url }}"
-                  {%- else -%}
-                  "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}",
-                  "mainEntityOfPage": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
-                  {%- endif -%}
-                }
+                {%- if subPost.lang == site.default_lang -%}
+                "url": "{{ site.url }}{{ subPost.url }}"
+                {%- else -%}
+                "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
+                {%- endif -%}
               }
               {%- unless forloop.last %},{% endunless -%}
               {%- endfor -%}
