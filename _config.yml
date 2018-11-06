@@ -24,6 +24,7 @@ url: https://dev-yakuza.github.io # the base hostname & protocol for your site, 
 twitter_username: # twitter user name
 github_username: # github user name
 author: dev.yakuza@gmail.com
+logo: https://dev-yakuza.github.io/assets/images/icon.png
 
 # Build settings
 markdown: kramdown
