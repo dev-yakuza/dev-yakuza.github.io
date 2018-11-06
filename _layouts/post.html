@@ -208,17 +208,26 @@ layout: default
             "@type":"ItemList",
             "itemListElement":[
               {%- for subPost in posts reversed -%}
-              {%- if subPost.lang == page.lang and subPost.categories[0] == page.categories[0] -%}
               {
                 "@type":"ListItem",
                 "position":{{ forloop.index }},
-                {% if subPost.lang == site.default_lang %}
-                "url": "{{ site.url }}{{ subPost.url }}"
-                {% else %}
-                "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
-                {% endif %}
+                item: {
+                  "@type": "Article",
+                  "name": "{{ subPost.title }}",
+                  "image": "{{ subPost.image }}",
+                  "author": {
+                    "@type":"Person",
+                    "name":"dev.yakuza@gmail.com"
+                  },
+                  "datePublished": "{{site.url}}{{ subPost.date }}",
+                  "description": "{{ subPost.description }}",
+                  {%- if subPost.lang == site.default_lang -%}
+                  "url": "{{ site.url }}{{ subPost.url }}"
+                  {%- else -%}
+                  "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
+                  {%- endif -%}
+                }
               }
-              {%- endif -%}
               {%- unless forloop.last %},{% endunless -%}
               {%- endfor -%}
             ]
