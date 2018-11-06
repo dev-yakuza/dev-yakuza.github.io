@@ -12,9 +12,9 @@ layout: null
   {% for lang in site.languages %}
     <url>
       {% if lang == site.default_lang %}
-      <loc>{{ site.url }}{{ post.url }}</loc>
+      <loc>{{ site.url }}{{ post.url | replace: 'index.html', '' }}</loc>
       {% else %}
-      <loc>{{ site.url }}/{{lang}}{{ post.url }}</loc>
+      <loc>{{ site.url }}/{{lang}}{{ post.url | replace: 'index.html', '' }}</loc>
       {% endif %}
 
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
@@ -31,17 +31,10 @@ layout: null
     {% else %}
     <url>
       {% if lang == site.default_lang %}
-      <loc>{{ site.url }}{{ page.url }}</loc>
+      <loc>{{ site.url }}{{ page.url | replace: 'index.html', '' }}</loc>
       {% else %}
-      <loc>{{ site.url }}/{{lang}}{{ page.url }}</loc>
+      <loc>{{ site.url }}/{{lang}}{{ page.url | replace: 'index.html', '' }}</loc>
       {% endif %}
-      {% for lang in site.languages %}
-      {% if lang == site.default_lang %}
-      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}{{page.permalink | replace: 'index.html', ''}}"/>
-      {% else %}
-      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{site.url}}/{{lang}}{{page.permalink | replace: 'index.html', ''}}"/>
-      {% endif %}
-      {% endfor %}
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <priority>0.5</priority>
     </url>
