@@ -201,35 +201,6 @@ layout: default
             })
           });
         </script>
-        <script type="application/ld+json">
-          {
-            "@context":"http://schema.org",
-            "@type": "Organization",
-            "url": "{{ site.url }}",
-            "logo": "{{ site.logo }}"
-          }
-        </script>
-        <script type="application/ld+json">
-          {%- assign posts = site.posts | where_exp:"item", "item.categories[0] == page.categories[0]" | where_exp:"item", "item.lang == page.lang" -%}
-          {
-            "@context":"http://schema.org",
-            "@type":"ItemList",
-            "itemListElement":[
-              {%- for subPost in posts reversed -%}
-              {
-                "@type":"ListItem",
-                "position":{{ forloop.index }},
-                {%- if subPost.lang == site.default_lang -%}
-                "url": "{{ site.url }}{{ subPost.url }}"
-                {%- else -%}
-                "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}"
-                {%- endif -%}
-              }
-              {%- unless forloop.last %},{% endunless -%}
-              {%- endfor -%}
-            ]
-          }
-          </script>
       </article>
       <div class="col-lg-8 col-md-10 mx-auto">
         <hr />
