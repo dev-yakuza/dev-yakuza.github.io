@@ -10,3 +10,4 @@ package.json
 .jekyll-metadata
 .jekyll
 Gemfile.lock
+_site/
