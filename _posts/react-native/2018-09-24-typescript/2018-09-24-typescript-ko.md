@@ -52,7 +52,9 @@ typescript 개발을 편리하게 하기 위해 tslint를 적용합니다. 아�
 - [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" :target="_blank"}
 
 ### rn-cli.config.js 만들기
-typescript를 런타임중에 인식할 수 있게 도와주는 라이브러리을 위한 설정 파일입니다. 프로젝트 root폴더에 ```rn-cli.config.js``` 파일에 아래에 내용을 작성합니다.
+[Bruno Lemos](https://www.facebook.com/brunolemos?fref=gc&dti=586400221495560){:rel="nofollow noreferrer" :target="_blank"}님께서 ```No need for rn-cli.config.js anymore since v0.57```라고 페이스북(facebook)에 댓글을 주셔서 확인해 본 결과 RN(react native) 버전 0.57 이상에서는 ```rn-cli.config.js```가 필요 없는게 되었네요. 모두 참고 하시기 바랍니다.
+
+~~typescript를 런타임중에 인식할 수 있게 도와주는 라이브러리을 위한 설정 파일입니다. 프로젝트 root폴더에 ```rn-cli.config.js``` 파일에 아래에 내용을 작성합니다.~~
 
 {% include_relative common/rn_cli_config.md %}
 

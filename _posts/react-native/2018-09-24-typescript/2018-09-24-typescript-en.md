@@ -52,7 +52,9 @@ if you want more detail, see official website.
 - [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" :target="_blank"}
 
 ### create rn-cli.config.js
-this setting help RN to recognize typescript at runtime. create ```rn-cli.config.js``` file in the project root folder and copy-paste below contents.
+we got the comment(```No need for rn-cli.config.js anymore since v0.57```) on facebook from [Bruno Lemos](https://www.facebook.com/brunolemos?fref=gc&dti=586400221495560){:rel="nofollow noreferrer" :target="_blank"} and we checked it. it doesn't need anymore to create ```rn-cli.config.js``` since RN(react-native) version 0.57.
+
+~~this setting help RN to recognize typescript at runtime. create ```rn-cli.config.js``` file in the project root folder and copy-paste below contents.~~
 
 {% include_relative common/rn_cli_config.md %}
 

@@ -13,12 +13,12 @@ image: '/assets/images/category/react-native/react-native-admob.jpg'
 
 
 ## 개요
-구글은 광고 플랫폼으로 애드센스(Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"})와 애드몹(Admob: [https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" :target="_blank"})을 가지고 있습니다. 여기에서는 어플리케이션에 구글 애드몹(admob)을 이용하여 광고를 노출시키는 방법에 대해서 알아보겠습니다.
+구글은 광고 플랫폼으로 애드센스(Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"})와 애드몹(Admob: [https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" :target="_blank"})을 가지고 있습니다. 여기에서는 어플리케이션에 구글 애드몹(google admob)을 이용하여 광고를 노출시키는 방법에 대해서 알아보겠습니다.
 
-구글의 애드센스(Adsense)와 애드몹(Admob)의 차이점은 애드센스(Adsense)는 웹사이트용 플랫폼이고 애드몹(Admob)은 스마트폰 어플리케이션용이라는 점입니다. 우리는 블로그용 광고로 이미 애드센스(Adsense)를 사용하고 있으며 웹사이트에 애드센스(Adsense)를 사용하는 방법에 대해서는 [google service]({{site.url}}/jekyll/google-service/)에서 확인하시기 바랍니다.
+구글의 애드센스(google adsense)와 애드몹(google admob)의 차이점은 애드센스는 웹사이트용 플랫폼이고 애드몹은 스마트폰 어플리케이션용이라는 점입니다. 우리는 블로그용 광고로 이미 애드센스(google adsense)를 사용하고 있으며 웹사이트에 애드센스(Adsense)를 사용하는 방법에 대해서는 [google service]({{site.url}}/jekyll/google-service/)에서 확인하시기 바랍니다.
 
 ## 라이브러리 설치
-구글 애드몹(Admob)을 RN(react native)에서 사용하기 위해 [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" :target="_blank" } 라이브러리를 설치합니다.
+구글 애드몹(google admob)을 RN(react native)에서 사용하기 위해 [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" :target="_blank" } 라이브러리를 설치합니다.
 
 ```bash
 npm install react-native-admob@next --save
@@ -41,11 +41,11 @@ react-native link react-native-admob
 
 위에 링크를 눌러 다운로드 사이트로 이동하여 ```Google Mobile Ads SDK```를 다운로드합니다. 다운로드가 완료되면 압축을 풀어줍니다.
 
-RN(react native) 프로젝트 폴더에서 ios 폴더로 이동 ```프로젝트명.xcodeproj```파일을 실행합니다.
+RN(react native) 프로젝트 폴더에서 ios 폴더로 이동하여 ```프로젝트명.xcodeproj```파일을 실행합니다.
 
 ![add Google Mobile Ads SDK to ios ](/assets/images/category/react-native/react-native-admob/add_sdk.png)
 
-xcode가 실행되면 왼쪽위에 프로젝트명을 우클릭하고 ```Add Files to [프로젝트명]```을 선택합니다. 위에서 다운로드하고 압축을 푼 ```Google Mobile Ads SDK``` 폴더로 이동하여 ```GoogleMobileAds.framework```파일을 선택합니다. 하단에 ```Copy  items if needed```를 선택하고 ```add``` 버튼을 눌러 ```Google Mobile Ads SDK``` 라이브러리를 추가합니다.
+xcode가 실행되면 왼쪽위에 프로젝트명을 우클릭하고 ```Add Files to [프로젝트명]```을 선택합니다. 위에서 다운로드하고 압축을 푼 ```Google Mobile Ads SDK``` 폴더로 이동하여 ```GoogleMobileAds.framework```파일을 선택합니다. 하단에 ```Copy items if needed```를 선택하고 ```add``` 버튼을 눌러 ```Google Mobile Ads SDK``` 라이브러리를 추가합니다.
 
 ## 구글 애드몹 가입
 구글 애드몹(Google admob) 사이트로 이동하여 회원가입을 합니다. 일반적인 회원가입/로그인 절차임으로 설명을 생략합니다.
@@ -72,7 +72,7 @@ xcode가 실행되면 왼쪽위에 프로젝트명을 우클릭하고 ```Add Fil
 구글 애드몹(Google admob) 등록이 완료되었습니다. 친절하게 하단에 다음 단계에 대한 설명이 잘 나와있습니다.
 
 1. react-native-admob을 설정할때 필요한 ```App ID```를 복사해둡니다.
-1. 광고 타입(ad uni)을 구글 애드몹(Google admob)에서 설정합니다.
+1. 광고 타입(ad unit)을 구글 애드몹(Google admob)에서 설정합니다.
 1. 앱을 앱스토어에 등록하면 구글 애드몹(Google admob)에서 연결해줘야합니다.
 
 하단에 있는 ```NEXT: CREATE AD UNIT```을 눌러 광고 타입 설정화면으로 이동합니다.
@@ -113,11 +113,11 @@ self.window.rootViewController = rootViewController;
 
 구글 애드몹(Google admob)을 생성할 때 복사한 app ID를 넣은 ```[GADMobileAds configureWithApplicationID:@"구글 애드몹 앱 ID"];``` 코드를 위와 같은 위치에 넣습니다.
 
-이로써 iOS에서 사용할 준비가 되었습니다.
+이로써 iOS에서 구글 애드몹(Google admob)을 사용할 준비가 되었습니다.
 
 
-### import library
-구글 애드몹(Google admob)에 설정한 배너를 사용하기위해 ```react-native-admob``` 라이브러리에 ```AdMobBanner```를 임포트합니다.
+### react-native-admob 사용
+구글 애드몹(Google admob)에 설정한 배너를 사용하기위해 배너를 표시하고자하는 파일에 ```react-native-admob``` 라이브러리에 ```AdMobBanner```를 임포트합니다.
 
 ```js
 import { AdMobBanner } from 'react-native-admob';
@@ -142,6 +142,6 @@ import { AdMobBanner } from 'react-native-admob';
 설정이 완료되었습니다. 프로젝트를 실행하여 광고가 잘 표시되는지 확인합니다.
 
 
-## 안드로이드
-안드로이드 부분은 실제로 개발하여 추가되면 블로그에 추가할 예정입니다.
+## 안드로이드(Android)
+안드로이드(Android) 부분은 실제로 개발하여 추가되면 블로그에 추가할 예정입니다.
 
