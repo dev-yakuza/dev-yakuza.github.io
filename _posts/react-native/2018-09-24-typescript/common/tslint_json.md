@@ -1,0 +1,12 @@
+```json
+{
+    "extends": [],
+    "defaultSeverity": "warning",
+    "linterOptions": {
+      "exclude": [
+        "config/**/*.js",
+        "node_modules/**/*.ts"
+      ]
+    }
+}
+```

@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ page.image }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>{{ page.title }}</h1>
+            <span class="subheading">{{ page.description }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="breadcrumb-item active"  aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+            <span itemprop="name">{{ page.title }}</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        {{ content }}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row card-container justify-content-center justify-content-sm-center justify-content-md-start">
+        <!-- Home Post List -->
+        {% for post in paginator.posts %}
+          <div class="col-lg-4 col-md-6 col-sm-auto col-auto">
+            <div class="card-content-container" style="background-image: url({{post.image}});">
+              <div class="overlay"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <div class="card-title">
+                    <h3>{{ post.title }}</h3>
+                  </diV>
+                </div>
+                <div class="card-body">
+                  <div class="date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{ post.date | date: "%Y-%m-%d" }}
+                  </div>
+                  <div class="card-body-content">
+                    {{ post.description }}
+                  </div>
+                </div>
+                <a class="card-footer" href="{{post.permalink}}">
+                  <div>{{ page.see_more }} ▶︎</div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <div class="row card-container justify-content-center">
+      <div class="col-auto">
+      <ul class="pagination">
+          <li class="page-item {% if paginator.previous_page == Nil %}disabled{% endif %}">
+            <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          {% if paginator.page_trail %}
+            {% for trail in paginator.page_trail %}
+              <li class="page-item {% if page.url == trail.path %}active{% endif %}">
+                  <a class="page-link" href="{{ trail.path | prepend: site.baseurl | replace: 'index.html', ''}}" title="{{trail.title}}">{{ trail.num }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+          <li class="page-item {% if paginator.next_page == Nil %}disabled{% endif %}">
+            <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+      </ul>
+      </div>
+    </div>
+    {% endif %}
+  </div>

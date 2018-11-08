@@ -1,0 +1,28 @@
+```json
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "allowJs": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./nodenode_modules/@types", "./src/@types"]
+  },
+  "exclude": [
+    "node_modules",
+    "dest",
+    "android",
+    "ios",
+    "acceptance-tests",
+    ".jest",
+    "src/setupTests.ts",
+    "./node_modules/**/*"
+  ],
+  "include": ["./nodenode_modules/@types", "./src/**/*", "./src/@types"]
+}
+
+```
