@@ -1,3 +1,0 @@
-```
-bundle exec jekyll build
-```
