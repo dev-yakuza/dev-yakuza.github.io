@@ -1,4 +1,0 @@
-    - Android SDK
-    - Android SDK Platform
-    - Performance (Intel ® HAXM)
-    - Android Virtual Device
