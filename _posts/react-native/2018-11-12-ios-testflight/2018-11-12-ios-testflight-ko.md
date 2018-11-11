@@ -57,17 +57,10 @@ xcode의 상단 메뉴중 ```Product```의 ```Archive```를 선택하여 앱을 
 
 최종적으로 ```Upload``` 버튼을 눌러 앱을 ```App Store Connect```에 업로드합니다.
 
-
-
-
-
-
-
-빌드가 무사히 성공하면 ```Archives``` 창을 볼 수 있습니다. ```Archives``` 창을 실수로 닫으셨거나 다시 창을 열고 싶으신 분은 xcode 상단 메뉴의 ```Window```를 선택하고 ```Organizer```를 선택합니다.
+### Archives(Organizer) 창
+실수로 ```Archives``` 창을 닫으셨거나 다시 창을 열고 싶으신 분은 xcode 상단 메뉴의 ```Window```를 선택하고 ```Organizer```를 선택합니다.
 
 ![Organizer Menu](/assets/images/category/react-native/ios-testflight/organizer-menu.png)
-
-
 
 ## 어플 등록
 RN(react native) 프로젝트로 제작한 어플을 ```testflight```에 등록하여 테스트가 가능한 상태를 만들어 보겠습니다. 아래에 링크를 눌러 애플 개발자(Apple Developer) 사이트로 이동합니다.
@@ -98,53 +91,5 @@ RN(react native) 프로젝트로 제작한 어플을 ```testflight```에 등록�
 
 위와 같은 화면이 나오면 ```승인```을 눌러 창을 종료시킵니다.
 
-
-
-앱 스토어에 등록할 정보를 입력하는 화면이 나옵니다. 해당 어플을 앱 스토어에 등록할 때 사용할 정보를 입력하세요. 실제로 심사에 들어가는 것이 아니기 때문에 너무 걱정할 필요없습니다.
-
-
-## 테스터 추가
-애플이 제공하는 ```testflight```를 사용하면 앱 스토어(App store)에 올리기전에 테스터들과 제작한 앱을 테스트할 수 있습니다. 그러기 위해서는 테스터를 추가해야합니다. 애플 개발자 프로그램(Apple Developer Program)에 등록한 계정으로만 테스트하시려는 분은 이 부분을 건너뛰셔도 됩니다. 아래에 링크를 클릭하여 애플 개발자 사이트로 이동합니다.
-
-- 애플 개발자 사이트: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
-
-![apple developer site](/assets/images/category/react-native/ios-testflight/apple-developer-site.png)
-
-오른쪽 위에 ```Account```를 눌러 Account 페이지로 이동합니다.
-
-![apple developer site after enrolling](/assets/images/category/react-native/ios-testflight/apple-developer-site-after-enrolling.png)
-
-위와 같은 페이지에서 ```App Store Connect```를 눌러 App store connector 사이트로 이동합니다.
-
-![ko app store connector](/assets/images/category/react-native/ios-testflight/ko-app-store-connector.png)
-
-왼쪽 밑에 ```사용자 및 액세스``` 메뉴를 눌러 테스터 등록 페이지로 이동합니다.
-
-![ko user access](/assets/images/category/react-native/ios-testflight/ko-user-access.png)
-
-이미 애플 개발자 프로그램(Apple Developer Program)에 등록한 계정은 등록이 되어있습니다. 이제 새로운 테스터를 왼쪽 위에 ```+``` 버튼을 눌러 추가합시다.
-
-![ko add user](/assets/images/category/react-native/ios-testflight/ko-add-user.png)
-
-테스터의 이름과 이메일을 입력합니다. 여기서 사용하는 이메일은 애플 아이디(Apple ID), 즉 아이폰 앱스토어(App store)에서 어플을 다운로드 받으실 때 사용하는 이메일 또는 사용할 이메일을 입력합니다. 애플 아읻(Apple ID)가 아닌 경우 이 이메일을 사용하여 애플 아이디(Apple ID)를 등록하셔야 합니다. ```앱 관리```를 선택하고 하단에 ```초대``` 버튼을 눌러 테스터를 초대합니다. 특정 어플만 테스트하기 위해서는 ```앱``` 항목에서 특정 어플을 선택해 주세요.
-
-![invite mail](/assets/images/category/react-native/ios-testflight/invite-mail.png)
-
-입력한 테스터 메일에 초대 메일이 도착합니다. 초대 메일에서 ```activate your account``` 눌러 계정을 활성화 페이지로 이동합니다.
-
-![activate account](/assets/images/category/react-native/ios-testflight/activate-account.png)
-
-위와 같은 화면이 보이면 테스터로 등록한 아이디를 확인하고 패스워드를 입력합니다. 앱 스토어(App store) 아이디임으로 앱 스토어(App store)의 패스워드를 입력하시면 됩니다.
-
-![privacy](/assets/images/category/react-native/ios-testflight/privacy.png)
-
-약관을 확인하고 ```Continue```를 다음으로 진행합니다.
-
-![trust browser](/assets/images/category/react-native/ios-testflight/trust-browser.png)
-
-지금 사용하고 있는 웹브라우저가 신뢰가능한 브라우저인지 물어보는 화면이 나옵니다. 공용 PC가 아니라면 ```Trust```를 눌러 다음으로 진행합니다.
-
-서비스 약관 화면이 나옵니다. 하단에 ```위의 서비스 약관을 읽었으며 이에 동의합니다.```를 선택하고 ```수락``` 버튼을 눌러 다음으로 진행합니다.
-
-테스터 등록이 완료되었습니다. 이제 어플을 등록하고 실제 ```testflight```를 이용하는 방법에 대해서 알아보겠습니다.
-
+## 테스트 그룹 추가
+위에서 접속한 ```TestFlight

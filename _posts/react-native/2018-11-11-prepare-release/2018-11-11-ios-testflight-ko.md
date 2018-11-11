@@ -26,8 +26,8 @@ iOS를 마켓에 등록시키기 위해서는 아래와 같은 항목이 필요�
 1. SKU
 1. Apple
 1. 카테고리 x 2
-1. 아이폰 6.5인치/5.5인치의 앱 미리보기 사진 x 3
-1. 아이폰 6.5인치/5.5인치의 앱 스크린 샷 x 10
+1. 아이폰 5.5인치의 앱 미리보기 사진 x 3
+1. 아이폰 5.5인치의 앱 스크린 샷 x 10
 1. 프로모션 텍스트
 1. 키워드
 1. 설명
@@ -39,3 +39,12 @@ iOS를 마켓에 등록시키기 위해서는 아래와 같은 항목이 필요�
 - 개인정보 취급방침: [https://www.privacy.go.kr/a3sc/per/inf/perInfStep01.do](https://www.privacy.go.kr/a3sc/per/inf/perInfStep01.do){:rel="nofollow noreferrer" :target="_blank"}
 
 위에 링크를 클릭해 지시사항을 따라서 입력해 줍니다. 완성된 파일을 다운로드하여 서비스 사이트에 업로드합니다.
+
+
+## Android
+안드로이드를 마켓에 등록할 때 내용을 추가하도록 하겠습니다.
+
+
+## 참고
+- 스크린샷 사이즈: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" :target="_blank"}
+- 앱 미리보기 사이즈: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" :target="_blank"}
