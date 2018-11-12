@@ -39,6 +39,8 @@ image: '/assets/images/category/react-native/react-native-tts.jpg'
 - speak: 해당 단어를 소리내어 읽습니다.
 
 ## 기본 목소리 설정
+기본 목소리 설정은 ```setDefaultLanguage```를 해당 국가로 설정하면 자동으로 변경됩니다. 따라서 ```setDefaultLanguage```를 사용하여 국가를 변경하는 경우 아래에 목소리 설정을 따로 해줄 필요가 없습니다.
+
 react-native-tt는 기본 목소리 설정이 가능합니다. 아래에 코드를 사용하여 기본 목소리 설정을 변경해 보세요.
 
 ```js

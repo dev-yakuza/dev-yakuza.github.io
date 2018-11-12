@@ -39,6 +39,8 @@ image: '/assets/images/category/react-native/react-native-tts.jpg'
 - speak: この単語を読みます。
 
 ## 基本声設定
+基本声の設定は```setDefaultLanguage```で国の設定を変えれば自動にその国の声で設定されます。```setDefaultLanguage```を使って国を変更する方はこの部分はスキップしても大丈夫です。
+
 react-native-ttは基本声を設定することが可能です。下のコードを使って基本声の設定を変えてみてください。
 
 ```js

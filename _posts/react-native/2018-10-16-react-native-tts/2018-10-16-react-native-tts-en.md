@@ -54,6 +54,8 @@ Tts.voices().then(voices => console.log(voices));
 we checked all supported voices with above code.
 
 ### iOS supported voices
+if you set country code by ```setDefaultLanguage``` function, react-native-tts automatically set that country voice. if you already use ```setDefaultLanguage``` function for setting the coutnry, it's better to skip this section.
+
 you can change default voice by passing ```id``` of below list to ```setDefaultVoice``` parameter
 
 ```js

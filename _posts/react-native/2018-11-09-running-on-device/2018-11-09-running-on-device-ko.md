@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/react-native/running-on-device/'
 paginate_path: '/react-native/:num/running-on-device/'
@@ -14,7 +13,9 @@ image: '/assets/images/category/react-native/running-on-device.jpg'
 
 
 ## 개요
-지난 시간에 RN(react native)로 개발한 프로젝트를 디바이스에서 테스트를 해봤습니다. 다들 별 문제 없으셨나요? 이제 테스트는 충분히 해봤으니 RN(react native) 프로젝트를 배포하기 위해 빌드해 보고 실제로 디바이스 올려서 기동시켜 봅시다.
+지난 시간에 RN(react native)로 개발한 프로젝트를 디바이스에서 테스트를 해봤습니다.([디바이스 테스트]({{site.url}}/{{page.categories}}/test-on-device/){:target="_blank"}) 다들 별 문제 없으셨나요? 이제 테스트는 충분히 해봤으니 RN(react native) 프로젝트를 배포하기 위해 빌드해 보고 실제로 디바이스 올려서 기동시켜 봅시다.
+
+여기에서는 RN(react native) 프로젝트 빌드와 빌드된 파일을 테스트 디바이스에서 확인하는 방법에 대해 알아보겠습니다. 실제 마켓에 업로드하는 과정은 포함되어 있지 않습니다.
 
 ## iOS / Mac
 개발자 생성 및 디바이스와의 연결은 이전 블로그를 참고해주세요.([디바이스 테스트]({{site.url}}/{{page.categories}}/test-on-device/){:target="_blank"}) 여기서는 RN(react native) 프로젝트를 배포하기 위해 빌드하는 방법과 빌드된 파일을 디바이스에 올려 테스트하는 내용만 다루겠습니다.
@@ -23,7 +24,7 @@ image: '/assets/images/category/react-native/running-on-device.jpg'
 공식 사이트([react-native](https://facebook.github.io/react-native/docs/running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" :target="_blank"})에 모든 설명이 친절하게 나와있습니다. 하나하나 따라해봅시다.
 
 #### HTTPS 통신 설정
-애플에서 어플이 외부와 ```HTTP``` 통신을 할때는 ```HTTPS```로 통신을 하지 않으면 통신이 불가하도록 설정하는 기능을 넣었다고 합니다. 하지만 RN(react-native)는 개발할시 로컬에 개발 서버를 띄우고 개발 서버와 통신하여 어플을 기동하므로 이 기능을 기본적으로 사용하지 않도록 설정해놨습니다. 하지만 실제 빌드하여 제공할 때는 개발 서버를 이용하지 않으므로 이 부분을 제거할 필요가 있습니다. ```프로젝트/ios/프로젝트명/info.plist```를 열어 아래에 부분을 찾아 제거합니다.
+애플에서 어플이 외부와 ```HTTP``` 통신을 할때는 ```HTTPS```로 통신을 하지 않으면 통신이 불가하도록 설정하는 기능을 넣었다고 합니다. 하지만 RN(react native)를 개발할때는 로컬에 개발 서버를 띄우고 개발 서버와 통신하여 어플을 기동하므로 RN(react native)는 이 기능을 기본적으로 사용하지 않도록 설정해놨습니다. 하지만 실제 빌드하여 제공할 때는 개발 서버를 이용하지 않으므로 이 부분을 제거할 필요가 있습니다. RN(react native) 프로젝트 폴더에서 ```/ios/프로젝트명/info.plist``` 파일을 열어 아래에 부분을 찾아 제거합니다.
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -54,15 +55,15 @@ image: '/assets/images/category/react-native/running-on-device.jpg'
 ```
 
 #### 빌드 스키마 변경
-RN(react native) 프로젝트를 빌드하기 위해서는 빌드 스키마(build schema)를 ```Debug```에서 ```Release```로 변경해야 합니다.RN(react native) 프로젝트 폴더에서 ```ios/프로젝트명.xcodeproj```을 실행시킵니다.
+RN(react native) 프로젝트를 빌드하기 위해서는 빌드 스키마(build scheme)를 ```Debug```에서 ```Release```로 변경해야 합니다. RN(react native) 프로젝트 폴더에서 ```ios/프로젝트명.xcodeproj```을 실행시킵니다.
 
 xcode가 실행되면 상단 메뉴에서 ```Product``` 메뉴에 ```Scheme``` 항목에 ```Edit Scheme```를 선택합니다.
 
-![change build schema](/assets/images/category/react-native/running-on-device/change-schema.png)
+![change build scheme](/assets/images/category/react-native/running-on-device/change-scheme.png)
 
 하단과 같은 화면이 나오면 왼쪽에 ```Run```을 선택하고 오른쪽에 ```Build Configuration```을 ```Debug```에서 ```Release```로 변경하고 하단에 ```Close```를 창을 닫습니다.
 
-![change build schema to Release from Debug](/assets/images/category/react-native/running-on-device/change-debug-to-release.png)
+![change build scheme to Release from Debug](/assets/images/category/react-native/running-on-device/change-debug-to-release.png)
 
 주의: 역시 다시 개발을 할 때에는 이 부분을 ```Release```에서 ```Debug```로 돌려줄 필요가 있습니다.
 
@@ -78,31 +79,14 @@ xcode가 실행되면 상단 메뉴에서 ```Product``` 메뉴에 ```Scheme``` �
 ```
 
 #### 디바이스에서 기동
-모든 설정은 끝났습니다. 파일을 빌드하기 전에 디바이스에서 확인해 봅시다. 디바이스에서 테스트하는 것과 마찬가지로 USB로 Mac과 아이폰을 연결한 후 빌드 타겟을 디바이스로 한 후 화살표 모양을 눌러 실행 시킵니다.
+모든 설정은 끝났습니다. RN(react native)를 빌드하기 전에 디바이스에서 확인해 봅시다. 디바이스에서 테스트하는 것과 마찬가지로 USB로 Mac과 아이폰을 연결한 후 빌드 타겟을 디바이스로 한 후 화살표 모양을 눌러 실행 시킵니다.
 
 ![device test](/assets/images/category/react-native/running-on-device/device-test.png)
 
-디바이스에서 테스트와 달리 js(javascript)가 빌드된 bundle 파일을 사용하기 때문에 Mac과 아이폰이 같은 Wifi/Network상에 존재할 필요가 없습니다. 하지만 정식 인스톨이 아니기 때문에 일정 기간이 지나면 해당 어플을 사용할 수 없습니다.
-
-#### 배포용 빌드
-이제 배포용 파일을 디바이스에서 테스트했으니 실제 배포용 파일을 만들어 봅니다.
-
-![build for production](/assets/images/category/react-native/running-on-device/build-for-production.png)
-
-xcode 상단 메뉴에서 ```Product```를 선택하고 ```Archive```를 눌러 바이너리 파일을 생성합니다.
-
-![Archives](/assets/images/category/react-native/running-on-device/archives.png)
-
-성공적으로 바이너리 파일이 완료되었습니다. 다음 블로그를 통해 이 파일을 활용할 수 있습니다
-
-- testflight를 이용하여 테스트하기: [testflight]({{site.url}}/{{page.categories}}/test-flight/){:target="_blank"}
-- 앱스토어(App store)에 등록하기: [App store]({{site.url}}/{{page.categories}}/app-store/){:target="_blank"}
-
-
+디바이스에서 테스트와 달리 js(javascript)가 빌드된 bundle 파일을 사용하기 때문에 Mac과 아이폰이 같은 Wifi/Network상에 존재할 필요가 없으며 인스톨후에 Mac과 디바이스가 연결되어 있을 필요가 없습니다. 하지만 정식 인스톨이 아니기 때문에 일정 기간이 지나면 해당 어플을 사용할 수 없습니다.
 
 ## 안드로이드(Android)
 우리가 안드로이드(Android)로 테스트할 때 내용을 수정하도록 하겠습니다.
-
 
 ## 참고
 - 공식 사이트: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}
