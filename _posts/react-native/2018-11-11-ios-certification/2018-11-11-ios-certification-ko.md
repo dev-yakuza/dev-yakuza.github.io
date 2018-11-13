@@ -31,7 +31,7 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 
 ![apple developer login](/assets/images/category/react-native/ios-enroll-developer-program/login.png)
 
-개발자 계정이 없는 분은 [디바이스 테스트]({{site.url}}/{{page.categories}}/test-on-device/){:target="_blank"} 블로그를 참고하여 계정을 생성해 주세요.
+개발자 계정이 없는 분은 [디바이스 테스트]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"} 블로그를 참고하여 계정을 생성해 주세요.
 
 ![after login](/assets/images/category/react-native/ios-enroll-developer-program/after-login.png)
 

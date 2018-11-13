@@ -17,7 +17,7 @@ image: '/assets/images/category/react-native/ios-testflight.jpg'
 이전 블로그인 [개발자 등록]({{site.url}}/{{page.categories}}/enroll-developer-program/){:target="_blank"}을 잘 하신 분들은 이제 등록한 애플 개발자 계정(Apple Developer account)으로 ```testflight```를 사용하여 RN(react native)로 제작한 어플리케이션을 테스트해 봅시다.
 
 ## 앱 빌드
-이전 블로그인 [빌드 및 테스트]({{site.url}}/{{page.categories}}/running-on-device/){:target="_blank"}를 통해 빌드를 하신 분들은 빌드하신 파일을 지우시고 진행하셔야 합니다.
+이전 블로그인 [빌드 및 테스트]({{site.url}}/{{page.categories}}/ios-running-on-device/){:target="_blank"}를 통해 빌드를 하신 분들은 빌드하신 파일을 지우시고 진행하셔야 합니다.
 
 ### 빌드된 앱 삭제
 애플 개발자 프로그램(Apple Developer Program) 등록전에 xcode의 ```Product```의 ```Archive``` 메뉴로 앱을 빌드한 적이 있다면 빌드된 앱을 삭제합니다.
@@ -83,7 +83,7 @@ RN(react native) 프로젝트로 제작한 어플을 ```testflight```에 등록�
 
 ![ko new app](/assets/images/category/react-native/ios-testflight/ko-new-app.png)
 
-새로운 어플의 정보를 입력합니다. 우리는 이미 어플을 빌드한 상태이므로 번들ID에 빌드한 어플 선택이 가능합니다. 어플을 빌드하지 않으신 분은 이전 블로그인 [빌드 및 테스트]({{site.url}}/{{page.categories}}/running-on-device/){:target="_blank"}를 확인해 주세요. 사용자 액세스 권한은 전체 액세스, 플랫폼은 iOS를 선택하고 나머지 정보는 개발중인 어플에 맞춰 입력합니다. 다 입력하셨다면 ```생성```을 눌러 신규 앱 등록을 완료합니다.
+새로운 어플의 정보를 입력합니다. 우리는 이미 어플을 빌드한 상태이므로 번들ID에 빌드한 어플 선택이 가능합니다. 어플을 빌드하지 않으신 분은 이전 블로그인 [빌드 및 테스트]({{site.url}}/{{page.categories}}/ios-running-on-device/){:target="_blank"}를 확인해 주세요. 사용자 액세스 권한은 전체 액세스, 플랫폼은 iOS를 선택하고 나머지 정보는 개발중인 어플에 맞춰 입력합니다. 다 입력하셨다면 ```생성```을 눌러 신규 앱 등록을 완료합니다.
 
 상단 메뉴에 ```TestFlight```를 눌러 ```TestFlight``` 페이지로 이동합니다.
 
