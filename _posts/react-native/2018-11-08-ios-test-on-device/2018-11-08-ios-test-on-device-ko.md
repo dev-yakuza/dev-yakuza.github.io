@@ -6,7 +6,7 @@ lang: 'ko'
 categories: 'react-native'
 comments: true
 
-title: '디바이스 테스트'
+title: 'iOS 디바이스 테스트'
 description: 'RN(react native)로 개발한 프로젝트를 디바이스에서 테스트해 봅시다.'
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---

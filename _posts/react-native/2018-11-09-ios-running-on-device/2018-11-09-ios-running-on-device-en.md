@@ -6,7 +6,7 @@ lang: 'en'
 categories: 'react-native'
 comments: true
 
-title: 'build and test'
+title: 'iOS build and test'
 description: let's build RN(react native) for production and test it on the device.
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
@@ -84,9 +84,6 @@ completed all settings. let's check the built file on the device. connect the de
 ![device test](/assets/images/category/react-native/ios-running-on-device/device-test.png)
 
 it is not necessary that Mac and the device are same Wifi/Network enviroment like device test and doesn't need to connect the device to Mac after installation because RN(react native) uses the bundle file.however, this is not formal installation so the app will not be available after a certain period time.
-
-## Android
-when we test on Andorid, we will add contents in here.
 
 ## reference
 - official site: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}

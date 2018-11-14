@@ -6,7 +6,7 @@ lang: 'ko'
 categories: 'react-native'
 comments: true
 
-title: '빌드 및 테스트'
+title: 'iOS 빌드 및 테스트'
 description: 'RN(react native)로 개발한 프로젝트를 빌드하고 디바이스에서 테스트해봅시다.'
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
@@ -84,9 +84,6 @@ xcode가 실행되면 상단 메뉴에서 ```Product``` 메뉴에 ```Scheme``` �
 ![device test](/assets/images/category/react-native/ios-running-on-device/device-test.png)
 
 디바이스에서 테스트와 달리 js(javascript)가 빌드된 bundle 파일을 사용하기 때문에 Mac과 아이폰이 같은 Wifi/Network상에 존재할 필요가 없으며 인스톨후에 Mac과 디바이스가 연결되어 있을 필요가 없습니다. 하지만 정식 인스톨이 아니기 때문에 일정 기간이 지나면 해당 어플을 사용할 수 없습니다.
-
-## 안드로이드(Android)
-우리가 안드로이드(Android)로 테스트할 때 내용을 수정하도록 하겠습니다.
 
 ## 참고
 - 공식 사이트: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}

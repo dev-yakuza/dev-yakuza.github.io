@@ -6,7 +6,7 @@ lang: 'en'
 categories: 'react-native'
 comments: true
 
-title: 'device test'
+title: 'iOS device test'
 description: let's test RN(react native) project on devices
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---
@@ -79,9 +79,6 @@ your English is definitely better than us so you can see everything on official 
     ![security error](/assets/images/category/react-native/ios-test-on-device/security-error.png)
 
     there are details what to do. just follow it.
-
-## Android
-if we test on Android, we write contents in here.
 
 ## reference
 - official site: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}

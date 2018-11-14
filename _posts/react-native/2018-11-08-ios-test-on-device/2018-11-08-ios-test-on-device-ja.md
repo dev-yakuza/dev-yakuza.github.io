@@ -6,7 +6,7 @@ lang: 'ja'
 categories: 'react-native'
 comments: true
 
-title: 'デバイステスト'
+title: 'iOSデバイステスト'
 description: 'RN(react native)で開発したプロジェクトをデバイスでテストしてみましょう。'
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---

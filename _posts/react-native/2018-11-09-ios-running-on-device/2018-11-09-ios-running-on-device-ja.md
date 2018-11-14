@@ -6,7 +6,7 @@ lang: 'ja'
 categories: 'react-native'
 comments: true
 
-title: 'ビルドやテスト'
+title: 'iOSビルドやテスト'
 description: 'RN(react native)で開発したプロジェクトをビルドしてデバイスでテストしてみましょう。'
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
@@ -84,9 +84,5 @@ xcodeが実行されたら上部のメニューから```Product```メニュー�
 ![device test](/assets/images/category/react-native/ios-running-on-device/device-test.png)
 
 デバイステストとは違ってjs(javascript)がビルドされたbundleファイルを使うのでMacとアイホンが同じWifi/Network上へある必要とインストールした後デバイスがMacと接続してる必要がありません。しかし、正式にインストールではないので一定期間が経過すると、そのアプリを使うことが出来ません。
-
-## アンドロイド(Android)
-私たちが実際アンドロイド(Android)でテストする時内容を追加します。
-
 ## 参考
 - 公式サイト: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}
