@@ -17,7 +17,7 @@ layout: null
       <loc>{{ site.url }}/{{lang}}{{ post.url | replace: 'index.html', '' }}</loc>
       {% endif %}
 
-      <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+      <lastmod>{{ post.last_modified_at | date: '%Y-%m-%d' }}</lastmod>
       <priority>1.0</priority>
     </url>
   {% endfor %}
