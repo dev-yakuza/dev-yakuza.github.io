@@ -13,6 +13,43 @@ image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
 
 
+
+## 개요
+개발자 등록까지 모두 맞췄다면 이제 개발한 앱을 마켓에 등록할 준비를 합니다. 준비할 항목이 무엇이 있는지 함께 살펴봅시다.
+
+## iOS
+iOS를 마켓에 등록시키기 위해서는 아래와 같은 항목이 필요합니다.
+
+1. 이름
+1. 개인정보 취급방침 URL
+1. 부제
+1. 번들 ID
+1. SKU
+1. Apple
+1. 카테고리 x 2
+1. 아이폰 5.5인치의 앱 미리보기 사진 x 3
+1. 아이폰 5.5인치의 앱 스크린 샷 x 10
+1. 프로모션 텍스트
+1. 키워드
+1. 설명
+1. 지원 URL(앱 스토어에 표시)
+1. 마케팅 URL(앱 스토어에 표시)
+
+제일 어려운건 개인정보 취급방침 URL입니다. 다행이 한국은 개인정보 취급방침을 쉽게 만들수 있도록 도와주는 사이트가 있습니다.
+
+- 개인정보 취급방침: [https://www.privacy.go.kr/a3sc/per/inf/perInfStep01.do](https://www.privacy.go.kr/a3sc/per/inf/perInfStep01.do){:rel="nofollow noreferrer" :target="_blank"}
+
+위에 링크를 클릭해 지시사항을 따라서 입력해 줍니다. 완성된 파일을 다운로드하여 서비스 사이트에 업로드합니다.
+
+
+## Android
+안드로이드를 마켓에 등록할 때 내용을 추가하도록 하겠습니다.
+
+
+## 참고
+- 스크린샷 사이즈: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" :target="_blank"}
+- 앱 미리보기 사이즈: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" :target="_blank"}
+
 ## 개요
 지난 시간에 RN(react native)로 개발한 프로젝트를 디바이스에서 테스트를 해봤습니다. 다들 별 문제 없으셨나요? 이제 테스트는 충분히 해봤으니 RN(react native) 프로젝트를 배포하기 위해 빌드해 보고 실제로 디바이스 올려서 기동시켜 봅시다.
 
