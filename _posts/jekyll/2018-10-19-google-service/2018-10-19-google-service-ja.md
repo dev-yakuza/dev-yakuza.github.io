@@ -15,14 +15,14 @@ image: '/assets/images/category/jekyll/google-service.jpg'
 自分のブログで収益やインサイトを貰うためにはやはりグーグルサービスと連動が重要と思います。ここにはブログをもっと上手く活用するためにグーグルサービスとの連携する方法を紹介します。
 
 私たちが連携するグーグルサービスは下記のようです。
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 ## Google Analytics
 サイトの分析するためには基本的Google Analyticsを使います。下のリンクを押してGoogle Analyticsサイトに移動してグーグルアカウントでログインします。
 
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
 
 ログインをすると下の画面が見えます。```sign up```を押して進んでください。
 
@@ -43,7 +43,7 @@ Google Analyticsとの連動が終わりました。今からはデータを見�
 ## Google Search Console
 Google Search Consoleはグーグル検索エンジンへ自分のサイトを登録してグーグルに自分のサイトが検索できるようにします。下記のリンクを押してGoogle Search Consoleへ移動します。
 
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
 
 下の画面が出たら、```Start now```を押してGoogle Search Consoleを始めます。
 
@@ -75,7 +75,7 @@ Google Search Consoleとの連動が終わりました。今からグーグル�
 
 下記のリンクを押してGoogle Adsenseサイトに行きます。
 
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 Google Adsenseサイトで```sign up```を押して会員登録します。
 
@@ -92,6 +92,6 @@ Google Adsenseサイトで```sign up```を押して会員登録します。
 たくさんのユーザーがページを見たり広告を押したら上の画面みたいにGoogle Adsenseからお金が入ります。実際自分の口座におろすためには一定量（¥8,000）越える必要があります。私たちが口座へおろす時が来たらどうやっておろすかをブログへ記録します。
 
 ## 参考
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}

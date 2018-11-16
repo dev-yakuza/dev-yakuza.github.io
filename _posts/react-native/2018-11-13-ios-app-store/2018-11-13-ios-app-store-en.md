@@ -37,7 +37,7 @@ below list will be shown on App Store.
 
 it is best difficult to create privacy policy URL. fortunately, we can make privacy policy URL by free generators
 
-- privacy policy: [https://www.freeprivacypolicy.com/free-privacy-policy-generator.php](https://www.freeprivacypolicy.com/free-privacy-policy-generator.php){:rel="nofollow noreferrer" :target="_blank"}
+- privacy policy: [https://www.freeprivacypolicy.com/free-privacy-policy-generator.php](https://www.freeprivacypolicy.com/free-privacy-policy-generator.php){:rel="nofollow noreferrer" target="_blank"}
 
 click above link and create privacy policy.
 
@@ -51,8 +51,8 @@ below list is for App Review.
 ## App Review Guidelines
 you already know Apple review is very difficult. we also already to reject 3 times, and still wait App Review. so click below link to see App Review Guidelines for approving your app smoothly.
 
-- App Review Guidelines: [https://developer.apple.com/app-store/review/guidelines/](https://developer.apple.com/app-store/review/guidelines/){:rel="nofollow noreferrer" :target="_blank"}
+- App Review Guidelines: [https://developer.apple.com/app-store/review/guidelines/](https://developer.apple.com/app-store/review/guidelines/){:rel="nofollow noreferrer" target="_blank"}
 
 ## reference
-- screenshot size: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" :target="_blank"}
-- app preview size: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" :target="_blank"}
+- screenshot size: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" target="_blank"}
+- app preview size: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" target="_blank"}

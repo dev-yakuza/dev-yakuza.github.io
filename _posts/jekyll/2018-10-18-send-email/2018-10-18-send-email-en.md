@@ -12,14 +12,14 @@ image: '/assets/images/category/jekyll/send-email.jpg'
 ---
 
 ## outline
-we use [github page](https://pages.github.com/){:rel="nofollow noreferrer" :target="_blank"} for serving this blog. we provide this blog by uploading static files(html, css, javascript) created by jekyll to github page. in other words, we can not create and use server-side-source. so we are not also able to create simple email feature on github page and jekyll.
+we use [github page](https://pages.github.com/){:rel="nofollow noreferrer" target="_blank"} for serving this blog. we provide this blog by uploading static files(html, css, javascript) created by jekyll to github page. in other words, we can not create and use server-side-source. so we are not also able to create simple email feature on github page and jekyll.
 
-[formspree service](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"} helps static page like above situation to be able to create sending email feature. this blog post introduces how to apply formspree service to jekyll for sending email feature.
+[formspree service](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"} helps static page like above situation to be able to create sending email feature. this blog post introduces how to apply formspree service to jekyll for sending email feature.
 
 ## formspree service
 we can use formspree service without joining up. click below link to go formspree service site.
 
-- formspree service site: [https://formspree.io/](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"}
+- formspree service site: [https://formspree.io/](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"}
 
 ## use formspree service
 you can see below screen when you click above link to move formspree service.
@@ -74,4 +74,4 @@ set email title using above code.
 everything is completed. go to your site and send email for test.
 
 ## reference
-- official site: [formspree service](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"}
+- official site: [formspree service](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"}

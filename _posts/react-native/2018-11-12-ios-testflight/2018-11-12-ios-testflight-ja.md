@@ -26,7 +26,7 @@ iOSは開発したアプリをリリースする前自分のテスターまた�
 ## リリース用アプリ生成
 アップルが提供してる```TestFlight```を使ってアプリをテストする場合アプリストアコネクト(Apple Store Connect)にリリース用アプリを生成する必要があります。下記のリンクを押してアプリストアコネクト(App Store Connect)へ移動します。
 
-- アプリストアコネクト(App Store Connect): [https://appstoreconnect.apple.com/](https://appstoreconnect.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- アプリストアコネクト(App Store Connect): [https://appstoreconnect.apple.com/](https://appstoreconnect.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![App Store Connect](/assets/images/category/react-native/ios-testflight/app-store-connect.png)
 

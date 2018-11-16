@@ -21,7 +21,7 @@ image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 開発者アカウント生成とデバイスとの連携は以前のブログを参考してください。([デバイステスト]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}) ここにはRN(react native)のプロジェクトをリリースするためのビルド方法とビルドしたファイルをデバイスでテストする方法について紹介します。
 
 ### リリースビルド準備
-公式サイト([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" :target="_blank"})へ全ての説明があります。それを見ながらやってみます。
+公式サイト([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" target="_blank"})へ全ての説明があります。それを見ながらやってみます。
 
 #### HTTPS通信の設定
 アップルはアプリが外部のシステムと```HTTP```通信をする時```HTTPS```で通信しないとダメになる機能を入れました。しかし、RN(react native)を開発する時はPCに開発サーバーを立ち上げてそのサーバーと通信してアプリを起動するのでRN(react native)は基本この機能を無効化してます。実際ビルドしてリリースすると開発サーバーとは通信しないのでこの無効化してる部分を消す必要があります。RN(react native)のプロジェクトフォルダから```/ios/プロジェクト名/info.plist```のファイルを開いて下記の部分を探して消します。
@@ -85,4 +85,4 @@ xcodeが実行されたら上部のメニューから```Product```メニュー�
 
 デバイステストとは違ってjs(javascript)がビルドされたbundleファイルを使うのでMacとアイホンが同じWifi/Network上へある必要とインストールした後デバイスがMacと接続してる必要がありません。しかし、正式にインストールではないので一定期間が経過すると、そのアプリを使うことが出来ません。
 ## 参考
-- 公式サイト: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- 公式サイト: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" target="_blank"}

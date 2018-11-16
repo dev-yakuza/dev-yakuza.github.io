@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/app-icon.jpg'
 
 
 ## 概要
-mac osx上で [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }を使ってアプリアイコンを作る方法を説明します。
+mac osx上で [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }を使ってアプリアイコンを作る方法を説明します。
 
 ## イメージ準備
 アプリアイコンで使う1024x1024pxサイズのイメージを準備します。
@@ -23,7 +23,7 @@ mac osx上で [generator-rn-toolbox](https://github.com/bamlab/generator-rn-tool
 
 {% include_relative common/installation.md %}
 
-- generator-rn-toolbox: RNのプロジェクトを助けてくれるツールを提供してるライブラリです。詳しくは公式サイトを参考して下さい。（公式サイト：[generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }）
+- generator-rn-toolbox: RNのプロジェクトを助けてくれるツールを提供してるライブラリです。詳しくは公式サイトを参考して下さい。（公式サイト：[generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }）
 - yo: generator-rn-toolboxを起動するためのライブラリです。
 
 アプリアイコンを生成するためには```imagemagick```のインストールが必要です。
@@ -42,4 +42,4 @@ mac osx上で [generator-rn-toolbox](https://github.com/bamlab/generator-rn-tool
 アイコンがちゃんと表示できない方はシミュレータまたは端末のアプリを削除してもう一度プロジェクトを実行して見てください。
 
 ## 参考
-- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }

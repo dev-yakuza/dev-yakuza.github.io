@@ -18,7 +18,7 @@ image: '/assets/images/category/react-native/ios-certification.jpg'
 今から開発者の証明書(Certification)を生成して設定する方法について説明します。
 
 ## 証明書ダウンロード
-アップル開発者プログラム(Apple Developer Program)を購入して購入完了メールをもらったらアップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})の```Account```ページへ移動します。
+アップル開発者プログラム(Apple Developer Program)を購入して購入完了メールをもらったらアップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})の```Account```ページへ移動します。
 
 ![apple developer site after enrolling](/assets/images/category/react-native/ios-certification/apple-developer-site-after-enrolling.png)
 
@@ -55,7 +55,7 @@ Macで```キーチェーンアクセス```プログラムを実行します。
 
 ![download certification](/assets/images/category/react-native/ios-certification/download-certification.png)
 
-アップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})の```Account```ページで```Certificates, IDs & Profiles```メニューを押して証明書登録サイトへ移動します。そこで右上にある```+```ボタンを押します。
+アップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})の```Account```ページで```Certificates, IDs & Profiles```メニューを押して証明書登録サイトへ移動します。そこで右上にある```+```ボタンを押します。
 
 ![certification selection](/assets/images/category/react-native/ios-certification/select-certification.png)
 

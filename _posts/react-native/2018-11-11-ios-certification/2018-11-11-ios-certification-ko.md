@@ -18,7 +18,7 @@ image: '/assets/images/category/react-native/ios-certification.jpg'
 그럼 개발자 인증서(Certification)을 생성하고 설정하는 방법에 대해 알아보겠습니다.
 
 ## 인증서 다운로드
-애플 개발자 프로그램(Apple Developer Program)을 구매하고 구매 완료 이메일을 받았다면 애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})의 ```Account``` 페이지로 이동합니다.
+애플 개발자 프로그램(Apple Developer Program)을 구매하고 구매 완료 이메일을 받았다면 애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})의 ```Account``` 페이지로 이동합니다.
 
 ![apple developer site after enrolling](/assets/images/category/react-native/ios-certification/apple-developer-site-after-enrolling.png)
 
@@ -55,7 +55,7 @@ Mac에서 ```키체인 접근``` 프로그램을 실행 시킵니다.
 
 ![download certification](/assets/images/category/react-native/ios-certification/download-certification.png)
 
-애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})에 ```Account``` 페이지에서 ```Certificates, IDs & Profiles```를 눌러 이동했던 사이트에 오른쪽 위에 ```+```버튼을 누릅니다.
+애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})에 ```Account``` 페이지에서 ```Certificates, IDs & Profiles```를 눌러 이동했던 사이트에 오른쪽 위에 ```+```버튼을 누릅니다.
 
 ![certification selection](/assets/images/category/react-native/ios-certification/select-certification.png)
 

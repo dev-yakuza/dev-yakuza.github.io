@@ -12,7 +12,7 @@ image: '/assets/images/category/jekyll/pagination.jpg'
 ---
 
 ## outline
-jekyll basically provides pagination plugin but we use [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" :target="_blank"}.
+jekyll basically provides pagination plugin but we use [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" target="_blank"}.
 this blog introduces how to use jekyll-paginate-v2.
 
 ## plugin installation and configuration
@@ -29,7 +29,7 @@ write below contents to ```_config.yml``` file.
 {% include_relative common/config_yml.md %}
 
 - permalink: this is page default link. if this is not set, plugin is not working.
-- pagination: these are plugin options. if you want more informations, see officail site.([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"})
+- pagination: these are plugin options. if you want more informations, see officail site.([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"})
 - enabled: activate plugin.
 - per_page: post count per page.
 - sort_reverse: indicates whether to reverse sort. we set `` `true``` for newest.
@@ -57,5 +57,5 @@ configure below option to the pages called from pagination.(ex> post page)
 - paginate_path: options for including page number in the url of the page called from pagination.
 
 ## reference
-- official site: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
-- official site - options: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
+- official site: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}
+- official site - options: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}

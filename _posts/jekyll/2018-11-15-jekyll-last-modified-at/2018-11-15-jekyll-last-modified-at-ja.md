@@ -21,7 +21,7 @@ image: '/assets/images/category/jekyll/jekyll-last-modified-at.jpg'
 ## プラグイン
 下にあるリンクを押して```jekyll-last-modified-at```のサイトへ行ったら全ての説明が詳しくあります。それを見ながらやってみます。
 
-- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" :target="_blank"}
+- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" target="_blank"}
 
 ## プラグインインストル
 下のコマンドで```jekyll-last-modified-at```ぷログインをインストールします。

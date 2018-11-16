@@ -49,7 +49,7 @@ git init
 
 우리의 블로그 git 저장소(Repository)를 clone하는 것을 예로 들어 설명하겠습니다.
 
-- git 저장소(Repository): [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" :target="_blank"}
+- git 저장소(Repository): [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" target="_blank"}
 
 위에 링크를 눌러 github에서 저장하고 있는 우리의 git 저장소(Repository)로 이동합니다.
 

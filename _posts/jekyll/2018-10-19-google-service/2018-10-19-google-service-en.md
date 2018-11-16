@@ -16,14 +16,14 @@ if you want to gather the money or the insight from your blog, we think integrat
 
 we will introduce below service.
 
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 ## Google Analytics
 if you want to analyze your site, we recommend to use Google Analytics service. click below link to go to the service site and sigin with google account.
 
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
 
 after login, you can see below screen. click ```sign up``` button to go to next step.
 
@@ -42,7 +42,7 @@ warning: above code is test code for the example. don't copy-paste. copy-paste y
 ## Google Search Console
 if we register our site to Google Search Console, the site is able to be searched on Google. click below link to go to the Google Search Console site.
 
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
 
 click ```Start now``` to starting Google Search Console when you see below screen.
 
@@ -75,7 +75,7 @@ we thought we can not be rich by the blog but we need to practice to integrate G
 
 click below link to go to the Google Adsense service site.
 
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 click ```sign up``` for registering Google Adsense service.
 
@@ -94,6 +94,6 @@ so if you are in same situation, try to make contents(pages).
 if many users see our blog or click the advertisement on the blog, Google Adsense gives us the money like above screen. we can withdraw that if that is more than a certain amount(¥8,000). when we withdraw that, we will write the blog about how to withdraw it.
 
 ## reference
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}

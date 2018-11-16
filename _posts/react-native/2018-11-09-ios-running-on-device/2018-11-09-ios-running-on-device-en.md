@@ -21,7 +21,7 @@ in here, we will introduce how to build RN(react native) project and how to test
 if you don't know how to create developer account and connect the device to Mac, see previous blog.([device test]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}) in here, we will only introduce how to build RN(react native) project for production and how to test the built file on the device.
 
 ### prepare to build
-we are not English native so your English is better than us. if you don't like our poor English, just see official site([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" :target="_blank"}). there are all details about how to build for production. we will introduce how to build by following that.
+we are not English native so your English is better than us. if you don't like our poor English, just see official site([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" target="_blank"}). there are all details about how to build for production. we will introduce how to build by following that.
 
 #### configure HTTPS protocol
 Apple added the feature for security reason. if this is activated, all HTTP requests(not HTTPS requests) are rejected. but when RN(react native) is on development, RN(react native) executes dev-server on Local PC and communicates by HTTP request so RN(react native) basically disabled this feature. however, RN(react native) is built and executed on production, it doesn't communicate with dev-server so we need to delete disable code. find below code at ```/ios/projectname/info.plist``` in RN(react native) project folder and delete them.
@@ -86,4 +86,4 @@ completed all settings. let's check the built file on the device. connect the de
 it is not necessary that Mac and the device are same Wifi/Network enviroment like device test and doesn't need to connect the device to Mac after installation because RN(react native) uses the bundle file.however, this is not formal installation so the app will not be available after a certain period time.
 
 ## reference
-- official site: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- official site: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" target="_blank"}

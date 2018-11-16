@@ -27,7 +27,7 @@ react-navigationライブラリを下記のコマンドでインストールし�
 
 ## 使い方
 react-navigationを使うたくさんの方法が公式サイトへ詳しく載せております。ここには私たちが実際プロジェクトを進めながら使った内容をちょっとちょっと追加する予定です。
-- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
 
 ### stack navigation
 基本的スタックナビゲーションを使う方法です。
@@ -48,4 +48,4 @@ react-navigationを使うたくさんの方法が公式サイトへ詳しく載�
 - { header: null }: navigation header barを非表示します。
 
 ## 参考
-- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }

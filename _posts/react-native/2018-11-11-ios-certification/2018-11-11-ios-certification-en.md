@@ -19,7 +19,7 @@ if you don't enroll Apple Developer Program, see previous blog post [enroll iOS 
 let's see how to create iOS developer certification and configure it.
 
 ## donwload certification
-if you get purchase approved email from Apple after buying Apple Developer Program, go to ```Account``` page on Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})
+if you get purchase approved email from Apple after buying Apple Developer Program, go to ```Account``` page on Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})
 
 ![apple developer site after enrolling](/assets/images/category/react-native/ios-certification/apple-developer-site-after-enrolling.png)
 
@@ -56,7 +56,7 @@ completed to create KeyChain Certification file.
 
 ![download certification](/assets/images/category/react-native/ios-certification/download-certification.png)
 
-go to ```Account``` page in Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}) and select ```Certificates, IDs & Profiles``` menu. click ```+``` button on the right top of the screen.
+go to ```Account``` page in Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}) and select ```Certificates, IDs & Profiles``` menu. click ```+``` button on the right top of the screen.
 
 ![certification selection](/assets/images/category/react-native/ios-certification/select-certification.png)
 

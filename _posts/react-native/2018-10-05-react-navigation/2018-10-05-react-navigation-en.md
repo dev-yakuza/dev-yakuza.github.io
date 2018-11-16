@@ -29,7 +29,7 @@ install react-navigation library via below commands.
 ## how to use
 there are many ways to use react-navigation at the official site. we will add how to use react-navigation which we really apply our project.
 
-- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
 
 ### stack navigation
 this is how to use basic stack navigation.
@@ -50,4 +50,4 @@ you can hide navigation bar with below code
 - { header: null }: hide navigation header bar.
 
 ## reference
-- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }

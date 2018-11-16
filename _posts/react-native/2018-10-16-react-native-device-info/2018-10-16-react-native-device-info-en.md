@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/react-native-device-info.jpg'
 
 
 ## outline
-we apply [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" :target="_blank" } library to RN project for getting user's device informations.
+we apply [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" target="_blank" } library to RN project for getting user's device informations.
 
 ## react-native-device-info library installation
 install react-native-device-info with below code.
@@ -28,7 +28,7 @@ finish to install, link react-native-device-info library to the project with bel
 we only write a blog post if we have used libraries. so we will add contents to here when we use.
 
 if you want to knwo how to use, see official site.
-- official site: [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" target="_blank" }
 
 ## device locale
 how to get device locale.
@@ -36,4 +36,4 @@ how to get device locale.
 {% include_relative common/usage.md %}
 
 ## reference
-- official site: [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" target="_blank" }

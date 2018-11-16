@@ -49,7 +49,7 @@ if you have existing project(Opensource or project already managed by git), you 
 
 we introduce how to clone(copy) git project using our blog git repository.
 
-- our git repository: [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" :target="_blank"}
+- our git repository: [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" target="_blank"}
 
 click the above link to go to the our git repository in github.
 

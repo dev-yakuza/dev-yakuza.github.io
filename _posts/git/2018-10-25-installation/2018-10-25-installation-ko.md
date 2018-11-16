@@ -24,7 +24,7 @@ git을 사용하기 위해서는 먼저 git을 PC에 설치해야합니다. OS�
 ## git을 Mac에 설치
 git을 Mac에 설치하기 위해 아래에 링크를 클릭해 설치 파일을 다운로드합니다.
 
-- 다운로드 링크: [https://git-scm.com/download/mac](https://git-scm.com/download/mac){:rel="nofollow noreferrer" :target="_blank"}
+- 다운로드 링크: [https://git-scm.com/download/mac](https://git-scm.com/download/mac){:rel="nofollow noreferrer" target="_blank"}
 
 자동으로 다운로드가 시작되지 않으시면 ```click here to download manually``` 링크를 눌러 다운로드를 해 주세요.
 
@@ -41,7 +41,7 @@ git --version
 ## git을 Windows에 설치
 git을 Windows에 설치하기 위해 아래에 링크를 클릭해 설치 파일을 다운로드합니다.
 
-- 다운로드 링크: [https://gitforwindows.org/](https://gitforwindows.org/){:rel="nofollow noreferrer" :target="_blank"}
+- 다운로드 링크: [https://gitforwindows.org/](https://gitforwindows.org/){:rel="nofollow noreferrer" target="_blank"}
 
 ![git download for windows](/assets/images/category/git/installation/download_windows.png)
 

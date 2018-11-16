@@ -18,7 +18,7 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 ## 애플 개발자 프로그램 등록
 애플 개발자 프로그램(Apple developer program)에 등록하기 위해 아래에 링크를 눌러 애플 개발자(Apple developer) 사이트로 이동합니다.
 
-- 애플 개발자(Apple developer) 사이트: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- 애플 개발자(Apple developer) 사이트: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-enroll-developer-program/apple-developer-site.png)
 
@@ -53,4 +53,4 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 이제 구매 화면을 보실 수 있습니다. ```Purchase```버튼을 눌러 구매합니다. 구매 절차는 설명을 생략하도록 하겠습니다.
 
 ## 완료
-구매 절차를 모두 완료했습니다. 구매가 정식적으로 완료되면 애플로부터 구매 완료 메일이 옵니다. 구매후 구매 완료까지 조금 시간이 걸립니다. 아무리 기다려도 구매 완료 메일이 오지 않는 분은 애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})에 로그인한 후 왼쪽 메뉴에서 ```Contact Us```를 누르고 ```멤버십 및 계정``` 메뉴를선택한 다음 ```프로그램 구입 및 갱신```을 누르고 ```전화받기```를 눌러 전화로 상담하시면 바로 구매 완료 메일을 받으실 수 있습니다.
+구매 절차를 모두 완료했습니다. 구매가 정식적으로 완료되면 애플로부터 구매 완료 메일이 옵니다. 구매후 구매 완료까지 조금 시간이 걸립니다. 아무리 기다려도 구매 완료 메일이 오지 않는 분은 애플 개발자 사이트([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})에 로그인한 후 왼쪽 메뉴에서 ```Contact Us```를 누르고 ```멤버십 및 계정``` 메뉴를선택한 다음 ```프로그램 구입 및 갱신```을 누르고 ```전화받기```를 눌러 전화로 상담하시면 바로 구매 완료 메일을 받으실 수 있습니다.

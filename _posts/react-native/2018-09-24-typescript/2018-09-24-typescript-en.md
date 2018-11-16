@@ -39,8 +39,8 @@ create ```tsconfig.json``` in the project root folder and copy-paste below conte
 {% include_relative common/tsconfig_json.md %}
 
 if you want more detail, see official website.
-- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" :target="_blank"}
-- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" :target="_blank"}
+- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
+- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
 
 ### create tslint.json
 configure tslint to help typescript development. create ```tslint.json``` in the project root folder and copy-paste below contents.
@@ -48,11 +48,11 @@ configure tslint to help typescript development. create ```tslint.json``` in the
 {% include_relative common/tslint_json.md %}
 
 if you want more detail, see official website.
-- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" :target="_blank"}
-- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" :target="_blank"}
+- [typescript - tslint](https://github.com/Microsoft/TypeScript-React-Starter#overriding-defaults){:rel="nofollow noreferrer" target="_blank"}
+- [tslint - configuration](https://palantir.github.io/tslint/usage/configuration/){:rel="nofollow noreferrer" target="_blank"}
 
 ### create rn-cli.config.js
-we got the comment(```No need for rn-cli.config.js anymore since v0.57```) on facebook from [Bruno Lemos](https://www.facebook.com/brunolemos?fref=gc&dti=586400221495560){:rel="nofollow noreferrer" :target="_blank"} and we checked it. it doesn't need anymore to create ```rn-cli.config.js``` since RN(react-native) version 0.57.
+we got the comment(```No need for rn-cli.config.js anymore since v0.57```) on facebook from [Bruno Lemos](https://www.facebook.com/brunolemos?fref=gc&dti=586400221495560){:rel="nofollow noreferrer" target="_blank"} and we checked it. it doesn't need anymore to create ```rn-cli.config.js``` since RN(react-native) version 0.57.
 
 ~~this setting help RN to recognize typescript at runtime. create ```rn-cli.config.js``` file in the project root folder and copy-paste below contents.~~
 

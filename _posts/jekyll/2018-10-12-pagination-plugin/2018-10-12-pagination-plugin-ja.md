@@ -12,7 +12,7 @@ image: '/assets/images/category/jekyll/pagination.jpg'
 ---
 
 ## 概要
-jekyllは基本的にpaginationプラグインを提供してますが、私たちは[jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" :target="_blank"}を使っています。
+jekyllは基本的にpaginationプラグインを提供してますが、私たちは[jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" target="_blank"}を使っています。
 このブログはjekyll-paginate-v2の使用法について説明します。
 
 ## プラグインのインストールや設定
@@ -29,7 +29,7 @@ jekyll-paginate-v2プラグインをインストールしてプレジェクト�
 {% include_relative common/config_yml.md %}
 
 - permalink: ページの基本リンクです。このリンクがないとプラグインがうまく動作しません。
-- pagination: プラグインの設定オプションです。詳しく内容は公式サイトをご参考してください。([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"})
+- pagination: プラグインの設定オプションです。詳しく内容は公式サイトをご参考してください。([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"})
 - enabled: プラグインを有効化します。
 - per_page: ページごとに表示するポスト数です。
 - sort_reverse: 逆整列をするかどうかを意味します。私たちは最近順でポストを表示するため```true```で設定します。
@@ -57,5 +57,5 @@ paginationを表示するためpaginationを持ってるページ(ex> category�
 - paginate_path: paginationから呼ばれる時ページの番号をリンクへ入れるための設定です。
 
 ## 参考
-- 公式サイト: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
-- 公式サイトのオプション説明: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
+- 公式サイト: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}
+- 公式サイトのオプション説明: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}

@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/react-native/react-native-analytics-bridge/'
 paginate_path: '/react-native/:num/react-native-analytics-bridge/'
@@ -8,16 +7,16 @@ categories: 'react-native'
 comments: true
 
 title: 'Google Analytics'
-description: 'RN(react native)에 구글 애널리틱스(Google Analytics)를 이용하여 앱을 분석해 봅시다.'
+description: 'RN(react native)로 개발한 앱을 구글 애널리틱스(Google Analytics)를 이용하여 앱을 분석해 봅시다.'
 image: '/assets/images/category/react-native/react-native-analytics-bridge.jpg'
 ---
 
 
 ## 개요
-구글 애널리틱스([Google Analytics](https://marketingplatform.google.com/about/analytics/){:rel="nofollow noreferrer" :target="_blank"})를 사용하여 RN(react native)로 제작한 앱을 분석할 수 있습니다. 구글 애널리틱스(Google Analytics)를 이용하여 RN(react native)를 분석해 봅시다.
+구글 애널리틱스([Google Analytics](https://marketingplatform.google.com/about/analytics/){:rel="nofollow noreferrer" target="_blank"})를 사용하여 RN(react native)로 제작한 앱을 분석할 수 있습니다. 구글 애널리틱스(Google Analytics)를 이용하여 RN(react native)를 분석해 봅시다.
 
-## 라이브러리 인스톨
-RN(react native)와 구글 애널리틱스(Google Analytics)를 연동하기 위해서는 [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" :target="_blank"} 라이브러리를 설치해야 합니다. 아래에 코드를 이용하여 ```GoogleAnalyticsBridge``` 라이브러리를 설치해 주십시오.
+## 라이브러리 설치
+RN(react native)와 구글 애널리틱스(Google Analytics)를 연동하기 위해서는 [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" target="_blank"} 라이브러리를 설치해야 합니다. 아래에 코드를 이용하여 ```GoogleAnalyticsBridge``` 라이브러리를 설치해 주십시오.
 
 ```bash
 npm install --save react-native-google-analytics-bridge
@@ -34,9 +33,9 @@ react-native-google-analytics-bridge 라이브러리를 사용할 준비가 되�
 ## Google Analytics
 아래에 링크를 눌러 구글 애널리틱스(Google Analytics)로 이동하여 로그인합니다.
 
-- 구글 애널리틱스(Google Analytics): [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
+- 구글 애널리틱스(Google Analytics): [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
 
-로그인후 왼쪽 하단의 ```accounts``` 메뉴를 선택합니다.
+로그인후 왼쪽 하단의 ```Admin``` 메뉴를 선택합니다.
 
 ![create account for mobile](/assets/images/category/react-native/react-native-analytics-bridge/create-account-for-mobile.png)
 
@@ -64,7 +63,7 @@ tracker.trackScreenView("Home");
 ...
 ```
 
-네, 이제 전부입니다. 간단하죠? 아래 코드에 자식의 구글 애널리틱스(Google Analytics) 트랙킹 아이디(Tracking ID)를 입력합니다.
+네, 이제 전부입니다. 간단하죠? 아래 코드에 자신의 구글 애널리틱스(Google Analytics) 트랙킹 아이디(Tracking ID)를 입력합니다.
 
 ```js
 new GoogleAnalyticsTracker("자신의 트랙킹 아이디")
@@ -80,7 +79,7 @@ tracker.trackScreenView("Home");
 
 좀 더 깊은 분석을 하고 싶은 분은 공식 홈페이지를 참조해서 react-native-google-analytics-bridge의 다양한 기능을 활용해 보세요.
 
-- [react-native-google-analytics-bridge](https://github.com/idehub/react-native-google-analytics-bridge#usage){:rel="nofollow noreferrer" :target="_blank"}
+- [react-native-google-analytics-bridge](https://github.com/idehub/react-native-google-analytics-bridge#usage){:rel="nofollow noreferrer" target="_blank"}
 
 ## 참고
-- 공식 사이트: [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" :target="_blank"}
+- 공식 사이트: [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" target="_blank"}

@@ -21,7 +21,7 @@ image: '/assets/images/category/jekyll/jekyll-last-modified-at.jpg'
 ## 플러그인
 아래에 링크를 클릭하여 ```jekyll-last-modified-at``` 사이트로 이동하면 모든 설명이 자세히 나와있습니다. 한번 따라해 보도록 하겠습니다.
 
-- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" :target="_blank"}
+- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" target="_blank"}
 
 ## 플러그인 설치
 아래에 명령어를 이용하여 ```jekyll-last-modified-at``` 플러그인을 설치합니다.

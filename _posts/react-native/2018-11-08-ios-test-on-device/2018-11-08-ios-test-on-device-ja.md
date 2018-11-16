@@ -25,7 +25,7 @@ RN(react native)で開発したプロジェクトをシミュレータでテス�
 
 下のリンクを押してアップル開発者アカウント(Apple developer account)生成サイトに行きます。
 
-- アップル開発者アカウント(Apple developer account): [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- アップル開発者アカウント(Apple developer account): [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-test-on-device/apple-developer-site.png)
 
@@ -44,7 +44,7 @@ RN(react native)で開発したプロジェクトをシミュレータでテス�
 アップル開発者アカウント(Apple developer account)の生成が終わりました。
 
 ### デバイステスト
-公式サイト([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"})へ全ての内容が詳しく載せております。やってみましょう。
+公式サイト([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"})へ全ての内容が詳しく載せております。やってみましょう。
 
 1. USBを使ってテストしたいデバイスとMacを接続します。
 1. RN(react native)プロジェクトがあるフォルダへ```ios/[プロジェクト名].xcodeproj```ファイルを実行します。
@@ -81,4 +81,4 @@ RN(react native)で開発したプロジェクトをシミュレータでテス�
 
 
 ## 参考
-- 公式サイト: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- 公式サイト: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"}

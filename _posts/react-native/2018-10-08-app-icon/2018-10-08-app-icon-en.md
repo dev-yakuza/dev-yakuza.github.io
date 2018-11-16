@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/app-icon.jpg'
 
 
 ## outline
-this blog introduces how to make app icon by using [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" } on Mac osx
+this blog introduces how to make app icon by using [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" } on Mac osx
 
 ## prepare app icon image
 prepare 1024x1024px size png image for app icon.
@@ -23,7 +23,7 @@ install reuqired libraries using below code.
 
 {% include_relative common/installation.md %}
 
-- generator-rn-toolbox: this is tools for support RN projects. if you want to know details, see official site.(official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" })
+- generator-rn-toolbox: this is tools for support RN projects. if you want to know details, see official site.(official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" })
 - yo: this is a library for executing generator-rn-toolbox library.
 
 you should install ```imagemagick``` for creating app icons.
@@ -42,4 +42,4 @@ done! app icons were created and applied to the project. let's check it by execu
 if app icons is not applied, remove your app from the simulator or phone and try again.
 
 ## reference
-- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }

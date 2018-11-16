@@ -37,7 +37,7 @@ iOSアプリストア(App Store)へ登録するためには下記の項目が必
 
 ここで一番難しい項目はプライバシーポリシーURLです。下のリンクはプライバシーポリシーを作る時参考したサイトです。
 
-- プライバシーポリシー: [https://kiyaku.jp/hinagata/privacy.html](https://kiyaku.jp/hinagata/privacy.html){:rel="nofollow noreferrer" :target="_blank"}
+- プライバシーポリシー: [https://kiyaku.jp/hinagata/privacy.html](https://kiyaku.jp/hinagata/privacy.html){:rel="nofollow noreferrer" target="_blank"}
 
 上のリンクを押してプライバシーポリシーを作ってみてください。
 
@@ -51,8 +51,8 @@ iOSアプリストア(App Store)へ登録するためには下記の項目が必
 ## 審査指針
 皆さんもよくしてると思いますがアップルの審査は厳しいです。私たちも簡単なアプリですが今三回落ちって、まだ待てる状態です。下記のリンクはアップルの審査指針です。よく読んでアップルの審査にお落ちないように準備しましょう。
 
-- 審査指針: [https://developer.apple.com/jp/app-store/review/guidelines/](https://developer.apple.com/jp/app-store/review/guidelines/){:rel="nofollow noreferrer" :target="_blank"}
+- 審査指針: [https://developer.apple.com/jp/app-store/review/guidelines/](https://developer.apple.com/jp/app-store/review/guidelines/){:rel="nofollow noreferrer" target="_blank"}
 
 ## 参考
-- スクリンショットサイズ: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" :target="_blank"}
-- アプリプレビューサイズ: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" :target="_blank"}
+- スクリンショットサイズ: [https://help.apple.com](https://help.apple.com/app-store-connect/#/devd274dd925){:rel="nofollow noreferrer" target="_blank"}
+- アプリプレビューサイズ: [https://help.apple.com](https://help.apple.com/app-store-connect/#/dev4e413fcb8){:rel="nofollow noreferrer" target="_blank"}

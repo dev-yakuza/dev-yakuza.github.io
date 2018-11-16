@@ -21,7 +21,7 @@ image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 개발자 생성 및 디바이스와의 연결은 이전 블로그를 참고해주세요.([디바이스 테스트]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}) 여기서는 RN(react native) 프로젝트를 배포하기 위해 빌드하는 방법과 빌드된 파일을 디바이스에 올려 테스트하는 내용만 다루겠습니다.
 
 ### 배포 빌드 준비
-공식 사이트([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" :target="_blank"})에 모든 설명이 친절하게 나와있습니다. 하나하나 따라해봅시다.
+공식 사이트([react-native](https://facebook.github.io/react-native/docs/ios-running-on-device#building-your-app-for-production){:rel="nofollow noreferrer" target="_blank"})에 모든 설명이 친절하게 나와있습니다. 하나하나 따라해봅시다.
 
 #### HTTPS 통신 설정
 애플에서 어플이 외부와 ```HTTP``` 통신을 할때는 ```HTTPS```로 통신을 하지 않으면 통신이 불가하도록 설정하는 기능을 넣었다고 합니다. 하지만 RN(react native)를 개발할때는 로컬에 개발 서버를 띄우고 개발 서버와 통신하여 어플을 기동하므로 RN(react native)는 이 기능을 기본적으로 사용하지 않도록 설정해놨습니다. 하지만 실제 빌드하여 제공할 때는 개발 서버를 이용하지 않으므로 이 부분을 제거할 필요가 있습니다. RN(react native) 프로젝트 폴더에서 ```/ios/프로젝트명/info.plist``` 파일을 열어 아래에 부분을 찾아 제거합니다.
@@ -86,4 +86,4 @@ xcode가 실행되면 상단 메뉴에서 ```Product``` 메뉴에 ```Scheme``` �
 디바이스에서 테스트와 달리 js(javascript)가 빌드된 bundle 파일을 사용하기 때문에 Mac과 아이폰이 같은 Wifi/Network상에 존재할 필요가 없으며 인스톨후에 Mac과 디바이스가 연결되어 있을 필요가 없습니다. 하지만 정식 인스톨이 아니기 때문에 일정 기간이 지나면 해당 어플을 사용할 수 없습니다.
 
 ## 참고
-- 공식 사이트: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- 공식 사이트: [react native](https://facebook.github.io/react-native/docs/ios-running-on-device){:rel="nofollow noreferrer" target="_blank"}

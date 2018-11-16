@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/splash-image.jpg'
 
 
 ## outline
-we introduce how to generate splash images created by [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" } on mac osx.
+we introduce how to generate splash images created by [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" } on mac osx.
 
 ## libaray installation
 if you want to know how to install generator-rn-toolbox library, see previous blog post [App icon]({{site.url}}/{{page.categories}}/app-icon/){:target="_blank"}.
@@ -26,7 +26,7 @@ we use sketchapp for design but it is impossible to export psd file from sketcha
 
 1. design splash image by sketchapp.
 1. export splash image to pdf on sketchapp.
-1. search 'pdf to psd converter' on the internet for converting the file.(we use this [site](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" :target="_blank" })
+1. search 'pdf to psd converter' on the internet for converting the file.(we use this [site](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" target="_blank" })
 
 ## set splash image
 create and set splash image by below code on cmd.
@@ -41,4 +41,4 @@ splash image is created and applied to the project. let's check splash image is 
 if splash image is not showing up, remove your app from the simulator or phone and do again.
 
 ## reference
-- official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

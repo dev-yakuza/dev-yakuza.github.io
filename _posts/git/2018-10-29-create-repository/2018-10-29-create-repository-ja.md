@@ -49,7 +49,7 @@ git init
 
 下記は私たちのブログのgitリポジトリ(Repository)をcloneすることで説明します。
 
-- gitリポジトリ(Repository): [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" :target="_blank"}
+- gitリポジトリ(Repository): [https://github.com/dev-yakuza/dev-yakuza.github.io](https://github.com/dev-yakuza/dev-yakuza.github.io){:rel="nofollow noreferrer" target="_blank"}
 
 上のリンクを押してgithubで保存している私たちのgitリポジトリ(Repository)へ移動します。
 

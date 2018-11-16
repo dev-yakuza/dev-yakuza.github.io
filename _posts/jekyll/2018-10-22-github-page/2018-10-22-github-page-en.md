@@ -13,7 +13,7 @@ image: '/assets/images/category/jekyll/github-page.jpg'
 
 ## outline
 let's start blog service by uploading jekyll project to github page.
-we manage basic source code by [bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"} and upload static page which is built by jekyll to [github](https://github.com/){:rel="nofollow noreferrer" :target="_blank"} for the blog service.
+we manage basic source code by [bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"} and upload static page which is built by jekyll to [github](https://github.com/){:rel="nofollow noreferrer" target="_blank"} for the blog service.
 
 if you don't know how to make jekyll project, check my previous blogs.
 
@@ -36,7 +36,7 @@ bitbucket is source control(version control) service like github. there are many
 
 click below link to go to bitbucket.
 
-- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}
+- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}
 
 ### signup and signin
 we don't introduce how to signup and signin. it's same process to signup and signin to normal service.
@@ -73,7 +73,7 @@ clone the repository with the above command. copy jekyll project to the created 
 
 push the local(pc) source to bitbucket repository with the above command.
 
-go to the [bitbucket site](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"} and check the source which you pushed.
+go to the [bitbucket site](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"} and check the source which you pushed.
 
 ## integrate github page
 let's upload the static files built by jekyll to github page for starting blog service.
@@ -83,7 +83,7 @@ click the below link to go to the github site and signup and signin. we don't in
 
 warning: when you sigup, be careful to make ```username```. we make github blog service with ```https://username.github.io```.
 
-- github site: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" :target="_blank"}
+- github site: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![github login](/assets/images/category/jekyll/github-page/github-login.png)
 

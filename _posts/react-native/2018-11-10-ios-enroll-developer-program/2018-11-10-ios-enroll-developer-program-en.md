@@ -18,7 +18,7 @@ until now, we studied how to develop the app on RN(react native) and how to test
 ## enroll Apple Developer Program
 click below link to go to Apple Developer site for enrolling Apple Developer Program.
 
-- Apple developer site: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- Apple developer site: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-enroll-developer-program/apple-developer-site.png)
 
@@ -54,4 +54,4 @@ check your information and click ```Continue``` button.
 you can see purchase screen. click ```Purchase``` button. we will skip the explanation of the purchase procedure.
 
 ## completed
-completed purchase procedure. if purchase is approved, you can get email from Apple. it takes a time between purchase and purchase approvement. if you can't get email from Apple after long time, go to Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}) and click ```Account``` menu. click ```Contact Us``` menu on Account page and contact Apple.
+completed purchase procedure. if purchase is approved, you can get email from Apple. it takes a time between purchase and purchase approvement. if you can't get email from Apple after long time, go to Apple Developer site([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}) and click ```Account``` menu. click ```Contact Us``` menu on Account page and contact Apple.

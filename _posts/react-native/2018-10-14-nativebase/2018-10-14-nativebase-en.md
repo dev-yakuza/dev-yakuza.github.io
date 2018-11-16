@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/nativebase.jpg'
 
 
 ## outline
-let's apply [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" } which is material ui components to RN project.
+let's apply [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" } which is material ui components to RN project.
 
 ## library installation
 install NativeBase library with below code
@@ -28,7 +28,7 @@ after installing, link the library to the project with below code.
 we only write a blog post if we have used libraries. so we will add contents to here when we use.
 
 if you want to knwo how to use, see official site.
-- official site: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }
 
 ## ActionSheet
 if you want to use ActionSheet feature, you should wrap root component of the project by NativeBase's ```<Root>``` component.
@@ -46,4 +46,4 @@ write below code to display ActionSheet.
 - (buttonIndex: number) => { alert(buttonIndex); }: if button is selected, selected button index is passed.
 
 ## reference
-- official site: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- official site: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }

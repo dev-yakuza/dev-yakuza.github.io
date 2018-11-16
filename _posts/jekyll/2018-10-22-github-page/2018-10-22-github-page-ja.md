@@ -12,7 +12,7 @@ image: '/assets/images/category/jekyll/github-page.jpg'
 ---
 
 ## 概要
-今まで作ったjekyllプロジェクトをgithub pageへアップロードしてブログを始めてみましょう。基本ソースは[bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}で管理する予定でjekyllからbuildされたstaticページを[github](https://github.com/){:rel="nofollow noreferrer" :target="_blank"}へアップロードしてサービスする予定です。
+今まで作ったjekyllプロジェクトをgithub pageへアップロードしてブログを始めてみましょう。基本ソースは[bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}で管理する予定でjekyllからbuildされたstaticページを[github](https://github.com/){:rel="nofollow noreferrer" target="_blank"}へアップロードしてサービスする予定です。
 
 jekyllを使ってプロジェクトを作る方法をよく知らない方は以前のブログを確認してください。
 
@@ -35,7 +35,7 @@ bitbucketもgithubのようにrepositoryを管理するツールです。機能�
 
 下記のリンクを押してbitbucketへ移動します。
 
-- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}
+- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}
 
 ### 会員登録とログイン
 会員登録とログインの説明は省略します。一般的サービスと同じ手順ですので会員登録とログインをしてください。
@@ -72,7 +72,7 @@ repositoryが生成されたら上の画面が見えます。PCとの連動に�
 
 上のコマンドでlocal(pc)にあるソースをbitbucketへあるrepositoryへアップロードします。
 
-[bitbucketサイト](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}で移動して自分が追加したjekyllプロジェクトのソースがあるかどうか確認します。
+[bitbucketサイト](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}で移動して自分が追加したjekyllプロジェクトのソースがあるかどうか確認します。
 
 ## github page連動
 github pageにはjekyllがビルドしたstaticファイルをアップロードしてブログサービスを始まります。
@@ -82,7 +82,7 @@ github pageにはjekyllがビルドしたstaticファイルをアップロード
 
 注意；会員登録する時```ユーザ名```には注意してください。```https://ユーザ名.github.io```でgithub pageを作る予定です。
 
-- githubサイト: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" :target="_blank"}
+- githubサイト: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![github login](/assets/images/category/jekyll/github-page/github-login.png)
 

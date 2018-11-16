@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/splash-image.jpg'
 
 
 ## 개요
-mac osx에서 [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }를 사용하여 splash 이미지를 만드는 방법을 설명하겠습니다.
+mac osx에서 [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }를 사용하여 splash 이미지를 만드는 방법을 설명하겠습니다.
 
 ## 라이브러리 설치
 generator-rn-toolbox 라이브러리 설치는 이전 블로그 [App icon]({{site.url}}/{{page.categories}}/app-icon/){:target="_blank"}을 참고하시기 바랍니다.
@@ -26,7 +26,7 @@ splash 이미지로 사용할 2208x2208px 사이즈에 psd 파일을 준비합�
 
 1. sketchapp으로 splash 이미지 디자인하기
 1. 디자인한 splash 이미지를 pdf로 내보내기
-1. 인터넷에서 pdf to psd converter를 검색하여 온라인 변환 사이트를 찾습니다.(우리가 사용한 [사이트](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" :target="_blank" })
+1. 인터넷에서 pdf to psd converter를 검색하여 온라인 변환 사이트를 찾습니다.(우리가 사용한 [사이트](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" target="_blank" })
 
 ## splash 설정하기
 아래에 명령어를 이용하여 각 os에 맞는 splash 이미지를 생성합니다.
@@ -41,4 +41,4 @@ splash 이미지가 생성되어 프로젝트에 반영되었습니다. 프로�
 splash 이미지가 제대로 표시되지 않는 경우 시뮬레이터/단말기에서 어플을 지우고 다시 실행해 보시길 바랍니다.
 
 ## 참고
-- 공식 사이트: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" :target="_blank" }
+- 공식 사이트: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

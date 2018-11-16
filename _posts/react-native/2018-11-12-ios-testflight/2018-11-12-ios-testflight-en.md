@@ -26,7 +26,7 @@ if you don't know how to enroll Apple Developer Program or how to configure cert
 ## create App
 we need to create new App to Apple Store Connect to use ```TestFlight```. click below link to go to Apple Store Connect.
 
-- App Store Connect: [https://appstoreconnect.apple.com/](https://appstoreconnect.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- App Store Connect: [https://appstoreconnect.apple.com/](https://appstoreconnect.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![App Store Connect](/assets/images/category/react-native/ios-testflight/app-store-connect.png)
 

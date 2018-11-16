@@ -13,12 +13,12 @@ image: '/assets/images/category/react-native/react-native-admob.jpg'
 
 
 ## outline
-google has the advertisement platforms those are Adsense([https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}) and Admob([https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" :target="_blank"}). in here we talk about how to display Google Admob advertisement to RN(react-native).
+google has the advertisement platforms those are Adsense([https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}) and Admob([https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" target="_blank"}). in here we talk about how to display Google Admob advertisement to RN(react-native).
 
 the difference between Google Adsense and Admob is that Adsense is for the website platform and Admob is for the smartphone application. we already used Adsense on this blog website. if you want to know how to use Google Adsense to the website, see another blog([google service]({{site.url}}/jekyll/google-service/)).
 
 ## install library
-install [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" :target="_blank" } library for using Google Admob at RN(react native).
+install [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" target="_blank" } library for using Google Admob at RN(react native).
 
 ```bash
 npm install react-native-admob@next --save
@@ -33,11 +33,11 @@ react-native link react-native-admob
 ### install SDK for iOS
 to use Google Admob on iOS, we need to install ```Google Mobile Ads SDK```. click below link to see how to install ```Google Mobile Ads SDK```.
 
-- Google Mobile Ads SDK: [https://developers.google.com/admob/ios/quick-start](https://developers.google.com/admob/ios/quick-start#import_the_mobile_ads_sdk){:rel="nofollow noreferrer" :target="_blank" }
+- Google Mobile Ads SDK: [https://developers.google.com/admob/ios/quick-start](https://developers.google.com/admob/ios/quick-start#import_the_mobile_ads_sdk){:rel="nofollow noreferrer" target="_blank" }
 
 we introduce how to install ```Google Mobile Ads SDK``` by downloading the file.
 
-- donwload link: [https://developers.google.com/admob/ios/download](https://developers.google.com/admob/ios/download){:rel="nofollow noreferrer" :target="_blank" }
+- donwload link: [https://developers.google.com/admob/ios/download](https://developers.google.com/admob/ios/download){:rel="nofollow noreferrer" target="_blank" }
 
 click above link to go to the download site and download ```Google Mobile Ads SDK``` file. after downloading, unzip the file.
 
@@ -50,7 +50,7 @@ after executing xcode, right click project name on the left of the top and ```Ad
 ## signup Googld Admob
 go to Google Admob site for signup. it's same process to signup and signin to normal service.
 
-- Google Admob site: [https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" :target="_blank" }
+- Google Admob site: [https://www.google.com/admob/](https://www.google.com/admob/){:rel="nofollow noreferrer" target="_blank" }
 
 ## Google Admob Configuration
 let's check about how to use Google Admob. after signup and signin to Google Admob, you can see below screen.
@@ -135,7 +135,7 @@ copy-paste below code to the position where you want to display Google Admob ban
 />
 ```
 
-- adSize: this is the banner size. details about the banner size, see the official site.([react-native-admob banner size](https://github.com/sbugert/react-native-admob#admobbanner){:rel="nofollow noreferrer" :target="_blank"})
+- adSize: this is the banner size. details about the banner size, see the official site.([react-native-admob banner size](https://github.com/sbugert/react-native-admob#admobbanner){:rel="nofollow noreferrer" target="_blank"})
 - adUnitID: copy-paste Ad Unit ID that we created in Google Admob service.
 - testDevices: test device ID list. we set the simulator ID.
 - onAdFailedToLoad: if the advertisement loading is failed, this is executed.

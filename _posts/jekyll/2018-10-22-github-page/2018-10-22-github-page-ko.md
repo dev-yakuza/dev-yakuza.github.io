@@ -12,7 +12,7 @@ image: '/assets/images/category/jekyll/github-page.jpg'
 ---
 
 ## 개요
-지금까지 만든 jekyll 프로젝트를 github page에 업로드하여 블로그 서비스를 시작해봅시다. 기본적인 소스는 [bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}에서 관리할 예정이고 jekyll에서 build된 static 페이지만 [github](https://github.com/){:rel="nofollow noreferrer" :target="_blank"}에 업로드하여 서비스할 예정입니다.
+지금까지 만든 jekyll 프로젝트를 github page에 업로드하여 블로그 서비스를 시작해봅시다. 기본적인 소스는 [bitbucket](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}에서 관리할 예정이고 jekyll에서 build된 static 페이지만 [github](https://github.com/){:rel="nofollow noreferrer" target="_blank"}에 업로드하여 서비스할 예정입니다.
 
 jekyll을 사용하여 프로젝트를 진행하는 방법에 대해 잘 모르시는 분들은 이전 블로그를 확인해 주세요.
 
@@ -35,7 +35,7 @@ bitbucket도 github과 같이 repository를 관리하는 툴입니다. 많은 �
 
 아래에 링크를 통해 bitbucket으로 이동합니다.
 
-- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}
+- bitbucket: [https://bitbucket.org/](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}
 
 ### 회원 가입 및 로그인
 회원가입과 로그인 부분의 설명은 생략하겠습니다. 보통 서비스 가입과 같은 절차임으로 회원 가입과 로그인을 해주세요.
@@ -72,7 +72,7 @@ repository가 생성이 되면 위와 같은 화면을 볼 수 있습니다. 친
 
 위에 명령어로 local(pc)에 있는 소스를 bitbucket에 있는 repository에 업로드합니다.
 
-[bitbucket 사이트](https://bitbucket.org/){:rel="nofollow noreferrer" :target="_blank"}로 이동하여 자신이 추가한 jekyll 프로젝트의 파일이 잘 있는지 확인합니다.
+[bitbucket 사이트](https://bitbucket.org/){:rel="nofollow noreferrer" target="_blank"}로 이동하여 자신이 추가한 jekyll 프로젝트의 파일이 잘 있는지 확인합니다.
 
 ## github page 연동
 github page에는 jekyll가 빌드된 static 파일을 업로드하여 블로그를 서비스 합니다.
@@ -82,7 +82,7 @@ github page에는 jekyll가 빌드된 static 파일을 업로드하여 블로그
 
 주의: 회원가입시 ```사용자명```에는 주의해주세요. ```https://사용자명.github.io```으로 github page를 서비스할 예정입니다.
 
-- github 사이트: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" :target="_blank"}
+- github 사이트: [https://github.com/](https://github.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![github login](/assets/images/category/jekyll/github-page/github-login.png)
 

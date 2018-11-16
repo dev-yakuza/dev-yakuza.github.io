@@ -25,7 +25,7 @@ RN(react native)로 개발한 프로젝트를 시뮬레이터로만 테스트하
 
 아래에 링크를 눌러 애플 개발자 계정(Apple developer account) 생성 사이트로 이동합니다.
 
-- 애플 개발자 계정(Apple developer account): [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- 애플 개발자 계정(Apple developer account): [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-test-on-device/apple-developer-site.png)
 
@@ -44,7 +44,7 @@ RN(react native)로 개발한 프로젝트를 시뮬레이터로만 테스트하
 애플 개발자 계정(Apple developer account) 생성이 완료되었습니다.
 
 ### 디바이스 테스트
-공식 사이트([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"})에 친절하게 설명이 잘 나와있습니다. 한번 따라해 봅시다.
+공식 사이트([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"})에 친절하게 설명이 잘 나와있습니다. 한번 따라해 봅시다.
 
 1. USB를 이용하여 테스트하고 싶은 디바이스와 Mac을 연결합니다.
 1. RN(react native) 프로젝트가 있는 폴더에 ```ios/[프로젝트명].xcodeproj``` 파일을 실행 시킵니다.
@@ -83,4 +83,4 @@ RN(react native)로 개발한 프로젝트를 시뮬레이터로만 테스트하
     친절하게 설명이 나와있으므로 따라해봅니다. 디바이스의 ```설정```을 실행합니다. ```일반```을 선택하고 ```프로파일 및 기기 관리```를 선택합니다. ```개발자 앱``` 항목에 자신의 애플 개발자 계정(Apple developer account)을 선택하고 ```신뢰함```을 선택합니다. 그리고 xcode에 왼쪽 위에 실행 버튼을 다시 눌러 프로젝트를 실행하면 잘 동작하는 것을 확인할 수 있습니다.
 
 ## 참고
-- 공식 사이트: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- 공식 사이트: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"}

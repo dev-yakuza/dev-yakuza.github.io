@@ -21,7 +21,7 @@ this code for sitemap.xml. this means last modified date of all pages is last bu
 ## plugin
 you can see all details about ```jekyll-last-modified-at``` to click below link. we will introduce how to install and use ```jekyll-last-modified-at```.
 
-- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" :target="_blank"}
+- jekyll-last-modified-at: [https://github.com/gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at){:rel="nofollow noreferrer" target="_blank"}
 
 ## install plugin
 execute below command to install ```jekyll-last-modified-at``` plugin.

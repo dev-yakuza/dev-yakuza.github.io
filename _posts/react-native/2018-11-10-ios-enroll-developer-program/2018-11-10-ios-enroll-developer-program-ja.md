@@ -18,7 +18,7 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 ## アップル開発者プログラム登録
 アップル開発者プログラム(Apple developer program)へ登録するため下のリンクを押してアップル開発者(Apple developer)サイトへ移動します。
 
-- アップル開発者(Apple developer)サイト: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- アップル開発者(Apple developer)サイト: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-enroll-developer-program/apple-developer-site.png)
 
@@ -53,4 +53,4 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 購入の画面が見えます。 ```Purchase```ボタンを押して購入します。購入手続きの説明は省略します。
 
 ## 完了
-購入手続きを完了しました。購入が正式的完了されたらアップルから購入完了メールがきます。購入後、購入完了まで少し時間がかかります。結構待っててもメールが来ない方はアップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"})へログインして```Account```ページの左下の```Contact Us```メニューを押して```メンバーシップおよびアカウント```を押します。```プログラムの購入と更新```を押して```電話```を押して電話で相談したらすぐ完了メールをもらえます。
+購入手続きを完了しました。購入が正式的完了されたらアップルから購入完了メールがきます。購入後、購入完了まで少し時間がかかります。結構待っててもメールが来ない方はアップル開発者サイト([https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"})へログインして```Account```ページの左下の```Contact Us```メニューを押して```メンバーシップおよびアカウント```を押します。```プログラムの購入と更新```を押して```電話```を押して電話で相談したらすぐ完了メールをもらえます。

@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/nativebase.jpg'
 
 
 ## 개요
-RN 프로젝트에 material ui components인 [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }를 적용해 보자.
+RN 프로젝트에 material ui components인 [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }를 적용해 보자.
 
 ## 라이브러리 설치
 아래에 명령어로 NativeBase를 설치합니다.
@@ -28,7 +28,7 @@ RN 프로젝트에 material ui components인 [NativeBase](https://nativebase.io/
 우리는 기본적으로 사용한적이 있는 경우만 블로그로 작성합니다. 따라서 여기에 작성된 내용은 우리가 사용할 때마다 추가될 것입니다.
 
 사용법에 대한 자세한 사항은 공식 홈페이지를 참조하세요.
-- 공식 사이트: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- 공식 사이트: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }
 
 ## ActionSheet
 ActionSheet를 사용하기 위해서는 프로젝트 전체를 NativeBase의 ```<Root>``` 컴포넌트로 감싸줘야 합니다.
@@ -46,4 +46,4 @@ ActionSheet를 표시하고 싶은 부분에 아래와 같이 코딩합니다.
 - (buttonIndex: number) => { alert(buttonIndex); }: 선택된 버튼의 index를 넘겨줍니다.
 
 ## 참고
-- 공식 사이트: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- 공식 사이트: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }

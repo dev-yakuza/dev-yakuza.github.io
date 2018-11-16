@@ -12,13 +12,13 @@ image: '/assets/images/category/jekyll/send-email.jpg'
 ---
 
 ## 概要
-私たちは[github page](https://pages.github.com/){:rel="nofollow noreferrer" :target="_blank"}でブログをサービスしています。jekyllで生成したStaticファイル（html, css, javascript）をgithub pageへアップロードすることでブログをサービスしてます。つまり、サーバーソースの生成や活用してないことです。そのため、一般的にサーバーを通じてメールを送信する簡単な機能もgithubとjekyllを使って作ったサイトでは利用することが不可能です。
+私たちは[github page](https://pages.github.com/){:rel="nofollow noreferrer" target="_blank"}でブログをサービスしています。jekyllで生成したStaticファイル（html, css, javascript）をgithub pageへアップロードすることでブログをサービスしてます。つまり、サーバーソースの生成や活用してないことです。そのため、一般的にサーバーを通じてメールを送信する簡単な機能もgithubとjekyllを使って作ったサイトでは利用することが不可能です。
 
-[formspreeサービス](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"}はこのようなStaticページにメール送信機能を無料で使えるように助けてくれるサービスです。このブログポストではformspreeを使ってjekyllでメールを送信する機能を作る方法を紹介します。
+[formspreeサービス](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"}はこのようなStaticページにメール送信機能を無料で使えるように助けてくれるサービスです。このブログポストではformspreeを使ってjekyllでメールを送信する機能を作る方法を紹介します。
 
 ## formspreeサービス
 formspreeサービスは会員登録しなくても無料で使うことが出来ます。下記のリンクを押してサービスサイトに移動しましょう。
-- formspreeサービス: [https://formspree.io/](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"}
+- formspreeサービス: [https://formspree.io/](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"}
 
 ## formspreeサービスを使う
 formspreeサービスサイトへ移動したら下の画面が見ます。
@@ -72,4 +72,4 @@ formのactionへ```_config.yml```に設定したメールを使うようにし�
 全ての設定が終わりました。実際サイトでメールを送信して確認してください。
 
 ## 参考
-- 公式サイト: [formspreeサービス](https://formspree.io/){:rel="nofollow noreferrer" :target="_blank"}
+- 公式サイト: [formspreeサービス](https://formspree.io/){:rel="nofollow noreferrer" target="_blank"}

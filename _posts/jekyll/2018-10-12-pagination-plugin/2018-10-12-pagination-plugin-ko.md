@@ -12,7 +12,7 @@ image: '/assets/images/category/jekyll/pagination.jpg'
 ---
 
 ## 개요
-jekyll은 기본적으로 pagination 플러그인을 제공하지만 우리는 [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" :target="_blank"}을 사용하고 있습니다.
+jekyll은 기본적으로 pagination 플러그인을 제공하지만 우리는 [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2){:rel="nofollow noreferrer" target="_blank"}을 사용하고 있습니다.
 이 블로그는 jekyll-paginate-v2의 사용법에 관해 설명합니다.
 
 ## 플러그인 설치 및 설정
@@ -29,7 +29,7 @@ jekyll-paginate-v2 플러그인을 설치하고 프로젝트에 설정합니다.
 {% include_relative common/config_yml.md %}
 
 - permalink: 페이지의 기본 링크입니다. 이 링크가 없으면 플러그인이 제대로 동작하지 않습니다.
-- pagination: 플러그인의 설정 옵션들입니다. 자세한 사항은 공식 사이트를 참고하세요.([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"})
+- pagination: 플러그인의 설정 옵션들입니다. 자세한 사항은 공식 사이트를 참고하세요.([jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"})
 - enabled: 플러그인을 활성화합니다.
 - per_page: 한 페이지에 표시할 갯수를 나타냅니다.
 - sort_reverse: 역정렬을 할지 여부를 나타냅니다. 우리는 최신순으로 표시하기 위해 ```true```로 설정합니다.
@@ -57,5 +57,5 @@ pagination을 표시하기 위해 해당 pagination 기능이 필요한 페이�
 - paginate_path: pagination에 의해 호출될 때 페이지 번호를 링크에 포함하기 위한 설정입니다.
 
 ## 참고
-- 공식 사이트: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
-- 공식 사이트의 옵션 설명: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" :target="_blank"}
+- 공식 사이트: [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}
+- 공식 사이트의 옵션 설명: [jekyll-paginate-v2:options](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md){:rel="nofollow noreferrer" target="_blank"}

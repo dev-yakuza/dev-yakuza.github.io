@@ -13,7 +13,7 @@ image: '/assets/images/category/react-native/nativebase.jpg'
 
 
 ## 概要
-RNプロジェクトへmaterial ui componentsである[NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }を適用して見ましょう。
+RNプロジェクトへmaterial ui componentsである[NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }を適用して見ましょう。
 
 ## ライブラリインストール
 下記のコマンドでNativeBaseをインストールします。
@@ -28,7 +28,7 @@ RNプロジェクトへmaterial ui componentsである[NativeBase](https://nativ
 私たちは基本的使ったことがある場合、ブログを作成します。したがってここには私たちが実際使って分かった内容を追加する予定です。
 
 使い方を詳しく知りたい方は公式サイトを見てください。
-- 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }
 
 ## ActionSheet
 ActionSheetを使うためにはプロジェクト全体をNativeBaseの```<Root>``` component中に入れる必要があります。
@@ -46,4 +46,4 @@ ActionSheetを表示する部分へ下記のようにコーディングします
 - (buttonIndex: number) => { alert(buttonIndex); }: 選択されたボタンのindexを貰えます。
 
 ## 参考
-- 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" :target="_blank" }
+- 公式サイト: [NativeBase](https://nativebase.io/){:rel="nofollow noreferrer" target="_blank" }

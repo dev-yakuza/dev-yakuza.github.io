@@ -41,8 +41,8 @@ styled-components has theme function for maintaining site level styles. let's se
 
 ### Theme usage
 there are details about how to use typescript for theme in official site.
-- officail site: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" :target="_blank"}
-- reference site: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}
+- officail site: [styled-components#typescript](https://www.styled-components.com/docs/api#typescript){:rel="nofollow noreferrer" target="_blank"}
+- reference site: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}
 
 if you see official site and reference site, you can catch we should use relative path for using styled-components.
 
@@ -51,5 +51,5 @@ so, we don't use official site way. we use "dynamic styling using props" way.
 {% include_relative common/theme_usage.md %}
 
 ## reference
-- styled-components official site: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" :target="_blank"}
-- reference site: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" :target="_blank"}
+- styled-components official site: [styled-components](https://www.styled-components.com/docs){:rel="nofollow noreferrer" target="_blank"}
+- reference site: [Styled-Components-Typescript-Example](https://github.com/patrick91/Styled-Components-Typescript-Example){:rel="nofollow noreferrer" target="_blank"}

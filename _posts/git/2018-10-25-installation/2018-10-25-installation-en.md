@@ -24,7 +24,7 @@ before using git, let's install git to PC. install git by following the installa
 ## intsll git on Mac
 click the below link for downloading git installation file for Mac.
 
-- download link: [https://git-scm.com/download/mac](https://git-scm.com/download/mac){:rel="nofollow noreferrer" :target="_blank"}
+- download link: [https://git-scm.com/download/mac](https://git-scm.com/download/mac){:rel="nofollow noreferrer" target="_blank"}
 
 if downloading is not started automatically, click the ```click here to download manually``` link on the site.
 
@@ -41,7 +41,7 @@ git --version
 ## install git to Windows
 click the below link for downloading git installation file for Windows.
 
-- download link: [https://gitforwindows.org/](https://gitforwindows.org/){:rel="nofollow noreferrer" :target="_blank"}
+- download link: [https://gitforwindows.org/](https://gitforwindows.org/){:rel="nofollow noreferrer" target="_blank"}
 
 ![git download for windows](/assets/images/category/git/installation/download_windows.png)
 

@@ -15,14 +15,14 @@ image: '/assets/images/category/jekyll/google-service.jpg'
 자신에 블로그에서 수익을 내거나 더 많은 인사이트를 얻기 위해서는 역시 구글 서비스와 연동이 중요한거 같습니다. 여기에서는 블로그를 더욱 잘 활용할 수 있도록 구글 서비스와 연동해 보도록 하겠습니다.
 
 우리가 여기서 연동할 서비스는 아래와 같습니다.
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 ## Google Analytics
 사이트 분석을 위해서는 기본적으로 Google Analytics를 이용합니다. 아래에 링크를 통해 Google Analytics 사이트로 이동하고 구글 계정으로 로그인 합니다.
 
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
 
 로그인을 하면 아래와 같은 화면을 볼 수 있습니다. ```sign up```을 눌러 다음으로 진행하세요.
 
@@ -43,7 +43,7 @@ Google Analytics 연동이 완료되었습니다. 이제 데이터를 분석하�
 ## Google Search Console
 Google Search Console은 구글 검색 엔진에 사이트를 등록하여 구글에서 검색이 가능하다록 합니다. 아래에 링크를 눌러 Google Search Console로 이동합니다.
 
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
 
 아래와 같은 화면에서 ```Start now```를 눌러 Google Search Console을 시작합니다.
 
@@ -76,7 +76,7 @@ Google Search Console 연동이 끝났습니다. 이제 우리 사이트가 구�
 
 아래에 링크를 통해 Google Adsense 사이트로 이동합니다.
 
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}
 
 Google Adsense 사이트에서 ```sign up```을 눌러 가입합니다.
 
@@ -93,6 +93,6 @@ Google Adsense 사이트에서 ```sign up```을 눌러 가입합니다.
 많은 유저들이 페이지를 보거나 클릭하면 이렇게 Google Adsense로부터 돈이 들어옵니다. 실제로 우리 통장에 입금하기 위해서는 일정 금액(¥8,000)이상이 되어야 입금이 가능합니다. 입금이 가능한 날이 오면 입금 절차도 블로그에 작성하도록 하겠습니다.
 
 ## 참고
-- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" :target="_blank"}
-- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" :target="_blank"}
-- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" :target="_blank"}
+- Google Analytics: [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/){:rel="nofollow noreferrer" target="_blank"}
+- Google Search Console: [https://search.google.com/search-console/about](https://search.google.com/search-console/about){:rel="nofollow noreferrer" target="_blank"}
+- Google Adsense: [https://www.google.com/adsense/start/](https://www.google.com/adsense/start/){:rel="nofollow noreferrer" target="_blank"}

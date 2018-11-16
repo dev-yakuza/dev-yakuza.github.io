@@ -25,7 +25,7 @@ we need Apple developer account to test on devices. this is not enrolling develo
 
 click below link to go to the Apple developer account site.
 
-- Apple developer account site: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" :target="_blank"}
+- Apple developer account site: [https://developer.apple.com/](https://developer.apple.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ![apple developer site](/assets/images/category/react-native/ios-test-on-device/apple-developer-site.png)
 
@@ -44,7 +44,7 @@ after login, you can see agreement. click ```By checking this box I confirm that
 completed to create Apple developer account.
 
 ### test on deveices
-your English is definitely better than us so you can see everything on official site([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}). we do just following it.
+your English is definitely better than us so you can see everything on official site([react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"}). we do just following it.
 
 1. connect the device to Mac using USB.
 1. got to RN(react native) project folder and execute ```ios/[project name].xcodeproj``` file.
@@ -81,4 +81,4 @@ your English is definitely better than us so you can see everything on official 
     there are details what to do. just follow it.
 
 ## reference
-- official site: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" :target="_blank"}
+- official site: [react native](https://facebook.github.io/react-native/docs/running-on-device){:rel="nofollow noreferrer" target="_blank"}
