@@ -81,5 +81,8 @@ if you want to analyze deeply, see official site to check details about react-na
 
 - [react-native-google-analytics-bridge](https://github.com/idehub/react-native-google-analytics-bridge#usage){:rel="nofollow noreferrer" target="_blank"}
 
+## notice
+we decided to use react-native-firebase not only for the app analytics but also many features. if we configure react-native-firebase library for other features, the app analytics is automatically configured. if you want to know how to set react-native-firebase, see [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"} blog post.
+
 ## reference
 - official site: [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" target="_blank"}

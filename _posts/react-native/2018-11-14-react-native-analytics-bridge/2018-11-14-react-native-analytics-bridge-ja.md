@@ -81,5 +81,8 @@ tracker.trackScreenView("Home");
 
 - [react-native-google-analytics-bridge](https://github.com/idehub/react-native-google-analytics-bridge#usage){:rel="nofollow noreferrer" target="_blank"}
 
+## お知らせ
+私たちはアプリの分析だけではなくグーグルのファイアベース(Google firebase)の色んな機能を使うためreact-native-firebaseを使ってアプリを分析することにしました。別の機能のためreact-native-firebaseライブラリを設定するだけで児童にアプリを分析してくれます。react-native-firebaseライブラリの設定に関しては[Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"}のブログをみてください。
+
 ## 参考
 - 公式サイト: [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" target="_blank"}

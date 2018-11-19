@@ -143,5 +143,8 @@ copy-paste below code to the position where you want to display Google Admob ban
 completed to set. execute RN(react native) and check the banner displayed well.
 
 ## Android
-introduce about how to apply on Android, when we develop Android application.
+~~introduce about how to apply on Android, when we develop Android application.~~
+we decided not to use react-native-admob, so we won't add Android parts in here.
 
+## notice
+we decide to use react-native-firebase for Google Admob. if you want to know more informations, see [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"} blog post.

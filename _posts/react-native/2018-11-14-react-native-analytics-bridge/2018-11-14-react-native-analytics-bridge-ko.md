@@ -81,5 +81,8 @@ tracker.trackScreenView("Home");
 
 - [react-native-google-analytics-bridge](https://github.com/idehub/react-native-google-analytics-bridge#usage){:rel="nofollow noreferrer" target="_blank"}
 
+## 알림
+우리는 앱 분석뿐만아니라 구글 파이어베이스(Google firebase)의 다양한 기능을 사용하기 위해서 react-native-firebase를 통해 앱을 분석하기로 했습니다. 다른 기능을 위해 react-native-firebase 라이브러리를 설정하기만 해도 자동으로 앱을 분석해줍니다. react-native-firebase 라이브러리 설정에 관해서는 [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"} 블로그를 참고하시기바랍니다.
+
 ## 참고
 - 공식 사이트: [GoogleAnalyticsBridge](https://github.com/idehub/react-native-google-analytics-bridge#installation-and-linking-libraries){:rel="nofollow noreferrer" target="_blank"}

@@ -140,5 +140,8 @@ import { AdMobBanner } from 'react-native-admob';
 これで設定が終わりました。プロジェクトを実行して広告が上手く表示されるかを確認します。
 
 ## アンドロイド(Android)
-アンドロイド(Android)の部分は実際開発する時、このブログへ追加します。
+~~アンドロイド(Android)の部分は実際開発する時、このブログへ追加します。~~
+現在react-native-admobライブラリを使うことをやめました。したがって、アンドロイド(Android)部分は追加されません。
 
+## お知らせ
+私たちはreact-native-firebaseを使ってグーグルアドモブ(Google Admob)を表示することになりました。詳しく内容は[Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"}のブログを参考してください。

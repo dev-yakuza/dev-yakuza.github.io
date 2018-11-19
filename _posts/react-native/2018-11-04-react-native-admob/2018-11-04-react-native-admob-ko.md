@@ -143,5 +143,9 @@ import { AdMobBanner } from 'react-native-admob';
 
 
 ## 안드로이드(Android)
-안드로이드(Android) 부분은 실제로 개발하여 추가되면 블로그에 추가할 예정입니다.
+~~안드로이드(Android) 부분은 실제로 개발하여 추가되면 블로그에 추가할 예정입니다.~~
+현재 react-native-admob 라이브러리르 사용하지 않기로 했습니다. 따라서 안드로이드(Android)를 부분이 추가되지 않을 예정입니다.
 
+
+## 알림
+우리는 react-native-firebase를 사용하여 구글 애드몹(Google Admob)을 표시하기로 했습니다. 자세한 사항은 [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"} 블로그를 참고하시기바랍니다.
