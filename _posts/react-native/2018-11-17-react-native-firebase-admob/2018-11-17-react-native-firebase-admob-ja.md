@@ -192,7 +192,7 @@ dependencies {
     ...
     implementation "com.google.android.gms:play-services-base:16.0.1"
     implementation 'com.google.firebase:firebase-core:16.0.4'
-    implementation "com.google.firebase:firebase-ads:15.0.1"
+    implementation "com.google.firebase:firebase-ads:16.0.1"
 }
 ```
 
