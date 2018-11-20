@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOSデバイステスト'
-description: 'RN(react native)で開発したプロジェクトをデバイスでテストしてみましょう。'
+description: 'RN(react native)で開発したプロジェクトをiOSデバイスでテストしてみましょう。'
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---
 
@@ -15,10 +15,14 @@ image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ## 概要
 RN(react native)で開発したプロジェクトをシミュレータでテストすることは大変ですね。今まで開発したRN(react native)プロジェkとをシミュレータではなくデバイスでテストしてみましょう。
 
+RN(react native)をアンドロイド(Android)デバイスでテストする方法が知りたい方は[アンドロイドデバイステスト]({{site.url}}/{{page.categories}}/android-test-on-device/){:target="_blank"}を確認してください。
+
 ## iOS / Mac
 アイホンでテストするためにはMacが必要です。Mac、iOSデバイス(アイホン)とテストしたいプロジェクトを準備します。
 
 ![prepare iphone mac](/assets/images/category/react-native/ios-test-on-device/mac-iphone.jpg)
+
+PCでRN(react native)の開発環境を設定する方法が知りたい方は以前のブログ[RNインストール]({{site.url}}/{{page.categories}}/installation/){:target="_blank"}を参考してください。
 
 ### 開発アカウント生成
 デバイスでテストするためにはアップル開発者アカウント(Apple developer account)が必要です。開発者登録じゃなくアカウントの生成なので無料で使うことが可能です。アップル開発者アカウントがある方はこの項目はスキップしても構わないです。

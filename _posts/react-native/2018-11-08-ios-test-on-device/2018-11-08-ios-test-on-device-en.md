@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOS device test'
-description: let's test RN(react native) project on devices
+description: let's test RN(react native) project on iOS devices
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---
 
@@ -15,10 +15,14 @@ image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ## outline
 it is slow and annoyed to test on the simulator, isn't it? let's start to test RN(react native) on devices not the simulator.
 
+if you want to know how to test RN(react native) on Android device, see our another blog post - [Android device test]({{site.url}}/{{page.categories}}/android-test-on-device/){:target="_blank"}.
+
 ## iOS / Mac
 we absolutely need Mac to test RN(react native) project on iPhone. we need to prepare iPhone, Mac and RN(react native) project you want to test.
 
 ![prepare iphone mac](/assets/images/category/react-native/ios-test-on-device/mac-iphone.jpg)
+
+if you want to knwo how to make RN(react native) development enviroment, see another blog post - [RN installation]({{site.url}}/{{page.categories}}/installation/){:target="_blank"}.
 
 ### create developer account
 we need Apple developer account to test on devices. this is not enrolling developer program so it is free to create Apple developer account. if you have Apple developer account, it is better to skip this section.

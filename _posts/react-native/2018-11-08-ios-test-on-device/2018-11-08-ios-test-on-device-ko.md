@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOS 디바이스 테스트'
-description: 'RN(react native)로 개발한 프로젝트를 디바이스에서 테스트해 봅시다.'
+description: 'RN(react native)로 개발한 프로젝트를 iOS 디바이스에서 테스트해 봅시다.'
 image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ---
 
@@ -15,10 +15,14 @@ image: '/assets/images/category/react-native/ios-test-on-device.jpg'
 ## 개요
 RN(react native)로 개발한 프로젝트를 시뮬레이터로만 테스트하기 힘드시죠? 지금까지 개발한 RN(react native) 프로젝트를 시뮬레이터가 아닌 디바이스에서 테스트해 봅시다.
 
+RN(react native)를 안드로이드(Android) 디바이스에서 테스트하는 방법이 궁금하시는 분은 [안드로이드 디바이스 테스트]({{site.url}}/{{page.categories}}/android-test-on-device/){:target="_blank"}를 확인해 주시기 바랍니다.
+
 ## iOS / Mac
 아이폰에서 테스트하려면 Mac이 있어야겠죠. Mac과 iOS 디바이스 그리고 테스트 하고 싶은 프로젝트를 준비합니다.
 
 ![prepare iphone mac](/assets/images/category/react-native/ios-test-on-device/mac-iphone.jpg)
+
+PC에 RN(react native) 개발 환경을 구성하는 방법에 대해서 궁금하신 분은 이전 블로그인 [RN 설치]({{site.url}}/{{page.categories}}/installation/){:target="_blank"}을 참고하시기 바랍니다.
 
 ### 개발자 생성
 디바이스에서 테스트하기 위해서는 애플 개발자 계정(Apple developer account)이 필요합니다. 개발자 등록이 아닌 계정을 생성하는 것이므로 무료로 사용이 가능합니다. 애플 개발자 계정(Apple developer account)이 있으신 분은 이 항목을 넘어가셔도 괜찮습니다.
