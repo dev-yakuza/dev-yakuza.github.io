@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOS 빌드 및 테스트'
-description: 'RN(react native)로 개발한 프로젝트를 빌드하고 디바이스에서 테스트해봅시다.'
+description: 'RN(react native)로 개발한 프로젝트를 iOS용으로 빌드하고 디바이스에서 테스트해봅시다.'
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
 

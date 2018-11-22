@@ -42,5 +42,29 @@ RN(react native)の公式サイトへRN(react native)をアンドロイド(Andro
 
 注意：これはデバイスでテストするための実行です。したがって、エミュレータと同じようにPCへRN(react native)の開発サーバーが立ち上がってそのサーバーとデバイスが連動してテストが出来る仕組みです。したがって同じWifi/ネットワークの環境じゃないとデバイスがサーバーを見つかれないのでテストが出来ないです。
 
+## アンドロイド5.0バージョン以下
+テストするデバイスがアンドロイド(Android)バージョン5.0以下の場合、別の設定をする必要があります。下記にある設定で私たちはアンドロイド4.4.2でRN(react native)プロジェクトを起動してテストしました。
+
+RN(react native)プロジェクトフォルダで```android/app/build.gradle```ファイルを下記のように修正します。
+
+```xml
+defaultConfig {
+    ...
+    ndk {
+        // abiFilters "armeabi-v7a", "x86"
+    }
+}
+```
+
+アンドロイドスタジオ(Android Studio)を開いて```gradle```を```sync```ボタンを押して同期化します。同期化が完了されたらRN(react native)プロジェクトを実行します。
+
+```bash
+react-native run-android
+```
+
+RN(react native)のサーバーがPCで実行されてデバイスにもアプリが上手くインストールされますが、赤画面のエラーが出ます。
+
+デバイスを振って開発者メニュー(Developer Menu)を開きます。開発者メニューで```Dev Settings``` > ```Debug server host & port for device```を選択します。IPアドレスとポート(Port)を入力する画面が出ます。そこに自分のIPと8081ポートを入力します。(ex> 10.0.1.1:8081)また開発者メニューへ戻って```Reload JS```を押してプロジェクトを再起動します。
+
 ## 完了
 アンドロイド(Android)デバイスでRN(react native)を起動する方法を紹介しました。今からは実際のデバイスでテストしてみてください。

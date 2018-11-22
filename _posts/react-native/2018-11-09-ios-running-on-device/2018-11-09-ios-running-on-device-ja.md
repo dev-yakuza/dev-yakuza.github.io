@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOSビルドやテスト'
-description: 'RN(react native)で開発したプロジェクトをビルドしてデバイスでテストしてみましょう。'
+description: 'RN(react native)で開発したプロジェクトをiOS用でビルドしてデバイスでテストしてみましょう。'
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
 

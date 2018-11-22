@@ -152,6 +152,48 @@ RN(react native)プロジェクトの```AppDelete.m```ファイルを上のよ�
 
 アンドロイドパッケージ名(Android Package Name)を入力して```Register app```を押します。
 
+RN(react native)でアンドロイドパッケージ名を修正したい方は下の項目を進んでください。
+
+### アンドロイドパッケージ名修正
+- RN(react native)プロジェクトフォルダで```android/app/BUCK```ファイル修正
+
+  ```xml
+  ...
+  android_build_config(
+      ...
+      package = "package_name",
+  )
+  ...
+  android_resource(
+      ...
+      package = "package_name",
+      ...
+  )
+  ...
+  ```
+
+- RN(react native)プロジェクトフォルダで```android/app/src/main/AndroindManifest.xml```ファイル修正
+
+  ```xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="package_name">
+  ...
+  ```
+
+- RN(react native)プロジェクトフォルダで```android/app/src/main/java/com/ProjectName/MainActivity.java```ファイル修正
+
+  ```java
+  package package_name;
+  ...
+  ```
+
+- RN(react native)プロジェクトフォルダで```android/app/src/main/java/com/ProjectName/MainApplication.java```ファイル修正
+
+  ```java
+  package package_name;
+  ...
+  ```
+
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
 グーグルファイアベース(Google Firebase)が作った```google-services.json```ファイルをRN(react native)プロジェクトの```android/app```フォルダへコピーします。その後、```Next```ボタンを押して次へ移動します。
@@ -254,7 +296,7 @@ render() {
         ...
         <Banner
           unitId="ca-app-pub-7987914246691031/7659403606"
-          size={'FULL_BANNER'}
+          size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
             console.log('Advert loaded');

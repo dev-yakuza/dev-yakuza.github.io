@@ -152,6 +152,48 @@ RN(react native) 프로젝트의 ```AppDelegate.m``` 파일에 위와 같이 코
 
 안드로이드 패키지명(Android Package Name)을 입력하고 ```Register app```을 선택합니다.
 
+RN(react native)에서 안드로이드 패키지명을 수정하고 싶으신 분은 아래에 항목을 진행해 주세요.
+
+### 안드로이드 패키지명 수정
+- RN(react native) 프로젝트 폴더에서 ```android/app/BUCK``` 파일 수정
+
+  ```xml
+  ...
+  android_build_config(
+      ...
+      package = "package_name",
+  )
+  ...
+  android_resource(
+      ...
+      package = "package_name",
+      ...
+  )
+  ...
+  ```
+
+- RN(react native) 프로젝트 폴더에서 ```android/app/src/main/AndroindManifest.xml``` 파일 수정
+
+  ```xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="package_name">
+  ...
+  ```
+
+- RN(react native) 프로젝트 폴더에서 ```android/app/src/main/java/com/ProjectName/MainActivity.java``` 파일 수정
+
+  ```java
+  package package_name;
+  ...
+  ```
+
+- RN(react native) 프로젝트 폴더에서 ```android/app/src/main/java/com/ProjectName/MainApplication.java``` 파일 수정
+
+  ```java
+  package package_name;
+  ...
+  ```
+
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
 구글 파이어베이스(Google Firebase)가 만든 ```google-services.json``` 파일을 RN(react native) 프로젝트의 ```android/app``` 폴더에 복사합니다. 그리고 ```Next```버튼을 눌러 다음 단계로 진행합니다.
@@ -254,7 +296,7 @@ render() {
         ...
         <Banner
           unitId="ca-app-pub-7987914246691031/7659403606"
-          size={'FULL_BANNER'}
+          size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
             console.log('Advert loaded');

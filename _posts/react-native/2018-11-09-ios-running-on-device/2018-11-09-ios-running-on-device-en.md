@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iOS build and test'
-description: let's build RN(react native) for production and test it on the device.
+description: let's build RN(react native) for iOS production and test it on the device.
 image: '/assets/images/category/react-native/ios-running-on-device.jpg'
 ---
 

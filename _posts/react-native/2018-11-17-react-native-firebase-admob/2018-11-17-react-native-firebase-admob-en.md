@@ -150,7 +150,50 @@ click ```+ Add app``` > ```Android icon``` to go to Android project configuratio
 
 ![Google Firebase Android app register](/assets/images/category/react-native/react-native-firebase-admob/register-android.png)
 
-insert Nadroid Package Name and click ```REgister app```.
+insert Nadroid Package Name and click ```Register app```.
+
+if you want to change Android package name in RN(react native), do following section.
+
+### change Android Package name
+- modify ```android/app/BUCK``` file
+
+  ```xml
+  ...
+  android_build_config(
+      ...
+      package = "package_name",
+  )
+  ...
+  android_resource(
+      ...
+      package = "package_name",
+      ...
+  )
+  ...
+  ```
+
+- modify ```android/app/src/main/AndroindManifest.xml``` file
+
+  ```xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="package_name">
+  ...
+  ```
+
+- modify ```android/app/src/main/java/com/ProjectName/MainActivity.java``` file
+
+  ```java
+  package package_name;
+  ...
+  ```
+
+- modify ```android/app/src/main/java/com/ProjectName/MainApplication.java``` file
+
+  ```java
+  package package_name;
+  ...
+  ```
+
 
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
@@ -254,7 +297,7 @@ render() {
         ...
         <Banner
           unitId="ca-app-pub-7987914246691031/7659403606"
-          size={'FULL_BANNER'}
+          size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
             console.log('Advert loaded');
