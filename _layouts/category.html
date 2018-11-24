@@ -57,7 +57,7 @@ layout: default
                 <div class="card-body">
                   <div class="date">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    {{ post.date | date: "%Y-%m-%d" }}
+                    {{ post.last_modified_at | date: "%Y-%m-%d" }}
                   </div>
                   <div class="card-body-content">
                     {{ post.description }}

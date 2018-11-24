@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/react-native/android-running-on-device/'
 paginate_path: '/react-native/:num/android-running-on-device/'
@@ -14,7 +13,7 @@ image: '/assets/images/category/react-native/android-running-on-device.jpg'
 
 
 ## 개요
-지금까지 개발한 RN(react native)를 안드로이드(Android)용으로 빌드하여 디바이스에 올리고 테스트하는 방법을 소개하겠습니다. 여기에서는 Mac(맥)에서 안드로이드(Android)용 서명 키(Signing Key)를 생성하고 빌드할 예정입니다. 윈도우즈(Windows)에서 작업하시는 분들은 공식 홈페이지를 참고하세요. 이 블로그는 RN(react native)의 공식 사이트를 참고하였으며 상세한 설명은 공식 사이트를 참고하시기 바랍니다.
+지금까지 개발한 RN(react native)를 안드로이드(Android)용으로 빌드하여 디바이스에 올리고 테스트하는 방법을 소개하겠습니다. 여기에서는 Mac(맥)에서 안드로이드(Android)용 서명 키(Signing Key)를 생성하고 빌드할 예정입니다. 이 블로그는 RN(react native)의 공식 사이트를 참고하였으며 상세한 설명은 공식 사이트를 참고하시기 바랍니다.
 
 - 공식 사이트: [https://facebook.github.io/react-native/docs/signed-apk-android](https://facebook.github.io/react-native/docs/signed-apk-android){:rel="nofollow noreferrer" target="_blank"}
 
@@ -24,6 +23,7 @@ Mac에서 ```터미널``` 프로그램을 열고 RN(react native) 프로젝트 �
 ```bash
 cd [your path]/android/app
 ```
+
 아래에 명령어를 통해 안드로이드(Android)용 서명 키(Signing Key)를 발급합니다.
 
 ```bash
@@ -52,7 +52,7 @@ Enter key password for <my-key-alias>
     (RETURN if same as keystore password):
 ```
 
-전부 입력을 하고 나면 RN(react native) 프로젝트 폴더 하위에 ```android/app``` 폴더에는 ```my-release-key.keystore``` 파일이 생성된 것을 확인할 수 있습니다.
+전부 입력을 하고 나면 RN(react native) 프로젝트 폴더 하위에 ```android/app``` 폴더에 ```my-release-key.keystore``` 파일이 생성된 것을 확인할 수 있습니다.
 
 ## 서명 키 설정
 서명 키(Signing Key)가 생성되면 ```gradle```에 키를 설정해야합니다. ```android/gradle.properties``` 파일을 열고 아래에 코드를 추가합니다.
@@ -132,14 +132,14 @@ android {
 
 
 ## 빌드된 파일 테스트
-안드로이드(Android)에 기존에 설치된 앱을 삭제하고 아래에 명령어를 실행하여 빌드 파일을 위한 테스트를 진행하세요.
+안드로이드 디바이스(Android Device)에 기존에 설치된 앱을 삭제하고 아래에 명령어를 실행하여 빌드 파일을 위한 테스트를 진행하세요.
 
 ```bash
 react-native run-android --variant=release
 ```
 
 ## 에러 대응
-공식 사이트에 내용을 통해 위와 같이 진행했지만 우리는 실제로 아래와 명령어를 통해
+공식 사이트에 내용을 통해 위와 같이 진행했지만 우리는 실제로 아래와 명령어를 통해 빌드 파일을 생성할 때와
 
 ```bash
 ./gradlew assembleRelease

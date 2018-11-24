@@ -11,7 +11,7 @@
       {%- else -%}
       "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}",
       {%- endif -%}
-      "date": "{{ subPost.date | date_to_xmlschema }}",
+      "date": "{{ subPost.last_modified_at | date_to_xmlschema }}",
       "page": "{{ page | plus:1 }}"
   }
   {%- unless forloop.last -%},{%- endunless -%}
