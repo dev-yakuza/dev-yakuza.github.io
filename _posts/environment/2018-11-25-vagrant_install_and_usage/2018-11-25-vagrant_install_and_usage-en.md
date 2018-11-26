@@ -99,8 +99,8 @@ if you add wrong box, it's possible to delete it by executing below vagrant comm
 vagrant box remove bento/ubuntu-16.04
 ```
 
-## create virtual machine
-execute below vagrant command to create virtual machine using vagrant and added box.
+## create virtual machine setting
+execute below vagrant command to create virtual machine setting using vagrant and added box.
 
 ```bash
 # mkdir create your project folder
@@ -120,8 +120,8 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-## execute virtual machine
-execute below vagrant command to start virtual machine with ```Vagrantfile``` we made above.
+## create virtual machine
+execute below vagrant command to create virtual machine with ```Vagrantfile``` we made above.
 
 ```bash
 vagrant up

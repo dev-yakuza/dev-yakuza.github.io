@@ -99,8 +99,8 @@ vagrant box list
 vagrant box remove bento/ubuntu-16.04
 ```
 
-## 仮想マシン生成
-下記のvagrantコマンドでvagrantと追加したboxを使って仮想マシンを生成します。
+## 仮想マシン設定生成
+下記のvagrantコマンドでvagrantと追加したboxを使って仮想マシンを設定生成します。
 
 ```bash
 # mkdir create your project folder
@@ -120,8 +120,8 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-## 仮想マシン実行
-上で作った```Vagrantfile```を下のvagrantコマンドでvagrantを使って仮想マシンを実行します。
+## 仮想マシン生成
+上で作った```Vagrantfile```を下のvagrantコマンドでvagrantを使って仮想マシンを生成します。
 
 ```bash
 vagrant up
