@@ -2,7 +2,7 @@
 layout: 'category'
 permalink: '/react-native/'
 lang: 'ko'
-categories: 'development'
+categories: 'frontend'
 is_main_category: true
 pagination:
   enabled: true

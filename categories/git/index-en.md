@@ -12,5 +12,5 @@ pagination:
 title: 'git'
 description: 'until now I am using git for the work but I never study it. from now, I will study and write how to use it.'
 image: '/assets/images/category/git/background.jpg'
-see_more: 'more'
+see_more: 'see more'
 ---
