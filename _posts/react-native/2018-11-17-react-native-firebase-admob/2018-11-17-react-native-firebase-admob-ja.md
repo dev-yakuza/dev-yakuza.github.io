@@ -249,7 +249,9 @@ com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = 
 最後に```android/app/src/main/java/com/[app name]/MainApplication.java```ファイルへ下のソースを追加します。
 
 ```java
-import com.google.android.gms.ads.MobileAds;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 
 @Override
 protected List<ReactPackage> getPackages() {
@@ -257,6 +259,7 @@ protected List<ReactPackage> getPackages() {
     ...
     new RNFirebasePackage(),
     new RNFirebaseAdMobPackage(),
+    new RNFirebaseAnalyticsPackage(),
     ...
   );
 }

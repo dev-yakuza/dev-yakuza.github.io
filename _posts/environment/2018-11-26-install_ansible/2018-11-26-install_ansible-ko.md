@@ -18,5 +18,21 @@ image: '/assets/images/category/environment/install-ansible.jpg'
 
 이 블로그 포스트는 PC에 virtualbox, vagrant가 설치되어 있는 환경을 대상으로 하며 virtualbox, vagarnt에 설치 방법은 이전 블로그인 [vagrant 설치 및 사용법]({{site.url}}/{{page.categories}}/vagrant-install-and-usage/){:target="_blank"}를 확인해 주세요.
 
-## 가상 머신 생성
-아래에 vagrant 명령어를 통해 가상 머신을 생성합니다.
+## 가상 머신 설정 생성
+아래에 vagrant 명령어를 통해 가상 머신을 설정 생성합니다.
+
+```bash
+vagrant init bento/ubuntu-16.04
+```
+
+명령어를 실행한 폴더에 ```Vagrantfile``` 파일이 생성된 것을 확인할 수 있습니다. 아래는 주석 처리(```#```)가 된 부분을 제외한 ```Vagrantfile```의 내용입니다.
+
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-16.04"
+end
+```
+

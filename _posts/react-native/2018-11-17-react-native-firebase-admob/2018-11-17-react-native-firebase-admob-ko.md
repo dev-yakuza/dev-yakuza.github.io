@@ -249,7 +249,9 @@ com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = 
 마지막으로 ```android/app/src/main/java/com/[app name]/MainApplication.java``` 파일에 아래와 같이 소스를 추가합니다.
 
 ```java
-import com.google.android.gms.ads.MobileAds;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 
 @Override
 protected List<ReactPackage> getPackages() {
@@ -257,6 +259,7 @@ protected List<ReactPackage> getPackages() {
     ...
     new RNFirebasePackage(),
     new RNFirebaseAdMobPackage(),
+    new RNFirebaseAnalyticsPackage(),
     ...
   );
 }
