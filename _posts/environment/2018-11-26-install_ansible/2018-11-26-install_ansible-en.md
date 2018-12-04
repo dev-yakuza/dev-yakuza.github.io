@@ -140,4 +140,4 @@ ansible 2.7.2
 ```
 
 ## completed
-in here, we introduced how to install Ansible to vagrant by Vagrantfile. if Ansible masters saw this blog, maybe they say why do we need to install Ansible to vagrant? not local PC(host system)? normally people install Ansible to local machine(host system) and they use Ansible to configure the infrastructure for virtual machine(guest system) but windows OS doesn't support Ansible yet so we decided to do above process. next blog, we will introduce how to use Ansible to configure Laravel development environment in virtual machine(guest system).
+in here, we introduced how to install Ansible to vagrant by Vagrantfile. if Ansible masters saw this blog, maybe they say why do we need to install Ansible to vagrant? not local PC(host system)? normally people install Ansible to local machine(host system) and they use Ansible to configure the infrastructure for virtual machine(guest system) but windows OS doesn't support Ansible yet so we decided to do above process. next blog, we will introduce how to use Ansible to configure development environment in virtual machine(guest system).
