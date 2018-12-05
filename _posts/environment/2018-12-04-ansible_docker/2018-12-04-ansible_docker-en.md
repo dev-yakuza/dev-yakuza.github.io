@@ -72,15 +72,13 @@ add below codes to ```docker/tasks/main.yml``` we created.
 
 - name: Change privilege of docker
   become: true
-  command: chmod +x /usr/bin/docker
+  file: dest=/usr/bin/docker mode=+x
 
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
 let's see Ansible commands one by one.
@@ -105,20 +103,14 @@ this command is to install Docker by using Docker install script.
 this is to change user and permission of Docker.
 
 ```yml
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
-this command is to install Docker Compose
-
-```yml
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
-```
-
-this is to change Docker Compose Permission
+this command is to install python docker module and Docker Compose
 
 ## execute Ansible
 execute below Ansible command in virtual machine(guest system) to execute Docker installation ```role``` we added in Ansible Playbook above.

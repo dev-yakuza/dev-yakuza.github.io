@@ -79,12 +79,20 @@ image: '/assets/images/category/environment/ansible-playbook.jpg'
     update_cache: yes
     cache_valid_time: 86400
 
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+
 - name: Install basic packages
   become: true
   apt:
     pkg:
-        - git
-        - unzip
+      - git
+      - unzip
+      - python3.6
+      - python-pip
+      - python3-pip
+      - fabric
     state: present
     update_cache: yes
 ```
@@ -127,17 +135,29 @@ image: '/assets/images/category/environment/ansible-playbook.jpg'
 리눅스 팩키지 관리 도구인 ```apt-get```을 최신 상태로 업데이트 합니다. ```become: true```를 통해 관리자(root) 권한으로 이 앤서블(Ansible) 명령어를 실행합니다.
 
 ```yml
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+```
+
+앤서블(Ansible)의 모듈중에 파이썬(python)에 의존하는 모듈들이 있어 파이썬(python)을 설치할 필요가 있습니다. 파이썬(python)을 설치하기 위해 파이썬 저장소(repository)를 추가합니다.
+
+```yml
 - name: Install basic packages
   become: true
   apt:
     pkg:
         - git
         - unzip
+        - python3.6
+        - python-pip
+        - python3-pip
+        - fabric
     state: present
     update_cache: yes
 ```
 
-앞으로 필요한 기본 프로그램(git, unzip)을 설치합니다.
+앞으로 필요한 기본 프로그램(git, unzip)과 파이썬(python) 관련 프로그램을 설치합니다.
 
 ## Vagrantfile 수정
 기존의 ```Vagrantfile```에 아래에 내용을 추가합니다.

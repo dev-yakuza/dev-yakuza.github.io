@@ -79,12 +79,20 @@ image: '/assets/images/category/environment/ansible-playbook.jpg'
     update_cache: yes
     cache_valid_time: 86400
 
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+
 - name: Install basic packages
   become: true
   apt:
     pkg:
-        - git
-        - unzip
+      - git
+      - unzip
+      - python3.6
+      - python-pip
+      - python3-pip
+      - fabric
     state: present
     update_cache: yes
 ```
@@ -127,17 +135,29 @@ image: '/assets/images/category/environment/ansible-playbook.jpg'
 Linuxのパッケージ管理ツールの```apt-get```をアップデートします。```become: true```で管理者権限(root)でこのアンシブル(Ansible)コマンドを実行します。
 
 ```yml
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+```
+
+アンシブル(Ansible)のモジュール中でパイソン(python)に依存するモジュールがあってパイソン(python)をインストールする必要があります。パイソン(python)をインストールするためパイソンのレポジトリ(repository)を追加します。
+
+```yml
 - name: Install basic packages
   become: true
   apt:
     pkg:
         - git
         - unzip
+        - python3.6
+        - python-pip
+        - python3-pip
+        - fabric
     state: present
     update_cache: yes
 ```
 
-あとで必要な基本プログラム(git, unzip)をインストールします。
+あとで必要な基本プログラム(git, unzip)とパイソン(python)と関係あるプログラムをインストールします。
 
 ## Vagrantfile修正
 既存の```Vagrantfile```に下記の内容を追加します。

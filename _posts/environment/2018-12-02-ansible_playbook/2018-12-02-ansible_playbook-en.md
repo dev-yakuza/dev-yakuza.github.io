@@ -79,12 +79,20 @@ create ```init/tasks/main.yml``` in ```ansible``` folder and modify it like belo
     update_cache: yes
     cache_valid_time: 86400
 
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+
 - name: Install basic packages
   become: true
   apt:
     pkg:
-        - git
-        - unzip
+      - git
+      - unzip
+      - python3.6
+      - python-pip
+      - python3-pip
+      - fabric
     state: present
     update_cache: yes
 ```
@@ -128,17 +136,28 @@ set local server timezone.
 update linux package management tool(```apt-get```). ```become: true``` executes Ansible command by root permission.
 
 ```yml
+- name: Add python3.6 repo
+  apt_repository:
+    repo: 'ppa:jonathonf/python-3.6'
+```
+Ansible has some modules depend on python so we need to install python. add python repository for installing.
+
+```yml
 - name: Install basic packages
   become: true
   apt:
     pkg:
         - git
         - unzip
+        - python3.6
+        - python-pip
+        - python3-pip
+        - fabric
     state: present
     update_cache: yes
 ```
 
-install git, unzip programs for later.
+install git, unzip programs and python programs for later.
 
 ## modify Vagrantfile
 add below to ```Vagrantfile```

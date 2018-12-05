@@ -72,15 +72,13 @@ image: '/assets/images/category/environment/ansible-docker.jpg'
 
 - name: Change privilege of docker
   become: true
-  command: chmod +x /usr/bin/docker
+  file: dest=/usr/bin/docker mode=+x
 
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
 今からアンシブル(Ansible)コマンドを1つずつ見ます。
@@ -105,20 +103,14 @@ image: '/assets/images/category/environment/ansible-docker.jpg'
 ドッカー(Docker)のユーザーや権限を変更します。
 
 ```yml
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
-ドッカーコンポーズ(Docker Compose)をインストールします。
-
-```yml
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
-```
-
-ドッカーコンポーズ(Docker Compose)の権限を変更します。
+パイソン(python)のpipを使ってパイソンドッカーモジュール(python docker module)とドッカーコンポーズ(Docker Compose)をインストールします。
 
 ## アンシブル実行
 上でアンシブルプレイブック(Ansible Playbook)へ追加したドッカー(Docker)インストール```role```を実行するため下のアンシブル(Ansible)コマンドを仮想マシン(guest system)で実行します。

@@ -72,15 +72,13 @@ image: '/assets/images/category/environment/ansible-docker.jpg'
 
 - name: Change privilege of docker
   become: true
-  command: chmod +x /usr/bin/docker
+  file: dest=/usr/bin/docker mode=+x
 
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
 이제 앤시블(Ansible) 명령어를 하나씩 자세히 보겠습니다.
@@ -105,20 +103,14 @@ image: '/assets/images/category/environment/ansible-docker.jpg'
 도커(Docker)의 사용자와 권한을 변경합니다.
 
 ```yml
-- name: Install docker-compose
-  become: true
-  shell: curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+- name: python docker / docker-compse module
+  pip:
+    name:
+        - docker
+        - docker-compose
 ```
 
-도커 컴포즈(Docker Compose)를 설치합니다.
-
-```yml
-- name: Change privilege of docker-compose
-  become: true
-  command: chmod +x /usr/local/bin/docker-compose
-```
-
-도커 컴포즈(Docker Compose)의 권한을 변경합니다.
+파이썬(python)의 pip를 이용해 파이썬 도커 모듈(python docker module)과 도커 컴포즈(Docker Compose)를 설치합니다.
 
 ## 앤서블 실행
 위에서 앤서블 플레이북(Ansible Playbook)에 추가한 도커(Docker) 설치 ```role```을 실행하기 위해 아래에 앤서블(Ansible) 명령어를 가상 머신(guest system)에서 실행합니다.
