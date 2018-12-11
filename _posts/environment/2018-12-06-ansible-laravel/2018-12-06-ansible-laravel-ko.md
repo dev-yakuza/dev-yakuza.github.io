@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/environment/ansible-laravel/'
 paginate_path: '/environment/:num/ansible-laravel/'
@@ -145,7 +144,7 @@ php7.2와 라라벨(Laravel) 설치 및 실행에 필요한 php모듈들을 설�
   tags: php
 ```
 
-composer 설치에 앞서 composer가 실행 파일이 존재하는지 체크한 후 그 결과를 ```composer_bin```에 저장합니다.
+composer 설치에 앞서 composer의 실행 파일이 존재하는지 체크한 후 그 결과를 ```composer_bin```에 저장합니다.
 
 ```yml
 - block:
@@ -180,7 +179,6 @@ composer 설치 스크립트를 이용하여 ```/usr/local/bin```에 composer를
 ```
 
 설치된 composer 파일(```composer.phar```)의 이름을 ```composer```로 변경합니다.
-
 
 ```yml
 - name: make composer executable
@@ -227,7 +225,7 @@ composer create-project laravel/laravel app
 ```
 
 ## 라라벨 프로젝트 설정
-우리는 이전 시간에 라라독(Laradock) 설치 ```role```에서 아래와 같이 작성하였습니다.
+우리는 이전 블로그([앤서블&라라독]({{site.url}}/{{page.categories}}/ansible-laradock/){:target="_blank"})에서 라라독(Laradock) 설치 ```role```을 아래와 같이 작성하였습니다.
 
 ```yml
 ...
@@ -241,16 +239,16 @@ composer create-project laravel/laravel app
 ...
 ```
 
-이 부분의 의해 라라독(Laradock)의 workspace 도커(Docker)가 생성될 때 ```/vagrant/app``` 폴더와 동기화되도록 설정한 부부입니다. 따라서 우리는 새로운 프로젝트를 ```/vagrant``` 폴더에 ```/app```이라는 폴더명으로 생성하였습니다. 여러분이 기존에 라라벨(Laravel) 프로젝트를 가지고 계신다면 해당 프로젝트를 ```/vagrant/app``` 폴더로 복사하거나 이전 시간에 만든 라라독(Laradock)의 ```role```중에 위에 해당하는 부분을 여러분의 라라벨(Laravel) 프로젝트 폴더로 지정하여 사용하시기 바랍니다.
+이 부분에서 라라독(Laradock)의 workspace 도커(Docker)가 생성될 때 ```/vagrant/app``` 폴더와 동기화되도록 설정하였습니다. 따라서 우리는 새로운 프로젝트를 ```/vagrant``` 폴더에 ```/app```이라는 폴더명으로 생성하였습니다. 여러분이 기존에 라라벨(Laravel) 프로젝트를 가지고 계신다면 해당 프로젝트를 ```/vagrant/app``` 폴더로 복사하거나 이전 시간에 만든 라라독(Laradock)의 ```role```중에 위에 해당하는 부분을 여러분의 라라벨(Laravel) 프로젝트 폴더로 지정하여 사용하시기 바랍니다.
 
 ## 라라벨 프로젝트 확인
 이제 다시 localhost에 접속하면 아래와 같이 라라벨(Laravel)의 기본 화면이 보이는 것을 확인할 수 있습니다.
 
 ![laravel first page](/assets/images/category/environment/ansible-laravel/laravel.png)
 
-라라벨(Laravel) 설정이 제대로 되지 않았다면 아래와 같은 에러 화면이 나옵니다.
+라라벨(Laravel) 설정이 제대로 되지 않았다면 아래와 같은 500 에러 화면이 나옵니다.
 
-![laravel 500 error page](/assets/images/category/environment/ansible-laravel/larave_error.png)
+![laravel 500 error page](/assets/images/category/environment/ansible-laravel/laravel_error.png)
 
 라라벨(Laravel) 설정중 아래에 항목들을 빼먹었는지 확인해봅니다. ```composer create-project laravel/laravel app``` 명령어로 라라벨(Laravel) 프로젝트를 새로 생성하였다면 아래에 설정은 자동으로 진행됩니다.
 
@@ -271,7 +269,6 @@ cp .env.example .env
 ```bash
 php artisan key:generate
 ```
-
 
 ## phpmyadmin
 데이터베이스를 다루기 위해 설치한 ```phpmyadmin```에 접속해 봅니다. ```localhost:8080```으로 접속하면 ```phpmyadmin```화면이 보입니다.
@@ -312,7 +309,7 @@ DB_PASSWORD=secret
 ...
 ```
 
-이 부분을 아래와 같이 수정합니다. ```DB_DATABASE```와 ```DB_PASSWORD``` 부분은 여러분이 설정한 암호를 입력합니다.
+이 부분을 아래와 같이 수정합니다. ```DB_DATABASE```와 ```DB_PASSWORD``` 부분은 여러분이 설정한 내용을 입력합니다.
 
 ```bash
 ...
@@ -325,7 +322,7 @@ DB_PASSWORD=*******
 ...
 ```
 
-이렇게 수정하였다면 아래에 라라벨(Laravel) 명령어를 통해 기본적인 사용자 테이블(Table)을 생성해 봅니다.
+이렇게 수정하였다면 아래에 라라벨(Laravel) 명령어를 통해 라라벨(Laravel)이 기본적으로 제공하는 사용자 테이블(User Table)을 생성해 봅니다.
 
 ```bash
 # vagrant ssh
@@ -333,9 +330,16 @@ DB_PASSWORD=*******
 php artisan migrate
 ```
 
-## 완료
-vagrant, 앤서블(Ansible), 라라독(Laradock)을 이용하여 라라벨(Laravel) 개발 환경을 구축해보았습니다. 또한 이번 개발 환경 구축을 통해 앤서블(Ansible)과 도커(Docker)를 살짝 맛보았습니다. 앤서블(Ansible)과 도커(Docker)를 잘 활용하면 말로만 듣던 ```DevOps```를 할 수 있는 개발자가 되는게 아닌가 싶습니다. 앞으로도 이 [개발 환경]({{site.url}}/{{page.categories}}/){:target="_blank"} 카테고리에는 개발 환경 구축, 도커(Docker), 앤서블(Ansible)과 관련된 내용을 추가할 예정입니다. 또한 라라벨(Laravel)을 개발 관련한 블로그는 이 [라라벨]({{site.url}}/laravel/){:target="_blank"} 카테고리에 작성할 예정이니 많이 참고하시기 바랍니다.
+라라벨(Laravel)이 기본적으로 제공하는 사용자 테이블(User Table)을 사용하지 않을 예정이라면 라라벨(Laravel) 명령어를 통해 생성한 테이블을 제거합니다.
 
+```bash
+php artisan migrate:rollback
+```
+
+## 완료
+vagrant, 앤서블(Ansible), 라라독(Laradock)을 이용하여 라라벨(Laravel) 개발 환경을 구축해보았습니다. 또한 이번 개발 환경 구축을 통해 앤서블(Ansible)과 도커(Docker)를 살짝 맛보았습니다. 앤서블(Ansible)과 도커(Docker)를 잘 활용하면 말로만 듣던 ```DevOps```를 할 수 있는 개발자가 되는게 아닌가 싶습니다.
+
+앞으로도 이 [개발 환경]({{site.url}}/{{page.categories}}/){:target="_blank"} 카테고리에는 개발 환경 구축, 도커(Docker), 앤서블(Ansible)과 관련된 내용을 추가할 예정입니다. 또한 라라벨(Laravel) 개발에 관련한 블로그는 [라라벨]({{site.url}}/laravel/){:target="_blank"} 카테고리에 작성할 예정이니 많이 참고하시기 바랍니다.
 
 ## 참고
 - [https://laradock.io/documentation/](https://laradock.io/documentation/){:rel="nofollow noreferrer" target="_blank"}

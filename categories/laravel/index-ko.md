@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'category'
 permalink: '/laravel/'
 lang: 'ko'
