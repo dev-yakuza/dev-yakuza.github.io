@@ -26,7 +26,7 @@ splash 이미지로 사용할 2208x2208px 사이즈에 psd 파일을 준비합�
 
 1. sketchapp으로 splash 이미지 디자인하기
 1. 디자인한 splash 이미지를 pdf로 내보내기
-1. 인터넷에서 pdf to psd converter를 검색하여 온라인 변환 사이트를 찾습니다.(우리가 사용한 [사이트](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" target="_blank" })
+1. 인터넷에서 pdf to psd converter를 검색하여 온라인 변환 사이트를 찾습니다.(우리가 사용한 [사이트](https://www.pdfconvertonline.com/pdf-to-psd-online.html){:rel="nofollow noreferrer" target="_blank" })
 
 ## splash 설정하기
 아래에 명령어를 이용하여 각 os에 맞는 splash 이미지를 생성합니다.

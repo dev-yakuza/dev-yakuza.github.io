@@ -35,5 +35,21 @@ device locale을 정보를 가져오는 방법.
 
 {% include_relative common/usage.md %}
 
+
+## 에러 대응
+잘 개발을 디바이스에서 랜덤하게 crash가 나는 문제가 발생했다. 시뮬레이터에서도 아래에 같은 메세지가 표시되었다.
+
+```
+RCTBridge required dispatch_sync to load RCTDevLoadingView. This may lead to deadlocks
+```
+
+위에 문제를 해결하기 위해 아래와 같이 ```libRNDeviceInfo.a```를 제일 하단으로 이동시켜 문제를 해결했다.
+
+![RCTBridge required dispatch_sync to load RCTDevLoadingView. error](/assets/images/category/react-native/react-native-device-info/error.png)
+
+아래에 링크는 에러를 고칠때 참고한 내용입니다.
+
+- [github issue](https://github.com/rebeccahughes/react-native-device-info/issues/260#issuecomment-366835600){:rel="nofollow noreferrer" target="_blank" }
+
 ## 참고
 - 공식 사이트: [react-native-device-info](https://github.com/rebeccahughes/react-native-device-info){:rel="nofollow noreferrer" target="_blank" }

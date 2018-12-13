@@ -26,7 +26,7 @@ we use sketchapp for design but it is impossible to export psd file from sketcha
 
 1. design splash image by sketchapp.
 1. export splash image to pdf on sketchapp.
-1. search 'pdf to psd converter' on the internet for converting the file.(we use this [site](https://www.aconvert.com/pdf/pdf-to-psd/){:rel="nofollow noreferrer" target="_blank" })
+1. search 'pdf to psd converter' on the internet for converting the file.(we use this [site](https://www.pdfconvertonline.com/pdf-to-psd-online.html){:rel="nofollow noreferrer" target="_blank" })
 
 ## set splash image
 create and set splash image by below code on cmd.
