@@ -160,9 +160,7 @@ java.lang.RuntimeException: Unable to load script from assets 'index.android.bun
 해결 방법으로 아래의 명령어를 먼저 입력하여 ```index.android.bundle```을 생성한 후
 
 ```bash
-...
 react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle
-...
 ```
 
 빌드를 하거나
