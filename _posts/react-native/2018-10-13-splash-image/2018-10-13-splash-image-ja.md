@@ -40,5 +40,14 @@ splashイメージが生成されてプロジェクトへ反映されました�
 
 splashイメージがちゃんと表示されない時はシミュレーター/端末でアプリを削除してもう一度実行してください。
 
+## エラー対応
+アンドロイド(Android)でsplashイメージがフルサイズ表示できない問題が発生しました。それで```android/app/src/main/res/drawable/launch_screen_bitmap.xml```を下記のように修正して解決しました。
+
+```xml
+<bitmap
+    android:src="@drawable/launch_screen"
+    android:gravity="fill_horizontal|fill_vertical"/>
+```
+
 ## 参考
 - 公式サイト: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

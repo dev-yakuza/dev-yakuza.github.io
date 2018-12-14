@@ -40,5 +40,14 @@ splash image is created and applied to the project. let's check splash image is 
 
 if splash image is not showing up, remove your app from the simulator or phone and do again.
 
+## error
+we got the problem not to show Splash image up full size. so we've modified ```android/app/src/main/res/drawable/launch_screen_bitmap.xml``` file like below.
+
+```xml
+<bitmap
+    android:src="@drawable/launch_screen"
+    android:gravity="fill_horizontal|fill_vertical"/>
+```
+
 ## reference
 - official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

@@ -40,5 +40,16 @@ splash 이미지가 생성되어 프로젝트에 반영되었습니다. 프로�
 
 splash 이미지가 제대로 표시되지 않는 경우 시뮬레이터/단말기에서 어플을 지우고 다시 실행해 보시길 바랍니다.
 
+## 에러 대응
+안드로이드(Android)에서 splash 이미지가 전체 사이즈로 표시되지 않는 문제가 발생했습니다. 그래서 ```android/app/src/main/res/drawable/launch_screen_bitmap.xml```을 아래와 같이 변경하였습니다.
+
+```xml
+<bitmap
+    android:src="@drawable/launch_screen"
+    android:gravity="fill_horizontal|fill_vertical"/>
+```
+
+
+
 ## 참고
 - 공식 사이트: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }
