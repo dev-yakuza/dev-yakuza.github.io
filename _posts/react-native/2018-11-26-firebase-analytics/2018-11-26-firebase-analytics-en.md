@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'Firebase Analytics'
-description: 'react-native-firebase 라이브러리를 사용하여 좀 더 자세하게 앱을 분석해 보자'
+description: let's analyze the app more detail using react-native-firebase.
 image: '/assets/images/category/react-native/react-native-firebase-analytics.jpg'
 ---
 
