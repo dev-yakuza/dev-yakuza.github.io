@@ -10,7 +10,7 @@
     "allowJs": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["./nodenode_modules/@types", "./src/@types"]
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
   "exclude": [
     "node_modules",
@@ -22,7 +22,7 @@
     "src/setupTests.ts",
     "./node_modules/**/*"
   ],
-  "include": ["./nodenode_modules/@types", "./src/**/*", "./src/@types"]
+  "include": ["./node_modules/@types", "./src/**/*", "./src/@types"]
 }
 
 ```
