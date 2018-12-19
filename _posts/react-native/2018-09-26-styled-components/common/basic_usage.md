@@ -1,15 +1,15 @@
 ```js
 // src/App.tsx
 ...
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 ...
-const Container = styled(View)`
+const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
   background-color: #f5fcff;
 `;
-const MainText = styled(Text)`
+const MainText = styled.Text`
   font-size: 20;
   text-align: center;
   margin: 10px;
