@@ -343,5 +343,8 @@ we've made Laravel development environment using vagrant, Ansible and Laradock. 
 
 we will continue to add contents related to building development environment, Docker and Ansible to this [dev environment]({{site.url}}/{{page.categories}}/){:target="_blank"} category. also, we will add contents about Laravel development to [Laravel]({{site.url}}/laravel/){:target="_blank"}, so please see it.
 
+you can see Laravel development environment created until now at below repository.
+- [https://github.com/dev-yakuza/laravel-devtool](https://github.com/dev-yakuza/laravel-devtool){:rel="nofollow noreferrer" target="_blank"}
+
 ## reference
 - [https://laradock.io/documentation/](https://laradock.io/documentation/){:rel="nofollow noreferrer" target="_blank"}
