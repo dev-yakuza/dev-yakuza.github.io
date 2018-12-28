@@ -27,9 +27,6 @@ typescriptが動作出来るようにするため必要なライブラリをイ�
 - @types/react: typescriptへ必要なreactのtypeをインストール。
 - @types/react-native: typescriptへ必要なreact-nativeのtypeをインストール。
 
-### ビルド自動化のためのライブラリ
-- react-native-typescript-transformer: typescriptをランタイム中に、自動にビルドするためのライブラリ
-
 ## typescript設定
 typescriptを設定してreact-nativeが動作出来るようにします。
 

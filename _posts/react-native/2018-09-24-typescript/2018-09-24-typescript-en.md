@@ -27,9 +27,6 @@ install required libraries for applying typescript to the project.
 - @types/react: intsll react types for typescript.
 - @types/react-native: intall RN type for typescript.
 
-### automatically build library
-- react-native-typescript-transformer: this helps to build typescript when project is running.
-
 ## typescript configuration
 configure typescript to make react-native work.
 

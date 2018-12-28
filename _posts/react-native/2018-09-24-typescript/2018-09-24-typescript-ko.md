@@ -27,9 +27,6 @@ typescript가 동작할 수 있도록 필요한 라이브러리을 설치합니�
 - @types/react: typescript에 필요한 react의 type을 설치한다.
 - @types/react-native: typescript에 필요한 react-native의 type을 설치한다.
 
-### 빌드 자동화를 위한 라이브러리
-- react-native-typescript-transformer: typescript를 런타임중에 자동으로 빌드하기 위한 라이브러리.
-
 ## typescript 설정
 typescript를 설정하여 react-native가 동작하도록 만듭니다.
 
