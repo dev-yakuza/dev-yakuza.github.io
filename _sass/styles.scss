@@ -17,7 +17,11 @@ header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading,
 header.masthead .post-heading .subheading,
 #mainNav,
-.btn, code, kbd, pre, samp {
+.btn,
+code,
+kbd,
+pre,
+samp {
   font-family: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
 }
 h3 {
@@ -419,4 +423,8 @@ table {
 
 a {
   cursor: pointer;
+}
+
+ul li:last-child {
+  margin-bottom: 16px;
 }

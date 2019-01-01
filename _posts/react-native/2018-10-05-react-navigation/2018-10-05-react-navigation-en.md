@@ -21,30 +21,111 @@ this blog uses react-native project which composed typescript and styled-compone
 ## react-navigation installation
 install react-navigation library via below commands.
 
-{% include_relative common/installation.md %}
+```bash
+npm install --save react-navigation
+npm install --save react-native-gesture-handler
+```
 
-- react-navigation: this is react-navigation library.
-- @types/react-navigation: this is react-navigation type for typescript.
+## link react-native-gesture-handler library
+execute below command to link ```react-native-gesture-handler``` library to RN(react-native) project.
+
+```bash
+react-native link react-native-gesture-handler
+```
 
 ## how to use
-there are many ways to use react-navigation at the official site. we will add how to use react-navigation which we really apply our project.
+there are many ways to use react-navigation at the official site. if you want to know details, please check below link.
 
-- official site: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
+- official site: [https://reactnavigation.org/docs](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
 
-### stack navigation
-this is how to use basic stack navigation.
+we've made the repository about basic usage by following official site. before using ```react-navigation```, if you see this repository, it will help when you get the basic structure.
 
-{% include_relative common/stack-navigation.md %}
+- react-navigation-exercise: [https://github.com/dev-yakuza/react-navigation-exercise](https://github.com/dev-yakuza/react-navigation-exercise){:rel="nofollow noreferrer" target="_blank" }
 
-- set screens which you want to use and default screen in ```Navigator.tsx```
-- screens created by ```createStackNavigator``` basically have navigation variable in props.
-- use ```this.props.navigation.navigate``` for switching screens.
-- use ```this.props.navigation.goBack``` for going to the previous screen.
+### Navigation to use
+import Navigation to use.
+
+```js
+import {
+  createSwitchNavigator,
+  createBottomTabNavigator,
+  createStackNavigator,
+  createAppContainer,
+} from 'react-navigation';
+```
+
+### createAppContainer
+to use ```react-navigation``` in App, we should use ```createAppContainer``` to Top navigation.
+
+### createSwitchNavigator
+if App has Login feature, we recommend to use ```createSwitchNavigator```.  our Repository uses Switch Navigation to basic navigation.
+
+```js
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      AuthLoading,
+      Auth,
+      MainNavi,
+    },
+    {
+      initialRouteName: 'AuthLoading',
+    }
+  )
+);
+```
+
+### createStackNavigator
+this ```createStackNavigator``` is the navigator to stack a view to another view. we use this navigation to show full screen view on tab navigation and display another view in tab nabigation.
+
+```js
+const MainNavi = createStackNavigator({
+  MainTab: {
+    screen: MainTab,
+    navigationOptions: ({ navigation }) => ({
+      header: null,
+    }),
+  },
+  FullDetail,
+});
+```
+
+### createBottomTabNavigator
+we use this ```createBottomTabNavigator``` to show tab navigation on the bottom of the screen.
+
+```js
+const MainTab = createBottomTabNavigator({
+  FirstTabStack,
+  SecondTab,
+  ThirdTab,
+});
+```
+
+### switch navigation
+we use below code to switch a view to another view.
+
+```js
+this.props.navigation.navigate('MainTab');
+```
 
 ## hide Navigation bar
 you can hide navigation bar with below code
 
-{% include_relative common/hide-navigation-bar.md %}
+```js
+...
+export default class Home extends React.Component<Props, State> {
+  static navigationOptions = { header: null };
+
+  render() {
+    return (
+      <Container>
+        <StyledText>Home screen!</StyledText>
+      </Container>
+    );
+  }
+}
+...
+```
 
 - static navigationOptions: you can set navigation options via this variable.
 - { header: null }: hide navigation header bar.

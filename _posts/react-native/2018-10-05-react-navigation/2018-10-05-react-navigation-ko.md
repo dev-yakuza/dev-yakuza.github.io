@@ -20,29 +20,113 @@ typescript와 styled-components를 적용한 프로젝트에서 진행합니다.
 ## react-navigation 설치
 react-navigation 라이브러리를 아래에 명령어를 통해 설치합니다.
 
-{% include_relative common/installation.md %}
+```bash
+npm install --save react-navigation
+npm install --save react-native-gesture-handler
+```
 
-- react-navigation: react-navigation 라이브러리입니다.
-- @types/react-navigation: typescript에 필요한 react-navigation의 타입입니다.
+## react-native-gesture-handler 라이브러리 연결
+아래에 명령어를 통해 ```react-native-gesture-handler``` 라이브러리를 RN(react-native) 프로젝트에 연결합니다.
+
+```bash
+react-native link react-native-gesture-handler
+```
 
 ## 사용법
-react-navigation를 사용하는 여러가지 방법들이 공식 홈페이지에 자세히 나와있습니다. 우리는 실제로 프로젝트를 진행하면서 사용한 내용을 조금씩 추가해 나갈 예정입니다.
-- 공식 홈페이지: [react-navigation](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
+react-navigation를 사용하는 여러가지 방법들이 공식 홈페이지에 자세히 나와있습니다. 자세한 내용은 링크를 참고해주세요.
 
-### stack navigation
-기본적인 스택 네비게이션을 사용하는 방법입니다.
+- 공식 홈페이지: [https://reactnavigation.org/docs](https://reactnavigation.org/docs){:rel="nofollow noreferrer" target="_blank" }
 
-{% include_relative common/stack-navigation.md %}
+우리는 공식 홈페이지를 참고하여 기본적인 사용법을 정리한 저장소(Repository)를 만들었습니다. ```react-navigation```을 사용하기 전에 이 저장소(Repository)를 확인한다면 기본적인 구조를 잡을 때, 도움이 될거 같습니다.
 
-- ```Navigator.tsx```에 사용할 화면과 기본 화면을 설정합니다.
-- ```createStackNavigator```으로 생성된 화면은 기본적으로 props에 navigation을 가지고 있습니다.
-- ```this.props.navigation.navigate```를 사용하여 화면 전환을 합니다.
-- ```this.props.navigation.goBack```을 이용하여 이전 페이지로 돌아갑니다.
+- react-navigation-exercise: [https://github.com/dev-yakuza/react-navigation-exercise](https://github.com/dev-yakuza/react-navigation-exercise){:rel="nofollow noreferrer" target="_blank" }
+
+이 저장소(Repository)에 구현된 내용을 설명하도록 하겠습니다.
+
+### 사용할 네비게이션
+사용할 네비게이션(Navigation)을 추가(import)하여 사용합니다.
+
+```js
+import {
+  createSwitchNavigator,
+  createBottomTabNavigator,
+  createStackNavigator,
+  createAppContainer,
+} from 'react-navigation';
+```
+
+### createAppContainer
+앱(App)에서 ```react-navigation```을 사용하기 위해서는 ```createAppContainer```을 최상위 네비게이션(Navigation)에 사용해야 합니다.
+
+### createSwitchNavigator
+앱(App)이 기본적으로 로그인 기능을 가지고 있다면 ```createSwitchNavigator``` 사용을 권장합니다. 우리의 저장소(Repository)는 Switch Navigation을 기본 네비게이션(Navigation)으로 사용하고 있습니다.
+
+```js
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      AuthLoading,
+      Auth,
+      MainNavi,
+    },
+    {
+      initialRouteName: 'AuthLoading',
+    }
+  )
+);
+```
+
+### createStackNavigator
+이 ```createStackNavigator```는 뷰(View) 위에 다른 뷰(View)를 쌓는(Stack) 네비게이션(Navigation)입니다. 우리는 이 네비게이션(Navigation)을 사용하여 탭 네비게이션(Tab Navigation)위에 전체 화면의 뷰(View)를 표시할 때, 탭 네비게이션(Tab Navigation)안에서 다른 뷰(View)를 표시할 때 사용합니다.
+
+```js
+const MainNavi = createStackNavigator({
+  MainTab: {
+    screen: MainTab,
+    navigationOptions: ({ navigation }) => ({
+      header: null,
+    }),
+  },
+  FullDetail,
+});
+```
+
+### createBottomTabNavigator
+이 ```createBottomTabNavigator```를 사용하여 하단에 탭 네비게이션(Tab Navigation)을 표시합니다.
+
+```js
+const MainTab = createBottomTabNavigator({
+  FirstTabStack,
+  SecondTab,
+  ThirdTab,
+});
+```
+
+### 네비게이션 전환
+뷰(View)에서 다른 뷰(View)로 전환할 때, 아래에 코드를 사용합니다.
+
+```js
+this.props.navigation.navigate('MainTab');
+```
 
 ## Navigation bar 숨기기
 아래에 코드로 navigation bar를 숨길 수 있습니다.
 
-{% include_relative common/hide-navigation-bar.md %}
+```js
+...
+export default class Home extends React.Component<Props, State> {
+  static navigationOptions = { header: null };
+
+  render() {
+    return (
+      <Container>
+        <StyledText>Home screen!</StyledText>
+      </Container>
+    );
+  }
+}
+...
+```
 
 - static navigationOptions: 네비게이션의 옵션을 설정합니다.
 - { header: null }: navigation header bar를 비활성화합니다.
