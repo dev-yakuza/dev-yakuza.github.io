@@ -1,6 +1,6 @@
 ---
 layout: 'posts'
-permalink: '/api/environment/posts.json'
+permalink: '/api/laravel/posts.json'
 lang: 'en'
-target: 'environment'
+target: 'laravel'
 ---

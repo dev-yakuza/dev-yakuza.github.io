@@ -1,15 +1,15 @@
 ---
 published: false
 layout: 'post'
-permalink: '/laravel/jwt-user-info/'
-paginate_path: '/laravel/:num/jwt-user-info/'
+permalink: '/laravel/jwt-refresh-token/'
+paginate_path: '/laravel/:num/jwt-refresh-token/'
 lang: 'ko'
 categories: 'laravel'
 comments: true
 
-title: 'jwt:사용자정보'
+title: 'jwt:사용자 정보'
 description: '토큰 기반 인증 시스템인 jwt(Json Web Token)를 통해 로그인한 사용자의 정보를 얻는 방법에 대해서 알아봅시다.'
-image: '/assets/images/category/laravel/jwt-user-info.jpg'
+image: '/assets/images/category/laravel/jwt-refresh-token.jpg'
 ---
 
 
@@ -20,195 +20,78 @@ jwt 인증 시스템을 통해 로그인한 사용자의 정보를 얻는 방법
 - [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
 - [jwt:로그인]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
 
-## 모델 수정
-jwt 인증 시스템의 인증에 사용되는 모델(Model)을 아래와 같이 수정합니다.
+## 저장소(Repository)
+우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.
 
-```php
-<?php
-...
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Tymon\JWTAuth\Contracts\JWTSubject;
-...
-class User extends Authenticatable implements JWTSubject
-{
-    ...
-    public function getJWTIdentifier() {
-        return $this->getKey();
-    }
+- laravel-jwt-exercise: [https://github.com/dev-yakuza/laravel-jwt-exercise](https://github.com/dev-yakuza/laravel-jwt-exercise){:rel="nofollow noreferrer" target="_blank"}
 
-    public function getJWTCustomClaims() {
-        return [];
-    }
-}
-```
+## 개발 환경 구성
+여기서 설명할 내용은 라라독(Laradock)과 앤서블(Ansible)을 이용하여 만든 라라벨(Laravel) 개발 환경에서 작업합니다. 라라독(Laradock)과 앤서블(Ansible)을 이용한 라라벨(Laravel) 개발 환경에 관해서는 아래에 블로그를 참고하세요.
 
-라라벨(Laravle)의 인증 기능을 사용하기 위해 모델(Model)을 ```Authenticatable``` 상속받았습니다. 또한 jwt 미들웨어(Middleware)의 인터페이스를 ```JWTSubject```를 통해 구현합니다.
-
-```php
-public function getJWTIdentifier() {
-    return $this->getKey();
-}
-
-public function getJWTCustomClaims() {
-    return [];
-}
-```
-
-위에 함수는 jwt 미들웨어(Middleware)의 인터페이스를 구현한 부분입니다.
-
-```php
-public function getJWTIdentifier() {
-    return $this->getKey();
-}
-```
-
-이 부분은 jwt의 토큰을 습득하기 위한 함수입니다.
-
-```php
-public function getJWTCustomClaims() {
-    return [];
-}
-```
-
-이 함수를 설명하기 위해 jwt 토큰을 잠시 설하겠습니다. jwt는 크게 ```헤더(header).내용(payload).서명(signature)``` 구성되어 있습니다. 그중 ```내용(Payload)```에 사용될 정보의 조각을 ```Claim```이라고 하며, ```key-value``` 형식으로 구성됩니다. jwt는 기본적으로 ```내용(Payload)```에 아래와 같은 정보를 가지고 있습니다.
-
-- iss(Issuer): 토큰 발급자
-- sub(Subject): 토큰 제목(기본값은 user id)
-- iat(Issued At): When the token was issued (unix timestamp)
-- exp(Expiry): 토큰의 만료시간
-- nbf(Not Before): 토큰을 사용할 수 있는 시작 시간
-- jti(JWT Id):JWT의 고유 식별자. 주로 중복적인 처리를 방지하기 위하여 사용.
-- prv: 사용자 공급자 클래스(User Provider class)의 해쉬값. 다중 guard를 사용하기 위해 ```tymondesigns/jwt-auth```에 추가한 특별한 코드.([자세한 설명](https://github.com/tymondesigns/jwt-auth/pull/1167){:rel="nofollow noreferrer" target="_blank"})
-
-이 정보 이외에 추가적으로 jwt토큰에 정보를 추가하고 싶다면 ```getJWTCustomClaims()``` 함수에 반환값(Return value)을 수정하면 됩니다.
-
-```php
-public function getJWTCustomClaims() {
-    return [
-        'firstname' => $this->firstname,
-        'lastname' => $this->lastname,
-        'email' => $this->email
-    ];
-}
-```
-
-## guard 수정
-라라벨(Laravel)의 인증을 담당하고 있는 ```config/auth.php``` 파일의 ```guard```를 아래와 같이 수정합니다.
-
-```php
-'guards' => [
-    'web' => [
-        'driver' => 'session',
-        'provider' => 'users',
-    ],
-
-    'api' => [
-        'driver' => 'jwt',
-        'provider' => 'users',
-    ],
-],
-```
+- [앤서블&라라벨]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
 
 ## 컨트롤러 수정
-이전 블로그에서 생성한 ```app/Http/Controllers/JWTAuthController.php``` 컨트롤러에 로그인 함수를 추가합니다
+라라벨(Laravel) 프로젝트 폴더의 ```/app/Http/Controllers/JWTAuthController.php``` 파일을 열고 아래의 내용을 추가합니다.
+
 
 ```php
-public function login(Request $request) {
-    $validator = Validator::make($request->all(), [
-        'email' => 'required|email|max:255',
-        'password' => 'required|string|min:8|max:255',
-    ]);
-
-    if($validator->fails()) {
-        return response()->json([
-            'status' => 'error',
-            'messages' => $validator->messages()
-        ], 200);
-    }
-
-    if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])) {
-        return response()->json(['error' => 'Unauthorized'], 401);
-    }
-
-    return $this->respondWithToken($token);
-}
-
-protected function respondWithToken($token) {
-    return response()->json([
-        'access_token' => $token,
-        'token_type' => 'bearer',
-        'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
-    ]);
+public function user() {
+    return response()->json(Auth::guard('api')->user());
 }
 ```
 
-우선 요청(Request)의 입력 데이터를 확인합니다.
+클라이언트(Client, 브라우저)의 요청(Request)으로 로그인한 유저의 정보를 얻어 응답(Response)하는 함수입니다.
+
+## 라우트 수정
+컨트롤러(Controller)에 추가한 함수를 URL과 연결하기 위해 라우트(Route)를 수정합니다. ```/routes/api.php``` 파일을 열고 아래의 내용을 추가합니다.
 
 ```php
-$validator = Validator::make($request->all(), [
-    'email' => 'required|email|max:255',
-    'password' => 'required|string|min:8|max:255',
-]);
-
-if($validator->fails()) {
+Route::get('unauthorized', function() {
     return response()->json([
         'status' => 'error',
-        'messages' => $validator->messages()
-    ], 200);
+        'message' => 'Unauthorized'
+    ], 401);
+})->name('api.jwt.unauthorized');
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::get('user', 'JWTAuthController@user')->name('api.jwt.user');
+});
+```
+
+사용자 정보를 얻기 위한 ```user``` 라우트(Route)는 미들웨어(Middleware)로 ```auth:api```를 사용합니다. 이 미들웨어(Middleware)에 의해 로그인한 사용자와 로그인하지 않은 사용자가 판단되며 로그인한 사용자만 사용자 정보를 얻을 수 있습니다. 로그인하지 않은 사용자는 ```unauthorized``` 라우트(Route)로 리다이렉트(Redirect)를 시키고 그에 따라 ```401```를 응답(Response)할 예정입니다.
+
+## 리다이렉트
+라라벨(Laravel)의 ```Auth``` 미들웨어(Middleware)는 기본적으로 리다이렉트(Redirect) 기능을 가지고 있습니다. 우리는 여기에 ```api```용 리다이렉트(Redirect)를 설정하고 ```401``` 에러를 응답(Response)하도록 설정하려 합니다. ```app/Http/Middleware/Authenticate.php``` 파일을 열고 아래와 같이 수정합니다.
+
+```php
+protected function redirectTo($request)
+{
+    if (! $request->expectsJson()) {
+        if ($request->is('api/*')) {
+            return route('api.jwt.unauthorized');
+        }
+        return route('login');
+    }
 }
-```
-
-그리고 사용자의 ```email```과 ```password```로 로그인 시킵니다.
-
-```php
-if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])) {
-    return response()->json(['error' => 'Unauthorized'], 401);
-}
-```
-
-보통은
-
-```php
-Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password])
-```
-
-형식으로 충분하지만 우리는 이메일 본인 인증 기능이 있어 추가적인 필드 검사를 추가하였습니다.
-
-```php
-Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])
-```
-
-로그인에 성공하면 요청(Request)에 대한 jwt 토큰을 반환(Response)합니다.
-
-```php
-return response()->json([
-    'access_token' => $token,
-    'token_type' => 'bearer',
-    'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
-]);
-```
-
-## 라우팅 연결
-컨트롤러(Controller)에서 생성한 로그인 함수를 ```routes/api.php```에서 URL과 연결합니다.
-
-```php
-Route::post('login', 'JWTAuthController@login')->name('api.jwt.login');
 ```
 
 ## 테스트
-이제 지금까지 만든 jwt 인증 시스템의 로그인 기능을 ```Postman```을 통해 확인합니다. ```localhost/api/login``` URL에 ```email```과 ```password```를 입력하고 ```POST```로 요청(Request)을 보내면 아래와 같은 결과를 확인할 수 있습니다.
+지금까지 개발한 사용자 정보 보기 기능을 ```Postman```을 통해 확인합니다.
 
-![postman login api test](/assets/images/category/laravel/jwt-signin/login.png)
+```bash
+# URL
+localhost/api/user
+# header
+Authorization
+Bearer jwt_token
+```
+jwt 토큰이 유효하다면 아래와 같이 사용자의 정보를 얻을 수 있습니다.
 
-응답(Response)으로 받은 ```access_token```키를 [https://jwt.io/](https://jwt.io/){:rel="nofollow noreferrer" target="_blank"}에서 확인해보면 아래와 같은 결과를 얻을 수 있습니다.
+![get user info](/assets/images/category/laravel/jwt-user-info/get_user_info.png)
 
-![check access_key](/assets/images/category/laravel/jwt-signin/check_access_key.png)
+jwt 토큰의 유효기간이 끝났거나, 로그인하지 않은 사용자가 정보를 요청(Request)하면 아래와 같이 ```401``` 에러의 응답(Response)을 확인할 수 있습니다.
+
+![fail to get user info](/assets/images/category/laravel/jwt-user-info/fail_to_get_user_info.png)
 
 ## 완료
-이것으로 jwt 인증 시스템을 이용하여 로그인 기능을 구현해보았습니다. 다음 블로그에서는 ```access token```을 이용한 사용자 정보를 얻는 방법에 대해서 알아보도록 하겠습니다.
-
-## 참고
-- JSON Web Token (JWT): [https://tools.ietf.org/html/rfc7519#section-4.1](https://tools.ietf.org/html/rfc7519#section-4.1){:rel="nofollow noreferrer" target="_blank"}
-- jwt-auth prv: [https://github.com/tymondesigns/jwt-auth/issues/1344](https://github.com/tymondesigns/jwt-auth/issues/1344){:rel="nofollow noreferrer" target="_blank"}
-- jwt-auth Creating Tokens: [https://github.com/tymondesigns/jwt-auth/wiki/Creating-Tokens](https://github.com/tymondesigns/jwt-auth/wiki/Creating-Tokens){:rel="nofollow noreferrer" target="_blank"}
-
+이것으로 jwt 인증 시스템을 이용하여 로그인한 사용자의 정보를 얻는 api를 개발하였습니다. 다음 블로그에서는 로그인 후 api를 통해 얻은 jwt 토큰을 갱신(Refresh)하는 기능을 추가하도록 하겠습니다.

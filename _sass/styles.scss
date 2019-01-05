@@ -428,3 +428,7 @@ a {
 ul li:last-child {
   margin-bottom: 16px;
 }
+
+.navbar-nav :last-child {
+  margin-bottom: 0;
+}

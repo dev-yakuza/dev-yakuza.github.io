@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/laravel/jwt-signup/'
 paginate_path: '/laravel/:num/jwt-signup/'
@@ -18,6 +17,11 @@ image: '/assets/images/category/laravel/jwt-signup.jpg'
 
 - [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
 
+## 저장소(Repository)
+우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.
+
+- laravel-jwt-exercise: [https://github.com/dev-yakuza/laravel-jwt-exercise](https://github.com/dev-yakuza/laravel-jwt-exercise){:rel="nofollow noreferrer" target="_blank"}
+
 ## 개발 환경 구성
 여기서 설명할 내용은 라라독(Laradock)과 앤서블(Ansible)을 이용하여 만든 라라벨(Laravel) 개발 환경에서 작업합니다. 라라독(Laradock)과 앤서블(Ansible)을 이용한 라라벨(Laravel) 개발 환경에 관해서는 아래에 블로그를 참고하세요.
 
@@ -29,7 +33,7 @@ image: '/assets/images/category/laravel/jwt-signup.jpg'
 - [앤서블&라라벨]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
 
 ## 테이블 생성
-라라벨(Laravel)은 기본적으로 사용자에 관한 마이그레이션(Migration - DB 테이블을 생성하기 위한 파일)과 컨트롤러(Controller)를 제공합니다. 따라서 아래에 명령어를 사용하여 라라벨(Laravel)이 제공하는 기본 사용자 테이블을 사용할 수 있습니다.
+라라벨(Laravel)은 기본적으로 사용자에 관한 마이그레이션(Migration - DB 테이블을 생성하기 위한 파일)과 모델(Model)를 제공합니다. 따라서 아래에 명령어를 사용하여 라라벨(Laravel)이 제공하는 기본 사용자 테이블을 사용할 수 있습니다.
 
 ```bash
 # vagrant up
@@ -37,98 +41,6 @@ image: '/assets/images/category/laravel/jwt-signup.jpg'
 # sudo docker exec -it laradock_workspace_1 bash
 php artisan migrate
 ```
-
-라라벨(Laravel)이 기본적으로 제공하는 사용자 테이블이 아닌 자신만의 사용자 테이블을 생성하고 싶으신 분은 ```database/migrations``` 폴더에 있는 파일을 지우고 아래에 명령어로 새로운 사용자 마이그레이션(Migration)을 생성합니다.
-
-```bash
-php artisan make:migration create_users_table
-```
-
-그리고 ```database/migrations```에 생성된 새로운 마이그레이션(Migration) 파일에 개발에 필요한 사용자 정보를 입력합니다. 아래는 우리가 사용하는 마이그레이션 파일의 예입니다.
-
-```php
-Schema::create('users', function (Blueprint $table) {
-    $table->increments('id');
-    $table->string('name', 100);
-    $table->string('email')->unique();
-    $table->string('password');
-    $table->boolean('authenticated')->default(false);
-    $table->tinyInteger('wrong_pw')->default(0);
-    $table->tinyInteger('authority')->default(1)->comment('0:master/1:user');
-    $table->timestamp('password_lock')->nullable();
-    $table->timestamps();
-    $table->softDeletes();
-});
-```
-
-위의 마이그레이션(Migration) 파일을 잠깐 설명하겠습니다.
-
-```php
-$table->increments('id');
-```
-
-자동으로 증가하는 ```id``` 항목(Column)을 만듭니다.
-
-```php
-$table->string('name', 100);
-```
-
-100자의 길이를 갖는 문자형 항목(Column)인 ```name```입니다.
-
-```php
-$table->boolean('authenticated')->default(false);
-```
-
-기본값이 false인 boolean 자료형입니다.
-
-```php
-$table->tinyInteger('authority')->default(1)->comment('0:master/1:user');
-```
-
-자료형이 ```tinyint```이며 기본값은 1을 가지는 항목(Column)입니다. ```comment``` 기능을 사용하여 항목(Column)에 코멘트(Comment)를 추가하였습니다.
-
-```php
-$table->timestamps();
-```
-
-라라벨(Laravel)이 기본적으로 사용하는 ```created_at```(데이터 생성일), ```updated_at```(데이터 갱신일) 항목(column)을 만듭니다.
-
-```php
-$table->softDeletes();
-```
-
-라라벨(Laravel)에서 데이터를 삭제할 때, 논리 삭제를 사용하기 위한 기능입니다. 이 기능을 사용하면 ```deleted_at``` 항목(column)이 생기고 이 항목에 날짜가 들어가면 라라벨(Laravel)은 삭제된 데이터로 인식합니다.
-
-라라벨(Laravel)이 기본적으로 제공하는 사용자 테이블을 사용해도 되지만, 필요하다면 이렇게 자신의 설계에 맞는 사용자 테이블을 사용할 수 있습니다.
-
-## 모델 생성
-위에서 생성한 유저 테이블과 일치하는 모델(Model)을 아래의 artisan 명령어로 생성합니다.
-
-```php
-php artisan make:model Models/User
-```
-
-생성된 ```app/Models/User.php```를 아래와 같이 수정합니다.
-
-```php
-...
-use Illuminate\Database\Eloquent\SoftDeletes;
-...
-class User extends Model
-{
-    use SoftDeletes;
-    protected $fillable = [
-        'name',
-        'email',
-    ];
-    protected $hidden = [
-        'id',
-        'password',
-    ];
-}
-```
-
-테이블 생성시 설정한 논리 삭제 기능을 사용하기 위해 ```SoftDeletes```를 추가하였습니다. 또한 ```User``` 데이터를 만들때 간단하게 항목을 채울수 있도록 ```fillable```을 사용하였고 외부에 노출시키지 않을 데이터 항목(column)을 ```$hidden```을 통해 설정하였습니다.
 
 ## 컨트롤러 생성
 jwt 인증 시스템을 구현할 컨트롤러(Controller)를 아래와 같이 artisan 명령어로 생성합니다.
@@ -140,19 +52,19 @@ jwt 인증 시스템을 구현할 컨트롤러(Controller)를 아래와 같이 a
 php artisan make:controller JWTAuthController
 ```
 
-생성된 ```app/http/Controllers/JWTAuthController```를 아래와 같이 수정합니다.
+생성된 ```app/http/Controllers/JWTAuthController.php```를 아래와 같이 수정합니다.
 
 ```php
 ...
 use Illuminate\Support\Facades\Validator;
-use App\Models\User;
+use App\User;
 
 class JWTAuthController extends Controller
 {
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:100',
-            'email' => 'required|email|max:255|unique:poma_users',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|string|min:8|max:255|confirmed',
             'password_confirmation' => 'required|string|min:8|max:255',
         ]);
@@ -177,12 +89,12 @@ class JWTAuthController extends Controller
 }
 ```
 
-생성한 컨트롤러(Controller)를 자세히 살펴보겠습니다.
+수정한 컨트롤러(Controller)를 자세히 살펴보겠습니다.
 
 ```php
 $validator = Validator::make($request->all(), [
     'name' => 'required|string|max:100',
-    'email' => 'required|email|max:255|unique:poma_users',
+    'email' => 'required|email|max:255|unique:users',
     'password' => 'required|string|min:8|max:255|confirmed',
     'password_confirmation' => 'required|string|min:8|max:255',
 ]);
@@ -199,7 +111,7 @@ if($validator->fails()) {
 }
 ```
 
-위에서 설정한 값으로 요청(Request)을 검증하여 실패한 경우, 실패 메세지와 함께 요청(Requst)에 대한 응답(Response)을 클라이언트(Client, 브라우저)에 보냅니다.
+위에서 요청(Request)을 검증하여 실패한 경우, 실패 메세지와 함께 요청(Requst)에 대한 응답(Response)을 클라이언트(Client, 브라우저)에 보냅니다.
 
 ```php
 $user = new User;
@@ -225,21 +137,21 @@ return response()->json([
 
 데이터를 성공적으로 생성한 경우 해당 데이터와 함께 클라이언트(Client, 브라우저)의 요청(Request)에 대한 응답(Response)를 보냅니다.
 
-## 라우팅 연결
-지금까지 생성한 컨트롤러(Controller)와 라우팅을 설정하여 URL을 연결시킵니다. ```routes/api.php``` 파일을 열고 아래와 같이 수정합니다.
+## 라우트 연결
+지금까지 생성한 컨트롤러(Controller)를 라우트 설정을 통해 URL을 연결시킵니다. ```routes/api.php``` 파일을 열고 아래와 같이 수정합니다.
 
 ```php
 Route::post('register', 'JWTAuthController@register')->name('api.jwt.register');
 ```
 
-라라벨(Laravel)에 ```register```라는 URL에 ```post``` 요청이 오면 ```JWTAutController```의 ```register```라는 함수를 호출하도록 연결하였습니다.
+라라벨(Laravel)에 ```register```라는 URL에 ```post``` 요청(Request)이 오면 ```JWTAuthController```의 ```register```라는 함수를 호출하도록 연결하였습니다.
 
 ## 테스트
-우리는 API 테스트를 위해 ```Postman```을 사용합니다. ```Postman```이 없는 경우 아래에 링크를 눌러 설치해 주세요. 테스트는 꼭 Postman이 아니라 ```curl```을 사용하셔도 됩니다.
+우리는 API 테스트를 위해 ```Postman```을 사용합니다. ```Postman```이 없는 경우 아래에 링크를 눌러 설치해 주세요. 테스트는 Postman이 아니라 ```curl```을 사용하셔도 됩니다.
 
 - Postman: [https://www.getpostman.com/](https://www.getpostman.com/){:rel="nofollow noreferrer" target="_blank"}
 
-이제 ```Postman```을 열고 아래와 같이 ```localhost/api/register```의 URL로 ```post``` 요청을 보냅니다.
+이제 ```Postman```을 열고 아래와 같이 ```localhost/api/register```의 URL로 ```post``` 요청(Request)을 보냅니다.
 
 ![postman register api test](/assets/images/category/laravel/jwt-signup/register_api_test.png)
 

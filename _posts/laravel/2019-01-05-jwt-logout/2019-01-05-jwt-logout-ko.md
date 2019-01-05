@@ -1,0 +1,81 @@
+---
+published: false
+layout: 'post'
+permalink: '/laravel/jwt-logout/'
+paginate_path: '/laravel/:num/jwt-logout/'
+lang: 'ko'
+categories: 'laravel'
+comments: true
+
+title: 'jwt:로그아웃'
+description: 'jwt(Json Web Token) 인증 시스템의 로그아웃 기능을 구현하는 방법에 대해서 알아보겠습니다.'
+image: '/assets/images/category/laravel/jwt-logout.jpg'
+---
+
+
+## 개요
+jwt 인증 시스템에 로그아웃 기능을 추가하는 방법에 대해서 알아보겠습니다. 이 블로그는 시리즈로 구성되어 있습니다. jwt 구현을 위한 미들웨어(Middleware) 설치나 회원가입, 로그인, 사용자 정보 얻기, jwt 토큰 갱신 기능에 관해서는 이전 블로그를 참고해주세요.
+
+- [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
+- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
+- [jwt:로그인]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
+- [jwt:사용자 정보]({{site.url}}/{{page.categories}}/jwt/jwt-user-info){:target="_blank"}
+- [jwt:토큰 갱신]({{site.url}}/{{page.categories}}/jwt/jwt-refresh-token){:target="_blank"}
+
+## 저장소(Repository)
+우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.
+
+- laravel-jwt-exercise: [https://github.com/dev-yakuza/laravel-jwt-exercise](https://github.com/dev-yakuza/laravel-jwt-exercise){:rel="nofollow noreferrer" target="_blank"}
+
+## 개발 환경 구성
+여기서 설명할 내용은 라라독(Laradock)과 앤서블(Ansible)을 이용하여 만든 라라벨(Laravel) 개발 환경에서 작업합니다. 라라독(Laradock)과 앤서블(Ansible)을 이용한 라라벨(Laravel) 개발 환경에 관해서는 아래에 블로그를 참고하세요.
+
+- [앤서블&라라벨]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
+
+## 컨트롤러 수정
+라라벨(Laravel) 프로젝트 폴더의 ```/app/Http/Controllers/JWTAuthController.php``` 컨트롤러(Controller) 파일을 열고 아래의 내용을 추가합니다.
+
+```php
+public function logout() {
+    Auth::guard('api')->logout();
+
+    return response()->json([
+        'status' => 'success',
+        'message' => 'logout'
+    ], 200);
+}
+```
+
+## 라우트 수정
+로그아웃을 위한 URL을 추가하기 위해 ```/routes/api.php``` 파일을 열고 아래의 내용을 추가합니다.
+
+```php
+...
+Route::group(['middleware' => 'auth:api'], function(){
+    ...
+    Route::get('logout', 'JWTAuthController@logout')->name('api.jwt.logout');
+    ...
+});
+...
+```
+
+## 테스트
+지금까지 개발한 로그아웃 기능을 ```Postman```을 통해 확인합니다.
+
+```bash
+# URL
+localhost/api/logout
+# header
+Authorization
+Bearer jwt_token
+```
+jwt 토큰이 유효하다면 아래와 같이 성공적으로 로그아웃할 수 있습니다.
+
+![logout](/assets/images/category/laravel/jwt-user-info/logout.png)
+
+jwt 토큰의 유효기간이 끝났거나, 이전의 jwt 토큰을 사용하면 아래와 같이 ```401``` 에러의 응답(Response)을 확인할 수 있습니다.
+
+![fail to logout](/assets/images/category/laravel/jwt-user-info/fail_to_logout.png)
+
+## 완료
+이것으로 라라벨(Laravel)에 jwt 인증 시스템을 추가하여 토큰 기반 인증 시스템을 구현하였습니다. 우리는 이 jwt 인증 시스템을 사용하여 RN(React Native) 앱을 개발할 예정입니다.

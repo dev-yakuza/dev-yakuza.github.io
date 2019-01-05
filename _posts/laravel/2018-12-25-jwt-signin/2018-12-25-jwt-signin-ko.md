@@ -19,6 +19,16 @@ jwt 인증 시스템을 통해 로그인 절차를 구현해 보려고합니다.
 - [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
 - [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
 
+## 저장소(Repository)
+우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.
+
+- laravel-jwt-exercise: [https://github.com/dev-yakuza/laravel-jwt-exercise](https://github.com/dev-yakuza/laravel-jwt-exercise){:rel="nofollow noreferrer" target="_blank"}
+
+## 개발 환경 구성
+여기서 설명할 내용은 라라독(Laradock)과 앤서블(Ansible)을 이용하여 만든 라라벨(Laravel) 개발 환경에서 작업합니다. 라라독(Laradock)과 앤서블(Ansible)을 이용한 라라벨(Laravel) 개발 환경에 관해서는 아래에 블로그를 참고하세요.
+
+- [앤서블&라라벨]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
+
 ## 모델 수정
 jwt 인증 시스템의 인증에 사용되는 모델(Model)을 아래와 같이 수정합니다.
 
@@ -69,7 +79,7 @@ public function getJWTCustomClaims() {
 }
 ```
 
-이 함수를 설명하기 위해 jwt 토큰을 잠시 설하겠습니다. jwt는 크게 ```헤더(header).내용(payload).서명(signature)``` 구성되어 있습니다. 그중 ```내용(Payload)```에 사용될 정보의 조각을 ```Claim```이라고 하며, ```key-value``` 형식으로 구성됩니다. jwt는 기본적으로 ```내용(Payload)```에 아래와 같은 정보를 가지고 있습니다.
+이 함수를 설명하기 위해 jwt 토큰을 잠시 설명하겠습니다. jwt는 크게 ```헤더(header).내용(payload).서명(signature)``` 구성되어 있습니다. 그중 ```내용(Payload)```에 사용될 정보의 일부를 ```Claim```이라고 하며, ```key-value``` 형식으로 구성되어있습니다. jwt는 기본적으로 ```내용(Payload)```에 아래와 같은 정보(```Claim```)를 가지고 있습니다.
 
 - iss(Issuer): 토큰 발급자
 - sub(Subject): 토큰 제목(기본값은 user id)
@@ -125,7 +135,7 @@ public function login(Request $request) {
         ], 200);
     }
 
-    if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])) {
+    if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password])) {
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
@@ -160,21 +170,9 @@ if($validator->fails()) {
 그리고 사용자의 ```email```과 ```password```로 로그인 시킵니다.
 
 ```php
-if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])) {
+if (! $token = Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password])) {
     return response()->json(['error' => 'Unauthorized'], 401);
 }
-```
-
-보통은
-
-```php
-Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password])
-```
-
-형식으로 충분하지만 우리는 이메일 본인 인증 기능이 있어 추가적인 필드 검사를 추가하였습니다.
-
-```php
-Auth::guard('api')->attempt(['email' => $request->email, 'password' => $request->password, 'certificated' => true])
 ```
 
 로그인에 성공하면 요청(Request)에 대한 jwt 토큰을 반환(Response)합니다.
