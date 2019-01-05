@@ -6,14 +6,14 @@ lang: 'en'
 categories: 'laravel'
 comments: true
 
-title: 'jwt:signin'
-description: let's make signin feature by using jwt(Json Web Token) whicih is a token based authentication system.
+title: 'jwt:signup'
+description: let's make signup feature by using jwt(Json Web Token) whicih is a token based authentication system.
 image: '/assets/images/category/laravel/jwt-signup.jpg'
 ---
 
 
 ## Outline
-we try to make signin feature by using jwt(Json Web Token) which is a token based authentication system. in this blog, we will apply [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth){:rel="nofollow noreferrer" target="_blank"} middleware to Laravel project to make jwt token system. if you want to know how to insall and configure ```tymon/jwt-auth```, see our previous blog.
+we try to make signup feature by using jwt(Json Web Token) which is a token based authentication system. in this blog, we will apply [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth){:rel="nofollow noreferrer" target="_blank"} middleware to Laravel project to make jwt token system. if you want to know how to insall and configure ```tymon/jwt-auth```, see our previous blog.
 
 - [jwt installation&settings]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
 
@@ -28,7 +28,7 @@ in here, we'll use Laravel development environment created by Laradock and Ansib
 - [Ansible&Laravel]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
 
 ## Connect Database
-signin feature which we will develop from now need the database to store the user information. if you don't know how to connect the database to Laravel, see below blog.
+signup feature which we will develop from now need the database to store the user information. if you don't know how to connect the database to Laravel, see below blog.
 
 - [Ansible&Laravel]({{site.url}}/environment/ansible-laravel/){:target="_blank"}
 
@@ -160,7 +160,7 @@ if the data is successfully created, you can see the response which we configure
 ![postman register api test fail](/assets/images/category/laravel/jwt-signup/register_api_test_fail.png)
 
 ## Completed
-until now, we've developed jwt authentication system which is one of token based authentication systems. next blog post, we will introduce how to make login process in jwt authentication system.
+until now, we've developed jwt authentication system which is one of token based authentication systems. next blog post, we will introduce how to make login procedure in jwt authentication system.
 
 ## Reference
 - tymon/jwt-auth: [https://github.com/tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth){:rel="nofollow noreferrer" target="_blank"}
