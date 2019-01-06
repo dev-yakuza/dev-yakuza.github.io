@@ -16,7 +16,7 @@ image: '/assets/images/category/laravel/jwt-signin.png'
 we try to implement the login procedure via jwt authentication system. this blog is a series. if you want to know how to install jwt middleware or how to implement signup, see our previous blogs.
 
 - [jwt installation&settings]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:signup]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
+- [jwt:signup]({{site.url}}/{{page.categories}}/jwt-signup){:target="_blank"}
 
 ## Repository
 we've made the repository of jwt authentication system. click below link to see our repository.

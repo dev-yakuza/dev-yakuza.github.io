@@ -16,8 +16,8 @@ image: '/assets/images/category/laravel/jwt-user-info.jpg'
 jwt 인증 시스템을 통해 로그인한 사용자의 정보를 얻는 방법에 대해서 알아보려고 합니다. 이 블로그는 시리즈로 구성되어 있습니다. jwt 구현을 위한 미들웨어(Middleware) 설치나 회원가입, 로그인 구현에 관해서는 이전 블로그를 참고해주세요.
 
 - [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
-- [jwt:로그인]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
+- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt-signup){:target="_blank"}
+- [jwt:로그인]({{site.url}}/{{page.categories}}/jwt-signin){:target="_blank"}
 
 ## 저장소(Repository)
 우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.

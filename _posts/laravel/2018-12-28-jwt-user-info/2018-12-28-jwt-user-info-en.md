@@ -16,8 +16,8 @@ image: '/assets/images/category/laravel/jwt-user-info.jpg'
 we'll introduce how to get user information from login user in jwt authentication system. this blog is a series. if you want to know how to install jwt middleware and implement signup, signin features, see our previous blogs.
 
 - [jwt installation&settings]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:signup]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
-- [jwt:signin]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
+- [jwt:signup]({{site.url}}/{{page.categories}}/jwt-signup){:target="_blank"}
+- [jwt:signin]({{site.url}}/{{page.categories}}/jwt-signin){:target="_blank"}
 
 ## Repository
 we've made the repository of jwt authentication system. click below link to see our repository.

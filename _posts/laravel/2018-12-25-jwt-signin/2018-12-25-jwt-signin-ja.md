@@ -16,7 +16,7 @@ image: '/assets/images/category/laravel/jwt-signin.png'
 jwt認証システムを使ってログイン機能を実装してみようかと思います。このブログはシリーズで構成されています。jwt実装のためミドルウェア(Middleware)インストールや会員登録機能の実装に関しては以前のブログを確認してください。
 
 - [jwtインストールや設定]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:会員登録]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
+- [jwt:会員登録]({{site.url}}/{{page.categories}}/jwt-signup){:target="_blank"}
 
 ## リポジトリ(Repository)
 私たちはjwt認証システムを実装したリポジトリ(Repository)を作りました。下記のリンクを押してリポジトリ(Repository)を確認してみてください。

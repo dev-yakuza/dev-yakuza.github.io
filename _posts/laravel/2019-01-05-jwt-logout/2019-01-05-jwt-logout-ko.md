@@ -17,7 +17,7 @@ image: '/assets/images/category/laravel/jwt-logout.jpg'
 jwt 인증 시스템에 로그아웃 기능을 추가하는 방법에 대해서 알아보겠습니다. 이 블로그는 시리즈로 구성되어 있습니다. jwt 구현을 위한 미들웨어(Middleware) 설치나 회원가입, 로그인, 사용자 정보 얻기, jwt 토큰 갱신 기능에 관해서는 이전 블로그를 참고해주세요.
 
 - [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
+- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-signup){:target="_blank"}
 - [jwt:로그인]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
 - [jwt:사용자 정보]({{site.url}}/{{page.categories}}/jwt/jwt-user-info){:target="_blank"}
 - [jwt:토큰 갱신]({{site.url}}/{{page.categories}}/jwt/jwt-refresh-token){:target="_blank"}

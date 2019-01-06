@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/laravel/jwt-refresh-token/'
 paginate_path: '/laravel/:num/jwt-refresh-token/'
@@ -17,9 +16,9 @@ image: '/assets/images/category/laravel/jwt-refresh-token.jpg'
 jwt 인증 시스템을 통해 로그인후 얻은 jwt 토큰을 갱신(Refresh)하는 방법에 대해서 알아보도록 하겠습니다. 이 블로그는 시리즈로 구성되어 있습니다. jwt 구현을 위한 미들웨어(Middleware) 설치나 회원가입, 로그인, 사용자 정보 얻기 기능에 관해서는 이전 블로그를 참고해주세요.
 
 - [jwt 설치 및 설정]({{site.url}}/{{page.categories}}/jwt/){:target="_blank"}
-- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt/jwt-siginup){:target="_blank"}
-- [jwt:로그인]({{site.url}}/{{page.categories}}/jwt/jwt-signin){:target="_blank"}
-- [jwt:사용자 정보]({{site.url}}/{{page.categories}}/jwt/jwt-user-info){:target="_blank"}
+- [jwt:회원가입]({{site.url}}/{{page.categories}}/jwt-signup){:target="_blank"}
+- [jwt:로그인]({{site.url}}/{{page.categories}}/jwt-signin){:target="_blank"}
+- [jwt:사용자 정보]({{site.url}}/{{page.categories}}/jwt-user-info){:target="_blank"}
 
 ## 저장소(Repository)
 우리는 jwt 인증 시스템을 구현한 저장소(Repository)를 만들었습니다. 아래에 링크를 클릭해서 저장소(Repository)를 확인해 보세요.
@@ -63,13 +62,14 @@ localhost/api/refresh
 Authorization
 Bearer jwt_token
 ```
+
 jwt 토큰이 유효하다면 아래와 같이 jwt 토큰을 갱신(Refresh)하여 새로운 토큰을 발급받을 수 있습니다.
 
-![refresh token](/assets/images/category/laravel/jwt-user-info/refresh_token.png)
+![refresh token](/assets/images/category/laravel/jwt-refresh-token/refresh_token.png)
 
 jwt 토큰의 유효기간이 끝났거나, 이전의 jwt 토큰을 사용하면 아래와 같이 ```401``` 에러의 응답(Response)을 확인할 수 있습니다.
 
-![fail to refresh token](/assets/images/category/laravel/jwt-user-info/fail_to_refresh_token.png)
+![fail to refresh token](/assets/images/category/laravel/jwt-refresh-token/fail_to_refresh_token.png)
 
 ## 완료
 이것으로 jwt 인증 시스템을 이용하여 로그인후 얻은 jwt 토큰을 갱신(Refresh)하는 방법에 대해서 알아보았습니다. 다음 블로그에서는 jwt 인증 시스템의 마지막 기능인 로그아웃 기능을 추가하는 방법에 대해서 알아보겠습니다.
