@@ -1,15 +1,14 @@
 ---
-published: false
 layout: 'post'
-permalink: '/laravel/jwt-refresh-token/'
-paginate_path: '/laravel/:num/jwt-refresh-token/'
+permalink: '/laravel/jwt-user-info/'
+paginate_path: '/laravel/:num/jwt-user-info/'
 lang: 'ko'
 categories: 'laravel'
 comments: true
 
 title: 'jwt:사용자 정보'
 description: '토큰 기반 인증 시스템인 jwt(Json Web Token)를 통해 로그인한 사용자의 정보를 얻는 방법에 대해서 알아봅시다.'
-image: '/assets/images/category/laravel/jwt-refresh-token.jpg'
+image: '/assets/images/category/laravel/jwt-user-info.jpg'
 ---
 
 
@@ -32,7 +31,6 @@ jwt 인증 시스템을 통해 로그인한 사용자의 정보를 얻는 방법
 
 ## 컨트롤러 수정
 라라벨(Laravel) 프로젝트 폴더의 ```/app/Http/Controllers/JWTAuthController.php``` 파일을 열고 아래의 내용을 추가합니다.
-
 
 ```php
 public function user() {
@@ -85,6 +83,7 @@ localhost/api/user
 Authorization
 Bearer jwt_token
 ```
+
 jwt 토큰이 유효하다면 아래와 같이 사용자의 정보를 얻을 수 있습니다.
 
 ![get user info](/assets/images/category/laravel/jwt-user-info/get_user_info.png)
