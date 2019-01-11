@@ -15,6 +15,10 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 ## 概要
 今までRN(react native)プロジェクトを開発してデバイスでテストする方法について勉強しました。ここでは完成したアプリをiOSアプリストア(App store)へ登録するためアップルの開発者プログラム(Apple developer program)へ登録する方法について説明します。
 
+アンドロイド開発者登録(グーグルプレイ開発者登録)に関しては私たちが作成した別のブログを参考してください。
+
+- [アンドロイド開発者登録]({{site.url}}/{{page.categories}}/android-enroll-google-play-developer/){:target="_blank"}
+
 ## アップル開発者プログラム登録
 アップル開発者プログラム(Apple developer program)へ登録するため下のリンクを押してアップル開発者(Apple developer)サイトへ移動します。
 

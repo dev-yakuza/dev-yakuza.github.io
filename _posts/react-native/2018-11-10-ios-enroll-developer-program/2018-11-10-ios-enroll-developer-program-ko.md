@@ -15,6 +15,10 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 ## 개요
 지금까지 RN(react native) 프로젝트로 개발하고 디바이스에 올리는 방법까지 알아봤습니다. 이제 완성된 어플리케이션을 iOS 앱 스토어(App store)에 등록하기 위한 애플의 개발자 프로그램(Apple developer program)에 등록하는 방법에 대해서 알아봅시다.
 
+안드로이드 개발자 등록(구글 플레이 개발자 등록)에 관해서는 우리가 작성한 다른 블로그를 참고하여 주시기 바랍니다.
+
+- [안드로이드 개발자 등록]({{site.url}}/{{page.categories}}/android-enroll-google-play-developer/){:target="_blank"}
+
 ## 애플 개발자 프로그램 등록
 애플 개발자 프로그램(Apple developer program)에 등록하기 위해 아래에 링크를 눌러 애플 개발자(Apple developer) 사이트로 이동합니다.
 

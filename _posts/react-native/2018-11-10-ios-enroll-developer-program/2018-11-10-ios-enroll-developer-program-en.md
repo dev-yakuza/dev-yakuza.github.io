@@ -15,6 +15,11 @@ image: '/assets/images/category/react-native/ios-enroll-developer-program.jpg'
 ## outline
 until now, we studied how to develop the app on RN(react native) and how to test on the device. in here we introduce how to enroll Apple Developer Program for registering RN(react native) app to iOS App store.
 
+if you want to know how to register Android developer(Google Play developer), see our another blog post.
+
+- [enroll Android Developer]({{site.url}}/{{page.categories}}/android-enroll-google-play-developer/){:target="_blank"}
+
+
 ## enroll Apple Developer Program
 click below link to go to Apple Developer site for enrolling Apple Developer Program.
 
