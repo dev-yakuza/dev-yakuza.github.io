@@ -95,6 +95,7 @@ android {
 RN(react native)가 있는 프로젝트 폴더에서 ```android``` 폴더로 이동한 후 아래에 명령어로 빌드합니다.
 
 ```bash
+# cd android
 ./gradlew assembleRelease
 ```
 

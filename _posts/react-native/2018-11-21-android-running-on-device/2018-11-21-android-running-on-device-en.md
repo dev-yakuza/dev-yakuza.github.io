@@ -95,6 +95,7 @@ android {
 go to ```android``` folder in RN(react native) project folder and execute below code to build.
 
 ```bash
+# cd android
 ./gradlew assembleRelease
 ```
 

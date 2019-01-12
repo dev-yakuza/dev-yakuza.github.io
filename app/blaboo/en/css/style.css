@@ -660,3 +660,7 @@ header {
 .navbar-brand--center {
   margin: auto;
 }
+
+.card.features {
+  margin-bottom: 2rem;
+}

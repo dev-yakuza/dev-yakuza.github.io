@@ -166,6 +166,7 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 ビルドをしたり
 
 ```bash
+# cd android
 ./gradlew assembleRelease
 ```
 
