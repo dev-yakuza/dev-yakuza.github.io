@@ -19,3 +19,7 @@ image: '/assets/images/category/blaboo/development-journal.png'
 ## BlaBoo란?
 BlaBoo(블라부)는 영어의 ```blah blah```라는 단어와 아기들이 잘 내는 ```boo```라는 단어를 합친 의미로, 유아/어린이를 대상으로 하는 단어 공부 앱입니다. 유아/어린이가 그림을 보고 그 그림을 선택하면 음성으로 단어를 읽어주는 아주 간단한 앱입니다.
 
+![유아/어린이용 단어 공부 앱 BlaBoo](/assets/images/category/blaboo/ios-running-on-device/change-scheme.png)
+
+## 왜 만들게 되었나?
+사실 유아/어린이용 단어 공부 앱은 많이 나와있습니다. 이 앱을 만들게 된 주목적은

@@ -90,7 +90,7 @@ add Google Firebase SDK to RN(react native) project followed the manual shown on
 pod init
 ```
 
-add Google Firebase SDK.
+add Google Firebase SDK to ```Podfile```.
 
 ```ruby
 target 'blaboo' do
@@ -100,6 +100,11 @@ target 'blaboo' do
   # Pods for blaboo
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+
+#  target 'blaboo-tvOS' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
   target 'blabooTests' do
     inherit! :search_paths
@@ -194,6 +199,16 @@ if you want to change Android package name in RN(react native), do following sec
   ...
   ```
 
+- modify  ```android/app/src/bundle.gradle``` file
+
+  ```java
+  ...
+  defaultConfig {
+      applicationId package_name
+      ...
+  }
+  ...
+  ```
 
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
@@ -253,6 +268,7 @@ last, add below source to ```android/app/src/main/java/com/[app name]/MainApplic
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import com.google.android.gms.ads.MobileAds;
 
 @Override
 protected List<ReactPackage> getPackages() {

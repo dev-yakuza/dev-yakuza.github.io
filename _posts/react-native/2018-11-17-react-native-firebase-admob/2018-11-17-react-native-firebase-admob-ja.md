@@ -90,7 +90,7 @@ react-native link react-native-firebase
 pod init
 ```
 
-グーグルファイアベースSDK(Google Firebase SDK)を追加します。
+グーグルファイアベースSDK(Google Firebase SDK)を```Podfile```に追加します。
 
 ```ruby
 target 'blaboo' do
@@ -100,6 +100,11 @@ target 'blaboo' do
   # Pods for blaboo
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+
+#  target 'blaboo-tvOS' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
   target 'blabooTests' do
     inherit! :search_paths
@@ -193,7 +198,16 @@ RN(react native)でアンドロイドパッケージ名を修正したい方は�
   package package_name;
   ...
   ```
+- RN(react native)プロジェクトフォルダで```android/app/src/bundle.gradle```ファイル修正
 
+  ```java
+  ...
+  defaultConfig {
+      applicationId package_name
+      ...
+  }
+  ...
+  ```
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
 グーグルファイアベース(Google Firebase)が作った```google-services.json```ファイルをRN(react native)プロジェクトの```android/app```フォルダへコピーします。その後、```Next```ボタンを押して次へ移動します。
@@ -252,6 +266,7 @@ com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = 
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import com.google.android.gms.ads.MobileAds;
 
 @Override
 protected List<ReactPackage> getPackages() {

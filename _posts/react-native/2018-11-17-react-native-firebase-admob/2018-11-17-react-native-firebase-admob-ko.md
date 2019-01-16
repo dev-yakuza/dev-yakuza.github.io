@@ -90,7 +90,7 @@ react-native link react-native-firebase
 pod init
 ```
 
-구글 파이어베이스 SDK(Google Firebase SDK) 추가합니다.
+구글 파이어베이스 SDK(Google Firebase SDK)를 ```Podfile```에 추가합니다.
 
 ```ruby
 target 'blaboo' do
@@ -100,6 +100,11 @@ target 'blaboo' do
   # Pods for blaboo
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+
+#  target 'blaboo-tvOS' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
   target 'blabooTests' do
     inherit! :search_paths
@@ -194,6 +199,17 @@ RN(react native)에서 안드로이드 패키지명을 수정하고 싶으신 �
   ...
   ```
 
+- RN(react native) 프로젝트 폴더에서 ```android/app/src/bundle.gradle``` 파일 수정
+
+  ```java
+  ...
+  defaultConfig {
+      applicationId package_name
+      ...
+  }
+  ...
+  ```
+
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.png)
 
 구글 파이어베이스(Google Firebase)가 만든 ```google-services.json``` 파일을 RN(react native) 프로젝트의 ```android/app``` 폴더에 복사합니다. 그리고 ```Next```버튼을 눌러 다음 단계로 진행합니다.
@@ -252,6 +268,7 @@ com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = 
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import com.google.android.gms.ads.MobileAds;
 
 @Override
 protected List<ReactPackage> getPackages() {
