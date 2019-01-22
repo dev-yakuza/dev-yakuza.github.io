@@ -13,6 +13,7 @@ export default class Home extends React.Component<Props, State> {
     }
     ...
     private _onPressSpeech = () => {
+        Tts.stop();
         Tts.speak('Hello, world!');
     }
 }
