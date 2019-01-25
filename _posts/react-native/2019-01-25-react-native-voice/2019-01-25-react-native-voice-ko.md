@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: '사용자 음성 인식'
-description: 'RN(React Native) 프로젝트에서 react-native-voice 라이브러리를 사용하여 사용자 음성 인식하여 문자로 변환해주는 기능을 추가해 봅시다.'
+description: 'RN(React Native) 프로젝트에서 react-native-voice 라이브러리를 사용하여 사용자 음성을 인식하여 문자로 변환해주는 기능을 추가해 봅시다.'
 image: '/assets/images/category/react-native/react-native-voice.jpg'
 ---
 
