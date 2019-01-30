@@ -135,8 +135,11 @@ import Google Firebase SDK.
 
 ```js
 ...
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+...
 [FIRApp configure];
 [GADMobileAds configureWithApplicationID:@"ca-app-pub-7987914246691031~8295071692"];
+return YES;
 ...
 ```
 
@@ -306,16 +309,27 @@ import firebase from 'react-native-firebase';
 
 load react-native-firebase.
 
+### Banner
+below source code is the example about how to show Banner type advertisement(AD Unit is Banner) by ```react-native-firebase``` Admob.
+
 ```js
+import { Platform } from 'react-native';
+...
 render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
     const request = new AdRequest();
+
+
+    const unitId =
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-7987914246691031/4248107679'
+        : 'ca-app-pub-7987914246691031/5729668166';
     ...
     return (
         ...
         <Banner
-          unitId="ca-app-pub-7987914246691031/7659403606"
+          unitId={unitId}
           size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
@@ -326,6 +340,44 @@ render() {
 ```
 
 add above source and execute RN(react native) project. you can see the Google Admob banner.
+
+### Interstitial
+below source code is the example about how to show Interstitial type advertisement(AD Unit is Interstitial) by ```react-native-firebase``` Admob.
+
+```js
+import { Platform } from 'react-native';
+...
+componentDidMount() {
+  ...
+  const unitId =
+    Platform.OS === 'ios'
+      ? 'ca-app-pub-7987914246691031/4248107679'
+      : 'ca-app-pub-7987914246691031/5729668166';
+  const advert = firebase.admob().interstitial(unitId);
+  const AdRequest = firebase.admob.AdRequest;
+  const request = new AdRequest();
+  advert.loadAd(request.build());
+
+  advert.on('onAdLoaded', () => {
+    console.log('Advert ready to show.');
+    advert.show();
+  });
+  ...
+}
+...
+```
+
+you can use ```advert.show()``` function when you show Interstitial advertisement like below. you should call ```advert.isLoaded()``` to check the Interstitial advertisement is ready.
+
+```js
+setTimeout(() => {
+  if (advert.isLoaded()) {
+    advert.show();
+  } else {
+    // Unable to show interstitial - not loaded yet.
+  }
+}, 1000);
+```
 
 ## completed
 we introduced how to display Google Admob using react-native-firebase library in RN(react native) project. when you set react-native-firebase, Analytics is automatically configured.

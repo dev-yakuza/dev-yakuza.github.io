@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'register Android App store'
-description: we'll introduce how to register RN(React Native) Android App to Android App store(Google Play.
+description: we'll introduce how to register RN(React Native) Android App to Android App store(Google Play).
 image: '/assets/images/category/react-native/android-google-play.jpg'
 ---
 

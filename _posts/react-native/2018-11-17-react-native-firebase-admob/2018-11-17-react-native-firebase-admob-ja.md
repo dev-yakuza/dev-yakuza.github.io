@@ -135,8 +135,11 @@ RN(react native)プロジェクトの```AppDelete.m```ファイルを上のよ�
 
 ```js
 ...
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+...
 [FIRApp configure];
 [GADMobileAds configureWithApplicationID:@"ca-app-pub-7987914246691031~8295071692"];
+return YES;
 ...
 ```
 
@@ -304,16 +307,27 @@ import firebase from 'react-native-firebase';
 
 react-native-firebaseをローディングします。
 
+
+### バナー
+下記のソースコードは```react-native-firebase```のアドモブ(Admob)を使って広告タイプ(Ad Unit)がバナー(Banner)である広告を表示するれいたい例題です。
+
 ```js
+import { Platform } from 'react-native';
+...
 render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
     const request = new AdRequest();
+
+    const unitId =
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-7987914246691031/4248107679'
+        : 'ca-app-pub-7987914246691031/5729668166';
     ...
     return (
         ...
         <Banner
-          unitId="ca-app-pub-7987914246691031/7659403606"
+          unitId={unitId}
           size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
@@ -324,6 +338,44 @@ render() {
 ```
 
 上のようにソースコードを追加してRN(react native)プロジェクトを実行したらバナーが上手く表示されることを確認することができます。
+
+### 割込み広告
+下記のソースコードは```react-native-firebase```のアドモブ(Admob)を使って広告タイプ(AD Unit)が割込み広告(Interstitial)である広告を表示する方法です。
+
+```js
+import { Platform } from 'react-native';
+...
+componentDidMount() {
+  ...
+  const unitId =
+    Platform.OS === 'ios'
+      ? 'ca-app-pub-7987914246691031/4248107679'
+      : 'ca-app-pub-7987914246691031/5729668166';
+  const advert = firebase.admob().interstitial(unitId);
+  const AdRequest = firebase.admob.AdRequest;
+  const request = new AdRequest();
+  advert.loadAd(request.build());
+
+  advert.on('onAdLoaded', () => {
+    console.log('Advert ready to show.');
+    advert.show();
+  });
+  ...
+}
+...
+```
+
+上のソースでわかると思いますが、```react-native-firebase```のアドモブ(Admob)の割込み広告(Interstitial)を表示したい時、```advert.show()```を使って表示します。表示する前いつも```advert.isLoaded()```を使って広告が準備できたか確認してください。
+
+```js
+setTimeout(() => {
+  if (advert.isLoaded()) {
+    advert.show();
+  } else {
+    // Unable to show interstitial - not loaded yet.
+  }
+}, 1000);
+```
 
 ## 完了
 RN(react native)プロジェクトへreact-native-firebaseライブラリを使ってグーグルアドモブ(Google Admob)を適用する方法をみてみました。これでreact-native-firebaseを設定したらアナリティクス(Analytics)は自動に設定されて分析することができます。

@@ -135,8 +135,11 @@ RN(react native) 프로젝트의 ```AppDelegate.m``` 파일에 위와 같이 코
 
 ```js
 ...
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+...
 [FIRApp configure];
 [GADMobileAds configureWithApplicationID:@"ca-app-pub-7987914246691031~8295071692"];
+return YES;
 ...
 ```
 
@@ -306,16 +309,26 @@ import firebase from 'react-native-firebase';
 
 react-native-firebase를 로딩합니다.
 
+### 배너
+아래의 소스코드는 ```react-native-firebase```의 애드몹(Admob)을 사용하여 광고 형식(AD Unit)이 배너(Banner)인 광고를 표시하는 예제입니다.
+
 ```js
+import { Platform } from 'react-native';
+...
 render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
     const request = new AdRequest();
+
+    const unitId =
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-7987914246691031/4248107679'
+        : 'ca-app-pub-7987914246691031/5729668166';
     ...
     return (
         ...
         <Banner
-          unitId="ca-app-pub-7987914246691031/7659403606"
+          unitId={unitId}
           size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
@@ -326,6 +339,44 @@ render() {
 ```
 
 위와 같이 소스를 추가하고 RN(react native) 프로젝트를 실행하면 배너가 잘 표시되는 것을 확인할 수 있습니다.
+
+### 삽입 광고
+아래의 소스코드는 ```react-native-firebase```의 애드몹(Admob)을 사용하여 광고 형식(AD Unit)이 삽입 광고(Interstitial, 전체페이지 광고)인 광고를 표시하는 예제입니다.
+
+```js
+import { Platform } from 'react-native';
+...
+componentDidMount() {
+  ...
+  const unitId =
+    Platform.OS === 'ios'
+      ? 'ca-app-pub-7987914246691031/4248107679'
+      : 'ca-app-pub-7987914246691031/5729668166';
+  const advert = firebase.admob().interstitial(unitId);
+  const AdRequest = firebase.admob.AdRequest;
+  const request = new AdRequest();
+  advert.loadAd(request.build());
+
+  advert.on('onAdLoaded', () => {
+    console.log('Advert ready to show.');
+    advert.show();
+  });
+  ...
+}
+...
+```
+
+위에 소스에서 알수 있듯이 ```react-native-firebase```의 애드몹(Admob)의 삽입 광고(Interstitial, 전체페이지 광고)를 표시하고 싶을 때 ```advert.show()```함수를 호출합니다. 호출하기 전에 항상 ```advert.isLoaded()``` 함수를 사용하여 광고가 준비되었는지 확인하시기 바랍니다.
+
+```js
+setTimeout(() => {
+  if (advert.isLoaded()) {
+    advert.show();
+  } else {
+    // Unable to show interstitial - not loaded yet.
+  }
+}, 1000);
+```
 
 ## 완료
 RN(react native) 프로젝트에 react-native-firebase 라이브러리를 사용하여 구글 애드몹(Google Admobe)을 적용하는 법을 살펴보았습니다. 이렇게 react-native-firebase를 설정하면 애널리틱스(Analytics)는 자동으로 설정되어 분석이 가능하게 됩니다.
