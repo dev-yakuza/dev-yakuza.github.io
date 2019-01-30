@@ -36,7 +36,8 @@ pod 'Crashlytics'
 
 ```bash
 # cd ios
-pod update
+pod install
+# pod update
 ```
 
 ### Crashlytics 실행 스크립트 추가

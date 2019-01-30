@@ -36,7 +36,8 @@ use below ```pod``` command to install added libraries.
 
 ```bash
 # cd ios
-pod update
+pod install
+# pod update
 ```
 
 ### add Crashlytics executing script
