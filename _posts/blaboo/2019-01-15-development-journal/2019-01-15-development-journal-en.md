@@ -8,7 +8,7 @@ comments: true
 
 title: 'BlaBoo App Development Journal(RN, React Native)'
 description: I've use RN(React Native) to develop the App called BlaBoo. in here, I've written the development journal about this app.
-image: '/assets/images/category/blaboo/development-journal.png'
+image: '/assets/images/category/blaboo/background.png'
 ---
 
 
@@ -17,6 +17,10 @@ I've studied RN(React Native) so far, but I've never developed the app from star
 
 ## What is BlaBoo?
 BlaBoo is a word study app for baby/children that combines the word ```blah blah``` with the word ```boo```.
+
+- BlaBoo introduction page: [BlaBoo](https://dev-yakuza.github.io/app/blaboo/en/){:target="_blank"}
+
+below is BlaBoo's download links.
 
 - Donwload: [Apple App store](https://itunes.apple.com/us/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}

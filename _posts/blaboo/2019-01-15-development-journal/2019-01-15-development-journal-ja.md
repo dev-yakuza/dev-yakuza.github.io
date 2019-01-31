@@ -8,7 +8,7 @@ comments: true
 
 title: 'BlaBooアプリ開発日誌(RN, React Native)'
 description: 'RN(React Native)を使ってBlaBooと言うアプリを開発してみました。このアプリを開発した時のエピソードをまとめてみました。'
-image: '/assets/images/category/blaboo/development-journal.png'
+image: '/assets/images/category/blaboo/background.png'
 ---
 
 
@@ -17,6 +17,10 @@ image: '/assets/images/category/blaboo/development-journal.png'
 
 ## BlaBooとは?
 BlaBoo(ブラブー)は英語の```blah blah(ブラブラ)```の単語と赤ちゃんが良く出す```boo(ブー)```の単語を合わせた意味で、赤ちゃん/子供向けの単語アプリです。
+
+- BlaBoo紹介ページ: [BlaBoo]( https://dev-yakuza.github.io/app/blaboo/){:target="_blank"}
+
+下記はBlaBooアプリのダウンロードリンクです。
 
 - ダウンロード: [アップルアプリストア](https://itunes.apple.com/jp/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
