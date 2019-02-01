@@ -16,6 +16,13 @@ image: '/assets/images/category/react-native/ios-app-store.jpg'
 ## 概要
 今から開発したアプリをiOSアプリスタア(App Store)へ登録する方法について説明します。ここには無料アプリを登録する時必要な情報が載せております。
 
+このブログは下記のブログを見て全部終わった方のためです。
+- [iOSデバイステスト]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}
+- [iOSビルドやテスト]({{site.url}}/{{page.categories}}/ios-running-on-device/){:target="_blank"}
+- [iOS開発者登録]({{site.url}}/{{page.categories}}/ios-enroll-developer-program/){:target="_blank"}
+- [iOS証明書(Certification)]({{site.url}}/{{page.categories}}/ios-certification/){:target="_blank"}
+- [iOS TestFlight]({{site.url}}/{{page.categories}}/ios-testflight/){:target="_blank"}
+
 ## 準備項目
 iOSアプリストア(App Store)へ登録するためには下記の項目が必要になります。
 

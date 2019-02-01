@@ -16,6 +16,13 @@ image: '/assets/images/category/react-native/ios-app-store.jpg'
 ## 개요
 지금부터 개발한 앱을 iOS 앱 스토어(App Store)에 등록하는 방법에 대해서 알아봅니다. 여기에서는 무료 앱을 등록하기 위한 최소한에 정보가 기록되어있습니다.
 
+이 블로그는 아래에 과정을 끝내신 분을 위한 블로그입니다.
+- [iOS 디바이스 테스트]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}
+- [iOS 빌드 및 테스트]({{site.url}}/{{page.categories}}/ios-running-on-device/){:target="_blank"}
+- [iOS 개발자 등록]({{site.url}}/{{page.categories}}/ios-enroll-developer-program/){:target="_blank"}
+- [iOS 인증서(Certification)]({{site.url}}/{{page.categories}}/ios-certification/){:target="_blank"}
+- [iOS TestFlight]({{site.url}}/{{page.categories}}/ios-testflight/){:target="_blank"}
+
 ## 준비 사항
 iOS 앱 스토어(App Store)에 등록시키기 위해서는 아래와 같은 항목이 필요합니다.
 

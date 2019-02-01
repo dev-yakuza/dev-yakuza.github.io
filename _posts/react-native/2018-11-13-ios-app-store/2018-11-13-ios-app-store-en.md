@@ -16,6 +16,13 @@ image: '/assets/images/category/react-native/ios-app-store.jpg'
 ## outline
 let's see how to register the app to iOS App Store. in here, we will introduce what we need minimum information to register the free app to iOS App Store.
 
+this blog post is for people who completed to read below blog.
+- [iOS device test]({{site.url}}/{{page.categories}}/ios-test-on-device/){:target="_blank"}
+- [iOS build and test]({{site.url}}/{{page.categories}}/ios-running-on-device/){:target="_blank"}
+- [enroll iOS developer]({{site.url}}/{{page.categories}}/ios-enroll-developer-program/){:target="_blank"}
+- [iOS Certification]({{site.url}}/{{page.categories}}/ios-certification/){:target="_blank"}
+- [iOS TestFlight]({{site.url}}/{{page.categories}}/ios-testflight/){:target="_blank"}
+
 ## preparations
 below is required to register iOS App Store.
 
