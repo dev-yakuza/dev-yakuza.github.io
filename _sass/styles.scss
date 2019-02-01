@@ -3,9 +3,11 @@
 
 body {
   overflow-x: hidden;
+  word-break: break-word;
+}
+:lang(ja) body {
   word-break: break-all;
 }
-
 body,
 h1,
 h2,

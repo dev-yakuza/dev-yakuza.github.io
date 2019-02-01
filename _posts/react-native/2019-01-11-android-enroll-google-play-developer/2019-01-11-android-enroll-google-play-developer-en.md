@@ -37,28 +37,28 @@ now, we're ready to register Android developer(Google Play developer). click bel
 
 if you were logged in with Google Account and clicked above link, you can see the screen like below.
 
-![Android developer, Google Play developer register site](/assets/images/category/react-native/android-enroll-google-play-developer/enroll-goole-play-developer.png)
+![Android developer, Google Play developer register site](/assets/images/category/react-native/android-enroll-google-play/enroll-goole-play-developer.png)
 
 scroll to go down and agree ```Accept developer agreement``` on left side and click ```CONTINUE TO PAYMENT``` on right bottom.
 
 
-![Android developer, Google Play developer accept developer agreement](/assets/images/category/react-native/android-enroll-google-play-developer/accept-developer-agreement.png)
+![Android developer, Google Play developer accept developer agreement](/assets/images/category/react-native/android-enroll-google-play/accept-developer-agreement.png)
 
 and then, you can see payment screen like below.
 
-![Android developer, Google Play developer register fee](/assets/images/category/react-native/android-enroll-google-play-developer/purchase.png)
+![Android developer, Google Play developer register fee](/assets/images/category/react-native/android-enroll-google-play/purchase.png)
 
 insert your payment information and click ```BUY``` button on right bottom.
 
-![Android developer, Google Play developer success to pay](/assets/images/category/react-native/android-enroll-google-play-developer/purchase-completed.png)
+![Android developer, Google Play developer success to pay](/assets/images/category/react-native/android-enroll-google-play/purchase-completed.png)
 
 if you succeed to pay, you can see the screen like above. click ```CONTINUE REGISTRATION``` button to continue to register Android developer(Google Play developer).
 
-![insert Android developer, Google Play developer information](/assets/images/category/react-native/android-enroll-google-play-developer/developer-info.png)
+![insert Android developer, Google Play developer information](/assets/images/category/react-native/android-enroll-google-play/developer-info.png)
 
 when you see Android developer(Google Play developer) information input screen, insert all required fields and click ```COMPLETE REGISTRATION``` button on right bottom.
 
-![succeed to register Android developer, Google Play developer](/assets/images/category/react-native/android-enroll-google-play-developer/completed-enroll.png)
+![succeed to register Android developer, Google Play developer](/assets/images/category/react-native/android-enroll-google-play/completed-enroll.png)
 
 if you succeed to register Android developer(Google Play developer), you can see the screen like above.
 
