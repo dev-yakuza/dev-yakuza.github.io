@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'スワイプ検知'
-description: 'RN(React Native)プロジェクトでユーザが画面でどの方向でスワイプ(Swipe)したか検知するためreact-native-gesturesを使ってみましょう。 '
+description: 'RN(React Native)プロジェクトでユーザが画面でどの方向でスワイプ(Swipe)したか検知するためreact-native-swipe-gesturesを使ってみましょう。 '
 image: '/assets/images/category/react-native/react-native-swipe-gestures.jpg'
 ---
 

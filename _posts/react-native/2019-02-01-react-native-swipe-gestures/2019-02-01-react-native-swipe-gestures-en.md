@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'Swipe Detection'
-description: let's see how to use react-native-gestures to detect user swipe event on RN(React Native) project
+description: let's see how to use react-native-swipe-gestures to detect user swipe event on RN(React Native) project
 image: '/assets/images/category/react-native/react-native-swipe-gestures.jpg'
 ---
 

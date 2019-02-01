@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: '스와이프 감지'
-description: 'RN(React Native) 프로젝트에서 유저가 화면에서 어느 방향으로 스와이프(Swipe) 했는지 감지하기 위해 react-native-gestures를 사용해 보자'
+description: 'RN(React Native) 프로젝트에서 유저가 화면에서 어느 방향으로 스와이프(Swipe) 했는지 감지하기 위해 react-native-swipe-gestures를 사용해 보자'
 image: '/assets/images/category/react-native/react-native-swipe-gestures.jpg'
 ---
 
