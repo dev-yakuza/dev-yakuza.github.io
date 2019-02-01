@@ -4,6 +4,7 @@
 body {
   overflow-x: hidden;
   word-break: break-word;
+  letter-spacing: -1px;
 }
 :lang(ja) body {
   word-break: break-all;
