@@ -65,6 +65,7 @@ var styles = StyleSheet.create({
 
 私たちは背景でグラデーション(Gradient)を使うため下のソースコードを使っています。
 
+{% raw %}
 ```js
 ...
 import LinearGradient from 'react-native-linear-gradient';
@@ -88,6 +89,7 @@ const Background = styled(LinearGradient)`
 />
 ...
 ```
+{% endraw %}
 
 また、ページの切り替える時背景のグラデーション(Gradient)をスムーズ変えるためアニメーションを適用してます。アニメーションは下記のサイトを参考して作りました。
 

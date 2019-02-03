@@ -65,6 +65,7 @@ var styles = StyleSheet.create({
 
 우리는 배경화면 그라데이션(Gradient)을 사용하기 위해 아래의 소스코드를 사용하고 있습니다.
 
+{% raw %}
 ```js
 ...
 import LinearGradient from 'react-native-linear-gradient';
@@ -88,6 +89,7 @@ const Background = styled(LinearGradient)`
 />
 ...
 ```
+{% endraw %}
 
 또한 페이지 전환시 배경 그라데이션(Gradient)을 자연스럽게 전환하기 위해 애니메이션을 적용했습니다. 애니메이션은 아래에 사이트를 참고하여 제작하였습니다.
 

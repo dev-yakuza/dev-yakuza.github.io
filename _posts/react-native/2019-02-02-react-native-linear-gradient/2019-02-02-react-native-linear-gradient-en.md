@@ -65,6 +65,7 @@ var styles = StyleSheet.create({
 
 we use below source code to make the gradient background.
 
+{% raw %}
 ```js
 ...
 import LinearGradient from 'react-native-linear-gradient';
@@ -88,6 +89,7 @@ const Background = styled(LinearGradient)`
 />
 ...
 ```
+{% endraw %}
 
 also, when the page that has the gradient background is switched, we applied the animation to switch smoothly the gradient background. we referred below site to make the animation.
 
