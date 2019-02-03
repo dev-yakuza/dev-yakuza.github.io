@@ -166,7 +166,7 @@ p.lead {
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 40px;
+    font-size: 34px;
   }
   h2 {
     font-size: 30px;
@@ -292,7 +292,7 @@ header {
 
 @media (max-width: 767px) {
   .tagline {
-    font-size: 17px;
+    font-size: 15px;
   }
   .img-holder {
     padding-bottom: 100%;
