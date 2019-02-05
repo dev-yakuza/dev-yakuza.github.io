@@ -120,8 +120,7 @@ also, I needed various informations. it took a long time to make these informati
 - how to register iOS app: [register iOS App store]({{site.url}}/react-native/ios-app-store/){:target="_blank"}
 - how to register Android app: [register Android App store]({{site.url}}/react-native/android-google-play/){:target="_blank"}
 
-and Apple strict App Review. my app was rejected 5 times. I felt not to register.
-그리고 역시나 무서운 애플의 앱 심사(App Review). 5차례 정도 앱 심사(App Review)가 거부(Reject)되었습니다. at that time, I really wanted to stop to register. and final rejection reason was my app doesn't have user interact, so Apple App store doesn't need my app.
+and Apple strict App Review. my app was rejected 5 times. I felt not to register. at that time, I really wanted to stop to register. and final rejection reason was my app doesn't have user interact, so Apple App store doesn't need my app.
 
 OMG. at first, I appealed to Apple like "my app has more categories than this app. my app has more words and multiple language feature than that app." but they didn't approve it easily. rather, if I think other apps are in violation of the app store, report them...but how do I report them those developers have made with many efforts...so I added an weird feature unlike origin plan.
 
