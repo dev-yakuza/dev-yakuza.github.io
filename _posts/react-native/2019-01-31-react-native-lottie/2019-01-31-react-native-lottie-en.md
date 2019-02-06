@@ -84,6 +84,35 @@ export default class BasicExample extends React.Component {
 ...
 ```
 
+## Fix Error
+I've used ```react-native-lottie``` well after implementing on RN(React Native), but after installing another library, when I built my RN(React Native) project, I got the error like below.
+
+```bash
+Build system information
+
+error: Cycle in dependencies between targets 'LottieLibraryIOS' and 'LottieReactNative'; building could produce unreliable results.
+Cycle path: LottieLibraryIOS → LottieReactNative → LottieLibraryIOS
+Cycle details:
+...
+```
+
+I deleted ```Pods``` folder and ```node_modules``` folder, and installed again, but the error was still occured.
+
+below is how to fix the error in my case.  if you have same issue as I have, try to do below.
+
+execute ```ios/[project_name].xcworkspace``` file in RN(React Native) project to open xcode.
+
+![lottie fix build error](/assets/images/category/react-native/react-native-lottie/lottie_fix_error.png)
+
+after executing xcode, click ```File > Workspace Settings...``` like above.
+
+![lottie fix build error: change build system](/assets/images/category/react-native/react-native-lottie/change_build_system.png)
+
+change the Build System to ```Legacy Build System``` from ```New Build System (Default)```.
+
+in my case, after changing the Build System, I can build successfully. I hope this way is helpful to you.
+
+
 ## Completed
 we've done to use lottie on RN(React Native) to show Microinteractions. it's quite simple, isn't it? I think it's more difficult to make the animation than applying it by lottie. I don't know how to use After Effects, so I use [https://lottiefiles.com/](https://lottiefiles.com/){:rel="nofollow noreferrer" target="_blank"} site. I recommend for you to use lottie to use Microinteractions on you project.
 

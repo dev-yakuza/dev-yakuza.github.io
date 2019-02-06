@@ -84,6 +84,35 @@ export default class BasicExample extends React.Component {
 ...
 ```
 
+## 에러 대응
+RN(React Native) 프로젝트에 ```react-native-lottie```를 구현해서 잘 사용하다가 다른 라이브러리를 설치하고 빌드할 때, 아래와 같은 에러가 발생하였다.
+
+```bash
+Build system information
+
+error: Cycle in dependencies between targets 'LottieLibraryIOS' and 'LottieReactNative'; building could produce unreliable results.
+Cycle path: LottieLibraryIOS → LottieReactNative → LottieLibraryIOS
+Cycle details:
+...
+```
+
+RN(React Native) 프로젝트의 ```Pods``` 폴더나 ```node_modules```를 지우고 다시 설치해도 계속 문제가 발생하였다.
+
+아래에서 설명하는 방법으로 제 RN(React Native) 프로젝트는 정상적으로 빌드가 되었습니다. 다른 분들도 저와 같은 문제가 있으시면 아래에 방법을 한번 시도해 보시기 바랍니다.
+
+RN(React Native) 프로젝트의 ```ios/[project_name].xcworkspace``` 파일을 실행하여 xcode를 실행합니다.
+
+![lottie 빌드 에러 대응](/assets/images/category/react-native/react-native-lottie/lottie_fix_error.png)
+
+xcode가 실행되면 위와 같이 ```File > Workspace Settings...```를 선택합니다.
+
+![lottie 빌드 에러 대응: 빌드 시스템 변경](/assets/images/category/react-native/react-native-lottie/change_build_system.png)
+
+위와 같이 빌드 시스템(Build System)을 ```New Build System (Default)``` 에서 ```Legacy Build System```으로 변경합니다.
+
+저의 경우는 위와 같이 빌드 시스템(Build System)을 변경한 후 RN(React Native)를 빌드하면 정상적으로 빌드되는 것을 확인하였습니다. 다른 분들도 이 방법으로 해결이 되었으면 좋겠습니다.
+
+
 ## 완료
 이것으로 RN(React Native)에 lottie를 이용하여 마이크로 인터렉션(Microinteractions)을 구현했습니다. 간단하죠? lottie로 애니메이션을 적용하는 것보다 애니메이션을 만드는게 더 힘들거 같습니다. 저는 애프터 이펙트(After Effects)를 사용할지 모르기 때문에 [https://lottiefiles.com/](https://lottiefiles.com/){:rel="nofollow noreferrer" target="_blank"} 사이트를 이용하고 있습니다. lottie를 이용하여 여러분도 여러분의 앱에 재미있는 마이크로 인터렉션(Microinteractions) 적용해 보세요.
 
