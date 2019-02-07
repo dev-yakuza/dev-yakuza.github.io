@@ -8,7 +8,7 @@ comments: true
 
 title: 'App Splash スクリーン'
 description: 'RN(React Native)プロジェクトでreact-native-splash-screenを使ってSplashスクリーンを好きな時間に終了するように作ってみましょう。'
-image: '/assets/images/category/react-native/react-native-splash-screen.png'
+image: '/assets/images/category/react-native/react-native-splash-screen.jpg'
 ---
 
 
