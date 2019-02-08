@@ -44,7 +44,7 @@ a:focus {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 300;
   letter-spacing: -1px;
   margin-bottom: 1.5rem;
@@ -271,7 +271,7 @@ header {
 }
 
 .tagline {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 300;
   color: #ffb8f6;
   max-width: 800px;
