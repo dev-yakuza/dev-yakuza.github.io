@@ -22,7 +22,7 @@ BlaBoo(ブラブー)は英語の```blah blah(ブラブラ)```の単語と赤ち�
 
 下記はBlaBooアプリのダウンロードリンクです。
 
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/jp/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
 
 赤ちゃん/子供がイラストを見てそのイラストをタッチしたら音声でその単語を読んでくれるとてもシンプルなアプリです。
@@ -131,7 +131,7 @@ MVP(Minimum Vaiable Product：最小機能製品)の機能中一つである音�
 
 最初はアップルのアプリ審査(App Review)が厳しすぎるじゃないと思いましたが、この審査があるおかげでiOSのアプリのUI/UXが用意かなと思いました。また、アップルのアプリ審査(App Reivew)の経験で次のアプリはもっとユーザを考えて作ると思いました。アプルのアプリ審査者(Apple App Reviewer)様だちに本当にありがとございます。
 
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/jp/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
 
 
@@ -145,11 +145,21 @@ MVP(Minimum Vaiable Product：最小機能製品)の機能中一つである音�
 BlaBooで検証したかった無料リソスでアプリの開発が出来る仮説は検証できました。皆さんも無料リソスを活用してアプリを開発してみてください。
 
 ## 最後に
-やはり```TTS(Text To Speech)```の音声は抵抗感がありました。そして読み間違い時もありました。韓国語で```スパゲティ```は発音できなかったので```パスタ```で変更しました。もし声を寄付してくれう方がいったら大歓迎です。([Contact Us](https://dev-yakuza.github.io/contact/){:target="_blank"})
+やはり```TTS(Text To Speech)```の音声は抵抗感がありました。そして読み間違い時もありました。韓国語で```スパゲティ```は発音できなかったので```パスタ```で変更しました。もし声を寄付してくれう方がいったら大歓迎です。メールやギットハブ(Github)のプルリクエスト(Pull Request)お願いします。
 
-イラストも無料イラストを使ったので一つのスタイルになってないです。やはり、これも寄付してくれる方がいったら大歓迎です。([Contact Us](https://dev-yakuza.github.io/contact/){:target="_blank"})
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- メール: dev.yakuza@gmail.com
 
-多言語は日本語、英語、韓国語を基本提供しましたが、中国とイタリアでアプリダウンロードがあって中国ごとイタリア語を追加しました。しかし中国語、イタリア語はできないので翻訳機を使いました。間違ってる中国、イタリア語があったら、フィドバックお願いします。また、他の言語を寄付してくれる方がいったら大歓迎です。([Contact Us](https://dev-yakuza.github.io/contact/){:target="_blank"})
+イラストも無料イラストを使ったので一つのスタイルになってないです。やはり、これも寄付してくれる方がいったら大歓迎です。メールやギットハブ(Github)のプルリクエスト(Pull Request)お願いします。
 
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/jp/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- メール: dev.yakuza@gmail.com
+
+多言語は日本語、英語、韓国語を基本提供しましたが、中国とイタリアでアプリダウンロードがあって中国ごとイタリア語を追加しました。しかし中国語、イタリア語はできないので翻訳機を使いました。間違ってる中国、イタリア語があったら、フィドバックお願いします。また、他の言語を寄付してくれる方がいったら大歓迎です。メールやギットハブ(Github)のプルリクエスト(Pull Request)お願いします。
+
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- メール: dev.yakuza@gmail.com
+
+## ダウンロード
+- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}

@@ -22,7 +22,7 @@ BlaBoo is a word study app for baby/children that combines the word ```blah blah
 
 below is BlaBoo's download links.
 
-- Donwload: [Apple App store](https://itunes.apple.com/us/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
 
 baby/children see the illustrations and if they touch them, the app reads the word with sound.
@@ -132,7 +132,7 @@ this feature is not at first plan and it is made for approving App Review fastly
 
 at first, I felt anger about Apple App Review, but this review made me thought that iOS apps have great UI/UX. after Apple App Review, I thought I'd make the next app more user friendly. thanks Apple App Reviewers.
 
-- Donwload: [Apple App store](https://itunes.apple.com/us/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
 
 ## Finish App Development Journal
@@ -146,11 +146,21 @@ Apple strict App Review. changed App concept quickly, but this experience change
 The hypothesis that I can develop the app with free resources at BlaBoo is proven. develop apps using free resources!
 
 ## Lastly
-well, ```TTS(Text To Speech)``` voice is not friendly. and there is wrong pronunciation. for example, TTS can't pronounce ```spaghetti``` in Korean, so I changed it to ```pasta```. if you want to donate voices, please contact me([Contact Us](https://dev-yakuza.github.io/en/contact/){:target="_blank"})
+well, ```TTS(Text To Speech)``` voice is not friendly. and there is wrong pronunciation. for example, TTS can't pronounce ```spaghetti``` in Korean, so I changed it to ```pasta```. if you want to donate voices, please send email or pull request.
 
-I use free illustrations so that doesn't looks like same style. if you want to donate illustrations, please contact me([Contact Us](https://dev-yakuza.github.io/en/contact/){:target="_blank"})
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- email: dev.yakuza@gmail.com
 
-I made BlaBoo support Japanese, English, Korean basically and app download is occured in China and Italy so I added Chinese and Italian. however, I don't know Chinese and Italian so I used google translator. if you catch wrong Chinese or Italian, please feedback me. also if you want to donate other languages, please contact me([Contact Us](https://dev-yakuza.github.io/en/contact/){:target="_blank"})
+I use free illustrations so that doesn't looks like same style. if you want to donate illustrations, please send email or pull.
 
-- Donwload: [Apple App store](https://itunes.apple.com/us/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- email: dev.yakuza@gmail.com
+
+I made BlaBoo support Japanese, English, Korean basically and app download is occured in China and Italy so I added Chinese and Italian. however, I don't know Chinese and Italian so I used google translator. if you catch wrong Chinese or Italian, please feedback me. also if you want to donate other languages, please send email or pull.
+
+- github: [https://github.com/dev-yakuza/blaboo-translate](https://github.com/dev-yakuza/blaboo-translate){:target="_blank"})
+- email: dev.yakuza@gmail.com
+
+## Download
+- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
 - Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
