@@ -7,7 +7,7 @@ lang: 'ko'
 categories: 'blaboo'
 comments: true
 
-title: 'BlaBoo 업데이트 전략'
+title: 'BlaBoo 업데이트 기록'
 description: 'RN(React Native)를 사용하여 BlaBoo라는 앱을 제작하고 배포하였습니다. 앱 배포후 BlaBoo는 어떤 업데이트 전략을 취하고 있는지 설명합니다.'
 image: '/assets/images/category/blaboo/update-strategy.png'
 ---
