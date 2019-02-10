@@ -244,3 +244,16 @@ h6 {
   color: #0055a9;
   font-weight: normal;
 }
+
+@media (max-width: 991px) {
+  .home-banner-area .fullscreen {
+    height: initial !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .download-button {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+}

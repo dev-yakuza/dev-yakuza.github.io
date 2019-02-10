@@ -250,3 +250,10 @@ h6 {
     height: initial !important;
   }
 }
+
+@media (max-width: 991px) {
+  .download-button {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+}
