@@ -22,8 +22,14 @@ BlaBoo(블라부)는 영어의 ```blah blah(블라 블라)```라는 단어와 �
 
 아래는 BlaBoo 앱을 다운로드 받을 수 있는 링크 입니다.
 
-- 다운로드: [애플 앱 스토어](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- 다운로드: [구글 앱 스토어](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="어린이 단어 학습 앱 blaboo iOS 다운로드"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="어린이 단어 학습 앱 blaboo 안드로이드 다운로드"/>
+    </a>
+</div>
 
 유아/어린이가 그림을 보고 그 그림을 선택하면 음성으로 단어를 읽어주는 아주 간단한 앱입니다.
 
@@ -95,6 +101,7 @@ MVP(Minimum Viable Product: 최소 기능 제품)의 기능중 하나인 음성 
 
 - react-native-firebase admob 사용 방법: [react-native-firebase-admob]({{site.url}}/react-native/react-native-firebase-admob/){:target="_blank"}
 - react-native-firebase analytics 사용 방법: [react-native-firebase-analytics]({{site.url}}/react-native/react-native-firebase-analytics/){:target="_blank"}
+- react-native-firebase Crasylytics 사용 방법: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
 
 이렇게 정리하다보니 거의 오픈소스를 가져다가 구현한 것 이외에는 한게 별로 없어보이네요. 다들 너무 훌륭한 오픈소스를 만들어 줘서 너무 감사합니다. 훌륭한 오픈소스로 주요 기능을 구현하고 RN(React Native)를 활용하여 재사용 가능한 컴포넌트(Component)를 사용하니 개발은 수월하게 진행할 수 있었습니다. 단지 화면에 표시하기 위한 일러스트와 음성을 위한 단어를 모으고 정리하는데 시간이 더 많이 걸렸습니다.
 
@@ -131,8 +138,14 @@ MVP(Minimum Viable Product: 최소 기능 제품)의 기능중 하나인 음성 
 
 처음엔 애플의 앱 심사(App Review)가 너무 심하고 화가 났지만, 이 심사가 있기에 iOS의 앱들의 UI/UX가 뛰어나구나 생각이 들었습니다. 또한 애플 앱 심사(App Review)를 거치다 보니 다음 앱을 좀 더 사용자 친화적으로 만들어야겠다는 생각이 들었습니다. 애플 앱 심사자(Apple App Reviewer)님들께 진심으로 감사드립니다.
 
-- 다운로드: [애플 앱 스토어](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- 다운로드: [구글 앱 스토어](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="어린이 단어 학습 앱 blaboo iOS 다운로드"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="어린이 단어 학습 앱 blaboo 안드로이드 다운로드"/>
+    </a>
+</div>
 
 ## 앱 개발기를 마치며
 이런 저런 일들이 있었지만 무사히 첫 앱을 릴리스할 수 있었습니다. 보잘것 없는 앱으로 보실 수 있지만, 이 앱은 유저를 많이 늘리고 광고 수익을 내기 위함보다는 자신이 사용하기 위해, 그리고 지금까지 공부한 RN(React Native)를 활용하여 앱을 최종적으로 등록하는 프로세스를 확인하기 위해 제작하였습니다.
@@ -160,5 +173,11 @@ BlaBoo에서 검증하고 싶던 무료 리소스로 앱을 개발할 수 있다
 - 이메일: dev.yakuza@gmail.com
 
 ## 다운로드
-- 다운로드: [애플 앱 스토어](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- 다운로드: [구글 앱 스토어](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="어린이 단어 학습 앱 blaboo iOS 다운로드"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="어린이 단어 학습 앱 blaboo 안드로이드 다운로드"/>
+    </a>
+</div>

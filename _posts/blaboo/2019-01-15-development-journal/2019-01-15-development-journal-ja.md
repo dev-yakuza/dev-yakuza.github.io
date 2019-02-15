@@ -22,8 +22,14 @@ BlaBoo(ブラブー)は英語の```blah blah(ブラブラ)```の単語と赤ち�
 
 下記はBlaBooアプリのダウンロードリンクです。
 
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="子供向け単語勉強アプリblaboo iOSダウンロード"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="子供向け単語勉強アプリblabooアンドロイドダウンロード"/>
+    </a>
+</div>
 
 赤ちゃん/子供がイラストを見てそのイラストをタッチしたら音声でその単語を読んでくれるとてもシンプルなアプリです。
 
@@ -95,6 +101,7 @@ MVP(Minimum Vaiable Product：最小機能製品)の機能中一つである音�
 
 - react-native-firebase admobの使い方: [react-native-firebase-admob]({{site.url}}/react-native/react-native-firebase-admob/){:target="_blank"}
 - react-native-firebase analyticsの使い方: [react-native-firebase-analytics]({{site.url}}/react-native/react-native-firebase-analytics/){:target="_blank"}
+- react-native-firebase Crasylyticsの使い方: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
 
 こうやってまとめたらほとんどオープンソースを持って来て実装しただけであまりやったものがないに見えますね。素敵なオープンソースを作ってくれてありがとうございます。素敵なオープンソースでメインの機能を開発してRN(React Native)を使って再利用可能なコンポーネント(Component)を使って開発は容易に進めました。ただ、画面へ表示するイラストや音声のための単語をまとめる作業がもっと時間がかかりました。
 
@@ -131,8 +138,14 @@ MVP(Minimum Vaiable Product：最小機能製品)の機能中一つである音�
 
 最初はアップルのアプリ審査(App Review)が厳しすぎるじゃないと思いましたが、この審査があるおかげでiOSのアプリのUI/UXが用意かなと思いました。また、アップルのアプリ審査(App Reivew)の経験で次のアプリはもっとユーザを考えて作ると思いました。アプルのアプリ審査者(Apple App Reviewer)様だちに本当にありがとございます。
 
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="子供向け単語勉強アプリblaboo iOSダウンロード"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="子供向け単語勉強アプリblabooアンドロイドダウンロード"/>
+    </a>
+</div>
 
 
 ## アプリの開発の振り返え
@@ -161,5 +174,11 @@ BlaBooで検証したかった無料リソスでアプリの開発が出来る�
 - メール: dev.yakuza@gmail.com
 
 ## ダウンロード
-- ダウンロード: [アップルアプリストア](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- ダウンロード: [グーグルアプリストア](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="子供向け単語勉強アプリblaboo iOSダウンロード"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="子供向け単語勉強アプリblabooアンドロイドダウンロード"/>
+    </a>
+</div>

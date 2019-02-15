@@ -22,8 +22,14 @@ BlaBoo is a word study app for baby/children that combines the word ```blah blah
 
 below is BlaBoo's download links.
 
-- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="learning words app for children, blaboo iOS download"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="learning words app for children, blaboo Android download"/>
+    </a>
+</div>
 
 baby/children see the illustrations and if they touch them, the app reads the word with sound.
 
@@ -95,6 +101,7 @@ finally, I use Google Firebase to analyze the app and use Google Admob for the a
 
 - how to use react-native-firebase for admob: [react-native-firebase-admob]({{site.url}}/react-native/react-native-firebase-admob/){:target="_blank"}
 - how to use react-native-firebase for analytics: [react-native-firebase-analytics]({{site.url}}/react-native/react-native-firebase-analytics/){:target="_blank"}
+- how to use react-native-firebase for Crasylytics: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
 
 I've written the journal like above,
 after all, it seems like there was not much to do except bring and implement open source. thanks to make beautiful and useful open source. to develop the app was not difficult because I used awesome open source and reusable component. just, gathering the illustrations and words took a longer time than developing.
@@ -132,8 +139,14 @@ this feature is not at first plan and it is made for approving App Review fastly
 
 at first, I felt anger about Apple App Review, but this review made me thought that iOS apps have great UI/UX. after Apple App Review, I thought I'd make the next app more user friendly. thanks Apple App Reviewers.
 
-- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="learning words app for children, blaboo iOS download"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="learning words app for children, blaboo Android download"/>
+    </a>
+</div>
 
 ## Finish App Development Journal
 there were many things, but I could release the first app safely. maybe, this app looks like not to have enough features, but this app's purpose is not to gather many users for getting money, just I want to use for my child and for developing an app with RN(React Native).
@@ -162,5 +175,11 @@ I made BlaBoo support Japanese, English, Korean basically and app download is oc
 - email: dev.yakuza@gmail.com
 
 ## Download
-- Donwload: [Apple App store](https://itunes.apple.com/app/blaboo/id1441741187){:rel="nofollow noreferrer" target="_blank"}
-- Donwload: [Goole App store](https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo){:rel="nofollow noreferrer" target="_blank"}
+<div class="download_link_container">
+    <a class="download_link_ios" href="https://itunes.apple.com/app/blaboo/id1441741187" target="_blank">
+        <img src="/assets/images/apple_download.png" alt="learning words app for children, blaboo iOS download"/>
+    </a>
+    <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.blaboo" target="_blank">
+        <img src="/assets/images/google play_download.png" alt="learning words app for children, blaboo Android download"/>
+    </a>
+</div>

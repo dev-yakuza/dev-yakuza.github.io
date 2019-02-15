@@ -2,7 +2,7 @@
 layout: 'post'
 permalink: '/react-native/react-native-rate/'
 paginate_path: '/react-native/:num/react-native-rate/'
-lang: ’en'
+lang: 'en'
 categories: 'react-native'
 comments: true
 

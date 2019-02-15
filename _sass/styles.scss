@@ -436,3 +436,26 @@ ul li:last-child {
 .navbar-nav :last-child {
   margin-bottom: 0;
 }
+
+.half_image_container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.half_image {
+  width: 50%;
+}
+.download_link_container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.download_link_container a {
+  text-decoration: none;
+}
+.download_link_container img {
+  width: 150px;
+}
+.download_link_ios {
+  margin-right: 5%;
+}
+.download_link_android {
+}
