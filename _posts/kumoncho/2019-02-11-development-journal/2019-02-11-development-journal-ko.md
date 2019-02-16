@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/kumoncho/development-journal/'
 paginate_path: '/kumoncho/:num/development-journal/'
@@ -92,7 +91,7 @@ image: '/assets/images/category/kumoncho/background.png'
 
 ![쿠몬쵸 일러스트](/assets/images/category/kumoncho/development-journal/illustration.png)
 
-제 친구라서가 아니라 정말 그림고 스토리에는 재능이 있는게 아닌가 싶습니다.
+제 친구라서가 아니라 정말 그림과 스토리에는 재능이 있는게 아닌가 싶습니다.
 
 
 ## 앱 개발
@@ -129,7 +128,7 @@ image: '/assets/images/category/kumoncho/background.png'
 
 - react-native-firebase admob 사용 방법: [react-native-firebase-admob]({{site.url}}/react-native/react-native-firebase-admob/){:target="_blank"}
 - react-native-firebase analytics 사용 방법: [react-native-firebase-analytics]({{site.url}}/react-native/react-native-firebase-analytics/){:target="_blank"}
-- react-native-firebase Crasylytics 사용 방법: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
+- react-native-firebase Crashlytics 사용 방법: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
 
 아래의 목록은 부가적인 기능을 구현하기 위해 사용한 라이브러리입니다.
 

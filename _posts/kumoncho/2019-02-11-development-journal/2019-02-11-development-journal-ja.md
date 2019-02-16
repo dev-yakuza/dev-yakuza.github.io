@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/kumoncho/development-journal/'
 paginate_path: '/kumoncho/:num/development-journal/'
@@ -130,7 +129,7 @@ image: '/assets/images/category/kumoncho/background.png'
 
 - react-native-firebase admobの使い方: [react-native-firebase-admob]({{site.url}}/react-native/react-native-firebase-admob/){:target="_blank"}
 - react-native-firebase analyticsの使い方: [react-native-firebase-analytics]({{site.url}}/react-native/react-native-firebase-analytics/){:target="_blank"}
-- react-native-firebase Crasylyticsの使い方: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
+- react-native-firebase Crashlyticsの使い方: [firebase-crashlytics]({{site.url}}/react-native/firebase-crashlytics/){:target="_blank"}
 
 下記のリストは付加的な機能を実装するため使ったライブラリです。
 
