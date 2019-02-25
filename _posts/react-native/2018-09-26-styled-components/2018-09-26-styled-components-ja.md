@@ -23,9 +23,14 @@ styled-componentsライブラリとtypescriptを連動するためのライブ�
 
 - styled-components: styled-componentsライブラリです。
 - @types/styled-components: typescriptへ必要なstyled-componentsのタイプです。
-- babel-plugin-styled-components: 必須ではないけど、デバッグする時、class名を分かりやすくしてくれます。```.babelrc```へ下記のように設定します。
+- babel-plugin-styled-components: 必須ではないけど、デバッグする時、class名を分かりやすくしてくれます。```babel.config.js```へ下記のように設定します。
 
-{% include_relative common/babel-plugin-styled-components.md %}
+```js
+module.exports = {
+  ...
+  plugins: ['babel-plugin-styled-components'],
+};
+```
 
 ## 使い方
 styled-componentsは全般的なスタイルを管理するため```theme```の機能を提供してます。```theme```を使う方法と基本的使い方を説明します。

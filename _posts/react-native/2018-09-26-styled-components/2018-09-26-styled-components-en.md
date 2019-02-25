@@ -23,9 +23,14 @@ install styled-components library and other necessary libraries for integrating 
 
 - styled-components: this is styled-components library.
 - @types/styled-components: this is stypled-components types for typescript.
-- babel-plugin-styled-components: this is not required but make class name easily understand. copy and paste below code to ```.babelrc```.
+- babel-plugin-styled-components: this is not required but make class name easily understand. copy and paste below code to ```babel.config.js```.
 
-{% include_relative common/babel-plugin-styled-components.md %}
+```js
+module.exports = {
+  ...
+  plugins: ['babel-plugin-styled-components'],
+};
+```
 
 ## how to use
 styled-components has theme function for maintaining site level styles. let's see ```theme``` feature and basic usages.

@@ -84,6 +84,68 @@ export default class BasicExample extends React.Component {
 ...
 ```
 
+
+## Animation File with Images
+when you create the animation using Adobe After Effects, sometimes, you need to export the animation file that includes images.
+
+if you export the animation file that includes images, you can see ```data.json``` like below.
+
+```json
+// data.json
+{
+  ...
+  "assets": [
+    {
+      "id": "image_0",
+      "w": 588,
+      "h": 792,
+      "u": "images/",
+      "p": "main_character.png",
+      "e": 0
+    }
+  ]
+  ...
+```
+
+we need to add images in the animation file to the native platforms.
+
+
+### iOS
+execute xcode to select ```ios/[project name].xcworkspace```(or ```ios/xcodeproj```) in RN(React Native) project.
+
+![lottie ios add images](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add.png)
+
+right click ```Resources``` folder below the project name on left side menu, and select ```Add Files to [project name]```
+
+![lottie ios add images - select file](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_select_file.png)
+
+select image files what you want to add, select ```Copy items if needed``` options on below and add.
+
+if you can't see ```Resources``` folder, right click the project name on left side menu, and select  ```New Group without Folder```. after adding the group, rename it to ```Resources```.
+
+![lottie ios add images - resources add group](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_resources_group.png)
+
+
+### Android
+Android is more simple than iOS. create the folder that you copy images on ```android/app/src/main/assets``` in RN(React Native) project. in here, I created ```images``` folder. and then, copy images to that folder(```android/app/src/main/assets/images```).
+
+after copying, modify the source code adding ```imageAssetsFolder={'images'}``` like below.
+
+```js
+<LottieView
+  source={require('./animation.json')}
+  autoPlay
+  loop
+  imageAssetsFolder={'images'}
+/>
+```
+
+### Git Repository
+we created git repository about how to use ```Lottie``` in this case. you can click the link below to check the example.
+
+- git repository: [react_native_lottie_exercise](https://github.com/dev-yakuza/react_native_lottie_exercise){:rel="nofollow noreferrer" target="_blank"}
+
+
 ## Fix Error
 I've used ```react-native-lottie``` well after implementing on RN(React Native), but after installing another library, when I built my RN(React Native) project, I got the error like below.
 
@@ -111,6 +173,28 @@ after executing xcode, click ```File > Workspace Settings...``` like above.
 change the Build System to ```Legacy Build System``` from ```New Build System (Default)```.
 
 in my case, after changing the Build System, I can build successfully. I hope this way is helpful to you.
+
+### Android Build Error
+when you build on Android, sometimes, you can see the error like below.
+
+```bash
+Execution failed for task ':app:transformClassesWithDexBuilderForDevDebug'.
+```
+
+in this case, I modified ```android/app/build.gradle``` file in RN(React Native) project like below.
+
+```xml
+android{
+    ...
+    configurations.all {
+        resolutionStrategy {
+            force 'com.airbnb.android:lottie:2.5.5'
+        }
+    }
+}
+```
+
+- Reference: [Java 8 compilation error version 2.5.6 ](https://github.com/airbnb/lottie-android/issues/822#issuecomment-401812260){:rel="nofollow noreferrer" target="_blank"}
 
 
 ## Completed

@@ -23,9 +23,14 @@ styled-components 라이브러리와 typescript 연동을 위한 라이브러리
 
 - styled-components: styled-components 라이브러리입니다.
 - @types/styled-components: typescript에 필요한 styled-components의 타입입니다.
-- babel-plugin-styled-components: 필수는 아니지만 디버깅시 class명을 확인하기 쉽게 만들어 줍니다. ```.babelrc```에 아래와 같이 설정해 줍니다.
+- babel-plugin-styled-components: 필수는 아니지만 디버깅시 class명을 확인하기 쉽게 만들어 줍니다. ```babel.config.js```에 아래와 같이 설정해 줍니다.
 
-{% include_relative common/babel-plugin-styled-components.md %}
+```js
+module.exports = {
+  ...
+  plugins: ['babel-plugin-styled-components'],
+};
+```
 
 ## 사용법
 styled-components는 전체 스타일을 관리하기 위한 ```theme``` 기능을 제공합니다. ```theme```을 사용하는 방법과 기본적인 사용법을 알아봅니다.

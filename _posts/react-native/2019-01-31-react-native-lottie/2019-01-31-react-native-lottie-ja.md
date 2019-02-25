@@ -84,6 +84,68 @@ export default class BasicExample extends React.Component {
 ...
 ```
 
+
+## アニメーションファイルへイメージがある場合
+アドビのアフターエフェクト(AEF)を使ってアニメーションを作る際、アニメーションへイメージを含める場合が発生します。
+
+イメージを含めたアニメーションをlottie用でエクスポートしたら、下記のようにイメージが含めてある```data.json```を確認することができます。
+
+```json
+// data.json
+{
+  ...
+  "assets": [
+    {
+      "id": "image_0",
+      "w": 588,
+      "h": 792,
+      "u": "images/",
+      "p": "main_character.png",
+      "e": 0
+    }
+  ]
+  ...
+```
+
+イメージを含めてるアニメーションファイルは普通のファイルと違ってイメージを追加する作業が必要になります。
+
+
+### iOS
+RN(React Native)プロジェクトフォルダで```ios/[project name].xcworkspace```(または```ios/xcodeproj```)を選択してxcodeを実行します。
+
+![lottie ios イメージ追加](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add.png)
+
+上のように左でプロジェクトを選択して```Resources```フォルダを右クリくして```Add Files to [project name]```を選択します。
+
+![lottie ios イメージ追加 - ファイル選択](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_select_file.png)
+
+追加したいファイルを選択して、下にある```Copy items if needed```オプションを選択して追加します。
+
+上記のように```Resources```フォルダが見えない場合、左メニューでプロジェクト名を右クリくして```New Group without Folder```を洗濯した後、追加されたグループ名を```Resources```で修正します。
+
+![lottie ios イメージ追加 - resources グループ追加](/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_resources_group.png)
+
+
+### アンドロイド
+アンドロイドはiOSより簡単です。RN(React Native)プロジェクトの```android/app/src/main/assets```へアニメーションに含めてるイメージを入れるフォルダを生成します。ここでは```images```フォルダを生成しました。そしてそのフォルダにイメージをコピーします。(```android/app/src/main/assets/images```)
+
+コピーが完了したら、下のようにソースコードへ```imageAssetsFolder={'images'}```を追加します。
+
+```js
+<LottieView
+  source={require('./animation.json')}
+  autoPlay
+  loop
+  imageAssetsFolder={'images'}
+/>
+```
+
+### Git リポジトリ
+アニメーションへイメージが含まれてある場合、```Lottie```を使う方法についてgitリポジトリ(Repository)を作りました。下記のリンクで例題を確認することができます。
+
+- git リポジトリ: [react_native_lottie_exercise](https://github.com/dev-yakuza/react_native_lottie_exercise){:rel="nofollow noreferrer" target="_blank"}
+
+
 ## エラー対応
 RN(React Native)プロジェクトで```react-native-lottie```を実装してよく使いましたが、別のライブラリを入れった後ビルドする時、下記のようなエラーが発生しました。
 
@@ -111,6 +173,28 @@ xcodeが実行されたら上のように```File > Workspace Settings...```を�
 上のようにビルドシステム(Build System)を```New Build System (Default)```から ```Legacy Build System```に変更します。
 
 私の場合はこのようにビルドシステム(Build System)を変更した後、RN(React Native)をビルドしたら無事にビルドされることを確認しました。他の方もこの方法で解決されたらいいと思います。
+
+### アンドロイドビルドエラー
+アンドロイドでビルドしたら下記のようにエラーが発生する場合があります。
+
+```bash
+Execution failed for task ':app:transformClassesWithDexBuilderForDevDebug'.
+```
+
+この場合、RN(React Native)プロジェクトフォルダの```android/app/build.gradle```を開いて下記のように修正します。
+
+```xml
+android{
+    ...
+    configurations.all {
+        resolutionStrategy {
+            force 'com.airbnb.android:lottie:2.5.5'
+        }
+    }
+}
+```
+
+- 参考: [Java 8 compilation error version 2.5.6 ](https://github.com/airbnb/lottie-android/issues/822#issuecomment-401812260){:rel="nofollow noreferrer" target="_blank"}
 
 
 ## 完了
