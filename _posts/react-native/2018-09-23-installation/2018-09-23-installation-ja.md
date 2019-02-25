@@ -31,6 +31,15 @@ react-nativeインストールする前(Mac)Node, Watchman / (Windows)Node, pyth
 
 - xcodeダウンロードやインストール: [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12){:rel="nofollow noreferrer" target="_blank"}
 
+- コマンドラインツール: Xcodeのコマンドラインツールを設定する必要があります。Xcodeを開いて、メニューの```Preferences...```を選択します。
+
+![react native インストール - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences.png)
+
+メニューで```Locations```を選択して、下の```Command Line Tools```を最新版を選択します。
+
+![react native インストール - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences_configure_command_line_tools.png)
+
+
 ### Windows
 - Windowsは[Chocolatey](https://chocolatey.org/){:rel="nofollow noreferrer" target="_blank"}を使ってインストールします。
 

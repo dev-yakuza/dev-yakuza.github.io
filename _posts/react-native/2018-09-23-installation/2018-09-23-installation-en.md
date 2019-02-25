@@ -31,6 +31,15 @@ we will introduce the installation using xcode for Mac and using Android studio 
 
 - download and install xcode: [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12){:rel="nofollow noreferrer" target="_blank"}
 
+- Command Line Tools: we need to configure Command Line Tools in Xcode. open Xcode and select ```Preferences...``` on the menu.
+
+![react native installation - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences.png)
+
+select ```Locations``` on the menu, and select the most recent version in ```Command Line Tools``` on the bottom.
+
+![react native installation - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences_configure_command_line_tools.png)
+
+
 ### Windows
 - install Node, puthon2 using [Chocolatey](https://chocolatey.org/){:rel="nofollow noreferrer" target="_blank"} on Windows.
 

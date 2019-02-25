@@ -31,6 +31,14 @@ react-native 설치전에 (Mac)Node, Watchman / (Windows)Node, python2 jdk8을 �
 
 - xcode 다운로드 및 설치: [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12){:rel="nofollow noreferrer" target="_blank"}
 
+- 커멘드 라인 설정: Xcode의 커멘드 라인 툴을 설정할 필요가 있습니다. Xcode를 실행하고, 메뉴의 ```Preferences...```를 선택합니다.
+
+![react native 설치 - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences.png)
+
+메뉴에서 ```Locations```를 선택하고, 하단의 ```Command Line Tools```를 최신 버전으로 선택합니다.
+
+![react native 설치 - xcode](/assets/images/category/react-native/installation/react_native_xcode_preferences_configure_command_line_tools.png)
+
 ### Windows
 - Windows는 [Chocolatey](https://chocolatey.org/){:rel="nofollow noreferrer" target="_blank"}를 통해 설치합니다.
 
