@@ -33,7 +33,37 @@ image: '/assets/images/category/react-native/react-native-device-info.jpg'
 ## device locale
 device locale을 정보를 가져오는 방법.
 
-{% include_relative common/usage.md %}
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const deviceLocale = DeviceInfo.getDeviceLocale();
+        // iOS: "en"
+        // Android: "en-US"
+        ...
+    }
+}
+```
+
+## Unique ID
+앱의 Unique ID를 얻습니다.
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const uniqueID = DeviceInfo.getUniqueID();
+        // E98948E4-498D-447B-A750-D632C30461A3
+        ...
+    }
+}
+```
 
 
 ## 에러 대응

@@ -33,7 +33,38 @@ image: '/assets/images/category/react-native/react-native-device-info.jpg'
 ## device locale
 device localeの情報を取得する方法。
 
-{% include_relative common/usage.md %}
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const deviceLocale = DeviceInfo.getDeviceLocale();
+        // iOS: "en"
+        // Android: "en-US"
+        ...
+    }
+}
+```
+
+## Unique ID
+アプリのUnique IDを取得する。
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const uniqueID = DeviceInfo.getUniqueID();
+        // E98948E4-498D-447B-A750-D632C30461A3
+        ...
+    }
+}
+```
+
 
 ## エラー対応
 よく開発してきましたがデバイスでランダムでcrashが発生する問題が出ました。シミュレータでも下のメッセージが表示してきました。

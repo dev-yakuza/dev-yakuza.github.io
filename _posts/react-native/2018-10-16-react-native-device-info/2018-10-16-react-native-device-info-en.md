@@ -33,7 +33,37 @@ if you want to knwo how to use, see official site.
 ## device locale
 how to get device locale.
 
-{% include_relative common/usage.md %}
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const deviceLocale = DeviceInfo.getDeviceLocale();
+        // iOS: "en"
+        // Android: "en-US"
+        ...
+    }
+}
+```
+
+## Unique ID
+the code below is about how to get App's Unique ID.
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const uniqueID = DeviceInfo.getUniqueID();
+        // E98948E4-498D-447B-A750-D632C30461A3
+        ...
+    }
+}
+```
 
 ## fix errors
 suddenly, occur App crash randomly and show below error message up on the simulator.
