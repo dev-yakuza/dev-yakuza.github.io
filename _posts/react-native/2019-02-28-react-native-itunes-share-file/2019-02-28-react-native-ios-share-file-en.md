@@ -7,7 +7,7 @@ categories: 'react-native'
 comments: true
 
 title: 'iTunes file sharing feature'
-description: let's see how to share files vie iTunes on RN(React Native) project.
+description: let's see how to share files via iTunes on RN(React Native) project.
 image: '/assets/images/category/react-native/react-native-itunes-share-file/background.jpg'
 ---
 
