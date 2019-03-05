@@ -42,4 +42,4 @@ done! app icons were created and applied to the project. let's check it by execu
 if app icons is not applied, remove your app from the simulator or phone and try again.
 
 ## reference
-- official site: [react-navigation](https://reactnavigation.org/){:rel="nofollow noreferrer" target="_blank" }
+- official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

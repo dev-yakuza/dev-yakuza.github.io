@@ -42,4 +42,4 @@ mac osx上で [generator-rn-toolbox](https://github.com/bamlab/generator-rn-tool
 アイコンがちゃんと表示できない方はシミュレータまたは端末のアプリを削除してもう一度プロジェクトを実行して見てください。
 
 ## 参考
-- 公式サイト: [react-navigation](https://reactnavigation.org/){:rel="nofollow noreferrer" target="_blank" }
+- 公式サイト: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

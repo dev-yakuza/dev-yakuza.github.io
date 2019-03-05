@@ -49,5 +49,24 @@ splashイメージがちゃんと表示されない時はシミュレーター/�
     android:gravity="fill_horizontal|fill_vertical"/>
 ```
 
+### イメージ生成ができない
+下記のようにエラーがでってイメージが生成されない問題が発生しました。
+
+```bash
+Error: Command failed: identify: FailedToExecuteCommand `'gs'
+```
+
+下記のコマンドで```ghostscript```をインストールします。
+
+```bash
+brew install ghostscript
+```
+
+また、下記のコマンドを実行したら、正常に動作することを確認することができます。
+다시 아래에 명령어를 실행할 경우, 정상 동작하는 것을 확인하실 수 있습니다.
+
+{% include_relative common/usage.md %}
+
+
 ## 参考
 - 公式サイト: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

@@ -49,5 +49,23 @@ we got the problem not to show Splash image up full size. so we've modified ```a
     android:gravity="fill_horizontal|fill_vertical"/>
 ```
 
+### Can't Generate Images
+I got the erro below and couldn't generate the images.
+
+```bash
+Error: Command failed: identify: FailedToExecuteCommand `'gs'
+```
+
+execute the command below to install ```ghostscript```.
+
+```bash
+brew install ghostscript
+```
+
+and execute the commands below, you can see that the images are generated.
+
+{% include_relative common/usage.md %}
+
+
 ## reference
 - official site: [generator-rn-toolbox](https://github.com/bamlab/generator-rn-toolbox){:rel="nofollow noreferrer" target="_blank" }

@@ -49,6 +49,22 @@ splash 이미지가 제대로 표시되지 않는 경우 시뮬레이터/단말�
     android:gravity="fill_horizontal|fill_vertical"/>
 ```
 
+### 이미지 생성 불가
+아래와 같은 에러가 나오면서 이미지 생성이 되지 않은 문제가 발생했습니다.
+
+```bash
+Error: Command failed: identify: FailedToExecuteCommand `'gs'
+```
+
+아래에 명령어를 통해 ```ghostscript```를 설치합니다.
+
+```bash
+brew install ghostscript
+```
+
+다시 아래에 명령어를 실행할 경우, 정상 동작하는 것을 확인하실 수 있습니다.
+
+{% include_relative common/usage.md %}
 
 
 ## 참고
