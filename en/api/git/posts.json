@@ -1,1 +1,13 @@
-[{ "title": "create version(editing history)", "description": "we should create the version(editing history) to manage source code on git repository. we introduce how to create version(editing history).","url": "https://dev-yakuza.github.io/en/git/create-stage/","date": "2018-11-08T18:08:09+09:00", "page": "1" },{ "title": "create Repository", "description": "create git repository for using git. git repository is the storage to manage source code version.","url": "https://dev-yakuza.github.io/en/git/create-repository/","date": "2018-11-16T16:17:29+09:00", "page": "1" },{ "title": "git installation", "description": "we use git for source code version control tool. before using git, let's install git first.","url": "https://dev-yakuza.github.io/en/git/installation/","date": "2018-11-16T16:17:29+09:00", "page": "1" }]
+[{
+      "title": "create version(editing history)",
+      "description": "we should create the version(editing history) to manage source code on git repository. we introduce how to create version(editing history).","url": "http://localhost:4000/en/git/create-stage/","date": "2018-11-08T18:08:09+09:00",
+      "page": "1"
+  },{
+      "title": "create Repository",
+      "description": "create git repository for using git. git repository is the storage to manage source code version.","url": "http://localhost:4000/en/git/create-repository/","date": "2018-11-16T16:17:29+09:00",
+      "page": "1"
+  },{
+      "title": "git installation",
+      "description": "we use git for source code version control tool. before using git, let's install git first.","url": "http://localhost:4000/en/git/installation/","date": "2018-11-16T16:17:29+09:00",
+      "page": "1"
+  }]
