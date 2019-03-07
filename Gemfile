@@ -23,7 +23,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate-v2"
   gem "jekyll-polyglot"
   gem "jekyll-seo-tag"
-  gem "jekyll-minifier"
+  gem "jekyll-minifier", "0.1.6"
   gem "jekyll-last-modified-at"
 end
 

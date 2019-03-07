@@ -1,9 +1,1 @@
-[{
-      "title": "BlaBoo 업데이트 후기",
-      "description": "RN(React Native)를 사용하여 BlaBoo라는 앱을 제작하고 배포하였습니다. 앱 배포후 BlaBoo는 어떤 업데이트 하고 있는지에 대해 설명합니다.","url": "https://dev-yakuza.github.io/ko/blaboo/update-review/","date": "2019-02-28T16:38:37+09:00",
-      "page": "1"
-  },{
-      "title": "BlaBoo 앱 개발기(RN, React Native)",
-      "description": "RN(React Native)를 사용하여 BlaBoo라는 앱을 제작해 보았습니다. 이 앱을 제작하면서 격은 내용을 정리해보려고 합니다.","url": "https://dev-yakuza.github.io/ko/blaboo/development-journal/","date": "2019-02-15T09:59:43+09:00",
-      "page": "1"
-  }]
+[{ "title": "BlaBoo 업데이트 후기", "description": "RN(React Native)를 사용하여 BlaBoo라는 앱을 제작하고 배포하였습니다. 앱 배포후 BlaBoo는 어떤 업데이트 하고 있는지에 대해 설명합니다.","url": "https://dev-yakuza.github.io/ko/blaboo/update-review/","date": "2019-02-28T16:38:37+09:00", "page": "1" },{ "title": "BlaBoo 앱 개발기(RN, React Native)", "description": "RN(React Native)를 사용하여 BlaBoo라는 앱을 제작해 보았습니다. 이 앱을 제작하면서 격은 내용을 정리해보려고 합니다.","url": "https://dev-yakuza.github.io/ko/blaboo/development-journal/","date": "2019-02-15T09:59:43+09:00", "page": "1" }]
