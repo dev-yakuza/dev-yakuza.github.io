@@ -1,5 +1,4 @@
 ---
-published: false
 layout: 'post'
 permalink: '/environment/mac-iterm-zsh/'
 paginate_path: '/environment/:num/mac-iterm-zsh/'
@@ -13,11 +12,18 @@ image: '/assets/images/category/environment/mac-iterm-zsh/background.jpg'
 ---
 
 ## 개요
+새로운 맥(Mac)에 개발 환경을 처음부터 구축한 내용을 정리하려고 합니다. 이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.
 
-새로운 맥(Mac)에 개발 환경을 처음부터 구축한 내용을 정리하려고 합니다. 이번 블로그에서는 새로운 맥(Mac)에 [iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}와 [zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}를 설정하는 방법에 대해서 알아봅니다.
+- [맥(Mac) 개발 환경 구축(1) - iTerm과 zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
+
+이번 블로그에서는 새로운 맥(Mac)에 [iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}와 [zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}를 설정하는 방법에 대해서 알아봅니다.
 
 - [iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}
 - [zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}
+
+
 
 ## iterm 설치
 

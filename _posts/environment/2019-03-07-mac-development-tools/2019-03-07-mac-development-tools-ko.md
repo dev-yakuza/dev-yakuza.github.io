@@ -15,9 +15,11 @@ image: '/assets/images/category/environment/mac-development-tools/background.jpg
 ## 개요
 맥(Mac)에 새롭게 개발 환경을 구축하고 있습니다. 이 블로그에서는 개발과 커뮤니케이션에 사용하고 있는 툴들을 정리합니다.
 
-이 블로그는 연재물입니다. 이전 zsh 설치에 관해서는 이전 블로그를 확인해 주세요.
+이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.
 
 - [맥(Mac) 개발 환경 구축(1) - iTerm과 zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
 
 ## 커뮤니케이션 툴

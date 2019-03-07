@@ -1,21 +1,120 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="Ansible&Laradock"/> <meta name="twitter:description" content="let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible."/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>Ansible&Laradock - let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.</title> <meta name="description" content="let&#39;s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible."/> <meta property="og:url" content="https://dev-yakuza.github.io/en/environment/ansible-laradock/"/> <meta name="generator" content="Jekyll v3.7.3"/> <meta property="og:title" content="Ansible&amp;Laradock"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="en"/> <meta name="description" content="let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible."/> <meta property="og:description" content="let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible."/> <link rel="canonical" href="https://dev-yakuza.github.io/en/environment/ansible-laradock/"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/ansible-laradock/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="https://dev-yakuza.github.io/assets/images/category/environment/ansible-laradock.jpg"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2018-12-05T00:00:00+09:00"/> <script type="application/ld+json">
-{"image":"https://dev-yakuza.github.io/assets/images/category/environment/ansible-laradock.jpg","url":"https://dev-yakuza.github.io/environment/ansible-laradock/","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/environment/ansible-laradock/"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"description":"let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"@type":"BlogPosting","headline":"Ansible&amp;Laradock","dateModified":"2018-12-10T17:38:20+09:00","datePublished":"2018-12-05T00:00:00+09:00","@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7987914246691031",enable_page_level_ads:!0});</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/> <link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/en/assets/main.css?v=20190305"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/en/feed.xml"/> <script type="application/ld+json">
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  
+  <meta charset="utf-8" />
+  
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  <meta name="twitter:title" content="Ansible&Laradock" />
+  <meta name="twitter:description" content="let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DevYakuza" />
+  <meta name="twitter:creator" content="@DevYakuza" />
+
+  <title>Ansible&Laradock - let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.</title>
+  <meta
+    name="description"
+    content="let&#39;s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible."
+  />
+
+  
+  <meta
+    property="og:url"
+    content="http://localhost:4000/en/environment/ansible-laradock/"
+  />
+   <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Ansible&amp;Laradock" />
+<meta name="author" content="dev.yakuza@gmail.com" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible." />
+<meta property="og:description" content="let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible." />
+<link rel="canonical" href="http://localhost:4000/en/environment/ansible-laradock/" />
+<meta property="og:url" content="http://localhost:4000/environment/ansible-laradock/" />
+<meta property="og:site_name" content="Dreams the art through programming" />
+<meta property="og:image" content="http://localhost:4000/assets/images/category/environment/ansible-laradock.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-05T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"let’s make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"@type":"BlogPosting","url":"http://localhost:4000/environment/ansible-laradock/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"image":"http://localhost:4000/assets/images/category/environment/ansible-laradock.jpg","headline":"Ansible&amp;Laradock","dateModified":"2018-12-10T17:38:20+09:00","datePublished":"2018-12-05T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/environment/ansible-laradock/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125408913-1');
+  </script>
+
+  <script
+    async
+    src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+  ></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: 'ca-pub-7987914246691031',
+      enable_page_level_ads: true,
+    });
+  </script>
+
+  
+  <link
+    href="https://fonts.googleapis.com/css?family=Noto+Sans"
+    rel="stylesheet"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="/en/assets/main.css?v=20190307"
+  />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Dreams the art through programming"
+    href="/en/feed.xml"
+  />
+
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "dev.yakuza",
-      "url": "https://dev-yakuza.github.io",
+      "url": "http://localhost:4000",
       "sameAs": [
         "https://www.facebook.com/yakuza.dev.54",
         "https://www.instagram.com/dev_yakuza/",
         "https://twitter.com/DevYakuza"
       ]
     }
-  </script> <script type="application/ld+json">
+  </script>
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "url": "https://dev-yakuza.github.io",
+      "url": "http://localhost:4000",
       "logo": "https://dev-yakuza.github.io/assets/images/icon.png"
     }
   </script><script type="application/ld+json">
@@ -24,21 +123,337 @@
       "@type":"ItemList",
       "itemListElement":[{
           "@type":"ListItem",
-          "position":1,"url": "https://dev-yakuza.github.io/en/environment/vagrant-install-and-usage/"},{
+          "position":1,"url": "http://localhost:4000/en/environment/vagrant-install-and-usage/"},{
           "@type":"ListItem",
-          "position":2,"url": "https://dev-yakuza.github.io/en/environment/install-ansible/"},{
+          "position":2,"url": "http://localhost:4000/en/environment/install-ansible/"},{
           "@type":"ListItem",
-          "position":3,"url": "https://dev-yakuza.github.io/en/environment/ansible-playbook/"},{
+          "position":3,"url": "http://localhost:4000/en/environment/ansible-playbook/"},{
           "@type":"ListItem",
-          "position":4,"url": "https://dev-yakuza.github.io/en/environment/ansible-docker/"},{
+          "position":4,"url": "http://localhost:4000/en/environment/ansible-docker/"},{
           "@type":"ListItem",
-          "position":5,"url": "https://dev-yakuza.github.io/en/environment/ansible-laradock/"},{
+          "position":5,"url": "http://localhost:4000/en/environment/ansible-laradock/"},{
           "@type":"ListItem",
-          "position":6,"url": "https://dev-yakuza.github.io/en/environment/ansible-laravel/"},{
+          "position":6,"url": "http://localhost:4000/en/environment/ansible-laravel/"},{
           "@type":"ListItem",
-          "position":7,"url": "https://dev-yakuza.github.io/en/environment/ngrok/"}]
+          "position":7,"url": "http://localhost:4000/en/environment/ngrok/"}]
     }
-  </script><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/> <script src="/assets/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();</script> </head> <body> <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <div class="container"> <a class="navbar-brand" href="/en/"> <img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a> <div class="navbar-menu-container"> <div class="collapse navbar-collapse"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/git/">git</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/react-native/">react-native</a> </div> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> <div class="btn-group-sm btn-translate-group dropdown"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-language" aria-hidden="true"></i> </button> <div class="dropdown-menu"> <a class="dropdown-item menu-ko" href="/ko/environment/ansible-laradock/">한국어</a> <a class="dropdown-item menu-en" href="/en/environment/ansible-laradock/">English</a> <a class="dropdown-item menu-ja" href="/en/environment/ansible-laradock/">日本語</a> </div> </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button> </div> <div class="collapse navbar-collapse" id="navbarResponsive"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/git/">git</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/react-native/">react-native</a> </div> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script> <header class="masthead" style="background-image: url('/assets/images/category/environment/ansible-laradock.jpg')"> <div class="overlay"></div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-heading"> <h1>Ansible&Laradock</h1> <div class="heading-date"> <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-10 </div> <h2 class="subheading">let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.</h2> </div> </div> </div> </div> </header> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <nav aria-label="breadcrumb"> <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io"> <span itemprop="name">Home</span> </a> <meta itemprop="position" content="1"/> </li> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/en/environment"> <span itemprop="name">environment</span> </a> <meta itemprop="position" content="2"/> </li> <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/en/environment/ansible-laradock/"> <span itemprop="name">Ansible&Laradock</span> </a> <meta itemprop="position" content="3"/> </li> </ol> </nav> </div> </div> <div class="row"> <article class="col-lg-8 col-md-10 mx-auto"> <h2 id="outline">outline</h2> <p>in these days, everything is existed in the world. something we thought is already existed and shared in somewhere. Laradock is the project that creates and manages Dockers for Laravel development environment. if you want to know more details, see official repository(<a href="https://github.com/laradock/laradock/" rel="nofollow noreferrer" target="_blank">https://github.com/laradock/laradock/</a>). in here, we will introduce how to use Laradock to make Laravel development environment.</p> <p>this blog is the series of below list. we recommend to read below list for understanding.</p> <ul> <li><a href="https://dev-yakuza.github.io/en/environment/vagrant-install-and-usage/" target="_blank">vagrant installation and usage</a></li> <li><a href="https://dev-yakuza.github.io/en/environment/install-ansible/" target="_blank">Ansible installation</a></li> <li><a href="https://dev-yakuza.github.io/en/environment/ansible-playbook/" target="_blank">Ansible Playbook</a></li> <li><a href="https://dev-yakuza.github.io/en/environment/ansible-docker/" target="_blank">Ansible&amp;Docker</a></li> </ul> <h2 id="configure-development-environment">configure development environment</h2> <p>Laradock provides many Dockers for configuring development environment. so we should decide which Docker we will use for development. we’ve decided to use below list for configuring development environment.</p> <ul> <li>nginx</li> <li>mysql</li> <li>phpmyadmin</li> <li>workspace</li> </ul> <h2 id="modify-virtual-machine-setting">modify virtual machine setting</h2> <p>modify <code class="highlighter-rouge">Vagrantfile</code> for virtual machine setting.</p> <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># -*- mode: ruby -*-</span>
+  </script><link rel="stylesheet" href="/en/assets/highlight/railscasts.css" />
+  <script src="/assets/highlight/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+
+  <body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/en/">
+      <img src="/assets/images/icon.png" alt="dev.yakuza blog logo" />
+      ヤクザ
+    </a>
+    <div class="navbar-menu-container">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/en/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Category
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+
+
+
+<a class="dropdown-item" href="/en/environment/">dev environment</a>
+
+
+
+
+<a class="dropdown-item" href="/en/kumoncho/">kumoncho</a>
+
+
+
+
+<a class="dropdown-item" href="/en/git/">git</a>
+
+
+
+
+<a class="dropdown-item" href="/en/jekyll/">jekyll blog</a>
+
+
+
+
+
+
+
+<a class="dropdown-item" href="/en/blaboo/">BlaBoo</a>
+
+
+
+
+<a class="dropdown-item" href="/en/laravel/">Laravel</a>
+
+
+
+
+<a class="dropdown-item" href="/en/react-native/">react-native</a>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/en/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="btn-group-sm btn-translate-group dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="fa fa-language" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item menu-ko" href="/ko/environment/ansible-laradock/">한국어</a>
+          <a class="dropdown-item menu-en" href="/en/environment/ansible-laradock/">English</a>
+          <a class="dropdown-item menu-ja" href="/en/environment/ansible-laradock/">日本語</a>
+        </div>
+      </div>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+
+
+
+<a class="dropdown-item" href="/en/environment/">dev environment</a>
+
+
+
+
+<a class="dropdown-item" href="/en/kumoncho/">kumoncho</a>
+
+
+
+
+<a class="dropdown-item" href="/en/git/">git</a>
+
+
+
+
+<a class="dropdown-item" href="/en/jekyll/">jekyll blog</a>
+
+
+
+
+
+
+
+<a class="dropdown-item" href="/en/blaboo/">BlaBoo</a>
+
+
+
+
+<a class="dropdown-item" href="/en/laravel/">Laravel</a>
+
+
+
+
+<a class="dropdown-item" href="/en/react-native/">react-native</a>
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/en/contact/">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var urlPath = window.location.pathname;
+    if (urlPath.indexOf('/en/') >= 0) {
+      $('.menu-ko').prop('href', urlPath.replace('/en/', '/ko/'));
+      $('.menu-en').prop('href', urlPath);
+      $('.menu-ja').prop('href', urlPath.replace('/en/', '/'));
+    }
+    else if (urlPath.indexOf('/ko/') >= 0) {
+      $('.menu-ko').prop('href', urlPath);
+      $('.menu-en').prop('href', urlPath.replace('/ko/', '/en/'));
+      $('.menu-ja').prop('href', urlPath.replace('/ko/', '/'));
+    }
+    else {
+      $('.menu-ko').prop('href', '/ko' + urlPath);
+      $('.menu-en').prop('href', '/en' + urlPath);
+      $('.menu-ja').prop('href', urlPath);
+    }
+
+    $('body').on('show.bs.dropdown', '.dropdown', function () {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+    });
+
+    $('body').on('hide.bs.dropdown', '.dropdown', function () {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    });
+  });
+</script>
+
+    <!-- Page Header -->
+
+<header
+  class="masthead"
+  style="background-image: url('/assets/images/category/environment/ansible-laradock.jpg')"
+>
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Ansible&Laradock</h1>
+            <div class="heading-date">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              2018-12-10
+            </div>
+            
+            <h2 class="subheading">let's make Laravel development environment by using virtual machine(guest system) created by vagrant and Ansible.</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb"
+            itemscope
+            itemtype="http://schema.org/BreadcrumbList"
+          >
+            <li
+              class="breadcrumb-item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                itemtype="http://schema.org/Thing"
+                itemprop="item"
+                href="http://localhost:4000"
+              >
+                <span itemprop="name">Home</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li
+              class="breadcrumb-item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                itemtype="http://schema.org/Thing"
+                itemprop="item"
+                href="http://localhost:4000/en/environment"
+              >
+                <span itemprop="name">environment</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                itemtype="http://schema.org/Thing"
+                itemprop="item"
+                href="http://localhost:4000/en/environment/ansible-laradock/"
+              >
+                <span itemprop="name">Ansible&Laradock</span>
+              </a>
+              <meta itemprop="position" content="3" />
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <article class="col-lg-8 col-md-10 mx-auto">
+        <h2 id="outline">outline</h2>
+<p>in these days, everything is existed in the world. something we thought is already existed and shared in somewhere. Laradock is the project that creates and manages Dockers for Laravel development environment. if you want to know more details, see official repository(<a href="https://github.com/laradock/laradock/" rel="nofollow noreferrer" target="_blank">https://github.com/laradock/laradock/</a>). in here, we will introduce how to use Laradock to make Laravel development environment.</p>
+
+<p>this blog is the series of below list. we recommend to read below list for understanding.</p>
+
+<ul>
+  <li><a href="http://localhost:4000/en/environment/vagrant-install-and-usage/" target="_blank">vagrant installation and usage</a></li>
+  <li><a href="http://localhost:4000/en/environment/install-ansible/" target="_blank">Ansible installation</a></li>
+  <li><a href="http://localhost:4000/en/environment/ansible-playbook/" target="_blank">Ansible Playbook</a></li>
+  <li><a href="http://localhost:4000/en/environment/ansible-docker/" target="_blank">Ansible&amp;Docker</a></li>
+</ul>
+
+<h2 id="configure-development-environment">configure development environment</h2>
+<p>Laradock provides many Dockers for configuring development environment. so we should decide which Docker we will use for development. we’ve decided to use below list for configuring development environment.</p>
+
+<ul>
+  <li>nginx</li>
+  <li>mysql</li>
+  <li>phpmyadmin</li>
+  <li>workspace</li>
+</ul>
+
+<h2 id="modify-virtual-machine-setting">modify virtual machine setting</h2>
+<p>modify <code class="highlighter-rouge">Vagrantfile</code> for virtual machine setting.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># -*- mode: ruby -*-</span>
 <span class="c1"># vi: set ft=ruby :</span>
 
 <span class="no">Vagrant</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
@@ -54,11 +469,26 @@
     <span class="n">trigger</span><span class="p">.</span><span class="nf">run_remote</span> <span class="o">=</span> <span class="p">{</span><span class="ss">inline: </span><span class="s2">"sudo ansible-playbook /vagrant/ansible/playbook.yml --tags 'docker'"</span><span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre></div></div> <p>we set specific name(<code class="highlighter-rouge">laravel-dev</code>) by <code class="highlighter-rouge">vb.name</code> to display it on virtualbox. this part actually is not related with development environment, just display it for easy understanding.</p> <p>we used <code class="highlighter-rouge">config.vm.network "forwarded_port"</code> of vagrant features for port-forward betwenn local machine(host system) and virtual machine(guest system). now we can access virtual machine(guest system) ports by local machine(host system) ports. 80 port is for Laravel project and 8080 is for phpmyadmin to acceess.</p> <p>we can stop virtual machine(guest system) by vagrant command(<code class="highlighter-rouge">vagrant halt</code>) and restart it by vagrant command(<code class="highlighter-rouge">vagrant up</code>). however, Ansible Playbook is not executed because it is in Provision shell when virutal machine(guest system) is restarted. and Laradock Dockers is not configured to restart always so when virtual machine(guest system) is restarted, Dockers are not executed. therefore, we modified Vagrantfile like below.</p> <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">trigger</span><span class="p">.</span><span class="nf">after</span> <span class="ss">:up</span> <span class="k">do</span> <span class="o">|</span><span class="n">trigger</span><span class="o">|</span>
+</code></pre></div></div>
+
+<p>we set specific name(<code class="highlighter-rouge">laravel-dev</code>) by <code class="highlighter-rouge">vb.name</code> to display it on virtualbox. this part actually is not related with development environment, just display it for easy understanding.</p>
+
+<p>we used <code class="highlighter-rouge">config.vm.network "forwarded_port"</code> of vagrant features for port-forward betwenn local machine(host system) and virtual machine(guest system). now we can access virtual machine(guest system) ports by local machine(host system) ports. 80 port is for Laravel project and 8080 is for phpmyadmin to acceess.</p>
+
+<p>we can stop virtual machine(guest system) by vagrant command(<code class="highlighter-rouge">vagrant halt</code>) and restart it by vagrant command(<code class="highlighter-rouge">vagrant up</code>). however, Ansible Playbook is not executed because it is in Provision shell when virutal machine(guest system) is restarted. and Laradock Dockers is not configured to restart always so when virtual machine(guest system) is restarted, Dockers are not executed. therefore, we modified Vagrantfile like below.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">trigger</span><span class="p">.</span><span class="nf">after</span> <span class="ss">:up</span> <span class="k">do</span> <span class="o">|</span><span class="n">trigger</span><span class="o">|</span>
   <span class="n">trigger</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"trigger Docker after Vagrant Up"</span>
   <span class="n">trigger</span><span class="p">.</span><span class="nf">run_remote</span> <span class="o">=</span> <span class="p">{</span><span class="ss">inline: </span><span class="s2">"sudo ansible-playbook /vagrant/ansible/playbook.yml --tags 'docker'"</span><span class="p">}</span>
 <span class="k">end</span>
-</code></pre></div></div> <p>this option is executed after we execute <code class="highlighter-rouge">vagrant up</code> command to restart virtual machine(guest system). we configured Ansible Playbook will be executed after virtual machine(guest system) is restarted. Ansible Playbook command in here uses <code class="highlighter-rouge">--tags 'docker'</code> unlike the command in provision shell. if we use this option, we can execute specific commands tagging <code class="highlighter-rouge">docker</code>. we will explain more detail in below Ansible Playbook setting again.</p> <h2 id="set-laradock-in-ansible-playbook">set Laradock in Ansible Playbook</h2> <p>we’ll use previous Ansible Playbook setting for configure development environment. until now, folder structure is like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- ansible
+</code></pre></div></div>
+
+<p>this option is executed after we execute <code class="highlighter-rouge">vagrant up</code> command to restart virtual machine(guest system). we configured Ansible Playbook will be executed after virtual machine(guest system) is restarted. Ansible Playbook command in here uses <code class="highlighter-rouge">--tags 'docker'</code> unlike the command in provision shell. if we use this option, we can execute specific commands tagging <code class="highlighter-rouge">docker</code>. we will explain more detail in below Ansible Playbook setting again.</p>
+
+<h2 id="set-laradock-in-ansible-playbook">set Laradock in Ansible Playbook</h2>
+<p>we’ll use previous Ansible Playbook setting for configure development environment. until now, folder structure is like below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- ansible
 |    |-- init
 |    |    |-- tasks
 |    |    |    |-- main.yml
@@ -67,7 +497,11 @@
 |    |    |    |-- main.yml
 |    |-- playbook.yml
 |-- Vagrantfile
-</code></pre></div></div> <p>we create <code class="highlighter-rouge">laradock/tasks/main.yml</code> file to define <code class="highlighter-rouge">role</code> for Laradock.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- ansible
+</code></pre></div></div>
+
+<p>we create <code class="highlighter-rouge">laradock/tasks/main.yml</code> file to define <code class="highlighter-rouge">role</code> for Laradock.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- ansible
 |    |-- init
 |    |    |-- tasks
 |    |    |    |-- main.yml
@@ -79,14 +513,22 @@
 |    |    |    |-- main.yml
 |    |-- playbook.yml
 |-- Vagrantfile
-</code></pre></div></div> <p>add Laradock <code class="highlighter-rouge">role</code> to Ansible Playbook start point <code class="highlighter-rouge">playbook.yml</code>.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+</code></pre></div></div>
+
+<p>add Laradock <code class="highlighter-rouge">role</code> to Ansible Playbook start point <code class="highlighter-rouge">playbook.yml</code>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="pi">-</span> <span class="na">hosts</span><span class="pi">:</span> <span class="s">localhost</span>
   <span class="na">connection</span><span class="pi">:</span> <span class="s">local</span>
   <span class="na">roles</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">init</span>
     <span class="pi">-</span> <span class="s">docker</span>
     <span class="pi">-</span> <span class="s">laradock</span>
-</code></pre></div></div> <p>modify <code class="highlighter-rouge">laradock/tasks/main.yml</code> file we added like below.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+</code></pre></div></div>
+
+<p>modify <code class="highlighter-rouge">laradock/tasks/main.yml</code> file we added like below.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">git clone Laradock</span>
   <span class="na">git</span><span class="pi">:</span> <span class="s">repo=https://github.com/Laradock/laradock.git dest=/vagrant/app/laradock/ version=master</span>
 
@@ -120,27 +562,51 @@
         <span class="pi">-</span> <span class="s">workspace</span>
   <span class="na">tags</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">docker</span>
-</code></pre></div></div> <p>let’s see Ansible Playbook <code class="highlighter-rouge">role</code> we added.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">git clone Laradock</span>
+</code></pre></div></div>
+
+<p>let’s see Ansible Playbook <code class="highlighter-rouge">role</code> we added.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">git clone Laradock</span>
   <span class="na">git</span><span class="pi">:</span> <span class="s">repo=https://github.com/Laradock/laradock.git dest=/vagrant/app/laradock/ version=master</span>
-</code></pre></div></div> <p>this is to use Ansible git module to clone Laradock repository.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">copy Laradock environment file</span>
+</code></pre></div></div>
+
+<p>this is to use Ansible git module to clone Laradock repository.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">copy Laradock environment file</span>
   <span class="na">copy</span><span class="pi">:</span> <span class="s">src=/vagrant/app/laradock/env-example dest=/vagrant/app/laradock/.env</span>
-</code></pre></div></div> <p>copy example environment file(<code class="highlighter-rouge">env-example</code>) to environment file(<code class="highlighter-rouge">.env</code>) we can use.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">change mysql version</span>
+</code></pre></div></div>
+
+<p>copy example environment file(<code class="highlighter-rouge">env-example</code>) to environment file(<code class="highlighter-rouge">.env</code>) we can use.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">change mysql version</span>
   <span class="na">replace</span><span class="pi">:</span>
     <span class="na">path</span><span class="pi">:</span> <span class="s">/vagrant/app/laradock/.env</span>
     <span class="na">regexp</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MYSQL_VERSION=*.*'</span>
     <span class="na">replace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MYSQL_VERSION=5.7'</span>
   <span class="na">tags</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">replace</span>
-</code></pre></div></div> <p>change <code class="highlighter-rouge">mysql</code> version to <code class="highlighter-rouge">5.7</code> in Laradock environment file(<code class="highlighter-rouge">.env</code>). when we used recent version(<code class="highlighter-rouge">8.0</code>), we got below error message when we access mysql from Laravel.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>PDOException]
+</code></pre></div></div>
+
+<p>change <code class="highlighter-rouge">mysql</code> version to <code class="highlighter-rouge">5.7</code> in Laradock environment file(<code class="highlighter-rouge">.env</code>). when we used recent version(<code class="highlighter-rouge">8.0</code>), we got below error message when we access mysql from Laravel.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>PDOException]
 SQLSTATE[HY000] <span class="o">[</span>2054] The server requested authentication method unknown to the client
-</code></pre></div></div> <p>maybe, Laravel is not supported new password authentication method of recent mysql. there are many solutions for this problem, but if you don’t use specific features in mysql 8.0, we recommend just downgrade to 5.7.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">change project folder</span>
+</code></pre></div></div>
+
+<p>maybe, Laravel is not supported new password authentication method of recent mysql. there are many solutions for this problem, but if you don’t use specific features in mysql 8.0, we recommend just downgrade to 5.7.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">change project folder</span>
   <span class="na">replace</span><span class="pi">:</span>
     <span class="na">path</span><span class="pi">:</span> <span class="s">/vagrant/lib/laradock/.env</span>
     <span class="na">regexp</span><span class="pi">:</span> <span class="s1">'</span><span class="s">APP_CODE_PATH_HOST=*.*'</span>
     <span class="na">replace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">APP_CODE_PATH_HOST=/vagrant/app'</span>
   <span class="na">tags</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">replace</span>
-</code></pre></div></div> <p>Laradock workspace Docker is the environment that Laravel project is executed. this Docker refers<code class="highlighter-rouge">APP_CODE_PATH_HOST</code> folder to sync it so workspace Docker is built and executed with this folder. basic option is <code class="highlighter-rouge">APP_CODE_PATH_HOST=../</code> which means upper Laradock folder. we modified this to <code class="highlighter-rouge">/vagrant/app</code>. you can modify it to your Laravel project folder or you can change your Laravel project folder name to <code class="highlighter-rouge">app</code>.</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dokcer compose Laradock(nginx, mysql, phpmyadmin, workspace)</span>
+</code></pre></div></div>
+
+<p>Laradock workspace Docker is the environment that Laravel project is executed. this Docker refers<code class="highlighter-rouge">APP_CODE_PATH_HOST</code> folder to sync it so workspace Docker is built and executed with this folder. basic option is <code class="highlighter-rouge">APP_CODE_PATH_HOST=../</code> which means upper Laradock folder. we modified this to <code class="highlighter-rouge">/vagrant/app</code>. you can modify it to your Laravel project folder or you can change your Laravel project folder name to <code class="highlighter-rouge">app</code>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dokcer compose Laradock(nginx, mysql, phpmyadmin, workspace)</span>
   <span class="na">docker_service</span><span class="pi">:</span>
     <span class="na">debug</span><span class="pi">:</span> <span class="no">true</span>
     <span class="na">state</span><span class="pi">:</span> <span class="s">present</span>
@@ -153,12 +619,350 @@ SQLSTATE[HY000] <span class="o">[</span>2054] The server requested authenticatio
         <span class="pi">-</span> <span class="s">workspace</span>
   <span class="na">tags</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">docker</span>
-</code></pre></div></div> <p>build and execute required Dockers by Ansible Docker Service module. this task uses <code class="highlighter-rouge">tag</code> feature unlike others. if we use <code class="highlighter-rouge">--tags</code> option in executing Ansible Playbook command, we can execute only tagged commands in all commands. if <code class="highlighter-rouge">--tags</code> option is not set, Ansible Playbook executes all commands.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># execute all commands</span>
+</code></pre></div></div>
+
+<p>build and execute required Dockers by Ansible Docker Service module. this task uses <code class="highlighter-rouge">tag</code> feature unlike others. if we use <code class="highlighter-rouge">--tags</code> option in executing Ansible Playbook command, we can execute only tagged commands in all commands. if <code class="highlighter-rouge">--tags</code> option is not set, Ansible Playbook executes all commands.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># execute all commands</span>
 <span class="nb">sudo </span>ansible-playbook /vagrant/ansible/playbook.yml
 <span class="c"># execute commands tagged docker</span>
 <span class="nb">sudo </span>ansible-playbook /vagrant/ansible/playbook.yml <span class="nt">--tags</span> <span class="s1">'docker'</span>
-</code></pre></div></div> <h2 id="execute-ansible-playbook">execute Ansible Playbook</h2> <p>completed to configure Laradock <code class="highlighter-rouge">role</code> to Ansible Playbook. let’s execute Ansible Playbook to install Laradock.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># vagrant ssh</span>
+</code></pre></div></div>
+
+<h2 id="execute-ansible-playbook">execute Ansible Playbook</h2>
+<p>completed to configure Laradock <code class="highlighter-rouge">role</code> to Ansible Playbook. let’s execute Ansible Playbook to install Laradock.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># vagrant ssh</span>
 <span class="nb">sudo </span>ansible-playbook /vagrant/ansible/playbook.yml
-</code></pre></div></div> <h2 id="check-laradock-is-installed">check Laradock is installed</h2> <p>execute below Docker command to check Laradock is installed well by Ansible Playbook.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># vagrant ssh</span>
+</code></pre></div></div>
+
+<h2 id="check-laradock-is-installed">check Laradock is installed</h2>
+<p>execute below Docker command to check Laradock is installed well by Ansible Playbook.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># vagrant ssh</span>
 <span class="nb">sudo </span>docker ps
-</code></pre></div></div> <p>also, open <code class="highlighter-rouge">http://localhost</code> on local machine(host system) browser. you can see <code class="highlighter-rouge">nginx</code>’s <code class="highlighter-rouge">404 Not Found</code> error screen.</p> <h2 id="completed">completed</h2> <p>we prepared Laravel development environment by installing Laradock using Ansible. now we can see <code class="highlighter-rouge">404 Not Found</code> because we’ve not set Laravel project but Laravel development environment was ready by Laradock. next, we will configure Laravel project on Laradock development environment.</p> <h2 id="reference">reference</h2> <ul> <li><a href="https://laradock.io/documentation/" rel="nofollow noreferrer" target="_blank">https://laradock.io/documentation/</a></li> </ul> <div class="buy_me_a_coffee_container"> <style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; box-shadow: none !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-flex !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important; -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; margin: 0 auto !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a> </div> <div class="post-list-container"> <div class="header"> <div class="header-title">Posts</div> </div> <div class="body"> <div class="list-group"></div> </div> <div class="footer"> <ul class="pagination"> <li class="page-item page-item--previous"> <div class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </div> </li> <li class="page-item page-item--next"> <div class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </div> </li> </ul> </div> </div> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){$.get("/en/api/environment/posts.json",function(e){e.length>0&&($(".post-list-container").show(),e.forEach(function(e){var a=$(".post-list-container .body .list-group"),t=a.find(".page-"+e.page),i=e.url.indexOf(location.pathname)>=0?"active":"",s="";if(s+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+i+'">',s+='  <div class="d-flex w-100 justify-content-between">',s+='    <div class="mb-1">'+e.title+"</div>",s+="  </div>",s+='  <div class="body-text">'+e.description+"</div>",s+="</a>",t.length>0)t.addClass(i),t.append(s);else{var n="";n+='<div class="page page-'+e.page+" "+i+'">',n+=s,n+="</div>",a.append(n)}var p="";p+='<li class="page-item page-item--link '+i+'" data-page="'+e.page+'">',p+='  <div class="page-link" data-page="'+e.page+'">',p+=e.page,p+="  </div>",p+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+e.page+'"]').length&&$(".post-list-container .footer .page-item--next").before(p),"active"===i&&$("li[data-page="+e.page+"]").addClass(i),e.page>1&&$(".footer").css("display","flex")}))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")})});</script> </article> <div class="col-lg-8 col-md-10 mx-auto"> <hr/> <div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="https://dev-yakuza.github.io/environment/ansible-laradock/",this.page.identifier="https://dev-yakuza.github.io/environment/ansible-laradock/"};!function(){var t=document,e=t.createElement("script");e.src="https://https-dev-yakuza-github-io-en.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> </header> <hr> <footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div> <div class="col-lg-8 col-md-10 mx-auto"> <ul class="list-inline text-center"> <li class="list-inline-item"> <a href="https://twitter.com/intent/tweet?text=Ansible&Laradock&url=https://dev-yakuza.github.io/environment/ansible-laradock/" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.github.io/environment/ansible-laradock/" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://dev-yakuza.github.io/en/feed.xml" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i> </span> </a> </li> </ul> <p class="copyright text-muted">Copyright &copy; dev.yakuza@gmail.com 2019</p> </div> </div> </div> </footer> <script src="/assets/vendor/jquery/jquery.min.js"></script> <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script> <script src="/assets/scripts.js"></script> </body> </html>
+</code></pre></div></div>
+
+<p>also, open <code class="highlighter-rouge">http://localhost</code> on local machine(host system) browser. you can see <code class="highlighter-rouge">nginx</code>’s <code class="highlighter-rouge">404 Not Found</code> error screen.</p>
+
+<h2 id="completed">completed</h2>
+<p>we prepared Laravel development environment by installing Laradock using Ansible. now we can see <code class="highlighter-rouge">404 Not Found</code> because we’ve not set Laravel project but Laravel development environment was ready by Laradock. next, we will configure Laravel project on Laradock development environment.</p>
+
+<h2 id="reference">reference</h2>
+<ul>
+  <li><a href="https://laradock.io/documentation/" rel="nofollow noreferrer" target="_blank">https://laradock.io/documentation/</a></li>
+</ul>
+
+
+        <div class="buy_me_a_coffee_container">
+  <style>
+    .bmc-button img {
+      width: 27px !important;
+      margin-bottom: 1px !important;
+      box-shadow: none !important;
+      border: none !important;
+      vertical-align: middle !important;
+    }
+    .bmc-button {
+      line-height: 36px !important;
+      height: 37px !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      color: #ffffff !important;
+      background-color: #ff813f !important;
+      border-radius: 3px !important;
+      border: 1px solid transparent !important;
+      padding: 0px 9px !important;
+      font-size: 17px !important;
+      letter-spacing: -0.08px !important;
+      box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+      -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+      margin: 0 auto !important;
+      font-family: 'Lato', sans-serif !important;
+      -webkit-box-sizing: border-box !important;
+      box-sizing: border-box !important;
+      -o-transition: 0.3s all linear !important;
+      -webkit-transition: 0.3s all linear !important;
+      -moz-transition: 0.3s all linear !important;
+      -ms-transition: 0.3s all linear !important;
+      transition: 0.3s all linear !important;
+    }
+    .bmc-button:hover,
+    .bmc-button:active,
+    .bmc-button:focus {
+      -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+      text-decoration: none !important;
+      box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+      opacity: 0.85 !important;
+      color: #ffffff !important;
+    }</style
+  ><link
+    href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+    rel="stylesheet"
+  /><a
+    class="bmc-button"
+    target="_blank"
+    href="https://www.buymeacoffee.com/j0cXhWiza"
+    ><img
+      src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg"
+      alt="Buy me a coffee"
+    /><span style="margin-left:5px">Buy me a coffee</span></a
+  >
+</div>
+
+        <div class="post-list-container">
+          <div class="header">
+            <div class="header-title">Posts</div>
+          </div>
+
+          <div class="body">
+            <div class="list-group"></div>
+          </div>
+
+          <div class="footer">
+            <ul class="pagination">
+              <li class="page-item page-item--previous">
+                <div class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </div>
+              </li>
+
+              <li class="page-item page-item--next">
+                <div class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            var lang =
+              'en' === 'ja'
+                ? ''
+                : '/en';
+
+            $.get(lang + '/api/environment/posts.json', function(
+              data,
+              status
+            ) {
+              if (data.length > 0) {
+                $('.post-list-container').show();
+
+                data.forEach(function(post, index) {
+                  var container = $('.post-list-container .body .list-group');
+                  var page = container.find('.page-' + post.page);
+                  debugger;
+                  var active =
+                    post.url.indexOf(location.pathname) >= 0 ? 'active' : '';
+
+                  // post item in page
+                  var item = '';
+                  item +=
+                    '<a href="' +
+                    post.url +
+                    '" class="list-group-item list-group-item-action flex-column align-items-start ' +
+                    active +
+                    '">';
+                  item +=
+                    '  <div class="d-flex w-100 justify-content-between">';
+                  item += '    <div class="mb-1">' + post.title + '</div>';
+                  item += '  </div>';
+                  item +=
+                    '  <div class="body-text">' + post.description + '</div>';
+                  item += '</a>';
+
+                  if (page.length > 0) {
+                    // page already exists
+                    page.addClass(active);
+                    page.append(item);
+                  } else {
+                    // new page
+                    var temp = '';
+                    temp +=
+                      '<div class="page page-' +
+                      post.page +
+                      ' ' +
+                      active +
+                      '">';
+                    temp += item;
+                    temp += '</div>';
+                    container.append(temp);
+                  }
+
+                  // pagination
+                  var paginationItem = '';
+                  paginationItem +=
+                    '<li class="page-item page-item--link ' +
+                    active +
+                    '" data-page="' +
+                    post.page +
+                    '">';
+                  paginationItem +=
+                    '  <div class="page-link" data-page="' + post.page + '">';
+                  paginationItem += post.page;
+                  paginationItem += '  </div>';
+                  paginationItem += '</li>';
+
+                  if (
+                    $(
+                      '.post-list-container .footer .page-item[data-page="' +
+                        post.page +
+                        '"]'
+                    ).length === 0
+                  ) {
+                    $('.post-list-container .footer .page-item--next').before(
+                      paginationItem
+                    );
+                  }
+
+                  if (active === 'active') {
+                    $('li[data-page=' + post.page + ']').addClass(active);
+                  }
+
+                  if (post.page > 1) {
+                    $('.footer').css('display', 'flex');
+                  }
+                });
+              }
+            });
+
+            $('body').on('click', '.page-link', function(e) {
+              var pageContainer = $('.post-list-container .body .list-group');
+              var paginationContainer = $('.footer .pagination');
+              var currentItem = paginationContainer.find('.page-item.active');
+              var currentPageNum = currentItem.find('.page-link').data('page');
+              var pageNum = $(this).data('page');
+
+              if (
+                $(this)
+                  .closest('.page-item')
+                  .hasClass('page-item--previous')
+              ) {
+                if (currentPageNum > 1) {
+                  pageNum = currentPageNum - 1;
+                } else {
+                  pageNum = 1;
+                }
+              } else if (
+                $(this)
+                  .closest('.page-item')
+                  .hasClass('page-item--next')
+              ) {
+                var total = paginationContainer.find('.page-item--link').length;
+                if (currentPageNum < total) {
+                  pageNum = currentPageNum + 1;
+                } else {
+                  pageNum = total;
+                }
+              } else {
+                var pageNum = $(this).data('page');
+              }
+
+              pageContainer.find('.page').removeClass('active');
+              pageContainer.find('.page-' + pageNum).addClass('active');
+
+              paginationContainer.find('.page-item').removeClass('active');
+              paginationContainer
+                .find('.page-link[data-page="' + pageNum + '"]')
+                .closest('.page-item')
+                .addClass('active');
+            });
+          });
+        </script>
+      </article>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <hr />
+        
+        <div id="disqus_thread"></div>
+        <script>
+
+          var disqus_config = function () {
+            this.page.url = "http://localhost:4000/environment/ansible-laradock/";
+            this.page.identifier = "http://localhost:4000/environment/ansible-laradock/";
+          };
+          (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            
+            s.src = 'https://https-dev-yakuza-github-io-en.disqus.com/embed.js';
+            
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+          ></noscript
+        >
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto share-title">
+        SHARE
+      </div>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="https://twitter.com/intent/tweet?text=Ansible&Laradock&url=http://localhost:4000/environment/ansible-laradock/" rel="nofollow noreferrer"
+              target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/environment/ansible-laradock/" rel="nofollow noreferrer"
+              target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a href="http://localhost:4000/en/feed.xml" rel="nofollow noreferrer" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; dev.yakuza@gmail.com 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+  </body>
+
+</html>
