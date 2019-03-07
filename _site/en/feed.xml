@@ -1,11 +1,596 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/en/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/en/" rel="alternate" type="text/html" /><updated>2019-03-07T10:15:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dreams the art through programming</title><subtitle>『Programming Artist ヤクザ』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="en"><title type="html">Control StatusBar</title><link href="http://localhost:4000/en/react-native/react-native-status-bar/" rel="alternate" type="text/html" title="Control StatusBar" /><published>2019-03-01T00:00:00+09:00</published><updated>2019-03-03T16:07:02+09:00</updated><id>http://localhost:4000/react-native/react-native-status-bar-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-status-bar/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://dev-yakuza.github.io/en/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dev-yakuza.github.io/en/" rel="alternate" type="text/html" /><updated>2019-03-07T17:52:06+09:00</updated><id>https://dev-yakuza.github.io/feed.xml</id><title type="html">Dreams the art through programming</title><subtitle>『Programming Artist ヤクザ』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="en"><title type="html">Development Environment on Mac(3) - for development</title><link href="https://dev-yakuza.github.io/en/environment/mac-development-environment/" rel="alternate" type="text/html" title="Development Environment on Mac(3) - for development" /><published>2019-03-07T00:00:00+09:00</published><updated>2019-03-07T17:51:15+09:00</updated><id>https://dev-yakuza.github.io/environment/mac-development-environment-en</id><content type="html" xml:base="https://dev-yakuza.github.io/environment/mac-development-environment/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;I got a new Mac, so I’am configuring the development environment on it. in this blog post, I’ll show how to set the development environment what I use.&lt;/p&gt;
+
+&lt;p&gt;this blog is a series. if you want to know other development environment, see other blog posts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-iterm-zsh/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(1) - iTerm &amp;amp; zsh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-tools/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(2) - for tools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-environment/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(3) - for development&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;python3&quot;&gt;python3&lt;/h2&gt;
+&lt;p&gt;Mac has basically python2. in here, I’ll introduce how to install python3 and configure python3 to zsh default.&lt;/p&gt;
+
+&lt;p&gt;execute the command below to install homebrew.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;execute the command below to open zsh configuration file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;add the content below to the bottom of the configuration file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin:/usr/local/sbin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;open zsh(iTerm) and execute the command below to install python3.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;add the below to the bottom of zsh configuration file to set python3 to default.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# code ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;git-flow&quot;&gt;git flow&lt;/h2&gt;
+&lt;p&gt;execute the command below to install git flow.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install git-flow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;node--npm&quot;&gt;node / npm&lt;/h2&gt;
+&lt;p&gt;click the link below to download and install node.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;node: &lt;a href=&quot;https://nodejs.org/en/download/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://nodejs.org/en/download/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;react-native&quot;&gt;react native&lt;/h2&gt;
+&lt;p&gt;I wrote about how to install RN(React Native) on another blog post. click the link below to check how to install RN(React Native).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/installation/&quot; target=&quot;_blank&quot;&gt;RN installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;laravel&quot;&gt;Laravel&lt;/h2&gt;
+&lt;p&gt;Mac has basically php. execute the command below to install &lt;code class=&quot;highlighter-rouge&quot;&gt;composer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-sS&lt;/span&gt; https://getcomposer.org/installer | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;php &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--install-dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;open zsh configuration file and add the content below to the bottom of it.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# code ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;composer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;php /usr/local/bin/composer.phar&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;execute the command below to change the permission.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chmod &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 777 /Users/[user name]/.composer/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;execute the command below to install Laravel&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer global require laravel/installer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;add the content below to the bottom of zsh settings file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# code ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.composer/vendor/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mysql-installation&quot;&gt;mysql installation&lt;/h2&gt;
+&lt;p&gt;execute the command below to install mysql.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install mysql@5.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;open zsh configuration file and add the below to the bottom of it.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# code ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/mysql@5.7/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LDFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-L/usr/local/opt/mysql@5.7/lib&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CPPFLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-I/usr/local/opt/mysql@5.7/include&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;execute the command below to start mysql server.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql.server start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;execute the command below to start mysql configuration(set password, etc).&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll&quot;&gt;jekyll&lt;/h2&gt;
+&lt;p&gt;I have the blog post about how to install jekyll. click the link below to see how to install it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/jekyll/installation/&quot; target=&quot;_blank&quot;&gt;jekyll installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;zsh-configuration-file&quot;&gt;zsh configuration file&lt;/h2&gt;
+&lt;p&gt;the below is zsh configuration file’s contents.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# If you come from bash you might have to change your $PATH.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export PATH=$HOME/bin:/usr/local/bin:$PATH&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Path to your oh-my-zsh installation.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/jeonghean_kim/.oh-my-zsh&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set name of the theme to load --- if set to &quot;random&quot;, it will&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# load a random theme each time oh-my-zsh is loaded, in which case,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# to know which specific one was loaded, run: echo $RANDOM_THEME&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;powerlevel9k/powerlevel9k&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set list of themes to pick from when loading at random&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Setting this variable when ZSH_THEME=random will cause zsh to load&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# If set to an empty array, this variable will have no effect.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ZSH_THEME_RANDOM_CANDIDATES=( &quot;robbyrussell&quot; &quot;agnoster&quot; )&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to use case-sensitive completion.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# CASE_SENSITIVE=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to use hyphen-insensitive completion.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Case-sensitive completion must be off. _ and - will be interchangeable.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# HYPHEN_INSENSITIVE=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to disable bi-weekly auto-update checks.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# DISABLE_AUTO_UPDATE=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to change how often to auto-update (in days).&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export UPDATE_ZSH_DAYS=13&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to disable colors in ls.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# DISABLE_LS_COLORS=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to disable auto-setting terminal title.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# DISABLE_AUTO_TITLE=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to enable command auto-correction.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ENABLE_CORRECTION=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line to display red dots whilst waiting for completion.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# COMPLETION_WAITING_DOTS=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line if you want to disable marking untracked files&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# under VCS as dirty. This makes repository status check for large repositories&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# much, much faster.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# DISABLE_UNTRACKED_FILES_DIRTY=&quot;true&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Uncomment the following line if you want to change the command execution time&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# stamp shown in the history command output.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# You can set one of the optional three formats:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# &quot;mm/dd/yyyy&quot;|&quot;dd.mm.yyyy&quot;|&quot;yyyy-mm-dd&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# or set a custom format using the strftime function format specifications,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# see 'man strftime' for details.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# HIST_STAMPS=&quot;mm/dd/yyyy&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Would you like to use another custom folder than $ZSH/custom?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ZSH_CUSTOM=/path/to/new-custom-folder&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Which plugins would you like to load?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Standard plugins can be found in ~/.oh-my-zsh/plugins/*&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Example format: plugins=(rails git textmate ruby lighthouse)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Add wisely, as too many plugins slow down shell startup.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;git&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ZSH&lt;/span&gt;/oh-my-zsh.sh
+
+&lt;span class=&quot;c&quot;&gt;# User configuration&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# export MANPATH=&quot;/usr/local/man:$MANPATH&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# You may need to manually set your language environment&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export LANG=en_US.UTF-8&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Preferred editor for local and remote sessions&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# if [[ -n $SSH_CONNECTION ]]; then&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   export EDITOR='vim'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# else&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   export EDITOR='mvim'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# fi&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Compilation flags&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export ARCHFLAGS=&quot;-arch x86_64&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ssh&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export SSH_KEY_PATH=&quot;~/.ssh/rsa_id&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set personal aliases, overriding those provided by oh-my-zsh libs,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# plugins, and themes. Aliases can be placed here, though oh-my-zsh&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# users are encouraged to define aliases within the ZSH_CUSTOM folder.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# For a full list of active aliases, run `alias`.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Example aliases&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# alias zshconfig=&quot;mate ~/.zshrc&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# remove user name in zsh&lt;/span&gt;
+prompt_context&lt;span class=&quot;o&quot;&gt;(){}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# vscode code command&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# brew path&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin:/usr/local/sbin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# python3 default&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;python3
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pip3
+&lt;span class=&quot;c&quot;&gt;# composer&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;composer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;php /usr/local/bin/composer.phar&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Laravel&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.composer/vendor/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mysql&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/opt/mysql@5.7/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# jekyll&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GEM_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/gems
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/gems/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline I got a new Mac, so I’am configuring the development environment on it. in this blog post, I’ll show how to set the development environment what I use.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/environment/mac-development-environment/background.jpg" /></entry><entry xml:lang="en"><title type="html">Development Environment on Mac(2) - for tools</title><link href="https://dev-yakuza.github.io/en/environment/mac-development-tools/" rel="alternate" type="text/html" title="Development Environment on Mac(2) - for tools" /><published>2019-03-06T00:00:00+09:00</published><updated>2019-03-07T17:18:14+09:00</updated><id>https://dev-yakuza.github.io/environment/mac-development-tools-en</id><content type="html" xml:base="https://dev-yakuza.github.io/environment/mac-development-tools/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;now I’m setting the development environment on new Mac. in this blog, I’ll show the tools what I use.&lt;/p&gt;
+
+&lt;p&gt;this blog is a series. if you want to know other development environment, see other blog posts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-iterm-zsh/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(1) - iTerm &amp;amp; zsh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-tools/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(2) - for tools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-environment/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(3) - for development&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;communication-tools&quot;&gt;Communication Tools&lt;/h2&gt;
+&lt;p&gt;the below is what I use for communication when I develop.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Line: Download from App store&lt;/li&gt;
+  &lt;li&gt;Kakaotalk: Download from App store&lt;/li&gt;
+  &lt;li&gt;Slack: Download from App store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;development-tools&quot;&gt;Development Tools&lt;/h2&gt;
+&lt;p&gt;the below is the development tools what I use.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;android studio: &lt;a href=&quot;https://developer.android.com/studio&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://developer.android.com/studio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;xcode: Download from App store&lt;/li&gt;
+  &lt;li&gt;vscode: &lt;a href=&quot;https://code.visualstudio.com/download&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://code.visualstudio.com/download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vscode&quot;&gt;vscode&lt;/h3&gt;
+&lt;p&gt;this is vscode plugin list what I use.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Active File In StatusBar&lt;/li&gt;
+  &lt;li&gt;Babel ES6/ES7&lt;/li&gt;
+  &lt;li&gt;Bracket Pair Colorizer&lt;/li&gt;
+  &lt;li&gt;Debugger for Chrome&lt;/li&gt;
+  &lt;li&gt;IntelliSense for CSS, SCSS class names in HTML, Slim and SCSS&lt;/li&gt;
+  &lt;li&gt;Node.js Modlues Intellisense&lt;/li&gt;
+  &lt;li&gt;npm Intellisense&lt;/li&gt;
+  &lt;li&gt;Path Intellisense&lt;/li&gt;
+  &lt;li&gt;PHP Intellisense&lt;/li&gt;
+  &lt;li&gt;Prettier - Code Formatter&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;Trailing Spaces&lt;/li&gt;
+  &lt;li&gt;TSLint&lt;/li&gt;
+  &lt;li&gt;vscode-icons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;after installing all, execute the command below to open vscode configuration file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code ~/Library/Application&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Support/Code/User/settings.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;copy-paste the below to vscode setting file.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terminal.integrated.shell.osx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/bin/zsh&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terminal.integrated.fontFamily&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Meslo LG M for Powerline&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;window.zoomLevel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;workbench.iconTheme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vscode-icons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;editor.fontFamily&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;'D2Coding ligature'&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;editor.fontLigatures&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;window.restoreWindows&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;all&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prettier.eslintIntegration&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;javascript.format.enable&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;editor.formatOnSave&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;files.exclude&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.svn&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.DS_Store&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*/node_modules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.idea&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.vscode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/yarn.lock&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/tmp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;files.watcherExclude&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.git/objects/**&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/node_modules/**&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/tmp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;files.trimTrailingWhitespace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search.exclude&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/node_modules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/bower_components&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.DS_Store&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/tmp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/Pods&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/*.xcodeproj&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/*.xcworkspace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;**/.meteor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extensions.autoUpdate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prettier.singleQuote&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prettier.trailingComma&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prettier.jsxBracketSameLine&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;[markdown]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;editor.formatOnSave&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;db-tools&quot;&gt;DB Tools&lt;/h2&gt;
+&lt;p&gt;the below is the DB tools what I use.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sequel pro: &lt;a href=&quot;https://www.sequelpro.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.sequelpro.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;DB Browser For SQLite: &lt;a href=&quot;https://sqlitebrowser.org/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://sqlitebrowser.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;workbench: &lt;a href=&quot;https://www.mysql.com/products/workbench/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.mysql.com/products/workbench/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;support-program&quot;&gt;Support Program&lt;/h2&gt;
+&lt;p&gt;this is the support programs for developing.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Postman: &lt;a href=&quot;https://www.getpostman.com/downloads/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.getpostman.com/downloads/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Beyond Compare: &lt;a href=&quot;https://www.scootersoftware.com/download.php&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.scootersoftware.com/download.php&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sourcetree: &lt;a href=&quot;https://www.sourcetreeapp.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://www.sourcetreeapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;font&quot;&gt;Font&lt;/h2&gt;
+&lt;p&gt;this is the font for the development tools.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;D2Coding: &lt;a href=&quot;https://github.com/naver/d2codingfont&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/naver/d2codingfont&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline now I’m setting the development environment on new Mac. in this blog, I’ll show the tools what I use.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/environment/mac-development-tools/background.jpg" /></entry><entry xml:lang="en"><title type="html">Development Environment on Mac(1) - iTerm &amp;amp; zsh</title><link href="https://dev-yakuza.github.io/en/environment/mac-iterm-zsh/" rel="alternate" type="text/html" title="Development Environment on Mac(1) - iTerm &amp; zsh" /><published>2019-03-05T00:00:00+09:00</published><updated>2019-03-07T16:52:06+09:00</updated><id>https://dev-yakuza.github.io/environment/mac-iterm-zsh-en</id><content type="html" xml:base="https://dev-yakuza.github.io/environment/mac-iterm-zsh/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;I try to write how to configure the development environment from very first time on Mac. this blog is a series. if you want to know other development environment, see other blog posts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-iterm-zsh/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(1) - iTerm &amp;amp; zsh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-tools/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(2) - for tools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/environment/mac-development-environment/&quot; target=&quot;_blank&quot;&gt;Development Environment on Mac(3) - for development&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;in here, I’ll introduce how to configure &lt;a href=&quot;https://www.iterm2.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;iTerm&lt;/a&gt; and &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;zsh&lt;/a&gt; on Mac.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.iterm2.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;iTerm&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;zsh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;iterm-installation&quot;&gt;iTerm Installation&lt;/h2&gt;
+&lt;p&gt;click the link below to go to &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerm&lt;/code&gt; download page.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;iTerm download: &lt;a href=&quot;https://www.iterm2.com/downloads.html&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;you can see the screen like below, click &lt;code class=&quot;highlighter-rouge&quot;&gt;Stable Releases&lt;/code&gt; to download.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-download.png&quot; alt=&quot;Development Environment on Mac - iTerm download&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;unzip &lt;code class=&quot;highlighter-rouge&quot;&gt;zip&lt;/code&gt; file you downloaded and install it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access.png&quot; alt=&quot;Development Environment on Mac - iTerm full disk access permission&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;if iTerm asks you &lt;code class=&quot;highlighter-rouge&quot;&gt;Full Disk Access&lt;/code&gt; permission, click &lt;code class=&quot;highlighter-rouge&quot;&gt;Open System Preferences&lt;/code&gt; on the right bottom.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access-grant.png&quot; alt=&quot;Development Environment on Mac - iTerm full disk access permission setting&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;you can see the nice explanation and &lt;code class=&quot;highlighter-rouge&quot;&gt;Security &amp;amp; Privacy&lt;/code&gt; is activated. click the lock shape on the left bottom, and insert your password to make editable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access-grant-setting.png&quot; alt=&quot;Development Environment on Mac - iTerm full disk access permission setting screen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;select &lt;code class=&quot;highlighter-rouge&quot;&gt;Privacy&lt;/code&gt; on the top tab, and click &lt;code class=&quot;highlighter-rouge&quot;&gt;Full Disk Accesss&lt;/code&gt; on the left list.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access-grant-setting-select-iterm.png&quot; alt=&quot;Development Environment on Mac - iTerm full disk access permission setting iTerm select&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;click &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; button on the right side. go to &lt;code class=&quot;highlighter-rouge&quot;&gt;Applications&lt;/code&gt;, and select &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerm&lt;/code&gt; and click &lt;code class=&quot;highlighter-rouge&quot;&gt;Open&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access-grant-setting-quit.png&quot; alt=&quot;Development Environment on Mac - iTerm quit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;if Mac asks you that you want to quit &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerm&lt;/code&gt;, click &lt;code class=&quot;highlighter-rouge&quot;&gt;Quit Now&lt;/code&gt; to quit &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerm&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;after it, check iTerm is executed.&lt;/p&gt;
+
+&lt;h2 id=&quot;zsh&quot;&gt;zsh&lt;/h2&gt;
+&lt;p&gt;zsh makes Terminal easier to use. if you want to know more details, click the link below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;zsh official site: &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;zsh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;you can find the installation on zsh official site like below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-installation.png&quot; alt=&quot;Development Environment on Mac - zsh installation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;open iTerm or Terminal and execute the command below.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;after installing, you can see the screen like below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-install-completed.png&quot; alt=&quot;Development Environment on Mac - zsh install completed&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-zsh-to-iterm-default-terminal&quot;&gt;Configure zsh to iTerm Default Terminal&lt;/h2&gt;
+&lt;p&gt;iTerm’s default is to use the basic shell. let’s set iTerm uses basically zsh.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-install-completed.png&quot; alt=&quot;Development Environment on Mac - iTerm zsh configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;execute iTerm and click &lt;code class=&quot;highlighter-rouge&quot;&gt;iTerms2&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Preferences...&lt;/code&gt; on the left top.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/iterm-zsh-default-setting-path.png&quot; alt=&quot;Development Environment on Mac - iTerm zsh default setting&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;you can see the screen like above. click &lt;code class=&quot;highlighter-rouge&quot;&gt;Profiles&lt;/code&gt; tab on the top. insert &lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/zsh&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; section on the right middle.&lt;/p&gt;
+
+&lt;p&gt;after it, restart iTerm. you can see &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; is executed by default.&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-iterm-theme&quot;&gt;Configure iTerm Theme.&lt;/h2&gt;
+&lt;p&gt;there are many themes for iTerm. you can configure the theme what you want. in here, I’ll introduce how to set &lt;code class=&quot;highlighter-rouge&quot;&gt;iterm2-solarized&lt;/code&gt; theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/kevin-smets/8568070&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;iterm2-solarized&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;click the link below to download the theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20-%20Patched.itermcolors&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;download iterm2-solarized&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;when you click the link above, you can see the theme file contents. push &lt;code class=&quot;highlighter-rouge&quot;&gt;command + s&lt;/code&gt; to save it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-theme-setting.png&quot; alt=&quot;Development Environment on Mac - zsh theme setting&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;before you download it, change to &lt;code class=&quot;highlighter-rouge&quot;&gt;All Files&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;Format&lt;/code&gt; on the bottom. and check the end of the file is &lt;code class=&quot;highlighter-rouge&quot;&gt;.itermcolors&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;open Preferences of iTerm again.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-theme-import.png&quot; alt=&quot;Development Environment on Mac - zsh theme setting on iterm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;click &lt;code class=&quot;highlighter-rouge&quot;&gt;Profiles&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Colors&lt;/code&gt; like above, and click &lt;code class=&quot;highlighter-rouge&quot;&gt;Color Preset...&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;import...&lt;/code&gt; on the right bottom.&lt;/p&gt;
+
+&lt;p&gt;select &lt;code class=&quot;highlighter-rouge&quot;&gt;Solarized Dark - Patched.itermcolors&lt;/code&gt; file you downloaded above.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/zsh-theme-solarized-dark.png&quot; alt=&quot;Development Environment on Mac - zsh theme Solarized Dark setting on iterm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;select &lt;code class=&quot;highlighter-rouge&quot;&gt;Color Preset...&lt;/code&gt; again, you can see &lt;code class=&quot;highlighter-rouge&quot;&gt;Solarized Dark&lt;/code&gt;. click it to change the theme.&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-powerlevel9k&quot;&gt;Configure Powerlevel9k&lt;/h2&gt;
+&lt;p&gt;to show more information on zsh, let’s configure &lt;code class=&quot;highlighter-rouge&quot;&gt;Powerlevel9k&lt;/code&gt;. you can see the screen like below, when you execute current iTerm.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/normal_iterm.png&quot; alt=&quot;Development Environment on Mac - iterm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;execute the command below to download &lt;code class=&quot;highlighter-rouge&quot;&gt;Powerlevel9k&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;zsh’s configuration file is &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;. open it and set Powerlevel9k.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;find the theme configuration.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Set name of the theme to load --- if set to &quot;random&quot;, it will&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# load a random theme each time oh-my-zsh is loaded, in which case,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# to know which specific one was loaded, run: echo $RANDOM_THEME&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;robbyrussell&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;change the theme from &lt;code class=&quot;highlighter-rouge&quot;&gt;ZSH_THEME=&quot;robbyrussell&quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;ZSH_THEME=&quot;powerlevel9k/powerlevel9k&quot;&lt;/code&gt; and save it.&lt;/p&gt;
+
+&lt;p&gt;to restart iTerm, you can see the screen like below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/powerlevel9k.png&quot; alt=&quot;Development Environment on Mac - iterm powerlevel9k&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;you can see user information and &lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt;. the question mark is shown up when the font is not set. click the link below to go to the font download site.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;Meslo LG M Regular for Powerline.ttf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;when you click the link above, you can see the screen lik below. click &lt;code class=&quot;highlighter-rouge&quot;&gt;View Raw&lt;/code&gt; to download the font.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/download-font.png&quot; alt=&quot;Development Environment on Mac - iterm donwload font&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;after downloading it, click the font file to execute it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/install-font.png&quot; alt=&quot;Development Environment on Mac - iterm font installation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;click &lt;code class=&quot;highlighter-rouge&quot;&gt;Install Font&lt;/code&gt; on the right bottom to install it. after installing, open Preference on iTerm again and click &lt;code class=&quot;highlighter-rouge&quot;&gt;Profiles&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Text&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Change Font&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/set-font.png&quot; alt=&quot;Development Environment on Mac - iterm font installation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;select &lt;code class=&quot;highlighter-rouge&quot;&gt;Meslo LG M Regular for Powerline&lt;/code&gt; what we downloaded above.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/check-font.png&quot; alt=&quot;Development Environment on Mac - iterm font installation check&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;when you execute iTerm, you can see the screen like above.&lt;/p&gt;
+
+&lt;p&gt;I don’t like to show my long username, so I configured it not showing up. execute the command below if you want to hide it.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;add the content below to the bottom.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;prompt_context&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;restart iTerm. you can see the user name not displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/no-user-name.png&quot; alt=&quot;Development Environment on Mac - iterm hide user name&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;connect-vscode-and-zsh&quot;&gt;Connect vscode and zsh&lt;/h2&gt;
+&lt;p&gt;in here, we’ll set &lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt; command of vscode on zsh, and zsh to vscode’s default terminal on vscode.&lt;/p&gt;
+
+&lt;h3 id=&quot;configure-vscode-command-to-zsh&quot;&gt;Configure vscode command to zsh&lt;/h3&gt;
+&lt;p&gt;execute the command below to open zsh configuration file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;add the content below to the bottom of the settings file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;restart iTerm and execute the command below to check vscode activated.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;configure-zsh-to-vscode&quot;&gt;Configure zsh to vscode&lt;/h3&gt;
+&lt;p&gt;click &lt;code class=&quot;highlighter-rouge&quot;&gt;Code&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Preferences&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt; on the left top of the vscode.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/vscode-setting.png&quot; alt=&quot;Development Environment on Mac - vscode zsh configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;search &lt;code class=&quot;highlighter-rouge&quot;&gt;shell&lt;/code&gt; and change &lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/bash&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/zsh&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal &amp;gt; Integrated &amp;gt; Shell: Osx&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/vscode-shell-setting.png&quot; alt=&quot;Development Environment on Mac - vscode zsh shell configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;also, search &lt;code class=&quot;highlighter-rouge&quot;&gt;fontfamily&lt;/code&gt; and set &lt;code class=&quot;highlighter-rouge&quot;&gt;Meslo LG M for Powerline&lt;/code&gt; on it like below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/vscode-zsh-font-setting.png&quot; alt=&quot;Development Environment on Mac - vscode zsh font 설정&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;after it, to execute Terminal on vscode, you can see zsh executed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/category/environment/mac-iterm-zsh/vscode-zsh-font.png&quot; alt=&quot;Development Environment on Mac - vscode zsh configuration completed&quot; /&gt;&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline I try to write how to configure the development environment from very first time on Mac. this blog is a series. if you want to know other development environment, see other blog posts.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/environment/mac-iterm-zsh/background.jpg" /></entry><entry xml:lang="en"><title type="html">Control StatusBar</title><link href="https://dev-yakuza.github.io/en/react-native/react-native-status-bar/" rel="alternate" type="text/html" title="Control StatusBar" /><published>2019-03-01T00:00:00+09:00</published><updated>2019-03-03T16:07:02+09:00</updated><id>https://dev-yakuza.github.io/react-native/react-native-status-bar-en</id><content type="html" xml:base="https://dev-yakuza.github.io/react-native/react-native-status-bar/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;Recently, when I developed the app, I needed to control the StatusBar. in this blog, I’ll introduce how to handle the StatusBar in RN(React Native).&lt;/p&gt;
 
 &lt;h2 id=&quot;splash-screen&quot;&gt;Splash Screen&lt;/h2&gt;
 &lt;p&gt;I use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-splash-screen&lt;/code&gt; to handle the Splash screen in RN(React Native). if you want to know more details about how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-splash-screen&lt;/code&gt;, see the blog below.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;App Splash screen&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;App Splash screen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;if we don’t configure anything, the StatusBar will show up on the Splash screen. we can configure the settings below to hide the StatusBar on the Splash screen.&lt;/p&gt;
@@ -80,7 +665,7 @@
 &lt;p&gt;to make the StatusBar transparent, use &lt;code class=&quot;highlighter-rouge&quot;&gt;backgroundColor={'transparent'}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;translucent={true}&lt;/code&gt; options in StatusBar component of RN(React Native) like above.&lt;/p&gt;
 
 &lt;h2 id=&quot;completed&quot;&gt;Completed&lt;/h2&gt;
-&lt;p&gt;we’ve talked abouht how to handle the StatusBar in RN(React Native). if I use other way except the way above, I’ll add the contents to this blog.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline Recently, when I developed the app, I needed to control the StatusBar. in this blog, I’ll introduce how to handle the StatusBar in RN(React Native).</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-status-bar/background.jpg" /></entry><entry xml:lang="en"><title type="html">iTunes file sharing feature</title><link href="http://localhost:4000/en/react-native/react-native-itunes-share-file/" rel="alternate" type="text/html" title="iTunes file sharing feature" /><published>2019-02-28T00:00:00+09:00</published><updated>2019-03-04T15:07:12+09:00</updated><id>http://localhost:4000/react-native/react-native-ios-share-file-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-itunes-share-file/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;we’ve talked abouht how to handle the StatusBar in RN(React Native). if I use other way except the way above, I’ll add the contents to this blog.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline Recently, when I developed the app, I needed to control the StatusBar. in this blog, I’ll introduce how to handle the StatusBar in RN(React Native).</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/react-native/react-native-status-bar/background.jpg" /></entry><entry xml:lang="en"><title type="html">iTunes file sharing feature</title><link href="https://dev-yakuza.github.io/en/react-native/react-native-itunes-share-file/" rel="alternate" type="text/html" title="iTunes file sharing feature" /><published>2019-02-28T00:00:00+09:00</published><updated>2019-03-04T15:07:12+09:00</updated><id>https://dev-yakuza.github.io/react-native/react-native-ios-share-file-en</id><content type="html" xml:base="https://dev-yakuza.github.io/react-native/react-native-itunes-share-file/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;sometimes, we need to upload files to RN(React Native) app from PC via iTunes. for example, the video app like &lt;a href=&quot;https://itunes.apple.com/app/oplayer-video-player-classic-media-streaming/id344784375?mt=8&amp;amp;ign-mpt=uo%3D8&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;OPlayer&lt;/a&gt; or &lt;a href=&quot;https://itunes.apple.com/app/gom-player/id672542880?mt=8&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;GomPlayer&lt;/a&gt; can be uploaded the video files vi iTunes.&lt;/p&gt;
 
 &lt;p&gt;in this blog, I’ll introduce how to implement the feature to upload the file from PC to the app via iTunes.&lt;/p&gt;
@@ -106,7 +691,7 @@
 &lt;p&gt;we need to install the app on the device for testing. if you don’t know how to install RN(React Native) app on iOS device, see the blog post below.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/ios-test-on-device/&quot; target=&quot;_blank&quot;&gt;iOS device test&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/ios-test-on-device/&quot; target=&quot;_blank&quot;&gt;iOS device test&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;modify-infoplist&quot;&gt;Modify info.plist&lt;/h2&gt;
@@ -130,7 +715,7 @@
 &lt;p&gt;you can implement iTunes file sharing feature to modify &lt;code class=&quot;highlighter-rouge&quot;&gt;info.plist&lt;/code&gt;. also you can use the file uploaded via iTunes by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-fs&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/react-native-fs/&quot; target=&quot;_blank&quot;&gt;How to use filesystem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-fs/&quot; target=&quot;_blank&quot;&gt;How to use filesystem&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;you can access the file uploaded via iTunes by using &lt;code class=&quot;highlighter-rouge&quot;&gt;DocumentDirectoryPath&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-fs&lt;/code&gt;.&lt;/p&gt;
@@ -151,17 +736,17 @@
 &lt;p&gt;and then, implement &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-device-info&lt;/code&gt; library to get the app &lt;code class=&quot;highlighter-rouge&quot;&gt;unique id&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/react-native-device-info/&quot; target=&quot;_blank&quot;&gt;react-native-device-info&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-device-info/&quot; target=&quot;_blank&quot;&gt;react-native-device-info&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;after getting the simulator id and app unique id, you can copy the file to &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/[user name]/Library/Developer/CoreSimulator/Devices/[simulator id]/data/Container/Data/Application/[app id]/Documents/&lt;/code&gt; folder. it’s same action that you upload the file via iTunes.&lt;/p&gt;
 
 &lt;h2 id=&quot;completed&quot;&gt;Completed&lt;/h2&gt;
-&lt;p&gt;we’ve talked about how to implement the feature that the app need to be uploaded the files by users like music app or movie app. also, we’ve talked about how to acceess the files and how to test on the simulator. if you also need the users need specific files to use your app but you don’t have the server, it’s one of the good solution to solve it.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline sometimes, we need to upload files to RN(React Native) app from PC via iTunes. for example, the video app like OPlayer or GomPlayer can be uploaded the video files vi iTunes.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-itunes-share-file/background.jpg" /></entry><entry xml:lang="en"><title type="html">Kumoncho development journal(RN, React Native)</title><link href="http://localhost:4000/en/kumoncho/development-journal/" rel="alternate" type="text/html" title="Kumoncho development journal(RN, React Native)" /><published>2019-02-11T00:00:00+09:00</published><updated>2019-02-16T21:06:43+09:00</updated><id>http://localhost:4000/kumoncho/development-journal-en</id><content type="html" xml:base="http://localhost:4000/kumoncho/development-journal/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;we’ve talked about how to implement the feature that the app need to be uploaded the files by users like music app or movie app. also, we’ve talked about how to acceess the files and how to test on the simulator. if you also need the users need specific files to use your app but you don’t have the server, it’s one of the good solution to solve it.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline sometimes, we need to upload files to RN(React Native) app from PC via iTunes. for example, the video app like OPlayer or GomPlayer can be uploaded the video files vi iTunes.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/react-native/react-native-itunes-share-file/background.jpg" /></entry><entry xml:lang="en"><title type="html">Kumoncho development journal(RN, React Native)</title><link href="https://dev-yakuza.github.io/en/kumoncho/development-journal/" rel="alternate" type="text/html" title="Kumoncho development journal(RN, React Native)" /><published>2019-02-11T00:00:00+09:00</published><updated>2019-02-16T21:06:43+09:00</updated><id>https://dev-yakuza.github.io/kumoncho/development-journal-en</id><content type="html" xml:base="https://dev-yakuza.github.io/kumoncho/development-journal/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;at previous my project, I’ve developed the app from start to end by myself using RN(React Native). at this project, I wanted to develop the app with someone together. especially, I wanted to work with a designer because the design has taken too much time at previous project. if you want to know more details about previous project, see the development journal about previous project.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal (RN, React Native)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal (RN, React Native)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;what-is-kumoncho&quot;&gt;What is Kumoncho?&lt;/h2&gt;
@@ -186,7 +771,7 @@
 &lt;p&gt;I’ve focused to make the app by RN(React Native) by myself at previous project.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;so, at this project, I wanted to focus the collaboration with someone. also, I wanted to develop an app more fastly by collaborating the design that has taken too much time at previous project.&lt;/p&gt;
@@ -248,20 +833,20 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;of course, I developed the app with RN(React Native). Kumoncho is based on RN(&lt;code class=&quot;highlighter-rouge&quot;&gt;React Native&lt;/code&gt;) and &lt;code class=&quot;highlighter-rouge&quot;&gt;typescript&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;RN(React Native) installation: &lt;a href=&quot;http://localhost:4000/react-native/installation/&quot; target=&quot;_blank&quot;&gt;RN installation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;how to apply typescript to RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/typescript/&quot; target=&quot;_blank&quot;&gt;typescript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;RN(React Native) installation: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/installation/&quot; target=&quot;_blank&quot;&gt;RN installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to apply typescript to RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/typescript/&quot; target=&quot;_blank&quot;&gt;typescript&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;and I used &lt;code class=&quot;highlighter-rouge&quot;&gt;styled-component&lt;/code&gt; for styling.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;how to use styled-component at RN(React Navtive): &lt;a href=&quot;http://localhost:4000/react-native/styled-components/&quot; target=&quot;_blank&quot;&gt;styled-components&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to use styled-component at RN(React Navtive): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/styled-components/&quot; target=&quot;_blank&quot;&gt;styled-components&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I made the app background be gradient by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-linear-gradient&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;how to make the app background be gradient at RN(React Navtive): &lt;a href=&quot;http://localhost:4000/react-native/react-native-linear-gradient/&quot; target=&quot;_blank&quot;&gt;react-native-linear-gradient&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to make the app background be gradient at RN(React Navtive): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-linear-gradient/&quot; target=&quot;_blank&quot;&gt;react-native-linear-gradient&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;at the first time, I’ve used scroll to transit the pages.&lt;/p&gt;
@@ -270,7 +855,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
     &lt;img class=&quot;half_image&quot; src=&quot;/assets/images/category/kumoncho/development-journal/kumoncho_scroll.gif&quot; alt=&quot;fairy tale kumoncho, scroll&quot; /&gt;
 &lt;/div&gt;
 
-&lt;p&gt;however, I wanted to transit them more naturally, so I’ve used the animation of the gradient that I introduced at &lt;a href=&quot;http://localhost:4000/react-native/react-native-linear-gradient/&quot; target=&quot;_blank&quot;&gt;react-native-linear-gradient&lt;/a&gt;. and I made other images fadein/fadeout effects by using &lt;a href=&quot;http://localhost:4000/react-native/react-native-animatable/&quot; target=&quot;_blank&quot;&gt;react-native-animatable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;however, I wanted to transit them more naturally, so I’ve used the animation of the gradient that I introduced at &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-linear-gradient/&quot; target=&quot;_blank&quot;&gt;react-native-linear-gradient&lt;/a&gt;. and I made other images fadein/fadeout effects by using &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-animatable/&quot; target=&quot;_blank&quot;&gt;react-native-animatable&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;half_image_container&quot;&gt;
     &lt;img class=&quot;half_image&quot; src=&quot;/assets/images/category/kumoncho/development-journal/kumoncho_swipe.gif&quot; alt=&quot;Kumoncho picture book swipe&quot; /&gt;
@@ -279,28 +864,28 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;I used user’s swipe events to transit the pages.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;how to detect user’s swipe events at RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/react-native-swipe-gestures/&quot; target=&quot;_blank&quot;&gt;react-native-swipe-gestures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to detect user’s swipe events at RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-swipe-gestures/&quot; target=&quot;_blank&quot;&gt;react-native-swipe-gestures&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;finally, I used Google Firebase to analyze the app, and Google Admob for the advertisement in the app. I implemented them by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-firebase&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;how to use react-native-firebase for Admob: &lt;a href=&quot;http://localhost:4000/react-native/react-native-firebase-admob/&quot; target=&quot;_blank&quot;&gt;react-native-firebase-admob&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;how to implement Analytics by react-native-firebase analytics: &lt;a href=&quot;http://localhost:4000/react-native/react-native-firebase-analytics/&quot; target=&quot;_blank&quot;&gt;react-native-firebase-analytics&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;how to implement Crashlytics by react-native-firebase: &lt;a href=&quot;http://localhost:4000/react-native/firebase-crashlytics/&quot; target=&quot;_blank&quot;&gt;firebase-crashlytics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to use react-native-firebase for Admob: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-firebase-admob/&quot; target=&quot;_blank&quot;&gt;react-native-firebase-admob&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to implement Analytics by react-native-firebase analytics: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-firebase-analytics/&quot; target=&quot;_blank&quot;&gt;react-native-firebase-analytics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to implement Crashlytics by react-native-firebase: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/firebase-crashlytics/&quot; target=&quot;_blank&quot;&gt;firebase-crashlytics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;the list below is the libraries that I used to implement  other features in the app.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;send email in RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/react-native-mail/&quot; target=&quot;_blank&quot;&gt;react-native-mail&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;induce users to give the rating at RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/react-native-rate/&quot; target=&quot;_blank&quot;&gt;react-native-rate&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;controll splash screen at RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;react-native-splash-screen&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;how to implement TTS(Text To Speech) at RN(React Native): &lt;a href=&quot;http://localhost:4000/react-native/react-native-tts/&quot; target=&quot;_blank&quot;&gt;react-native-tts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;send email in RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-mail/&quot; target=&quot;_blank&quot;&gt;react-native-mail&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;induce users to give the rating at RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-rate/&quot; target=&quot;_blank&quot;&gt;react-native-rate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;controll splash screen at RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;react-native-splash-screen&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to implement TTS(Text To Speech) at RN(React Native): &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-tts/&quot; target=&quot;_blank&quot;&gt;react-native-tts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;app-registration&quot;&gt;App Registration&lt;/h2&gt;
-&lt;p&gt;I have terrible experience to register the app at previous project(&lt;a href=&quot;http://localhost:4000/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;). because of the experience, I could register the app without big problems at this project.&lt;/p&gt;
+&lt;p&gt;I have terrible experience to register the app at previous project(&lt;a href=&quot;https://dev-yakuza.github.io/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;). because of the experience, I could register the app without big problems at this project.&lt;/p&gt;
 
 &lt;p&gt;I tried to register the app to the children category at iOS, but the app was rejected in the review because of outbound link.if the app is in the children category, the app should be implemented Parental Gate feature to protect the links. however, my app didn’t have it. I didn’t find the library to implement Parental Gate, so I changed normal category to apply for the registration, and it was approved.&lt;/p&gt;
 
@@ -320,7 +905,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 
 &lt;p&gt;also, we worked on the book basis, so we didn’t think deeply about reading in the app(UX). if you exit the app during reading and start again the app, you should read all pages from the first. even, this app doesn’t have the feature to move to the middle of the pages. I think this project is completely failed about UX.&lt;/p&gt;
 
-&lt;p&gt;the development also had a problem. after deploying the app, my friend wanted the app supports the tablet, too. RN(React Native) is the cross-platform, so I thought that is not a big deal. actually, the previous project(&lt;a href=&quot;http://localhost:4000/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;) is too simple app, so I could simply make the previous project support the tablet. however, this project has many images and the positions of the images, and I didn’t design the app with considering the tablet so I failed to support the tablet. I will refactor the app to support the tablet if I have the time , but I should have made it well from the beginning.&lt;/p&gt;
+&lt;p&gt;the development also had a problem. after deploying the app, my friend wanted the app supports the tablet, too. RN(React Native) is the cross-platform, so I thought that is not a big deal. actually, the previous project(&lt;a href=&quot;https://dev-yakuza.github.io/blaboo/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo development journal(RN, React Native)&lt;/a&gt;) is too simple app, so I could simply make the previous project support the tablet. however, this project has many images and the positions of the images, and I didn’t design the app with considering the tablet so I failed to support the tablet. I will refactor the app to support the tablet if I have the time , but I should have made it well from the beginning.&lt;/p&gt;
 
 &lt;div class=&quot;download_link_container&quot;&gt;
     &lt;a class=&quot;download_link_ios&quot; href=&quot;https://itunes.apple.com/app/kumoncho/id1450902241&quot; target=&quot;_blank&quot;&gt;
@@ -333,7 +918,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 
 &lt;p&gt;For the last time, if someone works on the publication industry and wants to publish the book of our app, please contact us!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;mailto:dev.yakuza@gmail.com&quot;&gt;dev.yakuza@gmail.com&lt;/a&gt;&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline at previous my project, I’ve developed the app from start to end by myself using RN(React Native). at this project, I wanted to develop the app with someone together. especially, I wanted to work with a designer because the design has taken too much time at previous project. if you want to know more details about previous project, see the development journal about previous project.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/kumoncho/background.png" /></entry><entry xml:lang="en"><title type="html">App Store Rating</title><link href="http://localhost:4000/en/react-native/react-native-rate/" rel="alternate" type="text/html" title="App Store Rating" /><published>2019-02-09T00:00:00+09:00</published><updated>2019-02-15T09:59:43+09:00</updated><id>http://localhost:4000/react-native/react-native-rate-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-rate/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:dev.yakuza@gmail.com&quot;&gt;dev.yakuza@gmail.com&lt;/a&gt;&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline at previous my project, I’ve developed the app from start to end by myself using RN(React Native). at this project, I wanted to develop the app with someone together. especially, I wanted to work with a designer because the design has taken too much time at previous project. if you want to know more details about previous project, see the development journal about previous project.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/kumoncho/background.png" /></entry><entry xml:lang="en"><title type="html">App Store Rating</title><link href="https://dev-yakuza.github.io/en/react-native/react-native-rate/" rel="alternate" type="text/html" title="App Store Rating" /><published>2019-02-09T00:00:00+09:00</published><updated>2019-02-15T09:59:43+09:00</updated><id>https://dev-yakuza.github.io/react-native/react-native-rate-en</id><content type="html" xml:base="https://dev-yakuza.github.io/react-native/react-native-rate/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;after developing and releasing RN(React Native) app, users started to give the rating of the app. when I saw reviews, I felt rewarding and could know what users want. however, I didn’t implement especially inducing users to give the rating in the app, so I thought if I implement it, more I can hear more users opinions.&lt;/p&gt;
 
 &lt;p&gt;in this blog, we will talk about how to induce users to give reviews in the app store by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-rate&lt;/code&gt; library.&lt;/p&gt;
@@ -434,7 +1019,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;react-native-rate Official site: &lt;a href=&quot;https://github.com/KjellConnelly/react-native-rate&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/KjellConnelly/react-native-rate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline after developing and releasing RN(React Native) app, users started to give the rating of the app. when I saw reviews, I felt rewarding and could know what users want. however, I didn’t implement especially inducing users to give the rating in the app, so I thought if I implement it, more I can hear more users opinions.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-rate.jpg" /></entry><entry xml:lang="en"><title type="html">BlaBoo Update Reviews</title><link href="http://localhost:4000/en/blaboo/update-review/" rel="alternate" type="text/html" title="BlaBoo Update Reviews" /><published>2019-02-08T00:00:00+09:00</published><updated>2019-02-28T16:38:37+09:00</updated><id>http://localhost:4000/blaboo/update-review-en</id><content type="html" xml:base="http://localhost:4000/blaboo/update-review/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline after developing and releasing RN(React Native) app, users started to give the rating of the app. when I saw reviews, I felt rewarding and could know what users want. however, I didn’t implement especially inducing users to give the rating in the app, so I thought if I implement it, more I can hear more users opinions.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/react-native/react-native-rate.jpg" /></entry><entry xml:lang="en"><title type="html">BlaBoo Update Reviews</title><link href="https://dev-yakuza.github.io/en/blaboo/update-review/" rel="alternate" type="text/html" title="BlaBoo Update Reviews" /><published>2019-02-08T00:00:00+09:00</published><updated>2019-02-28T16:38:37+09:00</updated><id>https://dev-yakuza.github.io/blaboo/update-review-en</id><content type="html" xml:base="https://dev-yakuza.github.io/blaboo/update-review/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;I’ve created and released the app called BlaBoo by using RN(React Native). in here, I will introduce how I manage and what I updated the app after releasing. before starting it, see what BlaBoo is simply.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-blaboo&quot;&gt;What is BlaBoo?&lt;/h2&gt;
@@ -462,7 +1047,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;if you want to know more details about developing of BlaBoo, see my previous blog post.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo App Development Journal(RN, React Native)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/development-journal/&quot; target=&quot;_blank&quot;&gt;BlaBoo App Development Journal(RN, React Native)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;manage-the-app&quot;&gt;Manage The App&lt;/h2&gt;
@@ -492,7 +1077,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;BlaBoo uses the library below for TTS(Text To Speech) feature.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/react-native-tts/&quot; target=&quot;_blank&quot;&gt;react-native-tts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-tts/&quot; target=&quot;_blank&quot;&gt;react-native-tts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;this library has the language-coutnry lists to support it.&lt;/p&gt;
@@ -552,7 +1137,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;I used the bounceIn animation when the illustraions show up in BlaBoo. I used &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-animatable&lt;/code&gt; library to implement it.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;how to use react-native-animatable: &lt;a href=&quot;http://localhost:4000/react-native/react-native-animatable/&quot; target=&quot;_blank&quot;&gt;react-native-animatable&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;how to use react-native-animatable: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-animatable/&quot; target=&quot;_blank&quot;&gt;react-native-animatable&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I use an image list and &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; to display the illustrations on one view. when page is changed, I just switch the image list to show new images.&lt;/p&gt;
@@ -602,11 +1187,11 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;the list below is what I updated after first release.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;keep Splash screen for one second(use &lt;a href=&quot;http://localhost:4000/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;react-native-splash-screen&lt;/a&gt; library)&lt;/li&gt;
+  &lt;li&gt;keep Splash screen for one second(use &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-splash-screen/&quot; target=&quot;_blank&quot;&gt;react-native-splash-screen&lt;/a&gt; library)&lt;/li&gt;
   &lt;li&gt;user commented to want more numbers in the app review, so I added more numbers&lt;/li&gt;
   &lt;li&gt;a tester couldn’t find &lt;code class=&quot;highlighter-rouge&quot;&gt;start&lt;/code&gt; button on the first screen, so I added the animation to it for finding easily.&lt;/li&gt;
   &lt;li&gt;Added Chinese, Italian, Hindi, Dutch, Thai and German&lt;/li&gt;
-  &lt;li&gt;added the feature to induce users to give the app reviews(the library: &lt;a href=&quot;http://localhost:4000/react-native/react-native-rate/&quot; target=&quot;_blank&quot;&gt;react-native-rate&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;added the feature to induce users to give the app reviews(the library: &lt;a href=&quot;https://dev-yakuza.github.io/react-native/react-native-rate/&quot; target=&quot;_blank&quot;&gt;react-native-rate&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;supported the tablet.&lt;/li&gt;
   &lt;li&gt;fix some bug&lt;/li&gt;
 &lt;/ol&gt;
@@ -631,7 +1216,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
   &lt;li&gt;github: &lt;a href=&quot;https://github.com/dev-yakuza/blaboo-translate&quot; target=&quot;_blank&quot;&gt;https://github.com/dev-yakuza/blaboo-translate&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;your help is one developer’s hope, and helps many people can learn correct words.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline I’ve created and released the app called BlaBoo by using RN(React Native). in here, I will introduce how I manage and what I updated the app after releasing. before starting it, see what BlaBoo is simply.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/blaboo/update-review/app_concept.png" /></entry><entry xml:lang="en"><title type="html">Preview</title><link href="http://localhost:4000/en/jekyll/preview-speed-up/" rel="alternate" type="text/html" title="Preview" /><published>2019-02-07T00:00:00+09:00</published><updated>2019-02-07T14:11:05+09:00</updated><id>http://localhost:4000/jekyll/preview-speed-up-en</id><content type="html" xml:base="http://localhost:4000/jekyll/preview-speed-up/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+&lt;p&gt;your help is one developer’s hope, and helps many people can learn correct words.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline I’ve created and released the app called BlaBoo by using RN(React Native). in here, I will introduce how I manage and what I updated the app after releasing. before starting it, see what BlaBoo is simply.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/blaboo/update-review/app_concept.png" /></entry><entry xml:lang="en"><title type="html">Preview</title><link href="https://dev-yakuza.github.io/en/jekyll/preview-speed-up/" rel="alternate" type="text/html" title="Preview" /><published>2019-02-07T00:00:00+09:00</published><updated>2019-02-07T14:11:05+09:00</updated><id>https://dev-yakuza.github.io/jekyll/preview-speed-up-en</id><content type="html" xml:base="https://dev-yakuza.github.io/jekyll/preview-speed-up/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;I use Jekyll to manage this blog. as blog posts became many, it have taken a long time to check new blog post in local. I use Jekyll command below to check the blog post before publishing to the server.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
@@ -667,11 +1252,11 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;p&gt;after it, the build takes &lt;code class=&quot;highlighter-rouge&quot;&gt;50.668 seconds&lt;/code&gt;. it’s 20 seconds faster than before.&lt;/p&gt;
 
 &lt;h2 id=&quot;compoleted&quot;&gt;Compoleted&lt;/h2&gt;
-&lt;p&gt;the settings I mentioned above reduced 200 sec to 50 sec (1/4). however I think it takes a long time and it’s big issue in Jekyll blog.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Problem I use Jekyll to manage this blog. as blog posts became many, it have taken a long time to check new blog post in local. I use Jekyll command below to check the blog post before publishing to the server.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/jekyll/preview-speed-up.jpg" /></entry><entry xml:lang="en"><title type="html">App Splash Screen</title><link href="http://localhost:4000/en/react-native/react-native-splash-screen/" rel="alternate" type="text/html" title="App Splash Screen" /><published>2019-02-06T00:00:00+09:00</published><updated>2019-02-07T10:26:53+09:00</updated><id>http://localhost:4000/react-native/react-native-splash-screen-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-splash-screen/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+&lt;p&gt;the settings I mentioned above reduced 200 sec to 50 sec (1/4). however I think it takes a long time and it’s big issue in Jekyll blog.&lt;/p&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Problem I use Jekyll to manage this blog. as blog posts became many, it have taken a long time to check new blog post in local. I use Jekyll command below to check the blog post before publishing to the server.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/jekyll/preview-speed-up.jpg" /></entry><entry xml:lang="en"><title type="html">App Splash Screen</title><link href="https://dev-yakuza.github.io/en/react-native/react-native-splash-screen/" rel="alternate" type="text/html" title="App Splash Screen" /><published>2019-02-06T00:00:00+09:00</published><updated>2019-02-07T10:26:53+09:00</updated><id>https://dev-yakuza.github.io/react-native/react-native-splash-screen-en</id><content type="html" xml:base="https://dev-yakuza.github.io/react-native/react-native-splash-screen/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
 &lt;p&gt;basically, RN(React Native) supports Splash screen. I’ve introduced how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;generator-rn-toolbox&lt;/code&gt; tool to make Splash image in variety of sizes. you can see it to click the link below.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4000/react-native/splash-image/&quot; target=&quot;_blank&quot;&gt;Splash image&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev-yakuza.github.io/react-native/splash-image/&quot; target=&quot;_blank&quot;&gt;Splash image&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;however, when RN(React Native) is executed, Splash screen quickly ends. in normal app UX, Splash screen shows up and get informations via API in background. after getting informations, Splash screen ends and show the screen with informations. but it’s difficult to implement it with Splash screen which RN(React Native) supports basically.&lt;/p&gt;
@@ -763,7 +1348,7 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;if you used &lt;code class=&quot;highlighter-rouge&quot;&gt;generator-rn-toolbox&lt;/code&gt;(&lt;a href=&quot;http://localhost:4000/react-native/splash-image/&quot; target=&quot;_blank&quot;&gt;Splash Image&lt;/a&gt;) to generate the Splash images, Splash images were generated named &lt;code class=&quot;highlighter-rouge&quot;&gt;launch_screen.png&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;darwable-*&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;if you used &lt;code class=&quot;highlighter-rouge&quot;&gt;generator-rn-toolbox&lt;/code&gt;(&lt;a href=&quot;https://dev-yakuza.github.io/react-native/splash-image/&quot; target=&quot;_blank&quot;&gt;Splash Image&lt;/a&gt;) to generate the Splash images, Splash images were generated named &lt;code class=&quot;highlighter-rouge&quot;&gt;launch_screen.png&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;darwable-*&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;therefore, you can use above source code but if you have another name splash image file, you should modify &lt;code class=&quot;highlighter-rouge&quot;&gt;launch_screen&lt;/code&gt; part to your file name in &lt;code class=&quot;highlighter-rouge&quot;&gt;android:background=&quot;@drawable/launch_screen&quot;&lt;/code&gt;.&lt;/p&gt;
 
@@ -822,338 +1407,4 @@ persuaded him to join this project. I persuaded him by saying that the cartoonis
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;react-native-splash-screen official site: &lt;a href=&quot;https://github.com/crazycodeboy/react-native-splash-screen&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/crazycodeboy/react-native-splash-screen&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline basically, RN(React Native) supports Splash screen. I’ve introduced how to use generator-rn-toolbox tool to make Splash image in variety of sizes. you can see it to click the link below.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-splash-screen.jpg" /></entry><entry xml:lang="en"><title type="html">Gradient</title><link href="http://localhost:4000/en/react-native/react-native-linear-gradient/" rel="alternate" type="text/html" title="Gradient" /><published>2019-02-02T00:00:00+09:00</published><updated>2019-02-03T12:20:22+09:00</updated><id>http://localhost:4000/react-native/react-native-linear-gradient-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-linear-gradient/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;it’s difficult to make the gradient background on RN(Reat Native). in this blog, we’ll introduce how to make the gradient background by &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-linear-gradient&lt;/code&gt; library.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;react-native-linear-gradient official site: &lt;a href=&quot;https://github.com/react-native-community/react-native-linear-gradient&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/react-native-community/react-native-linear-gradient&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;execute belwo command to install &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-linear-gradient&lt;/code&gt; library to use the gradient on RN(React Native).&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; react-native-linear-gradient
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;link-library&quot;&gt;Link Library&lt;/h2&gt;
-&lt;p&gt;execute below command to link &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-linear-gradient&lt;/code&gt; to RN(React Native) project.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native link react-native-linear-gradient
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;how-to-use&quot;&gt;How To Use&lt;/h2&gt;
-&lt;p&gt;below source code is about how to make the gradient by &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-linear-gradient&lt;/code&gt; on RN(React Native). (source code is from react-native-linear-gradient official site)&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LinearGradient&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-native-linear-gradient'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Within your render function&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LinearGradient&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#4c669f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#3b5998'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#192f6a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;linearGradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Text&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;buttonText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;Sign&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Facebook&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Text&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/LinearGradient&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Later on in your styles..&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StyleSheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;linearGradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;paddingLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;paddingRight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;borderRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;buttonText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;fontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;fontFamily&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Gill Sans'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;textAlign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'center'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#ffffff'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;backgroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'transparent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;we use below source code to make the gradient background.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LinearGradient&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-native-linear-gradient'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;styled&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'styled-components/native'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Background&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;styled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LinearGradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Background&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;also, when the page that has the gradient background is switched, we applied the animation to switch smoothly the gradient background. we referred below site to make the animation.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;gradient animation example: &lt;a href=&quot;https://github.com/dslounge/rn-animated-gradient-example/tree/master/src/ColorExample/AnimatedGradient&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;AnimatedGradient&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;completed&quot;&gt;Completed&lt;/h2&gt;
-&lt;p&gt;let’s make RN(React Native) project more beautiful by the gradient background.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;react-native-linear-gradient official site: &lt;a href=&quot;https://github.com/react-native-community/react-native-linear-gradient&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/react-native-community/react-native-linear-gradient&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;gradient animation example: &lt;a href=&quot;https://github.com/dslounge/rn-animated-gradient-example/tree/master/src/ColorExample/AnimatedGradient&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;AnimatedGradient&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline it’s difficult to make the gradient background on RN(Reat Native). in this blog, we’ll introduce how to make the gradient background by react-native-linear-gradient library.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-linear-gradient.png" /></entry><entry xml:lang="en"><title type="html">Swipe Detection</title><link href="http://localhost:4000/en/react-native/react-native-swipe-gestures/" rel="alternate" type="text/html" title="Swipe Detection" /><published>2019-02-01T00:00:00+09:00</published><updated>2019-02-01T12:20:52+09:00</updated><id>http://localhost:4000/react-native/react-native-swipe-gestures-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-swipe-gestures/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;when I was developing RN(React Native) project, I needed to detect user swipe direction to do different actions in the app. so I searched and found &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-swipe-gestures&lt;/code&gt;. in this blog, we’ll see how to install and use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-swipe-gestures&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;react-native-swipe-gestures official site: &lt;a href=&quot;https://github.com/glepur/react-native-swipe-gestures&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/glepur/react-native-swipe-gestures&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;execute below command to install &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-gestures&lt;/code&gt; library.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; react-native-swipe-gestures
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;how-to-use&quot;&gt;How To Use&lt;/h2&gt;
-&lt;p&gt;add below soure where you want to detect user swipe events.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GestureRecognizer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-native-swipe-gestures'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GestureRecognizer&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;onSwipeLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_onSwipeLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;onSwipeRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_onSwipeRight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;velocityThreshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;directionalOffsetThreshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/GestureRecognizer&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_onSwipeLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gestureState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_onSwipeRight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gestureState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;completed&quot;&gt;Completed&lt;/h2&gt;
-&lt;p&gt;we saw how to install and use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-swipe-gestures&lt;/code&gt; to detect user swipe events on RN(React Native). I’ve found myself doing copy-paste not to make simple code…&lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-swipe-gestures&lt;/code&gt; source code is not long, so I think to make it yourself is also funny.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;react-native-swipe-gestures official site: &lt;a href=&quot;https://github.com/glepur/react-native-swipe-gestures&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/glepur/react-native-swipe-gestures&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline when I was developing RN(React Native) project, I needed to detect user swipe direction to do different actions in the app. so I searched and found react-native-swipe-gestures. in this blog, we’ll see how to install and use react-native-swipe-gestures.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-swipe-gestures.jpg" /></entry><entry xml:lang="en"><title type="html">use After Effects</title><link href="http://localhost:4000/en/react-native/react-native-lottie/" rel="alternate" type="text/html" title="use After Effects" /><published>2019-01-31T00:00:00+09:00</published><updated>2019-02-25T12:16:56+09:00</updated><id>http://localhost:4000/react-native/react-native-lottie-en</id><content type="html" xml:base="http://localhost:4000/react-native/react-native-lottie/">&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-&lt;p&gt;recently, many people use Microinteractions to make the app animations. in this blog, we will see how to apply the animation created by Adobe After Effects, to RN(React Native) project by using Airbnb’s &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie&lt;/code&gt; library.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;lottie official site: &lt;a href=&quot;https://airbnb.design/lottie/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://airbnb.design/lottie/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;execute below command to install &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-react-native&lt;/code&gt; library to use &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie&lt;/code&gt; library on RN(React Native).&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; lottie-react-native
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;link-library&quot;&gt;Link Library&lt;/h2&gt;
-&lt;p&gt;after installing &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-react-native&lt;/code&gt; to use &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie&lt;/code&gt; on RN(React Native), link the library to follow OS specific instruction.&lt;/p&gt;
-
-&lt;h3 id=&quot;ios&quot;&gt;iOS&lt;/h3&gt;
-&lt;p&gt;execute below command to link &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-react-native&lt;/code&gt; library to RN(React Native) for using &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie&lt;/code&gt; on iOS.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native link lottie-ios
-react-native link lottie-react-native
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;and open &lt;code class=&quot;highlighter-rouge&quot;&gt;ios/[project_name].xcodeproj&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;ios/[project_name].xcworkspace&lt;/code&gt; file to execute xcode. and then configure additional settings like below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/ios-settings.png&quot; alt=&quot;lottie ios additional setting&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;select the project name on left side menu.&lt;/li&gt;
-  &lt;li&gt;select the project name on &lt;code class=&quot;highlighter-rouge&quot;&gt;TARGETS&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;select &lt;code class=&quot;highlighter-rouge&quot;&gt;General&lt;/code&gt; on the top of the screen.&lt;/li&gt;
-  &lt;li&gt;scroll down and you can see &lt;code class=&quot;highlighter-rouge&quot;&gt;Embedded Binaries&lt;/code&gt; section. click &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; button and search &lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie.framework&lt;/code&gt;. select &lt;code class=&quot;highlighter-rouge&quot;&gt;ios&lt;/code&gt; and add.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/add-lottie-framework.png&quot; alt=&quot;lottie ios framework additional settings&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;android&quot;&gt;Android&lt;/h3&gt;
-&lt;p&gt;if you did above &lt;code class=&quot;highlighter-rouge&quot;&gt;iOS&lt;/code&gt; procedure, you don’t need to do anything to connect &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie&lt;/code&gt; library for Android. when below command was executed, Android was connected to &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-react-native&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native link lottie-react-native
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;how-to-use&quot;&gt;How TO Use&lt;/h2&gt;
-&lt;p&gt;we need Adobe After Effects animation file to use lottie on RN(React Native). we won’t talk about how to make lottie animation file by Adobe After Effects in this blog. if you want to know how to make lottie animation file by Adobe After Effects, see below link.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/lottie-web&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://github.com/airbnb/lottie-web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;or click below link to search the Microinteractions what you need.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://lottiefiles.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://lottiefiles.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;the animation file by Adobe After Effects or you downloaded is &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt; file type.&lt;/p&gt;
-
-&lt;p&gt;below code is how to use lottie on RN(React Native) project for applying Microinteractions&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LottieView&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'lottie-react-native'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BasicExample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LottieView&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./animation.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;autoPlay&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;loop&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;animation-file-with-images&quot;&gt;Animation File with Images&lt;/h2&gt;
-&lt;p&gt;when you create the animation using Adobe After Effects, sometimes, you need to export the animation file that includes images.&lt;/p&gt;
-
-&lt;p&gt;if you export the animation file that includes images, you can see &lt;code class=&quot;highlighter-rouge&quot;&gt;data.json&lt;/code&gt; like below.&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;data.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;image_0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;w&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;588&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;h&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;792&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;u&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;images/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;main_character.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;e&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;we need to add images in the animation file to the native platforms.&lt;/p&gt;
-
-&lt;h3 id=&quot;ios-1&quot;&gt;iOS&lt;/h3&gt;
-&lt;p&gt;execute xcode to select &lt;code class=&quot;highlighter-rouge&quot;&gt;ios/[project name].xcworkspace&lt;/code&gt;(or &lt;code class=&quot;highlighter-rouge&quot;&gt;ios/xcodeproj&lt;/code&gt;) in RN(React Native) project.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add.png&quot; alt=&quot;lottie ios add images&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;right click &lt;code class=&quot;highlighter-rouge&quot;&gt;Resources&lt;/code&gt; folder below the project name on left side menu, and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Files to [project name]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_select_file.png&quot; alt=&quot;lottie ios add images - select file&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;select image files what you want to add, select &lt;code class=&quot;highlighter-rouge&quot;&gt;Copy items if needed&lt;/code&gt; options on below and add.&lt;/p&gt;
-
-&lt;p&gt;if you can’t see &lt;code class=&quot;highlighter-rouge&quot;&gt;Resources&lt;/code&gt; folder, right click the project name on left side menu, and select  &lt;code class=&quot;highlighter-rouge&quot;&gt;New Group without Folder&lt;/code&gt;. after adding the group, rename it to &lt;code class=&quot;highlighter-rouge&quot;&gt;Resources&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/lottie_ios_image_add_resources_group.png&quot; alt=&quot;lottie ios add images - resources add group&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;android-1&quot;&gt;Android&lt;/h3&gt;
-&lt;p&gt;Android is more simple than iOS. create the folder that you copy images on &lt;code class=&quot;highlighter-rouge&quot;&gt;android/app/src/main/assets&lt;/code&gt; in RN(React Native) project. in here, I created &lt;code class=&quot;highlighter-rouge&quot;&gt;images&lt;/code&gt; folder. and then, copy images to that folder(&lt;code class=&quot;highlighter-rouge&quot;&gt;android/app/src/main/assets/images&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;after copying, modify the source code adding &lt;code class=&quot;highlighter-rouge&quot;&gt;imageAssetsFolder={'images'}&lt;/code&gt; like below.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LottieView&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./animation.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;autoPlay&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;loop&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;imageAssetsFolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'images'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;git-repository&quot;&gt;Git Repository&lt;/h3&gt;
-&lt;p&gt;we created git repository about how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie&lt;/code&gt; in this case. you can click the link below to check the example.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;git repository: &lt;a href=&quot;https://github.com/dev-yakuza/react_native_lottie_exercise&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;react_native_lottie_exercise&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;fix-error&quot;&gt;Fix Error&lt;/h2&gt;
-&lt;p&gt;I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native-lottie&lt;/code&gt; well after implementing on RN(React Native), but after installing another library, when I built my RN(React Native) project, I got the error like below.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Build system information
-
-error: Cycle &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;dependencies between targets &lt;span class=&quot;s1&quot;&gt;'LottieLibraryIOS'&lt;/span&gt; and &lt;span class=&quot;s1&quot;&gt;'LottieReactNative'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; building could produce unreliable results.
-Cycle path: LottieLibraryIOS → LottieReactNative → LottieLibraryIOS
-Cycle details:
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I deleted &lt;code class=&quot;highlighter-rouge&quot;&gt;Pods&lt;/code&gt; folder and &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; folder, and installed again, but the error was still occured.&lt;/p&gt;
-
-&lt;p&gt;below is how to fix the error in my case.  if you have same issue as I have, try to do below.&lt;/p&gt;
-
-&lt;p&gt;execute &lt;code class=&quot;highlighter-rouge&quot;&gt;ios/[project_name].xcworkspace&lt;/code&gt; file in RN(React Native) project to open xcode.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/lottie_fix_error.png&quot; alt=&quot;lottie fix build error&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;after executing xcode, click &lt;code class=&quot;highlighter-rouge&quot;&gt;File &amp;gt; Workspace Settings...&lt;/code&gt; like above.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/category/react-native/react-native-lottie/change_build_system.png&quot; alt=&quot;lottie fix build error: change build system&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;change the Build System to &lt;code class=&quot;highlighter-rouge&quot;&gt;Legacy Build System&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;New Build System (Default)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;in my case, after changing the Build System, I can build successfully. I hope this way is helpful to you.&lt;/p&gt;
-
-&lt;h3 id=&quot;android-build-error&quot;&gt;Android Build Error&lt;/h3&gt;
-&lt;p&gt;when you build on Android, sometimes, you can see the error like below.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Execution failed &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;task &lt;span class=&quot;s1&quot;&gt;':app:transformClassesWithDexBuilderForDevDebug'&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;in this case, I modified &lt;code class=&quot;highlighter-rouge&quot;&gt;android/app/build.gradle&lt;/code&gt; file in RN(React Native) project like below.&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;android{
-    ...
-    configurations.all {
-        resolutionStrategy {
-            force 'com.airbnb.android:lottie:2.5.5'
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Reference: &lt;a href=&quot;https://github.com/airbnb/lottie-android/issues/822#issuecomment-401812260&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;Java 8 compilation error version 2.5.6 &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;completed&quot;&gt;Completed&lt;/h2&gt;
-&lt;p&gt;we’ve done to use lottie on RN(React Native) to show Microinteractions. it’s quite simple, isn’t it? I think it’s more difficult to make the animation than applying it by lottie. I don’t know how to use After Effects, so I use &lt;a href=&quot;https://lottiefiles.com/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://lottiefiles.com/&lt;/a&gt; site. I recommend for you to use lottie to use Microinteractions on you project.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;lottie official site: &lt;a href=&quot;https://airbnb.design/lottie/&quot; rel=&quot;nofollow noreferrer&quot; target=&quot;_blank&quot;&gt;https://airbnb.design/lottie/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline recently, many people use Microinteractions to make the app animations. in this blog, we will see how to apply the animation created by Adobe After Effects, to RN(React Native) project by using Airbnb’s lottie library.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/category/react-native/react-native-lottie.jpg" /></entry></feed>
+&lt;/ul&gt;</content><author><name>dev.yakuza@gmail.com</name></author><summary type="html">Outline basically, RN(React Native) supports Splash screen. I’ve introduced how to use generator-rn-toolbox tool to make Splash image in variety of sizes. you can see it to click the link below.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://dev-yakuza.github.io/assets/images/category/react-native/react-native-splash-screen.jpg" /></entry></feed>

@@ -1,45 +1,44 @@
 ---
-published: false
 layout: 'post'
 permalink: '/environment/mac-development-tools/'
 paginate_path: '/environment/:num/mac-development-tools/'
-lang: 'ko'
+lang: 'en'
 categories: 'environment'
 comments: true
 
-title: '맥(Mac) 개발 환경 구축(2) - tools'
-description: '새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 맥(Mac)에서 사용하고 있는 툴들을 정리하였습니다.'
+title: 'Development Environment on Mac(2) - for tools'
+description: now I'm configuring the development environment on new Mac. in here, I'll introduce the tools that I use when I develop.
 image: '/assets/images/category/environment/mac-development-tools/background.jpg'
 ---
 
-## 개요
-맥(Mac)에 새롭게 개발 환경을 구축하고 있습니다. 이 블로그에서는 개발과 커뮤니케이션에 사용하고 있는 툴들을 정리합니다.
+## Outline
+now I'm setting the development environment on new Mac. in this blog, I'll show the tools what I use.
 
-이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.
+this blog is a series. if you want to know other development environment, see other blog posts.
 
-- [맥(Mac) 개발 환경 구축(1) - iTerm과 zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
-- [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
-- [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
-
-
-## 커뮤니케이션 툴
-아래는 개발할 때 사용하는 커뮤니케이션 툴을 나열하였습니다.
-
-- Line: App store에서 다운로드
-- Kakaotalk: App store에서 다운로드
-- Slack: App store에서 다운로드
+- [Development Environment on Mac(1) - iTerm & zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
+- [Development Environment on Mac(2) - for tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
+- [Development Environment on Mac(3) - for development]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
 
-## 개발툴
-아래는 실제 개발에 사용하는 툴을 나열하였습니다.
+## Communication Tools
+the below is what I use for communication when I develop.
+
+- Line: Download from App store
+- Kakaotalk: Download from App store
+- Slack: Download from App store
+
+
+## Development Tools
+the below is the development tools what I use.
 
 - android studio: [https://developer.android.com/studio](https://developer.android.com/studio){:rel="nofollow noreferrer" target="_blank"}
-- xcode: App store에서 다운로드
+- xcode: Download from App store
 - vscode: [https://code.visualstudio.com/download](https://code.visualstudio.com/download){:rel="nofollow noreferrer" target="_blank"}
 
 
 ### vscode
-아래는 vscode에서 사용하는 플로그인 리스트 입니다.
+this is vscode plugin list what I use.
 
 - Active File In StatusBar
 - Babel ES6/ES7
@@ -56,13 +55,13 @@ image: '/assets/images/category/environment/mac-development-tools/background.jpg
 - TSLint
 - vscode-icons
 
-위에 리스트를 모두 설치한 후, 아래의 명령어로 vscode 설정 파일을 엽니다.
+after installing all, execute the command below to open vscode configuration file.
 
 ```bash
 code ~/Library/Application\ Support/Code/User/settings.json
 ```
 
-vscode의 설정 파일 내용에 아래의 내용을 복사 붙여넣습니다.
+copy-paste the below to vscode setting file.
 
 ```json
 {
@@ -118,23 +117,23 @@ vscode의 설정 파일 내용에 아래의 내용을 복사 붙여넣습니다.
 ```
 
 
-## DB 툴
-아래는 실제 개발에 사용하는 DB 툴을 나열하였습니다.
+## DB Tools
+the below is the DB tools what I use.
 
 - sequel pro: [https://www.sequelpro.com/](https://www.sequelpro.com/){:rel="nofollow noreferrer" target="_blank"}
 - DB Browser For SQLite: [https://sqlitebrowser.org/](https://sqlitebrowser.org/){:rel="nofollow noreferrer" target="_blank"}
+- workbench: [https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/){:rel="nofollow noreferrer" target="_blank"}
 
-
-## 보조 프로그램
-아래는 실제 개발시 사용하는 보조 프로그램을 나열하였습니다.
+## Support Program
+this is the support programs for developing.
 
 - Postman: [https://www.getpostman.com/downloads/](https://www.getpostman.com/downloads/){:rel="nofollow noreferrer" target="_blank"}
 - Beyond Compare: [https://www.scootersoftware.com/download.php](https://www.scootersoftware.com/download.php){:rel="nofollow noreferrer" target="_blank"}
 - Sourcetree: [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/){:rel="nofollow noreferrer" target="_blank"}
 
 
-## 폰트
-아래는 개발툴에 사용하는 폰트입니다.
+## Font
+this is the font for the development tools.
 
 - D2Coding: [https://github.com/naver/d2codingfont](https://github.com/naver/d2codingfont){:rel="nofollow noreferrer" target="_blank"}
 

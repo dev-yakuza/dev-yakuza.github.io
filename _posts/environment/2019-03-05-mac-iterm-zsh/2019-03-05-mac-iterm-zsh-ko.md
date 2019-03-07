@@ -2,40 +2,42 @@
 layout: 'post'
 permalink: '/environment/mac-iterm-zsh/'
 paginate_path: '/environment/:num/mac-iterm-zsh/'
-lang: 'ja'
+lang: 'ko'
 categories: 'environment'
 comments: true
 
-title: 'マック(Mac)の開発環境の構築(1) - iTermとzsh'
-description: '新しいマック(Mac)に開発環境を構築してみようかと思います。マック(Mac)にiTermとzshを設定して新しいターミナル環境を構築します。'
+title: '맥(Mac) 개발 환경 구축(1) - iTerm과 zsh'
+description: '새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 맥(Mac)에 iTerm와 zsh를 설정하여 새로운 터미널 환경을 구축합니다.'
 image: '/assets/images/category/environment/mac-iterm-zsh/background.jpg'
 ---
 
-## 概要
-新しいマック(Mac)に開発環境を最初から構築した内容を纏めてみようかと思います。このブログはシリーズです。開発環境の別の部分が木になる方は下記の内容を確認してください。
+## 개요
+새로운 맥(Mac)에 개발 환경을 처음부터 구축한 내용을 정리하려고 합니다. 이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.
 
-- [マック(Mac)の開発環境の構築(1) - iTermとzsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
-- [マック(Mac)の開発環境の構築(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
-- [マック(Mac)の開発環境の構築(3) - 開発環境]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(1) - iTerm과 zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
+- [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
-このブログでは新しいマック(Mac)に[iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}と[zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}を設定する方法について説明します。
+이번 블로그에서는 새로운 맥(Mac)에 [iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}와 [zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}를 설정하는 방법에 대해서 알아봅니다.
 
 - [iTerm](https://www.iterm2.com/){:rel="nofollow noreferrer" target="_blank"}
 - [zsh](https://github.com/robbyrussell/oh-my-zsh){:rel="nofollow noreferrer" target="_blank"}
 
 
-## itermインストール
-下記のリンクを押して`iTerm`ダウンロードページに移動します。
 
-- iTermダウンロード: [ダウンロードページ](https://www.iterm2.com/downloads.html){:rel="nofollow noreferrer" target="_blank"}
+## iTerm 설치
 
-下記の画面が見えたら、`Stable Releases`を押してダウンロードします。
+아래에 링크를 통해 `iTerm` 다운로드 페이지로 이동합니다.
 
-![マック(mac)の開発環境の設定 - iTermダウンロード](/assets/images/category/environment/mac-iterm-zsh/iterm-download.png)
+- iTerm 다운로드: [다운로드 페이지](https://www.iterm2.com/downloads.html){:rel="nofollow noreferrer" target="_blank"}
 
-ダウンロードした`zip`ファイルを圧縮解除してインストールします。
+아래와 같이 화면이 보인다면, `Stable Releases`를 다운로드합니다.
 
-![マック(mac)の開発環境の設定 - iTerm full disk access権限](/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access.png)
+![맥(mac) 개발환경 설정 - iTerm 다운로드](/assets/images/category/environment/mac-iterm-zsh/iterm-download.png)
+
+다운로드 받은 `zip` 파일을 압축해제하고 설치합니다.
+
+![맥(mac) 개발환경 설정 - iTerm full disk access 권한 요청](/assets/images/category/environment/mac-iterm-zsh/iterm-full-disk-access.png)
 
 위와 같이 iTerm에서 `Full Disk Access`를 요청합니다. 오른쪽 하단의 `Open System Preferences`를 선택합니다.
 
@@ -91,17 +93,17 @@ iTerm을 실행하고 왼쪽 상단의 `iTerms2` > `Preferences...`를 선택합
 
 다시 iTerm을 시작하면 `zsh`가 기본으로 실행되는 것을 확인할 수 있습니다.
 
-## zsh 테마 설정
+## iTerm테마 설정
 
-zsh는 많은 테마(Theme)를 가지고 있습니다. 여러분이 원하는 테마를 설정하여 사용하시면 됩니다. 여기에서는 `term2-solarized` 테마를 설정하는 방법을 소개합니다.
+iTerm는 많은 테마(Theme)를 가지고 있습니다. 여러분이 원하는 테마를 설정하여 사용하시면 됩니다. 여기에서는 `iterm2-solarized` 테마를 설정하는 방법을 소개합니다.
 
 - [iterm2-solarized](https://gist.github.com/kevin-smets/8568070){:rel="nofollow noreferrer" target="_blank"}
 
 아래에 링크를 클릭하여 테마를 다운로드합니다.
 
-- [term2-solarized 다운로드](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20-%20Patched.itermcolors){:rel="nofollow noreferrer" target="_blank"}
+- [iterm2-solarized 다운로드](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20-%20Patched.itermcolors){:rel="nofollow noreferrer" target="_blank"}
 
-위에 링크를 선택 테마 파일 내용이 보입니다. `command + s`를 눌러 다운로드합니다.
+위에 링크를 선택하면 테마 파일 내용이 보입니다. `command + s`를 눌러 다운로드합니다.
 
 ![맥(mac) 개발환경 설정 - zsh 테마 설정](/assets/images/category/environment/mac-iterm-zsh/zsh-theme-setting.png)
 
@@ -111,7 +113,7 @@ zsh는 많은 테마(Theme)를 가지고 있습니다. 여러분이 원하는 �
 
 ![맥(mac) 개발환경 설정 - iterm에 zsh 테마 설정](/assets/images/category/environment/mac-iterm-zsh/zsh-theme-import.png)
 
-위와 같이 `Profiles` > `Colors`를 선택고 오른쪽 하단의 `Color Preset...` > `import...`를 선택합니다.
+위와 같이 `Profiles` > `Colors`를 선택하고 오른쪽 하단의 `Color Preset...` > `import...`를 선택합니다.
 
 위에서 다운로드한 `Solarized Dark - Patched.itermcolors` 파일을 선택합니다.
 

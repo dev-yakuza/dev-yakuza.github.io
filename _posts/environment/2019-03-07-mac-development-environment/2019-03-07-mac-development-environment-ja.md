@@ -1,55 +1,53 @@
 ---
-published: false
 layout: 'post'
 permalink: '/environment/mac-development-environment/'
 paginate_path: '/environment/:num/mac-development-environment/'
-lang: 'ko'
+lang: 'ja'
 categories: 'environment'
 comments: true
 
-title: '맥(Mac) 개발 환경 구축(3) - 개발 환경'
-description: '새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다.'
+title: 'マック(Mac)の開発環境の構築(3) - 開発環境'
+description: '新しいマック(Mac)に開発環境を構築しています。現在開発する時使ってる開発環境を設定する方法を説明します。'
 image: '/assets/images/category/environment/mac-development-environment/background.jpg'
 ---
 
-## 개요
-맥(Mac)에 새롭게 개발 환경을 구축하고 있습니다. 이 블로그에서는 개발 환경을 구성하는 방법에 대해서 정리합니다.
+## 概要
+新しい(Mac)に開発環境を設定しています。このブログには開発環境を構築する方法を纏めてみます。
 
-이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.
+このブログはシリーズです。開発環境の別の部分が木になる方は下記の内容を確認してください。
 
-- [맥(Mac) 개발 환경 구축(1) - iTerm과 zsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
-- [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
-- [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
+- [マック(Mac)の開発環境の構築(1) - iTermとzsh]({{site.url}}/{{page.categories}}/mac-iterm-zsh/){:target="_blank"}
+- [マック(Mac)の開発環境の構築(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
+- [マック(Mac)の開発環境の構築(3) - 開発環境]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
 
 ## python3
-맥(Mac)에는 기본적으로 python2가 설치되어 있습니다. 개발에 필요한 python3를 설치하고 zsh에 python3을 기본으로 설정하겠습니다.
+マック(Mac)には基本的python2がインストールされています。開発する時必要なpython3をインストールしてzshにpython3をデフォルトで設定します。
 
-아래에 명령어로 homebrew를 설치합니다.
+下記のコマンドでhomebrewをインストールします。
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-아래에 명령어로 zsh 설정 파일을 엽니다.
+下記のコマンドでzsh設定ファイルを開きます。
 
 ```bash
 code ~/.zshrc
 ```
-
-설정 파일 하단에 아래에 내용을 추가합니다.
+設定ファイルの下に下記の内容を追加します。
 
 ```bash
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ```
 
-zsh를 재실행하고 아래에 명령어로 python3를 설치합니다.
+zsh(iTerm)を再起動して下記のコマンドでpython3をインストールします。
 
 ```bash
 brew install python3
 ```
 
-zsh 설정 파일 하단에 아래에 내용을 추가하여 python3을 기본으로 설정합니다.
+zsh設定ファイルの下に下記の内容を追加してpython3をデフォルトで設定します。
 
 ```bash
 # code ~/.zshrc
@@ -57,65 +55,65 @@ alias python=python3
 ```
 
 ## git flow
-아래에 명령어로 git flow를 설치합니다.
+下記のコマンドでgit flowをインストールします。
 
 ```bash
 brew install git-flow
 ```
 
 ## node / npm
-아래에 링크를 눌러 node를 다운로드 및 설치합니다.
+下のリンクを押してnodeをダウンロードやインストールします。
 
-- node: [https://nodejs.org/ko/download/](https://nodejs.org/ko/download/){:rel="nofollow noreferrer" target="_blank"}
+- node: [https://nodejs.org/en/download/](https://nodejs.org/en/download/){:rel="nofollow noreferrer" target="_blank"}
 
 
 ## react native
-이전에 RN(React Native) 설치에 관한 블로그를 작성하였습니다. 아래에 링크를 확인하여 설치합니다.
+RN(React Native)のインストール関しては別のブログを作成しました。下記のリンクを押してインストール方法を確認してください。
 
-- [RN 설치]({{site.url}}/react-native/installation/){:target="_blank"}
+- [RNインストール]({{site.url}}/react-native/installation/){:target="_blank"}
 
 
 ## Laravel
-맥(Mac)은 기본적으로 php가 설치되어 있습니다. 아래에 명령어로 ```composer```를 설치합니다.
+マック(Mac)には基本的phpがインストールされています。下記のコマンドで```composer```をインストールします。
 
 ```bash
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin/
 ```
 
-zsh 설정 파일 하단에 아래에 내용을 추가합니다.
+zsh設定ファイルの下に下記の内容を追加します。
 
 ```bash
 # code ~/.zshrc
 alias composer="php /usr/local/bin/composer.phar"
 ```
 
-아래에 명령어로 권한을 변경합니다.
+下記のコマンドで権限を変更します。
 
 ```bash
 sudo chmod -R 777 /Users/[user name]/.composer/
 ```
 
-아래에 명령어로 Laravel을 설치합니다.
+下記のコマンドでLaravelをインストールします。
 
 ```bash
 composer global require laravel/installer
 ```
 
-zsh 설정 파일을 열고 아래에 내용을 추가합니다.
+zsh設定ファイルを開いて下記の内容を追加します。
 
 ```bash
 # code ~/.zshrc
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 ```
 
-## mysql 설치
-아래에 명령어로 mysql을 설치합니다.
+## mysqlインストール
+下記のコマンドでmysqlをインストールします。
 
 ```bash
 brew install mysql@5.7
 ```
 
-zsh 설정 파일을 열고 아래에 내용을 추가합니다.
+zsh設定ファイルを開いて下記の内容を追加します。
 
 ```bash
 # code ~/.zshrc
@@ -124,20 +122,27 @@ export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 ```
 
-아래에 명령어로 mysql 서버를 실행합니다.
+下記のコマンドでmysqlサーバーを実行します。
 
 ```bash
 mysql.server start
 ```
 
-아래에 명령어를 통해 mysql 설정을 진행합니다.(패스워드 설정 등)
+下記のコマンドでmysqlの設定を進めます。（パスワード設定など）
 
 ```bash
 mysql_secure_installation
 ```
 
-## zsh 설정 파일
-아래는 zsh 설정 파일의 내용입니다.
+
+## jekyll
+以前jekyllインストールに関してブログを作成したことがあります。下記のリンクを確認してインストールしてください。
+
+- [jekyllインストール]({{site.url}}/jekyll/installation/){:target="_blank"}
+
+
+## zsh設定ファイル
+下記はzsh設定ファイルの内容です。
 
 ```bash
 # If you come from bash you might have to change your $PATH.
@@ -245,6 +250,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # python3 default
 alias python=python3
+alias pip=pip3
 # composer
 alias composer="php /usr/local/bin/composer.phar"
 # Laravel

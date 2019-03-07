@@ -8,7 +8,31 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-status-bar/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/mac-development-environment/</loc>
+    <lastmod>2019-03-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://dev-yakuza.github.io/ko/environment/mac-development-tools/</loc>
+    <lastmod>2019-03-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://dev-yakuza.github.io/ko/environment/mac-iterm-zsh/</loc>
+    <lastmod>2019-03-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-status-bar/</loc>
     <lastmod>2019-03-03</lastmod>
     <priority>1.0</priority>
   </url>
@@ -16,7 +40,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-itunes-share-file/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-itunes-share-file/</loc>
     <lastmod>2019-03-03</lastmod>
     <priority>1.0</priority>
   </url>
@@ -24,7 +48,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/kumoncho/development-journal/</loc>
+    <loc>https://dev-yakuza.github.io/ko/kumoncho/development-journal/</loc>
     <lastmod>2019-02-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -32,7 +56,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-rate/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-rate/</loc>
     <lastmod>2019-02-09</lastmod>
     <priority>1.0</priority>
   </url>
@@ -40,7 +64,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/blaboo/update-review/</loc>
+    <loc>https://dev-yakuza.github.io/ko/blaboo/update-review/</loc>
     <lastmod>2019-02-28</lastmod>
     <priority>1.0</priority>
   </url>
@@ -48,7 +72,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/preview-speed-up/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/preview-speed-up/</loc>
     <lastmod>2019-02-07</lastmod>
     <priority>1.0</priority>
   </url>
@@ -56,7 +80,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-splash-screen/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-splash-screen/</loc>
     <lastmod>2019-02-07</lastmod>
     <priority>1.0</priority>
   </url>
@@ -64,7 +88,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-linear-gradient/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-linear-gradient/</loc>
     <lastmod>2019-02-03</lastmod>
     <priority>1.0</priority>
   </url>
@@ -72,7 +96,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-swipe-gestures/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-swipe-gestures/</loc>
     <lastmod>2019-02-01</lastmod>
     <priority>1.0</priority>
   </url>
@@ -80,7 +104,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-lottie/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-lottie/</loc>
     <lastmod>2019-02-25</lastmod>
     <priority>1.0</priority>
   </url>
@@ -88,7 +112,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/ngrok/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/ngrok/</loc>
     <lastmod>2019-02-01</lastmod>
     <priority>1.0</priority>
   </url>
@@ -96,7 +120,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-fs/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-fs/</loc>
     <lastmod>2019-01-30</lastmod>
     <priority>1.0</priority>
   </url>
@@ -104,7 +128,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-mail/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-mail/</loc>
     <lastmod>2019-01-26</lastmod>
     <priority>1.0</priority>
   </url>
@@ -112,7 +136,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-voice/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-voice/</loc>
     <lastmod>2019-01-25</lastmod>
     <priority>1.0</priority>
   </url>
@@ -120,7 +144,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/blaboo/development-journal/</loc>
+    <loc>https://dev-yakuza.github.io/ko/blaboo/development-journal/</loc>
     <lastmod>2019-02-15</lastmod>
     <priority>1.0</priority>
   </url>
@@ -128,7 +152,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/android-google-play/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/android-google-play/</loc>
     <lastmod>2019-01-15</lastmod>
     <priority>1.0</priority>
   </url>
@@ -136,7 +160,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/android-enroll-google-play-developer/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/android-enroll-google-play-developer/</loc>
     <lastmod>2019-01-11</lastmod>
     <priority>1.0</priority>
   </url>
@@ -144,7 +168,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt-logout/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt-logout/</loc>
     <lastmod>2019-01-06</lastmod>
     <priority>1.0</priority>
   </url>
@@ -152,7 +176,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt-refresh-token/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt-refresh-token/</loc>
     <lastmod>2019-01-06</lastmod>
     <priority>1.0</priority>
   </url>
@@ -160,7 +184,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt-user-info/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt-user-info/</loc>
     <lastmod>2019-01-06</lastmod>
     <priority>1.0</priority>
   </url>
@@ -168,7 +192,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt-signin/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt-signin/</loc>
     <lastmod>2019-01-06</lastmod>
     <priority>1.0</priority>
   </url>
@@ -176,7 +200,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt-signup/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt-signup/</loc>
     <lastmod>2019-01-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -184,7 +208,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-animatable/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-animatable/</loc>
     <lastmod>2018-12-19</lastmod>
     <priority>1.0</priority>
   </url>
@@ -192,7 +216,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/firebase-crashlytics/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/firebase-crashlytics/</loc>
     <lastmod>2019-01-30</lastmod>
     <priority>1.0</priority>
   </url>
@@ -200,7 +224,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-app-crash-debugging/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-app-crash-debugging/</loc>
     <lastmod>2018-12-13</lastmod>
     <priority>1.0</priority>
   </url>
@@ -208,7 +232,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/jwt/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/jwt/</loc>
     <lastmod>2019-01-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -216,7 +240,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/ansible-laravel/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/ansible-laravel/</loc>
     <lastmod>2018-12-19</lastmod>
     <priority>1.0</priority>
   </url>
@@ -224,7 +248,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/ansible-laradock/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/ansible-laradock/</loc>
     <lastmod>2018-12-10</lastmod>
     <priority>1.0</priority>
   </url>
@@ -232,7 +256,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/ansible-docker/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/ansible-docker/</loc>
     <lastmod>2018-12-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -240,7 +264,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/ansible-playbook/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/ansible-playbook/</loc>
     <lastmod>2018-12-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -248,7 +272,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-firebase-analytics/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-firebase-analytics/</loc>
     <lastmod>2018-11-29</lastmod>
     <priority>1.0</priority>
   </url>
@@ -256,7 +280,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/install-ansible/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/install-ansible/</loc>
     <lastmod>2018-12-04</lastmod>
     <priority>1.0</priority>
   </url>
@@ -264,7 +288,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/vagrant-install-and-usage/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/vagrant-install-and-usage/</loc>
     <lastmod>2018-11-26</lastmod>
     <priority>1.0</priority>
   </url>
@@ -272,7 +296,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-change-simulator/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-change-simulator/</loc>
     <lastmod>2018-11-24</lastmod>
     <priority>1.0</priority>
   </url>
@@ -280,7 +304,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/android-running-on-device/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/android-running-on-device/</loc>
     <lastmod>2019-01-12</lastmod>
     <priority>1.0</priority>
   </url>
@@ -288,7 +312,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/android-test-on-device/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/android-test-on-device/</loc>
     <lastmod>2018-11-22</lastmod>
     <priority>1.0</priority>
   </url>
@@ -296,7 +320,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-firebase-admob/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-firebase-admob/</loc>
     <lastmod>2019-01-30</lastmod>
     <priority>1.0</priority>
   </url>
@@ -304,7 +328,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/jekyll-last-modified-at/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/jekyll-last-modified-at/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -312,7 +336,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-analytics-bridge/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-analytics-bridge/</loc>
     <lastmod>2018-11-19</lastmod>
     <priority>1.0</priority>
   </url>
@@ -320,7 +344,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-app-store/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-app-store/</loc>
     <lastmod>2019-02-01</lastmod>
     <priority>1.0</priority>
   </url>
@@ -328,7 +352,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-testflight/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-testflight/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -336,7 +360,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-certification/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-certification/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -344,7 +368,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-enroll-developer-program/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-enroll-developer-program/</loc>
     <lastmod>2019-01-11</lastmod>
     <priority>1.0</priority>
   </url>
@@ -352,7 +376,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-running-on-device/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-running-on-device/</loc>
     <lastmod>2018-11-22</lastmod>
     <priority>1.0</priority>
   </url>
@@ -360,7 +384,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/ios-test-on-device/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/ios-test-on-device/</loc>
     <lastmod>2018-11-20</lastmod>
     <priority>1.0</priority>
   </url>
@@ -370,7 +394,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-admob/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-admob/</loc>
     <lastmod>2018-11-19</lastmod>
     <priority>1.0</priority>
   </url>
@@ -378,7 +402,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/git/create-stage/</loc>
+    <loc>https://dev-yakuza.github.io/ko/git/create-stage/</loc>
     <lastmod>2018-11-08</lastmod>
     <priority>1.0</priority>
   </url>
@@ -386,7 +410,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/git/create-repository/</loc>
+    <loc>https://dev-yakuza.github.io/ko/git/create-repository/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -394,7 +418,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/git/installation/</loc>
+    <loc>https://dev-yakuza.github.io/ko/git/installation/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -402,7 +426,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/github-page/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/github-page/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -410,7 +434,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/google-service/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/google-service/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -418,7 +442,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/send-email/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/send-email/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -426,7 +450,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/disqus/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/disqus/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -434,7 +458,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-tts/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-tts/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -442,7 +466,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-device-info/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-device-info/</loc>
     <lastmod>2019-03-03</lastmod>
     <priority>1.0</priority>
   </url>
@@ -450,7 +474,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-native-vector-icons/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-native-vector-icons/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -458,7 +482,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/nativebase/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/nativebase/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -466,7 +490,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/splash-image/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/splash-image/</loc>
     <lastmod>2019-03-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -474,7 +498,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/pagination-plugin/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/pagination-plugin/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -482,7 +506,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/seo/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/seo/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -492,7 +516,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/app-icon/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/app-icon/</loc>
     <lastmod>2019-03-05</lastmod>
     <priority>1.0</priority>
   </url>
@@ -500,7 +524,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/react-navigation/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/react-navigation/</loc>
     <lastmod>2019-01-01</lastmod>
     <priority>1.0</priority>
   </url>
@@ -508,7 +532,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/styled-components/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/styled-components/</loc>
     <lastmod>2019-02-25</lastmod>
     <priority>1.0</priority>
   </url>
@@ -516,7 +540,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/typescript/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/typescript/</loc>
     <lastmod>2018-12-28</lastmod>
     <priority>1.0</priority>
   </url>
@@ -524,7 +548,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/installation/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/installation/</loc>
     <lastmod>2019-02-25</lastmod>
     <priority>1.0</priority>
   </url>
@@ -532,7 +556,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/multi-languages-plugin/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/multi-languages-plugin/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -540,7 +564,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/configuration/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/configuration/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -548,7 +572,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/directory_structure/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/directory_structure/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -556,7 +580,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/theme/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/theme/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -566,7 +590,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/installation/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/installation/</loc>
     <lastmod>2018-11-16</lastmod>
     <priority>1.0</priority>
   </url>
@@ -599,7 +623,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/contact/</loc>
+    <loc>https://dev-yakuza.github.io/ko/contact/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -614,7 +638,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/</loc>
+    <loc>https://dev-yakuza.github.io/ko/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -642,7 +666,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/environment/</loc>
+    <loc>https://dev-yakuza.github.io/ko/environment/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -652,7 +676,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/kumoncho/</loc>
+    <loc>https://dev-yakuza.github.io/ko/kumoncho/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -662,7 +686,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/git/</loc>
+    <loc>https://dev-yakuza.github.io/ko/git/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -672,7 +696,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -682,7 +706,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/jekyll/2/</loc>
+    <loc>https://dev-yakuza.github.io/ko/jekyll/2/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -692,7 +716,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/blaboo/</loc>
+    <loc>https://dev-yakuza.github.io/ko/blaboo/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -702,7 +726,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/laravel/</loc>
+    <loc>https://dev-yakuza.github.io/ko/laravel/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -712,7 +736,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -722,7 +746,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/2/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/2/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -732,7 +756,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/3/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/3/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
@@ -742,7 +766,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/ko/react-native/4/</loc>
+    <loc>https://dev-yakuza.github.io/ko/react-native/4/</loc>
     <lastmod>2019-03-07</lastmod>
     <priority>0.5</priority>
   </url>
