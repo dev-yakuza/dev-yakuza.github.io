@@ -54,6 +54,7 @@ image: '/assets/images/category/environment/mac-development-tools/background.jpg
 - Trailing Spaces
 - TSLint
 - vscode-icons
+- vscode-styled-components
 
 上にあるリストを全てインストールした後、下記のコマンドでvscodeの設定ファイルを開きます。
 
@@ -123,6 +124,11 @@ vscodeの設定ファイルに下記の内容をコピペします。
 - sequel pro: [https://www.sequelpro.com/](https://www.sequelpro.com/){:rel="nofollow noreferrer" target="_blank"}
 - DB Browser For SQLite: [https://sqlitebrowser.org/](https://sqlitebrowser.org/){:rel="nofollow noreferrer" target="_blank"}
 - workbench: [https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/){:rel="nofollow noreferrer" target="_blank"}
+
+## デザインツール
+デザインツールはSketchappを使っています。
+
+- sketchapp: [https://www.sketchapp.com/](https://www.sketchapp.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ## 補助プログラム
 下記は開発する時使ってる補助プログラムです。

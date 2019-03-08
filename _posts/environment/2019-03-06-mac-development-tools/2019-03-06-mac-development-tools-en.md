@@ -54,6 +54,7 @@ this is vscode plugin list what I use.
 - Trailing Spaces
 - TSLint
 - vscode-icons
+- vscode-styled-components
 
 after installing all, execute the command below to open vscode configuration file.
 
@@ -123,6 +124,11 @@ the below is the DB tools what I use.
 - sequel pro: [https://www.sequelpro.com/](https://www.sequelpro.com/){:rel="nofollow noreferrer" target="_blank"}
 - DB Browser For SQLite: [https://sqlitebrowser.org/](https://sqlitebrowser.org/){:rel="nofollow noreferrer" target="_blank"}
 - workbench: [https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/){:rel="nofollow noreferrer" target="_blank"}
+
+## Design Tool
+I use the sketchapp for design.
+
+- sketchapp: [https://www.sketchapp.com/](https://www.sketchapp.com/){:rel="nofollow noreferrer" target="_blank"}
 
 ## Support Program
 this is the support programs for developing.
