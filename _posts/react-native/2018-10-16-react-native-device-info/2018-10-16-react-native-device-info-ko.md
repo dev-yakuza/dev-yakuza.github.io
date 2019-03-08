@@ -65,6 +65,23 @@ export default class Home extends React.Component<Props, State> {
 }
 ```
 
+## 디바이스 구분
+아래에 코드로 앱이 스마트폰에서 기동중인지, 태블릿에서 기동중인지 확인할 수 있습니다.
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const isTablet = DeviceInfo.isTablet();
+        // tablet: true / phone: false
+        ...
+    }
+}
+```
+
 
 ## 에러 대응
 잘 개발을 디바이스에서 랜덤하게 crash가 나는 문제가 발생했다. 시뮬레이터에서도 아래에 같은 메세지가 표시되었다.

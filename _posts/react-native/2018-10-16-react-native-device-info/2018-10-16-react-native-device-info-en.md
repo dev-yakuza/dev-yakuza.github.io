@@ -65,6 +65,23 @@ export default class Home extends React.Component<Props, State> {
 }
 ```
 
+## Device Identification
+if you want to know whether the app is running on the smartphone or tablet, use the code below.
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const isTablet = DeviceInfo.isTablet();
+        // tablet: true / phone: false
+        ...
+    }
+}
+```
+
 ## fix errors
 suddenly, occur App crash randomly and show below error message up on the simulator.
 

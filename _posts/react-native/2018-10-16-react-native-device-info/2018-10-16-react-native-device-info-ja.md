@@ -65,6 +65,23 @@ export default class Home extends React.Component<Props, State> {
 }
 ```
 
+## デバイス区分
+下記のコードでアプリがスマホで起動中か、タブレットで起動中か確認できます。
+
+```js
+...
+import DeviceInfo from 'react-native-device-info';
+...
+
+export default class Home extends React.Component<Props, State> {
+    render() {
+        const isTablet = DeviceInfo.isTablet();
+        // tablet: true / phone: false
+        ...
+    }
+}
+```
+
 
 ## エラー対応
 よく開発してきましたがデバイスでランダムでcrashが発生する問題が出ました。シミュレータでも下のメッセージが表示してきました。
