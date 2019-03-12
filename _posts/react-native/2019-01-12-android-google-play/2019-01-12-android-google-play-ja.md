@@ -162,5 +162,27 @@ android/app/build/outputs/apk/release/app-x86-release.apk
 
 アプリ審査の準備が終わったら```CONFIRM```ボタンを押してアプリ審査を申請します。
 
+## エラー対応
+下記のコマンドでアンドロイドをビルドする時、
+
+```bash
+./gradlew assembleRelease
+```
+
+下記のようなエラーメッセージが出ってビルドが失敗される時があります。
+
+```bash
+Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForRelease'.
+```
+
+下記の内容を`android/app/build.gradle`に追加してもう一回ビルドします。
+
+```js
+defaultConfig {
+    ...
+    multiDexEnabled true
+}
+```
+
 ## 完了
 アンドロイドアプリストア(Google Play)にアプリを登録するための手続きが終わりました。アプリ審査は2~3時間くらいかかります。アプリの審査が終わったら登録申請したアプリをアンドロイドアプリストア(Google Play)で検索やダウンロードができます。

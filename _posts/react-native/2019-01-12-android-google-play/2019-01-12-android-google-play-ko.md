@@ -162,5 +162,29 @@ android/app/build/outputs/apk/release/app-x86-release.apk
 
 앱 심사 준비가 끝났다면 ```CONFIRM``` 버튼을 눌러 앱 심사를 신청합니다.
 
+
+## 에러 대응
+아래에 명령어로 안드로이드를 빌드할 때,
+
+```bash
+./gradlew assembleRelease
+```
+
+아래와 같은 에러 메세지가 나오면서 빌드가 실패할 때가 있습니다.
+
+```bash
+Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForRelease'.
+```
+
+아래에 내용을 `android/app/build.gradle`에 추가하고 다시 빌드합니다.
+
+```js
+defaultConfig {
+    ...
+    multiDexEnabled true
+}
+```
+
+
 ## 완료
 안드로이드 앱 스토어(Google Play)에 앱 등록을 위한 모든 절차가 끝났습니다. 앱 심사는 2~3시간 정도 걸리며 앱 심사가 끝나면 등록 신청을 한 앱을 안드로이드 앱 스토어(Google Play)에서 검색 및 다운로드 할 수 있습니다.

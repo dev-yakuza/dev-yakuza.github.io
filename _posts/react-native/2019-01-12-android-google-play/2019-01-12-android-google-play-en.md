@@ -162,5 +162,27 @@ when you see above screen, scroll down and click ```START ROLLOUT TO PRODUCTION`
 
 if you're ready to apply App review, click ```CONFIRM``` button.
 
+## fix error
+when you execute the command below,
+
+```bash
+./gradlew assembleRelease
+```
+
+sometime, you get the error message like below and build is failed.
+
+```bash
+Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForRelease'.
+```
+
+add the code below to `android/app/build.gradle` and try to build again.
+
+```js
+defaultConfig {
+    ...
+    multiDexEnabled true
+}
+```
+
 ## Completed
 we've done to register App to Android App store(Google Play). App review takes 2 ~ 3 hours. if App review is finished, you can search and download your App in Android App store(Google Play).
