@@ -184,5 +184,66 @@ defaultConfig {
 }
 ```
 
+### ビルドエラー対応
+RN(React Native)のバージョン0.58で下記のコマンドを実行したら
+
+```bash
+./gradlew assembleRelease
+```
+
+下記のエラーが出ます。
+
+```bash
+  --auto-add-overlay\
+          --non-final-ids\
+          -0\
+          apk\
+          --no-version-vectors
+  Daemon:  AAPT2 aapt2-3.2.1-4818971-osx Daemon #0
+```
+
+下記のコマンドで実行したらビルドができます。
+
+```bash
+./gradlew app:assembleRelease
+```
+
+### 権限エラー
+RN(React Native)のバージョン0.58でビルドしたファイルをグーグルプレイへアップロードする時```android.permission.READ_PHONE_STATE```権限が含めてるのでダメですのエラーが出ます。
+
+公式サイトに解決方法があります。
+
+[https://facebook.github.io/react-native/docs/removing-default-permissions](https://facebook.github.io/react-native/docs/removing-default-permissions){:rel="nofollow noreferrer" target="_blank"}
+
+それを見ながらやってみます。
+
+RN(React Native)プロジェクトの```android/app/src/main/AndroidManifest.xml```のファイルを開いて下記のように修正します。
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXXX"
++   xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_PHONE_STATE" />
++   <uses-permission tools:node="remove" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_EXTERNAL_STORAGE" />
+...
+```
+
+そして```android/app/src/release/AndroidManifest.xml```ファイルを生成して下記の内容をコピペします。(パッケージ名は自分のパッケージ名を入れてください。)
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXX"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission tools:node="remove" android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+</manifest>
+```
+
 ## 完了
 アンドロイドアプリストア(Google Play)にアプリを登録するための手続きが終わりました。アプリ審査は2~3時間くらいかかります。アプリの審査が終わったら登録申請したアプリをアンドロイドアプリストア(Google Play)で検索やダウンロードができます。

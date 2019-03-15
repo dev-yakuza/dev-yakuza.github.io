@@ -162,7 +162,7 @@ when you see above screen, scroll down and click ```START ROLLOUT TO PRODUCTION`
 
 if you're ready to apply App review, click ```CONFIRM``` button.
 
-## fix error
+## Fix Error
 when you execute the command below,
 
 ```bash
@@ -183,6 +183,69 @@ defaultConfig {
     multiDexEnabled true
 }
 ```
+
+### Fix Build Error
+when I built RN(React Native) version 0.58 with the command below,
+
+```bash
+./gradlew assembleRelease
+```
+
+I got the error like below.
+
+```bash
+  --auto-add-overlay\
+          --non-final-ids\
+          -0\
+          apk\
+          --no-version-vectors
+  Daemon:  AAPT2 aapt2-3.2.1-4818971-osx Daemon #0
+```
+
+execute the command below to build.
+
+```bash
+./gradlew app:assembleRelease
+```
+
+### Permission Error
+after building RN(React Native) 0.58, when I uploaded the file to Google Play, I got the error message like my file include ```android.permission.READ_PHONE_STATE``` permission.
+
+the solution is on the official site.
+
+[https://facebook.github.io/react-native/docs/removing-default-permissions](https://facebook.github.io/react-native/docs/removing-default-permissions){:rel="nofollow noreferrer" target="_blank"}
+
+let's do it!
+
+open and edit ```android/app/src/main/AndroidManifest.xml``` file like below.
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXXX"
++   xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_PHONE_STATE" />
++   <uses-permission tools:node="remove" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_EXTERNAL_STORAGE" />
+...
+```
+
+and create ```android/app/src/release/AndroidManifest.xml``` file and copy-paste the content below to it.(you must change the package name with yours)
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXX"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission tools:node="remove" android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+</manifest>
+```
+
+completed! you can upload with no problems!
 
 ## Completed
 we've done to register App to Android App store(Google Play). App review takes 2 ~ 3 hours. if App review is finished, you can search and download your App in Android App store(Google Play).

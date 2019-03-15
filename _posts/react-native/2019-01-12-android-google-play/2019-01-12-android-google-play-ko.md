@@ -185,6 +185,68 @@ defaultConfig {
 }
 ```
 
+### 빌드 에러 대응
+RN(React Native) 버전 0.58에서 아래에 명령어로 빌드를 시도하면
+
+```bash
+./gradlew assembleRelease
+```
+
+아래와 같은 에러가 나옵니다.
+
+```bash
+  --auto-add-overlay\
+          --non-final-ids\
+          -0\
+          apk\
+          --no-version-vectors
+  Daemon:  AAPT2 aapt2-3.2.1-4818971-osx Daemon #0
+```
+
+아래에 명령어로 진행하면 에러없이 빌드를 할 수 있습니다.
+
+```bash
+./gradlew app:assembleRelease
+```
+
+### 권한 에러
+RN(React Native) 0.58 버전에 파일을 구글 플레이에 없로드 하면 ```android.permission.READ_PHONE_STATE``` 권한이 포함되어 있다며 에러가 나옵니다.
+
+공식 홈페이지에 해결 방법이 나와있습니다.
+
+[https://facebook.github.io/react-native/docs/removing-default-permissions](https://facebook.github.io/react-native/docs/removing-default-permissions){:rel="nofollow noreferrer" target="_blank"}
+
+한번 따라해 봅시다.
+
+RN(React Native) 프로젝트의 ```android/app/src/main/AndroidManifest.xml``` 파일을 열어 아래와 같이 수정합니다.
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXXX"
++   xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_PHONE_STATE" />
++   <uses-permission tools:node="remove" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++   <uses-permission tools:node="remove" android:name="android.permission.READ_EXTERNAL_STORAGE" />
+...
+```
+
+그리고 ```android/app/src/release/AndroidManifest.xml``` 파일을 생성하고 아래에 내용을 복사 붙여넣습니다.(패키지명을 자신의 패키지명으로 교체해주세요.)
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="XXXXXXX"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission tools:node="remove" android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+</manifest>
+```
+
+이 상태에서 빌드를 하고 업로드하면 문제없이 업로드되는 것을 확인할 수 있습니다.
 
 ## 완료
 안드로이드 앱 스토어(Google Play)에 앱 등록을 위한 모든 절차가 끝났습니다. 앱 심사는 2~3시간 정도 걸리며 앱 심사가 끝나면 등록 신청을 한 앱을 안드로이드 앱 스토어(Google Play)에서 검색 및 다운로드 할 수 있습니다.
