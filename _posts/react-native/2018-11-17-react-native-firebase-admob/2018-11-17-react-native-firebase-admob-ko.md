@@ -381,6 +381,17 @@ setTimeout(() => {
 }, 1000);
 ```
 
+## 에러 대응
+react-native-firebase를 사용하여 admob을 구현하면서 문제가 된 내용을 정리합니다.
+
+### admob/error-code-no-fill
+저도 드디어 나올께 나왔네요. 어느날 갑자기 앱의 광고가 제대로 표시되지 않는 문제가 나와 조사해보니 `admob/error-code-no-fill` 에러가 나오기 시작했습니다.
+
+저는 지급금이 4000엔(8000엔 부터 입금 가능)때 부터 `admob/error-code-no-fill`이 나오기 시작했습니다. 저는 아직 지급 받는 방법을 넣지 않은 상태였습니다. 지급 받는 방법을 넣고 나서부터는 광고가 다시 잘 표시되네요. 지급금을 제대로 입금하지 못할가봐 일부러 광고 게시율을 낮춘건지 모르겠습니다.
+
+결론적으로, `admob/error-code-no-fill` 에러가 나와 광고가 표시안되는 분들중에 지급 방법을 넣지 않으신 분들은, 지급 방법을 넣어보시기 바랍니다.
+
+
 ## 완료
 RN(react native) 프로젝트에 react-native-firebase 라이브러리를 사용하여 구글 애드몹(Google Admobe)을 적용하는 법을 살펴보았습니다. 이렇게 react-native-firebase를 설정하면 애널리틱스(Analytics)는 자동으로 설정되어 분석이 가능하게 됩니다.
 

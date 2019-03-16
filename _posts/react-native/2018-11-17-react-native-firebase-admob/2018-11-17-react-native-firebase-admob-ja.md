@@ -380,6 +380,17 @@ setTimeout(() => {
 }, 1000);
 ```
 
+## 에러 대응
+react-native-firebaseでadmobを実装して問題があった内容をまとめます。
+
+### admob/error-code-no-fill
+私もいよいよ出ました。突然アプリの広告が表示されなくて調査してみたら`admob/error-code-no-fill`のエラーが出ました。
+
+私は収入が4000円（8000円から入金可能）ぐらい時から`admob/error-code-no-fill`のエラーが出ました。その時私はまだPaymentの情報を入力してない状態でした。入金先の情報を入力した後から広告はまた良く表示されました。グーグルが入金が出来ないかもだから広告を表示してなかったかもしれないです。
+
+結論的に、`admob/error-code-no-fill`のエラーが出て広告が表示されない方中Payment情報を入力してない方は、入金情報を入れてみてください。
+
+
 ## 完了
 RN(react native)プロジェクトへreact-native-firebaseライブラリを使ってグーグルアドモブ(Google Admob)を適用する方法をみてみました。これでreact-native-firebaseを設定したらアナリティクス(Analytics)は自動に設定されて分析することができます。
 

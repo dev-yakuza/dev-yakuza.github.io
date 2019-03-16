@@ -382,6 +382,17 @@ setTimeout(() => {
 }, 1000);
 ```
 
+## Fix Error
+in here, I'll introduce my solution about the errors.
+
+### admob/error-code-no-fill
+finally, I got this message. suddenly my app didn't display the ads. when I debugged, I saw `admob/error-code-no-fill` message.
+
+when I got `admob/error-code-no-fill` message, my payment status was $40(we can withdraw money at $80). at that time, I didn't register my payment way. after registering it, the ads showed up! maybe, google didn't have my payment information so, they can't pay money to me, so they adjusted the ads rating.
+
+so, if you get `admob/error-code-no-fill` error message and you didn't give the payment information, insert it on the Admob settings.
+
+
 ## completed
 we introduced how to display Google Admob using react-native-firebase library in RN(react native) project. when you set react-native-firebase, Analytics is automatically configured.
 
