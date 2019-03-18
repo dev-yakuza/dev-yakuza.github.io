@@ -6,8 +6,8 @@ lang: 'en'
 categories: 'react-native'
 comments: true
 
-title: 'RN(React Naitve) 태블릿 지원하기'
-description: 'RN(React Native) 프로젝트에서 태블릿 지원하는 방법에 대해서 알아봅시다.'
+title: 'RN(React Naitve) Support Tablets'
+description: let's see how to make RN(React Native) project support tablets
 image: '/assets/images/category/react-native/react-native-support-tablet/background.jpg'
 ---
 
