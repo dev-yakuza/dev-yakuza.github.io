@@ -246,7 +246,38 @@ RN(React Native) 프로젝트의 ```android/app/src/main/AndroidManifest.xml``` 
 </manifest>
 ```
 
-이 상태에서 빌드를 하고 업로드하면 문제없이 업로드되는 것을 확인할 수 있습니다.
+### Android 4.4.2 Kitkat
+RN(React Native) 0.58에서 빌드한 파일을 안드로이드 4.4.2(Kitkat) 단말기에서 테스트할 때, 앱이 crash나면서 기동하지 못하는 문제가 발생하였습니다. 조사해 본 결과 `multiDexEnabled`의 문제로 아래의 내용을 더 추가하여 해결하였습니다.
+
+RN(React Native) 프로젝트의 `android/app/build.gradle`을 열고 아래에 내용을 추가합니다.
+
+```bash
+dependencies {
+    implementation project(':react-native-firebase')
+    ...
+    implementation 'com.android.support:multidex:1.0.1'
+}
+```
+
+또한 `MainApplication.java`를 열고 아래와 같이 수정합니다.
+
+```java
+import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+...
+public class MainApplication extends Application implements ReactApplication {
+  @Override
+  protected void attachBaseContext(Context base) {
+      super.attachBaseContext(base);
+      MultiDex.install(this);
+  }
+  ...
+}
+```
+
+이렇게 수정한 후 안드로이드 4.4.2(Kitkat)에서 무사히 동작하는 것을 확인할 수 있습니다.
+
 
 ## 완료
 안드로이드 앱 스토어(Google Play)에 앱 등록을 위한 모든 절차가 끝났습니다. 앱 심사는 2~3시간 정도 걸리며 앱 심사가 끝나면 등록 신청을 한 앱을 안드로이드 앱 스토어(Google Play)에서 검색 및 다운로드 할 수 있습니다.

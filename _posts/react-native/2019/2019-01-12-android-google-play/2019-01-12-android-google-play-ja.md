@@ -247,5 +247,40 @@ RN(React Native)プロジェクトの```android/app/src/main/AndroidManifest.xml
 
 これでビルドしてアップロードしたら問題なくアップロードできることを確認できます。
 
+
+
+### Android 4.4.2 Kitkat
+RN(React Native) 0.58でビルドしたファイルをアンドロイド4.4.2(Kitkat)の端末でテストする時、アプリがCrashが発生して起動出来ない問題が発生しました。問題を調査した結果、`multiDexEnabled`の問題で下記の内容を追加して解決しました。
+
+RN(React Native)プロジェクトの`android/app/build.gradle`を開いて下記の内容を追加してください。
+
+```bash
+dependencies {
+    implementation project(':react-native-firebase')
+    ...
+    implementation 'com.android.support:multidex:1.0.1'
+}
+```
+
+また、`MainApplication.java`を開いて下記のように修正してください。
+
+```java
+import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+...
+public class MainApplication extends Application implements ReactApplication {
+  @Override
+  protected void attachBaseContext(Context base) {
+      super.attachBaseContext(base);
+      MultiDex.install(this);
+  }
+  ...
+}
+```
+
+このように修正してアンドロイド4.4.2(Kitkat)でテストしたら無事に動作することを確認出来ます。
+
+
 ## 完了
 アンドロイドアプリストア(Google Play)にアプリを登録するための手続きが終わりました。アプリ審査は2~3時間くらいかかります。アプリの審査が終わったら登録申請したアプリをアンドロイドアプリストア(Google Play)で検索やダウンロードができます。

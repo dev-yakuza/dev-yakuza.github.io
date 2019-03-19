@@ -247,5 +247,39 @@ and create ```android/app/src/release/AndroidManifest.xml``` file and copy-paste
 
 completed! you can upload with no problems!
 
+
+### Android 4.4.2 Kitkat
+when I tested the build file of RN(React Native) 0.58 on Android 4.4.2(Kitkat) device, the app was not executed with the crash. the problem was `multiDexEnabled` and I added some code like below to resolve it.
+
+open `android/app/build.gradle` file in RN(React Native) and modify it like below.
+
+```bash
+dependencies {
+    implementation project(':react-native-firebase')
+    ...
+    implementation 'com.android.support:multidex:1.0.1'
+}
+```
+
+also, modify `MainApplication.java` file like below.
+
+```java
+import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+...
+public class MainApplication extends Application implements ReactApplication {
+  @Override
+  protected void attachBaseContext(Context base) {
+      super.attachBaseContext(base);
+      MultiDex.install(this);
+  }
+  ...
+}
+```
+
+after editing, you can see your app work on Android 4.4.2(KitKat).
+
+
 ## Completed
 we've done to register App to Android App store(Google Play). App review takes 2 ~ 3 hours. if App review is finished, you can search and download your App in Android App store(Google Play).
