@@ -183,6 +183,17 @@ vi ~/.zshrc
 prompt_context() {}
 ```
 
+または下記のように自分が好きな内容で修正することが出来ます。
+
+```bash
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
+```
+
+公式サイトにオップションについて詳しく説明があります。
+
+- 公式サイト: [https://github.com/bhilburn/powerlevel9k](https://github.com/bhilburn/powerlevel9k#available-prompt-segments){:rel="nofollow noreferrer" target="_blank"}
+
 また、iTermを実行したらユーザ名が非表示されたことが確認できます。
 
 ![マック(mac)の開発環境の設定 - iTermユーザ名非表示](/assets/images/category/environment/mac-iterm-zsh/no-user-name.png)

@@ -245,7 +245,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # remove user name in zsh
-prompt_context(){}
+# prompt_context(){}
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
 # vscode code command
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # brew path
@@ -262,5 +264,11 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # jekyll
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
+# Android path for React Native
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 

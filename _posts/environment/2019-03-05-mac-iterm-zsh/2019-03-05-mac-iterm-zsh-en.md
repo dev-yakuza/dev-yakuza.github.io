@@ -183,6 +183,17 @@ add the content below to the bottom.
 prompt_context() {}
 ```
 
+or you can customize it like below.
+
+```bash
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
+```
+
+you can see the details about the option on the official site.
+
+- official site: [https://github.com/bhilburn/powerlevel9k](https://github.com/bhilburn/powerlevel9k#available-prompt-segments){:rel="nofollow noreferrer" target="_blank"}
+
 restart iTerm. you can see the user name not displayed.
 
 ![Development Environment on Mac - iterm hide user name](/assets/images/category/environment/mac-iterm-zsh/no-user-name.png)
