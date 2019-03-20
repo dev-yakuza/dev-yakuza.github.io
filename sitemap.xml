@@ -30,6 +30,22 @@ layout: null
   {% endif %}
   {% endif %}
   {% endfor %}
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kumoncho/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/ildangongbu/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
 {% else %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -73,6 +89,85 @@ layout: null
   {% endfor %}
   {% endif %}
   {% endfor %}
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kumoncho/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kumoncho/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kumoncho/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/de/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/fr/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/hi/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/it/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/nl/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/sv/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/th/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/blaboo/zh/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/ildangongbu/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>
 {% endif %}
