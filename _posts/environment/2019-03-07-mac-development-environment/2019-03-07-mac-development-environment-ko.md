@@ -20,11 +20,8 @@ image: '/assets/images/category/environment/mac-development-environment/backgrou
 - [맥(Mac) 개발 환경 구축(2) - tools]({{site.url}}/{{page.categories}}/mac-development-tools/){:target="_blank"}
 - [맥(Mac) 개발 환경 구축(3) - 개발 환경]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
-
-## python3
-맥(Mac)에는 기본적으로 python2가 설치되어 있습니다. 개발에 필요한 python3를 설치하고 zsh에 python3을 기본으로 설정하겠습니다.
-
-아래에 명령어로 homebrew를 설치합니다.
+## homebrew
+맥(Mac)에서 가장 중요한 패키지 관리자인 homebrew를 아래에 명령어로 설치합니다.
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -41,6 +38,9 @@ code ~/.zshrc
 ```bash
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ```
+
+## python3
+맥(Mac)에는 기본적으로 python2가 설치되어 있습니다. 개발에 필요한 python3를 설치하고 zsh에 python3을 기본으로 설정하겠습니다.
 
 zsh(iTerm)를 재실행하고 아래에 명령어로 python3를 설치합니다.
 

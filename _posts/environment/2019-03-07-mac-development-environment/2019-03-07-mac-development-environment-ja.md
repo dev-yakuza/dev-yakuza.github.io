@@ -21,10 +21,8 @@ image: '/assets/images/category/environment/mac-development-environment/backgrou
 - [マック(Mac)の開発環境の構築(3) - 開発環境]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
 
-## python3
-マック(Mac)には基本的python2がインストールされています。開発する時必要なpython3をインストールしてzshにpython3をデフォルトで設定します。
-
-下記のコマンドでhomebrewをインストールします。
+## homebrew
+マック(Mac)で一番重要なパッケージ管理者のhomebrewを下記のコマンドでインストールします。
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -40,6 +38,10 @@ code ~/.zshrc
 ```bash
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ```
+
+
+## python3
+マック(Mac)には基本的python2がインストールされています。開発する時必要なpython3をインストールしてzshにpython3をデフォルトで設定します。
 
 zsh(iTerm)を再起動して下記のコマンドでpython3をインストールします。
 

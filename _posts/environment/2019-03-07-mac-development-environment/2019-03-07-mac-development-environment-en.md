@@ -21,10 +21,8 @@ this blog is a series. if you want to know other development environment, see ot
 - [Development Environment on Mac(3) - for development]({{site.url}}/{{page.categories}}/mac-development-environment/){:target="_blank"}
 
 
-## python3
-Mac has basically python2. in here, I'll introduce how to install python3 and configure python3 to zsh default.
-
-execute the command below to install homebrew.
+## homebrew
+execute the command below to install homebrew which is the package manager in Mac.
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -41,6 +39,9 @@ add the content below to the bottom of the configuration file.
 ```bash
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ```
+
+## python3
+Mac has basically python2. in here, I'll introduce how to install python3 and configure python3 to zsh default.
 
 open zsh(iTerm) and execute the command below to install python3.
 
