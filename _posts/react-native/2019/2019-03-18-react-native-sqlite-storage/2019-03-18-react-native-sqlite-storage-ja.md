@@ -93,72 +93,65 @@ podを使っている方は手動でライブラリを連結することをお�
 iOSですでに作ったsqlite DBを使えたい時、下記の手続きをする必要があります。
 
 1. `ios/[project name]/www`のフォルダを作って持っているsqlite DBをコピーします。
-
-![react-native-sqlite-storage wwwフォルダ生成やファイルコピー](/assets/images/category/react-native/2019/react-native-sqlite-storage/www_folder.png)
+  ![react-native-sqlite-storage wwwフォルダ生成やファイルコピー](/assets/images/category/react-native/2019/react-native-sqlite-storage/www_folder.png)
 
 1. `[project name].xcodeproj`または`[project name].xcworkspace`ファイルを実行してxcodeを実行します。
 
 1. 左上の`[project name]`の下にある`[project name]`フォルダを右クリックして、`Add Files to [project name]`を選択します。
-
-![react-native-sqlite-storage xcode에 DB 파일 추가](/assets/images/category/react-native/2019/react-native-sqlite-storage/add_file_to.png)
+  ![react-native-sqlite-storage xcodeにDBファイル追加](/assets/images/category/react-native/2019/react-native-sqlite-storage/add_file_for_ios.png)
 
 1. ファイル選択ダイアローグが表示されたら`(1)`で作った`www`フォルダを選択して`Create folder references`を選択した後`Add`のボタンを押して追加します。
-
-![react-native-sqlite-storage xcode에 DB 파일 추가](/assets/images/category/react-native/2019/react-native-sqlite-storage/create_folder_references.png)
+  ![react-native-sqlite-storage xcode에 DB 파일 추가](/assets/images/category/react-native/2019/react-native-sqlite-storage/create_folder_references.png)
 
 ### アンドロイド
 アンドロイドではすでに作ったsqlite DBを使うために下記の手続きをする必要があります。
 
-1. `android/settings.gradle`ファイルを開いて下記のように修正します。(react-native link react-native-sqlite-storageですでに修正された可能性があります。)
+1. `android/settings.gradle`ファイルを開いて下記のように修正します。
+  ```js
+  rootProject.name = 'react_native_sqlite_storage_exercise'
+  ...
+  include ':react-native-sqlite-storage'
+  project(':react-native-sqlite-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-storage/src/android')
+  ...
+  include ':app'
+  ```
 
-```js
-rootProject.name = 'react_native_sqlite_storage_exercise'
-...
-include ':react-native-sqlite-storage'
-project(':react-native-sqlite-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-storage/src/android')
-...
-include ':app'
-```
+1. `android/app/build.gradle`ファイルを開いて下記のように修正します。
+  ```js
+  ...
+  dependencies {
+      implementation fileTree(dir: "libs", include: ["*.jar"])
+      implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+      implementation "com.facebook.react:react-native:+"  // From node_modules
+    ...
+      implementation project(':react-native-sqlite-storage')
+  }
+  ...
+  ```
 
-1. `android/app/build.gradle`ファイルを開いて下記のように修正します。(react-native link react-native-sqlite-storageですでに修正された可能性があります。)
+1. ```MainApplication.java``` ファイルを開いて下記のように修正します。
+  ```java
+  ...
+  import org.pgsqlite.SQLitePluginPackage;
+  ...
+  public class MainApplication extends Application implements ReactApplication {
+    ...
 
-```js
-...
-dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"  // From node_modules
-	...
-    implementation project(':react-native-sqlite-storage')
-}
-...
-```
+    ...
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        ...
+        new SQLitePluginPackage(),
+        ...
+        new MainReactPackage()
+      );
+    }
+  }
+  ```
 
-1. ```MainApplication.java```ファイルを開いて下記のように修正します。(react-native link react-native-sqlite-storageですでに修正された可能性があります。)
-
-```java
-...
-import org.pgsqlite.SQLitePluginPackage;
-...
-public class MainApplication extends Application implements ReactApplication {
-	...
-
-	...
-	@Override
-	protected List<ReactPackage> getPackages() {
-		return Arrays.<ReactPackage>asList(
-			...
-			new SQLitePluginPackage(),
-			...
-			new MainReactPackage()
-		);
-	}
-}
-```
-
-1. `android/app/src/main/assets//www`フォルダを作ってすでに生成したsqlite DBをコピーします。
-
-![react-native-sqlite-storage android에 DBファイル追加](/assets/images/category/react-native/2019/react-native-sqlite-storage/www_folder_android.png)
+1. `android/app/src/main/assets/www`フォルダを作ってすでに生成したsqlite DBをコピーします。
+  ![react-native-sqlite-storage android에 DBファイル追加](/assets/images/category/react-native/2019/react-native-sqlite-storage/www_folder_android.png)
 
 
 ## DBを使う方法
@@ -254,6 +247,8 @@ export default class App extends React.Component<Props, State> {
 ```
 
 ## 完了
-これでreact-native-sqlite-storageライブラリを使ってsqlite DBを使う方法について説明しました。皆さんもDBを一緒に配布するアプリを作成する場合、sqliteを使うことを検討したらどうでしょうか？下記のリンクは上で説明した内容のソースのgitレポジトリ(repository)です。ソースが木になる方は下のリンクを参考してください。
+これでreact-native-sqlite-storageライブラリを使ってsqlite DBを使う方法について説明しました。皆さんもDBを一緒に配布するアプリを作成する場合、sqliteを使うことを検討したらどうでしょうか？
+
+下記のリンクは上で説明した内容のソースのgitレポジトリ(repository)です。ソースが木になる方は下のリンクを参考してください。
 
 - gitレポジトリ(repository): [react_native_sqlite_storage_exercise](){:rel="nofollow noreferrer" target="_blank"}
