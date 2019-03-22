@@ -23,7 +23,7 @@ RN(React Native)를 통해 벌써 3번째 앱을 제작했네요. 아래는 이�
 ## 일단 공부란?
 JLPT 일본어 단어를 레벨별로 공부할 수 있으며, 하루하루 공부할 수 있는 분량과 복습 기능으로 단어 암기를 도와주는 앱입니다.
 
-- 일단 공부 소개 페이지: [일단 공부]( https://dev-yakuza.github.io/app/ildangongbu/){:target="_blank"}
+- 일단 공부 소개 페이지: [일단 공부](https://dev-yakuza.github.io/app/ildangongbu/){:target="_blank"}
 
 아래는 앱을 다운로드 받을 수 있는 링크입니다.
 
