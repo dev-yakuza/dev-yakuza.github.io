@@ -2,41 +2,42 @@
 layout: 'post'
 permalink: '/kumoncho/update-review/'
 paginate_path: '/kumoncho/:num/update-review/'
-lang: 'ko'
+lang: 'en'
 categories: 'kumoncho'
 comments: true
 
-title: 'Kumoncho 업데이트 후기(RN, React Native)'
-description: 'RN(React Native)를 사용하여 쿠몬쵸(Kumoncho)라는 그림 동화책 앱을 제작하여 배포하였습니다. 배포후 어떤 업데이트를 했는지에 대해서 정리해보았습니다.'
+title: 'Kumoncho Update Reviews(RN, React Native)'
+description: I've developed and released the fairy tale picture book called Kumoncho by using RN(React Native). in this blog, I will talk about what I updated after the release.
 image: '/assets/images/category/kumoncho/background.png'
 ---
 
 ## 개요
-RN(React Native)를 사용하여 Kumoncho(쿠몬쵸)라는 앱을 제작하고 배포하였습니다. 이 블로그에서는 앱 배포후 Kumoncho 앱에 어떤 업데이트를 진행하였는지에 대해서 이야기하려고 합니다. Kumoncho 앱을 제작하면서 겪은 이야기는 아래의 앱 개발기 블로그를 참고하시기 바랍니다.
+I've made and released the fairy tale picture book called Kumoncho by using RN(React Native). in here, I will introduce what I updated the app after releasing it. if you want to know how I made the app, check the link below!
 
-- [Kumoncho 앱 개발기(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}
+- [Kumoncho development journal(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}
 
-본격적인 이야기에 앞서 Kumoncho를 간단하게 다시 한번 소개하고 진행하도록 하겠습니다.
+before starting it, let's see what Kumoncho is.
 
 
-## 쿠몬쵸(Kumoncho)란?
-쿠몬쵸(Kumoncho)는 구름의 나라 이카루스 왕자와 그의 구름 친구 쿠몬쵸의 우정과 용기를 그린 어린이 그림 동화책 앱입니다.
+## What is Kumoncho?
+Kumoncho is the picture fairy tale book about the friendship and courage between prince Ikaros of the cloud kingdom and his cloud friend, Kumoncho.
 
-- Kumoncho 소개 페이지: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/ko/){:target="_blank"}
+- Kumoncho landing page: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/ko/){:target="_blank"}
 
-아래는 앱을 다운로드 받을 수 있는 링크입니다.
+you can download to click the link below.
 
 <div class="download_link_container">
     <a class="download_link_ios" href="https://itunes.apple.com/app/kumoncho/id1450902241" target="_blank">
-        <img src="/assets/images/apple_download.png" alt="어린이 그림 동화책 앱 쿠몬쵸 iOS 다운로드"/>
+        <img src="/assets/images/apple_download.png" alt="children's picture fairy tale book, Kumoncho iOS download"/>
     </a>
     <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.kumoncho" target="_blank">
-        <img src="/assets/images/google play_download.png" alt="어린이 그림 동화책 앱 쿠몬쵸 안드로이드 다운로드"/>
+        <img src="/assets/images/google play_download.png" alt="children's picture fairy tale book, Kumoncho Android download"/>
     </a>
 </div>
 
 
-## 문제점
+## Problems
+already I've mentioned the problems in the development journal.
 이전 블로그에서도 이야기했지만, 이번 프로젝트는 UX면에서 실패한 프로젝트였습니다. 아래에 링크를 통해 앱 개발기를 확인할 수 있습니다.
 
 - [Kumoncho 앱 개발기(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}
