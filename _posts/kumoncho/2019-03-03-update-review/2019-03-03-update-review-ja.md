@@ -22,7 +22,7 @@ RN(React Native)を使ってKumoncho(くもんちょ)と言うアプリを開発
 ## くもんちょ(Kumoncho)とは?
 くもんちょ(Kumoncho)は雲の国のイカロス王子と彼の雲の友達、くもんちょの友情と容器に関する子供向け絵本アプリです。
 
-- Kumoncho紹介ページ: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/ko/){:target="_blank"}
+- Kumoncho紹介ページ: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/){:target="_blank"}
 
 下記はアプリのダウンロードリンクです。
 
@@ -160,7 +160,7 @@ Kumonchoは子供向け絵本```アプリ```です。シダがって、一般的
 
 各ページにアニメーションを追加しました。それでもっと面白く絵本を見ることができましたのでぜひ一回見てください。アニメーションは`lottie`を使いました。これに関するブログが下記になります。
 
-- [アフターエフェクト(AEF)]({{site.url}}//react-native/react-native-lottie/){:target="_blank"}
+- [アフターエフェクト(AEF)]({{site.url}}/react-native/react-native-lottie/){:target="_blank"}
 
 
 ### ページ移動

@@ -161,7 +161,7 @@ Kumoncho는 어린이 그림 동화책 ```앱```입니다. 따라서 일반 종�
 
 각 페이지별 애니메이션을 추가하였으며, 이로인해 좀 더 재밌게 그림 동화책을 볼수 있게 되었습니다. 애니메이션은 `lottie`를 사용했으며, 이에 관한 블로그는 아래 링크를 통해 확인할 수 있습니다.
 
-- [애프터이펙트(AEF) 사용]({{site.url}}//react-native/react-native-lottie/){:target="_blank"}
+- [애프터이펙트(AEF) 사용]({{site.url}}/react-native/react-native-lottie/){:target="_blank"}
 
 
 ### 페이지 전환

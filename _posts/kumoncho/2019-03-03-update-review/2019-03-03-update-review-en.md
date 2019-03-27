@@ -22,7 +22,7 @@ before starting it, let's see what Kumoncho is.
 ## What is Kumoncho?
 Kumoncho is the picture fairy tale book about the friendship and courage between prince Ikaros of the cloud kingdom and his cloud friend, Kumoncho.
 
-- Kumoncho landing page: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/ko/){:target="_blank"}
+- Kumoncho landing page: [Kumoncho]( https://dev-yakuza.github.io/app/kumoncho/en/){:target="_blank"}
 
 you can download to click the link below.
 
@@ -37,36 +37,35 @@ you can download to click the link below.
 
 
 ## Problems
-already I've mentioned the problems in the development journal.
-이전 블로그에서도 이야기했지만, 이번 프로젝트는 UX면에서 실패한 프로젝트였습니다. 아래에 링크를 통해 앱 개발기를 확인할 수 있습니다.
+already I've mentioned the problems in the development journal, this project was totally failed on UX. you can see the details about it via the link below.
 
-- [Kumoncho 앱 개발기(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}
+- [Kumoncho development journal(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}
 
-그래서 이번 업데이트를 통해 최대한 UX를 좋게 만드는 부분에 집중하였습니다. 또한 개발시 태블릿을 고려하지 않은 설계로 인해, 태블릿 지원에 실패하였습니다. 그래서 리팩토링을 통해 앱이 태블릿을 지원할 수 있도록 수정하였습니다.
+so in this update, I focused to make UX better. and when I've developed this app, I didn't consider to support the tablet, but my partner wanted to make the app support the tablet, and when I tried to make the app support the tablet, it was failed. so I've done refactoring the app to support the tablet.
 
-마지막으로 작가 친구는 현재 마이크로 인터랙션(Micro-interaction) 전문가를 꿈꾸고 있습니다. 현업에서도 사용할 수 있고, 이번 앱을 좀 더 효과적으로 표현할 수 있도록 애니메이션을 추가하였습니다.
-
-
-## 앱 업데이트
-Kumoncho v2는 아래에 기능들을 추가하였습니다.
-
-1. 태블릿 지원
-1. 애니메이션
-1. 페이지 전환
-1. 튜토리얼
-1. 상태바(StatusBar)
-
-하나하나 자세히 살펴보겠습니다.
+lastly, my writer friend wants to be a Micro-interaction expert. so we've added animations to the app, that can be used in the work.
 
 
-### 태블릿 지원
-RN(React Native)는 크로스 플랫폼(Cross Platform)을 지원하므로, 스마트폰과 태블릿을 지원하는 Universal App을 간단하게 제작할 수 있습니다. 물론 화면 사이즈가 다양하므로 그에 맞게 코딩을 해야합니다. RN(React Native)는 기본적으로 ```flexbox```를 사용함으로 간단하게 responsive 앱을 제작할 수 있습니다.
+## App Update
+Kumoncho v2 updates include the list below.
 
-하지만 Kumoncho는 어린이 그림 동화책 앱입니다. 따라서 전체 그림을 다양한 레이어(Layer)로 나누고 그 안에 이미지 위치를 고정하여 표시하고 있습니다. 처음부터 태블릿을 생각하지 않고 설계하여 간단하게 반응형 앱으로 전환할 수 없었습니다.
+1. support the tablet
+1. animation
+1. the feature that change the page.
+1. tutorial
+1. StatusBar
 
-![어린이 그림 동화책 앱 Kumoncho 레이어](/assets/images/category/kumoncho/update-review/kumoncho_layer.png)
+let's see one by one.
 
-Kumoncho는 위에서 보는 것과 같이, 배경 레이어, 메인 이미지 레이어, 주변 이미지 레이어, 설명(Description) 레이어로 나누어 관리하고 있습니다. 이렇게 나눈 레이어를 ```object``` 형식으로 각 페이지를 관리하고 있으며 React 컴포넌트를 활용해 간단하게 구현하여 사용하고 있었습니다.
+
+### Support The Tablet
+RN(React Native) supports the cross-platform, so we can make universal apps that support the smartphone and the tablet. of course, we need to code by each screen size. RN(React Native) uses basically ```flexbox```, so we can make the responsive app simply.
+
+however, Kumoncho is the children fairy tale picture book and has various layers that have fixed images. I didn't consider the tablet so, I couldn't make the app support the tablet easily beacause of the fixed images.
+
+![children fairy tale picture book Kumoncho layers](/assets/images/category/kumoncho/update-review/kumoncho_layer.png)
+
+Kumoncho has the background layer, main image layer, other images layer and description layer like above. I manage these layers by ```object``` and implement these by using React components.
 
 ```js
 {
@@ -94,7 +93,7 @@ Kumoncho는 위에서 보는 것과 같이, 배경 레이어, 메인 이미지 �
 },
 ```
 
-위에 보이는 ```object```는 실제로 사용하고 있는 object의 일부입니다. 보시는 바와같이 tablet과 관련된 어떤 설정도 존재하지 않고 있습니다. 처음에는 React 컴포넌트 부분에서 스마트폰인지 태블릿인지 구별하여 스타일을 적용하려고 애썼지만, 근본적인 문제가 해결이 되지 않아 결국 ```object``` 부분은 리팩토링(재작성)하게 되었습니다.
+above is the part of the ```object``` that I used. as you can see, there are no options for the tablets. when I was doing refactoring, I tried to modify React components to distinguish smartphone and tablet. but that was not the fundamental solution, so I've done refactoring ```object```.
 
 ```js
 {
@@ -150,61 +149,61 @@ Kumoncho는 위에서 보는 것과 같이, 배경 레이어, 메인 이미지 �
 },
 ```
 
-이렇게 레이어를 데이터(애니메이션)와 이미지 등을 지원할 수 있게 제작하였으며, 스타일을 스마트폰과 태블릿을 나누어 관리하게 만들었습니다. 또한 이전에는 특정 스타일(width 또는 color 등)만 지원하였지만, 이번 리팩토링에서는 어떤 스타일도 지원 가능하도록 수정하였습니다. 이로써 스마트폰과 상관없이 태블릿만 집중하여 개발할 수 있게 되었습니다.
+the layer can be the data(animation) or the image, and the style supports the smartphone and the tablet separately. also, the before style supported only the specific style(width or color, etc), but now the style can support everything. now I can focus to develop the app for the smartphone and the tablet separately.
 
 
-### 애니메이션
-Kumoncho는 어린이 그림 동화책 ```앱```입니다. 따라서 일반 종이책에서는 보여줄 수 없는 기능들을 제공하는게 가능합니다. 그중 하나가 애니메이션 기능으로, 유저(어린이)가 좀더 책을 재미있게 볼 수 있도록, 마이크로 인터랙선을 집어 넣었습니다.
-
-<div class="half_image_container">
-    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_animation.gif" alt="어린이 동화책 쿠몬쵸 애니메이션">
-</div>
-
-각 페이지별 애니메이션을 추가하였으며, 이로인해 좀 더 재밌게 그림 동화책을 볼수 있게 되었습니다. 애니메이션은 `lottie`를 사용했으며, 이에 관한 블로그는 아래 링크를 통해 확인할 수 있습니다.
-
-- [애프터이펙트(AEF) 사용]({{site.url}}//react-native/react-native-lottie/){:target="_blank"}
-
-
-### 페이지 전환
-이전 블로그([Kumoncho 앱 개발기(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"})에서도 설명했지만, 이번 프로젝트는 UX 부분에서 실패작이였습니다. 열심히 책을 읽다고 앱을 종료하면, 다시 처음부터 책을 읽어야하는 문제가 있었습니다. 이번 업데이트를 통해 이 부분을 해결하고자 하였으며, 페이지 전환 기능을 추가하게 되었습니다.
+### Animation
+Kumoncho is the children fairy tale picture book ```app```, it can provide some features that the paper book can't provide. one of them is the animation feature. I've added the animation that users(children) can be interested in the app more.
 
 <div class="half_image_container">
-    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_page_change.gif" alt="어린이 동화책 쿠몬쵸 스크롤">
+    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_animation.gif" alt="children fairy tale picture book Kumoncho animation">
 </div>
 
-화면을 더블 터치하면, 페이지 리스트가 보이는 화면이 나오고 그중에 원하는 페이지를 선택하면 해당 페이지로 이동하는 기능을 추가하였습니다.
+I've added the animations to each page, so you can see the book more interesting. I use `lottie` to implement the animation. if you want to know how to make it, see the link below.
+
+- [use After Effects(AEF)]({{site.url}}/react-native/react-native-lottie/){:target="_blank"}
 
 
-### 튜토리얼
-현재는 화면 스와이프, 화면 더블 터치 등으로 페이지 이동을 하고 있습니다. 이런 부분을 처음 사용하는 사용자는 잘 이해하지 못할 거 같아, 앱을 처음 실행하면 튜토리얼 화면이 보이도록 추가하였습니다.
+### Change Pages
+as I've mentioned on the previous blog([Kumoncho development journal(RN, React Native)]({{site.url}}/kumoncho/development-journal/){:target="_blank"}), this project was failed on UX. if users(children) read the book and quit the app in the middle of the book, they should re-read from first. so I've added the page change feature to solve this problem.
 
 <div class="half_image_container">
-    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_tutorial.png" alt="어린이 동화책 쿠몬쵸 튜토리얼">
+    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_page_change.gif" alt="children fairy tale book kumoncho scroll">
+</div>
+
+if users(children) double touched the screen, the page list is shown up and if they select the page, the page is changed.
+
+
+### Tutorial
+the current app has two features, double touch and swipe the screen. some users can't understand them easily, so when the app is executed for the first time, I've made the tutorial show up.
+
+<div class="half_image_container">
+    <img class="half_image" src="/assets/images/category/kumoncho/update-review/kumoncho_tutorial.png" alt="children fairy tale picture book, Kumoncho tutorial">
 </div>
 
 
-### 상태바(StatusBar)
-iOS을 중심으로 개발을 하다보니, 안드로이드를 크게 신경쓰지 못했습니다. iOS는 상태바(StatusBar)가 투명하여 큰 문제가 없었습니다. 앱을 배포하고 나서 안드로이드쪽에서 상태바(StatusBar)를 투명하게 하면 좋겠다는 의견이 있었습니다. 그래서 안드로이드에서 상태바를 투명하게 만들고, Splash가 표시될 때는 상태바를 숨기는 작업을 하였습니다. 아래에 링크는 이에 관한 블로그입니다.
+### StatusBar
+As I was developing around iOS, I didn't really care about Android. iOS Status Bar is transparent so it's not a problem. after the app was released, I got the feedback that wants to make the status bar transparent on Android. so I've made the transparent status bar on Android and hidden the status bar on the Splash screen. if you want to know how to control the status bar on Android, see the link below.
 
-- [StatusBar 다루기]({{site.url}}/react-native/react-native-status-bar/){:target="_blank"}
-
-
-## 문제점
-역시 안드로이드에서 문제가 발생하네요. 시뮬레이터에서는 별 문제가 없었으나 실제 디바이스에서 테스트를 하니 `OOM(Out Of Memory)`가 발생하면서 앱이 crash나는 현상이 발생하였습니다. 조사해보니 `lottie`의 애니메이션이 문제였습니다.
-
-지금 사용하고 있는 애니메이션은 png 이미지 파일을 쓰고 있습니다. 이 png 이미지를 다루는 방식이 iOS와 안드로이드가 다른 것 같습니다. 현재 png 이미지를 svg로 변환하여 적용해보니, 문제없이 진행되는 것을 확인할 수 있었습니다.
-
-혹시 여러분도 `lottie`를 사용하여 애니메이션을 적용할 예정이라면, png 이미지를 사용하지 않는 것을 추천합니다.
+- [Control StatusBar]({{site.url}}/react-native/react-native-status-bar/){:target="_blank"}
 
 
-## 결론
-이번 업데이트를 통해 완전 실패했던 UX부분을 조금은 좋게 만들었다고 생각합니다. 또한 애니메이션을 통해 좀 더 재밌게 동화를 즐길 수 있도록 했습니다. 이번 기회를 통해 만든 앱을 베이스로 다음 그림 동화책 앱을 만들 예정입니다. 좀 더 추가했으면 좋겠다는 의견이 있으면 아래 댓글을 남겨주세요!
+## Problem
+the problem always comes from Android. the simulator didn't have any problem, but when I tested the app on Android device, I got `OOM(Out Of Memory)` error and the app was crashed. I've debugged and found the cause of the problem was `lottie` animation.
+
+I used the animation with PNG images. I think `lottie` handles them on iOS and Android differently. now, I changed the image from PNG to SVG and the problem is gone.
+
+if you use `lottie` for the animation, I recommend not to use PNG image type.
+
+
+## Conclusion
+I think I make the app UX better than before via this update. also, users(children) can enjoy the app more, because of the animation. now I'm preparing the next fairy tale book app based on this project. if you have any idea or opinion about this app, please leave comments on below.
 
 <div class="download_link_container">
     <a class="download_link_ios" href="https://itunes.apple.com/app/kumoncho/id1450902241" target="_blank">
-        <img src="/assets/images/apple_download.png" alt="어린이 그림 동화책 앱 쿠몬쵸 iOS 다운로드"/>
+        <img src="/assets/images/apple_download.png" alt="children's picture fairy tale book, Kumoncho iOS download"/>
     </a>
     <a class="download_link_android" href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.kumoncho" target="_blank">
-        <img src="/assets/images/google play_download.png" alt="어린이 그림 동화책 앱 쿠몬쵸 안드로이드 다운로드"/>
+        <img src="/assets/images/google play_download.png" alt="children's picture fairy tale book, Kumoncho Android download"/>
     </a>
 </div>
