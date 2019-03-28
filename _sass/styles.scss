@@ -453,6 +453,9 @@ ul li:last-child {
 }
 .download_link_container img {
   width: 150px;
+  @media (max-width: 768px) {
+    width: 120px;
+  }
 }
 .download_link_ios {
   margin-right: 5%;
