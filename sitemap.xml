@@ -32,6 +32,11 @@ layout: null
   {% endfor %}
 
   <url>
+    <loc>https://dev-yakuza.github.io/app/list/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dev-yakuza.github.io/app/blaboo/ko/</loc>
     <lastmod>2019-03-20</lastmod>
     <priority>0.5</priority>
@@ -91,12 +96,23 @@ layout: null
   {% endfor %}
 
   <url>
+    <loc>https://dev-yakuza.github.io/app/list/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dev-yakuza.github.io/app/blaboo/ko/</loc>
     <lastmod>2019-03-20</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dev-yakuza.github.io/app/kumoncho/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/list/en/</loc>
     <lastmod>2019-03-20</lastmod>
     <priority>0.5</priority>
   </url>
@@ -107,6 +123,12 @@ layout: null
   </url>
   <url>
     <loc>https://dev-yakuza.github.io/app/kumoncho/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/list/</loc>
     <lastmod>2019-03-20</lastmod>
     <priority>0.5</priority>
   </url>
