@@ -37,6 +37,16 @@ defaultConfig {
 }
 ...
 def enableSeparateBuildPerCPUArchitecture = true
+
+def enableProguardInReleaseBuilds = true
+...
+buildTypes {
+    release {
+        shrinkResources enableProguardInReleaseBuilds
+        ...
+    }
+}
+..
 ```
 
 and then, execute below command to build RN(React Native) Android App.
@@ -44,8 +54,43 @@ and then, execute below command to build RN(React Native) Android App.
 ```bash
 # react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle
 # cd android
-./gradlew assembleRelease
+# ./gradlew assembleRelease
+./gradlew app:assembleRelease --stacktrace
 ```
+
+in here, I added `--stacktrace` option, because sometimes build errors occurs when `enableProguardInReleaseBuilds = true` is set.
+
+```
+...
+Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter { void writePong(okio.ByteString); }', but not the descriptor class 'okio.ByteString'
+Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter { void writeClose(int,okio.ByteString); }', but not the descriptor class 'okio.ByteString'
+Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter { void writeControlFrame(int,okio.ByteString); }', but not the descriptor class 'okio.ByteString'
+Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter$FrameSink { void write(okio.Buffer,long); }', but not the descriptor class 'okio.Buffer'
+Note: the configuration keeps the entry point 'okio.AsyncTimeout { void scheduleTimeout(okio.AsyncTimeout,long,boolean); }', but not the descriptor class 'okio.AsyncTimeout'
+Note: the configuration keeps the entry point 'okio.AsyncTimeout { boolean cancelScheduledTimeout(okio.AsyncTimeout); }', but not the descriptor class 'okio.AsyncTimeout'
+Note: the configuration keeps the entry point 'okio.AsyncTimeout { okio.Sink sink(okio.Sink); }', but not the descriptor class 'okio.Sink'
+Note: the configuration keeps the entry point 'okio.AsyncTimeout { okio.Source source(okio.Source); }', but not the descriptor class 'okio.Source'
+Note: the configuration keeps the entry point 'okio.ForwardingSink { ForwardingSink(okio.Sink); }', but not the descriptor class 'okio.Sink'
+Note: the configuration keeps the entry point 'okio.ForwardingSink { void write(okio.Buffer,long); }', but not the descriptor class 'okio.Buffer'
+Note: the configuration keeps the entry point 'okio.ForwardingSource { ForwardingSource(okio.Source); }', but not the descriptor class 'okio.Source'
+Note: the configuration keeps the entry point 'okio.ForwardingSource { long read(okio.Buffer,long); }', but not the descriptor class 'okio.Buffer'
+...
+* What went wrong:
+Execution failed for task ':app:transformClassesAndResourcesWithProguardForRelease'.
+> Job failed, see logs for details
+...
+```
+
+if you see the build error like above, modify `android/app/proguard-rules.pro` file like below.
+
+```
+# Note: the configuration keeps the entry point 'okio.AsyncTimeout { void scheduleTimeout(okio.AsyncTimeout,long,boolean); }', but not the descriptor class 'okio.AsyncTimeou
+-dontwarn okio.**
+# Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter$FrameSink { void write(okio.Buffer,long); }', but not the descriptor class 'okio.Buffer'
+-dontwarn okhttp3.**
+```
+
+you could get more build errors depends on what libraries you use. if you get more errors, check the error message and modify `android/app/proguard-rules.pro`.
 
 you can find build files on below path.
 
