@@ -17,6 +17,13 @@ image: '/assets/images/category/react-native/react-native-admob.jpg'
 
 グーグルのアドセンス(google adsense)とアドモブ(google admob)の違いはアドセンスはウェブサイト用のプラットホームでアドモブはスマホ用のフラットフォームのことです。私たちはブログ用の広告ですでにアドセンス(google adsense)を使ってます。ウェブへアドセンス(google adsense)を使う方法が気になる方は[google service]({{site.url}}/jekyll/google-service/)を確認してください。
 
+
+## 案内
+現在、私は`react-native-admob`を使ってないです。`react-native-firebase`でグーグルアドモブ(Google Admobe)を使っています。したがって、このブログポストは最新情報が含まれてない可能性があります。このブログではアドモブを登録する方法だけ参考して、下記のリンクで`react-native-firebase`を使うことをお勧めします。
+
+- [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"}
+
+
 ## ライブラリインストール
 グーグルのアドモブ(google admob)をRN(react native)へ使うためには[react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" target="_blank" }ライブラリをインストールする必要があります。
 

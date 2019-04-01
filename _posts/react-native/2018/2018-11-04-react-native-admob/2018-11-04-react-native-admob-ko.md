@@ -17,6 +17,11 @@ image: '/assets/images/category/react-native/react-native-admob.jpg'
 
 구글의 애드센스(google adsense)와 애드몹(google admob)의 차이점은 애드센스는 웹사이트용 플랫폼이고 애드몹은 스마트폰 어플리케이션용이라는 점입니다. 우리는 블로그용 광고로 이미 애드센스(google adsense)를 사용하고 있으며 웹사이트에 애드센스(Adsense)를 사용하는 방법에 대해서는 [google service]({{site.url}}/jekyll/google-service/)에서 확인하시기 바랍니다.
 
+## 안내
+현재 저는 `react-native-admob`을 사용하지 않고 `react-native-firebase`로 구글 애드몹을 사용하고 있습니다. 따라서 이 블로그 포스트는 최신 정보를 포함하지 않고 있을 가능성이 있습니다. 이 블로그에서는 애드몹 등록 방법만 참고하고, 아래에 링크를 통해 `react-native-firebase`를 사용하시기를 권장합니다.
+
+- [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"}
+
 ## 라이브러리 설치
 구글 애드몹(google admob)을 RN(react native)에서 사용하기 위해 [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" target="_blank" } 라이브러리를 설치합니다.
 

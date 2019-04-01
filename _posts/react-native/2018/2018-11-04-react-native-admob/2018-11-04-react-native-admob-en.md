@@ -17,6 +17,13 @@ google has the advertisement platforms those are Adsense([https://www.google.com
 
 the difference between Google Adsense and Admob is that Adsense is for the website platform and Admob is for the smartphone application. we already used Adsense on this blog website. if you want to know how to use Google Adsense to the website, see another blog([google service]({{site.url}}/jekyll/google-service/)).
 
+
+## Information
+currently, I don't use `react-native-admob`. I use `react-native-firebase` to implement Google Admob. so this blog post may not contain up-to-date. I recommend you just see how to register Google Admob in this blog, and use `react-native-firebase` via the link below.
+
+- [Firebase Admob]({{site.url}}/{{page.categories}}/react-native-firebase-admob/){:target="_blank"}
+
+
 ## install library
 install [react-native-admob](https://github.com/sbugert/react-native-admob){:rel="nofollow noreferrer" target="_blank" } library for using Google Admob at RN(react native).
 
@@ -71,7 +78,6 @@ create the app name and choose the platform of the app for using Google Admob. w
 ![completed to configure](/assets/images/category/react-native/react-native-admob/completed_configure.png)
 
 completed to register Google Admob. there are details about next step.
-구글 애드몹(Google admob) 등록이 완료되었습니다. 친절하게 하단에 다음 단계에 대한 설명이 잘 나와있습니다.
 
 1. copy ```App ID``` for setting react-native-admob
 1. we need to configure Ad Unit in Google Admob.
