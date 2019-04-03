@@ -1,0 +1,14 @@
+body {
+  font-family: 'Noto Sans JP', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.jumbotron .img-logo {
+  width: 80px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.jumbotron h1 {
+  margin-bottom: 24px;
+}
+.jumbotron p {
+  text-align: left;
+}
