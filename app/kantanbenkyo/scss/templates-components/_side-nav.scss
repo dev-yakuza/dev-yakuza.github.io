@@ -1,0 +1,39 @@
+//
+// Side Nav
+// --------------------------------------------------
+
+
+.side-nav {
+	position: fixed;
+	top: 45%;
+	right: 20px;
+	z-index: $zindex-navbar-fixed;
+
+	@media screen and (max-width: $screen-xs-320-min) {
+		display: none;
+	}
+
+	ul {
+
+		&.nav-side-nav {
+			@include unordered-list();
+
+			> li {
+				@include unordered-list-li($display: block, $padding: 8px 0);
+
+				> a {
+					@include unordered-list-a();
+					@include size(10px, 10px);
+					border-radius: 50%;
+					background: #e2e2e2;
+
+					&:hover,
+					&:focus {
+						background: darken(#e2e2e2, 20%);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

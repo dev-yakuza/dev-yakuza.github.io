@@ -1,0 +1,115 @@
+//
+// Footer
+// --------------------------------------------------
+
+
+.footer-section {
+	@include section-styles($ta: left, $padding: ($templates-global-padding * 3) 0);
+
+	@media screen and (max-width: $screen-md-800-min) {
+		text-align: center;
+	}
+
+	p {
+		font-size: 15px;
+	}
+}
+
+.col-footer {
+
+	@media screen and (max-width: $screen-md-800-min) {
+		&.col-padding {
+			padding-top: 		($templates-global-padding * 2);
+			padding-bottom: ($templates-global-padding * 2);
+		}
+	}
+
+	.fa {
+
+		&.fa-heart {
+			color: #fd487d;
+		}
+	}
+}
+
+.social-media-links {
+	@include unordered-list($margin: 0);
+
+	li {
+		@include unordered-list-li($padding: 0 3px);
+	}
+
+	a {
+		@include unordered-list-a();
+		@include size(40px, 40px);
+		border-radius: 50%;
+		background: transparent;
+		font-size: ($templates-font-base + 6);
+		color: $templates-white-color;
+		text-align: center;
+		line-height: 1.82857;
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			@include hover-style($color: $templates-white-color);
+		}
+
+		&.tw {
+			background: #53c3ee;
+
+			&:hover,
+			&:focus {
+				background: darken(#53c3ee, 15%);
+			}
+		}
+
+		&.fb {
+			background: #5975b1;
+
+			&:hover,
+			&:focus {
+				background: darken(#5975b1, 15%);
+			}
+		}
+
+		&.pn {
+			background: #d54e55;
+
+			&:hover,
+			&:focus {
+				background: darken(#d54e55, 15%);
+			}
+		}
+	}
+}
+
+// Share button
+.addthis_default_style {
+	@include unordered-list($ta: left, $margin: 0);
+
+	@media screen and (max-width: $screen-md-800-min) {
+		text-align: center;
+	}
+
+  li {
+  	@include unordered-list-li();
+
+  	&:first-child {
+  		margin-left: -2px;
+  	}
+  }
+
+  a {
+  	@include unordered-list-a();
+
+    &.addthis_button_facebook_like {
+      position: relative;
+      top: -3px;
+    }
+
+    &.addthis_button_tweet {
+      width: 80px !important;
+    }
+  }
+}

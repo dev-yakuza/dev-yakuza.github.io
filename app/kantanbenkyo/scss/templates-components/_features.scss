@@ -1,0 +1,107 @@
+//
+// Features
+// --------------------------------------------------
+
+
+.features-section {
+	@include section-styles($back: $gray-lighter, $ta: left, $padding: ($templates-global-padding * 5) 0);
+
+  .row {
+
+    @media screen and (max-width: $screen-md-800-min) {
+      &.media-screen-800 {
+        padding-top:    ($templates-global-padding * 2);
+        padding-bottom: ($templates-global-padding * 4);
+      }
+    }
+  }
+
+	// Images showcase
+  .img-iPhone {
+  	position: relative;
+    @include center-block();
+    @include size(320px, auto);
+
+    &.margin-top {
+    	top: -40px;
+
+      @media screen and (max-width: $screen-md-800-min) {
+        top: 0;
+      }
+    }
+
+    &.margin-top-1 {
+      top: -80px;
+
+      @media screen and (max-width: $screen-md-800-min) {
+        top: 0;
+      }
+    }
+
+    @media screen and (max-width: $screen-md-800-min) {
+      &.margin-screen-800 {
+        margin-top: ($templates-global-padding * 2);
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-min) {
+      @include size(250px, auto);
+    }
+
+    @media screen and (max-width: $screen-xs-320-min) {
+      @include size(220px, auto);
+    }
+  }
+
+  // Custom button
+  .btn-danger-border {
+    background: transparent;
+    @include border-style($bw: 2px, $bc: $brand-danger);
+    color: $brand-danger;
+    padding-top:    8px !important;
+    padding-bottom: 8px !important;
+
+    &:hover,
+    &:focus {
+      background: $brand-danger;
+      color: $templates-white-color;
+    }
+  }
+
+  // Button app store
+  .btn-app-store {
+
+    .btn {
+
+      &.btn-lg {
+        padding: 0;
+      }
+
+      img {
+        @include center-block();
+        @include size(180px, auto);
+      }
+    }
+  }
+}
+
+.col-features {
+
+  @media screen and (max-width: $screen-md-800-min) {
+    @include center-block();
+    width: 70%;
+    text-align: center;
+  }
+
+  @media screen and (max-width: $screen-xs-640-min) {
+    width: 90%;
+  }
+
+	&.features-content {
+		padding-top: 100px;
+
+    @media screen and (max-width: $screen-md-800-min) {
+      padding-top: 0;
+    }
+	}
+}

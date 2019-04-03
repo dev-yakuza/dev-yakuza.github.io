@@ -1,0 +1,52 @@
+//
+// Sign In/Sign Up
+// --------------------------------------------------
+
+
+.sign-in-up-section {
+	padding: ($templates-global-padding * 5) 0;
+
+	.container {
+		max-width: 460px;
+	}
+
+	// Logo
+  .img-logo {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    @include size(250px, auto);
+    margin-bottom: ($templates-global-padding * 2);
+  }
+
+  .footer-copyright {
+  	color: $templates-white-color;
+
+  	.fa {
+
+  		&.fa-heart {
+  			color: #fd487d;
+  		}
+  	}
+  }
+}
+
+.sign-in-up-content {
+	background: $templates-white-color;
+	border-radius: $templates-border-radius;
+	margin-bottom: $templates-global-padding;
+	padding: ($templates-global-padding - 5);
+
+	.sign-in-up-form {
+		padding-top: 10px;
+	}
+
+	.sign-in-up-links {
+		position: relative;
+		margin-top: -30px;
+
+		.sep {
+			margin: 0 4px;
+		}
+	}
+}
