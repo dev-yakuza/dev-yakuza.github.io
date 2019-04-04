@@ -9,8 +9,21 @@ body {
 .jumbotron h1 {
   margin-bottom: 24px;
 }
-.jumbotron p, .col-services p {
+.jumbotron p,
+.col-services p {
   text-align: left;
+}
+.features-section .img-iPhone.margin-top {
+  top: 0;
+}
+.margin-bottom {
+  margin-bottom: 40px;
+}
+.margin-top-bottom {
+  margin: 32px 0px;
+}
+.email:before {
+  content: '\e75a';
 }
 @media (max-width: 433px) {
   .app-stores img {
