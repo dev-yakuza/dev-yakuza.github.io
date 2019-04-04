@@ -51,6 +51,11 @@ layout: null
     <lastmod>2019-03-20</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kantanbenkyo/</loc>
+    <lastmod>2019-04-04</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
 {% else %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -188,6 +193,12 @@ layout: null
   <url>
     <loc>https://dev-yakuza.github.io/app/ildangongbu/</loc>
     <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.github.io/app/kantanbenkyo/</loc>
+    <lastmod>2019-04-04</lastmod>
     <priority>0.5</priority>
   </url>
 
