@@ -9,6 +9,24 @@ body {
 .jumbotron h1 {
   margin-bottom: 24px;
 }
-.jumbotron p {
+.jumbotron p, .col-services p {
   text-align: left;
+}
+@media (max-width: 433px) {
+  .app-stores img {
+    height: 42px;
+  }
+  h1,
+  .h1 {
+    font-size: 36px;
+  }
+  .jumbotron p {
+    font-size: 16px;
+  }
+  .jumbotron .img-logo {
+    width: 60px;
+  }
+  .logo-title {
+    font-size: 14px;
+  }
 }
