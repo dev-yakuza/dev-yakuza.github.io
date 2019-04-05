@@ -1,6 +1,6 @@
 ---
 layout: 'category'
-permalink: '/app/kantanbenkyo/'
+permalink: '/kantanbenkyo/'
 lang: 'en'
 categories: 'service'
 is_main_category: true

@@ -1,6 +1,6 @@
 ---
 layout: 'posts'
-permalink: '/api/blaboo/posts.json'
+permalink: '/api/kantanbenkyo/posts.json'
 lang: 'ja'
-target: 'blaboo'
+target: 'kantanbenkyo'
 ---
