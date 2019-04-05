@@ -1,2 +1,0 @@
-    - Variable name: ANDROID_HOME
-    - Variable value: c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk

@@ -1,0 +1,199 @@
+<!DOCTYPE html> <html lang="ja"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="アンシブル&ララベル"/> <meta name="twitter:description" content="アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>アンシブル&ララベル - アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。</title> <meta name="description" content="アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/ansible-laravel/"/> <meta name="generator" content="Jekyll v3.7.4"/> <meta property="og:title" content="アンシブル&amp;ララベル"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="ja"/> <meta name="description" content="アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。"/> <meta property="og:description" content="アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。"/> <link rel="canonical" href="https://dev-yakuza.github.io/environment/ansible-laravel/"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/ansible-laravel/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="https://dev-yakuza.github.io/assets/images/category/environment/ansible-laravel.jpg"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2018-12-06T00:00:00+09:00"/> <script type="application/ld+json">
+{"description":"アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"@type":"BlogPosting","url":"https://dev-yakuza.github.io/environment/ansible-laravel/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"image":"https://dev-yakuza.github.io/assets/images/category/environment/ansible-laravel.jpg","headline":"アンシブル&amp;ララベル","dateModified":"2018-12-19T17:58:34+09:00","datePublished":"2018-12-06T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/environment/ansible-laravel/"},"@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7987914246691031",enable_page_level_ads:!0});</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet"/> <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/assets/main.css?v=20190405"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/feed.xml"/> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.github.io",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.github.io",
+      "logo": "https://dev-yakuza.github.io/assets/images/icon.png"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "position":1,"url": "https://dev-yakuza.github.io/environment/vagrant-install-and-usage/"},{
+          "@type":"ListItem",
+          "position":2,"url": "https://dev-yakuza.github.io/environment/install-ansible/"},{
+          "@type":"ListItem",
+          "position":3,"url": "https://dev-yakuza.github.io/environment/ansible-playbook/"},{
+          "@type":"ListItem",
+          "position":4,"url": "https://dev-yakuza.github.io/environment/ansible-docker/"},{
+          "@type":"ListItem",
+          "position":5,"url": "https://dev-yakuza.github.io/environment/ansible-laradock/"},{
+          "@type":"ListItem",
+          "position":6,"url": "https://dev-yakuza.github.io/environment/ansible-laravel/"},{
+          "@type":"ListItem",
+          "position":7,"url": "https://dev-yakuza.github.io/environment/ngrok/"},{
+          "@type":"ListItem",
+          "position":8,"url": "https://dev-yakuza.github.io/environment/mac-iterm-zsh/"},{
+          "@type":"ListItem",
+          "position":9,"url": "https://dev-yakuza.github.io/environment/mac-development-tools/"},{
+          "@type":"ListItem",
+          "position":10,"url": "https://dev-yakuza.github.io/environment/mac-development-environment/"}]
+    }
+  </script><link rel="stylesheet" href="/assets/highlight/railscasts.css"/> <script src="/assets/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();</script> </head> <body> <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <div class="container"> <a class="navbar-brand" href="/"> <img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a> <div class="navbar-menu-container"> <div class="collapse navbar-collapse"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/git/">git</a> <a class="dropdown-item" href="/environment/">開発環境</a> <a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a> <a class="dropdown-item" href="/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/laravel/">Laravel</a> <a class="dropdown-item" href="/react-native/">react-native</a> <a class="dropdown-item" href="/blaboo/">BlaBoo</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" href=" /app/list/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/contact/">Contact</a> </li> </ul> </div> <div class="btn-group-sm btn-translate-group dropdown"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-language" aria-hidden="true"></i> </button> <div class="dropdown-menu"> <a class="dropdown-item menu-ko" href="/ko/environment/ansible-laravel/">한국어</a> <a class="dropdown-item menu-en" href="/en/environment/ansible-laravel/">English</a> <a class="dropdown-item menu-ja" href="/environment/ansible-laravel/">日本語</a> </div> </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button> </div> <div class="collapse navbar-collapse" id="navbarResponsive"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/git/">git</a> <a class="dropdown-item" href="/environment/">開発環境</a> <a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a> <a class="dropdown-item" href="/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/laravel/">Laravel</a> <a class="dropdown-item" href="/react-native/">react-native</a> <a class="dropdown-item" href="/blaboo/">BlaBoo</a> </div> </li> <li class="nav-item"> <a class="nav-link" href="/contact/">Contact</a> </li> </ul> </div> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script> <header class="masthead" style="background-image: url('/assets/images/category/environment/ansible-laravel.jpg')"> <div class="overlay"></div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-heading"> <h1>アンシブル&ララベル</h1> <div class="heading-date"> <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-19 </div> <h2 class="subheading">アンシブル(Ansible)とLaradockで作った開発環境にララベル(Laravel)をインストールして開発環境を構成してみます。</h2> </div> </div> </div> </div> </header> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <nav aria-label="breadcrumb"> <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io"> <span itemprop="name">Home</span> </a> <meta itemprop="position" content="1"/> </li> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/environment"> <span itemprop="name">environment</span> </a> <meta itemprop="position" content="2"/> </li> <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/environment/ansible-laravel/"> <span itemprop="name">アンシブル&ララベル</span> </a> <meta itemprop="position" content="3"/> </li> </ol> </nav> </div> </div> <div class="row"> <article class="col-lg-8 col-md-10 mx-auto"> <h2 id="概要">概要</h2> <p>以前のブログでアンシブル(Ansible)を使ってLaradockをインストールしました。今回はララベル(Laravel)を開発するためララベル(Laravel)をインストールしてララベル(Laravel)プロジェクトを生成してみます。</p> <p>このブログは下記のブログのシリーズです。理解のため下記のブログを先見ることをお勧めします。</p> <ul> <li><a href="https://dev-yakuza.github.io/environment/vagrant-install-and-usage/" target="_blank">vagrantインストールや使い方</a></li> <li><a href="https://dev-yakuza.github.io/environment/install-ansible/" target="_blank">アンシブルインストール</a></li> <li><a href="https://dev-yakuza.github.io/environment/ansible-playbook/" target="_blank">アンシブルプレイブック</a></li> <li><a href="https://dev-yakuza.github.io/environment/ansible-docker/" target="_blank">アンシブル&amp;ドッカー</a></li> <li><a href="https://dev-yakuza.github.io/environment/ansible-laradock/" target="_blank">アンシブル&amp;Laradock</a></li> </ul> <h2 id="phpとcomposer設定">phpとcomposer設定</h2> <p>自分のローカルマシン(host system)にphpとcomposerがインストールされたらこの段階はスキップしてもいいです。ララベル(Laravel)プロジェクトを生成するためphpとcomposerを仮想マシン(guest system)にインストールする予定です。</p> <p>今まで作ったフォルダにphpとcomposerをインストールするアンシブルプレイブック(Ansible Playbook)の<code class="highlighter-rouge">role</code>を追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- ansible
+|    |-- init
+|    |    |-- tasks
+|    |    |    |-- main.yml
+|    |-- docker
+|    |    |-- tasks
+|    |    |    |-- main.yml
+|    |-- laradock
+|    |    |-- tasks
+|    |    |    |-- main.yml
+|    |-- php
+|    |    |-- tasks
+|    |    |    |-- main.yml
+|    |-- playbook.yml
+|-- Vagrantfile
+</code></pre></div></div> <p>アンシブルプレイブック(Ansible Playbook)ファイルにも新しく追加したphpの<code class="highlighter-rouge">role</code>を追加します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="pi">-</span> <span class="na">hosts</span><span class="pi">:</span> <span class="s">localhost</span>
+  <span class="na">connection</span><span class="pi">:</span> <span class="s">local</span>
+  <span class="na">roles</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">init</span>
+    <span class="pi">-</span> <span class="s">docker</span>
+    <span class="pi">-</span> <span class="s">laradock</span>
+    <span class="pi">-</span> <span class="s">php</span>
+</code></pre></div></div> <p>追加したアンシブルプレイブック(Ansible Playbook)の<code class="highlighter-rouge">role</code>ファイルである<code class="highlighter-rouge">php/tasks/main.yml</code>ファイルを下記のように修正します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Add php7.2 repo</span>
+  <span class="na">apt_repository</span><span class="pi">:</span>
+    <span class="na">repo</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ppa:ondrej/php'</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install php</span>
+  <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">apt</span><span class="pi">:</span>
+    <span class="na">pkg</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">php7.2</span>
+      <span class="pi">-</span> <span class="s">php7.2-mbstring</span>
+      <span class="pi">-</span> <span class="s">php7.2-xml</span>
+    <span class="na">state</span><span class="pi">:</span> <span class="s">present</span>
+    <span class="na">update_cache</span><span class="pi">:</span> <span class="s">yes</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">check composer</span>
+  <span class="na">stat</span><span class="pi">:</span> <span class="s">path=/usr/local/bin/composer</span>
+  <span class="na">register</span><span class="pi">:</span> <span class="s">composer_bin</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+
+<span class="pi">-</span> <span class="na">block</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">download composer</span>
+    <span class="na">get_url</span><span class="pi">:</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s">https://getcomposer.org/installer</span>
+      <span class="na">dest</span><span class="pi">:</span> <span class="s">/tmp/installer</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">install composer</span>
+    <span class="na">shell</span><span class="pi">:</span> <span class="s">cat /tmp/installer | php -- --install-dir=/usr/local/bin</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">rename composer.phar to composer</span>
+    <span class="na">shell</span><span class="pi">:</span> <span class="s">mv /usr/local/bin/composer.phar /usr/local/bin/composer</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">make composer executable</span>
+    <span class="na">file</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s">/usr/local/bin/composer</span>
+      <span class="na">mode</span><span class="pi">:</span> <span class="s">a+x</span>
+      <span class="na">state</span><span class="pi">:</span> <span class="s">file</span>
+
+  <span class="na">when</span><span class="pi">:</span> <span class="s">not composer_bin.stat.exists</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">stop apache2</span>
+  <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">shell</span><span class="pi">:</span> <span class="s">update-rc.d apache2 disable</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>追加した<code class="highlighter-rouge">role</code>の<code class="highlighter-rouge">task</code>を一つずつみてみます。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Add php7.2 repo</span>
+  <span class="na">apt_repository</span><span class="pi">:</span>
+    <span class="na">repo</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ppa:ondrej/php'</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>php 7.2をインストールするため<code class="highlighter-rouge">apt</code>へphp7.2のリポジトリ(repository)を追加します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install php</span>
+  <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">apt</span><span class="pi">:</span>
+    <span class="na">pkg</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">php7.2</span>
+      <span class="pi">-</span> <span class="s">php7.2-mbstring</span>
+      <span class="pi">-</span> <span class="s">php7.2-xml</span>
+    <span class="na">state</span><span class="pi">:</span> <span class="s">present</span>
+    <span class="na">update_cache</span><span class="pi">:</span> <span class="s">yes</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>php7.2とララベル(Laravel)インストールや実行に必要なphpモジュールをインストールします。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">check composer</span>
+  <span class="na">stat</span><span class="pi">:</span> <span class="s">path=/usr/local/bin/composer</span>
+  <span class="na">register</span><span class="pi">:</span> <span class="s">composer_bin</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>composerのインストールする前composerの実行ファイルが存在するかチェックしてその結果を<code class="highlighter-rouge">composer_bin</code>に保存します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">block</span><span class="pi">:</span>
+  <span class="s">...</span>
+  <span class="na">when</span><span class="pi">:</span> <span class="s">not composer_bin.stat.exists</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>色んな<code class="highlighter-rouge">task</code>をブロック(block)で囲みます。また、このブロックは私たちが上記で保存した<code class="highlighter-rouge">composer_bin</code>が存在しない場合のみで実行します。</p> <p>ブロック(block)中を一つずつみてみます。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">download composer</span>
+  <span class="na">get_url</span><span class="pi">:</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">https://getcomposer.org/installer</span>
+    <span class="na">dest</span><span class="pi">:</span> <span class="s">/tmp/installer</span>
+</code></pre></div></div> <p>composerインストールスクリプトを<code class="highlighter-rouge">/tmp/instller</code>ファイルにダウンロードします。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">install composer</span>
+    <span class="s">shell</span><span class="pi">:</span> <span class="s">cat /tmp/installer | php -- --install-dir=/usr/local/bin</span>
+</code></pre></div></div> <p>composerインストールスクリプトを使って<code class="highlighter-rouge">/usr/local/bin</code>にcomposerをインストールします。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">rename composer.phar to composer</span>
+  <span class="na">shell</span><span class="pi">:</span> <span class="s">mv /usr/local/bin/composer.phar /usr/local/bin/composer</span>
+</code></pre></div></div> <p>インストールされたcomposerファイルを(<code class="highlighter-rouge">composer.phar</code>)の名前を<code class="highlighter-rouge">composer</code>に変更します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">make composer executable</span>
+    <span class="s">file</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s">/usr/local/bin/composer</span>
+      <span class="na">mode</span><span class="pi">:</span> <span class="s">a+x</span>
+      <span class="na">state</span><span class="pi">:</span> <span class="s">file</span>
+</code></pre></div></div> <p>composerが実行ができるように権限を変更します。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">stop apache2</span>
+  <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">shell</span><span class="pi">:</span> <span class="s">update-rc.d apache2 disable</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">php</span>
+</code></pre></div></div> <p>phpをインストールした後、仮想マシン(guest system)を再起動すると<code class="highlighter-rouge">apache2</code>サーバが起動されて同じポート(port)を使ってるドッカー(Docker)が起動されない問題があります。<code class="highlighter-rouge">apache2</code>サーバが仮想マシン(guest syste)が再起動する時再起動されないように設定します。</p> <h2 id="phpとcomposerインストール">phpとcomposerインストール</h2> <p>上記で作ったアンシブルプレイブック(Ansible Playbook)の<code class="highlighter-rouge">role</code>を実行してphpとcomposerをインストールします。私たちはこの<code class="highlighter-rouge">role</code>だけ実行できるようにタグ(tag)を指定したのでタグ(tag)オプションを追加したアンシブルプレイブック(Ansible Playbook)コマンドを下記のように実行します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#vagrant ssh</span>
+<span class="nb">sudo </span>ansible-playbook /vagrant/ansible/playbook.yml <span class="nt">--tags</span> <span class="s1">'php'</span>
+</code></pre></div></div> <p>下にあるコマンドでインストールがうまくできたか確認します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#vagrant ssh</span>
+php <span class="nt">--version</span>
+composer <span class="nt">--version</span>
+</code></pre></div></div> <h2 id="ララベルプロジェクト生成">ララベルプロジェクト生成</h2> <p>下記のコマンドでララベル(Laravel)プロジェクトを生成します。既存のララベル(Laravel)プロジェクトを持ってる方はこの部分はスキップしてもいいです。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#vagrant ssh</span>
+<span class="nb">cd</span> /vagrant
+composer create-project laravel/laravel app
+</code></pre></div></div> <h2 id="ララベルプロジェクト設定">ララベルプロジェクト設定</h2> <p>私たちは以前のブログ(<a href="https://dev-yakuza.github.io/environment/ansible-laradock/" target="_blank">アンシブル&amp;Laradock</a>)でLaradockのインストール<code class="highlighter-rouge">role</code>を下記のように作成しました。</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">change project folder</span>
+  <span class="na">replace</span><span class="pi">:</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/vagrant/lib/laradock/.env</span>
+    <span class="na">regexp</span><span class="pi">:</span> <span class="s1">'</span><span class="s">APP_CODE_PATH_HOST=*.*'</span>
+    <span class="na">replace</span><span class="pi">:</span> <span class="s1">'</span><span class="s">APP_CODE_PATH_HOST=/vagrant/app'</span>
+  <span class="na">tags</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">replace</span>
+<span class="nn">...</span>
+</code></pre></div></div> <p>この部分でLaradockのworkspaceドッカー(Docker)が実行される時<code class="highlighter-rouge">/vagrant/appp</code>フォルダと同期化するように設定しました。したがって、私たちは新しプロジェクトを<code class="highlighter-rouge">/vagrant</code>フォルダに<code class="highlighter-rouge">/app</code>のフォルダ名で生成しました。皆さんが既存のララベル(Laravel)プロジェクトを持ってるだったら<code class="highlighter-rouge">/vagrant/appp</code>フォルダにコピーするか以前のブログで作ったLaradockの<code class="highlighter-rouge">role</code>中で上記の部分を皆さんのララベル(Laravel)プロジェクトフォルダで指定して使ってください。</p> <h2 id="ララベルプロジェクト確認">ララベルプロジェクト確認</h2> <p>また、localhostに接続したら下記のようにララベル(Laravel)の基本画面が見えます。</p> <p><img src="/assets/images/category/environment/ansible-laravel/laravel.png" alt="laravel first page"/></p> <p>ララベル(Laravel)設定がよく出来てない時は下記のように500エラー画面が出ます。</p> <p><img src="/assets/images/category/environment/ansible-laravel/laravel_error.png" alt="laravel 500 error page"/></p> <p>ララベル(Laravel)設定中で下記の部分を全て実行したか確認します。<code class="highlighter-rouge">composer create-project laravel/laravel app</code>コマンドでララベル(Laravel)プロジェクトを新しく生成し場合、下記の設定は自動で実行されます。</p> <p>ララベル(Laravel)プロジェクトに必要なライブラリはインストルしたか？</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+</code></pre></div></div> <p>ララベル(Laravel)の環境ファイルは生成したか？</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .env.example .env
+</code></pre></div></div> <p>ララベル(Laravel)のキーは生成したか？</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan key:generate
+</code></pre></div></div> <h2 id="phpmyadmin">phpmyadmin</h2> <p>データベースを触るためインストールした<code class="highlighter-rouge">phpmyadmin</code>に接続してみます。<code class="highlighter-rouge">localhost:8080</code>で接続したら<code class="highlighter-rouge">phpmyadmin</code>の画面が見えます。</p> <p><img src="/assets/images/category/environment/ansible-laravel/phpmyadmin_login.png" alt="phpmyadmin login"/></p> <p>何も設定してなかったら下の情報を入力して接続します。</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server: mysql
+username: root
+password: root
+</code></pre></div></div> <p>このように接続した後下記のような画面が見えます。</p> <p><img src="/assets/images/category/environment/ansible-laravel/phpmyadmin_change_password.png" alt="phpmyadmin change password"/></p> <p>画面の真ん中にある<code class="highlighter-rouge">Change password</code>を押してパスワードを変更します。</p> <p><img src="/assets/images/category/environment/ansible-laravel/phpmyadmin_new_password.png" alt="phpmyadmin new password"/></p> <p>上部にあるメニュー中で<code class="highlighter-rouge">Database</code>を押してララベル(Laravel)と連結するデータベースを生成します。</p> <p><img src="/assets/images/category/environment/ansible-laravel/phpmyadmin_new_database.png" alt="phpmyadmin new database"/></p> <h2 id="ララベルdb設定">ララベルDB設定</h2> <p>上記で<code class="highlighter-rouge">phpmyadmin</code>を使って作ったデータベース(Database)をララベル(Laravel)プロジェクトに連結する必要があります。ララベル(Laravel)プロジェクトの環境ファイルである<code class="highlighter-rouge">.env</code>を開いたら下のように内容を確認することができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nv">DB_CONNECTION</span><span class="o">=</span>mysql
+<span class="nv">DB_HOST</span><span class="o">=</span>127.0.0.1
+<span class="nv">DB_PORT</span><span class="o">=</span>3306
+<span class="nv">DB_DATABASE</span><span class="o">=</span>homestead
+<span class="nv">DB_USERNAME</span><span class="o">=</span>homestead
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>secret
+...
+</code></pre></div></div> <p>この部分を下記のように修正します。<code class="highlighter-rouge">DB_DATABASE</code>と<code class="highlighter-rouge">DB_PASSWORD</code>の部分は皆さんが設定した内容を入力します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nv">DB_CONNECTION</span><span class="o">=</span>mysql
+<span class="nv">DB_HOST</span><span class="o">=</span>mysql
+<span class="nv">DB_PORT</span><span class="o">=</span>3306
+<span class="nv">DB_DATABASE</span><span class="o">=</span>app
+<span class="nv">DB_USERNAME</span><span class="o">=</span>root
+<span class="nv">DB_PASSWORD</span><span class="o">=</span><span class="k">*******</span>
+...
+</code></pre></div></div> <p>このように修正したら下記のララベル(Laravel)コマンドでララベル(Laravel)が基本的提供してるユーザーテーブル(User Table)を生成してみます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># vagrant ssh</span>
+<span class="c"># sudo docker exec -it laradock_workspace_1 bash</span>
+php artisan migrate
+</code></pre></div></div> <p>ララベル(Laravel)が基本的提供してるユーザーテーブル(User Table)を使わない予定ならララベル(Laravel)コマンドを使って生成したテーブルを削除します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php artisan migrate:rollback
+</code></pre></div></div> <h2 id="完了">完了</h2> <p>vagrant、アンシブル(Ansible)、Laradockを使ってララベル(Laravel)開発環境を構築してみました。また、この開発環境構築を通じてアンシブル(Ansible)とドッカー(Docker)を少しみてみました。アンシブル(Ansible)とドッカー(Docker)を上手く使えばよく聞こえる<code class="highlighter-rouge">Devops</code>ができる開発者になれるんじゃないかなと思います。</p> <p>今後はこの<a href="https://dev-yakuza.github.io/environment/" target="_blank">開発環境</a>カテゴリには開発構築、ドッカー(Docker)、アンシブル(Ansible)と関係ある内容を追加する予定です。また、ララベル(Laravel)開発と関係あるブログは<a href="https://dev-yakuza.github.io/laravel/" target="_blank">ララベル</a>カテゴリに作成する予定なのでご参考してください。</p> <p>今まで作ったララベル(Laravel)開発環境を下記のレポジトリ(Repository)で確認できます。</p> <ul> <li><a href="https://github.com/dev-yakuza/laravel-devtool" rel="nofollow noreferrer" target="_blank">https://github.com/dev-yakuza/laravel-devtool</a></li> </ul> <h2 id="参考">参考</h2> <ul> <li><a href="https://laradock.io/documentation/" rel="nofollow noreferrer" target="_blank">https://laradock.io/documentation/</a></li> </ul> <div class="buy_me_a_coffee_container"> <style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; box-shadow: none !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-flex !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important; -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; margin: 0 auto !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a> </div> <div class="post-list-container"> <div class="header"> <div class="header-title">Posts</div> </div> <div class="body"> <div class="list-group"></div> </div> <div class="footer"> <ul class="pagination"> <li class="page-item page-item--previous"> <div class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </div> </li> <li class="page-item page-item--next"> <div class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </div> </li> </ul> </div> </div> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){$.get("/api/environment/posts.json",function(e){e.length>0&&($(".post-list-container").show(),e.forEach(function(e){var a=$(".post-list-container .body .list-group"),t=a.find(".page-"+e.page),i=e.url.indexOf(location.pathname)>=0?"active":"",s="";if(s+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+i+'">',s+='  <div class="d-flex w-100 justify-content-between">',s+='    <div class="mb-1">'+e.title+"</div>",s+="  </div>",s+='  <div class="body-text">'+e.description+"</div>",s+="</a>",t.length>0)t.addClass(i),t.append(s);else{var n="";n+='<div class="page page-'+e.page+" "+i+'">',n+=s,n+="</div>",a.append(n)}var p="";p+='<li class="page-item page-item--link '+i+'" data-page="'+e.page+'">',p+='  <div class="page-link" data-page="'+e.page+'">',p+=e.page,p+="  </div>",p+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+e.page+'"]').length&&$(".post-list-container .footer .page-item--next").before(p),"active"===i&&$("li[data-page="+e.page+"]").addClass(i),e.page>1&&$(".footer").css("display","flex")}))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")})});</script> </article> <div class="col-lg-8 col-md-10 mx-auto"> <hr/> <div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="https://dev-yakuza.github.io/environment/ansible-laravel/",this.page.identifier="https://dev-yakuza.github.io/environment/ansible-laravel/"};!function(){var t=document,e=t.createElement("script");e.src="https://https-dev-yakuza-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> </header> <hr> <footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div> <div class="col-lg-8 col-md-10 mx-auto"> <ul class="list-inline text-center"> <li class="list-inline-item"> <a href="https://twitter.com/intent/tweet?text=アンシブル&ララベル&url=https://dev-yakuza.github.io/environment/ansible-laravel/" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.github.io/environment/ansible-laravel/" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://dev-yakuza.github.io/feed.xml" rel="nofollow noreferrer" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i> </span> </a> </li> </ul> <p class="copyright text-muted">Copyright &copy; dev.yakuza@gmail.com 2019</p> </div> </div> </div> </footer> <script src="/assets/vendor/jquery/jquery.min.js"></script> <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script> <script src="/assets/scripts.js"></script> </body> </html>

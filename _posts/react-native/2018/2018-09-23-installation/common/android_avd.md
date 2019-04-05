@@ -1,5 +1,0 @@
-    - "x86 Images" tab
-    - Release name: Oreo
-    - API Level: 26
-    - ABI: x86_64
-    - Target: Android 8.0
