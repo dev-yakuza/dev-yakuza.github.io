@@ -1,0 +1,312 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="Open the app with the specific file"/> <meta name="twitter:description" content="this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc)."/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>Open the app with the specific file - this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc).</title> <meta name="description" content="this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc)."/> <meta property="og:url" content="https://dev-yakuza.github.io/en/react-native/open-file-with-app/"/> <meta name="generator" content="Jekyll v3.7.4"/> <meta property="og:title" content="Open the app with the specific file"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="en"/> <meta name="description" content="this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc)."/> <meta property="og:description" content="this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc)."/> <link rel="canonical" href="https://dev-yakuza.github.io/en/react-native/open-file-with-app/"/> <meta property="og:url" content="https://dev-yakuza.github.io/react-native/open-file-with-app/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="https://dev-yakuza.github.io/assets/images/category/react-native/2019/open-file-with-app/background.jpg"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2019-04-16T00:00:00+09:00"/> <script type="application/ld+json">
+{"description":"this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc).","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"@type":"BlogPosting","url":"https://dev-yakuza.github.io/react-native/open-file-with-app/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"image":"https://dev-yakuza.github.io/assets/images/category/react-native/2019/open-file-with-app/background.jpg","headline":"Open the app with the specific file","dateModified":"2019-04-19T14:30:44+09:00","datePublished":"2019-04-16T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/react-native/open-file-with-app/"},"@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7987914246691031",enable_page_level_ads:!0});</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/> <link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/en/assets/main.css?v=20190419"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/en/feed.xml"/> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.github.io",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.github.io",
+      "logo": "https://dev-yakuza.github.io/assets/images/icon.png"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "position":1,"url": "https://dev-yakuza.github.io/en/react-native/installation/"},{
+          "@type":"ListItem",
+          "position":2,"url": "https://dev-yakuza.github.io/en/react-native/typescript/"},{
+          "@type":"ListItem",
+          "position":3,"url": "https://dev-yakuza.github.io/en/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "position":4,"url": "https://dev-yakuza.github.io/en/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "position":5,"url": "https://dev-yakuza.github.io/en/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "position":6,"url": "https://dev-yakuza.github.io/en/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "position":7,"url": "https://dev-yakuza.github.io/en/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "position":8,"url": "https://dev-yakuza.github.io/en/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "position":9,"url": "https://dev-yakuza.github.io/en/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "position":10,"url": "https://dev-yakuza.github.io/en/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "position":11,"url": "https://dev-yakuza.github.io/en/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "position":12,"url": "https://dev-yakuza.github.io/en/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "position":13,"url": "https://dev-yakuza.github.io/en/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "position":14,"url": "https://dev-yakuza.github.io/en/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "position":15,"url": "https://dev-yakuza.github.io/en/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "position":16,"url": "https://dev-yakuza.github.io/en/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "position":17,"url": "https://dev-yakuza.github.io/en/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "position":18,"url": "https://dev-yakuza.github.io/en/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "position":19,"url": "https://dev-yakuza.github.io/en/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "position":20,"url": "https://dev-yakuza.github.io/en/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "position":21,"url": "https://dev-yakuza.github.io/en/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "position":22,"url": "https://dev-yakuza.github.io/en/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "position":23,"url": "https://dev-yakuza.github.io/en/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "position":24,"url": "https://dev-yakuza.github.io/en/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "position":25,"url": "https://dev-yakuza.github.io/en/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "position":26,"url": "https://dev-yakuza.github.io/en/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "position":27,"url": "https://dev-yakuza.github.io/en/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "position":28,"url": "https://dev-yakuza.github.io/en/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "position":29,"url": "https://dev-yakuza.github.io/en/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "position":30,"url": "https://dev-yakuza.github.io/en/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "position":31,"url": "https://dev-yakuza.github.io/en/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "position":32,"url": "https://dev-yakuza.github.io/en/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "position":33,"url": "https://dev-yakuza.github.io/en/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "position":34,"url": "https://dev-yakuza.github.io/en/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "position":35,"url": "https://dev-yakuza.github.io/en/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "position":36,"url": "https://dev-yakuza.github.io/en/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "position":37,"url": "https://dev-yakuza.github.io/en/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "position":38,"url": "https://dev-yakuza.github.io/en/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "position":39,"url": "https://dev-yakuza.github.io/en/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "position":40,"url": "https://dev-yakuza.github.io/en/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "position":41,"url": "https://dev-yakuza.github.io/en/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "position":42,"url": "https://dev-yakuza.github.io/en/react-native/root-import/"},{
+          "@type":"ListItem",
+          "position":43,"url": "https://dev-yakuza.github.io/en/react-native/open-file-with-app/"}]
+    }
+  </script><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/> <script src="/assets/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();</script> </head> <body> <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <div class="container"> <a class="navbar-brand" href="/en/"> <img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a> <div class="navbar-menu-container"> <div class="collapse navbar-collapse"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/react-native/">react-native</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/git/">git</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> <div class="btn-group-sm btn-translate-group dropdown"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-language" aria-hidden="true"></i> </button> <div class="dropdown-menu"> <a class="dropdown-item menu-ko" href="/ko/react-native/open-file-with-app/">한국어</a> <a class="dropdown-item menu-en" href="/en/react-native/open-file-with-app/">English</a> <a class="dropdown-item menu-ja" href="/en/react-native/open-file-with-app/">日本語</a> </div> </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button> </div> <div class="collapse navbar-collapse" id="navbarResponsive"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/react-native/">react-native</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/git/">git</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script> <header class="masthead" style="background-image: url('/assets/images/category/react-native/2019/open-file-with-app/background.jpg')"> <div class="overlay"></div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-heading"> <h1>Open the app with the specific file</h1> <div class="heading-date"> <i class="fa fa-calendar" aria-hidden="true"></i> 2019-04-19 </div> <h2 class="subheading">this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc).</h2> </div> </div> </div> </div> </header> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <nav aria-label="breadcrumb"> <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io"> <span itemprop="name">Home</span> </a> <meta itemprop="position" content="1"/> </li> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/en/react-native"> <span itemprop="name">react-native</span> </a> <meta itemprop="position" content="2"/> </li> <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/en/react-native/open-file-with-app/"> <span itemprop="name">Open the app with the specific file</span> </a> <meta itemprop="position" content="3"/> </li> </ol> </nav> </div> </div> <div class="row"> <article class="col-lg-8 col-md-10 mx-auto"> <h2 id="outline">Outline</h2> <p>sometimes, we download the specific file from the web or the email, and want to open them with our app. for example, open the specific app with pdf file or excel file like below.</p> <p>in Android,</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/android-open-with.png" alt="Android - open the app with file"/> </div> <p>in iOS,</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/iphone-open-with.png" alt="iOS - open the app with file"/> </div> <p>this blog is about how to open your app when we open the specific file like above and how to use the specific file in your app. in this blog, we’ll use <code class="highlighter-rouge">.temp</code> file to execute the app.</p> <h2 id="ios">iOS</h2> <p>le’ts activate iTunes file share feature to check the specific file is copied well in iOS.</p> <ul> <li><a href="https://dev-yakuza.github.io/en/react-native/react-native-itunes-share-file/" target="_blank">iTunes file sharing feature</a></li> </ul> <p>and then, modify <code class="highlighter-rouge">ios/[project name]/Info.plist</code> like below to open the app with the specific file on iOS.</p> <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+  ...
+  <span class="c">&lt;!-- custom file start --&gt;</span>
+	<span class="nt">&lt;key&gt;</span>UTExportedTypeDeclarations<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;dict&gt;</span>
+			<span class="nt">&lt;key&gt;</span>UTTypeConformsTo<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;array&gt;</span>
+				<span class="nt">&lt;string&gt;</span>public.data<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;/array&gt;</span>
+			<span class="nt">&lt;key&gt;</span>UTTypeDescription<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>Custom File<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>UTTypeIdentifier<span class="nt">&lt;/key&gt;</span>
+			<span class="c">&lt;!-- change custom file extension --&gt;</span>
+			<span class="nt">&lt;string&gt;</span>com.example.document.temp<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>UTTypeTagSpecification<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;dict&gt;</span>
+				<span class="nt">&lt;key&gt;</span>public.filename-extension<span class="nt">&lt;/key&gt;</span>
+				<span class="c">&lt;!-- change custom file extension --&gt;</span>
+				<span class="nt">&lt;array&gt;</span>
+					<span class="nt">&lt;string&gt;</span>temp<span class="nt">&lt;/string&gt;</span>
+				<span class="nt">&lt;/array&gt;</span>
+			<span class="nt">&lt;/dict&gt;</span>
+		<span class="nt">&lt;/dict&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+	<span class="nt">&lt;key&gt;</span>CFBundleDocumentTypes<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;dict&gt;</span>
+			<span class="nt">&lt;key&gt;</span>CFBundleTypeName<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>Custom File<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>CFBundleTypeRole<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>Editor<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>LSHandlerRank<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>Owner<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>LSItemContentTypes<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;array&gt;</span>
+				<span class="c">&lt;!-- change custom file extension --&gt;</span>
+				<span class="nt">&lt;string&gt;</span>com.example.document.temp<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;/array&gt;</span>
+		<span class="nt">&lt;/dict&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+	<span class="c">&lt;!-- custom file end --&gt;</span>
+  ...
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre></div></div> <p>I mention again, above is to open the app with <code class="highlighter-rouge">.temp</code> file. change 3 parts(<code class="highlighter-rouge">&lt;!-- change custom file extension --&gt;</code> comments) to the file type you want to use.</p> <p>first, open iTunes to check the file share feature is activated.</p> <p><img src="/assets/images/category/react-native/2019/open-file-with-app/itunes-no-file.png" alt="iOS - check itunes file share feature"/></p> <p>for testing, change a file name to <code class="highlighter-rouge">.temp</code> and send an email with it. open the email app on iOS and select <code class="highlighter-rouge">.temp</code> file. when you click the share button on the right top, you can see that you can copy the file to your app.</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/ios-copy-to.png" alt="iOS - open the app with the custom file"/> </div> <p>if you select your app, the file will be copied in your app.</p> <p>open iTunes again, and select your app. you cann see <code class="highlighter-rouge">Inbox</code> folder is created.</p> <p><img src="/assets/images/category/react-native/2019/open-file-with-app/itunes-inbox-file.png" alt="iOS - check file is copied on itunes"/></p> <p>copy that folder to outside. you can see the same file which you sent via the email.</p> <p><img src="/assets/images/category/react-native/2019/open-file-with-app/check-inbox-file.png" alt="iOS - check the inbox file"/></p> <h2 id="android">Android</h2> <p>Android is more difficult than iOS. first, add <code class="highlighter-rouge">Intent Filter</code> in <code class="highlighter-rouge">android/app/src/main/AndroidManifest.xml</code>.</p> <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"com.react_native_open_file_with"</span><span class="nt">&gt;</span>
+  ...
+        <span class="nt">&lt;intent-filter&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="c">&lt;!-- custom file start --&gt;</span>
+        <span class="nt">&lt;intent-filter</span>
+          <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+          <span class="na">android:label=</span><span class="s">"@string/app_name"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.VIEW"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.EDIT"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- change custom file extension --&gt;</span>
+            <span class="nt">&lt;data</span>
+              <span class="na">android:mimeType=</span><span class="s">"*/*"</span>
+              <span class="na">android:host=</span><span class="s">"*"</span>
+              <span class="na">android:pathPattern=</span><span class="s">".*\\.temp"</span>
+            <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="c">&lt;!-- custom file end --&gt;</span>
+  ...
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div></div> <p>in here also, you would change <code class="highlighter-rouge">.temp</code> to the file name that you want to use. open and edit <code class="highlighter-rouge">MainActivity.java</code> file like below.</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="kn">import</span> <span class="nn">android.content.ContentResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.pm.PackageInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.pm.PackageManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.database.Cursor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.provider.MediaStore</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">ReactActivity</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+        <span class="n">Uri</span> <span class="n">data</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getData</span><span class="o">();</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">importData</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"File Import Error"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">importData</span><span class="o">(</span><span class="n">Uri</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">String</span> <span class="n">scheme</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getScheme</span><span class="o">();</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">ContentResolver</span><span class="o">.</span><span class="na">SCHEME_CONTENT</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">scheme</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">ContentResolver</span> <span class="n">cr</span> <span class="o">=</span> <span class="n">getApplicationContext</span><span class="o">().</span><span class="na">getContentResolver</span><span class="o">();</span>
+                <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="na">openInputStream</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">is</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+
+                <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">getContentName</span><span class="o">(</span><span class="n">cr</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
+
+                <span class="n">PackageManager</span> <span class="n">m</span> <span class="o">=</span> <span class="n">getPackageManager</span><span class="o">();</span>
+                <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">getPackageName</span><span class="o">();</span>
+                <span class="n">PackageInfo</span> <span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">applicationInfo</span><span class="o">.</span><span class="na">dataDir</span><span class="o">;</span>
+
+                <span class="n">InputStreamToFile</span><span class="o">(</span><span class="n">is</span><span class="o">,</span> <span class="n">s</span> <span class="o">+</span> <span class="s">"/files/"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"File Import Error"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getContentName</span><span class="o">(</span><span class="n">ContentResolver</span> <span class="n">resolver</span><span class="o">,</span> <span class="n">Uri</span> <span class="n">uri</span><span class="o">){</span>
+        <span class="n">Cursor</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">resolver</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">nameIndex</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">MediaStore</span><span class="o">.</span><span class="na">MediaColumns</span><span class="o">.</span><span class="na">DISPLAY_NAME</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">nameIndex</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">nameIndex</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">InputStreamToFile</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">,</span> <span class="n">String</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">OutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">file</span><span class="o">));</span>
+
+            <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+
+            <span class="k">while</span> <span class="o">((</span><span class="n">size</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">size</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="s">"InputStreamToFile exception: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div> <p>above is when you open the app with the file, copy the file to your app. on iOS, the file is copied automatically, but on Android, we need the code the file is copied on the app.</p> <p>rename any file to <code class="highlighter-rouge">.temp</code> and send the email with it like iOS test. open the email app and select <code class="highlighter-rouge">.temp</code> file that you sent or download the file and select it. you can see your app on the copy menu.</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/android-copy-to.png" alt="Android - open the app with the custom file"/> </div> <p>the file is copied when you select your app on the menu. the file is located on <code class="highlighter-rouge">/data/user/0/[app package name]/files</code>.</p> <h2 id="how-to-use">How To Use.</h2> <p>let’s see how to use the file that is copied on above with <code class="highlighter-rouge">react-native-fs</code>. I’ll use RN(React Native) project that applied below list. if you want to know more details, see the links.</p> <ul> <li><a href="https://dev-yakuza.github.io/en/react-native/typescript/" target="_blank">typescript</a></li> <li><a href="https://dev-yakuza.github.io/en/react-native/styled-components/" target="_blank">styled-components</a></li> <li><a href="https://dev-yakuza.github.io/en/react-native/root-import/" target="_blank">Make Import path based on Root in RN(React Native)</a></li> <li><a href="https://dev-yakuza.github.io/en/react-native/react-navigation/" target="_blank">react-navigation</a></li> <li><a href="https://dev-yakuza.github.io/en/react-native/nativebase/" target="_blank">NativeBase</a></li> </ul> <p>you can see full source code on the repository below.</p> <ul> <li>github repository: <a href="https://github.com/dev-yakuza/react_native_open_file_with" target="_blank">react_native_open_file_with</a></li> </ul> <p>you can see how to install <code class="highlighter-rouge">react-native-fs</code> on the blog post below.</p> <ul> <li><a href="https://dev-yakuza.github.io/en/react-native/react-native-fs/" target="_blank">Use Filesystem</a></li> </ul> <p>let’s see the main part of the source code.</p> <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">private</span> <span class="nx">_DOCUMENT_PATH</span> <span class="o">=</span> <span class="nx">RNFS</span><span class="p">.</span><span class="nx">DocumentDirectoryPath</span><span class="p">;</span>
+</code></pre></div></div> <p>you can access the copied file by <code class="highlighter-rouge">RNFS.DocumentDirectoryPath</code>.</p> <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">private</span> <span class="nx">_loadFiles</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Platform</span><span class="p">.</span><span class="nx">OS</span> <span class="o">===</span> <span class="s1">'ios'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_moveInboxFiles</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">RNFS</span><span class="p">.</span><span class="nx">readDir</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_DOCUMENT_PATH</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="na">srcFiles</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">RNFS</span><span class="p">.</span><span class="nx">ReadDirItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="na">files</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">RNFS</span><span class="p">.</span><span class="nx">ReadDirItem</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="nx">srcFiles</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="na">file</span><span class="p">:</span> <span class="nx">RNFS</span><span class="p">.</span><span class="nx">ReadDirItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">isFile</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'.temp'</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">files</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">files</span> <span class="p">});</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>read the folder and if it is the file, push the file to the file list. in <code class="highlighter-rouge">iOS</code>, the file is located on <code class="highlighter-rouge">Inbox</code> in <code class="highlighter-rouge">RNFS.DocumentDirectoryPath</code>. so, before reading the files, copy the files from <code class="highlighter-rouge">Inbox</code>.</p> <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">private</span> <span class="nx">_moveInboxFiles</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">inboxFiles</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">RNFS</span><span class="p">.</span><span class="nx">readDir</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_DOCUMENT_PATH</span> <span class="o">+</span> <span class="s1">'/Inbox'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">inboxFiles</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">inboxFiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="k">async</span> <span class="nx">file</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">isFile</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">isFile</span><span class="p">())</span> <span class="p">{</span>
+                        <span class="kr">await</span> <span class="nx">RNFS</span><span class="p">.</span><span class="nx">moveFile</span><span class="p">(</span>
+                        <span class="nx">file</span><span class="p">.</span><span class="nx">path</span><span class="p">,</span>
+                        <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">_DOCUMENT_PATH</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span>
+                        <span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>these files have the information below. you can use them.</p> <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">ctime</span><span class="p">,</span> <span class="nx">mtime</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">size</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">file</span><span class="p">;</span>
+</code></pre></div></div> <h3 id="test-on-ios-simulator">Test On iOS Simulator</h3> <p>let’s see how to test on iOS simulator. after executing the simulator, execute the code below to get the simulator id.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcrun simctl list | egrep <span class="s1">'(Booted)'</span>
+</code></pre></div></div> <p>I made npm command in my repository. check <code class="highlighter-rouge">package.json</code>.</p> <ul> <li>github repository: <a href="https://github.com/dev-yakuza/react_native_open_file_with" target="_blank">react_native_open_file_with</a></li> </ul> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run get-id
+iPhone X <span class="o">(</span>5C0277D7-12FA-42DE-AD6D-AC3C74324B4C<span class="o">)</span> <span class="o">(</span>Booted<span class="o">)</span>
+</code></pre></div></div> <p>after executing the command, you can get the simulator id.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Users/[user name]/Library/Developer/CoreSimulator/Devices/5C0277D7-12FA-42DE-AD6D-AC3C74324B4C/data/Containers/Data/Application/
+open <span class="nb">.</span>
+</code></pre></div></div> <p>you can see the app created at today on the folder above. copy the file to <code class="highlighter-rouge">Documents</code> folder in the app folder.</p> <p><img src="/assets/images/category/react-native/2019/open-file-with-app/simulator-files.png" alt="copy the file to the simulator"/></p> <p>after it, execute the app or if you use my repository, select the refresh button on the right top.</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/simulator-file-viewer.png" alt="iOS - show file list on the simulator"/> </div> <p>after then, you can see the file list like above.</p> <h3 id="test-on-android">Test on Android</h3> <p>I’ve tested Android on the device. you can see the file list is displayed well on Android.</p> <div class="half_image_container"> <img class="half_image" src="/assets/images/category/react-native/2019/open-file-with-app/android-file-viewer.png" alt="Android - show file list on Android device"/> </div> <h2 id="completed">Completed</h2> <p>recently, we save and use all files on the servers, so this feature may not be needed. however, I think someday we can use it if we know it. we saw how to open the app with the specific file and use it. I hope this blog post is helpful for someone to implement to open the app with a specific file.</p> <div class="buy_me_a_coffee_container"> <style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; box-shadow: none !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-flex !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important; -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; margin: 0 auto !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a> </div> <div class="post-list-container"> <div class="header"> <div class="header-title">Posts</div> </div> <div class="body"> <div class="list-group"></div> </div> <div class="footer"> <ul class="pagination"> <li class="page-item page-item--previous"> <div class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </div> </li> <li class="page-item page-item--next"> <div class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </div> </li> </ul> </div> </div> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){$.get("/en/api/react-native/posts.json",function(e){e.length>0&&($(".post-list-container").show(),e.forEach(function(e){var a=$(".post-list-container .body .list-group"),t=a.find(".page-"+e.page),i=e.url.indexOf(location.pathname)>=0?"active":"",s="";if(s+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+i+'">',s+='  <div class="d-flex w-100 justify-content-between">',s+='    <div class="mb-1">'+e.title+"</div>",s+="  </div>",s+='  <div class="body-text">'+e.description+"</div>",s+="</a>",t.length>0)t.addClass(i),t.append(s);else{var n="";n+='<div class="page page-'+e.page+" "+i+'">',n+=s,n+="</div>",a.append(n)}var p="";p+='<li class="page-item page-item--link '+i+'" data-page="'+e.page+'">',p+='  <div class="page-link" data-page="'+e.page+'">',p+=e.page,p+="  </div>",p+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+e.page+'"]').length&&$(".post-list-container .footer .page-item--next").before(p),"active"===i&&$("li[data-page="+e.page+"]").addClass(i),e.page>1&&$(".footer").css("display","flex")}))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")})});</script> </article> <div class="col-lg-8 col-md-10 mx-auto"> <hr/> <div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="https://dev-yakuza.github.io/react-native/open-file-with-app/",this.page.identifier="https://dev-yakuza.github.io/react-native/open-file-with-app/"};!function(){var t=document,e=t.createElement("script");e.src="https://https-dev-yakuza-github-io-en.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> </header> <hr/> <footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div> <div class="col-lg-8 col-md-10 mx-auto"> <ul class="list-inline text-center"> <li class="list-inline-item"> <a href="https://twitter.com/intent/tweet?text=Open the app with the specific file&url=https://dev-yakuza.github.io/react-native/open-file-with-app/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.github.io/react-native/open-file-with-app/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://dev-yakuza.github.io/en/feed.xml" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i> </span> </a> </li> </ul> <p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2019 </p> </div> </div> </div> </footer> <script src="/assets/vendor/jquery/jquery.min.js"></script> <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script> <script src="/assets/scripts.js"></script> </body> </html>
