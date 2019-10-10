@@ -1,0 +1,194 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="맥(Mac) 개발 환경 구축(3) - 개발 환경"/> <meta name="twitter:description" content="새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다."/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>맥(Mac) 개발 환경 구축(3) - 개발 환경 - 새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다.</title> <meta name="description" content="새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다."/> <meta property="og:url" content="http://localhost:4000/en/environment/configure-development-environment-on-mac-with-homebrew-and-script/"/> <meta name="generator" content="Jekyll v3.8.5"/> <meta property="og:title" content="맥(Mac) 개발 환경 구축(3) - 개발 환경"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="ko"/> <meta name="description" content="새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다."/> <meta property="og:description" content="새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다."/> <link rel="canonical" href="http://localhost:4000/en/environment/configure-development-environment-on-mac-with-homebrew-and-script/"/> <meta property="og:url" content="http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="http://localhost:4000/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-script/background.jpg"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2019-10-10T00:00:00+09:00"/> <script type="application/ld+json">
+{"url":"http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/","image":"http://localhost:4000/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-script/background.jpg","headline":"맥(Mac) 개발 환경 구축(3) - 개발 환경","dateModified":"2019-10-10T17:04:09+09:00","datePublished":"2019-10-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"description":"새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다.","@type":"BlogPosting","@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/> <link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/en/assets/main.css?v=20191010"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/en/feed.xml"/> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "http://localhost:4000",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4000",
+      "logo": "https://dev-yakuza.github.io/assets/images/icon.png"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "position":1,"url": "http://localhost:4000/ko/environment/configure-development-environment-on-mac-with-homebrew-and-script/"}]
+    }
+  </script><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/> <script src="/assets/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();</script> </head> <body> <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <div class="container"> <a class="navbar-brand" href="/en/"> <img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a> <div class="navbar-menu-container"> <div class="collapse navbar-collapse"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/books/">Writing Books</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/react-native/">React Native</a> <a class="dropdown-item" href="/en/react/">React</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/django/">djanog</a> <a class="dropdown-item" href="/en/git/">git</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> <div class="btn-group-sm btn-translate-group dropdown"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-language" aria-hidden="true"></i> </button> <div class="dropdown-menu"> <a class="dropdown-item menu-ko" href="/ko/environment/configure-development-environment-on-mac-with-homebrew-and-script/">한국어</a> <a class="dropdown-item menu-en" href="/en/environment/configure-development-environment-on-mac-with-homebrew-and-script/">English</a> <a class="dropdown-item menu-ja" href="/en/environment/configure-development-environment-on-mac-with-homebrew-and-script/">日本語</a> </div> </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button> </div> <div class="collapse navbar-collapse" id="navbarResponsive"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/en/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a> <a class="dropdown-item" href="/en/laravel/">Laravel</a> <a class="dropdown-item" href="/en/books/">Writing Books</a> <a class="dropdown-item" href="/en/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/en/environment/">dev environment</a> <a class="dropdown-item" href="/en/react-native/">React Native</a> <a class="dropdown-item" href="/en/react/">React</a> <a class="dropdown-item" href="/en/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/en/django/">djanog</a> <a class="dropdown-item" href="/en/git/">git</a> <a class="dropdown-item" href="/en/jekyll/">jekyll blog</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/en/contact/">Contact</a> </li> </ul> </div> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script> <header class="masthead" style="background-image: url('/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-script/background.jpg')"> <div class="overlay"></div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-heading"> <h1>맥(Mac) 개발 환경 구축(3) - 개발 환경</h1> <div class="heading-date"> <i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-10 </div> <h2 class="subheading">새로운 맥(Mac)에 개발 환경을 구축하려고 합니다. 지금 현재 개발에 사용하고 개발 환경을 설정하는 방법에 대해서 설명합니다.</h2> </div> </div> </div> </div> </header> <div class="top-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <nav aria-label="breadcrumb"> <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="http://localhost:4000"> <span itemprop="name">Home</span> </a> <meta itemprop="position" content="1"/> </li> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="http://localhost:4000/en/environment"> <span itemprop="name">environment</span> </a> <meta itemprop="position" content="2"/> </li> <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="http://localhost:4000/en/environment/configure-development-environment-on-mac-with-homebrew-and-script/"> <span itemprop="name">맥(Mac) 개발 환경 구축(3) - 개발 환경</span> </a> <meta itemprop="position" content="3"/> </li> </ol> </nav> </div> </div> <div class="row"> <div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <article class="col-lg-8 col-md-10 mx-auto"> <h2 id="개요">개요</h2> <p>맥(Mac)에 새롭게 개발 환경을 구축하고 있습니다. 이 블로그에서는 개발 환경을 구성하는 방법에 대해서 정리합니다.</p> <p>이 블로그는 연재물입니다. 개발 환경에 다른 부분을 확인하고 싶으신 분들은 아래에 내용을 참고하세요.</p> <ul> <li><a href="http://localhost:4000/en/environment/mac-iterm-zsh/" target="_blank">맥(Mac) 개발 환경 구축(1) - iTerm과 zsh</a></li> <li><a href="http://localhost:4000/en/environment/mac-development-tools/" target="_blank">맥(Mac) 개발 환경 구축(2) - tools</a></li> <li><a href="http://localhost:4000/en/environment/mac-development-environment/" target="_blank">맥(Mac) 개발 환경 구축(3) - 개발 환경</a></li> </ul> <h2 id="homebrew">homebrew</h2> <p>맥(Mac)에서 가장 중요한 패키지 관리자인 homebrew를 아래에 명령어로 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+</code></pre></div></div> <p>아래에 명령어로 zsh 설정 파일을 엽니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code ~/.zshrc
+</code></pre></div></div> <p>설정 파일 하단에 아래에 내용을 추가합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:/usr/local/sbin:<span class="nv">$PATH</span>
+</code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="python3">python3</h2> <p>맥(Mac)에는 기본적으로 python2가 설치되어 있습니다. 개발에 필요한 python3를 설치하고 zsh에 python3을 기본으로 설정하겠습니다.</p> <p>zsh(iTerm)를 재실행하고 아래에 명령어로 python3를 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install python3
+</code></pre></div></div> <p>zsh 설정 파일 하단에 아래에 내용을 추가하여 python3을 기본으로 설정합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># code ~/.zshrc</span>
+<span class="nb">alias </span><span class="nv">python</span><span class="o">=</span>python3
+</code></pre></div></div> <p>아래에 명령어로 <code class="highlighter-rouge">pip</code>를 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>easy_install pip
+</code></pre></div></div> <p>파이썬(python) 가상환경(Virtual Environment) 관리를 도와주는 모듈인 <code class="highlighter-rouge">virtualenv</code>을 아래에 명령어로 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install virtualenv pylint autopep8
+</code></pre></div></div> <p>zsh 설정 파일에 아래와 같이 설정하여 가상환경(Virtual Environment)에 접속중인지 확인할 수 있게 설정합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># code ~/.zshrc</span>
+...
+<span class="c"># python virtualenv</span>
+<span class="nv">plugins</span><span class="o">=(</span>virtualenv<span class="o">)</span>
+...
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>virtualenv dir_writable dir vcs<span class="o">)</span>
+...
+</code></pre></div></div> <h2 id="git-flow">git flow</h2> <p>아래에 명령어로 git flow를 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install git-flow
+</code></pre></div></div> <h2 id="node--npm">node / npm</h2> <p>아래에 링크를 눌러 node를 다운로드 및 설치합니다.</p> <ul> <li>node: <a href="https://nodejs.org/en/download/" rel="nofollow noreferrer" target="_blank">https://nodejs.org/en/download/</a></li> </ul> <h2 id="react-native">react native</h2> <p>이전에 RN(React Native) 설치에 관한 블로그를 작성하였습니다. 아래에 링크를 확인하여 설치합니다.</p> <ul> <li><a href="http://localhost:4000/en/react-native/installation/" target="_blank">RN 설치</a></li> </ul> <h2 id="laravel">Laravel</h2> <p>맥(Mac)은 기본적으로 php가 설치되어 있습니다. 아래에 명령어로 <code class="highlighter-rouge">composer</code>를 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sS</span> https://getcomposer.org/installer | <span class="nb">sudo </span>php <span class="nt">--</span> <span class="nt">--install-dir</span><span class="o">=</span>/usr/local/bin/
+</code></pre></div></div> <p>zsh 설정 파일 하단에 아래에 내용을 추가합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># code ~/.zshrc</span>
+<span class="nb">alias </span><span class="nv">composer</span><span class="o">=</span><span class="s2">"php /usr/local/bin/composer.phar"</span>
+</code></pre></div></div> <p>아래에 명령어로 권한을 변경합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>chmod 755 /Users/<span class="nv">$USER</span>/.composer/
+</code></pre></div></div> <p>아래에 명령어로 Laravel을 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer global require laravel/installer
+</code></pre></div></div> <p>zsh 설정 파일을 열고 아래에 내용을 추가합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># code ~/.zshrc</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.composer/vendor/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+</code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="mysql-설치">mysql 설치</h2> <p>아래에 명령어로 mysql을 설치합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mysql@5.7
+</code></pre></div></div> <p>zsh 설정 파일을 열고 아래에 내용을 추가합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># code ~/.zshrc</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/mysql@5.7/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/mysql@5.7/lib"</span>
+<span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/mysql@5.7/include"</span>
+</code></pre></div></div> <p>아래에 명령어로 mysql 서버를 실행합니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql.server start
+</code></pre></div></div> <p>아래에 명령어를 통해 mysql 설정을 진행합니다.(패스워드 설정 등)</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql_secure_installation
+</code></pre></div></div> <h2 id="jekyll">jekyll</h2> <p>이전에 jekyll 설치에 관한 블로그를 작성하였습니다. 아래에 링크를 확인하여 설치합니다.</p> <ul> <li><a href="http://localhost:4000/en/jekyll/installation/" target="_blank">jekyll 설치</a></li> </ul> <h2 id="zsh-설정-파일">zsh 설정 파일</h2> <p>아래는 zsh 설정 파일의 내용입니다.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># If you come from bash you might have to change your $PATH.</span>
+<span class="c"># export PATH=$HOME/bin:/usr/local/bin:$PATH</span>
+
+<span class="c"># Path to your oh-my-zsh installation.</span>
+<span class="nb">export </span><span class="nv">ZSH</span><span class="o">=</span><span class="s2">"/Users/jeonghean_kim/.oh-my-zsh"</span>
+
+<span class="c"># Set name of the theme to load --- if set to "random", it will</span>
+<span class="c"># load a random theme each time oh-my-zsh is loaded, in which case,</span>
+<span class="c"># to know which specific one was loaded, run: echo $RANDOM_THEME</span>
+<span class="c"># See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</span>
+<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">"powerlevel9k/powerlevel9k"</span>
+
+<span class="c"># Set list of themes to pick from when loading at random</span>
+<span class="c"># Setting this variable when ZSH_THEME=random will cause zsh to load</span>
+<span class="c"># a theme from this variable instead of looking in ~/.oh-my-zsh/themes/</span>
+<span class="c"># If set to an empty array, this variable will have no effect.</span>
+<span class="c"># ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )</span>
+
+<span class="c"># Uncomment the following line to use case-sensitive completion.</span>
+<span class="c"># CASE_SENSITIVE="true"</span>
+
+<span class="c"># Uncomment the following line to use hyphen-insensitive completion.</span>
+<span class="c"># Case-sensitive completion must be off. _ and - will be interchangeable.</span>
+<span class="c"># HYPHEN_INSENSITIVE="true"</span>
+
+<span class="c"># Uncomment the following line to disable bi-weekly auto-update checks.</span>
+<span class="c"># DISABLE_AUTO_UPDATE="true"</span>
+
+<span class="c"># Uncomment the following line to change how often to auto-update (in days).</span>
+<span class="c"># export UPDATE_ZSH_DAYS=13</span>
+
+<span class="c"># Uncomment the following line to disable colors in ls.</span>
+<span class="c"># DISABLE_LS_COLORS="true"</span>
+
+<span class="c"># Uncomment the following line to disable auto-setting terminal title.</span>
+<span class="c"># DISABLE_AUTO_TITLE="true"</span>
+
+<span class="c"># Uncomment the following line to enable command auto-correction.</span>
+<span class="c"># ENABLE_CORRECTION="true"</span>
+
+<span class="c"># Uncomment the following line to display red dots whilst waiting for completion.</span>
+<span class="c"># COMPLETION_WAITING_DOTS="true"</span>
+
+<span class="c"># Uncomment the following line if you want to disable marking untracked files</span>
+<span class="c"># under VCS as dirty. This makes repository status check for large repositories</span>
+<span class="c"># much, much faster.</span>
+<span class="c"># DISABLE_UNTRACKED_FILES_DIRTY="true"</span>
+
+<span class="c"># Uncomment the following line if you want to change the command execution time</span>
+<span class="c"># stamp shown in the history command output.</span>
+<span class="c"># You can set one of the optional three formats:</span>
+<span class="c"># "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"</span>
+<span class="c"># or set a custom format using the strftime function format specifications,</span>
+<span class="c"># see 'man strftime' for details.</span>
+<span class="c"># HIST_STAMPS="mm/dd/yyyy"</span>
+
+<span class="c"># Would you like to use another custom folder than $ZSH/custom?</span>
+<span class="c"># ZSH_CUSTOM=/path/to/new-custom-folder</span>
+
+<span class="c"># Which plugins would you like to load?</span>
+<span class="c"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span>
+<span class="c"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span>
+<span class="c"># Example format: plugins=(rails git textmate ruby lighthouse)</span>
+<span class="c"># Add wisely, as too many plugins slow down shell startup.</span>
+<span class="nv">plugins</span><span class="o">=(</span>git<span class="o">)</span>
+
+<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+
+<span class="c"># python virtualenv</span>
+<span class="nv">plugins</span><span class="o">=(</span>virtualenv<span class="o">)</span>
+
+<span class="c"># User configuration</span>
+
+<span class="c"># export MANPATH="/usr/local/man:$MANPATH"</span>
+
+<span class="c"># You may need to manually set your language environment</span>
+<span class="c"># export LANG=en_US.UTF-8</span>
+
+<span class="c"># Preferred editor for local and remote sessions</span>
+<span class="c"># if [[ -n $SSH_CONNECTION ]]; then</span>
+<span class="c">#   export EDITOR='vim'</span>
+<span class="c"># else</span>
+<span class="c">#   export EDITOR='mvim'</span>
+<span class="c"># fi</span>
+
+<span class="c"># Compilation flags</span>
+<span class="c"># export ARCHFLAGS="-arch x86_64"</span>
+
+<span class="c"># ssh</span>
+<span class="c"># export SSH_KEY_PATH="~/.ssh/rsa_id"</span>
+
+<span class="c"># Set personal aliases, overriding those provided by oh-my-zsh libs,</span>
+<span class="c"># plugins, and themes. Aliases can be placed here, though oh-my-zsh</span>
+<span class="c"># users are encouraged to define aliases within the ZSH_CUSTOM folder.</span>
+<span class="c"># For a full list of active aliases, run `alias`.</span>
+<span class="c">#</span>
+<span class="c"># Example aliases</span>
+<span class="c"># alias zshconfig="mate ~/.zshrc"</span>
+<span class="c"># alias ohmyzsh="mate ~/.oh-my-zsh"</span>
+
+<span class="c"># remove user name in zsh</span>
+<span class="c"># prompt_context(){}</span>
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>virtualenv dir_writable dir vcs<span class="o">)</span>
+<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>status <span class="nb">time </span>battery<span class="o">)</span>
+
+<span class="c"># vscode code command</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</span>
+<span class="c"># brew path</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:/usr/local/sbin:<span class="nv">$PATH</span>
+<span class="c"># python3 default</span>
+<span class="nb">alias </span><span class="nv">python</span><span class="o">=</span>python3
+<span class="nb">alias </span><span class="nv">pip</span><span class="o">=</span>pip3
+<span class="c"># composer</span>
+<span class="nb">alias </span><span class="nv">composer</span><span class="o">=</span><span class="s2">"php /usr/local/bin/composer.phar"</span>
+<span class="c"># Laravel</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.composer/vendor/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="c"># mysql</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/mysql@5.7/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="c"># jekyll</span>
+<span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gems
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/gems/bin:<span class="nv">$PATH</span>
+
+<span class="c"># The next line updates PATH for the Google Cloud SDK.</span>
+<span class="nb">source</span> /Users/jeonghean_kim/google-cloud-sdk/path.zsh.inc
+
+<span class="c"># The next line enables zsh completion for gcloud.</span>
+<span class="nb">source</span> /Users/jeonghean_kim/google-cloud-sdk/completion.zsh.inc
+
+<span class="c"># Android path for React Native</span>
+<span class="nb">export </span><span class="nv">ANDROID_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Android/sdk
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/emulator
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/tools
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/tools/bin
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/platform-tools
+</code></pre></div></div> <div class="buy_me_a_coffee_container"> <style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; box-shadow: none !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-flex !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important; -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; margin: 0 auto !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a> </div> </article> <div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> </div> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-list-container"> <div class="header"> <div class="header-title">Posts</div> </div> <div class="body"> <div class="list-group"></div> </div> <div class="footer"> <ul class="pagination"> <li class="page-item page-item--previous"> <div class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </div> </li> <li class="page-item page-item--next"> <div class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </div> </li> </ul> </div> </div> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){$.get("/ko/api/environment/posts.json",function(e){e.length>0&&($(".post-list-container").show(),e.forEach(function(e){var a=$(".post-list-container .body .list-group"),t=a.find(".page-"+e.page),i=e.url.indexOf(location.pathname)>=0?"active":"",s="";if(s+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+i+'">',s+='  <div class="d-flex w-100 justify-content-between">',s+='    <div class="mb-1">'+e.title+"</div>",s+="  </div>",s+='  <div class="body-text">'+e.description+"</div>",s+="</a>",t.length>0)t.addClass(i),t.append(s);else{var n="";n+='<div class="page page-'+e.page+" "+i+'">',n+=s,n+="</div>",a.append(n)}var p="";p+='<li class="page-item page-item--link '+i+'" data-page="'+e.page+'">',p+='  <div class="page-link" data-page="'+e.page+'">',p+=e.page,p+="  </div>",p+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+e.page+'"]').length&&$(".post-list-container .footer .page-item--next").before(p),"active"===i&&$("li[data-page="+e.page+"]").addClass(i),e.page>1&&$(".footer").css("display","flex")}))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")})});</script> </div> <div class="col-lg-8 col-md-10 mx-auto"> <hr/> <div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/",this.page.identifier="http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/"};!function(){var e=document,t=e.createElement("script");t.src="https://https-dev-yakuza-github-io-en.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> </div> <hr/> <footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div> <div class="col-lg-8 col-md-10 mx-auto"> <ul class="list-inline text-center"> <li class="list-inline-item"> <a href="https://twitter.com/intent/tweet?text=맥(Mac) 개발 환경 구축(3) - 개발 환경&url=http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/environment/configure-development-environment-on-mac-with-homebrew-and-script/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="http://localhost:4000/en/feed.xml" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i> </span> </a> </li> </ul> <p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2019 </p> </div> </div> </div> </footer> <script src="/assets/vendor/jquery/jquery.min.js"></script> <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script> <script src="/assets/scripts.js"></script> </body> </html>
