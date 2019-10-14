@@ -1,0 +1,414 @@
+<!DOCTYPE html> <html lang="ja"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する"/> <meta name="twitter:description" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する - HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。</title> <meta name="description" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta name="generator" content="Jekyll v3.8.5"/> <meta property="og:title" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="ja"/> <meta name="description" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。"/> <meta property="og:description" content="HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。"/> <link rel="canonical" href="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="https://dev-yakuza.github.io/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2019-10-10T00:00:00+09:00"/> <script type="application/ld+json">
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/","headline":"HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する","dateModified":"2019-10-14T14:33:32+09:00","datePublished":"2019-10-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"},"image":"https://dev-yakuza.github.io/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"description":"HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。","@type":"BlogPosting","@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet"/> <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/assets/main.css?v=20191014"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/feed.xml"/> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.github.io",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script> <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.github.io",
+      "logo": "https://dev-yakuza.github.io/assets/images/icon.png"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "position":1,"url": "https://dev-yakuza.github.io/environment/vagrant-install-and-usage/"},{
+          "@type":"ListItem",
+          "position":2,"url": "https://dev-yakuza.github.io/environment/install-ansible/"},{
+          "@type":"ListItem",
+          "position":3,"url": "https://dev-yakuza.github.io/environment/ansible-playbook/"},{
+          "@type":"ListItem",
+          "position":4,"url": "https://dev-yakuza.github.io/environment/ansible-docker/"},{
+          "@type":"ListItem",
+          "position":5,"url": "https://dev-yakuza.github.io/environment/ansible-laradock/"},{
+          "@type":"ListItem",
+          "position":6,"url": "https://dev-yakuza.github.io/environment/ansible-laravel/"},{
+          "@type":"ListItem",
+          "position":7,"url": "https://dev-yakuza.github.io/environment/ngrok/"},{
+          "@type":"ListItem",
+          "position":8,"url": "https://dev-yakuza.github.io/environment/mac-iterm-zsh/"},{
+          "@type":"ListItem",
+          "position":9,"url": "https://dev-yakuza.github.io/environment/mac-development-tools/"},{
+          "@type":"ListItem",
+          "position":10,"url": "https://dev-yakuza.github.io/environment/mac-development-environment/"},{
+          "@type":"ListItem",
+          "position":11,"url": "https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"}]
+    }
+  </script><link rel="stylesheet" href="/assets/highlight/railscasts.css"/> <script src="/assets/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();</script> </head> <body> <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> <div class="container"> <a class="navbar-brand" href="/"> <img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a> <div class="navbar-menu-container"> <div class="collapse navbar-collapse"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a> <a class="dropdown-item" href="/laravel/">Laravel</a> <a class="dropdown-item" href="/books/">本の執筆</a> <a class="dropdown-item" href="/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/environment/">開発環境</a> <a class="dropdown-item" href="/react-native/">React Native</a> <a class="dropdown-item" href="/react/">React</a> <a class="dropdown-item" href="/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/django/">ジャンゴ(djanog)</a> <a class="dropdown-item" href="/git/">git</a> <a class="dropdown-item" href="/jekyll/">jekyll blog</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/contact/">Contact</a> </li> </ul> </div> <div class="btn-group-sm btn-translate-group dropdown"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-language" aria-hidden="true"></i> </button> <div class="dropdown-menu"> <a class="dropdown-item menu-ko" href="/ko/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/">한국어</a> <a class="dropdown-item menu-en" href="/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/">English</a> <a class="dropdown-item menu-ja" href="/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/">日本語</a> </div> </div> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button> </div> <div class="collapse navbar-collapse" id="navbarResponsive"> <ul class="navbar-nav ml-auto"> <li class="nav-item"> <a class="nav-link" href="/">Home</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a> <a class="dropdown-item" href="/laravel/">Laravel</a> <a class="dropdown-item" href="/books/">本の執筆</a> <a class="dropdown-item" href="/blaboo/">BlaBoo</a> <a class="dropdown-item" href="/environment/">開発環境</a> <a class="dropdown-item" href="/react-native/">React Native</a> <a class="dropdown-item" href="/react/">React</a> <a class="dropdown-item" href="/kumoncho/">kumoncho</a> <a class="dropdown-item" href="/django/">ジャンゴ(djanog)</a> <a class="dropdown-item" href="/git/">git</a> <a class="dropdown-item" href="/jekyll/">jekyll blog</a> </div> </li> <li class="nav-item"> <a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a> </li> <li class="nav-item"> <a class="nav-link" href="/contact/">Contact</a> </li> </ul> </div> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script> <header class="masthead" style="background-image: url('/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png')"> <div class="overlay"></div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-heading"> <h1>HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する</h1> <div class="heading-date"> <i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-14 </div> <h2 class="subheading">HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する方法を共有します。このように作ったBrefileとShell Scriptを使って新しマック(Mac)に開発環境を設定してみます。</h2> </div> </div> </div> </div> </header> <div class="top-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <nav aria-label="breadcrumb"> <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io"> <span itemprop="name">Home</span> </a> <meta itemprop="position" content="1"/> </li> <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/environment"> <span itemprop="name">environment</span> </a> <meta itemprop="position" content="2"/> </li> <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"> <span itemprop="name">HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する</span> </a> <meta itemprop="position" content="3"/> </li> </ol> </nav> </div> </div> <div class="row"> <div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <article class="col-lg-8 col-md-10 mx-auto"> <div id="contents_list"> <h2 id="section">目次</h2> <ol> <li>概要](#概要)</li> <li><a href="#開発環境の構成">開発環境の構成</a></li> <li><a href="#brewfile">Brewfile</a> <ul> <li><a href="#brew">brew</a></li> <li><a href="#cask">cask</a></li> <li><a href="#mas">mas</a></li> </ul> </li> <li><a href="#shell-script">Shell Script</a> <ul> <li><a href="#homebrewとbrewfileのインストール">HomebrewとBrewfileのインストール</a></li> <li><a href="#セキュリティとプライバシー">セキュリティとプライバシー</a></li> <li><a href="#フォント">フォント</a></li> <li><a href="#zsh">zsh</a></li> <li><a href="#vscode設定">VSCode設定</a></li> <li><a href="#iterm2">iTerm2</a></li> <li><a href="#jekyll開発環境">jekyll開発環境</a></li> <li><a href="#react-native開発環境">react-native開発環境</a></li> <li><a href="#python開発環境">python開発環境</a></li> <li><a href="#xcode">Xcode</a></li> </ul> </li> <li><a href="#開発環境の設定を保存github">開発環境の設定を保存(Github)</a></li> <li><a href="#マックの初期化や最新osインストール">マックの初期化や最新OSインストール</a></li> <li><a href="#新しマックに開発環境を設定する">新しマックに開発環境を設定する</a> <ul> <li><a href="#iterm2手動設定">iTerm2手動設定</a></li> </ul> </li> <li><a href="#完了">完了</a></li> </ol> </div> <h2 id="概要">概要</h2> <p>マック(Mac)に新しく開発環境を構築しております。下記のブログポストリストは以前新しマック(Mac)に開発環境を手動で構築した内容を纏めたブログです。</p> <ul> <li><a href="https://dev-yakuza.github.io/environment/mac-iterm-zsh/" target="_blank">マック(Mac)の開発環境の構築(1) - iTermとzsh</a></li> <li><a href="https://dev-yakuza.github.io/environment/mac-development-tools/" target="_blank">マック(Mac)の開発環境の構築(2) - tools</a></li> <li><a href="https://dev-yakuza.github.io/environment/mac-development-environment/" target="_blank">マック(Mac)の開発環境の構築(3) - 開発環境</a></li> </ul> <p>今回のブログポストでは上記のプログポストリストにある開発環境をHomebrewとShell Scriptで自動化してもっと簡単に開発環境を構築できるようにしてみました。</p> <h2 id="開発環境の構成">開発環境の構成</h2> <p>今現在私が使ってる開発環境の構成です。</p> <ul> <li><a href="https://github.com/nvie/gitflow" rel="nofollow noreferrer" target="_blank">git-flow</a></li> <li><a href="https://www.mysql.com/" rel="nofollow noreferrer" target="_blank">mysql 5.7</a></li> <li><a href="https://www.python.org/" rel="nofollow noreferrer" target="_blank">python3</a></li> <li><a href="https://nodejs.org/" rel="nofollow noreferrer" target="_blank">node</a></li> <li><a href="https://facebook.github.io/watchman/" rel="nofollow noreferrer" target="_blank">watchman</a></li> <li><a href="https://www.php.net" rel="nofollow noreferrer" target="_blank">php</a></li> <li><a href="https://www.zsh.org/" rel="nofollow noreferrer" target="_blank">zsh</a></li> <li><a href="https://ohmyz.sh/" rel="nofollow noreferrer" target="_blank">oh my zsh</a></li> <li><a href="https://www.ruby-lang.org/" rel="nofollow noreferrer" target="_blank">ruby</a></li> <li><a href="https://ngrok.com/" rel="nofollow noreferrer" target="_blank">ngrok</a></li> <li><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" rel="nofollow noreferrer" target="_blank">jdk</a></li> <li><a href="https://developer.android.com/studio" rel="nofollow noreferrer" target="_blank">android studio</a></li> <li><a href="https://www.sequelpro.com/" rel="nofollow noreferrer" target="_blank">sequel pro</a></li> <li><a href="https://sqlitebrowser.org/" rel="nofollow noreferrer" target="_blank">db browser for sqlite</a></li> <li><a href="https://www.mysql.com/products/workbench/" rel="nofollow noreferrer" target="_blank">mysql workbrench</a></li> <li><a href="https://www.sketch.com/" rel="nofollow noreferrer" target="_blank">sketchapp</a></li> <li><a href="https://www.getpostman.com/" rel="nofollow noreferrer" target="_blank">postman</a></li> <li><a href="https://www.sourcetreeapp.com/" rel="nofollow noreferrer" target="_blank">sourcetree</a></li> <li><a href="https://www.google.com/chrome/" rel="nofollow noreferrer" target="_blank">chrome</a></li> <li><a href="https://www.iterm2.com/" rel="nofollow noreferrer" target="_blank">iterm2</a></li> <li><a href="https://developer.apple.com/xcode/" rel="nofollow noreferrer" target="_blank">xcode</a></li> <li><a href="https://line.me/" rel="nofollow noreferrer" target="_blank">LINE</a></li> <li><a href="https://www.kakaocorp.com/service/KakaoTalk" rel="nofollow noreferrer" target="_blank">KakaoTalk</a></li> <li><a href="https://slack.com/" rel="nofollow noreferrer" target="_blank">Slack</a></li> <li><a href="https://trello.com/" rel="nofollow noreferrer" target="_blank">Trello</a></li> <li><a href="https://facebook.github.io/react-native/" rel="nofollow noreferrer" target="_blank">react native</a></li> <li><a href="https://laravel.com/" rel="nofollow noreferrer" target="_blank">laravel</a></li> <li><a href="https://jekyllrb.com/" rel="nofollow noreferrer" target="_blank">jekyll</a></li> </ul> <p>今から上にある開発環境をHomebrewとShell Scriptを使って自動で構築できるようにしてみます。</p> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="brewfile">Brewfile</h2> <p>Homebrewを使って使うツール(tool)を自動にダウンロードすることができます。このようにHomebrewで自動にダウンロードしたいツールを定義するファイルが<code class="highlighter-rouge">Brewfile</code>です。下記のコマンドで現在使ってるマックのツールを定義するBrewfileを生成することができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle
+</code></pre></div></div> <p>このコマンドで生成されたBrewfileを確認しましたが、使ってるツールが全部入ってないでした。それで追加で欲しいツールを入れて作ったBrewfileが下記になります。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="s2">"mas"</span>
+brew <span class="s2">"git-flow"</span>
+brew <span class="s2">"mysql@5.7"</span>
+brew <span class="s2">"python3"</span>
+brew <span class="s2">"node"</span>
+brew <span class="s2">"watchman"</span>
+brew <span class="s2">"php"</span>
+<span class="c"># zsh is default in MacOS Catalina</span>
+<span class="c"># brew "zsh"</span>
+brew <span class="s2">"ruby"</span>
+
+mas <span class="s2">"LINE"</span>, <span class="nb">id</span>: 539883307
+mas <span class="s2">"KakaoTalk"</span>, <span class="nb">id</span>: 869223134
+mas <span class="s2">"Slack"</span>, <span class="nb">id</span>: 803453959
+mas <span class="s2">"Trello"</span>, <span class="nb">id</span>: 1278508951
+
+cask <span class="s2">"ngrok"</span>
+tap <span class="s2">"adoptopenjdk/openjdk"</span>
+cask <span class="s2">"adoptopenjdk8"</span>
+cask <span class="s2">"android-studio"</span>
+cask <span class="s2">"sequel-pro"</span>
+cask <span class="s2">"db-browser-for-sqlite"</span>
+cask <span class="s2">"mysqlworkbench"</span>
+cask <span class="s2">"sketch"</span>
+cask <span class="s2">"postman"</span>
+cask <span class="s2">"sourcetree"</span>
+cask <span class="s2">"google-chrome"</span>
+cask <span class="s2">"iterm2"</span>
+</code></pre></div></div> <p>このように使いたいツールを定義する方法について詳しく説明します。</p> <h3 id="brew">brew</h3> <p>Homebrewで正式的ダウンロードが可能なファイルは<code class="highlighter-rouge">brew "node"</code>ように作成します。定義するツールの名前を正確に分からない場合、下記のコマンドで名前を検索することができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew search node
+</code></pre></div></div> <p>そしたら、下記のような結果を見ることができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">==&gt;</span> Formulae
+heroku/brew/heroku-node        libbitcoin-node                node                           node@10                        node_exporter                  nodeenv
+leafnode                       llnode                         node-build                     node@8                         nodebrew                       nodenv
+
+<span class="o">==&gt;</span> Casks
+nodebox                                                        nodeclipse                                                     soundnode
+</code></pre></div></div> <p>検索結果をみたら<code class="highlighter-rouge">Formulae</code>と<code class="highlighter-rouge">Casks</code>、2つのリストが見えます。Homebrewが公式的サポートするツールは<code class="highlighter-rouge">Formulae</code>のリスト中にあります。このようにHomebrewが公式的サポートするツールはBrewfile中に下記のように作成しておいたら、将来に一個のコマンドを実行すると全てダウンロードすることができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="s2">"mas"</span>
+brew <span class="s2">"git-flow"</span>
+brew <span class="s2">"mysql@5.7"</span>
+brew <span class="s2">"python3"</span>
+brew <span class="s2">"node"</span>
+brew <span class="s2">"watchman"</span>
+brew <span class="s2">"php"</span>
+<span class="c"># zsh is default in MacOS Catalina</span>
+<span class="c"># brew "zsh"</span>
+brew <span class="s2">"ruby"</span>
+</code></pre></div></div> <h3 id="cask">cask</h3> <p>そしたら<code class="highlighter-rouge">Casks</code>は何でしょうか？CasksはHomebrewで公式的はサポートしないですが、Homebrewを使ってダウンロードできるツールを意味します。つまり、ウェブでダウンロードできるツールをHomebrewでインストールできるようにする機能がCasksです。</p> <p>例えば、グーグルの<code class="highlighter-rouge">Chrome</code>ブラウザはHomebrewが公式的サポートしてないですが、HomebrewのCasksを使ってインストールすることができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew search chrome
+</code></pre></div></div> <p>このようにグーグルのChromeを検索して見ると下記のような結果が見えます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">==&gt;</span> Formulae
+chrome-cli                                                                                     chrome-export
+
+<span class="o">==&gt;</span> Casks
+chrome-devtools                                dmm-player-for-chrome                          mkchromecast                                   homebrew/cask-versions/google-chrome-dev
+chrome-remote-desktop-host                     epichrome                                      homebrew/cask-versions/google-chrome-beta
+chromedriver                                   google-chrome                                  homebrew/cask-versions/google-chrome-canary
+</code></pre></div></div> <p>この中で私たちが使うChromeブラウザは<code class="highlighter-rouge">google-chrome</code>です。下記のHomebrewコマンドを使ってChromeブラウザをインストールすることができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>google-chrome
+</code></pre></div></div> <p>このようにHomebrewが公式的サポートしてないですが、ダウンロードが可能なツールをCasksを使ってBrewfileに作成します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cask <span class="s2">"ngrok"</span>
+tap <span class="s2">"adoptopenjdk/openjdk"</span>
+cask <span class="s2">"adoptopenjdk8"</span>
+cask <span class="s2">"android-studio"</span>
+cask <span class="s2">"sequel-pro"</span>
+cask <span class="s2">"db-browser-for-sqlite"</span>
+cask <span class="s2">"mysqlworkbench"</span>
+cask <span class="s2">"sketch"</span>
+cask <span class="s2">"postman"</span>
+cask <span class="s2">"sourcetree"</span>
+cask <span class="s2">"google-chrome"</span>
+cask <span class="s2">"iterm2"</span>
+</code></pre></div></div> <h3 id="mas">mas</h3> <p>もし、使いたいツールがマック(Mac)の<code class="highlighter-rouge">App store</code>にある場合、どうしたらいいでしょうか？これもHomebrewを使ってダウンロードすることができます。Homebrewを使ってApp storeにあるツールをダウンロードするためには<code class="highlighter-rouge">mas</code>を使います。</p> <p>下記のコマンドで<code class="highlighter-rouge">mas</code>をインストールします。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew isntall mas
+</code></pre></div></div> <p>このようにmasをインストールした後、下記のコマンドでmasでインストールできるツールを検索することができます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas search xcode
+</code></pre></div></div> <p>このように<code class="highlighter-rouge">xcode</code>を検索したら下記のような結果が出ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 497799835  Xcode                                                                <span class="o">(</span>11.1<span class="o">)</span>
+1183412116  Swiftify <span class="k">for </span>Xcode                                                   <span class="o">(</span>5.1<span class="o">)</span>
+...
+</code></pre></div></div> <p>このように検索出来たツールは下記のコマンドでインストールすることが出来ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas <span class="nb">install </span>497799835
+</code></pre></div></div> <p>masを使ってダウンロードできるツールを下記のようにBrewfileに作成します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas <span class="s2">"LINE"</span>, <span class="nb">id</span>: 539883307
+mas <span class="s2">"KakaoTalk"</span>, <span class="nb">id</span>: 869223134
+mas <span class="s2">"Slack"</span>, <span class="nb">id</span>: 803453959
+mas <span class="s2">"Trello"</span>, <span class="nb">id</span>: 1278508951
+</code></pre></div></div> <p>もちろん、この部分はmasがないとインストール出来ないので、Brewfileの一番上にmasをインストールするように設定します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="s2">"mas"</span>
+...
+</code></pre></div></div> <p>このように作ったBrewfileは下記のコマンドでインストールすることが出来ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle <span class="nt">--file</span><span class="o">=</span>./Brewfile
+</code></pre></div></div> <p>このコマンドを使うためにはもちろんHomebrewがマックにインストールされないとダメです。Homebrewのインストールや使うツールを細かく設定するためShell Scriptを作ってみましょう。</p> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="shell-script">Shell Script</h2> <p>Brewfileを使ったら使うツールを簡単にインストールすることが出来ます。しかし、インストールだけではなく色んな設定もするためにはShell Scriptを使う必要があります。</p> <h3 id="homebrewとbrewfileのインストール">HomebrewとBrewfileのインストール</h3> <p>まず、<code class="highlighter-rouge">./install.sh</code>ファイルを生成して下記のようにHomebrewをインストールして、Brewfileを実行して必要なツールをインストールするように作成します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+
+<span class="c"># install brew</span>
+/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># install via brew</span>
+brew bundle <span class="nt">--file</span><span class="o">=</span>./Brewfile
+</code></pre></div></div> <p>このように作成したスクリプトは下記のコマンドで実行出来ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh
+</code></pre></div></div> <h3 id="セキュリティとプライバシー">セキュリティとプライバシー</h3> <p>Casksでダウンロードしたツールはウェブでダウンロードしたツールと同じなので実行すると<code class="highlighter-rouge">Security</code>の問題で実行が出来ません。普通はこの時、<code class="highlighter-rouge">設定 &gt; セキュリティとプライバシー</code>を開いて<code class="highlighter-rouge">許可</code>ボタンを押してツールを実行します。</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/open-without-check-ja.png" alt="マック(mac)の開発環境設定 - セキュリティとプライバシーの許可"/></p> <p>この部分も下記のコマンドで解決出来ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo xattr -dr com.apple.quarantine /Applications/[App name]</span>
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Sourcetree.app
+</code></pre></div></div> <p>また、下記のコマンドでツールを実行することも出来ます。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># open /Applications/[App name]</span>
+open /Applications/Sourcetree.app
+</code></pre></div></div> <p>この内容を<code class="highlighter-rouge">./install.sh</code>に下記のように作成します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Sequel<span class="se">\ </span>Pro.app
+open /Applications/Sequel<span class="se">\ </span>Pro.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/DB<span class="se">\ </span>Browser<span class="se">\ </span><span class="k">for</span><span class="se">\ </span>SQLite.app
+open /Applications/DB<span class="se">\ </span>Browser<span class="se">\ </span><span class="k">for</span><span class="se">\ </span>SQLite.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/MySQLWorkbench.app
+open /Applications/MySQLWorkbench.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Sketch.app
+open /Applications/Sketch.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Postman.app
+open /Applications/Postman.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Sourcetree.app
+open /Applications/Sourcetree.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Google<span class="se">\ </span>Chrome.app
+open /Applications/Google<span class="se">\ </span>Chrome.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Android<span class="se">\ </span>Studio.app
+open /Applications/Android<span class="se">\ </span>Studio.app
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/iTerm.app
+open /Applications/iTerm.app
+</code></pre></div></div> <p>openコマンドを使ってツールを実行する理由はマックの下にある<code class="highlighter-rouge">Dock</code>に固定するためです。</p> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="フォント">フォント</h3> <p>VSCodeのソースコードフォントで<code class="highlighter-rouge">D2coding</code>を使うためzshとiTerm2で<code class="highlighter-rouge">Meslo LG M Regular for Powerline</code>フォントを使うためフォントを事前にダウンロードして<code class="highlighter-rouge">./fonts/</code>フォルダにコピーします。</p> <ul> <li><a href="https://github.com/naver/d2codingfont" rel="nofollow noreferrer" target="_blank">D2coding</a></li> <li><a href="https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf" rel="nofollow noreferrer" target="_blank">Meslo LG M Regular for Powerline</a></li> </ul> <p>このように事前にダウンロードしたフォントを新しマックでインストールするためには下記のコマンドを実行します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nb">cp</span> <span class="nt">-a</span> ./fonts/. ~/Library/Fonts
+</code></pre></div></div> <p>このコマンドを<code class="highlighter-rouge">./install.sh</code>ファイルに追加します。</p> <h3 id="zsh">zsh</h3> <p>zshのツールの設定を管理するため<code class="highlighter-rouge">./zsh/</code>フォルダを生成します。<code class="highlighter-rouge">./zsh/install.sh</code>ファイルを生成下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div> <p>このコマンドはoh my zshをインストールするコマンドです。</p> <p>そして現在使ってる<code class="highlighter-rouge">~/.zshrc</code>設定を<code class="highlighter-rouge">./zsh/</code>フォルダにコピーします。私が使ってる設定は下記のようです。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you come from bash you might have to change your $PATH.</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/bin:/usr/local/bin:<span class="nv">$PATH</span>
+
+<span class="c"># Path to your oh-my-zsh installation.</span>
+<span class="nb">export </span><span class="nv">ZSH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh"</span>
+
+<span class="c"># Set name of the theme to load --- if set to "random", it will</span>
+<span class="c"># load a random theme each time oh-my-zsh is loaded, in which case,</span>
+<span class="c"># to know which specific one was loaded, run: echo $RANDOM_THEME</span>
+<span class="c"># See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</span>
+<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">"powerlevel10k/powerlevel10k"</span>
+
+<span class="c"># Set list of themes to pick from when loading at random</span>
+<span class="c"># Setting this variable when ZSH_THEME=random will cause zsh to load</span>
+<span class="c"># a theme from this variable instead of looking in ~/.oh-my-zsh/themes/</span>
+<span class="c"># If set to an empty array, this variable will have no effect.</span>
+<span class="c"># ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )</span>
+
+<span class="c"># Uncomment the following line to use case-sensitive completion.</span>
+<span class="c"># CASE_SENSITIVE="true"</span>
+
+<span class="c"># Uncomment the following line to use hyphen-insensitive completion.</span>
+<span class="c"># Case-sensitive completion must be off. _ and - will be interchangeable.</span>
+<span class="c"># HYPHEN_INSENSITIVE="true"</span>
+
+<span class="c"># Uncomment the following line to disable bi-weekly auto-update checks.</span>
+<span class="c"># DISABLE_AUTO_UPDATE="true"</span>
+
+<span class="c"># Uncomment the following line to change how often to auto-update (in days).</span>
+<span class="c"># export UPDATE_ZSH_DAYS=13</span>
+
+<span class="c"># Uncomment the following line to disable colors in ls.</span>
+<span class="c"># DISABLE_LS_COLORS="true"</span>
+
+<span class="c"># Uncomment the following line to disable auto-setting terminal title.</span>
+<span class="c"># DISABLE_AUTO_TITLE="true"</span>
+
+<span class="c"># Uncomment the following line to enable command auto-correction.</span>
+<span class="c"># ENABLE_CORRECTION="true"</span>
+
+<span class="c"># Uncomment the following line to display red dots whilst waiting for completion.</span>
+<span class="c"># COMPLETION_WAITING_DOTS="true"</span>
+
+<span class="c"># Uncomment the following line if you want to disable marking untracked files</span>
+<span class="c"># under VCS as dirty. This makes repository status check for large repositories</span>
+<span class="c"># much, much faster.</span>
+<span class="c"># DISABLE_UNTRACKED_FILES_DIRTY="true"</span>
+
+<span class="c"># Uncomment the following line if you want to change the command execution time</span>
+<span class="c"># stamp shown in the history command output.</span>
+<span class="c"># You can set one of the optional three formats:</span>
+<span class="c"># "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"</span>
+<span class="c"># or set a custom format using the strftime function format specifications,</span>
+<span class="c"># see 'man strftime' for details.</span>
+<span class="c"># HIST_STAMPS="mm/dd/yyyy"</span>
+
+<span class="c"># Would you like to use another custom folder than $ZSH/custom?</span>
+<span class="c"># ZSH_CUSTOM=/path/to/new-custom-folder</span>
+
+<span class="c"># Which plugins would you like to load?</span>
+<span class="c"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span>
+<span class="c"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span>
+<span class="c"># Example format: plugins=(rails git textmate ruby lighthouse)</span>
+<span class="c"># Add wisely, as too many plugins slow down shell startup.</span>
+<span class="nv">plugins</span><span class="o">=(</span>git<span class="o">)</span>
+
+<span class="c"># python virtualenv</span>
+<span class="nv">plugins</span><span class="o">=(</span>virtualenv<span class="o">)</span>
+
+<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+
+<span class="c"># User configuration</span>
+
+<span class="c"># export MANPATH="/usr/local/man:$MANPATH"</span>
+
+<span class="c"># You may need to manually set your language environment</span>
+<span class="c"># export LANG=en_US.UTF-8</span>
+
+<span class="c"># Preferred editor for local and remote sessions</span>
+<span class="c"># if [[ -n $SSH_CONNECTION ]]; then</span>
+<span class="c">#   export EDITOR='vim'</span>
+<span class="c"># else</span>
+<span class="c">#   export EDITOR='mvim'</span>
+<span class="c"># fi</span>
+
+<span class="c"># Compilation flags</span>
+<span class="c"># export ARCHFLAGS="-arch x86_64"</span>
+
+<span class="c"># ssh</span>
+<span class="c"># export SSH_KEY_PATH="~/.ssh/rsa_id"</span>
+
+<span class="c"># Set personal aliases, overriding those provided by oh-my-zsh libs,</span>
+<span class="c"># plugins, and themes. Aliases can be placed here, though oh-my-zsh</span>
+<span class="c"># users are encouraged to define aliases within the ZSH_CUSTOM folder.</span>
+<span class="c"># For a full list of active aliases, run `alias`.</span>
+<span class="c">#</span>
+<span class="c"># Example aliases</span>
+<span class="c"># alias zshconfig="mate ~/.zshrc"</span>
+<span class="c"># alias ohmyzsh="mate ~/.oh-my-zsh"</span>
+
+<span class="c"># remove user name in zsh</span>
+<span class="c"># prompt_context(){}</span>
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>virtualenv dir_writable <span class="nb">dir </span>vcs<span class="o">)</span>
+<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>status <span class="nb">time </span>battery<span class="o">)</span>
+
+<span class="c"># vscode code command</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</span>
+<span class="c"># brew path</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:/usr/local/sbin:<span class="nv">$PATH</span>
+<span class="c"># python3 default</span>
+<span class="nb">alias </span><span class="nv">python</span><span class="o">=</span>python3
+<span class="nb">alias </span><span class="nv">pip</span><span class="o">=</span>pip3
+<span class="c"># composer</span>
+<span class="nb">alias </span><span class="nv">composer</span><span class="o">=</span><span class="s2">"php /usr/local/bin/composer.phar"</span>
+<span class="c"># Laravel</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.composer/vendor/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="c"># mysql</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/mysql@5.7/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="c"># jekyll</span>
+<span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gems
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/gems/bin:<span class="nv">$PATH</span>
+<span class="c"># Android path for React Native</span>
+<span class="nb">export </span><span class="nv">ANDROID_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Android/sdk
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/emulator
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/tools
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/tools/bin
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/platform-tools
+</code></pre></div></div> <p>このファイルをコピーするため下記のコマンドを<code class="highlighter-rouge">./zsh/install.sh</code>に追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nb">cp</span> ./zsh/.zshrc ~/.zshrc
+</code></pre></div></div> <p>最後にはzshテーマをインストールするため下記のコマンドを<code class="highlighter-rouge">./zsh/install.sh</code>に追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+git clone https://github.com/romkatv/powerlevel10k.git /Users/<span class="nv">$USER</span>/.oh-my-zsh/themes/powerlevel10k
+</code></pre></div></div> <p>完成した<code class="highlighter-rouge">./zsh/install.sh</code>は下記のようです。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+
+<span class="c">#install oh my zsh</span>
+sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># copy my zsh settings</span>
+<span class="nb">cp</span> ./zsh/.zshrc ~/.zshrc
+
+<span class="c"># install zsh theme</span>
+git clone https://github.com/romkatv/powerlevel10k.git /Users/<span class="nv">$USER</span>/.oh-my-zsh/themes/powerlevel10k
+</code></pre></div></div> <p>完成した<code class="highlighter-rouge">./zsh/install.sh</code>スクリプトを<code class="highlighter-rouge">./install.sh</code>で実行するため<code class="highlighter-rouge">./install.sh</code>ファイルを下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># configure zsh</span>
+<span class="nb">chmod </span>755 ./zsh/install.sh
+./zsh/install.sh
+</code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="vscode設定">VSCode設定</h3> <p>VSCodeのインストールや設定を管理するため<code class="highlighter-rouge">./vscode/</code>フォルダを作って、<code class="highlighter-rouge">./vscode/install.sh</code>ファイルを生成します。</p> <p>VSCodeをインストールして実行するため下記のようにコマンドを追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+brew cask <span class="nb">install </span>visual-studio-code
+
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
+</code></pre></div></div> <p>そして使ってる<code class="highlighter-rouge">Extension</code>をインストールするため下記のようにコマンドを追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># install vscode extensions</span>
+code <span class="nt">--install-extension</span> AlanWalk.markdown-toc
+code <span class="nt">--install-extension</span> christian-kohler.npm-intellisense
+code <span class="nt">--install-extension</span> christian-kohler.path-intellisense
+code <span class="nt">--install-extension</span> CoenraadS.bracket-pair-colorizer
+code <span class="nt">--install-extension</span> DavidAnson.vscode-markdownlint
+code <span class="nt">--install-extension</span> dzannotti.vscode-babel-coloring
+code <span class="nt">--install-extension</span> esbenp.prettier-vscode
+code <span class="nt">--install-extension</span> felixfbecker.php-intellisense
+code <span class="nt">--install-extension</span> fterrag.vscode-php-cs-fixer
+code <span class="nt">--install-extension</span> gencer.html-slim-scss-css-class-completion
+code <span class="nt">--install-extension</span> jcbuisson.vue
+code <span class="nt">--install-extension</span> leizongmin.node-module-intellisense
+code <span class="nt">--install-extension</span> mf.vscode-styled-components
+code <span class="nt">--install-extension</span> ms-python.python
+code <span class="nt">--install-extension</span> ms-vscode.vscode-typescript-tslint-plugin
+code <span class="nt">--install-extension</span> msjsdiag.debugger-for-chrome
+code <span class="nt">--install-extension</span> redhat.vscode-yaml
+code <span class="nt">--install-extension</span> RoscoP.ActiveFileInStatusBar
+code <span class="nt">--install-extension</span> shardulm94.trailing-spaces
+code <span class="nt">--install-extension</span> vscode-icons-team.vscode-icons
+</code></pre></div></div> <p>VSCodeのextensionをインストールするためには<code class="highlighter-rouge">code --install-extension [extension id]</code>なようにコマンドを作ります。ここで<code class="highlighter-rouge">extension id</code>は下記のようにExtensionの詳細ページでExtensionの名前の横で確認できます。</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/vscode-install-extension.png" alt="マック(mac)の開発環境設定 - vscode extension インストール"/></p> <p>最後には現在使ってるVSCodeの設定を<code class="highlighter-rouge">./vscode/</code>フォルダにコピーします。VSCodeの設定は下記のフォルダにあります。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
+</code></pre></div></div> <p>このようにコピーした<code class="highlighter-rouge">settings.json</code>ファイルを新しマックで設定するため下記のコマンドを<code class="highlighter-rouge">./vscode/install.sh</code>に追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nb">cp</span> ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
+</code></pre></div></div> <p>最終完成した<code class="highlighter-rouge">./vscode/install.sh</code>は下記のようです。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+brew cask <span class="nb">install </span>visual-studio-code
+
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
+
+<span class="c"># install vscode extensions</span>
+code <span class="nt">--install-extension</span> AlanWalk.markdown-toc
+code <span class="nt">--install-extension</span> christian-kohler.npm-intellisense
+code <span class="nt">--install-extension</span> christian-kohler.path-intellisense
+code <span class="nt">--install-extension</span> CoenraadS.bracket-pair-colorizer
+code <span class="nt">--install-extension</span> DavidAnson.vscode-markdownlint
+code <span class="nt">--install-extension</span> dzannotti.vscode-babel-coloring
+code <span class="nt">--install-extension</span> esbenp.prettier-vscode
+code <span class="nt">--install-extension</span> felixfbecker.php-intellisense
+code <span class="nt">--install-extension</span> fterrag.vscode-php-cs-fixer
+code <span class="nt">--install-extension</span> gencer.html-slim-scss-css-class-completion
+code <span class="nt">--install-extension</span> jcbuisson.vue
+code <span class="nt">--install-extension</span> leizongmin.node-module-intellisense
+code <span class="nt">--install-extension</span> mf.vscode-styled-components
+code <span class="nt">--install-extension</span> ms-python.python
+code <span class="nt">--install-extension</span> ms-vscode.vscode-typescript-tslint-plugin
+code <span class="nt">--install-extension</span> msjsdiag.debugger-for-chrome
+code <span class="nt">--install-extension</span> redhat.vscode-yaml
+code <span class="nt">--install-extension</span> RoscoP.ActiveFileInStatusBar
+code <span class="nt">--install-extension</span> shardulm94.trailing-spaces
+code <span class="nt">--install-extension</span> vscode-icons-team.vscode-icons
+
+<span class="c"># copy vscode settings</span>
+<span class="nb">cp</span> ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
+</code></pre></div></div> <p>この<code class="highlighter-rouge">./vscode/install.sh</code>を実行するため<code class="highlighter-rouge">./install.sh</code>ファイルの下に下記のように追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># configure VSCode</span>
+<span class="nb">chmod </span>755 ./vscode/install.sh
+./vscode/install.sh
+</code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="iterm2">iTerm2</h3> <p>iTerm2のインストールや設定を管理するため<code class="highlighter-rouge">./iterm2/</code>フォルダを生成します。そして現在のiTerm2を実行します。</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-preference.png" alt="マック(mac)の開発環境設定 - iterm2 設定"/></p> <p>iTerm2の現在設定をエクスポートするため<code class="highlighter-rouge">Preferences... &gt; General &gt; Preferences</code>を選択します。</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-preference-expert.png" alt="マック(mac)の開発環境設定 - iterm2 設定エクスポート 내보내기"/></p> <p>上の画面で<code class="highlighter-rouge">Load preferences from a custom folder or URL</code>をチェックします。そして<code class="highlighter-rouge">Browse</code>ボタンを押して上部で作った<code class="highlighter-rouge">./iterm2/</code>フォルダを設定します。</p> <p>設定を完了したら<code class="highlighter-rouge">Save Current Settings to Folder</code>ボタンを押して現在のiTerm2の設定をエクスポートします。</p> <p>このように設定をエクスポートすると、<code class="highlighter-rouge">./iterm2/com.googlecode.iterm2.plist</code>ファイルが生成されることが確認できます。</p> <p>次は、<code class="highlighter-rouge">./iterm2/install.sh</code>ファイルを生成して下記のように追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+
+<span class="nb">cp</span> ./iterm2/com.googlecode.iterm2.plist ~/Library/Application<span class="se">\ </span>Support/iTerm2/DynamicProfiles/
+
+chsh <span class="nt">-s</span> /bin/zsh
+</code></pre></div></div> <p>上部で生成した<code class="highlighter-rouge">com.googlecode.iterm2.plist</code>ファイルをコピーするコマンドとzshを基本Shellで設定するコマンド(<code class="highlighter-rouge">chsh -s /bin/zsh</code>)を追加しました。</p> <p>次は<code class="highlighter-rouge">./install.sh</code>ファイルしたに下記の内容を追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># copy iterm2 configuration</span>
+<span class="nb">chmod </span>755 ./iterm2/install.sh
+./iterm2/install.sh
+</code></pre></div></div> <h3 id="jekyll開発環境">jekyll開発環境</h3> <p>私は<code class="highlighter-rouge">jekyll</code>を使ってブログを運営しています。jekyllをインストールするため<code class="highlighter-rouge">./jekyll/install.sh</code>ファイルを生成して下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+
+<span class="nb">sudo </span>gem <span class="nb">install </span>bundler jekyll
+</code></pre></div></div> <p>生成したフィルを実行するため<code class="highlighter-rouge">./install.sh</code>ファイルの下に下記のように追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># install jekyll</span>
+<span class="nb">chmod </span>755 ./jekyll/install.sh
+./jekyll/install.sh
+</code></pre></div></div> <h3 id="react-native開発環境">react-native開発環境</h3> <p>私はアプリ開発に<code class="highlighter-rouge">React Native</code>を使ってます。React Nativeをインストールすため<code class="highlighter-rouge">./react-native/install.sh</code>ファイルを生成して下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+npm <span class="nb">install</span> <span class="nt">-g</span> react-native-cli
+
+npm config <span class="nb">set </span>save-exact<span class="o">=</span><span class="nb">true
+
+sudo </span>gem <span class="nb">install </span>cocoapods
+</code></pre></div></div> <ul> <li>npm install -g react-native-cli: react-native-cliをインストールします。</li> <li>npm config set save-exact=true: react-nativeのバージョンのせいで発生する問題を減らすためnpmモジュールをインストールする時package.jsonにバージョンを固定するようにします。</li> <li>sudo gem install cocoapods: iOSのpodを使うためcocoapodsをインストールします。</li> </ul> <p>次は<code class="highlighter-rouge">./install.sh</code>ファイルを開いて下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># install react-native</span>
+<span class="nb">chmod </span>755 ./react-native/install.sh
+./react-native/install.sh
+</code></pre></div></div> <h3 id="python開発環境">python開発環境</h3> <p>python開発環境に必要なライブラリをインストールするため<code class="highlighter-rouge">./python/install.sh</code>ファイルを生成して下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+pip <span class="nb">install </span>virtualenv pylint autopep8
+</code></pre></div></div> <p>生成したファイルを実行するため<code class="highlighter-rouge">./install.sh</code>ファイルを生成して下記のように追加します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># install python3</span>
+<span class="nb">chmod </span>755 ./python/install.sh
+./python/install.sh
+</code></pre></div></div> <h3 id="xcode">Xcode</h3> <p>これが最後です。<code class="highlighter-rouge">Xcode</code>をインストールするため<code class="highlighter-rouge">./xcode/install.sh</code>ファイルを生成して下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
+
+mas <span class="nb">install </span>497799835
+
+<span class="nb">sudo </span>xcodebuild <span class="nt">-license</span> accept
+</code></pre></div></div> <ul> <li>mas install 497799835: Homebrewのmasを使ってXcodeをインストールします。</li> <li>sudo xcodebuild -license accept: コマンドを使ってXcodeのライセンスに同意します。</li> </ul> <p>生成したスクリプトを実行するため<code class="highlighter-rouge">./install.sh</code>を下記のように修正します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># install xcode</span>
+<span class="nb">chmod </span>755 ./xcode/install.sh
+./xcode/install.sh
+</code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="開発環境の設定を保存github">開発環境の設定を保存(Github)</h2> <p>このように作った開発環境の設定を<code class="highlighter-rouge">Github</code>に保存します。今まで作った私の設定内容は下記のリンクで確認することができます。</p> <ul> <li><a href="https://github.com/dev-yakuza/development-environment-for-mac-os" target="_blank">https://github.com/dev-yakuza/development-environment-for-mac-os</a></li> </ul> <h2 id="マックの初期化や最新osインストール">マックの初期化や最新OSインストール</h2> <p>マックを初期化して最新のOSをインストールするためマックを再起動します。再起動する時<code class="highlighter-rouge">Command + Option + r</code>を押してインターネット経由で macOS 復元を試します。詳しく内容は下記のリンクを確認してください。</p> <ul> <li><a href="https://support.apple.com/ja-jp/HT201314" rel="nofollow noreferrer" target="_blank">https://support.apple.com/ja-jp/HT201314</a></li> </ul> <h2 id="新しマックに開発環境を設定する">新しマックに開発環境を設定する</h2> <p>このようにマックを初期化や最新のOSをインストールした後、ターミナルを実行して下記のコマンドでgitのバージョンを確認します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div> <p>まだ、マックにgitがインストールされてないので、gitをインストールする案内メッセージが出ます。案内メッセージを使ってgitをインストールします。</p> <p>gitのインストールが終わったら、git cloneコマンドを実行して上で作った開発環境のスクリプトをコピーします。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/dev-yakuza/development-environment-for-mac-os.git
+</code></pre></div></div> <p>コピーが終わったら、下記のコマンドで開発環境を児童に設定します。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./development-environment-for-mac-os/install.sh
+</code></pre></div></div> <p>スクリプトが実行する際、管理者権限が必要なコマンドがあるので途中に管理者のパスワードを入力する必要があります。</p> <h3 id="iterm2手動設定">iTerm2手動設定</h3> <p>残念ですがiTerm2は手動でテーマとフォントを設定する必要があります。下記のように新しマックに手動でテーマとフォントを設定します。</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-theme.png" alt="マック(mac)の開発環境設定 - iterm2のテーマを手動で設定"/></p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-font.png" alt="マック(mac)の開発環境設定 - iterm2のフォントを手動で設定"/></p> <h2 id="完了">完了</h2> <p>今回、マックのOSであるカタリナ(Catalina)をアップデートする際、マックの開発環境を最初から構築することになりました。毎回毎回、手動で一つ一つづつインストールしたものをちょっと効率的できる方法がないか探してみて、今回のブログを作成することになりました。</p> <p>今後はHomebrewとShell Scriptを使ってマックをもっと簡単に再設定ができるようになりました。皆さんも皆さんのBrewfileとShell Scriptを作って簡単にマックの開発環境が設定できるようにしてみてください。</p> <div class="buy_me_a_coffee_container"> <style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; box-shadow: none !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-flex !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important; -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; margin: 0 auto !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a> </div> </article> <div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> </div> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto"> <div class="post-list-container"> <div class="header"> <div class="header-title">Posts</div> </div> <div class="body"> <div class="list-group"></div> </div> <div class="footer"> <ul class="pagination"> <li class="page-item page-item--previous"> <div class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </div> </li> <li class="page-item page-item--next"> <div class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </div> </li> </ul> </div> </div> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){$.get("/api/environment/posts.json",function(e){e.length>0&&($(".post-list-container").show(),e.forEach(function(e){var a=$(".post-list-container .body .list-group"),t=a.find(".page-"+e.page),i=e.url.indexOf(location.pathname)>=0?"active":"",s="";if(s+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+i+'">',s+='  <div class="d-flex w-100 justify-content-between">',s+='    <div class="mb-1">'+e.title+"</div>",s+="  </div>",s+='  <div class="body-text">'+e.description+"</div>",s+="</a>",t.length>0)t.addClass(i),t.append(s);else{var n="";n+='<div class="page page-'+e.page+" "+i+'">',n+=s,n+="</div>",a.append(n)}var p="";p+='<li class="page-item page-item--link '+i+'" data-page="'+e.page+'">',p+='  <div class="page-link" data-page="'+e.page+'">',p+=e.page,p+="  </div>",p+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+e.page+'"]').length&&$(".post-list-container .footer .page-item--next").before(p),"active"===i&&$("li[data-page="+e.page+"]").addClass(i),e.page>1&&$(".footer").css("display","flex")}))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")})});</script> </div> <div class="col-lg-8 col-md-10 mx-auto"> <hr/> <div id="disqus_thread"></div> <script>var disqus_config=function(){this.page.url="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/",this.page.identifier="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"};!function(){var e=document,t=e.createElement("script");t.src="https://https-dev-yakuza-github-io.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();</script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> </div> <hr/> <footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div> <div class="col-lg-8 col-md-10 mx-auto"> <ul class="list-inline text-center"> <li class="list-inline-item"> <a href="https://twitter.com/intent/tweet?text=HomebrewとShell Scriptを使ってマック(Mac)の開発環境構築を自動化する&url=https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> </li> <li class="list-inline-item"> <a href="https://dev-yakuza.github.io/feed.xml" rel="nofollow noreferrer noopener" target="_blank"> <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i> </span> </a> </li> </ul> <p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2019 </p> </div> </div> </div> </footer> <script src="/assets/vendor/jquery/jquery.min.js"></script> <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script> <script src="/assets/scripts.js"></script> </body> </html>
