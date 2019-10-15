@@ -1,5 +1,5 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <meta name="twitter:title" content="Configure automatically development environment on Mac via Homebrew and Shell Script"/> <meta name="twitter:description" content="Let's see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let's see how to use Brewfile and Shell script on new Mac for configuring the development environment."/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:site" content="@DevYakuza"/> <meta name="twitter:creator" content="@DevYakuza"/> <title>Configure automatically development environment on Mac via Homebrew and Shell Script - Let's see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let's see how to use Brewfile and Shell script on new Mac for configuring the development environment.</title> <meta name="description" content="Let&#39;s see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let&#39;s see how to use Brewfile and Shell scrip..."/> <meta property="og:url" content="https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta name="generator" content="Jekyll v3.8.5"/> <meta property="og:title" content="Configure automatically development environment on Mac via Homebrew and Shell Script"/> <meta name="author" content="dev.yakuza@gmail.com"/> <meta property="og:locale" content="en"/> <meta name="description" content="Let’s see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let’s see how to use Brewfile and Shell script on new Mac for configuring the development environment."/> <meta property="og:description" content="Let’s see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let’s see how to use Brewfile and Shell script on new Mac for configuring the development environment."/> <link rel="canonical" href="https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta property="og:url" content="https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"/> <meta property="og:site_name" content="Dreams the art through programming"/> <meta property="og:image" content="https://dev-yakuza.github.io/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2019-10-10T00:00:00+09:00"/> <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/","headline":"Configure automatically development environment on Mac via Homebrew and Shell Script","dateModified":"2019-10-14T14:53:05+09:00","datePublished":"2019-10-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"},"image":"https://dev-yakuza.github.io/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"description":"Let’s see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let’s see how to use Brewfile and Shell script on new Mac for configuring the development environment.","@type":"BlogPosting","@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/> <link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/en/assets/main.css?v=20191014"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/en/feed.xml"/> <script type="application/ld+json">
+{"url":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/","image":"https://dev-yakuza.github.io/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/background.png","headline":"Configure automatically development environment on Mac via Homebrew and Shell Script","dateModified":"2019-10-14T14:53:05+09:00","datePublished":"2019-10-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.github.io/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.github.io/assets/images/icon.png"},"name":"dev.yakuza@gmail.com"},"description":"Let’s see how to configure automatically development environment on Mac via Homebrew and Shell Script. and then Let’s see how to use Brewfile and Shell script on new Mac for configuring the development environment.","@type":"BlogPosting","@context":"http://schema.org"}</script> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script> <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/> <link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/> <link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/> <link rel="stylesheet" href="/en/assets/main.css?v=20191015"/> <link rel="alternate" type="application/rss+xml" title="Dreams the art through programming" href="/en/feed.xml"/> <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Person",
@@ -58,10 +58,10 @@ brew <span class="s2">"php"</span>
 <span class="c"># brew "zsh"</span>
 brew <span class="s2">"ruby"</span>
 
-mas <span class="s2">"LINE"</span>, <span class="nb">id</span>: 539883307
-mas <span class="s2">"KakaoTalk"</span>, <span class="nb">id</span>: 869223134
-mas <span class="s2">"Slack"</span>, <span class="nb">id</span>: 803453959
-mas <span class="s2">"Trello"</span>, <span class="nb">id</span>: 1278508951
+mas <span class="s2">"LINE"</span>, id: 539883307
+mas <span class="s2">"KakaoTalk"</span>, id: 869223134
+mas <span class="s2">"Slack"</span>, id: 803453959
+mas <span class="s2">"Trello"</span>, id: 1278508951
 
 cask <span class="s2">"ngrok"</span>
 tap <span class="s2">"adoptopenjdk/openjdk"</span>
@@ -100,7 +100,7 @@ chrome-cli                                                                      
 chrome-devtools                                dmm-player-for-chrome                          mkchromecast                                   homebrew/cask-versions/google-chrome-dev
 chrome-remote-desktop-host                     epichrome                                      homebrew/cask-versions/google-chrome-beta
 chromedriver                                   google-chrome                                  homebrew/cask-versions/google-chrome-canary
-</code></pre></div></div> <p>In the list, <code class="highlighter-rouge">google-chrome</code> is Chrome browser what we use usually. We can install it via Homebrew command like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>google-chrome
+</code></pre></div></div> <p>In the list, <code class="highlighter-rouge">google-chrome</code> is Chrome browser what we use usually. We can install it via Homebrew command like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask install google-chrome
 </code></pre></div></div> <p>Writing them in Brewfile with Casks like below, we can download them via Homebrew.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cask <span class="s2">"ngrok"</span>
 tap <span class="s2">"adoptopenjdk/openjdk"</span>
 cask <span class="s2">"adoptopenjdk8"</span>
@@ -113,23 +113,23 @@ cask <span class="s2">"postman"</span>
 cask <span class="s2">"sourcetree"</span>
 cask <span class="s2">"google-chrome"</span>
 cask <span class="s2">"iterm2"</span>
-</code></pre></div></div> <h3 id="mas">mas</h3> <p>If the tools are in Mac’s <code class="highlighter-rouge">App store</code>, What do we do? In this case, we can use Homebrew to download them too. To download the tools exist in App store, we should use Homebrew’s <code class="highlighter-rouge">mas</code> to download them.</p> <p>Execute the command below to install <code class="highlighter-rouge">mas</code>.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew isntall mas
+</code></pre></div></div> <h3 id="mas">mas</h3> <p>If the tools are in Mac’s <code class="highlighter-rouge">App store</code>, What do we do? In this case, we can use Homebrew to download them too. To download the tools exist in App store, we should use Homebrew’s <code class="highlighter-rouge">mas</code> to download them.</p> <p>Execute the command below to install <code class="highlighter-rouge">mas</code>.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mas
 </code></pre></div></div> <p>After installing mas, you can search the tools that you can download from App store via the command below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas search xcode
 </code></pre></div></div> <p>When you search <code class="highlighter-rouge">xcode</code> like above, you can see the result like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 497799835  Xcode                                                                <span class="o">(</span>11.1<span class="o">)</span>
 1183412116  Swiftify <span class="k">for </span>Xcode                                                   <span class="o">(</span>5.1<span class="o">)</span>
 ...
-</code></pre></div></div> <p>And then, you can download it using the command below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas <span class="nb">install </span>497799835
-</code></pre></div></div> <p>Write the tools that you can download via mas in Brewfile like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas <span class="s2">"LINE"</span>, <span class="nb">id</span>: 539883307
-mas <span class="s2">"KakaoTalk"</span>, <span class="nb">id</span>: 869223134
-mas <span class="s2">"Slack"</span>, <span class="nb">id</span>: 803453959
-mas <span class="s2">"Trello"</span>, <span class="nb">id</span>: 1278508951
+</code></pre></div></div> <p>And then, you can download it using the command below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas install 497799835
+</code></pre></div></div> <p>Write the tools that you can download via mas in Brewfile like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mas <span class="s2">"LINE"</span>, id: 539883307
+mas <span class="s2">"KakaoTalk"</span>, id: 869223134
+mas <span class="s2">"Slack"</span>, id: 803453959
+mas <span class="s2">"Trello"</span>, id: 1278508951
 </code></pre></div></div> <p>Of course, we can’t download them without mas, so write mas installation like below on the top of Brewfile.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="s2">"mas"</span>
 ...
 </code></pre></div></div> <p>we can install all tools in Brewfile via the command below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle <span class="nt">--file</span><span class="o">=</span>./Brewfile
 </code></pre></div></div> <p>This command requires Homebrew installed on Mac. Let’s make Shell script to install Homebrew and configure the tools.</p> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="shell-script">Shell Script</h2> <p>We can easily install the tools by using Brewfile. However, we need Shell script not only to install but also to configure them.</p> <h3 id="install-homebrew-and-brewfile">Install Homebrew and Brewfile</h3> <p>First, create <code class="highlighter-rouge">./install.sh</code> and modify it like below to install Homebrew, and install the tools in Brewfile.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
 
 <span class="c"># install brew</span>
-/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
+/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
 
 <span class="c"># install via brew</span>
 brew bundle <span class="nt">--file</span><span class="o">=</span>./Brewfile
@@ -158,8 +158,8 @@ open /Applications/Android<span class="se">\ </span>Studio.app
 <span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/iTerm.app
 open /Applications/iTerm.app
 </code></pre></div></div> <p>the reason that I use the open command is to keep the tools in <code class="highlighter-rouge">Dock</code> of Mac.</p> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="fonts">Fonts</h3> <p>To use <code class="highlighter-rouge">D2coding</code> font for source code font in VSCode and <code class="highlighter-rouge">Meslo LG M Regular for Powerline</code> font for zsh and iTerm2, I downloaded and copy them to <code class="highlighter-rouge">./fonts/</code> folder.</p> <ul> <li><a href="https://github.com/naver/d2codingfont" rel="nofollow noreferrer" target="_blank">D2coding</a></li> <li><a href="https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf" rel="nofollow noreferrer" target="_blank">Meslo LG M Regular for Powerline</a></li> </ul> <p>To install the pre-downloaded font on the new Mac, execute the copy command below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-<span class="nb">cp</span> <span class="nt">-a</span> ./fonts/. ~/Library/Fonts
-</code></pre></div></div> <p>Add this command to <code class="highlighter-rouge">./install.sh</code> file.</p> <h3 id="zsh">zsh</h3> <p>Create <code class="highlighter-rouge">./zsh/</code> folder to save zsh configuration. Create <code class="highlighter-rouge">./zsh/install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+cp <span class="nt">-a</span> ./fonts/. ~/Library/Fonts
+</code></pre></div></div> <p>Add this command to <code class="highlighter-rouge">./install.sh</code> file.</p> <h3 id="zsh">zsh</h3> <p>Create <code class="highlighter-rouge">./zsh/</code> folder to save zsh configuration. Create <code class="highlighter-rouge">./zsh/install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div></div> <p>This command is to install oh my zsh.</p> <p>And then, copy the current settings file(<code class="highlighter-rouge">~/.zshrc</code>) to <code class="highlighter-rouge">./zsh/</code> folder. the content below is my current configuration of oh my zsh.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you come from bash you might have to change your $PATH.</span>
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/bin:/usr/local/bin:<span class="nv">$PATH</span>
 
@@ -262,7 +262,7 @@ open /Applications/iTerm.app
 
 <span class="c"># remove user name in zsh</span>
 <span class="c"># prompt_context(){}</span>
-<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>virtualenv dir_writable <span class="nb">dir </span>vcs<span class="o">)</span>
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>virtualenv dir_writable dir vcs<span class="o">)</span>
 <span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>status <span class="nb">time </span>battery<span class="o">)</span>
 
 <span class="c"># vscode code command</span>
@@ -288,25 +288,25 @@ open /Applications/iTerm.app
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/tools/bin
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/platform-tools
 </code></pre></div></div> <p>To copy this file, add the command below to <code class="highlighter-rouge">./zsh/install.sh</code> file.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-<span class="nb">cp</span> ./zsh/.zshrc ~/.zshrc
+cp ./zsh/.zshrc ~/.zshrc
 </code></pre></div></div> <p>Lastly, add the command below for installing zsh theme to <code class="highlighter-rouge">./zsh/install.sh</code> file.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 git clone https://github.com/romkatv/powerlevel10k.git /Users/<span class="nv">$USER</span>/.oh-my-zsh/themes/powerlevel10k
 </code></pre></div></div> <p>The completed <code class="highlighter-rouge">./zsh/install.sh</code> is as below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
 
 <span class="c">#install oh my zsh</span>
-sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+sh <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span>
 
 <span class="c"># copy my zsh settings</span>
-<span class="nb">cp</span> ./zsh/.zshrc ~/.zshrc
+cp ./zsh/.zshrc ~/.zshrc
 
 <span class="c"># install zsh theme</span>
 git clone https://github.com/romkatv/powerlevel10k.git /Users/<span class="nv">$USER</span>/.oh-my-zsh/themes/powerlevel10k
 </code></pre></div></div> <p>To execute <code class="highlighter-rouge">./zsh/install.sh</code> script, modify <code class="highlighter-rouge">./install.sh</code> file like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># configure zsh</span>
-<span class="nb">chmod </span>755 ./zsh/install.sh
+chmod 755 ./zsh/install.sh
 ./zsh/install.sh
 </code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="vscode-settings">VSCode settings</h3> <p>Create <code class="highlighter-rouge">./vscode/</code> folder to manage VSCode installation and settings, and create <code class="highlighter-rouge">./vscode/install.sh</code> file.</p> <p>Add the command below to install and open VSCode.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
-brew cask <span class="nb">install </span>visual-studio-code
+brew cask install visual-studio-code
 
 <span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
 </code></pre></div></div> <p>And then, to install VSCode <code class="highlighter-rouge">Extention</code>, add the command like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
@@ -333,9 +333,9 @@ code <span class="nt">--install-extension</span> shardulm94.trailing-spaces
 code <span class="nt">--install-extension</span> vscode-icons-team.vscode-icons
 </code></pre></div></div> <p>To install VSCode extension, we need to execute the command like <code class="highlighter-rouge">code --install-extension [extension id]</code>. You can find <code class="highlighter-rouge">extension id</code> on the right of the extension name in the extension detail page like below.</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/vscode-install-extension.png" alt="configure the development environment on Mac - install vscode extension"/></p> <p>Lastly, copy the current VSCode configuration to <code class="highlighter-rouge">./vscode/</code> folder. VSCode configuration is on the folder below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
 </code></pre></div></div> <p>To configure copied <code class="highlighter-rouge">settings.json</code> on new Mac, add the command below to <code class="highlighter-rouge">./vscode/install.sh</code> file.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-<span class="nb">cp</span> ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
+cp ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
 </code></pre></div></div> <p>The completed <code class="highlighter-rouge">./vscode/install.sh</code> is as below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
-brew cask <span class="nb">install </span>visual-studio-code
+brew cask install visual-studio-code
 
 <span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
 
@@ -362,51 +362,51 @@ code <span class="nt">--install-extension</span> shardulm94.trailing-spaces
 code <span class="nt">--install-extension</span> vscode-icons-team.vscode-icons
 
 <span class="c"># copy vscode settings</span>
-<span class="nb">cp</span> ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
+cp ./vscode/settings.json ~/Library/Application<span class="se">\ </span>Support/Code/User/settings.json
 </code></pre></div></div> <p>Add the command below to <code class="highlighter-rouge">./install.sh</code> to execute <code class="highlighter-rouge">./vscode/install.sh</code> script.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># configure VSCode</span>
-<span class="nb">chmod </span>755 ./vscode/install.sh
+chmod 755 ./vscode/install.sh
 ./vscode/install.sh
 </code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h3 id="iterm2">iTerm2</h3> <p>Create <code class="highlighter-rouge">./iterm2/</code> folder to manage iTerm2 installation and configuration. And open the current iTerm2.</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-preference.png" alt="configure the development environment on Mac - iterm2 preferences"/></p> <p>To export the current iTerm2 configuration, click <code class="highlighter-rouge">Preferences... &gt; General &gt; Preferences</code>.</p> <p><img src="/assets/images/category/environment/2019/configure-development-environment-on-mac-with-homebrew-and-shell-script/iterm2-preference-expert.png" alt="configure the development environment on Mac - export iterm2 configuration"/></p> <p>Check <code class="highlighter-rouge">Load preferences from a custom folder or URL</code> like above, and click <code class="highlighter-rouge">Browse</code> button and set <code class="highlighter-rouge">./iterm2/</code> folder created above.</p> <p>After setting, click <code class="highlighter-rouge">Save Current Settings to Folder</code> button to export current iTerm2 configuration.</p> <p>After than, you can see <code class="highlighter-rouge">./iterm2/com.googlecode.iterm2.plist</code> file is created.</p> <p>Now, create <code class="highlighter-rouge">./iterm2/install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
 
-<span class="nb">cp</span> ./iterm2/com.googlecode.iterm2.plist ~/Library/Application<span class="se">\ </span>Support/iTerm2/DynamicProfiles/
+cp ./iterm2/com.googlecode.iterm2.plist ~/Library/Application<span class="se">\ </span>Support/iTerm2/DynamicProfiles/
 
 chsh <span class="nt">-s</span> /bin/zsh
 </code></pre></div></div> <p>The commands above are to add <code class="highlighter-rouge">com.googlecode.iterm2.plist</code> file copy command we’ve created above, and the command that set zsh default shell.</p> <p>Add the command below to <code class="highlighter-rouge">.install.sh</code> file.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># copy iterm2 configuration</span>
-<span class="nb">chmod </span>755 ./iterm2/install.sh
+chmod 755 ./iterm2/install.sh
 ./iterm2/install.sh
 </code></pre></div></div> <h3 id="jekyll-configuration">jekyll configuration</h3> <p>I use <code class="highlighter-rouge">jekyll</code> to make the blog. To install jekyll, create <code class="highlighter-rouge">./jekyll/install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
 
-<span class="nb">sudo </span>gem <span class="nb">install </span>bundler jekyll
+<span class="nb">sudo </span>gem install bundler jekyll
 </code></pre></div></div> <p>And add the command below to <code class="highlighter-rouge">./install.sh</code> to execute the script above.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># install jekyll</span>
-<span class="nb">chmod </span>755 ./jekyll/install.sh
+chmod 755 ./jekyll/install.sh
 ./jekyll/install.sh
 </code></pre></div></div> <h3 id="react-native-environment">react-native environment</h3> <p>I use <code class="highlighter-rouge">React Native</code> for the app development. To install React Native, create <code class="highlighter-rouge">./react-native/install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
-npm <span class="nb">install</span> <span class="nt">-g</span> react-native-cli
+npm install <span class="nt">-g</span> react-native-cli
 
 npm config <span class="nb">set </span>save-exact<span class="o">=</span><span class="nb">true
 
-sudo </span>gem <span class="nb">install </span>cocoapods
+sudo </span>gem install cocoapods
 </code></pre></div></div> <ul> <li>npm install -g react-native-cli: install react-native-cli</li> <li>npm config set save-exact=true: this command is the npm nodule version fixed in package.json when they are installed to reduce react-native version problems.</li> <li>sudo gem install cocoapods: instlal Cocoapods to use pod in iOS</li> </ul> <p>Open <code class="highlighter-rouge">./install.sh</code> file and modify it like below.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># install react-native</span>
-<span class="nb">chmod </span>755 ./react-native/install.sh
+chmod 755 ./react-native/install.sh
 ./react-native/install.sh
 </code></pre></div></div> <h3 id="python-development-environment">python development environment</h3> <p>Create <code class="highlighter-rouge">./python/install.sh</code> file and modify it like below to install libraries for development.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
-pip <span class="nb">install </span>virtualenv pylint autopep8
+pip install virtualenv pylint autopep8
 </code></pre></div></div> <p>Add the command below to <code class="highlighter-rouge">./install.sh</code> to execute it.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># install python3</span>
-<span class="nb">chmod </span>755 ./python/install.sh
+chmod 755 ./python/install.sh
 ./python/install.sh
 </code></pre></div></div> <h3 id="xcode">Xcode</h3> <p>Lastly, create <code class="highlighter-rouge">./xcode/install.sh</code> to install `Xcode.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># !/bin/bash</span>
 
-mas <span class="nb">install </span>497799835
+mas install 497799835
 
 <span class="nb">sudo </span>xcodebuild <span class="nt">-license</span> accept
 </code></pre></div></div> <ul> <li>mas install 497799835: use Homebrew mas to isntall Xcode.</li> <li>sudo xcodebuild -license accept: accept Xcode license via command.</li> </ul> <p>Add the command below to <code class="highlighter-rouge">./isntall.sh</code> to execute the script.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="c"># install xcode</span>
-<span class="nb">chmod </span>755 ./xcode/install.sh
+chmod 755 ./xcode/install.sh
 ./xcode/install.sh
 </code></pre></div></div> <div class="in-feed-ads"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> <h2 id="save-the-development-environmentgithub">Save the development environment(Github)</h2> <p>Save these development environment settings on <code class="highlighter-rouge">Github</code>. You can see all my settings above on the link below.</p> <ul> <li><a href="https://github.com/dev-yakuza/development-environment-for-mac-os" target="_blank">https://github.com/dev-yakuza/development-environment-for-mac-os</a></li> </ul> <h2 id="reset-mac-and-install-latest-os">Reset Mac and install latest OS</h2> <p>Reboot Mac to reset and install latest OS. When rebooting, press <code class="highlighter-rouge">Command + Option + r</code> to use Internet recovery. I fyou want to know more details, see the link below.</p> <ul> <li><a href="https://support.apple.com/en-us/HT201314" rel="nofollow noreferrer" target="_blank">https://support.apple.com/en-us/HT201314</a></li> </ul> <h2 id="configure-the-development-environment-on-mac">Configure the development environment on Mac</h2> <p>After recovery, open Terminal and execute the command below to check Git version.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
 </code></pre></div></div> <p>Git is not installed yet, so you can see the dialog about it. Install Git via the dialog.</p> <p>After installing Git, execute Git clone command below to clone the development environment script we’ve made.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/dev-yakuza/development-environment-for-mac-os.git
