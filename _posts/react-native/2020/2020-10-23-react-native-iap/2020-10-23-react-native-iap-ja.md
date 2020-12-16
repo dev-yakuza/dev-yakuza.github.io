@@ -2,84 +2,84 @@
 layout: 'post'
 permalink: '/react-native/react-native-iap/'
 paginate_path: '/react-native/:num/react-native-iap/'
-lang: 'ko'
+lang: 'ja'
 categories: 'react-native'
 comments: true
 
-title: React Native에서 인앱 결제 구현하기
-description: React Native에서 인앱 결제를 구현하기 위해 react-native-iap를 사용하는 방법에 대해서 알아봅시다.
+title: React Nativeでアプリ内課金を実装する
+description: React Nativeでアプリ内課金を実装するためreact-native-iapを使う方法について説明します。
 image: '/assets/images/category/react-native/2020/react-native-iap/background.jpg'
 published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## 目次
 
 </div>
 
-## 개요
+## 概要
 
-React Native에서 인앱 결제를 구현하기 위해 `react-native-iap`를 사용하는 방법에 대해서 알아보려고 합니다.
+React Nativeでアプリ内課金を実装するため`react-native-iap`を使う方法に関して説明します。
 
 - [react-native-iap](https://github.com/dooboolab/react-native-iap){:rel="nofollow noreferrer" target="_blank"}
 
-## 인앱 상품 생성하기
+## アプリ内商品を生成する
 
-인앱 결제를 하기 위해서는 우선 인앱 상품을 생성할 필요가 있습니다. 각 플랫폼에 맞게 인앱 상품을 생성하는 방법에 대해서 알아봅시다.
+アプリ内課金を実装するためには、まずアプリ内商品を生成する必要があります。各プラットフォームに合わせてアプリ内商品を作る方法について説明します。
 
-### iOS 인앱 상품 생성
+### iOSのアプリない商品を生成する
 
-#### 계약, 세금 및 금융거래 설정
+#### 契約、税金や金融取引の設定
 
-iOS에서 인앱 상품을 생성하기 위해서는 우선 `계약, 세금 및 금융거래`를 설정할 필요가 있습니다. `계약, 세금 및 금융 거래`를 설정하기 위해서 Appstore Connect로 이동합니다.
+iOSでアプリ内商品を作るためには、まず、`契約、税金や金融取引`を設定する必要があります。`契約、税金や金融取引`を設定するためAppstore Connectへ移動します。
 
 ![Appstore connect](/assets/images/category/react-native/2020/react-native-iap/appstoreconnect.jpg)
 
-하단에 있는 `계약, 세금 및 금융거래`(Agreements, Tax, and Banking)을 선택하여 이동합니다.
+下にある`契約、税金や金融取引`(Agreements, Tax, and Banking)を選択して移動します。
 
 ![Paid apps](/assets/images/category/react-native/2020/react-native-iap/paid-apps.jpg)
 
-저는 이미 설정을 하였기 때문에 위와 같은 화면이지만, 여러분은 `유료 앱`(Paid Apps)을 설정할 필요가 있습니다. 필요한 항목을 잘 입력하시면 큰 문제 없이 설정하실 수 있습니다.
+私はすでに設定したので、上のような画面が表示されますが、皆さんは`有料アプリ`(Paid Apps)を設定する必要があります。必要な項目をうまく入力したら問題なく設定することができます。
 
-#### 앱 내 구입 항목 생성
+#### アプリ内の購入アイテム生成
 
-이제 앱 내에 구입 항목을 생성할 필요가 있습니다. 인앱 결제를 구현하고자 하는 앱을 선택합니다.
+次はアプリ内の購入アイテムを生成する必要があります。アプリ内課金を実装するアプリを選択します。
 
 ![manage in-app purchases](/assets/images/category/react-native/2020/react-native-iap/manage-in-app-purchases.jpg)
 
-왼쪽 하단의 `앱 내 구입`(In-App Purcahses)의 `관리`(Manage)를 선택하고 플러스 버튼(`+`)을 누르면, 위와 같이 추가하고자 하는 상품을 선택할 수 있습니다.
+左下の`アプリ内購入`(In-App Purcahses)の`管理`(Manage)を選択してプラスボタン(`+`)を押すと、上のように追加する商品を選ぶ画面がでます。
 
-저는 제 앱에 `자동 갱신 구독`(Auto-Renewable Subscription)을 추가하였으므로, `자동 갱신 구독`을 중심으로 설명합니다. 다른 상품을 추가하게 되면, 블로그를 수정하도록 하겠습니다.
+私は私のアプリへ`自動更新購読`(Auto-Renewable Subscription)を追加し他ので、`自動更新購読`を中心に説明します。他の商品を追加することになると、このブログポストへ追加します。
 
 ![in-app purchases reference name and product id](/assets/images/category/react-native/2020/react-native-iap/in-app-purchases-reference-name-product-id.jpg)
 
-여기서 `식별 정보`(Reference Name)는 Appstore connect에만 표시되는 이름이므로 자신이 알아보기 쉬운 이름으로 설정합니다. `제품 ID`(Product ID)는 앱에서 인앱 상품을 가져올 때 사용됩니다.
+ここで`識別情報`(Reference Name)はAppstore connectだけ表示される名前なので、自分が分かりやすい名前に設定します。`商品ID`(Product ID)はアプリ中でアプリ内商品を取ってくる時、使います。
 
 ![in-app purchases group name](/assets/images/category/react-native/2020/react-native-iap/in-app-purchases-group-name.jpg)
 
-그 다음 `구독 그룹 식별 정보`(Subscription Group Reference Name)를 입력합니다. `식별 정보`(Reference Name)와 마찬가지로, Appstore connect에만 표시되므로, 자신이 쉽게 알아볼 수 있는 이름으로 설정합니다.
+その後、`購読グループ識別情報`(Subscription Group Reference Name)を入力します。`識別情報`(Reference Name)と同じように、Appstore connect中だけ表示されるので、自分が分かりやすい名前を設定します。
 
-#### 앱 내 구입 메타데이터 입력
+#### アプリ内購入メタデータを入力する
 
-위와 같이 앱 내 구입 항목을 생성하였다면 이제 앱 내 구입 항목의 메타데이터를 입력할 필요가 있습니다.
+上のようにアプリ中購入アイテムを生成したら、次はアプリ中購入アイテムのメタデータを入力する必要があります。
 
 ![in-app purchases metadata](/assets/images/category/react-native/2020/react-native-iap/in-app-purchases-metadata.jpg)
 
-왼쪽 메뉴에서 다시 `앱 내 구입`(In-App Purchases)의 `관리`(Manage)를 누르면 위와 같이 메타데이터(Metadata)가 누락된 것을 확인할 수 있습니다. 이제 식별 정보의 이름을 선택하여 해당 항목의 상세 페이지로 이동합니다.
+左メニューでまた、`アプリ内購入`(In-App Purchases)の`管理`(Manage)を押すと上のようにメタデータ(Metadata)が入力されてないことが確認できます。ここで、識別情報の名前を選択して当該項目の詳細ページへ移動します。
 
 ![in-app purchases insert metadata](/assets/images/category/react-native/2020/react-native-iap/in-app-purchases-insert-metadata.jpg)
 
-위와 같이 상세 페이지로 이동하면 앱 내 구입 항목에 필요한 정보를 입력해야 합니다.
+上のような詳細ページへ移動したらアプリ内購入アイテムへ必要な情報を入力します。
 
-- 구독 기간(Subscription Duration)
-- 구독 가격(Subscription Prices)
-- App Store 정보(App Store Information)의 현지화(Localizations)
-- 심사 정보
+- 購読期間(Subscription Duration)
+- 購読価格(Subscription Prices)
+- App Store情報(App Store Information)のローカリゼーション(Localizations)
+- 審査情報
 
-여기서 App Store 정보는 앱내에서도, 앱 스토어에서도 표시되는 이름과 설명이므로 잘 작성합니다. 이 이름과 설명을 앱내에서 react-native-iap를 통해 가져올 수 있는데, 가져온 내용을 그대로 표시해 주지 않으면 리젝(Reject)될 수 있습니다.
+ここでApp store情報はアプリ内でも、アプリストアでも表示される名前と説明なので、注意して作成します。この名前と説明をアプリ中でreact-native-iapを使って取ってきますが、この内容をそのまま表示しないとRejectされる可能性があります。
 
-저는 리젝(Reject)을 피하고자, 심사 정보를 좀 자세히 작성하였습니다. 어떻게 하면 구매 페이지를 볼 수 있는지, 구매 페이지에는 어떤 내용들이 포함되고 있는지 작성하였습니다.
+私はRejectを避けるため、審査情報を詳しく作成しました。どうすれば、購入画面を見ることができるか、購入ページにはどんな内容が含めてあるかを作成しました。
 
 – Title of publication or service
 – Length of subscription (time period and/or content/services provided during each subscription period)
@@ -91,9 +91,9 @@ iOS에서 인앱 상품을 생성하기 위해서는 우선 `계약, 세금 및 
 – Links to Your Privacy Policy and Terms of Use
 – Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable
 
-위에 내용으로 리젝(Reject)이 되므로 위에 내용을 포함하고 있고, 어디서 확인이 가능한지 스크린 샷과 설명을 통해 설명하였습니다.
+上の内容でRejectされるので上の内容が含まれているか、どこので確認できるかスクリンショットをと説明を使って詳しく作成しました。
 
-#### iOS 앱 권한 설정
+#### iOSアプリ権限の設定
 
 이제 앱내에서 앱 내 구입을 사용하기 위해서는 권한을 설정할 필요가 있습니다.
 
