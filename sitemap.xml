@@ -1,0 +1,200 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" >
+  {% for post in site.posts %}
+    {% if post.lang %}
+      {% for lang in site.languages %}
+        {% if lang == 'ja' %}
+          <url>
+            <loc>{{ site.url }}/en{{ post.url | replace: 'index.html', '' }}</loc>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="ja"
+                    href=" {{ site.url }}{{ post.url | replace: 'index.html', '' }}"/>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="ko"
+                    href="{{ site.url }}/ko{{ post.url | replace: 'index.html', '' }}"/>
+
+            <lastmod>{{ post.last_modified_at | date: '%Y-%m-%d' }}</lastmod>
+            <priority>1.0</priority>
+          </url>
+          <url>
+            <loc>{{ site.url }}{{ post.url | replace: 'index.html', '' }}</loc>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="{{ site.url }}/en{{ post.url | replace: 'index.html', '' }}"/>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="ko"
+                    href="{{ site.url }}/ko{{ post.url | replace: 'index.html', '' }}"/>
+
+            <lastmod>{{ post.last_modified_at | date: '%Y-%m-%d' }}</lastmod>
+            <priority>1.0</priority>
+          </url>
+          <url>
+            <loc>{{ site.url }}/ko{{ post.url | replace: 'index.html', '' }}</loc>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="ja"
+                    href=" {{ site.url }}{{ post.url | replace: 'index.html', '' }}"/>
+            <xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="{{ site.url }}/en{{ post.url | replace: 'index.html', '' }}"/>
+
+            <lastmod>{{ post.last_modified_at | date: '%Y-%m-%d' }}</lastmod>
+            <priority>1.0</priority>
+          </url>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% for page in site.pages %}
+  {% if page.lang %}
+  {% for lang in site.languages %}
+    {% if page.permalink contains '.json' %}
+    {% else %}
+    <url>
+      {% if lang == site.default_lang %}
+      <loc>{{ site.url }}{{ page.url | replace: 'index.html', '' }}</loc>
+      {% else %}
+      <loc>{{ site.url }}/{{lang}}{{ page.url | replace: 'index.html', '' }}</loc>
+      {% endif %}
+      <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+      <priority>0.5</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/list/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/kumoncho/ko/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/list/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/kumoncho/en/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/list/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/kumoncho/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/de/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/fr/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/hi/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/it/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/nl/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/sv/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/th/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/blaboo/zh/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/ildangongbu/</loc>
+    <lastmod>2019-03-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/kantanbenkyo/</loc>
+    <lastmod>2019-04-04</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/topik12/</loc>
+    <lastmod>2019-04-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/topik34/</loc>
+    <lastmod>2019-04-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dev-yakuza.posstree.com/app/topik56/</loc>
+    <lastmod>2019-04-23</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

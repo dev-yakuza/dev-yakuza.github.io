@@ -1,0 +1,2 @@
+- Ruby: ```ruby 2.5.1p57```
+- jekyll: ```jekyll 3.7.3```

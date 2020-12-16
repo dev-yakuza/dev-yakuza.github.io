@@ -1,0 +1,21 @@
+[
+  {% if page.target == "home" %}
+    {%- assign posts = site.posts -%}
+  {% else %}
+    {%- assign posts = site.posts | where_exp:"item", "item.categories contains page.target" -%}
+  {% endif %}
+  {%- for subPost in posts -%}
+  {
+      "title": "{{ subPost.title | xml_escape }}",
+      "description": "{{ subPost.description | xml_escape }}",
+      {%- if subPost.lang == site.default_lang -%}
+      "url": "{{ site.url }}{{ subPost.url }}",
+      {%- else -%}
+      "url": "{{ site.url }}/{{subPost.lang}}{{ subPost.url }}",
+      {%- endif -%}
+      "date": "{{ subPost.last_modified_at | date_to_xmlschema }}",
+      "category": "{{ subPost.categories }}"
+  }
+  {%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+]

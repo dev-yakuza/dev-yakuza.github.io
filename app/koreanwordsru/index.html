@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>
+      Корейский словарь - вы только начали изучать корейский язык? Все еще
+      корейский Вам трудно читать слова? Не волнуйтесь. В корейской словарной
+      книге Предусмотрены не только слова, но и голоса. Даже если вы не знаете
+      корейского, пока смотрите и слушаете Вы можете изучать корейские слова.
+    </title>
+
+    <meta
+      name="twitter:title"
+      content="Корейский словарь - вы только начали изучать корейский язык? У вас все еще возникают проблемы с чтением корейских слов? Не волнуйтесь. Приложение Корейский словарь предоставляет не только слова, но и голоса. Даже если вы не знаете корейского, вы можете изучать корейские слова, смотря и слушая."
+    />
+    <meta
+      name="twitter:description"
+      content="Изучение словарного запаса тоже повторяется! Вы можете просмотреть изученный корейский словарный запас по частям и по всем словам. Функция обзора часто отображает больше неправильных корейских слов, поэтому чем больше вы используете корейский словарный запас, тем больше становится ваше словарное приложение!"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DevYakuza" />
+    <meta name="twitter:creator" content="@DevYakuza" />
+    <meta
+      name="description"
+      content="Изучение словарного запаса тоже повторяется! Вы можете просмотреть изученный корейский словарный запас по частям и по всем словам. Функция обзора часто отображает больше неправильных корейских слов, поэтому чем больше вы используете корейский словарный запас, тем больше становится ваше словарное приложение!"
+    />
+    <meta name="author" content="dev.yakuza@gmail.com" />
+    <meta
+      property="og:url"
+      content="https://dev-yakuza.posstree.com/app/koreanwordsru/"
+    />
+    <meta
+      property="og:title"
+      content="Корейский словарь - вы только начали изучать корейский язык? У вас все еще возникают проблемы с чтением корейских слов? Не волнуйтесь. Приложение Корейский словарь предоставляет не только слова, но и голоса. Даже если вы не знаете корейского, вы можете изучать корейские слова, смотря и слушая."
+    />
+    <meta property="og:locale" content="ko" />
+    <meta
+      property="og:description"
+      content="Изучение словарного запаса тоже повторяется! Вы можете просмотреть изученный корейский словарный запас по частям и по всем словам. Функция обзора часто отображает больше неправильных корейских слов, поэтому чем больше вы используете корейский словарный запас, тем больше становится ваше словарное приложение!"
+    />
+    <meta
+      property="og:site_name"
+      content="Корейский словарь - вы только начали изучать корейский язык? У вас все еще возникают проблемы с чтением корейских слов? Не волнуйтесь. Приложение Корейский словарь предоставляет не только слова, но и голоса. Даже если вы не знаете корейского, вы можете изучать корейские слова, смотря и слушая."
+    />
+    <meta
+      property="og:image"
+      content="https://dev-yakuza.posstree.com/app/koreanwordsru/img/share.jpg"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125408913-1');
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="page-wrap">
+      <div id="fh5co-hero-wrapper">
+        <nav
+          class="container navbar navbar-expand-lg main-navbar-nav navbar-light"
+        >
+          <a class="navbar-brand" href="">Корейский словарь</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >домой <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="$('#fh5co-features').goTo();return false;"
+                  >функция</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="$('#fh5co-download').goTo();return false;"
+                  >Скачать</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="container fh5co-hero-inner">
+          <h1 class="animated fadeIn wow" data-wow-delay="0.4s">
+            Корейский словарь
+          </h1>
+          <p class="animated fadeIn wow" data-wow-delay="0.67s">
+            Словарь корейских слов разделен на корейские слова по частям и
+            единицам. Там есть. Чтобы вам было легче изучать корейские слова
+            каждый день, Обеспечивается делением количества, которое нужно
+            запомнить. Кроме того, корейский язык, который я изучал в тот день
+            Слова можно проверить с помощью тестов.
+          </p>
+          <div class="download-button-container">
+            <a
+              class="ios-download btn btn-md wow fadeInLeft animated"
+              data-wow-delay="0.85s"
+              href="https://apps.apple.com/app/koreanwordsru/id1531555866"
+              target="_blank"
+              ><img
+                src="img/app-store-icon.png"
+                alt="Корейский словарь iOS Скачать"
+            /></a>
+            <a
+              class="android-download btn btn-md wow fadeInLeft animated"
+              data-wow-delay="0.85s"
+              href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.koreanwordsru"
+              target="_blank"
+              ><img
+                src="img/google-play-icon.png"
+                alt="Корейский словарь 안드로이드 Скачать"
+            /></a>
+          </div>
+          <!-- <button
+            class="btn btn-md download-btn-first wow fadeInLeft animated"
+            data-wow-delay="0.85s"
+            onclick="$('#fh5co-download').goTo();return false;"
+          >
+            Download
+          </button>
+          <button
+            class="btn btn-md features-btn-first animated fadeInLeft wow"
+            data-wow-delay="0.95s"
+            onclick="$('#fh5co-features').goTo();return false;"
+          >
+            Features
+          </button> -->
+          <img
+            class="fh5co-hero-smartphone animated fadeInRight wow"
+            data-wow-delay="1s"
+            src="img/phone1.png"
+            alt="Бесплатное приложение для корейского слова"
+          />
+        </div>
+      </div>
+      <!-- first section wrapper -->
+
+      <!-- ==========================================================================================================
+													 ADVANTAGES
+		 ========================================================================================================== -->
+
+      <div class="fh5co-advantages-outer">
+        <div class="container">
+          <h2 class="second-title">
+            <span class="span-perfect">Корейский словарь</span>
+            <span class="span-features">Введение в функцию</span>
+          </h2>
+          <small>Бесплатное приложение "Корейский словарь"</small>
+
+          <div
+            class="row fh5co-advantages-grid-columns wow animated fadeIn"
+            data-wow-delay="0.36s"
+          >
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/stairs.png"
+                alt="Корейский словарь - Предоставляется по частям / единицам"
+              />
+              <h1 class="grid-title">Part/Unitпредложение</h1>
+              <p class="grid-desc">
+                Корейский словарь содержит корейские слова по частям и единицам,
+                Там есть. Также, чтобы можно было заниматься каждый день, Это
+                обеспечивается делением на объем запоминания. Изучение
+                словарного запаса каждый день Попытайся.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/test.png"
+                alt="Корейский словарь - Тест и обзор"
+              />
+              <h1 class="grid-title">Тест и обзор</h1>
+              <p class="grid-desc">
+                С помощью функции тестирования вы можете проверить корейские
+                слова, которые вы изучали в тот день. Вы можете проверить,
+                сколько вы запомнили. Также по частям Предоставляя функцию
+                обзора для каждого блока, корейские слова, запомненные до сих
+                пор Можно проверить.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/audio.png"
+                alt="Корейский словарь - Предоставляется голосовая функция"
+              />
+              <h1 class="grid-title">Предоставляется голосовая функция</h1>
+              <p class="grid-desc">
+                Вы еще не знаете, как произносится «корейский»? Не волнуйтесь.
+                корейский язык Словарь содержит корейские слова и голосовые
+                функции. слово Вы можете изучать корейский словарный запас,
+                просматривая и слушая аудио.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+													  SLIDER
+		 ========================================================================================================== -->
+
+      <div class="fh5co-slider-outer wow fadeIn" data-wow-delay="0.36s">
+        <h1>Скриншот приложения</h1>
+        <small>Проверьте экран приложения</small>
+        <div class="container fh5co-slider-inner">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <img
+                src="img/appstore_1.jpg"
+                alt="Корейский словарь - Скриншот приложения1"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_2.jpg"
+                alt="Корейский словарь - Скриншот приложения2"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_3.jpg"
+                alt="Корейский словарь - Скриншот приложения3"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_4.jpg"
+                alt="Корейский словарь - Скриншот приложения4"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_5.jpg"
+                alt="Корейский словарь - Скриншот приложения5"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_6.jpg"
+                alt="Корейский словарь - Скриншот приложения6"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_7.jpg"
+                alt="Корейский словарь - Скриншот приложения7"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+													  FEATURES
+		 ========================================================================================================== -->
+
+      <div
+        class="curved-bg-div wow animated fadeIn"
+        data-wow-delay="0.15s"
+      ></div>
+      <div id="fh5co-features" class="fh5co-features-outer">
+        <div class="container">
+          <div class="row fh5co-features-grid-columns">
+            <div
+              class="col-sm-6 in-order-1 wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <div class="col-sm-image-container">
+                <img
+                  class="img-float-left"
+                  src="img/phone1.png"
+                  alt="Корейский словарь - Предоставление слов по частям / единицам"
+                />
+              </div>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-2 sm-6-content wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <h1>Предоставление слов по частям / единицам</h1>
+              <p>
+                По частям и единицам представлено 6400 корейских слов. Учись по
+                частям и по частям каждый день! Также в некоторой степени Вы
+                можете сразу увидеть, учитесь ли вы. Изучайте корейские слова
+                Вам интересно, сколько запоминать за день? Корейский словарь
+                разделен на слова, которые легко запомнить за день
+                Предоставлены. Теперь изучайте корейские слова каждый день!
+              </p>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-3 sm-6-content wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <h1>Предоставление значения слова, произношения и голоса</h1>
+              <p>
+                При изучении словаря значение слова видно с первого взгляда,
+                поэтому значение Вы когда-нибудь учились, прикрывая его
+                невидимкой? Корейский словарь Вы можете показать смысл, сделать
+                его незаметным, облегчить запоминание стал. Также для
+                предоставления фонетических символов и озвучивания корейских
+                слов Таким образом, вы легко сможете изучить сложное корейское
+                произношение.
+              </p>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-4 wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <img
+                class="img-float-right"
+                src="img/iPhone_words_list.png"
+                alt="Корейский словарь - Обеспечение смысла, произношения и голоса"
+              />
+            </div>
+
+            <div
+              class="col-sm-6 in-order-5 wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <div class="col-sm-image-container">
+                <img
+                  class="img-float-left"
+                  src="img/iPhone_word_review.png"
+                  alt="Корейский словарь - Функция тестирования и обзора"
+                />
+              </div>
+            </div>
+            <div
+              class="col-sm-6 in-order-6 sm-6-content wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <h1>Функция тестирования и обзора</h1>
+              <p>
+                Word study - это тоже обзор! С помощью функции тестирования
+                слова, изученные в тот день Проверьте запомненное содержание.
+                После изучения по частям и единицам, просмотрите Функция
+                позволяет вам просмотреть слова, которые вы уже изучили. обзор
+                Функция часто чаще отображает неправильные слова, поэтому вы Чем
+                больше вы используете корейскую лексику, тем больше ваш
+                собственный корейский словарный запас.
+              </p>
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+                                                 BOTTOM
+    ========================================================================================================== -->
+
+      <div id="fh5co-download" class="fh5co-bottom-outer">
+        <div class="overlay">
+          <div class="container fh5co-bottom-inner">
+            <div class="row">
+              <div class="col-sm-6">
+                <h1>Словарь корейского языка предоставляется бесплатно.</h1>
+                <p>
+                  Изучайте корейские слова бесплатно с помощью корейского
+                  словаря. Скачать бесплатно как на iPhone, так и на Android Там
+                  есть.
+                </p>
+                <a
+                  class="ios-download wow fadeIn animated"
+                  data-wow-delay="0.25s"
+                  href="https://apps.apple.com/app/koreanwordsru/id1531555866"
+                  target="_blank"
+                  ><img
+                    class="app-store-btn"
+                    src="img/app-store-icon.png"
+                    alt="Корейский словарь iOS Скачать"
+                /></a>
+                <a
+                  class="android-download wow fadeIn animated"
+                  data-wow-delay="0.67s"
+                  href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.koreanwordsru"
+                  target="_blank"
+                  ><img
+                    class="google-play-btn"
+                    src="img/google-play-icon.png"
+                    alt="Корейский словарь Android Скачать"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+                                               SECTION 7 - SUB FOOTER
+    ========================================================================================================== -->
+
+      <footer class="footer-outer">
+        <div class="container footer-inner">
+          <div
+            class="footer-three-grid wow fadeIn animated"
+            data-wow-delay="0.66s"
+          >
+            <div class="column-1-3">
+              <h1>Корейский словарь</h1>
+            </div>
+            <div class="column-2-3">
+              <nav class="footer-nav">
+                <ul>
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-hero-wrapper').goTo();return false;"
+                    ><li>домой</li></a
+                  >
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-features').goTo();return false;"
+                    ><li>функция</li></a
+                  >
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-download').goTo();return false;"
+                    ><li class="active">Скачать</li></a
+                  >
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <span class="border-bottom-footer"></span>
+
+          <p class="copyright">
+            &copy; 2018 App. All rights reserved. Design by
+            <a
+              href="https://freehtml5.co"
+              rel="nofollow noreferrer"
+              target="_blank"
+              >FreeHTML5</a
+            >.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- main page wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

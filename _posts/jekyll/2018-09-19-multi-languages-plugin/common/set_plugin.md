@@ -1,0 +1,4 @@
+```yml
+plugins:
+  - jekyll-polyglot
+```

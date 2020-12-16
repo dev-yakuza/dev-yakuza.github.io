@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="{{ site.active_lang }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include navbar.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    {% include_cached scripts.html %}
+
+    {% if page.search_json %}
+    <script type="text/javascript">
+      $(function () {
+        var posts = [];
+        var lang =
+          '{{ page.lang }}' === '{{ site.default_lang }}' ? '' : '/{{ page.lang }}';
+
+        $.get(lang + '/api/{{ page.search_json }}/posts.json', function (data) {
+          posts = data;
+        });
+        $('#search').on('keyup', function () {
+          var keyword = this.value.toLowerCase();
+          var searchResult = [];
+
+          if (keyword.length > 0) {
+            $('#search-result').show();
+          } else {
+            $('#search-result').hide();
+          }
+          $('.result-item').remove();
+
+          for (var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            if (
+              post.title.toLowerCase().indexOf(keyword) >= 0 ||
+              post.description.toLowerCase().indexOf(keyword) >= 0
+            ) {
+              searchResult.push(post);
+            }
+          }
+          if (searchResult.length === 0) {
+            $('#search-result').append(
+              '<div class="result-item"><div class="description">{{ page.no_search_result }}</div></div>'
+            );
+          } else {
+            for (var i = 0; i < searchResult.length; i++) {
+              $('#search-result').append(
+                '<a class="result-item" href="' +
+                  searchResult[i].url +
+                  '"><div class="title">【' + searchResult[i].category + '】' +
+                  searchResult[i].title +
+                  '</div><div class="description">' +
+                  searchResult[i].description +
+                  '</div></a>'
+              );
+            }
+          }
+        });
+      });
+    </script>
+    {% endif %}
+
+  </body>
+
+</html>
