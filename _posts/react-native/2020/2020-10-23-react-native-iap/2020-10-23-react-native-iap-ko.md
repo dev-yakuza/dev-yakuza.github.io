@@ -9,12 +9,41 @@ comments: true
 title: React Native에서 인앱 결제 구현하기
 description: React Native에서 인앱 결제를 구현하기 위해 react-native-iap를 사용하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/react-native/2020/react-native-iap/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [인앱 상품 생성하기](#인앱-상품-생성하기)
+  - [iOS 인앱 상품 생성](#ios-인앱-상품-생성)
+    - [계약, 세금 및 금융거래 설정](#계약-세금-및-금융거래-설정)
+    - [앱 내 구입 항목 생성](#앱-내-구입-항목-생성)
+    - [앱 내 구입 메타데이터 입력](#앱-내-구입-메타데이터-입력)
+    - [iOS 앱 권한 설정](#ios-앱-권한-설정)
+  - [안드로이드 인앱 상품 생성](#안드로이드-인앱-상품-생성)
+    - [Payments 설정](#payments-설정)
+    - [안드로이드 앱 권한 설정](#안드로이드-앱-권한-설정)
+    - [안드로이드 앱 내 구입 항목 생성](#안드로이드-앱-내-구입-항목-생성)
+- [코딩](#코딩)
+  - [react-native-iap 설치](#react-native-iap-설치)
+  - [JavaScript](#javascript)
+    - [초기화](#초기화)
+    - [결제](#결제)
+    - [결제 확인](#결제-확인)
+    - [복원](#복원)
+- [테스트](#테스트)
+  - [iOS](#ios)
+    - [iOS 테스트 계정 등록](#ios-테스트-계정-등록)
+    - [iOS 테스트](#ios-테스트)
+  - [안드로이드](#안드로이드)
+    - [안드로이드 테스트 계정 등록](#안드로이드-테스트-계정-등록)
+    - [안드로이드 테스트](#안드로이드-테스트)
+- [배포](#배포)
+  - [iOS 배포](#ios-배포)
+  - [안드로이드 배포](#안드로이드-배포)
+- [완료](#완료)
 
 </div>
 
@@ -48,7 +77,7 @@ iOS에서 인앱 상품을 생성하기 위해서는 우선 `계약, 세금 및 
 
 ![manage in-app purchases](/assets/images/category/react-native/2020/react-native-iap/manage-in-app-purchases.jpg)
 
-왼쪽 하단의 `앱 내 구입`(In-App Purcahses)의 `관리`(Manage)를 선택하고 플러스 버튼(`+`)을 누르면, 위와 같이 추가하고자 하는 상품을 선택할 수 있습니다.
+왼쪽 하단의 `앱 내 구입`(In-App Purchases)의 `관리`(Manage)를 선택하고 플러스 버튼(`+`)을 누르면, 위와 같이 추가하고자 하는 상품을 선택할 수 있습니다.
 
 저는 제 앱에 `자동 갱신 구독`(Auto-Renewable Subscription)을 추가하였으므로, `자동 갱신 구독`을 중심으로 설명합니다. 다른 상품을 추가하게 되면, 블로그를 수정하도록 하겠습니다.
 
@@ -81,15 +110,15 @@ iOS에서 인앱 상품을 생성하기 위해서는 우선 `계약, 세금 및 
 
 저는 리젝(Reject)을 피하고자, 심사 정보를 좀 자세히 작성하였습니다. 어떻게 하면 구매 페이지를 볼 수 있는지, 구매 페이지에는 어떤 내용들이 포함되고 있는지 작성하였습니다.
 
-– Title of publication or service
-– Length of subscription (time period and/or content/services provided during each subscription period)
-– Price of subscription, and price per unit if appropriate
-– Payment will be charged to iTunes Account at confirmation of purchase
-– Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period
-– Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
-– Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase
-– Links to Your Privacy Policy and Terms of Use
-– Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable
+- Title of publication or service
+- Length of subscription (time period and/or content/services provided during each subscription period)
+- Price of subscription, and price per unit if appropriate
+- Payment will be charged to iTunes Account at confirmation of purchase
+- Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period
+- Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
+- Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase
+- Links to Your Privacy Policy and Terms of Use
+- Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable
 
 위에 내용으로 리젝(Reject)이 되므로 위에 내용을 포함하고 있고, 어디서 확인이 가능한지 스크린 샷과 설명을 통해 설명하였습니다.
 
@@ -99,7 +128,7 @@ iOS에서 인앱 상품을 생성하기 위해서는 우선 `계약, 세금 및 
 
 ![in-app purchases insert metadata](/assets/images/category/react-native/2020/react-native-iap/xcode-in-app-purchase.jpg)
 
-Xcode로 프로젝트를 열고 `Signing & Capbilities`에 `In-App PUrchase` 권한을 추가합니다.
+Xcode로 프로젝트를 열고 `Signing & Capbilities`에 `In-App Purchase` 권한을 추가합니다.
 
 {% include in-feed-ads.html %}
 
@@ -174,6 +203,7 @@ npx pod-install
 아래에 코드는 실제로 제가 사용하는 코드입니다.
 
 ```js
+{% raw %}
 import React, { createContext, useState, useEffect, useCallback, useRef, useContext } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import {
@@ -513,6 +543,7 @@ const IAPProvider = ({ children }: Props): JSX.Element => {
 };
 
 export { IAPProvider, IAPContext };
+{% endraw %}
 ```
 
 위에 소스 코드는 제 프로젝트에 의존되는 부분들이 많기 때문에 그대로 사용하실 수 없습니다. 또한 저는 결제 로직을 Context API를 사용하여 구현하였습니다. 위에 코드를 하나하나 살펴보면서 결제 로직을 어떻게 만드는지 확인해 봅시다.
@@ -600,8 +631,8 @@ const itemSubs = Platform.select({
 
 ```js
 const itemSubs = Platform.select({
-  ios: [ENV.subscriptionId],
-  android: [ENV.subscriptionId],
+  ios: [ENV.ios.subscriptionId],
+  android: [ENV.android.subscriptionId],
 });
 ```
 
