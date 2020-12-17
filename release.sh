@@ -10,4 +10,5 @@ git push origin main
 cd _site/
 git add .
 git commit -m 'release'
+git push origin master
 git push origin master -f
