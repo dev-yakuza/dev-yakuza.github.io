@@ -26,7 +26,7 @@ React Native를 사용해서 취미로 앱을 개발을 하다보니, 앱이 점
 
 그래서 React Native로 만든 앱을 자동으로 배포하는 방법으로 `Fastlane`이라는 툴을 사용하여 자동으로 배포하고 있습니다.
 
-- 공식 사이트: [Fastlane](https://docs.fastlane.tools/){:rel="nofollow noreferrer" target="_blank"}
+- [Fastlane을 통한 앱 자동 배포]({{site.url}}/{{page.categories}}/fastlane/){:target="_blank"}
 
 하지만, 로컬 머신에서 `Fastlane`으로 앱을 하나씩 배포하는데 30분 정도 걸리고, 앱이 20개가 넘어가면서 로컬에서만 배포를 시도하는데도, 하나의 앱이 다 배포되고 나서 다음 앱이 배포됨으로 여전히 시간이 많이 걸리고 있습니다.
 
@@ -106,7 +106,7 @@ lane :github do |_options|
 end
 ```
 
-기존의 Fastlane은 로컬에서도 배포할 경우가 생길 수 있으므로 그대로 유지하고, 해당 Fastlane의 기능을 `version`과 `github`이라는 Fastlane을 추가하였습니다.
+기존의 Fastlane은 로컬에서도 배포할 경우가 생길 수 있으므로 그대로 유지하고, 해당 Fastlane의 기능을 `version`과 `github`이라는 Fastlane으로 나누어 추가하였습니다.
 
 GitHub Actions를 사용하기 전에 로컬에서 Fastlane의 `version`을 사용하여 버전을 업로드하고 GitHub Actions에서는 `github`이라는 Fastlane으로 앱을 배포할 예정입니다.
 
@@ -122,7 +122,7 @@ iOS에서 Fastlane은 인증서, 2FA 인증 등으로 인해 조금 복잡합니
 
 ![Export Certificate](/assets/images/category/react-native/2020/github-actions-fastlane/certificate.jpg)
 
-메뉴를 선택하면 암호를 입력하는 화면이 나오는, 해당 암호는 나중에 Fastlane에도 설정을 해야함으로 잘 기억해 둡니다.
+메뉴를 선택하면 암호를 입력하는 화면이 나옵니다. 해당 암호는 나중에 Fastlane에도 설정을 해야함으로 잘 기억해 둡니다.
 
 이렇게 저장한 파일을 React Native 프로젝트의 `ios` 폴더에 복사합니다. 저는 알기 쉽게 하기 위해 파일명을 `distribution.p12`으로 변경하여 저장하였습니다.
 
@@ -132,7 +132,7 @@ iOS에서 Fastlane은 인증서, 2FA 인증 등으로 인해 조금 복잡합니
 
 - [https://developer.apple.com/account/resources/profiles/list](https://developer.apple.com/account/resources/profiles/list){:rel="nofollow noreferrer" target="_blank"}
 
-그리고 GitHub Actions를 통해 배포하겨는 앱의 Provisioning profile 파일을 다운로드받습니다.
+그리고 GitHub Actions를 통해 배포하려는 앱의 Provisioning profile 파일을 다운로드받습니다.
 
 ![Export Certificate](/assets/images/category/react-native/2020/github-actions-fastlane/provisioning_profile.jpg)
 
@@ -261,7 +261,7 @@ update_project_provisioning(
 )
 ```
 
-그리고 위와 같이 `Provisioning profile` 파일을 설정합니다. 그리고 다음과 같이 API Key를 사용하기 위해 `app_store_connect_api_key` 함수를 호출하고 결과 같은 `api_key` 변수에 할당합니다.
+그리고 위와 같이 `Provisioning profile` 파일을 설정합니다. 그리고 다음과 같이 API Key를 사용하기 위해 `app_store_connect_api_key` 함수를 호출하고 결과를 `api_key` 변수에 할당합니다.
 
 ```ruby
 api_key = app_store_connect_api_key(
@@ -403,7 +403,7 @@ jobs:
     ruby-version: "2.x"
 ```
 
-노드와 루비를 설치 한 후,
+노드와 루비를 설치합니다.
 
 ```yml
 - name: Install Fastlane
@@ -414,7 +414,7 @@ jobs:
   run: cd ios && pod install && cd ..
 ```
 
-Fastlane, 노드 패키지, 그리고 Pod 라이브러리를 설치합니다.
+그 후, Fastlane, 노드 패키지, 그리고 Pod 라이브러리를 설치합니다.
 
 ```yml
 - name: Execute Fastlane command
@@ -469,7 +469,7 @@ jobs:
     ruby-version: "2.x"
 ```
 
-노드와 루비를 설치 한 후,
+노드와 루비를 설치합니다.
 
 ```yaml
 - name: Install Fastlane
@@ -478,7 +478,7 @@ jobs:
   run: yarn install
 ```
 
-Fastlane 그리고 노드 패키지를 설치합니다.
+그 후, Fastlane 그리고 노드 패키지를 설치합니다.
 
 ```yaml
 - name: Prebuild
@@ -528,7 +528,7 @@ git tag -a v$VERSION -m 'add verstion tag' -f
 git push origin v$VERSION -f
 ```
 
-안드로이 폴더와 iOS 폴더로 이동하여 앞에서 만든 Fastlane의 version을 사용하여 로컬에서 배포할 앱의 버전을 변경합니다.
+안드로이드 폴더와 iOS 폴더로 이동하여 앞에서 만든 Fastlane의 version을 사용하여 로컬에서 배포할 앱의 버전을 변경합니다.
 
 ```bash
 cd android
@@ -547,7 +547,7 @@ git commit -m 'update version'
 git push origin main
 ```
 
-마지막으로 Tag를 설정하고 Push를 GitHub Actions를 실행합니다.
+마지막으로 Tag를 설정하고 Push해서 GitHub Actions를 실행합니다.
 
 ```bash
 git tag -a v$VERSION -m 'add verstion tag' -f
