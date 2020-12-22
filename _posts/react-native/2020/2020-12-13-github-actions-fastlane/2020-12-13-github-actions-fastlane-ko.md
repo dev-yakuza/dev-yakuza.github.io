@@ -9,12 +9,26 @@ comments: true
 title: GitHub Actions와 Fastlane을 사용해서 React Native 앱 배포하기
 description: GitHub Actions와 Fastlane을 사용해서 React Native로 개발한 앱을 자동으로 배포해 봅시다.
 image: '/assets/images/category/react-native/2020/github-actions-fastlane/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [Fastlane 준비](#fastlane-준비)
+  - [안드로이드 Fastlane 준비](#안드로이드-fastlane-준비)
+  - [iOS Fastlane 준비](#ios-fastlane-준비)
+  - [Certificate](#certificate)
+  - [Provisioning profile](#provisioning-profile)
+  - [Signing & Capabilities](#signing--capabilities)
+  - [API key](#api-key)
+  - [iOS Fastlane](#ios-fastlane)
+- [GitHub Actions](#github-actions)
+  - [iOS GitHub Actions](#ios-github-actions)
+  - [안드로이드 GitHub Actions](#안드로이드-github-actions)
+- [스크립트](#스크립트)
+- [완료](#완료)
 
 </div>
 

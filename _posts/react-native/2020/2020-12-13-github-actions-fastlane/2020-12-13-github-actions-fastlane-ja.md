@@ -9,12 +9,26 @@ comments: true
 title: GitHub ActionsとFastlaneを使ってReact Nativeアプリをデプロイする
 description: GitHub ActionsとFastlaneを使ってReact Nativeで開発したアプリを自動でデプロイする
 image: '/assets/images/category/react-native/2020/github-actions-fastlane/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [Fastlane準備](#fastlane準備)
+  - [アンドロイドFastlane準備](#アンドロイドfastlane準備)
+  - [iOS Fastlane準備](#ios-fastlane準備)
+  - [Certificate](#certificate)
+  - [Provisioning profile](#provisioning-profile)
+  - [Signing & Capabilities](#signing--capabilities)
+  - [API key](#api-key)
+  - [iOS Fastlane](#ios-fastlane)
+- [GitHub Actions](#github-actions)
+  - [iOS GitHub Actions](#ios-github-actions)
+  - [アンドロイドGitHub Actions](#アンドロイドgithub-actions)
+- [スクリプト](#スクリプト)
+- [完了](#完了)
 
 </div>
 
