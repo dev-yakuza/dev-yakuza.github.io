@@ -5,5 +5,5 @@ cp CNAME _site/
 
 git add .
 git commit -m 'release'
-git push bb master
+git push bb main
 git subtree push --prefix _site origin master
