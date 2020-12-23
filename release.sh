@@ -7,7 +7,8 @@ git add .
 git commit -m 'release'
 git push bb main
 
-cd _site
-git init
-git remote add origin https://github.com/dev-yakuza/dev-yakuza.github.io.git
-git pull origin master
+# cd _site
+# git init
+# git remote add origin https://github.com/dev-yakuza/dev-yakuza.github.io.git
+# git pull origin master
+# git push origin master -f
