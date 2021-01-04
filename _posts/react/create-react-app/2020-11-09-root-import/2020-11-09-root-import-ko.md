@@ -24,7 +24,7 @@ published: false
 
 - [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
-- [create-react-app에서 typescript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
+- [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 - (타입스크립트) create-react-app에서 절대 경로 import
 - [create-react-app에서 styled-components]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
 

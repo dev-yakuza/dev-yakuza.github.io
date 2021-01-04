@@ -23,7 +23,7 @@ published: false
 이 블로그 포스트는 시리즈로 제작되었습니다. 다음은 `create-react-app`의 시리즈 리스트입니다.
 
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
-- [create-react-app에서 typescript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
+- [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 - create-react-app에서 styled-components
 
 ## 개요

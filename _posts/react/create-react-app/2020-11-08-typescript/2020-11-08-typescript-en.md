@@ -2,12 +2,12 @@
 layout: 'post'
 permalink: '/react/create-react-app/typescript/'
 paginate_path: '/react/:num/create-react-app/typescript/'
-lang: 'ko'
+lang: 'en'
 categories: 'react'
 comments: true
 
-title: 'create-react-app에서 TypeScript'
-description: 'create-react-app으로 생성한 React 프로젝트에 Typescript를 적용하는 방법에 대해서 알아봅시다.'
+title: 'TypeScript in create-react-app'
+description: Let's see how to apply TypeScript to React project created by create-react-app.
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
 published: false
 ---
@@ -18,16 +18,16 @@ published: false
 
 </div>
 
-## create-react-app 시리즈
+## create-react-app series
 
-이 블로그 포스트는 시리즈로 제작되었습니다. 다음은 `create-react-app`의 시리즈 리스트입니다.
+This blog post is a series. You can see other blog posts of the series on the list.
 
-- [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
+- [What is React]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
-- create-react-app에서 TypeScript
+- TypeScript in create-react-app
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 
-## 개요
+## Outline
 
 이전 블로그에서 `create-react-app`을 사용하여 React 프로젝트를 시작하는 방법에 대해서 알아보았습니다. 이번 블로그 포스트에서는 `create-react-app`으로 생성한 React 프로젝트에 `TypeScript`를 적용하는 방법에 대해서 알아봅니다.
 
