@@ -281,17 +281,14 @@ As above, `google()` should be in `repositories` and above `jcenter()`.
 Open `android/app/build.gradle` file on React Native folder, and modify it like below.
 
 ```js
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+...
 dependencies {
-    // under 59 version
-    // implementation project(':react-native-firebase')
-    ...
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+  implementation platform('com.google.firebase:firebase-bom:26.2.0')
+  implementation 'com.google.firebase:firebase-analytics'
+  ...
 }
-```
-
-If you don't use Google Analytics, you don't nedd to modify the file like above. And then, add the source code below on the bottom of the same file.
-
-```js
 ...
 apply plugin: 'com.google.gms.google-services'
 ```

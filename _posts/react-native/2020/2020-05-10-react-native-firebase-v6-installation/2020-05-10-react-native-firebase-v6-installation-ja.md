@@ -281,17 +281,14 @@ allprojects {
 React Nativeプロジェクトがあるフォルダで`android/app/build.gradle`ファイルを開いて下記のようにコードを追加します。
 
 ```js
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+...
 dependencies {
-    // under 59 version
-    // implementation project(':react-native-firebase')
-    ...
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+  implementation platform('com.google.firebase:firebase-bom:26.2.0')
+  implementation 'com.google.firebase:firebase-analytics'
+  ...
 }
-```
-
-Google Analyticsを使ってない場合は上の内容は追加しなくて大丈夫です。そして、同じファイルを一番したへ下記のコードを追加します。
-
-```js
 ...
 apply plugin: 'com.google.gms.google-services'
 ```

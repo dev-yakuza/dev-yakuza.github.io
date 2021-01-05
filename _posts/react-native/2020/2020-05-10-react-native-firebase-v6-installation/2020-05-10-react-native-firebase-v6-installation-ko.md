@@ -280,17 +280,14 @@ allprojects {
 React Native 프로젝트가 있는 폴더에서 `android/app/build.gradle` 파일을 열고 아래에 코드를 추가합니다.
 
 ```js
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+...
 dependencies {
-    // under 59 version
-    // implementation project(':react-native-firebase')
-    ...
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+  implementation platform('com.google.firebase:firebase-bom:26.2.0')
+  implementation 'com.google.firebase:firebase-analytics'
+  ...
 }
-```
-
-Google Analytics를 사용하지 않는 분들은 위 내용을 추가하지 않으셔도 됩니다. 그리고 동일한 파일 제일 하단에 아래에 코드를 추가합니다.
-
-```js
 ...
 apply plugin: 'com.google.gms.google-services'
 ```
@@ -307,7 +304,7 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.2")
-        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.google.gms:google-services:4.3.4'
     }
 }
 ```
