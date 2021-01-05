@@ -7,14 +7,24 @@ categories: 'react'
 comments: true
 
 title: 'TypeScript in create-react-app'
-description: Let's see how to apply TypeScript to React project created by create-react-app.
+description: Let's see how to apply TypeScript to the React project created by create-react-app.
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
+
+- [Outline](#outline)
+- [Create a project](#create-a-project)
+- [Apply TypeScript](#apply-typescript)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Modify file extension](#modify-file-extension)
+  - [Fix TypeScript error](#fix-typescript-error)
+  - [Execution](#execution)
+- [Template](#template)
+- [Completed](#completed)
 
 </div>
 
@@ -29,54 +39,54 @@ This blog post is a series. You can see other blog posts of the series on the li
 
 ## Outline
 
-이전 블로그에서 `create-react-app`을 사용하여 React 프로젝트를 시작하는 방법에 대해서 알아보았습니다. 이번 블로그 포스트에서는 `create-react-app`으로 생성한 React 프로젝트에 `TypeScript`를 적용하는 방법에 대해서 알아봅니다.
+In the previous blog post, we've seen how to create the React project with `create-react-app`. In this blog post, I will show how to apply `TypeScript` to the React project created by `create-react-app`.
 
-여기서 소개한 소스코드는 아래에 링크를 통해 확인할 수 있습니다.
+You can see the source code on the GitHub link below.
 
 - GitHub: [https://github.com/dev-yakuza/study-create-react-app/tree/main/2.typescript](https://github.com/dev-yakuza/study-create-react-app/tree/main/2.typescript){:rel="noopener" target="_blank"}
 
-## 프로젝트 생성
+## Create a project
 
-다음 명령어를 사용하여 React 프로젝트를 생성합니다.
+Execute the command below to create a React project.
 
 ```bash
 npx create-react-app my-app
 ```
 
-그리고 다음 명령어를 사용하여 React 프로젝트를 실행해 봅니다.
+And then, execute the command below to execute the project.
 
 ```bash
 # cd my-app
 npm start
 ```
 
-문제없이 React 프로젝트가 실행되면 아래와 같은 화면을 브라우저에서 확인할 수 있습니다.
+If you don't have any problem, you can see the screen below on your browser.
 
 ![create-react-app with TypeScript](/assets/images/category/react/create-react-app/typescript/project.jpg)
 
 {% include in-feed-ads.html %}
 
-## TypeScript 적용
+## Apply TypeScript
 
-이제 `create-react-app`으로 생성한 React 프로젝트에 TypeScript를 적용하는 방법에 대해서 알아봅시다.
+Now, let's see how to apply TypeScript to the React project created `create-react-app`.
 
-### 설치
+### Installation
 
-`create-react-app`으로 생성한 React 프로젝트에 `TypeScript`를 적용하기 위해 필요한 라이브러리를 설치할 필요가 있습니다. 다음 명령어를 통해 `TypeScript`에 필요한 라이브러리를 설치합니다.
+We need to install libraries to apply `TypeScript` to the React project created by `create-react-app`. Execute the command below to install libraries for `TypeScript`.
 
 ```bash
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
-### 설정
+### Configuration
 
-TypeScript를 사용하기 위해서는 `tsconfig.json`을 사용하여 TypeScript에 관한 설정을 할 필요가 있습니다.
+We need to configure `tsconfig.json` to configure TypeScript.
 
 - [TypeScript Handbook](https://www.typescriptlang.org/){:rel="noopener" target="_blank"}
 - [TypeScript Example on React](https://www.typescriptlang.org/play?jsx=2&esModuleInterop=true&e=196#example/typescript-with-react){:rel="noopener" target="_blank"}
 - [TypeScript Handbook](https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets){:rel="noopener" target="_blank"}
 
-그럼 `tsconfig.json` 파일을 생성하고 다음과 같이 수정합니다.
+Create `tsconfig.json` and modify it like below.
 
 ```json
 {
@@ -108,9 +118,9 @@ TypeScript를 사용하기 위해서는 `tsconfig.json`을 사용하여 TypeScri
 }
 ```
 
-### 파일 확장자 수정
+### Modify file extension
 
-이제 TypeScript가 소스코드를 인식할 수 있도록 파일의 확장자를 수정할 필요가 있습니다. `src` 폴더에 `.js` 파일 확장자를 `.tsx` 또는 `.ts` 파일 확장자로 변경합니다.
+We need to modify files extension to make TypeScript recognizes files. modify `.js` to `.tsx` or `.ts` of files in `src` folder.
 
 - App`.js` > App`.tsx`
 - App.test`.js` > App.test`.tsx`
@@ -118,15 +128,15 @@ TypeScript를 사용하기 위해서는 `tsconfig.json`을 사용하여 TypeScri
 - reportWebVitals`.js` > reportWebVitals`.ts`
 - setupTests`.js` > setupTests`.ts`
 
-### TypeScript 에러 수정
+### Fix TypeScript error
 
-이렇게 `.js` 파일 확장자를 `.tsx` 또는 `.ts`로 수정하면 TypeScript가 에러를 출력합니다. 이 에러를 수정하기 위해 `App.test.tsx`와 `App.tsx` 파일을 열고 최상단에 다음을 추가합니다.
+After modifying file extensions, TypeScript shows the errors. To fix the errors, add the code below on the top of `App.test.tsx` and `App.tsx` files
 
 ```ts
 import React from 'react';
 ```
 
-그리고 `reportWebVitals.ts` 파일을 열고 아래와 같이 수정합니다.
+And then, open `reportWebVitals.ts` file and modify it like below.
 
 ```ts
 import { ReportHandler } from 'web-vitals';
@@ -135,7 +145,7 @@ const reportWebVitals = (onPerfEntry?: ReportHandler) => {
 ...
 ```
 
-그리고 `./src/custom.d.ts` 파일을 만들고 아래와 같이 수정합니다.
+And, create `./src/custom.d.ts` file and modify it like below.
 
 ```ts
 declare module '*.svg' {
@@ -150,15 +160,15 @@ declare module '*.svg' {
 }
 ```
 
-### 실행
+### Execution
 
-이렇게 수정한 React 프로젝트가 제대로 동작하는지 확인하기 위해서 다음 명령어를 실행하여 React 프로젝트를 실행합니다.
+After modification, execute the command below to check the project work well.
 
 ```bash
 npm start
 ```
 
-문제없이 TypeScript를 설정하였다면 다음과 같이 React 프로젝트가 브라우저에서 실행되는 것을 확인할 수 있습니다.
+If you don't have any problem, you can see the screen like below on your browser.
 
 ![create-react-app with TypeScript](/assets/images/category/react/create-react-app/typescript/project.jpg)
 
@@ -166,20 +176,20 @@ npm start
 
 ## Template
 
-create-react-app을 사용하는 이유는 React로 프로젝트를 만들때, 많은 설정들을 하지 않기 위함인데, TypeScript만을 위해 너무 많은 설정을 했습니다. 하지만 TypeScript는 이제 JavaScript에서 중요한 역할을 하고 있기 때문에 React에서도 TypeScript를 사용하지 않을 수 없습니다.
+We use create-react-app not to set many configurations to start the React project. However, there are too many settings to use TypeScript. TypeScript becomes an important part of JavaScript, so it's better to use TypeScript for React.
 
-create-react-app도 이렇게 TypeScript에 중요성을 인지하고 있고, TypeScript를 더욱 간단하게 지원하기 위해 `Template` 옵션을 제공하고 있습니다. 그럼 create-react-app의 `Tempate` 옵션을 사용하여 React의 TypeScript 프로젝트를 생성해 보도록 합시다.
+The create-react-app team also known TypeScript's importance, so they provide the `Template` option to set TypeScript simpler. Let's see how to use the `Template` option to configure TypeScript on React.
 
-다음 명령어를 실행하여 React에 TypeScript가 적용된 프로젝트를 생성합니다.
+Execute the command below to create a React project applied TypeScript.
 
 ```bash
 npx create-react-app my-app --template=typescript
 ```
 
-그리고 해당 폴더를 열어보면 우리가 위에서 열심히 설정한 내용과 동일한 것을 볼 수 있습니다.
+After creating, when you open the folder of the project, you can see all configurations that we've done above.
 
-## 완료
+## Completed
 
-이번 블로그 포스트에서는 `create-react-app`으로 생성한 React 프로젝트에 `TypeScript`를 적용하는 방법에 대해 알아보았습니다. 또한 create-react-app을 사용하여 새로운 React 프로젝트를 생성할 때, `Template` 옵션을 활용하여 더욱 간단하게 TypeScript가 적용된 React 프로젝트를 생성하는 방법도 알아보았습니다.
+In this blog post, we've seen how to configure `TypeScript` to the React project which is created by `create-react-app`. Also, we've seen when we create a new React project with create-react-app, using the `Template` option makes simpler to configure TypeScript to the React project.
 
-이제 여러분도 React 프로젝트에 TypeScript를 적용하여 사용해 보시기 바랍니다.
+Now, you can apply TypeScript to your React project!

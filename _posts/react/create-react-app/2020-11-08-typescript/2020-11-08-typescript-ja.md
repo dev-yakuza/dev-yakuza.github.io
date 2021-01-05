@@ -9,12 +9,22 @@ comments: true
 title: 'create-react-appでTypeScriptを使う方法'
 description: 'create-react-appで生成したReactプロジェクトでTypescriptを使う方法について説明します。'
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [プロジェクト生成](#プロジェクト生成)
+- [TypeScript適用](#typescript適用)
+  - [インストール](#インストール)
+  - [設定](#設定)
+  - [ファイル拡張子修正](#ファイル拡張子修正)
+  - [TypeScriptエラー修正](#typescriptエラー修正)
+  - [実行](#実行)
+- [Template](#template)
+- [完了](#完了)
 
 </div>
 
