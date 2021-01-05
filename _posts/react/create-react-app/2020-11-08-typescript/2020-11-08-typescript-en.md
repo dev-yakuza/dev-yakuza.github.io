@@ -8,7 +8,7 @@ comments: true
 
 title: 'TypeScript in create-react-app'
 description: Let's see how to apply TypeScript to the React project created by create-react-app.
-image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
+image: '/assets/images/category/react/background.jpg'
 ---
 
 <div id="contents_list" markdown="1">
