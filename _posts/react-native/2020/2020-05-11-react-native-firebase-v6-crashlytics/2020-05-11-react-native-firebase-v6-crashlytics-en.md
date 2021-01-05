@@ -71,6 +71,35 @@ Next, we need to configure Google Firebase project for Crashlytics. Go to Fireba
 
 Click `Add SDK` on the top to add SDK. Also, change iOS/Android by selecting the project beside `Crashlytics` title, and click `Add SDK` to add iOS, and Android both.
 
+### Android configuration
+
+Open `android/build.gradle` file and modify it like below to use `Crashlytics` on Android.
+
+```js
+buildscript {
+    ...
+    dependencies {
+        ...
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
+    }
+}
+```
+
+And open `android/app/build.gradle` file and modify it like below.
+
+```js
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+...
+```
+
+### iOS configuration
+
+We don't need any configuration for iOS unlike Android.
+
 ## Completed
 
 Done! We've configured react-native-firebase to use Firebase Crashlytics.

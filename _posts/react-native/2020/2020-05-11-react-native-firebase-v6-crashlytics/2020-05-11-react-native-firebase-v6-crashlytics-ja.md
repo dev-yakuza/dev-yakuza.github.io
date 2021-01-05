@@ -19,6 +19,8 @@ image: '/assets/images/category/react-native/2020/react-native-firebase-v6-crash
 - [react-natiev-firebaseのインストールや準備](#react-natiev-firebaseのインストールや準備)
 - [ライブラリインストール](#ライブラリインストール)
 - [Firebaseプロジェクト設定](#firebaseプロジェクト設定)
+  - [アンドロイドの設定](#アンドロイドの設定)
+  - [iOSの設定](#iosの設定)
 - [完了](#完了)
 
 </div>
@@ -70,6 +72,35 @@ pod install
 ![crashlytics add sdk](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-add-sdk.jpg)
 
 上にある`Add SDK`ボタンを押してSDKを追加します。そして、`Crashlytics`のタイトル横にあるプロジェクトを選択してiOS/アンドロイドで変更して、`Add SDK`を押してiOS、アンドロイド、両方へSDKを追加します。
+
+### アンドロイドの設定
+
+アンドロイドでは`Crashlytics`を使うため、`android/build.gradle`ファイルを開いて下記のように修正します。
+
+```js
+buildscript {
+    ...
+    dependencies {
+        ...
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
+    }
+}
+```
+
+そして`android/app/build.gradle`ファイルを開いて下記のように修正します。
+
+```js
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+...
+```
+
+### iOSの設定
+
+iOSはアンドロイドは違って特に設定をする必要がありません。
 
 ## 完了
 
