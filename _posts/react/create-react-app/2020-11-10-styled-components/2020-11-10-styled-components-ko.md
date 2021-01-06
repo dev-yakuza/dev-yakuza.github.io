@@ -70,7 +70,7 @@ npm install --save styled-components
 그리고 저는 React 프로젝트에 Typescript를 사용함으로, 다음 명령어를 통해 `styled-components`의 타입을 설치하였습니다.
 
 ```bash
-npm install --save-dev @types/styled-components
+npm install --save-dev @types/styled-components jest-styled-components
 ```
 
 ## 사용법
