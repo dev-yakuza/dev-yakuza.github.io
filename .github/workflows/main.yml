@@ -1,0 +1,32 @@
+name: Publish GitHub Page
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  publish-github-page:
+    name: Publish GitHub Page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.x"
+      - name: Install Jekyll
+        run: bundle install
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+      - name: Remove whitespace
+        run: python3 remove_space_href.py
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: dev-yakuza/dev-yakuza.github.io
+          publish_branch: master
+          publish_dir: _site
+          cname: dev-yakuza.posstree.com
