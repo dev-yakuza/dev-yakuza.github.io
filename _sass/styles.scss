@@ -475,21 +475,21 @@ ul li:last-child {
 
 .left-ads {
   padding-left: 0;
-  .sticky-top {
-    margin-left: -175px;
-    @media (max-width: 1490px) {
-      margin-left: 0px;
-    }
-  }
+  // .sticky-top {
+  //   margin-left: -175px;
+  //   @media (max-width: 1490px) {
+  //     margin-left: 0px;
+  //   }
+  // }
 }
 .right-ads {
   padding-right: 0;
-  .sticky-top {
-    margin-right: -175px;
-    @media (max-width: 1490px) {
-      margin-right: 0px;
-    }
-  }
+  // .sticky-top {
+  //   margin-right: -175px;
+  //   @media (max-width: 1490px) {
+  //     margin-right: 0px;
+  //   }
+  // }
 }
 .top-ads {
   text-align: center;
