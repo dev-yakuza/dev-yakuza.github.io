@@ -18,6 +18,6 @@ if [ "$TARGET" = "local" ]; then
   git push origin master -f
 else
   git push bb main
-  git tag -a vtest -m 'add verstion tag' -f
-  git push bb vtest -f
+  git tag -a deploy -m 'add verstion tag' -f
+  git push bb deploy -f
 fi

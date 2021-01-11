@@ -2,7 +2,7 @@ name: Publish GitHub Page
 on:
   push:
     tags:
-      - "v*"
+      - "deploy"
 jobs:
   publish-github-page:
     name: Publish GitHub Page
