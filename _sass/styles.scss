@@ -487,8 +487,10 @@ ul li:last-child {
   padding-right: 0;
   .sticky-top {
     width: 175px;
-    margin-right: 175px;
+    margin-left: 175px;
+    margin-right: -175px;
     @media (max-width: 1490px) {
+      margin-left: 0px;
       margin-right: 0px;
     }
   }
