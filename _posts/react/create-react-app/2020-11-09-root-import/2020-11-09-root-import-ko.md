@@ -6,8 +6,8 @@ lang: 'ko'
 categories: 'react'
 comments: true
 
-title: '(타입스크립트) create-react-app에서 절대 경로 import'
-description: 'create-react-app의 타입스크립트로로 생성한 React 프로젝트에 절대 경로를 사용하여 컴포넌트를 추가하는 방법에 대해서 알아본다.'
+title: '[타입스크립트] create-react-app에서 절대 경로 import'
+description: 'create-react-app의 타입스크립트로 생성한 React 프로젝트에 절대 경로를 사용하여 컴포넌트를 추가하는 방법에 대해서 알아본다.'
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
 published: false
 ---
@@ -25,12 +25,12 @@ published: false
 - [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
-- (타입스크립트) create-react-app에서 절대 경로 import
+- [타입스크립트] create-react-app에서 절대 경로 import
 - [create-react-app에서 styled-components]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
 
 ## 개요
 
-이전 블로그에서 `create-react-app`을 사용하여 React 프로젝트에 타입스크립트를 적용하는 방법에 대해서 알아보았습니다. 이번 블로그 포스트에서는 타입스크립트가 적용된 React 프로젝트에서 컴포넌트를 추가할 때, 상대 경로가 아닌 절대 경로를 사용하여 추가하는 방법에 대해서 알아봅시다.
+이전 블로그에서 `create-react-app`을 사용하여 React 프로젝트에 타입스크립트를 적용하는 방법에 대해서 알아보았습니다. 이번 블로그 포스트에서는 타입스크립트가 적용된 React 프로젝트에서 컴포넌트를 추가할 때, 상대 경로가 아닌 절대 경로를 사용하여 컴포넌트를 추가하는 방법에 대해서 알아봅시다.
 
 여기서 소개한 소스코드는 아래에 링크를 통해 확인할 수 있습니다.
 
