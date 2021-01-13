@@ -9,12 +9,18 @@ comments: true
 title: '[타입스크립트] create-react-app에서 절대 경로 import'
 description: 'create-react-app의 타입스크립트로 생성한 React 프로젝트에 절대 경로를 사용하여 컴포넌트를 추가하는 방법에 대해서 알아본다.'
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [상대 경로와 절대 경로](#상대-경로와-절대-경로)
+- [프로젝트 생성](#프로젝트-생성)
+- [절대 경로 설정](#절대-경로-설정)
+- [사용법](#사용법)
+- [완료](#완료)
 
 </div>
 
@@ -40,11 +46,11 @@ published: false
 
 React를 사용하여 프로젝트를 개발하면, 우리는 컴포넌트를 중심으로 앱을 개발하게 된다. React로 프로젝트를 개발하면, 우선 필요한 수많은 컴포넌트를 제작하고, 그 컴포넌트를 조합하여 페이지를 제작하게 된다.
 
-이렇게 리액트 컴포넌트를 조합하여 페이지를 제작할 때, 보통은 상대 경로(`import Button from '../../Buttton'`)를 사용하여 컴포넌트를 불러오게 된다.
+이렇게 리액트 컴포넌트를 조합하여 페이지를 제작할 때, 보통은 상대 경로(`import Button from '../../Button'`)를 사용하여 컴포넌트를 불러오게 된다.
 
 컴포넌트가 많지 않은 경우는 큰 불편함을 느끼지 못하지만, 프로젝트가 커지고 컴포넌트가 많아지고, 프로젝트의 폴더 구조가 점점 복잡해지면, 이 상대 경로 추가 방식은 어떤 경로로 컴포넌트를 지정해야하는지, 어떤 컴포넌트를 불러오는지 파악하기 어려운 단점이 있다.
 
-이런 문제를 해결하고자, 이번 블로그 포스트에서는 절대 경로(`import Button from 'Buttton'`)로 컴포넌트를 추가하는 방법에 대해서 설명합니다.
+이런 문제를 해결하고자, 이번 블로그 포스트에서는 절대 경로(`import Button from 'Button'`)로 컴포넌트를 추가하는 방법에 대해서 설명합니다.
 
 {% include in-feed-ads.html %}
 
@@ -65,7 +71,7 @@ npm start
 
 문제없이 React 프로젝트가 실행되면 아래와 같은 화면을 브라우저에서 확인할 수 있습니다.
 
-![create-react-app with typescript](/assets/images/category/react/create-react-app/root-imprt/project.jpg)
+![create-react-app with typescript](/assets/images/category/react/create-react-app/root-import/project.jpg)
 
 ## 절대 경로 설정
 
@@ -106,7 +112,7 @@ npm start
 
 문제없이 설정하였다면, 다음과 같은 화면을 브라우저에서 확인할 수 있다.
 
-![create-react-app with typescript](/assets/images/category/react/create-react-app/root-imprt/project.jpg)
+![create-react-app with typescript](/assets/images/category/react/create-react-app/root-import/project.jpg)
 
 현재는 React 프로젝트가 간단하기 때문에 절대 경로로 컴포넌트를 추가하는 것에 큰 장점이 없어보이지만, 앞으로 React로 프로젝트를 진행하다보면, 이 절대 경로 컴포넌트 추가가 빛을 발하는 것을 목격할 수 있을 것이다.
 

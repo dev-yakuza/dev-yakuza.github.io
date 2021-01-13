@@ -35,6 +35,7 @@ image: '/assets/images/category/react/background.jpg'
 - [Reactとは]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - create-react-appでTypeScriptを使う方法
+- [[TypeScript] create-react-appで絶対パスのimport]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 
 ## 概要
