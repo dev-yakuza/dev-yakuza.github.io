@@ -1,24 +1,16 @@
-TARGET=$1
+bundle install
+bundle exec jekyll build
+python3 remove_space_href.py
+cp CNAME _site/
 
-if [ "$TARGET" = "local" ]; then
-  bundle install
-  bundle exec jekyll build
-  python3 remove_space_href.py
-  cp CNAME _site/
+git add .
+git commit -m 'release'
+git push bb main
 
-  git add .
-  git commit -m 'release'
-  git push bb main
-
-  cd _site
-  git init
-  git remote add origin https://github.com/dev-yakuza/dev-yakuza.github.io.git
-  git add .
-  git commit -m 'release'
-  git fetch
-  git push origin master -f
-else
-  git push bb main
-  git tag -a deploy -m 'add verstion tag' -f
-  git push bb deploy -f
-fi
+cd _site
+git init
+git remote add origin https://github.com/dev-yakuza/dev-yakuza.github.io.git
+git add .
+git commit -m 'release'
+git fetch
+git push origin master -f
