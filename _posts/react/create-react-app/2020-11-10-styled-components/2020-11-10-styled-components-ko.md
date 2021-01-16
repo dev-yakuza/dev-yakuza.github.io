@@ -27,9 +27,12 @@ image: '/assets/images/category/react/create-react-app/styled-components/backgro
 
 이 블로그 포스트는 시리즈로 제작되었습니다. 다음은 `create-react-app`의 시리즈 리스트입니다.
 
+- [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
+- [[타입스크립트] create-react-app에서 절대 경로 import]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
 - create-react-app에서 styled-components
+- [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 
 ## 개요
 
