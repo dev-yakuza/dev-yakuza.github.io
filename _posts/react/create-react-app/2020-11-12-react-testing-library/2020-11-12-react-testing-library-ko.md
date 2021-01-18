@@ -25,6 +25,7 @@ published: false
 - [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
+- [[타입스크립트] create-react-app에서 절대 경로 import]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 - create-react-app에서 react-testing-library로 테스트하기
 
@@ -42,7 +43,7 @@ published: false
 
 - react-testing-library: [https://testing-library.com/docs/react-testing-library/intro/](https://testing-library.com/docs/react-testing-library/intro/){:rel="noopener" target="_blank"}
 
-create-reate-app으로 React 프로젝트를 생성하면, `Jest`와 마찬가지로 `react-testing-library`도 함께 설치됩니다. 그러므로 특별한 설치없이 바로 `react-testing-library`를 사용할 수 있습니다.
+create-react-app으로 React 프로젝트를 생성하면, `Jest`와 마찬가지로 `react-testing-library`도 함께 설치됩니다. 그러므로 특별한 설치없이 바로 `react-testing-library`를 사용할 수 있습니다.
 
 이번 블로그 포스트에서는 예제를 통해 react-testing-library를 사용하는 방법에 대해서 알아보겠습니다.
 
@@ -73,7 +74,7 @@ npx create-react-app react-test --template=typescript
 }
 ```
 
-그리고 React 프로젝트에서 `styled-components`를 사용하기 위해, 다음 명령어를 통해 `styled-components`을 설치합니다.
+마지막으로 React 프로젝트에서 `styled-components`를 사용하기 위해, 다음 명령어를 통해 `styled-components`을 설치합니다.
 
 ```bash
 npm install --save styled-components
@@ -173,7 +174,7 @@ npm start
 
 문제없이 실행되었다면, 브라우저에서 다음과 같은 화면을 확인할 수 있다.
 
-![create-react-app with typescript](/assets/images/category/react/create-react-app/root-imprt/project.jpg)
+![create-react-app with typescript](/assets/images/category/react/create-react-app/root-import/project.jpg)
 
 {% include in-feed-ads.html %}
 
@@ -220,7 +221,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 ```
 
-우리는 컴포넌트를 디자인할 때 `styled-compontents`를 사용하고 있다. 이를 테스트하기 위한 라이브러리를 추가했다.
+우리는 컴포넌트를 디자인할 때 `styled-components`를 사용하고 있다. 이를 테스트하기 위한 라이브러리를 추가했다.
 
 ```js
 import 'jest-styled-components';
@@ -414,7 +415,7 @@ describe('<App />', () => {
 });
 ```
 
-Button 컴포넌트에서 설명한 내용은 생략하고 진행하도록 하겠다. 우선 Button 컴포넌트와 동일하게 우선 App 컴포넌트가 화면에 잘 표시되는지 확인하는 테스트 코드를 작성하였다. App 컴포넌트는 `label`과 `backgroundColor`가 다른 두 개의 Button 컴포넌트와 카운트를 표시하는 컴포넌트를 가지고 있다. 카운트는 초기값이 `0`이므로 화면에 `0`이 표시되어있는지를 통해 카운트를 표시하는 컴포넌트가 표시되었는지 확인하였다.
+Button 컴포넌트에서 설명한 내용은 생략하고 진행하도록 하겠다. 우선 Button 컴포넌트와 동일하게 App 컴포넌트가 화면에 잘 표시되는지 확인하는 테스트 코드를 작성하였다. App 컴포넌트는 `label`과 `backgroundColor`가 다른 두 개의 Button 컴포넌트와 카운트를 표시하는 컴포넌트를 가지고 있다. 카운트는 초기값이 `0`이므로 화면에 `0`이 표시되어있는지를 통해 카운트를 표시하는 컴포넌트가 화면에 표시되었는지 확인하였다.
 
 ```js
 const minusButton = screen.getByText('-');
