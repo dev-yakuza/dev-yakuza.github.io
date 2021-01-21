@@ -33,6 +33,7 @@ image: '/assets/images/category/react/create-react-app/styled-components/backgro
 - [[타입스크립트] create-react-app에서 절대 경로 import]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
 - create-react-app에서 styled-components
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
+- [create-react-app에서 react-testing-library로 테스트하기]({{site.url}}/{{page.categories}}/react-testing-library/jest/){:target="_blank"}
 
 ## 개요
 

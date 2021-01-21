@@ -9,12 +9,22 @@ comments: true
 title: 'create-react-app에서 react-testing-library로 테스트하기'
 description: 'create-react-app로 생성한 React 프로젝트에서 react-testing-library를 사용하여 테스트하는 방법에 대해서 알아봅시다.'
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [react-testing-library](#react-testing-library)
+- [카운터 앱 개발](#카운터-앱-개발)
+  - [Button 컴포넌트](#button-컴포넌트)
+  - [App 컴포넌트](#app-컴포넌트)
+- [테스트](#테스트)
+  - [Button 컴포넌트의 테스트](#button-컴포넌트의-테스트)
+  - [App 컴포넌트의 테스트](#app-컴포넌트의-테스트)
+- [코드 커버리지](#코드-커버리지)
+- [완료](#완료)
 
 </div>
 
@@ -26,6 +36,7 @@ published: false
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 - [[타입스크립트] create-react-app에서 절대 경로 import]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
+- [create-react-app에서 styled-components]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 - create-react-app에서 react-testing-library로 테스트하기
 
@@ -188,7 +199,7 @@ npm run test
 
 ### Button 컴포넌트의 테스트
 
-우선 Button 컴포넌트를 테스트해 보자. Button 컴포넌트를 테스트하기 위해 `./src/Components/Button/index.tsx` 파일을 만들고 다음과 같이 수정한다.
+우선 Button 컴포넌트를 테스트해 보자. Button 컴포넌트를 테스트하기 위해 `./src/Components/Button/index.test.tsx` 파일을 만들고 다음과 같이 수정한다.
 
 ```js
 import React from 'react';
@@ -550,4 +561,4 @@ Time:        2.752 s, estimated 3 s
 
 이것으로 create-react-app으로 생성한 리액트 프로젝트를 Jest와 create-react-app으로 테스트하는 방법에 대해서 알아보았다. 여기서 작성한 테스트 코드가 정답은 아니며, 여러 방법으로 같은 동일한 테스트 코드를 작성할 수 있다.
 
-또한, 테스트 커버리지를 통해 우리가 작성한 테스트 코드가 모든 테스트를 커버하는 것을 확인할 수 있었다. 하지만 코드 커버리지는 어디까지나 확인용이므로, 100%로 신뢰하지 않도록 주의하자. 테스트 커버리지가 100%라고 해서 현재 만든 앱에 버그가 없고, 내가 만든 테스트 코드가 모든 테스트 케이스를 테스트하고 있다고 착각하지 않도록 주의하자.
+또한, 코드 커버리지를 통해 우리가 작성한 테스트 코드가 모든 테스트를 커버하는 것을 확인할 수 있었다. 하지만 코드 커버리지는 어디까지나 확인용이므로, 100%로 신뢰하지 않도록 주의하자. 코드 커버리지가 100%라고 해서 현재 만든 앱에 버그가 없고, 내가 만든 테스트 코드가 모든 테스트 케이스를 테스트하고 있다고 착각하지 않도록 주의하자.

@@ -36,7 +36,9 @@ This blog post is a series. You can see other blog posts of the series on the li
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - TypeScript in create-react-app
 - [[TypeScript] Make Import path based on Root in create-react-app]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
+- [styled-components in create-react-app]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
+- [Test with react-testing-library in create-react-app]({{site.url}}/{{page.categories}}/create-react-app/react-testing-library/){:target="_blank"}
 
 ## Outline
 

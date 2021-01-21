@@ -33,6 +33,7 @@ image: '/assets/images/category/react/create-react-app/styled-components/backgro
 - [[TypeScript] create-react-appで絶対パスのimport]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
 - create-react-appでstyled-componentsの使い方
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
+- [create-react-appでreact-testing-libraryを使ってテストする]({{site.url}}/{{page.categories}}/create-react-app/react-testing-library/){:target="_blank"}
 
 ## 概要
 

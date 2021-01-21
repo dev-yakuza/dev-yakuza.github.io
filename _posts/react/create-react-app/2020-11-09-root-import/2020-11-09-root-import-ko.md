@@ -33,6 +33,8 @@ image: '/assets/images/category/react/create-react-app/typescript/background.jpg
 - [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 - [타입스크립트] create-react-app에서 절대 경로 import
 - [create-react-app에서 styled-components]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
+- [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
+- [create-react-app에서 react-testing-library로 테스트하기]({{site.url}}/{{page.categories}}/react-testing-library/jest/){:target="_blank"}
 
 ## 개요
 

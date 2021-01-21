@@ -9,12 +9,22 @@ comments: true
 title: 'create-react-appでreact-testing-libraryを使ってテストする'
 description: 'create-react-appで生成したReactプロジェクトでreact-testing-libraryを使ってテストをする方法について説明します。'
 image: '/assets/images/category/react/create-react-app/typescript/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [react-testing-library](#react-testing-library)
+- [カウントアプリ開発](#カウントアプリ開発)
+  - [Buttonコンポーネント](#buttonコンポーネント)
+  - [Appコンポーネント](#appコンポーネント)
+- [テスト](#テスト)
+  - [Buttonコンポーネントのテスト](#buttonコンポーネントのテスト)
+  - [Appコンポーネントのテスト](#appコンポーネントのテスト)
+- [コードカバレッジ](#コードカバレッジ)
+- [完了](#完了)
 
 </div>
 
@@ -26,6 +36,7 @@ published: false
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
 - [create-react-appでTypeScriptを使う方法]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 - [[TypeScript] create-react-appで絶対パスのimport]({{site.url}}/{{page.categories}}/create-react-app/root-import/){:target="_blank"}
+- [create-react-appでstyled-componentsの使い方]({{site.url}}/{{page.categories}}/create-react-app/styled-components/){:target="_blank"}
 - [Jest]({{site.url}}/{{page.categories}}/create-react-app/jest/){:target="_blank"}
 - create-react-appでreact-testing-libraryを使ってテストする
 
@@ -188,7 +199,7 @@ npm run test
 
 ### Buttonコンポーネントのテスト
 
-まず、Buttonコンポーネントをテストしてみましょう。Buttonコンポーネントをテストするため`./src/Components/Button/index.tsx`ファイルを作って次のように修正します。
+まず、Buttonコンポーネントをテストしてみましょう。Buttonコンポーネントをテストするため`./src/Components/Button/index.test.tsx`ファイルを作って次のように修正します。
 
 ```js
 import React from 'react';
@@ -550,4 +561,4 @@ Time:        2.752 s, estimated 3 s
 
 これでcreate-react-appで生成したReactプロジェクトをJestとcreate-react-appでテストする方法についてみてみました。ここで作成したテストコードが正解ではなく、色んな方法で同じテストコードを作成することができます。
 
-また、テストカバレッジを使って私たちが作成したテストコードが全てのテストをカバーすることを確認しました。しかし、コードカバレッジをあくまでも確認用なので、100%で信頼しないように注意する必要があります。テストカバレッジが100%が出たことで現在作ったアプリへバグがなくて、私が作ったテストコードが全てのテストケースをテストしてると菅自害しないように注意しましょう。
+また、コードカバレッジを使って私たちが作成したテストコードが全てのテストをカバーすることを確認しました。しかし、コードカバレッジをあくまでも確認用なので、100%で信頼しないように注意する必要があります。コードカバレッジが100%が出たことで現在作ったアプリへバグがなくて、私が作ったテストコードが全てのテストケースをテストしてると菅自害しないように注意しましょう。
