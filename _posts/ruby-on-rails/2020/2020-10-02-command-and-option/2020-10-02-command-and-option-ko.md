@@ -285,7 +285,7 @@ rails dbconsole
 sqlite>
 ```
 
-## rake routes
+### rake routes
 
 Rails에서는 웹 애플리케이션의 URL을 `config/routes.rb` 파일에서 관리하고 있습니다. `rake routes` 명령어를 사용하면 해당 Rails 애플리케이션에서 사용하는 모든 URL을 확인할 수 있습니다.
 
@@ -302,7 +302,7 @@ rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:f
 ...
 ```
 
-## rake notes
+### rake notes
 
 코드에 직접적으로 앞으로 할일, 수정해야할 일, 최적화해야할 일들을 잊지 않기 위해 주석으로 메모를 남기곤 합니다.
 
@@ -324,6 +324,26 @@ rails notes
 rails notes:todo
 rails notes:fixme
 rails notes:optimize
+```
+
+## rake db
+
+다음은 데이터베이스와 관련된 `rake` 명령어입니다.
+
+### rake db:drop:all
+
+미리 생성되어 있는 데이터베이스를 삭제할 때, 다음 명령어를 사용합니다.
+
+```bash
+rake db:drop:all
+```
+
+### rake db:reset
+
+다음 명령어를 사용하여, 미리 생성되어 있는 데이터베이스를 삭제하고, 미리 설정된 내용으로 데이터베이스를 초기화할 수 있습니다.
+
+```bash
+rake db:reset
 ```
 
 ## 완료
