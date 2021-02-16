@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumoncho 앱 개발기(RN, React Native)'
 description: 'RN(React Native)를 사용하여 쿠몬쵸(Kumoncho)라는 그림 동화책 앱을 제작해 보았습니다. 이 앱을 제작하면서 격은 내용을 정리해보려고 합니다.'
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_ko.png'
 ---
 
 ## 개요

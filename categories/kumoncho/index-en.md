@@ -11,7 +11,7 @@ pagination:
 
 title: 'kumoncho'
 description: Kumoncho is a children's picture fairy tale book app about the friendship and courage of Prince Ikaros and cloud friend Kumoncho. I've wrote episodes about when I develop the app with RN(React Native).
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_en.png'
 no_search_result: 'There is no search result.'
 search_json: 'kumoncho'
 

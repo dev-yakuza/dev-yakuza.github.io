@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumonchoアップデート後期(RN, React Native)'
 description: 'RN(React Native)を使ってくもんちょ(Kumoncho)と言う絵本アプリを開発してリリースしました。アプリをリリースした後どうんなアップデートをしてるかについて説明します。'
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_ja.png'
 ---
 
 ## 概要

@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumoncho development journal(RN, React Native)'
 description: I've developed the picture fairy tale book app that is called Kumoncho. in here, I wrote the development journal about what I experience.
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_en.png'
 ---
 
 ## Outline

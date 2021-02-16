@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumoncho 업데이트 후기(RN, React Native)'
 description: 'RN(React Native)를 사용하여 쿠몬쵸(Kumoncho)라는 그림 동화책 앱을 제작하여 배포하였습니다. 배포후 어떤 업데이트를 했는지에 대해서 정리해보았습니다.'
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_ko.png'
 ---
 
 ## 개요

@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumonchoアプリ開発日誌(RN, React Native)'
 description: 'RN(React Native)を使ってくもんちょ(Kumoncho)と言う子供向け絵本アプリを作りました。このアプリを開発した時のエピソードをまとめてみました。'
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_ja.png'
 ---
 
 ## 概要

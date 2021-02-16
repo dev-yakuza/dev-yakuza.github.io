@@ -8,7 +8,7 @@ comments: true
 
 title: 'Kumoncho Update Reviews(RN, React Native)'
 description: I've developed and released the fairy tale picture book called Kumoncho by using RN(React Native). in this blog, I will talk about what I updated after the release.
-image: '/assets/images/category/kumoncho/background.jpg'
+image: '/assets/images/category/kumoncho/background_en.png'
 ---
 
 ## Outline
