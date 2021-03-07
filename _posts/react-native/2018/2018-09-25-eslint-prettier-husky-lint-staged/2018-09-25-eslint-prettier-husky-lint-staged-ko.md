@@ -230,7 +230,6 @@ module.exports = {
     ...,
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
     'react/display-name': 'off',
     'react/prop-types': 'off',
   },
