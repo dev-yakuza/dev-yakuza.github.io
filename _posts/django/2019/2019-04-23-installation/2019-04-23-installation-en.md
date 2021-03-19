@@ -6,7 +6,7 @@ lang: 'en'
 categories: 'django'
 comments: true
 
-title: 'django installation'
+title: 'Django installation'
 description: let's see how to install django and how to configure django.
 image: '/assets/images/category/django/2019/installation/background.jpg'
 ---

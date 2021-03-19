@@ -6,7 +6,7 @@ lang: 'en'
 categories: 'django'
 comments: true
 
-title: 'django Customm User Model'
+title: 'Django Customm User Model'
 description: let's see how to make Custom User Model in django.
 image: '/assets/images/category/django/2019/custom-user-model/background.jpg'
 ---
