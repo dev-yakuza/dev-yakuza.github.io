@@ -28,7 +28,7 @@ layout: null
     <link>{{ site.url }}/</link>
     {% endif %}
     </image>
-    {%- assign posts = site.posts | reverse | slice: 0, 96 | reverse -%}
+    {%- assign posts = site.posts | reverse | slice: 0, 97 | reverse -%}
     {% for post in posts %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
