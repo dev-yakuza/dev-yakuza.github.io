@@ -16,6 +16,7 @@ image: '/assets/images/category/flutter/background.png'
 ## Content
 
 - [Outline](#outline)
+- [VScode](#vscode)
 - [Xcode](#xcode)
 - [Android Studio](#android-studio)
 - [Flutter SDK installation](#flutter-sdk-installation)
@@ -35,6 +36,21 @@ Flutter is a cross-platform mobile app development platform like React Native. W
 In this blog post, we'll see how to install Flutter on Mac to develop the app with it. If you use other OS, please see the official document on the link below.
 
 - Officail site: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install){:rel="nofollow noreferrer" target="_blank"}
+
+## VScode
+
+Normally, I use VSCode to deveolp the app with Flutter. If you don't use specific tools, I recommend to use VSCode. Execute the command below to install VSCode.
+
+```bash
+brew cask install visual-studio-code
+sudo xattr -dr com.apple.quarantine /Applications/Visual\ Studio\ Code.app
+```
+
+And then, execute the command below to install the Flutter extension.
+
+```bash
+code --install-extension dart-code.flutter
+```
 
 ## Xcode
 
