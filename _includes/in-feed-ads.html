@@ -1,44 +1,3 @@
-{% if site.active_lang == 'ko' %}
-<div
-  class="in-feed-ads"
-  style="
-    display: flex;
-    width: 100%;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-  "
->
-  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %} {% capture
-  ads_id %}{% cycle 371043, 412841, 371050, 412840, 412842 %}{% endcapture %} {%
-  if thecycle == 'odd' %}
-  <div style="width: 100%">
-    <script src="https://ads-partners.coupang.com/g.js"></script>
-    <script>
-      new PartnersCoupang.G({ id:{{ ads_id }},"trackingCode":"AF7212946","template":"carousel","width":"100%","height":"300" });
-    </script>
-  </div>
-  {% else %}
-  <div style="width: 100%">
-    <script
-      async
-      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    ></script>
-    <ins
-      class="adsbygoogle"
-      style="display: block; text-align: center"
-      data-ad-layout="in-article"
-      data-ad-format="fluid"
-      data-ad-client="ca-pub-7987914246691031"
-      data-ad-slot="2718813593"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  {% endif %}
-</div>
-{% else %}
 <div class="in-feed-ads">
   <script
     async
@@ -56,4 +15,3 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div>
-{% endif %}
