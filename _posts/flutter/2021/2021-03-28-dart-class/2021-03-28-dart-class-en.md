@@ -45,6 +45,10 @@ This blog post is a series. You can see the other posts on the link below.
 
 In this blog post, you'll see how to use the Class in Dart.
 
+You can see the source code, that is introduced on this blog post, on the link below
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## Class
 
 When you define the Class, the Class name should be started with the uppercase letter. The Class has member variables and functions.

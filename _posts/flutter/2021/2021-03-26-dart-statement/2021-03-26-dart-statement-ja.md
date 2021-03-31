@@ -39,6 +39,10 @@ image: '/assets/images/category/flutter/2021/dart/background.jpg'
 
 今回のブログポストではDartで`if/else`、`for/while`などStatementを使う方法について説明します。
 
+このブログポストで紹介するソースコードは下記のリンクで確認できます。
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## if文
 
 Dartでも他のプログラミング言語と同じように`if`文を使うことができます。

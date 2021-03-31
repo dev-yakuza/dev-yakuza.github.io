@@ -1,13 +1,13 @@
 ---
 layout: 'post'
-permalink: '/flutter/widget/'
-paginate_path: '/flutter/:num/widget/'
+permalink: '/flutter/layout/'
+paginate_path: '/flutter/:num/layout/'
 lang: 'ko'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] 위젯'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트를 살펴보고, Flutter의 위젯에 관해 배워보겠습니다..
+title: '[Flutter] 레이아웃'
+description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트를 살펴보고, Flutter의 위젯에 관해 배워보겠습니다.
 image: '/assets/images/category/flutter/background.jpg'
 published: false
 ---

@@ -45,6 +45,10 @@ image: '/assets/images/category/flutter/2021/dart/background.jpg'
 
 이번 블로그 포스트에서는 Dart에서 클래스를 사용하는 방법에 대해서 설명합니다.
 
+이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## 클래스
 
 클래스를 선언할 때, 클래스명은 대문자로 시작해야 합니다. 클래스는 멤버 변수와 멤버 함수를 가질 수 있습니다.

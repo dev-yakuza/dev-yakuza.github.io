@@ -39,6 +39,10 @@ This blog post is a series. You can see the other posts on the link below.
 
 In this blog post, you can see how to use Statement like `if/else` and `for/while` in Dart.
 
+You can see the source code, that is introduced on this blog post, on the link below
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## if statement
 
 You can use `if` statement like other programming languages like below.

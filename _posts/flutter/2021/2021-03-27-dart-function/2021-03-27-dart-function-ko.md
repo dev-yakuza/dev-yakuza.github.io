@@ -39,6 +39,10 @@ image: '/assets/images/category/flutter/2021/dart/background.jpg'
 
 이번 블로그 포스트에서는 Dart에서 함수를 사용하는 방법에 대해서 설명합니다.
 
+이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## 함수
 
 Dart에서는 다음과 같이 `함수`를 선언하고 사용할 수 있습니다.

@@ -39,6 +39,10 @@ image: '/assets/images/category/flutter/2021/dart/background.jpg'
 
 今回のブログポストではDartで関数を使う方法について説明します。
 
+このブログポストで紹介するソースコードは下記のリンクで確認できます。
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## 関数
 
 Dartでは下記のように`関数`を宣言して使うことができます。

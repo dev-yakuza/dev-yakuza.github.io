@@ -55,6 +55,10 @@ Flutterはグーグルで開発したDartと言う言語を使って開発しま
 
 このブログポストではFlutterで使ってるDart言語の基本的な使い方を説明して、Dartの変数について詳しく説明します。
 
+このブログポストで紹介するソースコードは下記のリンクで確認できます。
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## 開発環境
 
 Dartをローカルで開発するためにはFlutterをインストールして設定する必要があります。以前のブログポストを参考して開発環境を構築してください。

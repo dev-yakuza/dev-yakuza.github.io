@@ -45,6 +45,10 @@ image: '/assets/images/category/flutter/2021/dart/background.jpg'
 
 今回のブログポストではDartでクラスを使う方法について説明します。
 
+このブログポストで紹介するソースコードは下記のリンクで確認できます。
+
+- GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/dart](https://github.com/dev-yakuza/study-flutter/tree/main/dart){:rel="nofollow noreferrer" target="_blank"}
+
 ## クラス
 
 クラスを宣言する時、クラス名は大文字で始めます。クラスはメンバー変数やメンバー関数を持ってることができます。
