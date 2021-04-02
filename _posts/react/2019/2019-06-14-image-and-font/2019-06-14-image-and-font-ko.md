@@ -7,7 +7,7 @@ categories: 'react'
 comments: true
 
 title: 'React에서 이미지와 웹 폰트 다루기'
-description: 'Webpack(폰팩)을 기반으로 만든 React(리액트) 프로젝트에서 이미지(image)와 웹 폰트(font)를 사용하는 방법에 대해서 알아봅니다.'
+description: 'Webpack(웹팩)을 기반으로 만든 React(리액트) 프로젝트에서 이미지(image)와 웹 폰트(font)를 사용하는 방법에 대해서 알아봅니다.'
 image: '/assets/images/category/react/2019/image-and-font/background.jpg'
 ---
 
