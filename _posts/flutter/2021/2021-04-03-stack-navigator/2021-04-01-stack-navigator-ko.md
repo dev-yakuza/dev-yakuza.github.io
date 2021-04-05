@@ -8,7 +8,7 @@ comments: true
 
 title: '[Flutter] 스택 내비게이션'
 description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 스택 내비게이션을 사용하는 방법에 대해서 알아봅니다.
-image: '/assets/images/category/flutter/background.jpg'
+image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 

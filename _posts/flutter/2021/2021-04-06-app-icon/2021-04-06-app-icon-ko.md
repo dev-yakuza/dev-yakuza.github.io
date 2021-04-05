@@ -8,7 +8,7 @@ comments: true
 
 title: '[Flutter] 앱 아이콘 변경'
 description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 앱 아이콘을 변경하는 방법에 대해서 알아봅시다.
-image: '/assets/images/category/flutter/background.jpg'
+image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 

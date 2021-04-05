@@ -8,7 +8,7 @@ comments: true
 
 title: '[Flutter] Textfield 위젯'
 description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 사용자 입력을 받기 위한 Textfield 위젯을 사용하는 방법에 대해서 알아봅니다.
-image: '/assets/images/category/flutter/background.jpg'
+image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 

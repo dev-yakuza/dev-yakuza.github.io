@@ -8,7 +8,7 @@ comments: true
 
 title: '[Flutter] BuildContext'
 description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트를 살펴보고, Flutter의 위젯에 관해 배워보겠습니다.
-image: '/assets/images/category/flutter/background.jpg'
+image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 
