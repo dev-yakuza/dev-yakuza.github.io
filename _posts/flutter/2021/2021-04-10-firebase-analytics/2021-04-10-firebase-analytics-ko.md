@@ -20,9 +20,11 @@ published: false
 
 ## 개요
 
-이번 블로그 포스트에서는 Flutter에서 `firebase_core`을 사용하여 `Firebase`를 연동하는 방법에 대해서 소개합니다.
+이번 블로그 포스트에서는 Flutter에서 사용자의 행동을 분석하기 위해 `Firebase`의 `Analytics`를 설정하는 방법에 대해서 소개합니다.
 
-- [firebase_core](https://pub.dev/packages/firebase_core){:rel="nofollow noreferrer" target="_blank" }
+- [firebase_analytics](https://pub.dev/packages/firebase_analytics){:rel="nofollow noreferrer" target="_blank" }
+
+`Firebase`의 `Analytics`를 사용하기 위해 Flutter에 `firebase_analytics`을 설정하고 사용하는 방법에 대해서 알아봅시다.
 
 ## 블로그 시리즈
 
