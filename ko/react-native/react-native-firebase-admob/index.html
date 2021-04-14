@@ -1,0 +1,545 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="euc-kr"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="Firebase Admob"/><meta name="twitter:description" content="react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>Firebase Admob - react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.</title><meta name="description" content="react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"/><meta name="generator" content="Jekyll v3.9.0"/><meta property="og:title" content="Firebase Admob"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자."/><meta property="og:description" content="react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자."/><link rel="canonical" href="https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/react-native-firebase-admob.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2018-11-17T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/react-native-firebase-admob.jpg"/><meta property="twitter:title" content="Firebase Admob"/><script type="application/ld+json">
+{"url":"https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/","image":"https://dev-yakuza.posstree.com/assets/images/category/react-native/react-native-firebase-admob.jpg","headline":"Firebase Admob","dateModified":"2020-12-16T11:10:57+09:00","datePublished":"2018-11-17T00:00:00+09:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/"},"description":"react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.","@type":"BlogPosting","@context":"https://schema.org"}</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet"/><link rel="stylesheet" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/ko/assets/main.css?v=20210414"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/ko/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "맥(Mac)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 맥(Mac)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":1,"url": "https://dev-yakuza.posstree.com/ko/react-native/install-on-mac/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "윈도우(Windows)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 윈도우(Windows)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":2,"url": "https://dev-yakuza.posstree.com/ko/react-native/install-on-windows/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "RN 설치",
+          "description" : "react-native를 설치하고 프로젝트가 동작하는지 확인한다.",
+          "position":3,"url": "https://dev-yakuza.posstree.com/ko/react-native/installation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "typescript",
+          "description" : "react-native 프로젝트에 typescript를 적용하여 개발해 보자.",
+          "position":4,"url": "https://dev-yakuza.posstree.com/ko/react-native/typescript/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 ESLint, Prettier를 프로처럼 사용하기",
+          "description" : "React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.",
+          "position":5,"url": "https://dev-yakuza.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "react-native 스타일링을 위해 styled-components 라이브러리를 활용하는 방법에 대해 알아보자.",
+          "position":6,"url": "https://dev-yakuza.posstree.com/ko/react-native/styled-components/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "react-navigation을 활용하여 어플을 개발해 보자.",
+          "position":7,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.",
+          "position":8,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "generator-rn-toolbox을 이용하여 앱 아이콘을 생성해보자.",
+          "position":9,"url": "https://dev-yakuza.posstree.com/ko/react-native/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splash 이미지",
+          "description" : "generator-rn-toolbox을 이용하여 Splash 이미지를 설정하자.",
+          "position":10,"url": "https://dev-yakuza.posstree.com/ko/react-native/splash-image/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "기본 Component UI에 NativeBase 라이브러리를 사용해보자.",
+          "position":11,"url": "https://dev-yakuza.posstree.com/ko/react-native/nativebase/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "react-native-vector-icons 라이브러리를 사용하여 아이콘을 표시해보자.",
+          "position":12,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-vector-icons/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "유저의 디바이스 정보를 얻기 위해 react-native-device-info 라이브러리를 사용해보자",
+          "position":13,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-device-info/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "react-native-tts를 사용하여 text-to-speech 기능을 구현해보자.",
+          "position":14,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-tts/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "구글 애드몹",
+          "description" : "구글 애드몹(google admob) 광고를 사용하기 위해 react-native-admob 라이브러리를 사용해 보자.",
+          "position":15,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOS 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 디바이스에서 테스트해 봅시다.",
+          "position":16,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":17,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 개발자 등록",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 앱 스토어(App store)에 등록하기 위해 애플 개발자 프로그램(Apple Developer Program)에 등록하는 방법에 대해서 알아봅시다.",
+          "position":18,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-enroll-developer-program/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS 인증서(Certification)",
+          "description" : "애플 개발자 프로그램(Apple Developer Program) 등록을 완료했다면, 개발자 인증서(Certification)을 설정하는 방법에 대해 알아봅니다.",
+          "position":19,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-certification/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "iOS의 TestFlight를 이용하여 개발한 어플을 테스터를 통해 테스트해 보자.",
+          "position":20,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-testflight/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "iOS App store 등록",
+          "description" : "iOS 앱 스토어(App Store)에 등록하기 위해 필요한 항목에 대해 알아봅니다.",
+          "position":21,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-store/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "RN(react native)로 개발한 앱을 구글 애널리틱스(Google Analytics)를 이용하여 앱을 분석해 봅시다.",
+          "position":22,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-analytics-bridge/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.",
+          "position":23,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android) 디바이스에서 테스트해 봅시다.",
+          "position":24,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android)용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":25,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 시뮬레이터 변경",
+          "description" : "RN(react native)을 iOS에서 시뮬레이터로 테스트할 때 시뮬레이터를 변경하는 방법에 대해서 알아봅시다.",
+          "position":26,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-change-simulator/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "react-native-firebase 라이브러리를 사용하여 좀 더 자세하게 앱을 분석해 보자",
+          "position":27,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-analytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash 분석",
+          "description" : "iOS App crash 로그(Log)를 분석하는 방법에 대해서 알아봅니다.",
+          "position":28,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-crash-debugging/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "react-native-firebase를 사용하여 파이어베이스(Firebase)의 Crashlytics로 앱에서 crash가 발생했을 때 내용을 수집해봅시다.",
+          "position":29,"url": "https://dev-yakuza.posstree.com/ko/react-native/firebase-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "react-native-animatable을 사용해서 간단하게 RN(react native)에 애니메이션을 추가해 보자.",
+          "position":30,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-animatable/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 개발자 등록",
+          "description" : "안드로이드 앱(Android App)을 등록하기 위해 안드로이드 개발자 등록을 해봅시다.",
+          "position":31,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-enroll-google-play-developer/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 앱 스토어 등록",
+          "description" : "RN(React Native)로 개발한 안드로이드 앱(Android App)을 안드로이드 앱 스토어(Google Play)에 등록해 봅시다.",
+          "position":32,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-google-play/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "사용자 음성 인식",
+          "description" : "RN(React Native) 프로젝트에서 react-native-voice 라이브러리를 사용하여 사용자 음성을 인식하여 문자로 변환해주는 기능을 추가해 봅시다.",
+          "position":33,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-voice/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "이메일 발송 기능",
+          "description" : "RN(React Native) 프로젝트에서 react-native-mail 라이브러리를 사용하여 단말기에 설치되어 있는 이메일 앱을 실행하고 이메일(email)을 보내봅시다.",
+          "position":34,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-mail/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "파일 시스템 사용",
+          "description" : "RN(React Native) 프로젝트에서 react-native-fs 라이브러리를 사용하여 파일을 읽고 써봅시다.",
+          "position":35,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "애프터이펙트(AEF) 사용",
+          "description" : "RN(React Native) 프로젝트에서 어도비 애프터이펙트(Adobe After Effects)로 제작한 애니메이션을 적용해 보자.",
+          "position":36,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-lottie/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "스와이프 감지",
+          "description" : "RN(React Native) 프로젝트에서 유저가 화면에서 어느 방향으로 스와이프(Swipe) 했는지 감지하기 위해 react-native-swipe-gestures를 사용해 보자",
+          "position":37,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-swipe-gestures/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "그라데이션(Gradient)",
+          "description" : "RN(React Native) 프로젝트에서 react-native-linear-gradient을 사용해서 그라데이션(Gradient) 백그라운드(background)를 만들어 보자.",
+          "position":38,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-linear-gradient/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash 스크린",
+          "description" : "RN(React Native) 프로젝트에서 react-native-splash-screen를 사용하여 Splash 스크린을 원하는 시간에 종료하도록 만들어 보자.",
+          "position":39,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "앱 스토어 리뷰",
+          "description" : "RN(React Native) 프로젝트에서 react-native-rate를 사용하여 앱 스토어의 리뷰를 작성하도록 유도하는 방법에 대해서 설명합니다.",
+          "position":40,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-rate/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunes 파일 공유 기능",
+          "description" : "iTunes를 통해 RN(React Native)으로 제작한 앱에 파일을 공유하는 방법에 대해서 알아봅니다.",
+          "position":41,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-itunes-share-file/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "StatusBar 다루기",
+          "description" : "RN(React Native)에서 StatusBar를 다루는 방법에 대해서 설명합니다.",
+          "position":42,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-status-bar/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve) 태블릿 지원하기",
+          "description" : "RN(React Native) 프로젝트에서 태블릿 지원하는 방법에 대해서 알아봅시다.",
+          "position":43,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-support-tablet/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 sqlite 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 sqlite 데이터베이스를 사용하는 방법에 대해서 알아봅시다.",
+          "position":44,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-sqlite-storage/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 커스텀 폰트 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 커스텀 폰트를 적용하고 사용하는 방법에 대해서 알아봅시다.",
+          "position":45,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-custom-font/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "RN(React Native)에서 root import하기",
+          "description" : "RN(React Native) 프로젝트에서 import를 할때, root 폴더 기준으로 import할 수 있도록 프로젝트를 설정해 봅시다.",
+          "position":46,"url": "https://dev-yakuza.posstree.com/ko/react-native/root-import/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "특정 파일로 앱 열기",
+          "description" : "웹이나 이메일로 받은 특정 파일(엑셀, 파워포인트 등)을 RN(React Native)로 제작한 앱으로 공유하는 방법에 대해서 설명합니다.",
+          "position":47,"url": "https://dev-yakuza.posstree.com/ko/react-native/open-file-with-app/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notification",
+          "description" : "react-native-push-notification 라이브러리를 이용하여 Local Push Notification, 즉 앱(App) 자체에서 알림을 보내는 방법에 대해서 알아보겠습니다.",
+          "position":48,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-push-notification/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 App 아이콘 & Splash 이미지 만들기",
+          "description" : "react-native-make 라이브러리를 이용하여 App 아이콘과 Splash 이미지를 생성하는 방법에 대해서 알아봅니다.",
+          "position":49,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-make/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 현재 위치 정보 가져오기",
+          "description" : "react-native-geolocation-service 라이브러리를 이용하여 React Native에서 현재 위치 정보를 가져오는 방법에 대해서 알아봅시다.",
+          "position":50,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-geolocation-service/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 지도 표시하기",
+          "description" : "react-native-maps 라이브러리를 이용하여 React Native에서 지도를 사용하는 방법에 대해서 알아봅시다.",
+          "position":51,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-maps/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Fastlane을 통한 앱 자동 배포",
+          "description" : "Fastlane을 사용해서 React native로 만든 앱을 자동으로 배포해 보자",
+          "position":52,"url": "https://dev-yakuza.posstree.com/ko/react-native/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "react-native-image-modal을 사용해서 이미지를 전체 화면으로 표시해보고, pinch 확대, 축소 등을 사용해 보자",
+          "position":53,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-modal/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "react-native-image-picker을 사용해서 사진을 찍거나, 카메라 롤에서 사진을 가져오는 방법에 대해서 알아봅시다.",
+          "position":54,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-picker/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase(V5)를 이용한 Push message",
+          "description" : "React Native에서 푸시 메시지를 구현하기 위해, react-native-firebase(V5) 라이브러리를 사용하여 FCM(Firebase Cloud Messaging)을 사용해 봅시다.",
+          "position":55,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-fcm/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "React Native용 오픈소스 만들기",
+          "description" : "React Native용 오픈 소스를 제작하는 방법에 대해서 공유합니다.",
+          "position":56,"url": "https://dev-yakuza.posstree.com/ko/react-native/make-opensource-library/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "React Native에 Multidex 설정하기",
+          "description" : "React Naitve 프로젝트에서 안드로이드에 Multidex를 설정하는 방법에 대해서 알아봅시다.",
+          "position":57,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-multidex/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 설치",
+          "description" : "React Native에서 Firebase를 사용하기 위해 react-native-firebase(V6)을 설치하는 방법에 대해서 알아봅시다.",
+          "position":58,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-installation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Crashlytics를 사용하는 방법에 대해서 알아봅시다.",
+          "position":59,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Admob을 사용하는 방법에 대해서 알아봅시다.",
+          "position":60,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Youtube 재생하기",
+          "description" : "React Native에서 Youtube를 재생하기 위해서 react-native-youtube를 사용하는 방법에 대해서 알아봅시다.",
+          "position":61,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-youtube/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Admob의 Native Advanced 광고 사용하기",
+          "description" : "React Native에서 Admob의 Native Advanced 광고를 사용하기 위해 react-native-admob-native-ads 라이브러리를 사용하는 방법에 대해서 알아봅시다.",
+          "position":62,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob-native-ads/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 인앱 결제 구현하기",
+          "description" : "React Native에서 인앱 결제를 구현하기 위해 react-native-iap를 사용하는 방법에 대해서 알아봅시다.",
+          "position":63,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-iap/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub Actions와 Fastlane을 사용해서 React Native 앱 배포하기",
+          "description" : "GitHub Actions와 Fastlane을 사용해서 React Native로 개발한 앱을 자동으로 배포해 봅시다.",
+          "position":64,"url": "https://dev-yakuza.posstree.com/ko/react-native/github-actions-fastlane/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="stylesheet" href="/ko/assets/highlight/railscasts.css"/><script src="/assets/highlight/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="/assets//vendor/lazysizes/lazysizes.min.js" async=""></script><script data-ad-client="ca-pub-7987914246691031" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/ko/"><img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/django/">장고(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/react-native-firebase-admob/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/react-native-firebase-admob/">English</a><a class="dropdown-item menu-ja" href="/ko/react-native/react-native-firebase-admob/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/django/">장고(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div></div></nav><script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/react-native-firebase-admob.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>Firebase Admob</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-16 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/react-native-firebase-admob/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="top-ads"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/ko/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/ko/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"><span itemprop="name">Firebase Admob</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">목차</h2><ol><li><a href="#개요">개요</a></li><li><a href="#라이브러리-설치">라이브러리 설치</a></li><li><a href="#라이브러리-링크">라이브러리 링크</a><ul><li><a href="#060-이상">0.60 이상</a></li><li><a href="#059-이하">0.59 이하</a></li></ul></li><li><a href="#firebase-프로젝트-생성">firebase 프로젝트 생성</a></li><li><a href="#구글-애드몹-설정">구글 애드몹 설정</a></li><li><a href="#firebase-ios-설정">firebase iOS 설정</a></li><li><a href="#firebase-안드로이드android-설정">firebase 안드로이드(Android) 설정</a><ul><li><a href="#안드로이드-패키지명-수정">안드로이드 패키지명 수정</a></li></ul></li><li><a href="#소스-추가">소스 추가</a><ul><li><a href="#배너">배너</a></li><li><a href="#삽입-광고">삽입 광고</a></li></ul></li><li><a href="#에러-대응">에러 대응</a><ul><li><a href="#admoberror-code-no-fill">admob/error-code-no-fill</a></li></ul></li><li><a href="#완료">완료</a></li></ol></div><h2 id="개요">개요</h2><p>저는 구글 애드몹(Google Admob)을 사용하여 앱에 광고를 표시하고 있습니다. 이전에는 react-native-admob이라는 라이브러리를 사용했지만 구글 애드몹(Google Admob)이외에도 애널리틱스(Analytics)등 여러 기능을 사용하게 되어 통합적으로 사용할 수 있는 라이브러리를 찾다가 react-native-firebase라는 유용한 라이브러리를 찾게 되었습니다.</p><p>여기에서는 구글 파이어베이스(google firebase)를 사용하여 무료로 구글 애드몹(Google Admob), 애널리틱스(Analytics)를 사용하는 방법에 대해서 알아보겠습니다.</p><p>간단하게 구글 애드몹(Google Admob)만을 사용하고 싶으신 분은 이전 블로그인 <a href="https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/" target="_blank">구글 애드몹(Google Admob)</a>을 참고하시기 바랍니다.</p><p>아래에 링크는 react-native-firebase 라이브러리의 공식 페이지입니다. 자세한 내용은 공식 사이트에서 확인해 주세요.</p><ul><li>공식 사이트: <a href="https://github.com/invertase/react-native-firebase" rel="nofollow noreferrer" target="_blank">react-native-firebase</a></li></ul><h2 id="라이브러리-설치">라이브러리 설치</h2><p>아래에 명령어를 사용하여 react-native-firebase 라이브러리를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> react-native-firebase
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="라이브러리-링크">라이브러리 링크</h2><p>react-native-firebase 라이브러리를 사용하기 위해서는 라이브러리를 링크할 필요가 있습니다.</p><h3 id="060-이상">0.60 이상</h3><p>아래에 명령어를 사용하여 react-native-firebase 라이브러리를 RN(react native) 프로젝트에 연결합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>ios
+pod <span class="nb">install
+cd</span> ..
+</code></pre></div></div><h3 id="059-이하">0.59 이하</h3><p>아래에 명령어를 사용하여 react-native-firebase 라이브러리를 RN(react native) 프로젝트에 연결합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native <span class="nb">link </span>react-native-firebase
+</code></pre></div></div><h2 id="firebase-프로젝트-생성">firebase 프로젝트 생성</h2><p>다음은 구글의 파이어베이스(Google Firebase)에서 프로젝트를 생성할 필요가 있습니다. 아래에 링크를 눌러 구글 파이어베이스(Google Firebase)로 이동합니다.</p><ul><li>구글 파이어베이스(Google Firebase): <a href="https://firebase.google.com" rel="nofollow noreferrer" target="_blank">https://firebase.google.com</a></li></ul><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase.jpg" alt="google firebase"/></p><p>오른쪽 위에 <code class="language-plaintext highlighter-rouge">SIGN IN</code> 버튼을 눌러 로그인합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-after-login.jpg" alt="google firebase after login"/></p><p>로그인을 했다면 오른쪽 위에 <code class="language-plaintext highlighter-rouge">GO TO CONSOLE</code>을 눌러 구글 파이어베이스 콘솔(Google Firebase Console)로 이동합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-console.jpg" alt="google firebase console"/></p><p>구글 파이어베이스 콘솔(Google Firebase Console)에서 <code class="language-plaintext highlighter-rouge">+ Add project</code>를 눌러 프로젝트를 추가합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-console-add-project.jpg" alt="google firebase console add project"/></p><p>프로젝트 정보를 추가한 다음 <code class="language-plaintext highlighter-rouge">Create project</code> 버튼을 눌러 프로젝트를 생성합니다.</p><h2 id="구글-애드몹-설정">구글 애드몹 설정</h2><p>구글 애드몹(Google Admob)에 광고를 설정해야 합니다. 구글 파이어베이스 콘솔(Google Firebas Console)의 <code class="language-plaintext highlighter-rouge">Grow</code> &gt; <code class="language-plaintext highlighter-rouge">Admob</code>을 선택하면 아래와 같은 화면을 볼 수 있습니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-console-admob.jpg" alt="google firebase console admob"/></p><p>화면 중앙 하단에 <code class="language-plaintext highlighter-rouge">linking your apps in AdMob.</code> 링크를 누르면 구글 애드몹(Google Admob) 페이지로 이동됩니다.</p><p>구글 애드몹(Google Admob)에 광고를 설정하는 방법은 <a href="https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/" target="_blank">구글 애드몹(Google Admob)</a> 블로그를 참고하여 설정해 주시기 바랍니다.</p><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="firebase-ios-설정">firebase iOS 설정</h2><p>구글 파이어베이스 콘솔(Google Firebase Console)에서 프로젝트를 선택하면 다음과 같은 화면이 보입니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-console-project.jpg" alt="google firebase console project"/></p><p>중앙에 <code class="language-plaintext highlighter-rouge">iOS</code> 버튼을 눌러 iOS 설정 화면으로 이동합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/google-firebase-console-project-ios.jpg" alt="google firebase console project ios"/></p><p>개발한 앱에 번들 ID(bundle ID)를 입력하고 <code class="language-plaintext highlighter-rouge">Register app</code> 버튼을 선택합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/googleservice-info-plist-download.jpg" alt="GoogleService-Info.plist download"/></p><p>구글 파이어베이스(Google Firebase)가 생성한 <code class="language-plaintext highlighter-rouge">GoogleService-Info.plist</code> 파일을 다운로드하여 <code class="language-plaintext highlighter-rouge">info.plist</code>와 동일한 위치에 추가합니다. <code class="language-plaintext highlighter-rouge">GoogleService-Info.plist</code> 파일 추가를 완료했다면 <code class="language-plaintext highlighter-rouge">Next</code> 버튼을 클릭합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/add-firebase-sdk.jpg" alt="add Firebase SDK"/></p><p>화면에 표시된 방식으로 구글 파이어베이스 SDK(Google Firebase SDK)를 RN(react native) 프로젝트에 추가합니다.</p><p>React Native의 버전이 0.59 이하인 경우 아래에 명령어를 실행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod init
+</code></pre></div></div><p>구글 파이어베이스 SDK(Google Firebase SDK)를 <code class="language-plaintext highlighter-rouge">Podfile</code>에 추가합니다.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">target</span> <span class="s1">'blaboo'</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Core'</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Analytics'</span> <span class="o">/</span><span class="sr">/ if you use Analytics
+  pod 'Firebase/</span><span class="no">AdMob</span><span class="err">'</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>구글 파이어베이스 SDK(Google Firebase SDK) 설치를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod <span class="nb">install</span>
+<span class="c"># pod update</span>
+</code></pre></div></div><p><img src="/assets/images/category/react-native/react-native-firebase-admob/edit-appdelegate.jpg" alt="edit appdelegate.m for firebase"/></p><p>RN(react native) 프로젝트의 <code class="language-plaintext highlighter-rouge">AppDelegate.m</code> 파일에 위와 같이 코드를 추가합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="p">@</span><span class="nd">import</span> <span class="nx">Firebase</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="o">-</span> <span class="p">(</span><span class="nx">BOOL</span><span class="p">)</span><span class="nx">application</span><span class="p">:(</span><span class="nx">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nx">application</span> <span class="nx">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="nx">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nx">launchOptions</span>
+<span class="p">{</span>
+  <span class="p">[</span><span class="nx">FIRApp</span> <span class="nx">configure</span><span class="p">];</span>
+  <span class="p">...</span>
+  <span class="k">return</span> <span class="nx">YES</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div></div><p>구글 파이어베이스 SDK(Google Firebase SDK)를 초기화합니다. 그리고 <code class="language-plaintext highlighter-rouge">Info.plist</code> 파일을 열고 아래와 같이 수정합니다.</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+	...
+	<span class="nt">&lt;key&gt;</span>GADIsAdManagerApp<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;true/&gt;</span>
+	<span class="nt">&lt;key&gt;</span>GADApplicationIdentifier<span class="nt">&lt;/key&gt;</span>
+  <span class="nt">&lt;string&gt;</span>ca-app-pub-7987914246691031~8295071692<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre></div></div><p>구글 애드몹(Google Admob)의 앱 ID(App ID)를 입력하여 구글 애드몹(Google Admobe)을 초기화합니다. 구글 애드몹의 앱 ID(App ID)를 얻는 방법은 이전 블로그인 <a href="https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/" target="_blank">구글 애드몹(Google Admob)</a>를 참고하시기 바랍니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/connect-firebase-to-app.jpg" alt="connect firebase to app"/></p><p>저는 이 부분에서 <code class="language-plaintext highlighter-rouge">Skip this step</code>을 눌러 이 부분을 건너 뛰었습니다.</p><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="firebase-안드로이드android-설정">firebase 안드로이드(Android) 설정</h2><p>구글 파이어베이스 콘솔(Google Firebase Console)에서 왼쪽 상단의 <code class="language-plaintext highlighter-rouge">Project Overview</code>를 선택합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/firebase-project-overview.jpg" alt="Google Firebase Console Project Overview"/></p><p>상단에 <code class="language-plaintext highlighter-rouge">+ Add app</code> &gt; <code class="language-plaintext highlighter-rouge">안드로이드(Android) 아이콘</code>을 눌러 안드로이드(Android) 프로젝트 설정으로 이동합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/register-android.jpg" alt="Google Firebase Android app register"/></p><p>안드로이드 패키지명(Android Package Name)을 입력하고 <code class="language-plaintext highlighter-rouge">Register app</code>을 선택합니다.</p><p>RN(react native)에서 안드로이드 패키지명을 수정하고 싶으신 분은 아래에 항목을 진행해 주세요.</p><h3 id="안드로이드-패키지명-수정">안드로이드 패키지명 수정</h3><ul><li><p>RN(react native) 프로젝트 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/BUCK</code> 파일 수정</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+android_build_config(
+    ...
+    package = "package_name",
+)
+...
+android_resource(
+    ...
+    package = "package_name",
+    ...
+)
+...
+</code></pre></div></div></li><li><p>RN(react native) 프로젝트 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/src/main/AndroidManifest.xml</code> 파일 수정</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"package_name"</span><span class="nt">&gt;</span>
+...
+</code></pre></div></div></li><li><p>RN(react native) 프로젝트 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/src/main/java/com/ProjectName/MainActivity.java</code> 파일 수정</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">package_name</span><span class="o">;</span>
+<span class="o">...</span>
+</code></pre></div></div></li><li><p>RN(react native) 프로젝트 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/src/main/java/com/ProjectName/MainApplication.java</code> 파일 수정</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">package_name</span><span class="o">;</span>
+<span class="o">...</span>
+</code></pre></div></div></li><li><p>RN(react native) 프로젝트 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/build.gradle</code> 파일 수정</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">defaultConfig</span> <span class="o">{</span>
+    <span class="n">applicationId</span> <span class="n">package_name</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+<span class="o">...</span>
+</code></pre></div></div></li></ul><p><img src="/assets/images/category/react-native/react-native-firebase-admob/set-google-services-json.jpg" alt="Google Firebase google-services.json setting"/></p><p>구글 파이어베이스(Google Firebase)가 만든 <code class="language-plaintext highlighter-rouge">google-services.json</code> 파일을 RN(react native) 프로젝트의 <code class="language-plaintext highlighter-rouge">android/app</code> 폴더에 복사합니다. 그리고 <code class="language-plaintext highlighter-rouge">Next</code>버튼을 눌러 다음 단계로 진행합니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/setting-android.jpg" alt="Google Firebase setting on android"/></p><p>RN(react native) 프로젝트가 있는 폴더에서 <code class="language-plaintext highlighter-rouge">android/build.gradle</code> 파일을 열고 아래에 코드를 추가합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">buildscript</span> <span class="p">{</span>
+  <span class="nx">repositories</span> <span class="p">{</span>
+    <span class="nx">google</span><span class="p">()</span>
+    <span class="nx">jcenter</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nx">dependencies</span> <span class="p">{</span>
+    <span class="c1">// Add this line</span>
+    <span class="nx">classpath</span> <span class="dl">'</span><span class="s1">com.google.gms:google-services:4.3.3</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="nx">allprojects</span> <span class="p">{</span>
+  <span class="nx">repositories</span> <span class="p">{</span>
+    <span class="nx">mavenLocal</span><span class="p">()</span>
+    <span class="nx">google</span><span class="p">()</span>
+    <span class="nx">jcenter</span><span class="p">()</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>위와 같이 <code class="language-plaintext highlighter-rouge">repositories</code>에 <code class="language-plaintext highlighter-rouge">google()</code>이 포함되어 있어야 하며, <code class="language-plaintext highlighter-rouge">jcenter()</code>보다 위에 선언되어 있어야 됩니다.</p><p>RN(react native) 프로젝트가 있는 폴더에서 <code class="language-plaintext highlighter-rouge">android/app/build.gradle</code> 파일을 열고 아래에 코드를 추가합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dependencies</span> <span class="p">{</span>
+    <span class="nx">implementation</span> <span class="nx">project</span><span class="p">(</span><span class="dl">'</span><span class="s1">:react-native-firebase</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// under 59 version</span>
+    <span class="p">...</span>
+    <span class="nx">implementation</span> <span class="dl">"</span><span class="s2">com.google.android.gms:play-services-base:16.1.0</span><span class="dl">"</span>
+    <span class="nx">implementation</span> <span class="dl">'</span><span class="s1">com.google.firebase:firebase-core:16.0.9</span><span class="dl">'</span>
+    <span class="nx">implementation</span> <span class="dl">'</span><span class="s1">com.google.firebase:firebase-analytics:17.2.2</span><span class="dl">'</span> <span class="c1">// if you use analytics</span>
+    <span class="nx">implementation</span> <span class="dl">"</span><span class="s2">com.google.firebase:firebase-ads:17.2.1</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div><p>그리고 동일한 파일 제일 하단에 아래에 코드를 추가합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nx">apply</span> <span class="nx">plugin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.google.gms.google-services</span><span class="dl">'</span>
+</code></pre></div></div><ul><li>0.60 이상</li></ul><p>애드몹을 적용하기 위해 <code class="language-plaintext highlighter-rouge">android/app/src/main/java/com/[app name]/MainApplication.java</code> 파일에 아래와 같이 소스를 추가합니다.</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">io.invertase.firebase.RNFirebasePackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.admob.RNFirebaseAdMobPackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span> <span class="nf">getPackages</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"UnnecessaryLocalVariable"</span><span class="o">)</span>
+  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span> <span class="n">packages</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PackageList</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">getPackages</span><span class="o">();</span>
+  <span class="c1">// Packages that cannot be autolinked yet can be added manually here, for example:</span>
+  <span class="c1">// packages.add(new MyReactNativePackage());</span>
+  <span class="n">packages</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">RNFirebaseAnalyticsPackage</span><span class="o">());</span>
+  <span class="n">packages</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">RNFirebaseAdMobPackage</span><span class="o">());</span>
+  <span class="n">packages</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">RNFirebaseCrashlyticsPackage</span><span class="o">());</span>
+  <span class="k">return</span> <span class="n">packages</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="o">...</span>
+</code></pre></div></div><p>애드몹을 적용하기 위해 <code class="language-plaintext highlighter-rouge">android/app/src/AndroidManifest.xml</code> 파일을 아래와 같이 수정합니다.</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"io.github.dev.yakuza.blaboo"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;application</span>
+      <span class="na">android:name=</span><span class="s">".MainApplication"</span>
+      <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+      <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+      <span class="na">android:allowBackup=</span><span class="s">"false"</span>
+      <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta-data</span>
+        <span class="na">android:name=</span><span class="s">"com.google.android.gms.ads.APPLICATION_ID"</span>
+        <span class="na">android:value=</span><span class="s">"ca-app-pub-7987914246691031~9800293270"</span><span class="nt">/&gt;</span>
+      ...
+    <span class="nt">&lt;/application&gt;</span>
+
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div></div><ul><li>0.59 이하</li></ul><p>애드몹을 적용하기 위해 <code class="language-plaintext highlighter-rouge">android/app/src/main/java/com/[app name]/MainApplication.java</code> 파일에 아래와 같이 소스를 추가합니다.</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">io.invertase.firebase.RNFirebasePackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.admob.RNFirebaseAdMobPackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.android.gms.ads.MobileAds</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span> <span class="nf">getPackages</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span><span class="n">asList</span><span class="o">(</span>
+    <span class="o">...</span>
+    <span class="k">new</span> <span class="nf">RNFirebasePackage</span><span class="o">(),</span>
+    <span class="k">new</span> <span class="nf">RNFirebaseAdMobPackage</span><span class="o">(),</span>
+    <span class="k">new</span> <span class="nf">RNFirebaseAnalyticsPackage</span><span class="o">(),</span>
+    <span class="o">...</span>
+  <span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+  <span class="nc">MobileAds</span><span class="o">.</span><span class="na">initialize</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"ca-app-pub-7987914246691031~9800293270"</span><span class="o">);</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div><p>위에 소스에서 <code class="language-plaintext highlighter-rouge">MobileAds.initialize(this, "ad app id");</code> 부분에 구글 애드몹(Google Admob)에서 생성한 앱 아이디(App ID)를 추가합니다. 구글 애드몹(Google Admob)의 앱 아이디(App ID)를 생성하는 방법은 이전 블로그인 <a href="https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/" target="_blank">구글 애드몹(Google Admob)</a>을 참고하시기 바랍니다.</p><p>안드로이드 스튜디오(Android Studio)를 열면 <code class="language-plaintext highlighter-rouge">Gradle</code>을 동기화할지 물어봅니다. <code class="language-plaintext highlighter-rouge">Sync now</code>를 눌러 동기화 해줍니다.</p><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="소스-추가">소스 추가</h2><p>react-native-firebase의 설정을 완료했습니다. 이제 RN(react native)의 코드를 수정하여 구글 애드몹(Google Admob)이 잘 표시되도록 합니다.</p><p>아래의 소스는 react-native-firebase를 사용하여 banner를 표시하는 예제입니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="nx">firebase</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native-firebase</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+</code></pre></div></div><p>react-native-firebase를 로딩합니다.</p><h3 id="배너">배너</h3><p>아래의 소스코드는 <code class="language-plaintext highlighter-rouge">react-native-firebase</code>의 애드몹(Admob)을 사용하여 광고 형식(AD Unit)이 배너(Banner)인 광고를 표시하는 예제입니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Platform</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">Banner</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">admob</span><span class="p">.</span><span class="nx">Banner</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">AdRequest</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">admob</span><span class="p">.</span><span class="nx">AdRequest</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AdRequest</span><span class="p">();</span>
+
+    <span class="kd">const</span> <span class="nx">unitId</span> <span class="o">=</span>
+      <span class="nx">Platform</span><span class="p">.</span><span class="nx">OS</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">ios</span><span class="dl">'</span>
+        <span class="p">?</span> <span class="dl">'</span><span class="s1">ca-app-pub-7987914246691031/4248107679</span><span class="dl">'</span>
+        <span class="p">:</span> <span class="dl">'</span><span class="s1">ca-app-pub-7987914246691031/5729668166</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">Banner</span>
+          <span class="nx">unitId</span><span class="o">=</span><span class="p">{</span><span class="nx">unitId</span><span class="p">}</span>
+          <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="dl">'</span><span class="s1">SMART_BANNER</span><span class="dl">'</span><span class="p">}</span>
+          <span class="nx">request</span><span class="o">=</span><span class="p">{</span><span class="nx">request</span><span class="p">.</span><span class="nx">build</span><span class="p">()}</span>
+          <span class="nx">onAdLoaded</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Advert loaded</span><span class="dl">'</span><span class="p">);</span>
+          <span class="p">}}</span>
+        <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+</code></pre></div></div><p>위와 같이 소스를 추가하고 RN(react native) 프로젝트를 실행하면 배너가 잘 표시되는 것을 확인할 수 있습니다.</p><h3 id="삽입-광고">삽입 광고</h3><p>아래의 소스코드는 <code class="language-plaintext highlighter-rouge">react-native-firebase</code>의 애드몹(Admob)을 사용하여 광고 형식(AD Unit)이 삽입 광고(Interstitial, 전체페이지 광고)인 광고를 표시하는 예제입니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Platform</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="kd">const</span> <span class="nx">unitId</span> <span class="o">=</span>
+    <span class="nx">Platform</span><span class="p">.</span><span class="nx">OS</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">ios</span><span class="dl">'</span>
+      <span class="p">?</span> <span class="dl">'</span><span class="s1">ca-app-pub-7987914246691031/4248107679</span><span class="dl">'</span>
+      <span class="p">:</span> <span class="dl">'</span><span class="s1">ca-app-pub-7987914246691031/5729668166</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">advert</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">admob</span><span class="p">().</span><span class="nx">interstitial</span><span class="p">(</span><span class="nx">unitId</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">AdRequest</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">admob</span><span class="p">.</span><span class="nx">AdRequest</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AdRequest</span><span class="p">();</span>
+  <span class="nx">advert</span><span class="p">.</span><span class="nx">loadAd</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">build</span><span class="p">());</span>
+
+  <span class="nx">advert</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">onAdLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Advert ready to show.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">advert</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+  <span class="p">});</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div></div><p>위에 소스에서 알수 있듯이 <code class="language-plaintext highlighter-rouge">react-native-firebase</code>의 애드몹(Admob)의 삽입 광고(Interstitial, 전체페이지 광고)를 표시하고 싶을 때 <code class="language-plaintext highlighter-rouge">advert.show()</code>함수를 호출합니다. 호출하기 전에 항상 <code class="language-plaintext highlighter-rouge">advert.isLoaded()</code> 함수를 사용하여 광고가 준비되었는지 확인하시기 바랍니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">advert</span><span class="p">.</span><span class="nx">isLoaded</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">advert</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Unable to show interstitial - not loaded yet.</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="에러-대응">에러 대응</h2><p>react-native-firebase를 사용하여 admob을 구현하면서 문제가 된 내용을 정리합니다.</p><h3 id="admoberror-code-no-fill">admob/error-code-no-fill</h3><p>저도 드디어 나올께 나왔네요. 어느날 갑자기 앱의 광고가 제대로 표시되지 않는 문제가 나와 조사해보니 <code class="language-plaintext highlighter-rouge">admob/error-code-no-fill</code> 에러가 나오기 시작했습니다.</p><p>저는 지급금이 4000엔(8000엔 부터 입금 가능)때 부터 <code class="language-plaintext highlighter-rouge">admob/error-code-no-fill</code>이 나오기 시작했습니다. 저는 아직 지급 받는 방법을 넣지 않은 상태였습니다. 지급 받는 방법을 넣고 나서부터는 광고가 다시 잘 표시되네요. 지급금을 제대로 입금하지 못할가봐 일부러 광고 게시율을 낮춘건지 모르겠습니다.</p><p>결론적으로, <code class="language-plaintext highlighter-rouge">admob/error-code-no-fill</code> 에러가 나와 광고가 표시안되는 분들중에 지급 방법을 넣지 않으신 분들은, 지급 방법을 넣어보시기 바랍니다.</p><h2 id="완료">완료</h2><p>RN(react native) 프로젝트에 react-native-firebase 라이브러리를 사용하여 구글 애드몹(Google Admobe)을 적용하는 법을 살펴보았습니다. 이렇게 react-native-firebase를 설정하면 애널리틱스(Analytics)는 자동으로 설정되어 분석이 가능하게 됩니다.</p><p>구글 파이어베이스 콘솔(Google Firebase Console)의 메뉴에서 <code class="language-plaintext highlighter-rouge">Analytics</code> &gt; <code class="language-plaintext highlighter-rouge">Dashboard</code>를 선택하면, 분석을 하고 있는 것을 확인할 수 있습니다.</p><p><img src="/assets/images/category/react-native/react-native-firebase-admob/react-native-firebase-analytics.jpg" alt="react native firebase analytics"/></p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 제 블로그가 도움이 되셨나요? 하단의 댓글을 달아주시면 저에게 큰 힘이 됩니다! </code></p><h2>책 홍보</h2><div class="book-greeting"> 저도 블로그를 시작한지 1년만에...책을 다 써봅니다...인생에서 이런 날도 오는군요...타국에서 책 출판도 할 수 있고, 참 좋은 세상입니다.<br/><br/> 이번에 쓴 책은 <code class="highlighter-rouge">스무디 한 잔 마시며 끝내는 React Native</code>입니다. 다양한 예제를 통해 리액트 네이티브를 공부할 수 있도록 구성해 보았습니다. 또한 설치부터 배포까지 실전에서도 사용할 수 있는 내용들을 담고 있습니다.<br/><br/> 아래 링크를 통해 제가 쓴 책을 구매하실 수 있습니다.<br/> 많은 분들에게 도움이 되면 좋겠네요.<br/><br/><div style="display: flex; align-items: center; justify-content: center; margin-bottom: 40px;"><div style="margin-right: 20px;"><a href="https://coupa.ng/bMMos6" target="_blank"><img src="https://static.coupangcdn.com/image/affiliate/banner/b95772cbabc4ca68f13398b6d001d523@2x.jpg" alt="스무디 한 잔 마시며 끝내는 React Native, 비제이퍼블릭" style="width: 140px;"/></a></div><div><ul><li> yes24: <a target="_blank" rel="noopener" href="http://www.yes24.com/Product/Goods/82895471?Acode=101">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190014625&orderClick=LEa&Kc=">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=216744127">구매하기</a></li><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/bMMos6">구매하기</a></li></ul></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/ko/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><div id="disqus_thread"></div><script>var disqus_config=function(){this.page.url="https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/",this.page.identifier="https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/"};!function(){var e=document,t=e.createElement("script");t.src="https://https-dev-yakuza-github-io-ko.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=Firebase Admob&url=https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/ko/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2021 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script src="/assets/scripts.js?v=20210414"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"></body></html>

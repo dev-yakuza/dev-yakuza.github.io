@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="アンドロイドアプリストア登録"/><meta name="twitter:description" content="リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>アンドロイドアプリストア登録 - リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。</title><meta name="description" content="リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/react-native/android-google-play/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/react-native/android-google-play/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/react-native/android-google-play/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/android-google-play/"/><meta name="generator" content="Jekyll v3.9.0"/><meta property="og:title" content="アンドロイドアプリストア登録"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。"/><meta property="og:description" content="リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。"/><link rel="canonical" href="https://dev-yakuza.posstree.com/react-native/android-google-play/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/android-google-play/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/android-google-play.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2019-01-12T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/android-google-play.jpg"/><meta property="twitter:title" content="アンドロイドアプリストア登録"/><script type="application/ld+json">
+{"url":"https://dev-yakuza.posstree.com/react-native/android-google-play/","image":"https://dev-yakuza.posstree.com/assets/images/category/react-native/android-google-play.jpg","headline":"アンドロイドアプリストア登録","dateModified":"2020-12-16T11:10:57+09:00","datePublished":"2019-01-12T00:00:00+09:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/react-native/android-google-play/"},"description":"リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。","@type":"BlogPosting","@context":"https://schema.org"}</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet"/><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/assets/main.css?v=20210414"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "マック(Mac)にreact nativeの開発環境を構築する方法",
+          "description" : "react-nativeでアプリを開発するためマック(Mac)に開発環境を構築して見て、react-nativeのプロジェクトがうまく起動できるか確認して見ます。",
+          "position":1,"url": "https://dev-yakuza.posstree.com/react-native/install-on-mac/",
+          "item": "https://dev-yakuza.posstree.com/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "ウィンドウ(Windows)にreact nativeの開発環境を構築する方法",
+          "description" : "react-nativeでアプリを開発するためウィンドウ(Windows)に開発環境を構築して見て、react-nativeのプロジェクトがうまく起動できるか確認して見ます。",
+          "position":2,"url": "https://dev-yakuza.posstree.com/react-native/install-on-windows/",
+          "item": "https://dev-yakuza.posstree.com/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(RN)インストール",
+          "description" : "react-nativeをインストールしてプロジェクトが起動するか確認しましょう。",
+          "position":3,"url": "https://dev-yakuza.posstree.com/react-native/installation/",
+          "item": "https://dev-yakuza.posstree.com/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "typescript",
+          "description" : "RNプロジェクトへtypescriptを適用して開発してみよう。",
+          "position":4,"url": "https://dev-yakuza.posstree.com/react-native/typescript/",
+          "item": "https://dev-yakuza.posstree.com/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "React NativeでESLint, Prettierを使う方法",
+          "description" : "React NativeのプロジェクトへESLintとPrettierを適用する方法と、Husky, lint-stagedでプロみたいに使う方法について説明します。",
+          "position":5,"url": "https://dev-yakuza.posstree.com/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://dev-yakuza.posstree.com/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "react-nativeスタイリングのためstyled-componentsライブラリを活用する方法について説明します。",
+          "position":6,"url": "https://dev-yakuza.posstree.com/react-native/styled-components/",
+          "item": "https://dev-yakuza.posstree.com/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "react-navigationを使ってアプリを開発して見ましょう。",
+          "position":7,"url": "https://dev-yakuza.posstree.com/react-native/react-navigation/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "react-navigation V5をインストールして使う方法について共有します。",
+          "position":8,"url": "https://dev-yakuza.posstree.com/react-native/react-navigation-v5/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "generator-rn-toolboxを使ってアプリアイコンを作って見ましょう。",
+          "position":9,"url": "https://dev-yakuza.posstree.com/react-native/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splashイメージ",
+          "description" : "generator-rn-toolboxを使ってSplashイメージを設定して見ましょう。",
+          "position":10,"url": "https://dev-yakuza.posstree.com/react-native/splash-image/",
+          "item": "https://dev-yakuza.posstree.com/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "基本Component UIでNativeBaseライブラリを使って見ましょう。",
+          "position":11,"url": "https://dev-yakuza.posstree.com/react-native/nativebase/",
+          "item": "https://dev-yakuza.posstree.com/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "react-native-vector-iconsライブラリを使ってアイコンを表示して見ましょう。",
+          "position":12,"url": "https://dev-yakuza.posstree.com/react-native/react-native-vector-icons/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "ユーザーのデバイスの情報を取得するためreact-native-device-infoライブラリを使って見ましょう。",
+          "position":13,"url": "https://dev-yakuza.posstree.com/react-native/react-native-device-info/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "react-native-ttsを使ってtext-to-speech機能を作って見ましょう。",
+          "position":14,"url": "https://dev-yakuza.posstree.com/react-native/react-native-tts/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "グーグルアドモブ",
+          "description" : "グーグルアドモブ(google admob)広告を使うためreact-native-admobライブラリを使ってみましょう。",
+          "position":15,"url": "https://dev-yakuza.posstree.com/react-native/react-native-admob/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOSデバイステスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOSデバイスでテストしてみましょう。",
+          "position":16,"url": "https://dev-yakuza.posstree.com/react-native/ios-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOSビルドやテスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOS用でビルドしてデバイスでテストしてみましょう。",
+          "position":17,"url": "https://dev-yakuza.posstree.com/react-native/ios-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS開発者登録",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOSアップストア(App store)へ登録するためアップル開発者プログラム(Apple Developer Program)へ登録する方法について説明します。",
+          "position":18,"url": "https://dev-yakuza.posstree.com/react-native/ios-enroll-developer-program/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS 証明書(Certification)",
+          "description" : "アップル開発者プログラム(Apple Developer Program)の登録を完了したら、開発者証明書(Certification)を設定する方法について説明します。",
+          "position":19,"url": "https://dev-yakuza.posstree.com/react-native/ios-certification/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "iOSのTestFlightを使って作ったアプリをテスターに送ってテストしてみましょう。",
+          "position":20,"url": "https://dev-yakuza.posstree.com/react-native/ios-testflight/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "iOS App store 登録",
+          "description" : "iOSアプリストア(App Store)へ登録するため必要な項目について説明します。",
+          "position":21,"url": "https://dev-yakuza.posstree.com/react-native/ios-app-store/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "リアクトネイティブ(React Native)で開発したアプリをグーグルアナリティクス(Google Analytics)を使ってアプリを分析してみましょう。",
+          "position":22,"url": "https://dev-yakuza.posstree.com/react-native/react-native-analytics-bridge/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "react-native-firebaseライブラリを使ってグーグルアドモブ(Google Admob)を表示してみましょう。",
+          "position":23,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドデバイステスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをアンドロイド(Android)デバイスでテストしてみましょう。",
+          "position":24,"url": "https://dev-yakuza.posstree.com/react-native/android-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドビルドやテスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをアンドロイド(Android)用でビルドしてデバイスでテストしてみましょう。",
+          "position":25,"url": "https://dev-yakuza.posstree.com/react-native/android-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOSシミュレータ変更",
+          "description" : "リアクトネイティブ(React Native)をiOSでシミュレータでテストする時シミュレータを変更する方法を紹介します。",
+          "position":26,"url": "https://dev-yakuza.posstree.com/react-native/ios-change-simulator/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "react-native-firebaseライブラリを使ってもっと詳しくアプリを分析してみましょう。",
+          "position":27,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-analytics/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash分析",
+          "description" : "iOS App crashログ(Log)を分析する方法について説明します。",
+          "position":28,"url": "https://dev-yakuza.posstree.com/react-native/ios-app-crash-debugging/",
+          "item": "https://dev-yakuza.posstree.com/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "react-native-firebaseを使ってファイアベース(Firebase)のCrashlyticsでアプリのCrashが発生したらその情報を取得してみましょう。",
+          "position":29,"url": "https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "react-native-animatableを使って簡単にリアクトネイティブ(React Native)へアニメーションを追加してみましょう。",
+          "position":30,"url": "https://dev-yakuza.posstree.com/react-native/react-native-animatable/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "アンドロイド開発者登録",
+          "description" : "アンドロイドアプリ(Android App)を登録するためアンドロイド開発者登録をして見ましょう。",
+          "position":31,"url": "https://dev-yakuza.posstree.com/react-native/android-enroll-google-play-developer/",
+          "item": "https://dev-yakuza.posstree.com/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドアプリストア登録",
+          "description" : "リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。",
+          "position":32,"url": "https://dev-yakuza.posstree.com/react-native/android-google-play/",
+          "item": "https://dev-yakuza.posstree.com/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "ユーザ音声認識",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-voiceライブラリを使ってユーザの音声を認識して文字で変換する機能を追加してみます。",
+          "position":33,"url": "https://dev-yakuza.posstree.com/react-native/react-native-voice/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "メール送信機能",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-mailライブラリを使って端末にインストールされてあるメールアプリを起動してメールを送信してみましょう。",
+          "position":34,"url": "https://dev-yakuza.posstree.com/react-native/react-native-mail/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "ファイルシステム使用",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-fsライブラリを使ってファイルを読んだり書いたりしてみましょう。",
+          "position":35,"url": "https://dev-yakuza.posstree.com/react-native/react-native-fs/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "アフターエフェクト(AEF)",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでアドビのアフターエフェクト(Adobe After Effects)で作ったアニメーションを適用してみましょう",
+          "position":36,"url": "https://dev-yakuza.posstree.com/react-native/react-native-lottie/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "スワイプ検知",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでユーザが画面でどの方向でスワイプ(Swipe)したか検知するためreact-native-swipe-gesturesを使ってみましょう。 ",
+          "position":37,"url": "https://dev-yakuza.posstree.com/react-native/react-native-swipe-gestures/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "グラデーション(Gradient)",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-linear-gradientを使ってグラデーション(Gradient)バックグラウンド(background)を作ってみましょう。",
+          "position":38,"url": "https://dev-yakuza.posstree.com/react-native/react-native-linear-gradient/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash スクリーン",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-splash-screenを使ってSplashスクリーンを好きな時間に終了するように作ってみましょう。",
+          "position":39,"url": "https://dev-yakuza.posstree.com/react-native/react-native-splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "アプリストアレビュー",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-rateを使ってアプリストアのレビューを作成するように誘導する方法について説明します。",
+          "position":40,"url": "https://dev-yakuza.posstree.com/react-native/react-native-rate/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunesファイルシェア機能",
+          "description" : "iTunesを使ってリアクトネイティブ(React Native)で開発したアプリへファイルをシェアする方法について説明します。",
+          "position":41,"url": "https://dev-yakuza.posstree.com/react-native/react-native-itunes-share-file/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "StatusBarコントロール",
+          "description" : "リアクトネイティブ(React Native)でStatusBarをコントロールする方法について説明します。",
+          "position":42,"url": "https://dev-yakuza.posstree.com/react-native/react-native-status-bar/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve)タブレット対応",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでタブレットを対応する方法について説明します。",
+          "position":43,"url": "https://dev-yakuza.posstree.com/react-native/react-native-support-tablet/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)でsqliteを使う方法",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでsqliteデータベースを使う方法について説明します。",
+          "position":44,"url": "https://dev-yakuza.posstree.com/react-native/react-native-sqlite-storage/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(React Native)でカスタムフォントを使う方法",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでカスタムフォントを適用して使う方法について説明します。",
+          "position":45,"url": "https://dev-yakuza.posstree.com/react-native/react-native-custom-font/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(React Native)でrootからimportする",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでimportをする時、rootフォルダを基準にしてimportが出来るようにプロジェクトを設定してみましょう。",
+          "position":46,"url": "https://dev-yakuza.posstree.com/react-native/root-import/",
+          "item": "https://dev-yakuza.posstree.com/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "特定のファイルでアプリを開く",
+          "description" : "ウェブやメールでダウンロードした特定なファイルを(エクセル, パワーポイントなど)をリアクトネイティブ(React Native)で作成したアプリに入れる方法について説明します。",
+          "position":47,"url": "https://dev-yakuza.posstree.com/react-native/open-file-with-app/",
+          "item": "https://dev-yakuza.posstree.com/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notificatoin",
+          "description" : "react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。",
+          "position":48,"url": "https://dev-yakuza.posstree.com/react-native/react-native-push-notification/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "React NaitveでAppアイコン & Splashイメージを作る方法",
+          "description" : "react-native-makeライブラリを使ってAppアイコンやSplashイメージを生成する方法について説明します。",
+          "position":49,"url": "https://dev-yakuza.posstree.com/react-native/react-native-make/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "React Nativeで現在位置情報を取得する方法",
+          "description" : "react-native-geolocation-serviceライブラリを使ってReact Nativeで現在位置を取得する方法について調べてみましょう。",
+          "position":50,"url": "https://dev-yakuza.posstree.com/react-native/react-native-geolocation-service/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "React Nativeへ地図を表示する方法",
+          "description" : "react-native-mapsライブラリを使ってReact Nativeへ地図を使う方法について調べてみます。",
+          "position":51,"url": "https://dev-yakuza.posstree.com/react-native/react-native-maps/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Fastlaneを使ってアプリのデプロイを自動化する",
+          "description" : "Fastlaneを使ってReact nativeで作ったアプリをを自動でデプロイしてみましょう。",
+          "position":52,"url": "https://dev-yakuza.posstree.com/react-native/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "react-native-image-modalを使ってイメージを全体画面で表示して、pinch拡大、縮小などをしてみましょう。",
+          "position":53,"url": "https://dev-yakuza.posstree.com/react-native/react-native-image-modal/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "react-native-image-pickerを使って写真を取ったり、カメラロールから写真を取得する方法について説明します。",
+          "position":54,"url": "https://dev-yakuza.posstree.com/react-native/react-native-image-picker/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase(V5)を使ってPush Message",
+          "description" : "React Nativeでプッシュメッセージを使うため、react-native-firebase(V5)のライブラリを使ってFCM(Firebase Cloud Messaging)を使う方法について説明します。",
+          "position":55,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-fcm/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "React Native用オープンソースを作る方法",
+          "description" : "React Native用のオープンソースを作る方法について説明します。",
+          "position":56,"url": "https://dev-yakuza.posstree.com/react-native/make-opensource-library/",
+          "item": "https://dev-yakuza.posstree.com/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "React NativeでMultidexの設定",
+          "description" : "React NaitveのプロジェクトのアンドロイドへMultidexを設定する方法について説明します。",
+          "position":57,"url": "https://dev-yakuza.posstree.com/react-native/react-native-multidex/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6インストール",
+          "description" : "React NativeでFirebaseを使うため、react-native-firebase(V6)をインストールする方法について説明します。",
+          "position":58,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-installation/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "react-native-firebase(V6)を使ってFirebaseのCrashlyticsを使う方法について説明します。",
+          "position":59,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "react-native-firebase(V6)を使ってFirebaseのAdmobを使う方法について説明します。",
+          "position":60,"url": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-admob/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "React NativeでYoutubeを表示する",
+          "description" : "React NativeでYoutubeを表示するため、react-native-youtubeを使う方法について説明します。",
+          "position":61,"url": "https://dev-yakuza.posstree.com/react-native/react-native-youtube/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "React NativeでAdmobのNative Advanced広告を使う方法",
+          "description" : "React NativeでAdmobのNative Advanced広告を使うため、react-native-admob-native-adsライブラリを使う方法について説明します。",
+          "position":62,"url": "https://dev-yakuza.posstree.com/react-native/react-native-admob-native-ads/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "React Nativeでアプリ内課金を実装する",
+          "description" : "React Nativeでアプリ内課金を実装するためreact-native-iapを使う方法について説明します。",
+          "position":63,"url": "https://dev-yakuza.posstree.com/react-native/react-native-iap/",
+          "item": "https://dev-yakuza.posstree.com/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub ActionsとFastlaneを使ってReact Nativeアプリをデプロイする",
+          "description" : "GitHub ActionsとFastlaneを使ってReact Nativeで開発したアプリを自動でデプロイする",
+          "position":64,"url": "https://dev-yakuza.posstree.com/react-native/github-actions-fastlane/",
+          "item": "https://dev-yakuza.posstree.com/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="stylesheet" href="/assets/highlight/railscasts.css"/><script src="/assets/highlight/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="/assets//vendor/lazysizes/lazysizes.min.js" async=""></script><script data-ad-client="ca-pub-7987914246691031" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/"><img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/react-native/">React Native</a><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/android-google-play/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/android-google-play/">English</a><a class="dropdown-item menu-ja" href="/react-native/android-google-play/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/react-native/">React Native</a><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div></div></nav><script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/android-google-play.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>アンドロイドアプリストア登録</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-16 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/android-google-play/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="top-ads"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="https://dev-yakuza.posstree.com/react-native/android-google-play/"><span itemprop="name">アンドロイドアプリストア登録</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">目次</h2><ol><li><a href="#概要">概要</a></li><li><a href="#準備">準備</a></li><li><a href="#ビルドファイルサイズ最適化">ビルドファイルサイズ最適化</a></li><li><a href="#アプリ登録">アプリ登録</a></li><li><a href="#アプリ審査申請">アプリ審査申請</a></li><li><a href="#エラー対応">エラー対応</a><ul><li><a href="#ビルドエラー対応">ビルドエラー対応</a></li><li><a href="#権限エラー">権限エラー</a></li><li><a href="#android-442-kitkat">Android 4.4.2 Kitkat</a></li><li><a href="#unoptimised-apk">Unoptimised APK</a></li></ul></li><li><a href="#完了">完了</a>autoauto</li></ol></div><h2 id="概要">概要</h2><p>リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録してみようかと思います。アンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録するためにはアンドロイド開発者登録(グーグルプレイ開発者登録)が必要です。アンドロイド開発者登録(グーグルプレイ開発者登録)をしてない方は以前のブログを参考して登録してください。(<a href="https://dev-yakuza.posstree.com/react-native/android-enroll-google-play-developer/" target="_blank">アンドロイド開発者登録</a>)</p><p>このブログはシリーズです。下記のブログも確認してください。</p><ul><li><a href="https://dev-yakuza.posstree.com/react-native/android-test-on-device/" target="_blank">アンドロイドデバイステスト</a></li><li><a href="https://dev-yakuza.posstree.com/react-native/android-running-on-device/" target="_blank">アンドロイドビルドやテスト</a></li><li><a href="https://dev-yakuza.posstree.com/react-native/android-enroll-google-play-developer/" target="_blank">アンドロイド開発者登録</a></li><li><a href="https://dev-yakuza.posstree.com/react-native/fastlane/" target="_blank">Fastlaneを使ってアプリのデプロイを自動化する</a></li></ul><h2 id="準備">準備</h2><p>リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に灯篭するためリアクトネイティブ(React Native)をアンドロイド用にビルドする必要があります。リアクトネイティブ(React Native)にアンドロイド署名キー(Android Signing Key)を登録してアンドロイド用にビルドする方法については以前のブログを参考してください。</p><ul><li><a href="https://dev-yakuza.posstree.com/react-native/android-running-on-device/" target="_blank">アンドロイドビルドやテスト</a></li></ul><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="ビルドファイルサイズ最適化">ビルドファイルサイズ最適化</h2><p>以前のブログである<a href="https://dev-yakuza.posstree.com/react-native/android-running-on-device/" target="_blank">アンドロイドビルドやテスト</a>でアンドロイド用にビルドされたファイルはファイルサイズの最適化がされてないです。リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)にアップロードするためにはビルドファイルサイズを最適化する必要があります。</p><p>リアクトネイティブ(React Native)プロジェクトフォルダで<code class="language-plaintext highlighter-rouge">android/app/build.gradle</code>を開いて下記のように修正します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+defaultConfig <span class="o">{</span>
+    ...
+    // ndk <span class="o">{</span>
+    //     abiFilters <span class="s2">"armeabi-v7a"</span>, <span class="s2">"x86"</span>
+    // <span class="o">}</span>
+<span class="o">}</span>
+...
+def enableSeparateBuildPerCPUArchitecture <span class="o">=</span> <span class="nb">true
+
+</span>def enableProguardInReleaseBuilds <span class="o">=</span> <span class="nb">true</span>
+...
+buildTypes <span class="o">{</span>
+    release <span class="o">{</span>
+        shrinkResources <span class="nb">true</span>
+        ...
+    <span class="o">}</span>
+<span class="o">}</span>
+..
+</code></pre></div></div><ul><li>enableSeparateBuildPerCPUArchitecture: apkファイルビルドする時、各CPU別ファイルを分離してapkファイルを生成します。他のCPUへ必要な内容が抜けるので、ファイルサイズが小さくなります。しかし、apkファイルが複数生成されるので、アプリをデプロイする時はそのファイル全部をアップロードする必要があります。</li><li>enableProguardInReleaseBuilds: コード難読化へ必要なProguardを使います。Proguardはコードの難読化をするし、コードのサイズも減らしてくれるのでファイルサイズが小さくなります。</li><li>shrinkResources: いらないリソースを消してファイルサイズを小さくします。(アプリでローカルイメージが表示されない場合はこの部分をfalseで設定して使ってください。)</li></ul><p>そして下記のコマンドを使ってリアクトネイティブ(React Native)をアンドロイド用にビルドします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle</span>
+<span class="c"># cd android</span>
+<span class="c"># ./gradlew assembleRelease</span>
+./gradlew app:assembleRelease <span class="nt">--stacktrace</span>
+</code></pre></div></div><p>このように<code class="language-plaintext highlighter-rouge">--stacktrace</code>オプションを入れる理由は<code class="language-plaintext highlighter-rouge">enableProguardInReleaseBuilds = true</code>を設定すると下記のようなビルドエラーが発生する場合があるからです。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+Note: the configuration keeps the entry point <span class="s1">'okhttp3.internal.ws.WebSocketWriter { void writePong(okio.ByteString); }'</span>, but not the descriptor class <span class="s1">'okio.ByteString'</span>
+Note: the configuration keeps the entry point <span class="s1">'okhttp3.internal.ws.WebSocketWriter { void writeClose(int,okio.ByteString); }'</span>, but not the descriptor class <span class="s1">'okio.ByteString'</span>
+Note: the configuration keeps the entry point <span class="s1">'okhttp3.internal.ws.WebSocketWriter { void writeControlFrame(int,okio.ByteString); }'</span>, but not the descriptor class <span class="s1">'okio.ByteString'</span>
+Note: the configuration keeps the entry point <span class="s1">'okhttp3.internal.ws.WebSocketWriter$FrameSink { void write(okio.Buffer,long); }'</span>, but not the descriptor class <span class="s1">'okio.Buffer'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.AsyncTimeout { void scheduleTimeout(okio.AsyncTimeout,long,boolean); }'</span>, but not the descriptor class <span class="s1">'okio.AsyncTimeout'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.AsyncTimeout { boolean cancelScheduledTimeout(okio.AsyncTimeout); }'</span>, but not the descriptor class <span class="s1">'okio.AsyncTimeout'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.AsyncTimeout { okio.Sink sink(okio.Sink); }'</span>, but not the descriptor class <span class="s1">'okio.Sink'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.AsyncTimeout { okio.Source source(okio.Source); }'</span>, but not the descriptor class <span class="s1">'okio.Source'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.ForwardingSink { ForwardingSink(okio.Sink); }'</span>, but not the descriptor class <span class="s1">'okio.Sink'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.ForwardingSink { void write(okio.Buffer,long); }'</span>, but not the descriptor class <span class="s1">'okio.Buffer'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.ForwardingSource { ForwardingSource(okio.Source); }'</span>, but not the descriptor class <span class="s1">'okio.Source'</span>
+Note: the configuration keeps the entry point <span class="s1">'okio.ForwardingSource { long read(okio.Buffer,long); }'</span>, but not the descriptor class <span class="s1">'okio.Buffer'</span>
+...
+<span class="k">*</span> What went wrong:
+Execution failed <span class="k">for </span>task <span class="s1">':app:transformClassesAndResourcesWithProguardForRelease'</span><span class="nb">.</span>
+<span class="o">&gt;</span> Job failed, see logs <span class="k">for </span>details
+...
+</code></pre></div></div><p>上のようにビルドエラーが出る場合、<code class="language-plaintext highlighter-rouge">android/app/proguard-rules.pro</code>ファイルを開いて下記のように追加します。 파일을 열고 하단에 아래와 같이 추가합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Note: the configuration keeps the entry point 'okio.AsyncTimeout { void scheduleTimeout(okio.AsyncTimeout,long,boolean); }', but not the descriptor class 'okio.AsyncTimeou</span>
+<span class="nt">-dontwarn</span> okio.<span class="k">**</span>
+<span class="c"># Note: the configuration keeps the entry point 'okhttp3.internal.ws.WebSocketWriter$FrameSink { void write(okio.Buffer,long); }', but not the descriptor class 'okio.Buffer'</span>
+<span class="nt">-dontwarn</span> okhttp3.<span class="k">**</span>
+</code></pre></div></div><p>上のエラー以外も使ってるライブラリによってもっとエラーが出る可能性もあります。そのメッセージを見って<code class="language-plaintext highlighter-rouge">android/app/proguard-rules.pro</code>を修正してください。</p><p>ビルドされたファイルは下記の位置で確認できます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>android/app/build/outputs/apk/release/app-arm64-v8a-release.apk.apk
+android/app/build/outputs/apk/release/app-armeabi-v7a-release.apk.apk
+android/app/build/outputs/apk/release/app-x86_64-release.apk.apk
+android/app/build/outputs/apk/release/app-x86-release.apk.apk
+</code></pre></div></div><p>このファイル全てをアップロードする必要があります。</p><p>include</p><h2 id="アプリ登録">アプリ登録</h2><p>下記のリンクを押してグーグルプレイコンソル(Google Play Console)に移動します。</p><ul><li>グーグルプレイコンソル(Google Play Console): <a href="https://play.google.com/apps/publish/" rel="nofollow noreferrer" target="_blank">https://play.google.com/apps/publish/</a></li></ul><p>グーグルプレイコンソル(Google Play Console)に移動したら下記の画面が見えます。</p><p><img src="/assets/images/category/react-native/android-google-play/google-play-console-home.jpg" alt="グーグルプレイコンソルホーム"/></p><p>画面の上にある<code class="language-plaintext highlighter-rouge">PUBLISH AN ANDROID APP ON GOOGLE PLAY</code>ボタンを押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app-title.jpg" alt="グーグルプレイコンソルアプリタイトル"/></p><p>アンドロイドアプリストア(Google Play)に表示される名前と基本言語を選択します。</p><p><img src="/assets/images/category/react-native/android-google-play/app-info.jpg" alt="グーグルプレイコンソルアプリ情報"/></p><p>アンドロイドアプリストア(Google Play)に表示される情報を入力します。</p><ul><li>タイトル(title): 50文字</li><li>要約説明(short description): 80文字</li><li>全体説明(full description): 4000文字</li><li>アプリイメージ(Screenshots)</li><li>アプリアイコン(App icon): 512x512(32-bit PNG, alpha), 1024x500(JPG or 24-bit PNG), 180x120(JPG or 24-bit PNG), 1280x720(JPG or 24-bit PNG), 4096x4096(JPG or 24-bit PNG)</li><li>プロモーションビデオ(Promo Video)</li><li>アプリカテゴリ(Category)</li><li>開発者連絡先(Contact details)</li><li>個人情報ポリシー(Privacy Policy)</li></ul><p>全ての情報を入力したらapkファイルを登録する方法について説明します。</p><p>左上にある<code class="language-plaintext highlighter-rouge">App release</code>メニューを押したら下記の画面が見えます。</p><p><img src="/assets/images/category/react-native/android-google-play/app-register.jpg" alt="グーグルプレイアプリ登録"/></p><p>画面に見える<code class="language-plaintext highlighter-rouge">Production track</code>の<code class="language-plaintext highlighter-rouge">Production</code>項目の<code class="language-plaintext highlighter-rouge">MANAGE</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app-production.jpg" alt="グーグルプレイアプリproduction生成"/></p><p>上のような画面が見えたら下の<code class="language-plaintext highlighter-rouge">CREATE RELEASE</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/register-signing-key.jpg" alt="グーグルプレイアプリ署名キー登録"/></p><p>グーグルプレイ(Google Play)を使ってアプリ署名(App Signing)をするため<code class="language-plaintext highlighter-rouge">FINISH</code>ボタンを押します。</p><p><img src="/assets/images/category/react-native/android-google-play/accept-agreement.jpg" alt="グーグルプレイ利用規約同意"/></p><p>上のような利用規約が表示されたら下にある<code class="language-plaintext highlighter-rouge">ACCEPT</code>ボタンを押して同意します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_apk.jpg" alt="グーグルプレイapkアップロード"/></p><p>上でビルド下リアクトネイティブ(React Native)の<code class="language-plaintext highlighter-rouge">apk</code>ファイルをアップロードします。</p><p><img src="/assets/images/category/react-native/android-google-play/app_release_note.jpg" alt="グーグルプレイapkリリースノート"/></p><p>アプリの配布名前(Release Name)と配布ノート(Release Note)を作成して右下の<code class="language-plaintext highlighter-rouge">SAVE</code>ボタンを押します。そしたら右の<code class="language-plaintext highlighter-rouge">REVIEW</code>ボタンがアクティブになります。アクティブになった<code class="language-plaintext highlighter-rouge">REVIEW</code>ボタンを押します。</p><p><img src="/assets/images/category/react-native/android-google-play/not_yet.jpg" alt="グーグルプレイ登録不可"/></p><p>アプリの登録手続きが終わってないので右下の<code class="language-plaintext highlighter-rouge">START ROLLOUT TO PRODUCTION</code>ボタンがアクティブになりません。左メニューの<code class="language-plaintext highlighter-rouge">Content rating</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_content_rating.jpg" alt="グーグルプレイコンテンツ評価"/></p><p>コンテンツ評価(Content Rating)を設定する画面です。<code class="language-plaintext highlighter-rouge">CONTINUE</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_content_rating_insert_info.jpg" alt="グーグルプレイコンテンツ評価情報入力"/></p><p>メール情報やアプリのカテゴリを選択します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_content_rating_agreement.jpg" alt="グーグルプレイコンテンツ評価情報同意"/></p><p>アプリのコンテンツ評価を決めるための情報を選択します。全て選択したら下の<code class="language-plaintext highlighter-rouge">SAVE QUESTIONNAIRE</code>ボタンを押してアクティブされた<code class="language-plaintext highlighter-rouge">CALCULATE RATING</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_content_rating_completed.jpg" alt="グーグルプレイコンテンツ評価情報選択完了"/></p><p>入力した情報をベースでコンテンツ評価が計算されて出ます。内容を確認して下の<code class="language-plaintext highlighter-rouge">APPLYING RATING</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/calculated_content_rating.jpg" alt="グーグルプレイコンテンツ評価完了"/></p><p>コンテンツ評価の入力を完了しました。コンテンツ評価に影響があるアップデートがあったら、コンテンツ評価を再計算する必要がありますので、上の手続きをまたしてください。</p><p><img src="/assets/images/category/react-native/android-google-play/content_rating.jpg" alt="グーグルプレイコンテンツ評価"/></p><p>最後の手続きである料金の設定をするため左メニューの<code class="language-plaintext highlighter-rouge">Pricing &amp; distribution</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_price_info.jpg" alt="グーグルプレイアプリ料金情報"/></p><p>アプリの料金を設定する画面です。私たちは無料でアプリを提供する予定なので、<code class="language-plaintext highlighter-rouge">FREE</code>を設定して進めます。また、子供向け、アプリに広告が含まれてあるかなど情報を入力します。必須項目を全て入力したら下の<code class="language-plaintext highlighter-rouge">SAVE DRAFT</code>ボタンを押します。</p><p>include</p><h2 id="アプリ審査申請">アプリ審査申請</h2><p>アプリ審査(App Review)のための準備が終わりました。メニューの<code class="language-plaintext highlighter-rouge">App release</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_review.jpg" alt="グーグルプレイアプリ審査"/></p><p>上で作成した<code class="language-plaintext highlighter-rouge">Production</code>項目の横にある<code class="language-plaintext highlighter-rouge">EDIT RELEASE</code>ボタンを押します。</p><p><img src="/assets/images/category/react-native/android-google-play/app_review_info.jpg" alt="グーグルプレイアプリ審査情報"/></p><p>上で作成した情報が見えます。スクロールして下に移動して、<code class="language-plaintext highlighter-rouge">REVIEW</code>ボタンを選択します。</p><p><img src="/assets/images/category/react-native/android-google-play/apply_app_review_info.jpg" alt="グーグルプレイアプリ審査申請"/></p><p>上のような画面が見えたらスクロールして下に移動して<code class="language-plaintext highlighter-rouge">START ROLLOUT TO PRODUCTION</code>を押します。</p><p><img src="/assets/images/category/react-native/android-google-play/register_app.jpg" alt="グーグルプレイアプリ登録"/></p><p>アプリ審査の準備が終わったら<code class="language-plaintext highlighter-rouge">CONFIRM</code>ボタンを押してアプリ審査を申請します。</p><h2 id="エラー対応">エラー対応</h2><p>下記のコマンドでアンドロイドをビルドする時、</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew assembleRelease
+</code></pre></div></div><p>下記のようなエラーメッセージが出ってビルドが失敗される時があります。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Execution failed <span class="k">for </span>task <span class="s1">':app:transformDexArchiveWithExternalLibsDexMergerForRelease'</span><span class="nb">.</span>
+</code></pre></div></div><p>下記の内容を<code class="language-plaintext highlighter-rouge">android/app/build.gradle</code>に追加してもう一回ビルドします。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">defaultConfig</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nx">multiDexEnabled</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div><h3 id="ビルドエラー対応">ビルドエラー対応</h3><p>リアクトネイティブ(React Native)のバージョン0.58で下記のコマンドを実行したら</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew assembleRelease
+</code></pre></div></div><p>下記のエラーが出ます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">--auto-add-overlay</span><span class="se">\</span>
+          <span class="nt">--non-final-ids</span><span class="se">\</span>
+          <span class="nt">-0</span><span class="se">\</span>
+          apk<span class="se">\</span>
+          <span class="nt">--no-version-vectors</span>
+  Daemon:  AAPT2 aapt2-3.2.1-4818971-osx Daemon <span class="c">#0</span>
+</code></pre></div></div><p>下記のコマンドで実行したらビルドができます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew app:assembleRelease
+</code></pre></div></div><h3 id="権限エラー">権限エラー</h3><p>リアクトネイティブ(React Native)のバージョン0.58でビルドしたファイルをグーグルプレイへアップロードする時<code class="language-plaintext highlighter-rouge">android.permission.READ_PHONE_STATE</code>権限が含めてるのでダメですのエラーが出ます。</p><p>公式サイトに解決方法があります。</p><p><a href="https://facebook.github.io/react-native/docs/removing-default-permissions" rel="nofollow noreferrer" target="_blank">https://facebook.github.io/react-native/docs/removing-default-permissions</a></p><p>それを見ながらやってみます。</p><p>リアクトネイティブ(React Native)プロジェクトの<code class="language-plaintext highlighter-rouge">android/app/src/main/AndroidManifest.xml</code>のファイルを開いて下記のように修正します。</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">package=</span><span class="s">"XXXXXXXX"</span>
+<span class="err">+</span>   <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="nt">&gt;</span>
+
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span> <span class="nt">/&gt;</span>
++   <span class="nt">&lt;uses-permission</span> <span class="na">tools:node=</span><span class="s">"remove"</span> <span class="na">android:name=</span><span class="s">"android.permission.READ_PHONE_STATE"</span> <span class="nt">/&gt;</span>
++   <span class="nt">&lt;uses-permission</span> <span class="na">tools:node=</span><span class="s">"remove"</span> <span class="na">android:name=</span><span class="s">"android.permission.WRITE_EXTERNAL_STORAGE"</span> <span class="nt">/&gt;</span>
++   <span class="nt">&lt;uses-permission</span> <span class="na">tools:node=</span><span class="s">"remove"</span> <span class="na">android:name=</span><span class="s">"android.permission.READ_EXTERNAL_STORAGE"</span> <span class="nt">/&gt;</span>
+...
+</code></pre></div></div><p>そして<code class="language-plaintext highlighter-rouge">android/app/src/release/AndroidManifest.xml</code>ファイルを生成して下記の内容をコピペします。(パッケージ名は自分のパッケージ名を入れてください。)</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">package=</span><span class="s">"XXXXXXX"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;uses-permission</span> <span class="na">tools:node=</span><span class="s">"remove"</span> <span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div></div><p>これでビルドしてアップロードしたら問題なくアップロードできることを確認できます。</p><p>include</p><h3 id="android-442-kitkat">Android 4.4.2 Kitkat</h3><p>リアクトネイティブ(React Native) 0.58でビルドしたファイルをアンドロイド4.4.2(Kitkat)の端末でテストする時、アプリがCrashが発生して起動出来ない問題が発生しました。問題を調査した結果、<code class="language-plaintext highlighter-rouge">multiDexEnabled</code>の問題で下記の内容を追加して解決しました。</p><p>リアクトネイティブ(React Native)プロジェクトの<code class="language-plaintext highlighter-rouge">android/app/build.gradle</code>を開いて下記の内容を追加してください。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies <span class="o">{</span>
+    implementation project<span class="o">(</span><span class="s1">':react-native-firebase'</span><span class="o">)</span>
+    ...
+    implementation <span class="s1">'com.android.support:multidex:1.0.1'</span>
+<span class="o">}</span>
+</code></pre></div></div><p>また、<code class="language-plaintext highlighter-rouge">MainApplication.java</code>を開いて下記のように修正してください。</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">android.app.Application</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.multidex.MultiDex</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApplication</span> <span class="kd">extends</span> <span class="nc">Application</span> <span class="kd">implements</span> <span class="nc">ReactApplication</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">attachBaseContext</span><span class="o">(</span><span class="nc">Context</span> <span class="n">base</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">attachBaseContext</span><span class="o">(</span><span class="n">base</span><span class="o">);</span>
+      <span class="nc">MultiDex</span><span class="o">.</span><span class="na">install</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div><p>このように修正してアンドロイド4.4.2(Kitkat)でテストしたら無事に動作することを確認出来ます。</p><h3 id="unoptimised-apk">Unoptimised APK</h3><p>最近APKファイルをアップロードしてアップデートすると下記の警告メッセージが表示されます。</p><p><img src="/assets/images/category/react-native/android-google-play/unoptimised-apk-android-app-bundle.jpg" alt="unoptimised apk android app bundle 警告"/></p><p>下記のコマンドでAPKではなくapp bundleを生成します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew app:bundleRelease
+</code></pre></div></div><p>このコマンドで生成されたファイルは<code class="language-plaintext highlighter-rouge">android/app/build/outputs/bundle/release/app.aab</code>にあります。</p><p>この1つのファイルをアップロードすれば大丈夫です。</p><p>私の場合、<code class="language-plaintext highlighter-rouge">package.json</code>へ下記のスクリプトを追加して使っています。</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">...</span><span class="w">
+</span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"prebuild-android"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build-android"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cd ./android &amp;&amp; ./gradlew app:bundleRelease --stacktrace "</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">...</span><span class="w">
+</span></code></pre></div></div><p>下記のコマンドでビルドします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build-android
+</code></pre></div></div><h2 id="完了">完了</h2><p>アンドロイドアプリストア(Google Play)にアプリを登録するための手続きが終わりました。アプリ審査は2~3時間くらいかかります。アプリの審査が終わったら登録申請したアプリをアンドロイドアプリストア(Google Play)で検索やダウンロードができます。</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 私のブログが役に立ちましたか？下にコメントを残してください。それは私にとって大きな大きな力になります！ </code></p></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><div id="disqus_thread"></div><script>var disqus_config=function(){this.page.url="https://dev-yakuza.posstree.com/react-native/android-google-play/",this.page.identifier="https://dev-yakuza.posstree.com/react-native/android-google-play/"};!function(){var t=document,e=t.createElement("script");e.src="https://https-dev-yakuza-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=アンドロイドアプリストア登録&url=https://dev-yakuza.posstree.com/react-native/android-google-play/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/react-native/android-google-play/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2021 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script src="/assets/scripts.js?v=20210414"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"></body></html>
