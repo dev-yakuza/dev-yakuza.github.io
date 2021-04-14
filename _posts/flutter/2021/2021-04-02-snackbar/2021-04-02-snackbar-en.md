@@ -2,39 +2,39 @@
 layout: 'post'
 permalink: '/flutter/widget/snackbar/'
 paginate_path: '/flutter/:num/widget/snackbar/'
-lang: 'ko'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] Snackbar 위젯'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 스낵바를 표시하기 위해 Snackbar 위젯을 사용하는 방법에 대해서 알아봅니다.
+title: '[Flutter] Snackbar widget'
+description: I try to develop an app with Flutter. In this blog post, I will introduce how to use the Snackbar widget to show simple messages in Flutter.
 image: '/assets/images/category/flutter/background.png'
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
 
-- [개요](#개요)
-- [프로젝트 생성](#프로젝트-생성)
-- [스낵바](#스낵바)
-- [완료](#완료)
+- [Outline](#outline)
+- [Create project](#create-project)
+- [Snackbar](#snackbar)
+- [Completed](#completed)
 
 </div>
 
-## 개요
+## Outline
 
-Flutter를 사용해서 앱을 개발해 보려고 합니다. 이번 블로그 포스트에서는 Flutter에서 간단한 메시지를 표시하기 위해 스낵바를 사용하는 방법에 대해서 알아봅니다.
+I try to develop an app with Flutter. In this blog post, I will introduce how to show the Snackbar for the simple messages in Flutter.
 
 ![Flutter - snackbar](/assets/images/category/flutter/2021/snackbar/snackbar.jpg)
 
-이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+You can see the example source code of this blog post on the link below.
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/widget](https://github.com/dev-yakuza/study-flutter/tree/main/widget){:rel="nofollow noreferrer" target="_blank"}
 
-## 프로젝트 생성
+## Create project
 
-Flutter에서 스낵바를 표시하는 방법을 살펴보기 위해, 다음 명령어를 사용하여 새로운 프로젝트를 생성합니다.
+To see how to use the Snackbar in Flutter, execute the command below to create a new project.
 
 ```bash
 flutter create my_app
@@ -43,9 +43,9 @@ cd my_app
 
 {% include in-feed-ads.html %}
 
-## 스낵바
+## Snackbar
 
-그럼 이제 새롭게 생성된 프로젝트에서 스낵바를 표시해 봅시다. `main.dart` 파일을 열고 다음과 같이 수정합니다.
+Let's see how to display the Snackbar in the new project. Open `main.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -92,7 +92,7 @@ class Home extends StatelessWidget {
 }
 ```
 
-위에 코드는 화면 가운데에 버튼을 표시하고, 해당 버튼을 눌렀을 때, 스낵바가 표시되는 예제입니다.
+The code above shows a button on the center of the screen, and if the button is pressed, the Snackbar is shown up.
 
 ```dart
 Center(
@@ -105,7 +105,7 @@ Center(
 ),
 ```
 
-스낵바를 표시하기 위해서는 `ScaffoldMessenger`를 사용할 필요가 있습니다.
+To show the Snackbar, we should use `ScaffoldMessenger`.
 
 ```dart
 ScaffoldMessenger.of(context).showSnackBar(
@@ -115,11 +115,11 @@ ScaffoldMessenger.of(context).showSnackBar(
 );
 ```
 
-이때 `showSnackBar`에 `SnackBar` 위젯을 전달하며, 화면에 표시될 내용을 작성합니다.
+At this case, we sholud pass `SnackBar` widget to `showSnackBar`, and write the message in there.
 
 {% include in-feed-ads.html %}
 
-`SnackBar` 위젯의 다음과 같이 다양한 옵션을 사용할 수 있습니다.
+We can use `SnackBar` with various options like below.
 
 ```dart
 ScaffoldMessenger.of(context).showSnackBar(
@@ -137,10 +137,10 @@ ScaffoldMessenger.of(context).showSnackBar(
 );
 ```
 
-이렇게 옵션을 지정하면 다음과 같은 스낵바를 표시할 수 있습니다.
+When we use the options like above, we can show the Snackbar like below.
 
 ![Flutter - snackbar with options](/assets/images/category/flutter/2021/snackbar/snackbar_with_options.jpg)
 
-## 완료
+## Completed
 
-이것으로 Flutter에서 스낵바를 표시하는 방법에 대해서 알아보았습니다. 또한 스낵바의 다양한 옵션도 살펴보았습니다. 이제 Flutter에서 간단한 메시지를 표시할 때는 스낵바를 활용해 보시기 바랍니다.
+Done! we've seen how to use the Snackbar in Flutter. Also, we've seen the Snackbar's options. From now, let's use the Snackbar to show simple message in Flutter!
