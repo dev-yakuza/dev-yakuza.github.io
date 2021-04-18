@@ -58,6 +58,32 @@ Flutter 프로젝트에서 Firebase Crashlytics를 사용하기 위해서는 `fi
 flutter pub pub add firebase_crashlytics
 ```
 
+## Gradle 수정
+
+Flutter에서 Crashlytics를 사용하기 위해서는 `Gradle` 파일을 수정할 필요가 있습니다. 우선, `android/app/build.gradle` 파일을 열고 파일 하단을 다음과 같이 수정합니다.
+
+```js
+...
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics' // <<<<<<<<<<<<< Add this
+```
+
+그런 다음, `android/build.gradle` 파일을 열고 다음과 같이 수정합니다.
+
+```js
+buildscript {
+    ...
+    dependencies {
+        ...
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.5'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.1' // <<<<<<<<<<<<<<<< Add this
+    }
+}
+```
+
+이것으로 Flutter에서 Crashlytics를 사용할 준비가 되었습니다.
+
 ## firebase_crashlytics 사용법
 
 Flutter에서 다음과 같이 `firebase_crashlytics`를 사용하면, 앱이 강제 종료되었을 때, Firebase Crashlytics에 이를 보고할 수 있습니다.
