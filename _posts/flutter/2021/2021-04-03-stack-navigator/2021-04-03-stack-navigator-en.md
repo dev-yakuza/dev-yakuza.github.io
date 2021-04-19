@@ -2,35 +2,40 @@
 layout: 'post'
 permalink: '/flutter/navigator/stack/'
 paginate_path: '/flutter/:num/navigator/stack/'
-lang: 'ko'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] 스택 내비게이션'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 스택 내비게이션을 사용하는 방법에 대해서 알아봅니다.
+title: '[Flutter] Stack navigation'
+description: I try to develop an app with Flutter. In this blog post, I will introduce how to use the Stack navigation in Flutter.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
+
+- [Outline](#outline)
+- [Stack](#stack)
+- [Named routes](#named-routes)
+- [popUntil](#popuntil)
+- [Completed](#completed)
 
 </div>
 
-## 개요
+## Outline
 
-Flutter를 사용해서 앱을 개발해 보려고 합니다. 앱 개발에서 화면 이동을 위해서는 내비게이션을 사용해야 합니다. 이번 블로그 포스트에서는 Flutter에서 스택 내비게이션을 사용하여 화면을 이동하는 방법에 대해서 알아봅시다.
+I try to develop an app with Flutter. We normally use navigation to move the screen. In this blo post, I wil show you how to use the Stack navigation to navigate the screen in Flutter.
 
-이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+You can see the source code of this blog post on the link below.
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/navigator](https://github.com/dev-yakuza/study-flutter/tree/main/navigator){:rel="nofollow noreferrer" target="_blank"}
 
 ## Stack
 
-스택 내비게이션은 화면 위에 화면을 표시하는 방식으로 화면을 이동합니다. 화면 위에 화면을 표시할 때에는 `push`를, 위에 표시된 화면을 제거할 때에는 `pop`을 사용합니다.
+The Stack navigation stacks the screen over the screen. When we stack the screen over the screen, we use the `push`, and when we remove the screen, we use `pop`.
 
-그럼 예제를 통해 스택 내비게이션을 이해해 봅시다. 다음 명령어를 사용하여 스택 내비게이션을 위한 프로젝트를 생성합니다.
+Let's see the example to understand how to use the Stack navigation. Execute the command below to create a new project for the Stack navigation.
 
 ```bash
 flutter create my_app
@@ -39,7 +44,7 @@ cd stack
 
 {% include in-feed-ads.html %}
 
-그럼 `main.dart` 파일을 다음과 같이 수정하여 스택 내비게이션을 사용해 봅시다.
+Next, open `main.dart` file and modify it like below to use the Stack navigation.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -108,7 +113,7 @@ class SecondScreen extends StatelessWidget {
 
 {% include in-feed-ads.html %}
 
-그럼 이제 소스 코드를 하나씩 하나식 자세히 살펴 봅시다.
+Let's see the code one by one.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -132,9 +137,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-여기까지는 기본적인 앱 생성과 동일합니다. `MaterialApp`을 사용하면, 앱이 실행될 때, 제일 먼저 표시할 화면을 `home` 파라메터에 설정할 수 있습니다. 여기에 우리는 `Home` 위젯을 설정하였습니다.
+until here, it's same the basic app structure. When we use the `MaterialApp` and the app is started, the widget, which is set on `home` parameter, is shown up first. In here, I've set the `Home` widget.
 
-다음으로 스택 내비게이션을 사용하기 위해 두 개의 `StatelessWidget`을 생성하였습니다. 하나는 `MaterialApp`의 `home`에 설정한 `Home` 위젯과 스택 내비게이션을 사용하여 Home 위젯 위에 표시할 `SecondScreen` 위젯을 생성하였습니다.
+Next, I created two `StatelessWidget` for the Stack navigation. one is the `Home` widget that we've set the `home` parameter of `MaterialApp`, and another is the `SecondScreen` widget which will be used for the next screen by the Stack navigation.
 
 ```dart
 class Home extends StatelessWidget {
@@ -168,9 +173,9 @@ class SecondScreen extends StatelessWidget {
 }
 ```
 
-두 위젯은 `Scaffold`를 사용하여 기본적으로 동일한 구조를 가지고 있습니다. 화면 가운데 `ElevatedButton` 위젯을 사용하여 버튼을 표시했습니다. 그리고 각 버튼을 눌렀을 때, 스택 내비게이션을 통해 화면 이동을 구현했습니다.
+Two widgets are basically the same structure by using the `Scaffold`, and show the button on the center with the `ElevatedButton` widget. We'll implement navigating the screen with the Stack navigation when the button is pressed.
 
-그럼 이제 각 버튼을 눌렀을 때, 스택 내비게이션을 호출하는 부분을 살펴봅시다. 일단 `Home` 화면에서 `SecondScreen`으로 이동하는 코드를 살펴보겠습니다.
+Next, let's see the Stack navigation is called when the button is pressed. First, let's see the code that navigate from the `Home` screen to the `SecondScreen`.
 
 ```dart
 onPressed: () {
@@ -183,11 +188,11 @@ onPressed: () {
 },
 ```
 
-스택 내비게이션을 사용하여, 화면 위에 새로운 화면을 화면에 위에 표시하기 위해서는 `Navigator` 위젯의 `push` 함수를 사용할 필요가 있습니다. `push` 함수를 호출할 때, 위젯 트리의 위치 정보를 담고 있는 `context`와 `MaterialPageRoute`의 builder를 사용하여 화면위에 표시할 위젯을 파라메터로 전달해야 합니다.
+To show a new screen over the screen by the Stack navigation, we need to use the `push` function of the `Navigator` widget. When we call the `push` function, we need to pass the `context`, which includes the widget tree location info, and the next screen by using the builder of `MaterialPageRoute`.
 
-이와 같이 코드를 작성하면 `Home` 위젯에 표시된 버튼을 누르면, Home 화면 위에, `SecondScreen` 위젯이 표시되게 됩니다.
+If you write the code like above, when you press the button on the `Home` widget, the `SecondScreen` widget will be shown up over the `Home` widget.
 
-그럼 이제 `SecondScreen`에서 `Home` 화면으로 돌아가기 위해, `SecondScreen`을 제거하는 코드를 확인해 봅시다.
+Let's see the code about how to go back to the `Home` screen from `SecondScreen`.
 
 ```dart
 onPressed: () {
@@ -195,15 +200,15 @@ onPressed: () {
 },
 ```
 
-`Navigator` 위젯의 `pop`를 호출하면 현재 표시되고 있는 화면이 제거되며, 현재 표시된 화면 아래에 있던 화면이 표시됩니다. `pop` 함수를 호출할 때는 현재 위치 정보를 가지고 있는 `context`를 전달해야합니다.
+When we call the `pop` function of the `Navigator` widget, the current screen is removed, and the screen under it will be shown up. We need to pass the `context` includes the widget tree location info to call the `pop` function.
 
 {% include in-feed-ads.html %}
 
 ## Named routes
 
-Flutter에서 여러 화면을 관리할 때, `Named routes`를 사용할 수 있습니다.
+When we use the various screens in Flutter, we can use the `Named routes` to manage them.
 
-그럼 `Named routes`를 사용하여 스택 내비게이션을 사용해 봅시다. 우선 `main.dart` 파일을 다음과 같이 수정합니다.
+Let's see how to use the `Named routes` with the Stack navigation. First, open `main.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -235,11 +240,11 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-`Named routes`를 사용하기 위해서는 `MaterialApp`에서 `routes`에 화면의 이름과 해당 이름의 화면 위젯을 선언합니다. 또한 `home` 파라메터 대신 `initialRoute`를 사용하여 앱이 실행된 뒤 표시될 첫 화면 위젯을 정의합니다.
+To use the `Named routes`, we need to define the screen name and screen widget to the `routes` in `MaterialApp`. Also, we should use the `initialRoute` instead of `home` parameter for the first screen after the app is started.
 
-이번 예제에서는 각 화면 위젯을 `lib/ScreenA.dart`, `lib/ScreenB.dart`, `lib/ScreenC.dart` 파일을 생성한 후, 해당 파일에 코드를 작성하였습니다.
+In this example, we'll create `lib/ScreenA.dart`, `lib/ScreenB.dart` and `lib/ScreenC.dart` files, and write the code in them.
 
-이렇게 생성한 위젯들을 `main.dart` 파일에서 다음과 같이 불러와 사용하였습니다.
+We'll import the files in `main.dart` like below.
 
 ```dart
 import 'ScreenA.dart';
@@ -247,7 +252,7 @@ import 'ScreenB.dart';
 import 'ScreenC.dart';
 ```
 
-그럼 이제 각 화면에 대한 코드를 살펴보도록 하겠습니다. `ScreenA.dart` 파일 내용은 다음과 같습니다.
+Let's see the code in the each files. The code of the `ScreenA.dart` file is like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -283,7 +288,7 @@ class ScreenA extends StatelessWidget {
 }
 ```
 
-`StatelessWidget`을 상속 받고, `Scafford` 위젯을 사용한 간단한 화면 위젯입니다. 앞에서 설명한 소스 코드와 동일한 구조이므로 자세한 설명은 생략하도록 하겠습니다. 여기서는 `Named routes`를 사용하여 스택 내비게이션을 사용하는 부분만 살펴보도록 하겠습니다.
+This widget is a simple widget that uses the `Scafford` and inherits the `StatelessWidget`. I skip to explain the details that is already explained above. In here, I will explain how to use the `Named routes` of the Stack navigation.
 
 ```dart
 onPressed: () {
@@ -291,11 +296,11 @@ onPressed: () {
 },
 ```
 
-`Named routes`를 사용하여 스택 내비게이션을 사용하기 위해서는 `Navigator` 위젯의 `pushNamed` 함수를 사용하면 됩니다. 이때, 위젯 트리의 위치 정보를 가지고 있는 `contenxt`와 이동하고 싶은 화면의 이름을 파라메터로 전달하면 됩니다.
+To use the `Named routes` for the Stack navigation, we need to use the `pushNamed` function of the `Navigator` widget. At this time, we should pass the `context`, that includes the widget tree location info, and the screen name to the parameters.
 
 {% include in-feed-ads.html %}
 
-`ScreenB.dart`와 `ScreenC.dart`는 동일한 구조를 가지고 있으므로, 소스 코드만 공유하도록 하겠습니다.
+The `ScreenB.dart` and `ScreenC.dart` have the same structures, so I just share the code in here.
 
 - ScreenB.dart
 
@@ -381,15 +386,15 @@ class ScreenC extends StatelessWidget {
 }
 ```
 
-Named routes를 사용하면 좀 더 간단하게 화면 이동을 할 수 있으며, 여러 화면을 관리하기에 더 적합합니다.
+If you use the Named routes, you can navigate the screen simply and manage the variouse screens.
 
 {% include in-feed-ads.html %}
 
 ## popUntil
 
-스택 내비게이션을 사용하다보면, 많은 화면들이 쌓이게 됩니다. 이렇게 쌓인 화면을 한번에 되돌아 가기 위해서는 `popUntil`을 사용합니다.
+When you use the Stack navigation, many screens are stacked. At this case, we can use the `popUntil` to return the stacked screens at once.
 
-`popUntil`의 사용 방법을 확인하기 위해서 `ScreenC.dart` 파일을 열고 다음과 같이 수정합니다.
+To check how to use the `popUntil`, open `ScreenC.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -419,7 +424,7 @@ class ScreenC extends StatelessWidget {
 }
 ```
 
-화면을 첫 화면인 `ScreenA`까지 되돌아 가기 위해서 `ScreenC`에서는 다음과 같은 코드를 사용하였습니다.
+To return the `ScreenA` screen that is frist screen, I used the code below in the `ScreenC`.
 
 ```dart
 onPressed: () {
@@ -427,7 +432,7 @@ onPressed: () {
 },
 ```
 
-첫 화면으로 돌아가기 위해 `Navigator`의 `popUntil`을 사용하였으며, `route.isFirst`을 설정하였습니다. 이렇게 `popUntil`을 사용하면 첫 화면으로 돌아갈 수도 있지만, 다음과 같이 사용하면 특정 화면까지 되돌아 갈 수 있습니다.
+You can use the `popUntil` of the `Navigator` to return the first screen, and `route.isFirst`. If you use the `popUntil` like above, you can navigate to the first screen at once. Also, you can use the code below to go back the specific screen.
 
 ```dart
 onPressed: () {
@@ -435,8 +440,8 @@ onPressed: () {
 },
 ```
 
-위와 같이 사용하면, `Named routes`에 정의된 이름을 사용하여 해당 화면까지 되돌아 갈 수 있습니다.
+As above, you can use the screen name, which you define in the `Named routes`, to go back the specific screen in here.
 
-## 완료
+## Completed
 
-이것으로 Flutter에서 스택 내비게이션을 사용하는 방법에 대해서 살펴보았습니다. 스택 내비게이션은 앱의 화면 전환에 가장 많이 사용되는 내비게이션이므로 사용법을 잘 익혀둡시다.
+Done! We've seen how to use the Stack navigatoin. The Stack navigation is used many times, so keep in mind how to use it.
