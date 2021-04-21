@@ -2,42 +2,42 @@
 layout: 'post'
 permalink: '/flutter/navigator/drawer/'
 paginate_path: '/flutter/:num/navigator/drawer/'
-lang: 'ko'
+lang: 'ja'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] Drawer 내비게이션'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 드로어 내비게이션을 사용하는 방법에 대해서 알아봅니다.
+title: '[Flutter] Drawerナビゲーション'
+description: Flutterを使ってアプリを開発してみましょう。今回のブログポストではFlutterで作ったプロジェクトでドロワーナビゲーションを使う方法について説明します。
 image: '/assets/images/category/flutter/background.png'
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## 目次
 
-- [개요](#개요)
-- [드로어](#드로어)
+- [概要](#概要)
+- [ドロワー](#ドロワー)
   - [DrawerHeader](#drawerheader)
   - [UserAccountsDrawerHeader](#useraccountsdrawerheader)
-- [완료](#완료)
+- [完了](#完了)
 
 </div>
 
-## 개요
+## 概要
 
-Flutter를 사용해서 앱을 개발해 보려고 합니다. 앱 개발에서 화면 이동을 위해서는 내비게이션을 사용해야 합니다. 이번 블로그 포스트에서는 Flutter에서 드로어 내비게이션을 사용하여 화면을 이동하는 방법에 대해서 알아봅시다.
+Flutterを使ってアプリを開発してみようかと思います。アプリを開発する時画面の移動をするためにはナビゲーションを使います。今回のブログポストではFlutterでドロワーナビゲーションを使って画面を移動する方法について説明します。
 
-이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+このブログポストで紹介するソースコードは下記のリンクで確認できます。
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/navigator](https://github.com/dev-yakuza/study-flutter/tree/main/navigator){:rel="nofollow noreferrer" target="_blank"}
 
-## 드로어
+## ドロワー
 
-드로어 내비게이션은 주로 앱의 메뉴에 많이 사용되며, 다음과 같이 화면 위로 슬라이드되어 표시됩니다.
+ドロワーナビゲーションは主にアプリのメニューでよく使えますし、次のように画面の上にスライドされ表示されます。
 
 ![Flutter - drawer](/assets/images/category/flutter/2021/drawer/drawer.jpg)
 
-그럼 예제를 통해 드로어 내비게이션을 이해해 봅시다. 다음 명령어를 사용하여 드로어 내비게이션을 위한 프로젝트를 생성합니다.
+それじゃ、例題を使ってドロワーナビゲーションを理解してみましょう。次のコマンドを実行してドロワーナビゲーションのためプロジェクトを生成します。
 
 ```bash
 flutter create my_app
@@ -46,7 +46,7 @@ cd stack
 
 {% include in-feed-ads.html %}
 
-그럼 드로어 내비게이션을 구현하기 위해, `main.dart` 파일을 열고 다음과 같이 수정합니다.
+次はドロワーナビゲーションを実装するため、`main.dart`ファイルを開いて下記のように修正します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -100,11 +100,11 @@ class Home extends StatelessWidget {
 }
 ```
 
-그럼 이제 소스 코드를 자세히 살펴봅시다.
+じゃ、ソースコードを詳しくみてみましょう。
 
 {% include in-feed-ads.html %}
 
-다음은 기본적으로 앱을 화면에 표시하기 위한 부분입니다.
+下記は基本的アプリを画面へ表示するための部分です。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-자세한 설명은 생략하도록 하겠습니다. 앱이 실행되면 `Home` 위젯이 화면에 표시되게 됩니다.
+詳しく説明は省略します。このコードでアプリが実行すると`Home`ウィジェットが画面に表示されます。
 
 ```dart
 class Home extends StatelessWidget {
@@ -140,7 +140,7 @@ class Home extends StatelessWidget {
 }
 ```
 
-`Home` 위젯은 `StatelessWidget`을 상속받고, `Scaffold`를 사용하여 화면을 구성하였습니다. 이때, `drawer` 파라메터를 사용하면, 간단하게 드로어 내비게이션을 구현할 수 있습니다.
+`Home`ウィジェットは`StatelessWidget`を継承して、`Scaffold`を使って画面を構成しました。この時、`drawer`パラメーターを使って、簡単なドロワーナビゲーションを実装することができます。
 
 ```dart
 drawer: Drawer(
@@ -148,17 +148,17 @@ drawer: Drawer(
 ),
 ```
 
-`drawer` 파라메터에는 기본적으로 `Drawer` 위젯을 지정해야 합니다. `Darwer` 위젯은 하나의 자식 위젯을 가질 수 있습니다. 이번 예제에서는 `ListView` 위젯을 사용하였습니다.
+`drawer`パラメータには基本的`Drawer`ウィジェットを指定します。`Darwer`ウィジェットは1つのチャイルドウィジェットを持つことができます。今回の例題では`ListView`ウィジェットを使いました。
 
-이번 블로그 포스트는 드로어 내비게이션을 소개하고 있으므로, `ListView` 위젯에 대한 설명은 생략하도록 하겠습니다.
+今回のブログポストではドロワーナビゲーションを紹介していますので、`ListView`ウィジェットについて詳しく説明は省略します。
 
 ### DrawerHeader
 
-`DrawerHeader` 위젯은 Material 디자인에서 드로어 내비게이션 상단에 표시되는 위젯입니다. `DrawerHeader` 위젯은 기본적으로 Material의 디자인을 포함하고 있습니다.
+`DrawerHeader`ウィジェットはMaterialデザインでドロワーナビゲーションのヘッダーに表示されるウィジェットです。`DrawerHeader`ウィジェットは基本的Materialのデザインを含めております。
 
 ![Flutter - drawer header](/assets/images/category/flutter/2021/drawer/drawer_header.jpg)
 
-`Drawerheader`는 다음과 같이 사용할 수 있으며, `child`에 커스텀 위젯을 제공함으로써, 커스터마이즈할 수 있습니다.
+`Drawerheader`は次のように使うことができますし、`child`にカスタムウィジェットを提供してカスタマイズすることができます。
 
 ```dart
 DrawerHeader(
@@ -173,11 +173,11 @@ DrawerHeader(
 
 ### UserAccountsDrawerHeader
 
-`UserAccountsDrawerHeader`는 Material 디자인에서 드로어에 표시되는 사용자 계정 정보를 표시하는데 사용하는 위젯입니다.
+`UserAccountsDrawerHeader`はMaterialデザインでドロワーに表示されるユーザアカウント情報を表示するため使うウィジェットです。
 
 ![Flutter - user accounts drawer header](/assets/images/category/flutter/2021/drawer/user_accounts_drawer_header.jpg)
 
-`UserAccountsDrawerHeader`는 다음과 같이 사용할 수 있습니다.
+`UserAccountsDrawerHeader`は次のように使います。
 
 ```dart
 UserAccountsDrawerHeader(
@@ -203,6 +203,6 @@ UserAccountsDrawerHeader(
 ),
 ```
 
-## 완료
+## 完了
 
-이것으로 Flutter에서 드로어 내비게이션을 사용하는 방법에 대해서 살펴보았습니다. 그리고 드로어 상단에 표시할 수 있는 위젯들을 살펴보았습니다.
+これでFlutterでドロワーナビゲーションを使う方法について説明しました。そしてドロワーのヘッダーに表示できるウィジェットを説明しました。

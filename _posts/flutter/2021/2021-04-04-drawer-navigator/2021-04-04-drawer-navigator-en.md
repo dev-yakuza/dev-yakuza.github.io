@@ -2,42 +2,42 @@
 layout: 'post'
 permalink: '/flutter/navigator/drawer/'
 paginate_path: '/flutter/:num/navigator/drawer/'
-lang: 'ko'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] Drawer 내비게이션'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 드로어 내비게이션을 사용하는 방법에 대해서 알아봅니다.
+title: '[Flutter] Drawer navigation'
+description: I try to develop an app with Flutter. In this blog post, I will introduce how to use the Drawer navigation in Flutter.
 image: '/assets/images/category/flutter/background.png'
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
 
-- [개요](#개요)
-- [드로어](#드로어)
+- [Outline](#outline)
+- [Drawer](#drawer)
   - [DrawerHeader](#drawerheader)
   - [UserAccountsDrawerHeader](#useraccountsdrawerheader)
-- [완료](#완료)
+- [Completed](#completed)
 
 </div>
 
-## 개요
+## Outline
 
-Flutter를 사용해서 앱을 개발해 보려고 합니다. 앱 개발에서 화면 이동을 위해서는 내비게이션을 사용해야 합니다. 이번 블로그 포스트에서는 Flutter에서 드로어 내비게이션을 사용하여 화면을 이동하는 방법에 대해서 알아봅시다.
+I try to develop an app with Flutter. When we develop the app, we use the navigation system to navigate the screens. In this blog post, I will show you how to use the Drawer navigation in Flutter.
 
-이 블로그 포스트에서 소개하는 소스 코드는 아래에 링크에서 확인할 수 있습니다.
+You can see the full source code of this blog post on the link below.
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/navigator](https://github.com/dev-yakuza/study-flutter/tree/main/navigator){:rel="nofollow noreferrer" target="_blank"}
 
-## 드로어
+## Drawer
 
-드로어 내비게이션은 주로 앱의 메뉴에 많이 사용되며, 다음과 같이 화면 위로 슬라이드되어 표시됩니다.
+The Drawer navigation is mainly used for the app menu, and it slides over the screen like below.
 
 ![Flutter - drawer](/assets/images/category/flutter/2021/drawer/drawer.jpg)
 
-그럼 예제를 통해 드로어 내비게이션을 이해해 봅시다. 다음 명령어를 사용하여 드로어 내비게이션을 위한 프로젝트를 생성합니다.
+Let's see the example to understand the Drawer navigation. First, execute the command below to create a new project for the Drawer navigation.
 
 ```bash
 flutter create my_app
@@ -46,7 +46,7 @@ cd stack
 
 {% include in-feed-ads.html %}
 
-그럼 드로어 내비게이션을 구현하기 위해, `main.dart` 파일을 열고 다음과 같이 수정합니다.
+To implement the Drawer navigation, open the `main.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -100,11 +100,11 @@ class Home extends StatelessWidget {
 }
 ```
 
-그럼 이제 소스 코드를 자세히 살펴봅시다.
+And let's see the details.
 
 {% include in-feed-ads.html %}
 
-다음은 기본적으로 앱을 화면에 표시하기 위한 부분입니다.
+The code below is a basic code to show the app on the screen.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-자세한 설명은 생략하도록 하겠습니다. 앱이 실행되면 `Home` 위젯이 화면에 표시되게 됩니다.
+I just skip to explain the code above, because you already use it many times. After executing the app, the `Home` widget is shown up.
 
 ```dart
 class Home extends StatelessWidget {
@@ -140,7 +140,7 @@ class Home extends StatelessWidget {
 }
 ```
 
-`Home` 위젯은 `StatelessWidget`을 상속받고, `Scaffold`를 사용하여 화면을 구성하였습니다. 이때, `drawer` 파라메터를 사용하면, 간단하게 드로어 내비게이션을 구현할 수 있습니다.
+The `Home` widget inherits `StatelessWidget`, and use the `Scaffold` for the structure of the screen. At this time, we can use the `drawer` parameter to implement the Drawer navigation simply.
 
 ```dart
 drawer: Drawer(
@@ -148,17 +148,17 @@ drawer: Drawer(
 ),
 ```
 
-`drawer` 파라메터에는 기본적으로 `Drawer` 위젯을 지정해야 합니다. `Darwer` 위젯은 하나의 자식 위젯을 가질 수 있습니다. 이번 예제에서는 `ListView` 위젯을 사용하였습니다.
+We need to pass the `Drawer` widget on the `drawer` parameter. The `Drawer` widget can have one child widget. In this example, I use the `ListView` widget.
 
-이번 블로그 포스트는 드로어 내비게이션을 소개하고 있으므로, `ListView` 위젯에 대한 설명은 생략하도록 하겠습니다.
+In this blog post, I'm introducing the Drawer navigation, so I skip to explain the `ListView` widget in here.
 
 ### DrawerHeader
 
-`DrawerHeader` 위젯은 Material 디자인에서 드로어 내비게이션 상단에 표시되는 위젯입니다. `DrawerHeader` 위젯은 기본적으로 Material의 디자인을 포함하고 있습니다.
+The `DrawerHeader` widget is a widget to be shown up on the header of the Drawer navigation in Material design. The `DrawerHeader` widget includes basic Metarial design.
 
 ![Flutter - drawer header](/assets/images/category/flutter/2021/drawer/drawer_header.jpg)
 
-`Drawerheader`는 다음과 같이 사용할 수 있으며, `child`에 커스텀 위젯을 제공함으로써, 커스터마이즈할 수 있습니다.
+We can use the `Drawerheader` widget like below, and pass the custom widget to the `child` parameter to customize it.
 
 ```dart
 DrawerHeader(
@@ -173,11 +173,11 @@ DrawerHeader(
 
 ### UserAccountsDrawerHeader
 
-`UserAccountsDrawerHeader`는 Material 디자인에서 드로어에 표시되는 사용자 계정 정보를 표시하는데 사용하는 위젯입니다.
+The `UserAccountsDrawerHeader` is used for showing the user account information on the header of the Drawer navigation in the Material design.
 
 ![Flutter - user accounts drawer header](/assets/images/category/flutter/2021/drawer/user_accounts_drawer_header.jpg)
 
-`UserAccountsDrawerHeader`는 다음과 같이 사용할 수 있습니다.
+You can use the `UserAccountsDrawerHeader` widget like below.
 
 ```dart
 UserAccountsDrawerHeader(
@@ -203,6 +203,6 @@ UserAccountsDrawerHeader(
 ),
 ```
 
-## 완료
+## Completed
 
-이것으로 Flutter에서 드로어 내비게이션을 사용하는 방법에 대해서 살펴보았습니다. 그리고 드로어 상단에 표시할 수 있는 위젯들을 살펴보았습니다.
+Done! we've seen how to use the Drawer navigation and the widgets for the header of the Drawer navigation.
