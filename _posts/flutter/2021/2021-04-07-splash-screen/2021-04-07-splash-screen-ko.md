@@ -92,7 +92,7 @@ flutter_native_splash 패키지는 다양한 옵션을 가지고 있습니다
 flutter_native_splash 패키지의 옵션을 설정하였다면, 다음 명령어를 실행하여 스플래시 이미지를 생성합니다.
 
 ```bash
-flutter pub run flutter_native_splash:main
+flutter pub run flutter_native_splash:create
 ```
 
 {% include in-feed-ads.html %}

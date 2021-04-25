@@ -123,6 +123,39 @@ FirebaseCrashlytics.instance.crash();
 
 ![crashlytics integration](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-integration.jpg)
 
+## multiDexEnabled
+
+`firebase_crashlytics`를 설치하고 프로젝트를 실행했을 때, `Debug Console`에 다음과 같은 에러가 발생하였습니다.
+
+```bash
+Note: .pub-cache/hosted/pub.dartlang.org/firebase_core-1.0.4/android/src/main/java/io/flutter/plugins/firebase/core/FlutterFirebaseCorePlugin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: .pub-cache/hosted/pub.dartlang.org/flutter_tts-3.0.0/android/src/main/java/com/tundralabs/fluttertts/FlutterTtsPlugin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+Note: .pub-cache/hosted/pub.dartlang.org/firebase_crashlytics-2.0.1/android/src/main/java/io/flutter/plugins/firebase/crashlytics/FlutterFirebaseCrashlyticsPlugin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: .pub-cache/hosted/pub.dartlang.org/firebase_analytics-8.0.1/android/src/main/java/io/flutter/plugins/firebaseanalytics/FirebaseAnalyticsPlugin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: .pub-cache/hosted/pub.dartlang.org/firebase_analytics-8.0.1/android/src/main/java/io/flutter/plugins/firebaseanalytics/FirebaseAnalyticsPlugin.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+```
+
+이를 해결하기 위해서는 `multiDexEnabled`을 활성화할 필요가 있습니다. `android/app/build.gradle` 파일을 열고 다음과 같이 수정합니다.
+
+```js
+defaultConfig {
+    ...
+    minSdkVersion 21
+    targetSdkVersion 30
+    versionCode flutterVersionCode.toInteger()
+    versionName flutterVersionName
+    multiDexEnabled true // <<<<<<<<<< Add this
+}
+```
+
 ## 완료
 
 이것으로 Flutter에서 Firebase Crashlytics를 사용하기 위해 Flutter 프로젝트에 `firebase_crashlytics`를 설정하는 방법에 대해서 알아보았습니다. 이제 Firebase Crashlytics를 사용하여 개발한 앱의 강제 종료를 분석해 보시기 바랍니다.
