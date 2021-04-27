@@ -9,12 +9,22 @@ comments: true
 title: '[Flutter] Textfield widget'
 description: In this blog post, I will introduce how to use the TextField widget to get the user input in Flutter.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## Contents
+
+- [Outline](#outline)
+- [Create Flutter project](#create-flutter-project)
+- [Textfield](#textfield)
+- [InputDecoration](#inputdecoration)
+- [SingleChildScrollView](#singlechildscrollview)
+- [GestureDetector와 FocusScope](#gesturedetector와-focusscope)
+- [How to use the Textfield value](#how-to-use-the-textfield-value)
+  - [onChanged](#onchanged)
+  - [TextEditingController](#texteditingcontroller)
+- [Completed](#completed)
 
 </div>
 
@@ -136,7 +146,7 @@ When you use the `InputDecoration` as above, you can see the designed Textfield 
 
 ## SingleChildScrollView
 
-When we use the `Textfield` widget and the keyboard actives, there is no problem like below.
+When we use the `Textfield` widget and the keyboard is activated, there is no problem like below.
 
 ![Flutter - Textfield keyboard](/assets/images/category/flutter/2021/textfield/textfield_keyboard.jpg)
 
@@ -191,7 +201,7 @@ SingleChildScrollView(
 )
 ```
 
-If you use the `SingleChildScrollView` widget, when the keyboard actives, the screen will be scrollable.
+If you use the `SingleChildScrollView` widget, when the keyboard is activated, the screen will be scrollable.
 
 ![Flutter - Textfield SingleChildScrollView](/assets/images/category/flutter/2021/textfield/textfield_with_single_child_scroll_view.jpg)
 
@@ -199,11 +209,11 @@ If you use the `SingleChildScrollView` widget, when the keyboard actives, the sc
 
 ## GestureDetector와 FocusScope
 
-현재는 키보드가 활성화되면, 키보드의 `done` 버튼을 눌러야 키보드가 사라진다. 다른 말로 하면, Textfield가 `Focus` 상태가 되면, 키보드가 활성화가 되고, `done` 키를 눌러 Textfield가 `UnFocus` 상태가 되면 키보드가 사라진다.
+In current state, we need to press the `done` button to hide the keyboard. In other words, when the Textfield gets the `Focus`, the keyboard is activated, and when the `done` key is pressed, the Textfield gets the `UnFocus` and the keyboard is disappeared.
 
-보통 앱의 UX는 키보드가 활성화되면, 키보드 이외의 영역을 선택하였을 시, 키보드가 사라지게 된다. 이와 같이 키보드 이외의 영역을 선택하였을 때, 키보드를 사라지게 하기 위해서 `GestureDetector` 위젯과 `FocusScope` 위젯을 사용해야 한다.
+In the normal app's UX of the keyboard activation, when the other area than the keyboard is pressed, the keyboard is disappeared. To make the keyboard is disappeared when the other area than the keyboard is pressed, we need to use the `GestureDetector` widget and the `FocusScope` widget.
 
-그럼 키보드 이외에 영역을 선택하였을 때, 키보드를 사라지게 하기 위해서, `main.dart` 파일을 다음과 같이 수정한다.
+Let's open the `main.dart` file and modify it like below to hide the keyboard.
 
 ```dart
 GestureDetector(
@@ -212,17 +222,18 @@ GestureDetector(
 ),
 ```
 
-`SingleChildScrollView` 위젯안은 앞에서 살펴본 코드이므로 생략하였다. 우선 사용자의 이벤트를 감지하기 위해, `GestureDetector`를 사용하였다. 이때, 사용자가 화면을 터치하였을 때, 키보드로부터 `Focus`를 제거하기 위해, `FocusScope` 위젯의 `unfocus` 함수를 사용하였다.
+I skip to explain the code in the `SingleChildScrollView` widget. It's the same code with above. First, we need to use the `GestureDetector` widget to detect the user events. At this time, when the user touches the screen, to remove the keyboard `Focus`, I used the `unfocus` function of `FocusScope` widget.
 
+when you use the `GestureDetector` and `FocusScope`, you can hide
 이렇게 `GestureDetector`와 `FocusScope`를 사용하면, 키보드를 감추는 기능을 만들 수 있다.
 
-## Textfield 값 사용하기
+## How to use the Textfield value
 
-Textfield를 사용하는 이유는 사용자로부터 값을 입력받고, 입력받은 값을 사용하기 위해서이다. 그럼 Textfield 값을 사용하는 방법에 대해서 알아보도록 하자.
+We use the Textfield widget to get the user input and use the value. So, let's see how to get and use the Textfield value.
 
 ### onChanged
 
-사용자가 Textfield에 값을 입력하면 Textfield 위젯의 `onChanged` 함수가 호출된다. 이 함수가 호출될 때, 파라메터로 전달되는 text 값을 `setState`를 사용하여 저장하면 된다.
+When the user inserts the value in the Textfield, the `onChanged` function of the Textfield widget is called. At this time, the user input is passed via the text parameter, and we can use it with `setState`.
 
 ```dart
 class Home extends StatefulWidget {
@@ -285,7 +296,7 @@ class _HomeState extends State<Home> {
 }
 ```
 
-값이 변경되는 부분만 자세히 살펴보자.
+Let's see the code which make the value changed.
 
 ```dart
 ...
@@ -304,11 +315,11 @@ TextField(
 ...
 ```
 
-변경되는 값을 저장하기 위해, `StatefulWidget`을 생성하였다. 그리고 사용자의 입력값을 저장할 String 변수를 생성하였다. 이렇게 생성한 String 변수를 `Text` 위젯을 사용하여 화면에 표시하였다.
+To store the changed value, I created the `StatefulWidget` widget. And then, I created a String variable to save the user input. This String variable is used on the `Text` widget to display the user input.
 
-그리고 `Textfield` 위젯의 `onChanged` 함수를 사용하여 사용자가 입력한 값을 `setState`를 사용하여 앞에서 선언한 변수를 변경해 주었다.
+Next, I used the `onChanged` function of the `Textfield` widget to get the user input and change the String variable via `setState`.
 
-이제 Textfield에 값을 입력하면 다음과 같이 Textfeild 위에 입력한 내용이 출력되는 것을 확인할 수 있다.
+Now, if you change the value in the Textfield, you can see the text is printed what you insert in Textfield like below.
 
 ![Flutter - Textfield SingleChildScrollView](/assets/images/category/flutter/2021/textfield/textfield_on_changed.jpg)
 
@@ -316,9 +327,9 @@ TextField(
 
 ### TextEditingController
 
-위와 같이 실시간으로 데이터를 갱신할 수도 있지만, 특정 이벤트가 발생하였을 때, 현재 입력된 값에 접근하고 싶을 때도 있다. 이때 사용하는 것이 `TextEditingController`이다.
+We can update the data in real time as above, we can access the current input when the specific event is triggered. In this case, we need ot use the `TextEditingController`.
 
-`TextEditingController`는 다음과 같이 사용할 수 있다.
+You can use the `TextEditingController` like below.
 
 ```dart
 class _HomeState extends State<Home> {
@@ -383,7 +394,7 @@ class _HomeState extends State<Home> {
 
 {% include in-feed-ads.html %}
 
-그럼 `TextEditingController`을 사용하여 입력값을 화면에 표시하는 부분만을 살펴보자.
+Let's see the details about how to use the `TextEditingController` to get the user input.
 
 ```dart
 TextEditingController inputController = TextEditingController();
@@ -407,10 +418,10 @@ ElevatedButton(
 ...
 ```
 
-`TextEditingController`를 먼저 선언한 후, `TextField` 위젯의 `controller` 파라메터에 전달해 준다. 그리고 `ElevatedButton` 버튼이 눌러졌을 때, `setState`를 사용하여 변수를 업데이트해 준다. 이때, `inputController.text`와 같이 Textfield 위젯의 입력값에 접근할 수 있다.
+First, we need to defined the `TextEditingController`, and pass it to the `controller` parameter of the `Textfield`. And when the `ElevatedButton` button is pressed, update the variable via `setState`. At this time, we can access the Textfield value via `inputController.text`.
 
-이런 방식은 주로 서버에 데이터를 보낼 때 사용된다.
+This way is normally used to send the data to the server.
 
-## 완료
+## Completed
 
-이것으로 `Textfield` 위젯을 사용하여 사용자가 입력한 값에 접근하고 사용하는 방법에 대해서 알아보았다.
+Done! we've seen how to use the `Textfield` widget to access and use the user input!
