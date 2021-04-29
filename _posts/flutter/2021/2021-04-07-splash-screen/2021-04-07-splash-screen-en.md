@@ -2,7 +2,7 @@
 layout: 'post'
 permalink: '/flutter/splash-screen/'
 paginate_path: '/flutter/:num/splash-screen/'
-lang: 'ko'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
