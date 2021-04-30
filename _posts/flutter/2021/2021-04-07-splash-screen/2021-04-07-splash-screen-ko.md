@@ -6,15 +6,25 @@ lang: 'ko'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] 스플래시 스크린 변경'
+title: '[Flutter] 스플래시 스크린'
 description: 이번 블로그 포스트에서는 Flutter에서 스플래시 스크린을 변경하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [이미지 파일 준비](#이미지-파일-준비)
+- [flutter_native_splash 설치](#flutter_native_splash-설치)
+- [스플래시 이미지 설정](#스플래시-이미지-설정)
+- [flutter_native_splash 패키지 옵션](#flutter_native_splash-패키지-옵션)
+- [스플래시 이미지 생성](#스플래시-이미지-생성)
+- [팁](#팁)
+  - [초기 데이터](#초기-데이터)
+  - [상태바](#상태바)
+- [완료](#완료)
 
 </div>
 

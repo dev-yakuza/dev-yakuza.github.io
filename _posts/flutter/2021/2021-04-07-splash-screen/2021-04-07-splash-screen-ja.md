@@ -9,12 +9,22 @@ comments: true
 title: '[Flutter] スプラッシュスクリーン'
 description: 今回のブログポストではFlutterでスプラッシュスクリーンを変更する方法について説明します。
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [イメージファイル準備](#イメージファイル準備)
+- [flutter_native_splashインストール](#flutter_native_splashインストール)
+- [スプラッシュイメージ設定](#スプラッシュイメージ設定)
+- [flutter_native_splashパッケージオプション](#flutter_native_splashパッケージオプション)
+- [スプラッシュイメージ生成](#スプラッシュイメージ生成)
+- [Tip](#tip)
+  - [初期データ](#初期データ)
+  - [ステータスバー](#ステータスバー)
+- [完了](#完了)
 
 </div>
 

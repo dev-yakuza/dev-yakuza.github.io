@@ -6,50 +6,60 @@ lang: 'en'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] 스플래시 스크린 변경'
-description: 이번 블로그 포스트에서는 Flutter에서 스플래시 스크린을 변경하는 방법에 대해서 알아봅시다.
+title: '[Flutter] Splash Screen'
+description: Let's see how to change the Splash screen on Flutter.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
+
+- [Outline](#outline)
+- [Prepare imaage](#prepare-imaage)
+- [Install flutter_native_splash](#install-flutter_native_splash)
+- [Configure Splash image](#configure-splash-image)
+- [flutter_native_splash package options](#flutter_native_splash-package-options)
+- [Generate Splash images](#generate-splash-images)
+- [Tip](#tip)
+  - [Initial data](#initial-data)
+  - [Status bar](#status-bar)
+- [Completed](#completed)
 
 </div>
 
-## 개요
+## Outline
 
-Flutter를 사용해서 앱을 개발해 보려고 합니다. 이번 블로그 포스트에서는 Flutter에서 스플래시 스크린을 변경하는 방법에 대해서 알아봅니다.
+I try to develop an app with Flutter. In this blog post, I will introduce how to change the Splash screen in Flutter.
 
-스플래시 스크린을 변경하기 위해서는 안드로이드와 iOS에 맞게 이미지를 생성하고, 각각의 플랫폼에 맞게 스플래시 스크린을 설정해야 합니다.
+To apply a Splash screen, normally we need to create each image for Android and iOS and configure the images to each platform.
 
 - [Adding a splash screen to your mobile app](https://flutter.dev/docs/development/ui/advanced/splash-screen){:rel="nofollow noreferrer" target="_blank"}
 
-하지만 `flutter_native_splash` 패키지를 사용하면, 스플래시 스크린을 좀 더 쉽게 변경할 수 있습니다.
+However, if you use the `flutter_native_splash` package, you can change it more simply.
 
 - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash){:rel="nofollow noreferrer" target="_blank"}
 
-## 이미지 파일 준비
+## Prepare imaage
 
-공식 문서에 이미지 파일에 대한 특별한 조건이 명시되어 있지 않습니다. 저는 다음과 같은 이미지를 사용하였습니다.
+There is no limitaion of the image file on the official document. However, I used the image file like the condition below.
 
-- PNG 파일
-- 3000px X 3000px 사이즈 이상의 이미지
+- PNG file
+- bigger than 3000px X 3000px
 
-준비한 파일을 `assets/splash.png`로 저장합니다.
+Store the file to `assets/splash.png`.
 
-## flutter_native_splash 설치
+## Install flutter_native_splash
 
-flutter_native_splash 패키지를 사용하기 위해서는 flutter_native_splash 패키지를 설치할 필요가 있습니다. 다음 명령어를 실행하여 flutter_native_splash 패키지를 설치합니다.
+To use the flutter_native_splash package, we need to install the flutter_native_splash pacakge. Execute the command below to install the flutter_native_splash pageckage.
 
 ```bash
 flutter pub add flutter_native_splash
 ```
 
-## 스플래시 이미지 설정
+## Configure Splash image
 
-이제 스플래시 스크린으로 사용할 이미지 파일을 설정할 필요가 있습니다. `pubspec.yaml` 파일을 열고 다음과 같은 내용을 파일 하단에 추가합니다.
+Next, we need to configure an image for the Splash screen. Open the `pubspec.yaml` file and add the code below to the bottom of the file.
 
 ```yaml
 ...
@@ -59,25 +69,25 @@ flutter_native_splash:
   fullscreen: true
 ```
 
-## flutter_native_splash 패키지 옵션
+## flutter_native_splash package options
 
-flutter_native_splash 패키지는 다양한 옵션을 가지고 있습니다
+The flutter_native_splash package has some options.
 
-- color: 스플래시 스크린의 배경색
-- background_image: 스플래시 스크린의 배경 이미지
-- image: 스플래시 스크린의 이미지
-- color_dark: 디바이스 설정이 다크 모드일 경우의 배경색
-- background_image_dark: 디바이스 설정이 다크 모드일 경우의 배경 이미지
-- image_dark: 디바이스 설정이 다크 모드일 경우의 스플래시 스크린 이미지
-- android_gravity: 안드로이드에서 스플래시 이미지의 위치를 설정합니다. (bottom, center, center_horizontal, center_vertical, clip_horizontal, clip_vertical, end, fill, fill_horizontal, fill_vertical, left, right, start, top)
-- ios_content_mode: iOS에서 스플래시 이미지의 위치를 설정합니다. (scaleToFill, scaleAspectFit, scaleAspectFill, center, top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight)
-- web_image_mode: 웹에서 스플래시 이미지의 위치를 설정합니다. (center, contain, stretch, cover)
-- fullscreen: 스플래시 스크린을 전체 화면으로 표시할지 여부(true, false)
-- info_plist_files: info.plist 이름을 변경한 경우, 해당 파일을 설정하기 위한 옵션
+- color: Splash screen background color
+- background_image: Splash screen background image
+- image: Splash screen image
+- color_dark: background color when the device is the dark-mode
+- background_image_dark: background image when the device is the dark-mode
+- image_dark: Splash screen image when the device is the dark-mode
+- android_gravity: Splash image position on Android. (bottom, center, center_horizontal, center_vertical, clip_horizontal, clip_vertical, end, fill, fill_horizontal, fill_vertical, left, right, start, top)
+- ios_content_mode: Splash image position on iOS. (scaleToFill, scaleAspectFit, scaleAspectFill, center, top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight)
+- web_image_mode: Splash image position on Web. (center, contain, stretch, cover)
+- fullscreen: show the splash screen to full screen (true, false)
+- info_plist_files: if the info.plist file name is changed, set this option for it.
 
-## 스플래시 이미지 생성
+## Generate Splash images
 
-flutter_native_splash 패키지의 옵션을 설정하였다면, 다음 명령어를 실행하여 스플래시 이미지를 생성합니다.
+If you finish to configure the flutter_native_splash options, execute the command below to generate the Splash images.
 
 ```bash
 flutter pub run flutter_native_splash:create
@@ -85,15 +95,15 @@ flutter pub run flutter_native_splash:create
 
 {% include in-feed-ads.html %}
 
-## 팁
+## Tip
 
-flutter_native_splash 패키지를 사용하여 스플래시 이미지를 생성하였다면, 더이상 특별한 수정이 스플래시 스크린을 표시할 수 있습니다.
+If you use the flutter_native_splash package to create the Splash images, you don't need any modifiction to show the Splash screen.
 
-스플래시 스크린을 다음의 팁들과 함께 사용하면 좀 더 유용합니다.
+You can use the Splash screen with the tips below.
 
-### 초기 데이터
+### Initial data
 
-보통 스플래시 스크린을 화면에 표시한 후, 초기 데이터를 가져오곤 합니다. 이때는 다음과 같이 `Future`와 `async-await`를 사용하여 스플래시 스크린이 표시된 상태에서 데이터를 가져올 수 있습니다.
+Normally, we show the Splash screen and get the initial data. At this time, we can use `Future` and `async-await` to get the data under the Splash screen.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -128,11 +138,11 @@ Future<bool> fetchData() async {
 ...
 ```
 
-`main` 함수를 `async-await`로 변경한 후, `runApp`을 통해, 앱을 실행하기 전에 데이터를 가져옵니다. 이런 구조를 가지게 되면, 스플래시 스크린이 화면에 표시된 상태에서 데이터를 가져올 수 있습니다.
+Change the `main` funciton to `async-await`, and get the data before starting the app with `runApp`. As this structure, we can get the data when the Splash screen is shwoing.
 
-### 상태바
+### Status bar
 
-이 블로그 포스트에서는 `pubspec.yaml`에 `fullscreen: true`을 설정하여 스플래시 스크린을 생성하였습니다. flutter_native_splash의 버그인건지 모르겠지만, iOS에서 앱이 실행된 후, 상태바(Status Bar)가 표시되지 않습니다. 그래서 다음과 같이 코드를 수정하여 상태바를 표시하였습니다.
+In this blog post, I configured the `fullscreen: true` in the `pubspec.yaml` file to create the Splash images. I'm not sure this is the flutter_native_splash package bug, when the app is stared on iOS, the Status bar is not shown up. So I use the codeb below to display the Status bar.
 
 ```dart
 ...
@@ -157,6 +167,6 @@ class Home extends StatelessWidget {
 }
 ```
 
-## 완료
+## Completed
 
-이것으로 Flutter에서 스플래시 스크린을 변경하는 방법에 대해서 살펴보았습니다. `flutter_native_splash` 패키지를 사용하면 이처럼 간단하게 Flutter 앱의 스플래시 스크린을 변경할 수 있습니다.
+Done! we've seen how to change the Splash screen on Flutter. Like this blog post, if you use the `flutter_native_splash` package, you can change the App Splash screen simply on Flutter.
