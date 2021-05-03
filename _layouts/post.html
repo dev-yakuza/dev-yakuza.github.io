@@ -347,34 +347,14 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto">
         <hr />
         {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script>
-
-          var disqus_config = function () {
-            this.page.url = "{{ page.url | replace:'index.html','' | absolute_url }}";
-            this.page.identifier = "{{ page.url | replace:'index.html','' | absolute_url }}";
-          };
-          (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-
-            {% if site.active_lang == 'ko' %}
-            s.src = 'https://https-dev-yakuza-github-io-ko.disqus.com/embed.js';
-            {% elsif site.active_lang == 'en' %}
-            s.src = 'https://https-dev-yakuza-github-io-en.disqus.com/embed.js';
-            {% else %}
-            s.src = 'https://https-dev-yakuza-github-io.disqus.com/embed.js';
-            {% endif %}
-
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
+        <script src="https://utteranc.es/client.js"
+          repo="dev-yakuza/dev-yakuza.github.io"
+          issue-term="url"
+          label="comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
         </script>
-        <noscript
-          >Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript"
-            >comments powered by Disqus.</a
-          ></noscript
-        >
         {% endif %}
       </div>
     </div>
