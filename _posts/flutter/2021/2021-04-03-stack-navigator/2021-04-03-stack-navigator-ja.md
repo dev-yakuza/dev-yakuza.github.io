@@ -442,6 +442,43 @@ onPressed: () {
 
 上のように使うと、`Named routes`に定義した名前を使ってその画面まで戻ることができます。
 
+## automaticallyImplyLeading
+
+Flutterでスタックナビゲーションを使って画面を移動すると、特に設定をしなくても左上に以前の画面に戻れるボタンが生成されることが確認できます。
+
+普通はこの機能を使うので、特に問題ないですが、時々この機能を使いたくない時もあります。この時、使えることが`automaticallyImplyLeading`オプションです。
+
+次のようにAppBarウィジェとの`automaticallyImplyLeading`オプションを使うと、自動で生成される戻るボタンを消すことができます。
+
+```dart
+AppBar(
+  ...
+  automaticallyImplyLeading: false,
+)
+```
+
+{% include in-feed-ads.html %}
+
+## Swipe back
+
+Flutterでスタックナビゲーションを使うと、基本的スワイプで戻る(Swipe back)機能を使って以前の画面に戻ることができます。
+
+もし、この機能を使いたくない場合、次のように`WillPopScope`ウィジェットの`onWillPop`を使ってスワイプで戻る機能を無効化することができます。
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return WillPopScope(
+    onWillPop: () async => false,
+    child: Scaffold(
+      ...,
+    ),
+  );
+}
+```
+
+上のようにスタックナビゲーションを使って表示される画面を`WillPopScope`ウィジェットにつつみむ後、`onWillPop`パラメータを`false`で設定したら、スワイプで戻る機能を無効化することができます。
+
 ## 完了
 
 これでFlutterでスタックナビゲーションを使う方法についてみてみました。スタックナビゲーションはアプリの画面の移動に一番多く使えるので、今回よく覚えておきましょう。

@@ -442,6 +442,43 @@ onPressed: () {
 
 위와 같이 사용하면, `Named routes`에 정의된 이름을 사용하여 해당 화면까지 되돌아 갈 수 있습니다.
 
+## automaticallyImplyLeading
+
+Flutter에서 스택 내비게이션을 사용하여 화면을 이동하면, 특별한 설정을 하지 않아도 왼쪽 상단에 이전 화면으로 돌아가는 버튼이 생성되는 것을 확인할 수 있다.
+
+보통 이 기능을 사용하므로, 큰 문제가 되지 않지만, 때때로 이 기능을 사용하지 않고 싶을 때가 있다. 이 때, 사용 가능한 것이 `automaticallyImplyLeading` 옵션이다.
+
+다음과 같이 AppBar 위젯의 `automaticallyImplyLeading` 옵션을 사용하면, 자동으로 생성되는 되돌아가기 버튼을 제거할 수 있다.
+
+```dart
+AppBar(
+  ...
+  automaticallyImplyLeading: false,
+)
+```
+
+{% include in-feed-ads.html %}
+
+## Swipe back
+
+Flutter에서 스택 내비게이션을 사용하면 기본적으로 스와이프 백(Swipe back) 기능을 사용하여 이전 화면으로 되돌아갈 수 있다.
+
+만약, 이 기능을 사용하고 싶지 않다면, 다음과 같이 `WillPopScope` 위젯의 `onWillPop`을 사용하여 스와이프 백 기능을 비활성화할 수 있다.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return WillPopScope(
+    onWillPop: () async => false,
+    child: Scaffold(
+      ...,
+    ),
+  );
+}
+```
+
+위와 같이 스택 내비게이션을 사용하여 표시될 화면을 `WillPopScope` 위젯으로 감싸준 후, `onWillPop` 파라메터를 `false`로 설정하면, 스와이프 백 기능을 비활성화 할 수 있습니다.
+
 ## 완료
 
 이것으로 Flutter에서 스택 내비게이션을 사용하는 방법에 대해서 살펴보았습니다. 스택 내비게이션은 앱의 화면 전환에 가장 많이 사용되는 내비게이션이므로 사용법을 잘 익혀둡시다.

@@ -442,6 +442,43 @@ onPressed: () {
 
 As above, you can use the screen name, which you define in the `Named routes`, to go back the specific screen in here.
 
+## automaticallyImplyLeading
+
+If you use the Stack navigation to move the screen, you can see the back button on the left top of the screen, even if you didn't configure anything.
+
+Normally, we use this feature, so it's not a problem. However, if you don't want to use this feature, you can use the `automaticallyImplyLeading` option.
+
+If you use the `automaticallyImplyLeading` option like below, you can remove the back button that is automatically generated.
+
+```dart
+AppBar(
+  ...
+  automaticallyImplyLeading: false,
+)
+```
+
+{% include in-feed-ads.html %}
+
+## Swipe back
+
+If you use the Stack navigation on Flutter, you can use the Swipe back feture to go back the screen.
+
+If you don't want to use it, you can use the `onWillPop` parameter of the `WillPopScope` widget to disable the Swipe back feature like below.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return WillPopScope(
+    onWillPop: () async => false,
+    child: Scaffold(
+      ...,
+    ),
+  );
+}
+```
+
+Wrap the screen, that will be shown up by the Stack navigation, with the `WillPopScope` widget, and you can disable the Swipe back feature by passing the `false` to the `onWillPop` parameter of the `WillPopScope` widget.
+
 ## Completed
 
 Done! We've seen how to use the Stack navigatoin. The Stack navigation is used many times, so keep in mind how to use it.
