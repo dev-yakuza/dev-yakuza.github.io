@@ -19,6 +19,8 @@ image: '/assets/images/category/flutter/background.png'
 - [Stack](#stack)
 - [Named routes](#named-routes)
 - [popUntil](#popuntil)
+- [automaticallyImplyLeading](#automaticallyimplyleading)
+- [Swipe back](#swipe-back)
 - [완료](#완료)
 
 </div>
