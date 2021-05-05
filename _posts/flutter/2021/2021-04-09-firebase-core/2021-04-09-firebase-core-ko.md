@@ -7,7 +7,7 @@ categories: 'flutter'
 comments: true
 
 title: '[Flutter] Firebase core'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 Firebase를 연동하는 방법에 대해서 알아보겠습니다.
+description: 이번 블로그 포스트에서는 Flutter에서 Firebase를 연동하는 방법에 대해서 알아보겠습니다.
 image: '/assets/images/category/flutter/background.png'
 published: false
 ---
@@ -157,7 +157,7 @@ buildscript {
 
 ![Google Firebase google-services.json setting](/assets/images/category/react-native/2020/react-native-firebase-v6-installation/set-google-services-json.jpg)
 
-구글 파이어베이스(Google Firebase)가 만든 `google-services.json` 파일을 React Native 프로젝트의 `android/app` 폴더에 복사합니다. 이것으로 안드로이드에서 Firebase를 사용할 준비가 끝났습니다. 이후에 나오는 화면들에서 `Next` 버튼을 눌러 진행합니다.
+구글 파이어베이스(Google Firebase)가 만든 `google-services.json` 파일을 Flutter 프로젝트의 `android/app` 폴더에 복사합니다. 이것으로 안드로이드에서 Firebase를 사용할 준비가 끝났습니다. 이후에 나오는 화면들에서 `Next` 버튼을 눌러 진행합니다.
 
 ![Google Firebase setting on android](/assets/images/category/react-native/2020/react-native-firebase-v6-installation/setting-android.jpg)
 
@@ -189,3 +189,6 @@ Future<void> main() async {
 ## 완료
 
 이것으로 Flutter에서 Firebase를 사용하기 위해 Flutter 프로젝트와 Firebase 프로젝트를 준비하고, `firebase_core`를 설정하는 방법에 대해서 알아보았습니다. 이제 Firebase의 다른 기능들을 사용하기 위해, 다른 블로그 포스트를 확인해 주시기 바랍니다.
+
+- [[Flutter] Firebase Analytics]({{site.url}}/{{page.categories}}/firebase/analytics/){:target="_blank"}
+- [[Flutter] Firebase Crashlytics]({{site.url}}/{{page.categories}}/firebase/crashlytics/){:target="_blank"}
