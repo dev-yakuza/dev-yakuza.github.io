@@ -9,12 +9,24 @@ comments: true
 title: '[Flutter] Firebase core'
 description: 이번 블로그 포스트에서는 Flutter에서 Firebase를 연동하는 방법에 대해서 알아보겠습니다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [블로그 시리즈](#블로그-시리즈)
+- [Firebase 프로젝트 생성](#firebase-프로젝트-생성)
+- [iOS 설정](#ios-설정)
+  - [Bundle identifier 변경](#bundle-identifier-변경)
+  - [Firbase iOS 프로젝트 설정](#firbase-ios-프로젝트-설정)
+- [안드로이드 설정](#안드로이드-설정)
+  - [Gradle 수정](#gradle-수정)
+  - [Firbase 안드로이드 프로젝트 설정](#firbase-안드로이드-프로젝트-설정)
+- [firebase_core 설치](#firebase_core-설치)
+- [Firebase 초기화](#firebase-초기화)
+- [완료](#완료)
 
 </div>
 
