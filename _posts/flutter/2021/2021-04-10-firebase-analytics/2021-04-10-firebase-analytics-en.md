@@ -2,54 +2,54 @@
 layout: 'post'
 permalink: '/flutter/firebase/analytics/'
 paginate_path: '/flutter/:num/firebase/analytics/'
-lang: 'ja'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
 title: '[Flutter] Firebase Analytics'
-description: 今回のブログポストではFlutterでFirebaseのAnalyticsを連動する方法について説明します。
+description: In this blog post, I will show you how to use Filebase Analytics in Flutter.
 image: '/assets/images/category/flutter/background.png'
 ---
 
 <div id="contents_list" markdown="1">
 
-## 目次
+## Contents
 
-- [概要](#概要)
-- [ブログシリーズ](#ブログシリーズ)
-- [Firebaseプロジェクト生成や設定](#firebaseプロジェクト生成や設定)
-- [firebase_analyticsインストール](#firebase_analyticsインストール)
-- [firebase_analyticsの使い方](#firebase_analyticsの使い方)
-- [カスタムイベント](#カスタムイベント)
-- [完了](#完了)
+- [Outline](#outline)
+- [Blog series](#blog-series)
+- [Create and configure Firebase project](#create-and-configure-firebase-project)
+- [Install firebase_analytics](#install-firebase_analytics)
+- [How to use firebase_analytics](#how-to-use-firebase_analytics)
+- [Custom Event](#custom-event)
+- [Complete](#complete)
 
 </div>
 
-## 概要
+## Outline
 
-今回のブログポストではFlutterでユーザの動きを分析するため`Firebase`の`Analytics`を設定する方法について説明します。
+In this blog post, I will introduce how to configure `Firebase Analytics` to analyze the user behavior patterns in Flutter.
 
 - [firebase_analytics](https://pub.dev/packages/firebase_analytics){:rel="nofollow noreferrer" target="_blank" }
 
-`Firebase`の`Analytics`を使うためFlutterで`firebase_analytics`を使う必要があります。今回のブログポストでは`firebase_analytics`を設定して、使う方法について説明します。
+To use `Firebase Analytics` in Flutter, we need to install the `firebase_analytics` package. In this blog post, I will show you how to configure the `firebase_analytics` package and how to use it.
 
-## ブログシリーズ
+## Blog series
 
-このブログはシリーズで作成されております。次のリンクを使って他のブログポストは下記のリンクで確認できます。
+This blog post is a series. You can see the other posts on the link below.
 
 - [[Flutter] Firebase Core]({{site.url}}/{{page.categories}}/firebase/core/){:target="_blank"}
 - [Flutter] Firebase Analytics
 - [[Flutter] Firebase Crashlytics]({{site.url}}/{{page.categories}}/firebase/crashlytics/){:target="_blank"}
 
-## Firebaseプロジェクト生成や設定
+## Create and configure Firebase project
 
-FlutterでFirebaseを使うためにはFirebaseプロジェクトを生成して、`firebase_core`パッケージをインストールする必要があります。下記のリンクで詳しい内容を確認してください。
+To use Firebase in Flutter, we need to create Firebase project, and install the `firebase_core` package. See the details on the link below.
 
 - [[Flutter] Firebase Core]({{site.url}}/{{page.categories}}/firebase/core/){:target="_blank"}
 
-## firebase_analyticsインストール
+## Install firebase_analytics
 
-FlutterプロジェクトでFirebase Analyticsを使うためには`firebase_analytics`パッケージをインストールする必要があります。次のコマンドを実行して`firebase_analytics`パッケージをインストールします。
+To use Firebase Analytics in Flutter, we need to install the `firebase_analytics` package. Execute the command below to install the `firebase_analytics` package.
 
 ```dart
 flutter pub pub add firebase_analytics
@@ -57,9 +57,9 @@ flutter pub pub add firebase_analytics
 
 {% include in-feed-ads.html %}
 
-## firebase_analyticsの使い方
+## How to use firebase_analytics
 
-Flutterで次のように`firebase_analytics`を使うと、画面が変更された時、Firebase Analyticsへこれを記録することができます。
+If you use the `firebase_analytics` package like below in Flutter, when the screen is changed, you can write the event to Firebase Analytics.
 
 ```dart
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -82,9 +82,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-## カスタムイベント
+## Custom Event
 
-次のようにカスタムイベントを作って使うこともできます。
+You can make a custom event and use it like below.
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -163,6 +163,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-## 完了
+## Complete
 
-これでFlutterでFirebase Analyticsを使うためFlutterプロジェクトで`firebase_analytics`を設定する方法について説明しました。これからFirebase Analyticsを使ってユーザのアプリ内行動パターンを分析してみてください。
+Done! we've seen how to configure and use the `firebase_analytics` package to use Firebase Analytics in Flutter. Now, you can analyze the user behavior patterns via Firebase Analytics!

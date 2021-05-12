@@ -9,12 +9,19 @@ comments: true
 title: '[Flutter] Firebase Analytics'
 description: 이번 블로그 포스트에서는 Flutter에서 Firebase의 Analytics를 연동하고 사용하는 방법에 대해서 알아보겠습니다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [블로그 시리즈](#블로그-시리즈)
+- [Firebase 프로젝트 생성 및 설정](#firebase-프로젝트-생성-및-설정)
+- [firebase_analytics 설치](#firebase_analytics-설치)
+- [firebase_analytics 사용법](#firebase_analytics-사용법)
+- [커스텀 이벤트](#커스텀-이벤트)
+- [완료](#완료)
 
 </div>
 
@@ -74,6 +81,8 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+## 커스텀 이벤트
 
 다음과 같이 사용자 정의 이벤트를 만들어서 사용할 수도 있습니다.
 
