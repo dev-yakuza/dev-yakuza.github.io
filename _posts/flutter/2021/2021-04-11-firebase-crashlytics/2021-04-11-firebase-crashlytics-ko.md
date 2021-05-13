@@ -7,7 +7,7 @@ categories: 'flutter'
 comments: true
 
 title: '[Flutter] Firebase Crashlytics'
-description: Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 Firebase의 Crashlytics를 연동하고 사용하는 방법에 대해서 알아보겠습니다.
+description: 이번 블로그 포스트에서는 Flutter에서 Firebase의 Crashlytics를 연동하고 사용하는 방법에 대해서 알아보겠습니다.
 image: '/assets/images/category/flutter/background.png'
 published: false
 ---
@@ -20,7 +20,7 @@ published: false
 
 ## 개요
 
-이번 블로그 포스트에서는 Flutter에서 앱이 강제 종료되었을 때를 인지하기 위해 `Firebase`의 `Crashlytics`를 설정하는 방법에 대해서 소개합니다.
+이번 블로그 포스트에서는 Flutter로 개발한 앱이 강제 종료되었을 때를 인지하기 위해 `Firebase`의 `Crashlytics`를 설정하는 방법에 대해서 소개합니다.
 
 - [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics){:rel="nofollow noreferrer" target="_blank" }
 
@@ -48,7 +48,7 @@ Flutter에서 Firebase를 사용하기 위해서는 Firebase 프로젝트를 생
 
 ![crashlytics add sdk](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-add-sdk.jpg)
 
-상단에 있는 `Add SDK` 버튼을 눌러서 SDK를 추가합니다. 또한 상단에 `Crashlytics` 타이틀 옆에 있는 프로젝트를 선택하여 iOS/안드로이드로 변경 한 후, `Add SDK`를 눌러 iOS, 안드로이드 모두 SDK를 추가해 줍니다.
+상단에 있는 `Add SDK` 버튼을 눌러서 SDK를 추가합니다. 또한 상단에 `Crashlytics` 타이틀 옆에 있는 프로젝트를 선택하여 iOS/안드로이드로 변경한 후, `Add SDK`를 눌러 iOS, 안드로이드 모두 SDK를 추가해 줍니다.
 
 ## firebase_crashlytics 설치
 
@@ -60,7 +60,7 @@ flutter pub pub add firebase_crashlytics
 
 ## Gradle 수정
 
-Flutter에서 Crashlytics를 사용하기 위해서는 `Gradle` 파일을 수정할 필요가 있습니다. 우선, `android/app/build.gradle` 파일을 열고 파일 하단을 다음과 같이 수정합니다.
+Flutter 프로젝트의 안드로이드에서 Crashlytics를 사용하기 위해서는 `Gradle` 파일을 수정할 필요가 있습니다. 우선, `android/app/build.gradle` 파일을 열고 파일 하단을 다음과 같이 수정합니다.
 
 ```js
 ...
@@ -82,7 +82,7 @@ buildscript {
 }
 ```
 
-이것으로 Flutter에서 Crashlytics를 사용할 준비가 되었습니다.
+이것으로 Flutter 프로젝트의 안드로이드에서 Crashlytics를 사용할 준비가 되었습니다.
 
 ## firebase_crashlytics 사용법
 
@@ -123,9 +123,9 @@ FirebaseCrashlytics.instance.crash();
 
 ![crashlytics integration](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-integration.jpg)
 
-## multiDexEnabled
+## 안드로이드 multiDexEnabled
 
-`firebase_crashlytics`를 설치하고 프로젝트를 실행했을 때, `Debug Console`에 다음과 같은 에러가 발생하였습니다.
+`firebase_crashlytics`를 설치하고 Flutter 프로젝트를 안드로이드에서 실행했을 때, `Debug Console`에 다음과 같은 에러가 발생하였습니다.
 
 ```bash
 Note: .pub-cache/hosted/pub.dartlang.org/firebase_core-1.0.4/android/src/main/java/io/flutter/plugins/firebase/core/FlutterFirebaseCorePlugin.java uses or overrides a deprecated API.
