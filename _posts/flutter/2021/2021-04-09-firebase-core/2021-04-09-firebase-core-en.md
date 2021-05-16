@@ -20,6 +20,7 @@ image: '/assets/images/category/flutter/background.png'
 - [Create Firebase Project](#create-firebase-project)
 - [iOS configuration](#ios-configuration)
   - [Change bundle identifier](#change-bundle-identifier)
+  - [Change target SDK version](#change-target-sdk-version)
   - [Configure Firbase iOS project](#configure-firbase-ios-project)
 - [Android Configuration](#android-configuration)
   - [Modify Gradle](#modify-gradle)

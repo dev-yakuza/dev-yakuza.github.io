@@ -20,6 +20,7 @@ image: '/assets/images/category/flutter/background.png'
 - [Firebaseプロジェクト生成](#firebaseプロジェクト生成)
 - [iOS設定](#ios設定)
   - [Bundle identifier変更](#bundle-identifier変更)
+  - [ターゲットSDKバージョン変更](#ターゲットsdkバージョン変更)
   - [Firbase iOSプロジェクト設定](#firbase-iosプロジェクト設定)
 - [アンドロイド設定](#アンドロイド設定)
   - [Gradle修正](#gradle修正)
