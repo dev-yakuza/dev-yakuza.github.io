@@ -90,6 +90,15 @@ Before creating iOS porject in Firebase, we need to change `Bundle identifier` o
 
 Select the project name on left top and go to the `General`, you can find `Bundle Identifier` on it. Change the Bundle ID for your project.
 
+### Change target SDK version
+
+To use the `firebase_core` package, we need to change the iOS target SDK version. Open the `ios/Podfile` file and modify it like below.
+
+```ruby
+# Uncomment this line to define a global platform for your project
+platform :ios, '10.0'
+```
+
 ### Configure Firbase iOS project
 
 When you select the project on Google Fireabse Console, you can see the screen like below.
