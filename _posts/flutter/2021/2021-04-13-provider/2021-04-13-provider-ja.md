@@ -2,43 +2,43 @@
 layout: 'post'
 permalink: '/flutter/provider/'
 paginate_path: '/flutter/:num/provider/'
-lang: 'ko'
+lang: 'ja'
 categories: 'flutter'
 comments: true
 
 title: '[Flutter] Provider'
-description: 이번 블로그 포스트에서는 Flutter에서 전역 상태 또는 위젯끼리 상태를 공유하기 위해 Provider를 사용하는 방법에 대해서 알아보겠습니다.
+description: 今回のブログポストではFlutterでグローバル状態（State）、またはウィジェットたちの間で状態（State）を共有するためProviderを使う方法について説明します。
 image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## 目次
 
 </div>
 
-## 개요
+## 概要
 
-이번 블로그 포스트에서는 Flutter에서 전역 상태를 관리하거나 위젯간에 상태를 공유하기 위해 사용되는 `Provider`에 대해서 살펴보려고 합니다.
+今回ブログポストではFlutterでグローバル状態(State)を管理するため、またはウィジェットたちの間で状態(State)を共有するため使える`Provider`について説明します。
 
 - [flutter_provider](https://pub.dev/packages/flutter_provider){:rel="nofollow noreferrer" target="_blank" }
 
-이 블로그에서 소개하는 소스코드는 GitHub에서 확인하실 수 있습니다.
+このブログポストで紹介するソースコードはGitHubで確認できます。
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/packages/provider_example](https://github.com/dev-yakuza/study-flutter/tree/main/packages/provider_example){:rel="nofollow noreferrer" target="_blank"}
 
-그럼 Flutter에서 Provider를 사용하여 전역 상태 관리 및 위젯들간에 상태를 공유하는 방법에 대해서 알아보겠습니다.
+それじゃ、FlutterでProviderを使ってグローバル状態管理やウィジェットたちの間で状態を共有する方法についてみてみましょう。
 
-## Flutter 프로젝트 생성
+## Flutterプロジェクト生成
 
-다음 명령어를 사용하여 `flutter_provider` 패키지를 사용할 Flutter 프로젝트를 생성합니다.
+次のコマンドを実行して`flutter_provider`パッケージを使うFlutterプロジェクトを生成します。
 
 ```bash
 flutter create provider_example
 ```
 
-`Null safety`를 적용하기 위해 다음 명령어를 실행합니다.
+`Null safety`を適用するため次のコマンドを実行します。
 
 ```bash
 cd provider_example
@@ -47,35 +47,35 @@ dart migrate --apply-changes
 
 {% include in-feed-ads.html %}
 
-## flutter_provider 패키지 설치
+## flutter_providerパッケージのインストール
 
-Flutter에서 전역 상태 관리 및 위젯간의 상태를 공유하기 위해, 다음 명령어를 실행하여 `flutter_provider` 패키지를 설치합니다.
+Flutterでグローバル状態管理やウィジェットたちの間で状態を共有するため、次のコマンドを実行して`flutter_provider`パッケージをインストールします。
 
 ```bash
 flutter pub add flutter_provider
 ```
 
-## Provider란
+## Providerとは
 
-Flutter에서는 크게 두 종류의 위젯이 존재합니다. 하나는 상태를 가지지 않는 `Stateless Widget`과 상태를 가지고 있는 `Stateful Widget`입니다.
+Flutterでは大きく2種類のウィジェットが存在します。1は状態を持ってない`Stateless Widget`と状態(State)を持ってる`Stateful Widget`です。
 
-`Statefule Widget`은 한 위젯 안에서 상태(데이터)를 가지고 해당 상태의 변화에 따라 화면에 표시되는 UI를 변경합니다.
+`Statefule Widget`は1つのウィジェット中で状態(データ)を持ってその状態の変化によって画面に表示されたUIを変更します。
 
 ![flutter state](/assets/images/category/flutter/2021/provider/state.jpg)
 
-그런데 만약, 다른 위젯에서 동일한 상태(데이터)가 필요한 경우, 어떻게 해야할까요?
+もし、他のウィジェットで同じ状態（データ）が必要な場合はどうすれば良いでしょうか？
 
 ![flutter state required](/assets/images/category/flutter/2021/provider/need_state.jpg)
 
-상태를 공유하는 두 위젯의 공통 부모 위젯을 `Stateful Widget`으로 만들고, 자식 위젯을 생성할 때, 파라메터로 해당 상태를 전달하면, 두 위젯 사이에서 동일한 상태를 사용할 수 있습니다.
+状態をシェアする2つの共通親ウィジェットを`Stateful Widget`を作って、チャイルドウィジェットを生成する時、パラメータでその状態を渡して、2つのウィジェットの間で同じ状態を使うことができます。
 
 ![flutter state required](/assets/images/category/flutter/2021/provider/pass_state.jpg)
 
-하지만 상태를 표시하기 위해 불필요한 위젯들이 `Re-build`되면서 성능 이슈가 나타날 수 있습니다. `Provider`는 이 문제를 해결하기 위해 등장했으며, 이렇게 동일한 상태(데이터)를 전역적으로 다른 위젯들과 공유할 때 사용합니다.
+しかし、状態を表示するため要らないウィジェットたちが`Re-build`され性能的な問題が出る可能性があります。`Provider`はこの問題を解決するため登場しました。このように同じ状態（データ）をグローバル的他のウィジェットと共有する時、`Provider`を使います。
 
 ![flutter provider](/assets/images/category/flutter/2021/provider/provider.jpg)
 
-Provider를 사용할 때에는, 위젯 트리와 상관없이 상태(데이터)를 저장할 클래스를 생성하고, 해당 상태를 공유하는 공통 부모 위젯에 `Provider`를 제공(Provide)하고, 상태를 사용하는 곳에는 `Cosumer`를 제공하여 해당 상태를 소비(Consume)하게 됩니다.
+Providerを使う時には、ウィジェットツリーと関係なく状態（データ）を保存するクラスを生成して、当該状態をシェアする共通親ウィジェットに`Provider`を提供(Provide)して、状態を使うところで`Cosumer`を提供してその状態を消費(Consume)します。
 
 {% include in-feed-ads.html %}
 
