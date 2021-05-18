@@ -79,17 +79,17 @@ Providerを使う時には、ウィジェットツリーと関係なく状態（
 
 {% include in-feed-ads.html %}
 
-## 사용법
+## 使い方
 
-그럼 이제 `flutter_provider`를 사용하여 실제로 전역 상태를 관리해 봅시다. 이번 블로그 포스트에서는 `flutter_provider` 패키지를 사용하여, 다음과 같이 간단한 카운터 앱을 개발할 예정입니다.
+次は`flutter_provider`を使って実際グローバルの状態を管理してみましょう。今回のブログポストでは`flutter_provider`パッケージを使って、次のような簡単なカウンターアプリを開発する予定です。
 
 ![flutter provider](/assets/images/category/flutter/2021/provider/counter_app.jpg)
 
-`+` 버튼을 누르면, 화면에 표시된 숫자가 올라가고, `-` 버튼을 누르면 숫자가 감소하는 단순한 앱이다. 이 앱을 통해 Flutter에서 Provider를 사용하는 방법에 대해서 살펴봅시다.
+`+`ボタンを押すと、画面に表示される数字が上がって、`-`ボタンを押すと数字が下がる単純なアプリです。このアプリでFlutterでProviderを使う方法について説明します。
 
 ### Provider
 
-우선 전역 데이터를 관리하기 위한 Provider를 생성해 봅시다. `lib/providers/counts.dart` 파일을 생성하고, 다음과 같이 수정한다.
+まず、グローバルデータを管理するためProviderを作ってみましょう。`lib/providers/counts.dart`ファイルを生成して次のように修正します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -110,7 +110,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-Provider를 사용하기 위해서는 `ChangeNotifier`를 사용해서 클래스를 생성해야 합니다.
+Providerを使うためには`ChangeNotifier`を使ってクラスを生成する必要があります。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -120,7 +120,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-그리고 앱 내에서 공유할 상태 변수를 선언합니다. 또한 해당 변수를 외부에서 접근할 수 있도록 `getter`도 생성합니다.
+そしてアプリ内で共有する状態変数を宣言します。また、その変数を外部からアクセスできるように`getter`も生成します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -132,7 +132,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-그런 다음, 해당 상태 변수를 변경하는 함수를 생성합니다. 여기서는 값을 증가시키는 `add`함수와 값을 감소시키는 `remove` 함수를 생성하였습니다.
+その後、その状態変数を変更する関数を生成します。ここでは値を上げる`add`関数と値を下げる`remove`関数を生成しました。
 
 ```dart
 class Counts with ChangeNotifier {
@@ -149,9 +149,9 @@ class Counts with ChangeNotifier {
 }
 ```
 
-여기서 중요한 점은 변수를 수정하였다면, `notifyListeners()`를 실행하여, 데이터가 갱신되었음을 통보합니다. 마치 `Stateful Widget`에서 값이 변경되었음을 알리기 위해 `setState` 함수를 사용하는 것과 동일한 원리입니다. `notifyListeners` 함수를 실행하지 않으면, 다른 위젯들에서 해당 값이 변경되었는지 인식하지 못합니다.
+ここで重要なものは変数を修正したら、`notifyListeners()`を実行して、データが更新されたことを知らせます。`Stateful Widget`で値が変わったことを知らせるために`setState`関数を使うことと同じです。`notifyListeners`関数を実行しないと、他のウィジェットで値が変更されたことが認識できないです。
 
-이것으로 Provider를 사용하여 앱 전체에서 사용될 전역 상태를 생성하였습니다.
+これでProviderを使ってアプリ全体で使うグローバル状態を生成しました。
 
 {% include in-feed-ads.html %}
 
