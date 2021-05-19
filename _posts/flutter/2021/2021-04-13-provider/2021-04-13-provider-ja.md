@@ -157,7 +157,7 @@ class Counts with ChangeNotifier {
 
 ### Main
 
-그럼 이제, 생성한 전역 상태를 사용할 위젯들의 공통 부모 위젯에 `Provider`를 제공해 봅시다. `lib/main.dart` 파일을 열고 다음과 같이 수정합니다.
+次は生成したグローバル状態を使うウィジェットたちの共通親ウィジェットに`Provider`を提供してみましょう。`lib/main.dart`ファイルを開いて下記のように修正します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -214,16 +214,17 @@ class Home extends StatelessWidget {
 }
 ```
 
-앞에서 생성한 전역 상태를 사용하기 위해 `flutter_proivder` 패키지와 상태 클래스를 가져왔습니다.
+上で生成したグローバル状態を使うため`flutter_proivder`パッケージと状態クラスをインポートしました。
 
 ```dart
 ...
 import 'package:provider/provider.dart';
 import 'package:provider_example/providers/counts.dart';
-...
+import 'package:provider_example/widgets/buttons.dart';
+import 'package:provider_example/widgets/counter.dart';
 ```
 
-아직 만들지 않았지만, Provider를 사용할 위젯을 추가하였습니다.
+まだ、作ってはないですが、Providerを使うウィジェットも追加しました。
 
 ```dart
 ...
@@ -240,7 +241,7 @@ void main() {
 ...
 ```
 
-이번 예제에서는 최상단 위젯에 `Provider`를 제공하였습니다. 보통 하나의 앱을 개발할 때, 하나 이상의 Provider를 사용하므로, 이 번 예제에서도 `MultiProvider`를 사용하여 여러 Provider를 제공할 수 있도록 하였습니다.
+今回の例題では一番上のウィジェットに`Provider`を提供しました。普通は1つのアプリを開発する時、1つ以上のProviderを使うので、この例題では`MultiProvider`を使って複数のProviderを提供できるようにしました。
 
 ```dart
 ...
@@ -269,13 +270,13 @@ class Home extends StatelessWidget {
 ...
 ```
 
-이후, 보통의 앱을 개발하는 방식으로 화면을 구성하였습니다. 그럼 이제 Provider를 사용할 위젯인 `Counter`와 `Buttons`를 개발해 보도록 합시다.
+後は、普通のアプリを開発する方法で画面を構成しました。次はProviderを使うウィジェットである`Counter`と`Buttons`を開発してみましょう。
 
 {% include in-feed-ads.html %}
 
 ### Counter
 
-그럼 이제, Provider를 사용하는 위젯을 만들어 봅시다. `lib/widgets/counter.dart` 파일을 생성하고 다음과 같이 수정합니다.
+そしたら、Providerを使うウィジェットを作ってみましょう。`lib/widgets/counter.dart`ファイルを生成して次のように修正します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -297,11 +298,11 @@ class Counter extends StatelessWidget {
 }
 ```
 
-`Counter`위젯은 `Text` 위젯을 사용하여, 화면에 숫자를 표시하는 단순한 위젯입니다. 이때, `context.watch<Counts>().count`를 사용하여 우리가 만든 Provider의 `count` 값이 변경되는지를 감시하고, 변경이 발생하면 화면에 변경된 값을 표시하도록 하였습니다.
+`Counter`ウィジェットは`Text`ウィジェットを使って、画面に数字を表示する単純なウィジェットです。この時、`context.watch<Counts>().count`を使って私たちが作ったProviderの`count`の値が変更されることを監視して、変更がある場合その変更された値を表示するようにしました。
 
 ### Buttons
 
-다음은, 우리가 만든 Provider의 값을 변경하기 위해, `Buttons` 위젯을 만들어 봅시다. `lib/widgets/buttons.dart` 파일을 생성하고 다음과 같이 수정합니다.
+次は、私たちが作ったProviderの値を変更するため、`Buttons`ウィジェットを作ってみましょう。`lib/widgets/buttons.dart`ファイルを生成して次のように修正します。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -333,21 +334,21 @@ class Buttons extends StatelessWidget {
 }
 ```
 
-`Counter` 위젯과는 다르게 `Buttons` 위젯에서는 Provider의 `count`를 변경하기 위해 `context.read<Counts>()`을 사용해서 `add`와 `remove` 함수를 호출하였습니다.
+`Counter`ウィジェットとは違って`Buttons`ウィジェットではProviderの`count`を変更するため`context.read<Counts>()`を使って`add`と`remove`関数をコールしました。
 
-`Buttons` 위젯에서 `add` 또는 `remove` 함수가 호출되면, Provider에서 해당 변수를 변경한 후, `notifyListeners()` 함수를 호출하여 값이 변경되었음을 알립니다. 이렇게 값이 변경되면, Provider의 `context.watch` 또는 `context.select`로 해당 값을 사용하는 위젯들은 값의 변경에 따라 `re-build`가 발생하고 위젯이 새로운 값과 함께 다시 표시되게 욉니다.
+`Buttons`ウィジェットでは`add`または`remove`関数がコールされると、Providerで当該変数を変更した後、`notifyListeners()`関数をコールして値が変更されたことを知らせます。このように値が変更されたら、Providerの`context.watch`または`context.select`で当該値を使うウィジェットたちは値が変更で`re-build`が反省してウィジェットが新しい値と一緒に再表示されます。
 
 {% include in-feed-ads.html %}
 
 ## watch, read, select
 
-Provider에는 `watch`, `read`, `select` 기능을 제공하고 있습니다.
+Providerは`watch`, `read`, `select`の機能を提供しております。
 
-- read: 해당 위젯은 상태값을 읽습니다. 하지만 변경을 감시하지 않습니다.
-- watch: 해당 위젯이 상태값의 변경을 감시합니다.
-- select: 해당 위젯은 상태값의 특정 부분만을 감시합니다.
+- read: 当該ウィジェットは状態の値を読み込みます。しかし、変更を監視しません。
+- watch: 当該ウィジェットが状態の値の変更を監視します。
+- select: 当該ウィジェットは状態の値の特定な部分だけ監視します。
 
-보통 Provider의 값을 변경하기 위한 함수는 `read`를 통해 접근하며, 상태값을 사용할 때에는 `watch`를 사용합니다. 변경된 상태값을 표시하기 위해 `re-build`가 발생하는데, 이 `re-build`는 많은 비용을 사용합니다. 따라서, 다음과 같이 `select`를 통해 특정 값의 변경만을 감시하여 `re-build`를 최적화 할 수 있습니다.
+普通Providerの値を変更するための関数は`read`を使ってアクセスするし、状態の値を使う時には`watch`を使います。変更された状態の値を表示するためには`re-build`が発生しますが、この`re-build`は費用が高いです。したがって、次のように`select`を使って特定な値の変更だけ監視して`re-build`を最適化することができます。
 
 ```dart
 Widget build(BuildContext context) {
@@ -356,20 +357,20 @@ Widget build(BuildContext context) {
 }
 ```
 
-## 실행
+## 実行
 
-지금까지 개발한 Flutter 앱을 다음 명령어로 실행해 봅니다.
+今まで開発したFlutterアプリを次のコマンドで実行します。
 
 ```bash
 flutter run
 ```
 
-또는 사용하고 있는 에디터의 디버깅 기능으로 실행하면, 다음과 같은 화면을 볼 수 있습니다.
+または使っているエディターのデバッグ機能を使って実行すると、次のような画面が見えます。
 
 ![flutter provider](/assets/images/category/flutter/2021/provider/counter_app.jpg)
 
-그리고 화면에 보이는 `+` 버튼을 누르면 표시된 숫자가 증가하는 것을 확인할 수 있습니다. 또 `-` 버튼을 누르면 표시된 숫자가 감소하는 것을 확인할 수 있습니다.
+そして画面に見える`+`ボタンを押したら表示された数字が上がることが確認できます。また、`-`ボタンを押すと表示された数字が下がることが確認できます。
 
-## 완료
+## 完了
 
-이것으로 Flutter에서 Provider를 사용여 여러 위젯에서 사용되는 전역 상태를 관리하는 방법에 대해서 알아보았습니다. 또한 간단한 예제를 통해 Provider를 사용하는 방법에 대해서도 알아보았습니다.
+これでFlutterでProviderを使って色んなウィジェットで使えるグローバル状態を管理する方法についてみてみました。また、簡単な例題を使ってProviderを使う方法についてもみてみました。

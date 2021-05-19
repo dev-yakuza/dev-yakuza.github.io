@@ -220,6 +220,8 @@ class Home extends StatelessWidget {
 ...
 import 'package:provider/provider.dart';
 import 'package:provider_example/providers/counts.dart';
+import 'package:provider_example/widgets/buttons.dart';
+import 'package:provider_example/widgets/counter.dart';
 ...
 ```
 
@@ -240,7 +242,7 @@ void main() {
 ...
 ```
 
-이번 예제에서는 최상단 위젯에 `Provider`를 제공하였습니다. 보통 하나의 앱을 개발할 때, 하나 이상의 Provider를 사용하므로, 이 번 예제에서도 `MultiProvider`를 사용하여 여러 Provider를 제공할 수 있도록 하였습니다.
+이번 예제에서는 최상단 위젯에 `Provider`를 제공하였습니다. 보통 하나의 앱을 개발할 때, 하나 이상의 Provider를 사용하므로, 이번 예제에서는 `MultiProvider`를 사용하여 여러 Provider를 제공할 수 있도록 하였습니다.
 
 ```dart
 ...
@@ -335,7 +337,7 @@ class Buttons extends StatelessWidget {
 
 `Counter` 위젯과는 다르게 `Buttons` 위젯에서는 Provider의 `count`를 변경하기 위해 `context.read<Counts>()`을 사용해서 `add`와 `remove` 함수를 호출하였습니다.
 
-`Buttons` 위젯에서 `add` 또는 `remove` 함수가 호출되면, Provider에서 해당 변수를 변경한 후, `notifyListeners()` 함수를 호출하여 값이 변경되었음을 알립니다. 이렇게 값이 변경되면, Provider의 `context.watch` 또는 `context.select`로 해당 값을 사용하는 위젯들은 값의 변경에 따라 `re-build`가 발생하고 위젯이 새로운 값과 함께 다시 표시되게 욉니다.
+`Buttons` 위젯에서 `add` 또는 `remove` 함수가 호출되면, Provider에서 해당 변수를 변경한 후, `notifyListeners()` 함수를 호출하여 값이 변경되었음을 알립니다. 이렇게 값이 변경되면, Provider의 `context.watch` 또는 `context.select`로 해당 값을 사용하는 위젯들은 값의 변경에 따라 `re-build`가 발생하고 위젯이 새로운 값과 함께 다시 표시되게 됩니다.
 
 {% include in-feed-ads.html %}
 
