@@ -2,43 +2,43 @@
 layout: 'post'
 permalink: '/flutter/provider/'
 paginate_path: '/flutter/:num/provider/'
-lang: 'ko'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
 title: '[Flutter] Provider'
-description: 이번 블로그 포스트에서는 Flutter에서 전역 상태 또는 위젯끼리 상태를 공유하기 위해 Provider를 사용하는 방법에 대해서 알아보겠습니다.
+description: In this blog post, I will show you how to use Provider to use a global state or share the state between widgets in Flutter.
 image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## Contents
 
 </div>
 
-## 개요
+## Outline
 
-이번 블로그 포스트에서는 Flutter에서 전역 상태를 관리하거나 위젯간에 상태를 공유하기 위해 사용되는 `Provider`에 대해서 살펴보려고 합니다.
+Int this blog post, I will introduce how to use `Provider` to manage the global state or share the state between widgets in Flutter.
 
 - [flutter_provider](https://pub.dev/packages/flutter_provider){:rel="nofollow noreferrer" target="_blank" }
 
-이 블로그에서 소개하는 소스코드는 GitHub에서 확인하실 수 있습니다.
+You can see the full source code of the blog post on GitHub.
 
 - GitHub: [https://github.com/dev-yakuza/study-flutter/tree/main/packages/provider_example](https://github.com/dev-yakuza/study-flutter/tree/main/packages/provider_example){:rel="nofollow noreferrer" target="_blank"}
 
-그럼 Flutter에서 Provider를 사용하여 전역 상태 관리 및 위젯들간에 상태를 공유하는 방법에 대해서 알아보겠습니다.
+So, let's see how to use Provider in Flutter to manage the global state and share the state between widgets.
 
-## Flutter 프로젝트 생성
+## Create Flutter project
 
-다음 명령어를 사용하여 `flutter_provider` 패키지를 사용할 Flutter 프로젝트를 생성합니다.
+To use the `flutter_provider` package, execute the command below to create new Flutter project.
 
 ```bash
 flutter create provider_example
 ```
 
-`Null safety`를 적용하기 위해 다음 명령어를 실행합니다.
+To apply `Null safety`, execute the command below.
 
 ```bash
 cd provider_example
@@ -47,49 +47,49 @@ dart migrate --apply-changes
 
 {% include in-feed-ads.html %}
 
-## flutter_provider 패키지 설치
+## Install flutter_provider package
 
-Flutter에서 전역 상태 관리 및 위젯간의 상태를 공유하기 위해, 다음 명령어를 실행하여 `flutter_provider` 패키지를 설치합니다.
+To share the global state and share the state between widgets, execute the command below to install the `flutter_provider` package.
 
 ```bash
 flutter pub add flutter_provider
 ```
 
-## Provider란
+## What is Provider
 
-Flutter에서는 크게 두 종류의 위젯이 존재합니다. 하나는 상태를 가지지 않는 `Stateless Widget`과 상태를 가지고 있는 `Stateful Widget`입니다.
+There are two types of the widgets. One is the `Stateless Widget` which has no state, and another is the `Stateful Widget` which has the state.
 
-`Statefule Widget`은 한 위젯 안에서 상태(데이터)를 가지고 해당 상태의 변화에 따라 화면에 표시되는 UI를 변경합니다.
+The `Statefule Widget` has the state(data) and when the state is changed, the UI is changed by the state.
 
 ![flutter state](/assets/images/category/flutter/2021/provider/state.jpg)
 
-그런데 만약, 다른 위젯에서 동일한 상태(데이터)가 필요한 경우, 어떻게 해야할까요?
+If the other widgets need the same state(data), what can we do?
 
 ![flutter state required](/assets/images/category/flutter/2021/provider/need_state.jpg)
 
-상태를 공유하는 두 위젯의 공통 부모 위젯을 `Stateful Widget`으로 만들고, 자식 위젯을 생성할 때, 파라메터로 해당 상태를 전달하면, 두 위젯 사이에서 동일한 상태를 사용할 수 있습니다.
+Change the two widgets' shared parent widget to the `Stateful Widget`, and by passing the state to the child widget when you create the child widget, you can share the state between two widgets.
 
 ![flutter state required](/assets/images/category/flutter/2021/provider/pass_state.jpg)
 
-하지만 상태를 표시하기 위해 불필요한 위젯들이 `Re-build`되면서 성능 이슈가 나타날 수 있습니다. `Provider`는 이 문제를 해결하기 위해 등장했으며, 이렇게 동일한 상태(데이터)를 전역적으로 다른 위젯들과 공유할 때 사용합니다.
+However, to show the state, many widgets do `re-build` unnecessarily, so the performance issue may occur. To solve this issue, `Provider` is created. When we want to share the state between wigets globally, we use `Provider`.
 
 ![flutter provider](/assets/images/category/flutter/2021/provider/provider.jpg)
 
-Provider를 사용할 때에는, 위젯 트리와 상관없이 상태(데이터)를 저장할 클래스를 생성하고, 해당 상태를 공유하는 공통 부모 위젯에 `Provider`를 제공(Provide)하고, 상태를 사용하는 곳에는 `Provider`의 데이터를 읽어서 사용하게 됩니다.
+When we use Provider, we create a class to store the state(data) regardless of the widget tree, and provider `Provder` to the shared parent widget, and read `Provider` data in the widget which needs to consume the state.
 
 {% include in-feed-ads.html %}
 
-## 사용법
+## How to use
 
-그럼 이제 `flutter_provider`를 사용하여 실제로 전역 상태를 관리해 봅시다. 이번 블로그 포스트에서는 `flutter_provider` 패키지를 사용하여, 다음과 같이 간단한 카운터 앱을 개발할 예정입니다.
+Now, let's see how to use the `flutter_provider` package to manage the global state. In this blog post, we will make a simple counter app which uses the `flutter_provider` package.
 
 ![flutter provider](/assets/images/category/flutter/2021/provider/counter_app.jpg)
 
-`+` 버튼을 누르면, 화면에 표시된 숫자가 올라가고, `-` 버튼을 누르면 숫자가 감소하는 단순한 앱이다. 이 앱을 통해 Flutter에서 Provider를 사용하는 방법에 대해서 살펴봅시다.
+When you press the `+` button, the counter is increased, and when you press the `-` button, the number is decreased. It's very simple app, so let's see how to use Provider in Flutter via this app.
 
 ### Provider
 
-우선 전역 데이터를 관리하기 위한 Provider를 생성해 봅시다. `lib/providers/counts.dart` 파일을 생성하고, 다음과 같이 수정한다.
+First, let's create a Provider to manage the global state. Create the `lib/providers/counts.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -110,7 +110,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-Provider를 사용하기 위해서는 `ChangeNotifier`를 사용해서 클래스를 생성해야 합니다.
+To use Provider, we need to create a class with `ChangeNotifier`.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -120,7 +120,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-그리고 앱 내에서 공유할 상태 변수를 선언합니다. 또한 해당 변수를 외부에서 접근할 수 있도록 `getter`도 생성합니다.
+And then, define a state variable to share in the app. Also, create the `getter` to access the variable.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -132,7 +132,7 @@ class Counts with ChangeNotifier {
 }
 ```
 
-그런 다음, 해당 상태 변수를 변경하는 함수를 생성합니다. 여기서는 값을 증가시키는 `add`함수와 값을 감소시키는 `remove` 함수를 생성하였습니다.
+And then, create functions to change the state. In here, I've created the `add` function to increase the value and the `remove` function to decrease the value.
 
 ```dart
 class Counts with ChangeNotifier {
@@ -149,9 +149,9 @@ class Counts with ChangeNotifier {
 }
 ```
 
-여기서 중요한 점은 변수를 수정하였다면, `notifyListeners()`를 실행하여, 데이터가 갱신되었음을 통보합니다. 마치 `Stateful Widget`에서 값이 변경되었음을 알리기 위해 `setState` 함수를 사용하는 것과 동일한 원리입니다. `notifyListeners` 함수를 실행하지 않으면, 다른 위젯들에서 해당 값이 변경되었는지 인식하지 못합니다.
+Important thing is when the value is changed, we should call the `notifyListeners()` function to notify the value is changed to the widgets. It's like to change the state value in the `Stateful Widget`, we use the `setState` function to notifiy the state is changed to the widget. If we don't call the `notifyListeners` function, the other widgets can't recognize the value is changed.
 
-이것으로 Provider를 사용하여 앱 전체에서 사용될 전역 상태를 생성하였습니다.
+Done! we've created a Provider to make a global state in the app.
 
 {% include in-feed-ads.html %}
 
