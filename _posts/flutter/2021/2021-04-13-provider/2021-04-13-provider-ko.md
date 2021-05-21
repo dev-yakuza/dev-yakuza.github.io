@@ -9,12 +9,24 @@ comments: true
 title: '[Flutter] Provider'
 description: 이번 블로그 포스트에서는 Flutter에서 전역 상태 또는 위젯끼리 상태를 공유하기 위해 Provider를 사용하는 방법에 대해서 알아보겠습니다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [Flutter 프로젝트 생성](#flutter-프로젝트-생성)
+- [flutter_provider 패키지 설치](#flutter_provider-패키지-설치)
+- [Provider란](#provider란)
+- [사용법](#사용법)
+  - [Provider](#provider)
+  - [Main](#main)
+  - [Counter](#counter)
+  - [Buttons](#buttons)
+- [watch, read, select](#watch-read-select)
+- [실행](#실행)
+- [완료](#완료)
 
 </div>
 
