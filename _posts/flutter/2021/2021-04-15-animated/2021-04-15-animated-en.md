@@ -2,39 +2,39 @@
 layout: 'post'
 permalink: '/flutter/widget/animated/'
 paginate_path: '/flutter/:num/widget/animated/'
-lang: 'ja'
+lang: 'en'
 categories: 'flutter'
 comments: true
 
-title: '[Flutter] アニメーション'
-description: 今回のブログポストではFlutterで簡単なアニメーションを使うためAnimatedContainerとAnimatedOpacityを使う方法について説明します。
+title: '[Flutter] Animation'
+description: In this blog post, I will show you how to use AnimatedContainer and AnimatedOpacity widgets to make a simple animation in Flutter.
 image: '/assets/images/category/flutter/background.png'
 ---
 
 <div id="contents_list" markdown="1">
 
-## 目次
+## Contents
 
-- [概要](#概要)
-- [Flutterプロジェクト生成](#flutterプロジェクト生成)
+- [Outline](#outline)
+- [Create Flutter project](#create-flutter-project)
 - [AnimatedContainer](#animatedcontainer)
 - [AnimatedOpacity](#animatedopacity)
-- [完了](#完了)
+- [Completed](#completed)
 
 </div>
 
-## 概要
+## Outline
 
-Flutterで簡単なアニメーションを使うため`AnimatedContainer`ウィジェットと`AnimatedOpacity`ウィジェットを使う方法について説明します。
+Let's see how to use the `AnimatedContainer` widget and the `AnimatedOpacity` widget to make a simple animation in Flutter.
 
-このブログポストで紹介するソースコードは下記のリンクで確認できます。
+You can see the source code of the blog post on the link below.
 
 - GitHub: [AnimatedContainer](https://github.com/dev-yakuza/study-flutter/tree/main/widget/animated_container){:rel="nofollow noreferrer" target="_blank"}
 - GitHub: [AnimatedOpacity](https://github.com/dev-yakuza/study-flutter/tree/main/widget/animated_opacity){:rel="nofollow noreferrer" target="_blank"}
 
-## Flutterプロジェクト生成
+## Create Flutter project
 
-Flutterで簡単なアニメーションを使う方法を練習するため、次のコマンドを使って新しFlutterプロジェクトを生成します。
+To check how to use the animation in Flutter, execute the command below to create a new Flutter project.
 
 ```bash
 flutter create my_app
@@ -45,7 +45,7 @@ cd my_app
 
 ## AnimatedContainer
 
-プロジェクトを生成したら、`main.dart`ファイルを次のように修正して`AnimatedContainer`ウィジェットを表示します。
+After creating the project, open the `main.dart` file and modify it like below to show the `AnimatedContainer` widget.
 
 ```dart
 import 'dart:math';
@@ -115,13 +115,13 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-上のとうにコードを作成したら次のような画面が確認できます。
+If you write the code above, you can see the screen like below.
 
 ![Flutter - AnimatedContainer](/assets/images/category/flutter/2021/animated/animated_container.jpg)
 
 {% include in-feed-ads.html %}
 
-そしたら`AnimatedContainer`ウィジェットを使う部分を詳しくみてみましょう。
+Let's see the details about how to use the `AnimatedContainer` widget.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-`Statefull widget`を使ってアニメーションに使える変数を定義しました。
+I used `Statefull widget` and defined the animation values.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-このように定義した変数を`AnimatedContainer`ウィジェットを生成する時、使いました。
+And then, pass the values to the `AnimatedContainer` widget.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -186,13 +186,13 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-最後に`FloatingActionButton`を押した時、`setState`を使ってアニメーションに使えてる変数の値を変更しました。`FloatingActionButton`ボタンを押すと、色んな四角形が画面に表示されることが確認できます。
+Lastly, when the `FloatingActionButton` is pressed, the animation values are changed via `setState`. Now, when you press the `FloatingActionButton` button, you can see the various shape of the squares on the screen.
 
 {% include in-feed-ads.html %}
 
 ## AnimatedOpacity
 
-`AnimatedOpacity`ウィジェットは`AnimatedContainer`ウィジェットと違って、単純に透明度(Opacity)に関するアニメーションを適用する時使います。`main.dart`ファイルを開いて下記のように修正します。
+Dislike the `AnimatedContainer` widget, the `AnimatedOpacity` widget is simply to change the opacity with the animation. Open the `main.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -252,13 +252,13 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-コードを上のように修正したら、次のような画面が確認できます。
+If you mmodify the code like above, you can see the screen like below.
 
 ![Flutter - AnimatedOpacity](/assets/images/category/flutter/2021/animated/animated_opacity.jpg)
 
 {% include in-feed-ads.html %}
 
-そしたら`AnimatedOpacity`ウィジェットを使う部分をもっと詳しくみてみましょう。
+Let's see the details about thow to use the `AnimatedOpacity` widget.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -267,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-今回の例題では`_isVisible`変数を使って、`true`の場合は`AnimatedOpacity`ウィジェットを画面に表示して、`false`の場合はウィジェットを見えないようにする予定です。
+In this example, I used the `_isVisible` value, and if the value is `true`, the `AnimatedOpacity` widget will be shown, and if the value is `false`, the `AnimatedOpacity` widget will be hidden.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -293,7 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-`AnimatedOpacity`ウィジェットは`child`でウィジェットを必須で貰います。この時、`opacity`をセットすることで透明度のアニメーションを適用することができます。
+The `AnimatedOpacity` widget requires the `child` widget, and we can controll the opacity animation by pasdding the `opacity` parameter.
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -315,8 +315,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-次は`FloatingActionButton`ウィジェットを使って`_isVisible`を変更して、`AnimatedOpacity`ウィジェットの透明度を変更しました。
+Now, we can use the `FloatingActionButton` widget to change the `_isVisible` value and it will change the `AnimatedOpacity` widget's opacity.
 
-## 完了
+## Completed
 
-これでFlutterで`AnimatedContainer`ウィジェットと`AnimatedOpacity`ウィジェットを使って簡単なアニメーションを適用する方法についてみてみました。
+Done! We've seen how to use the `AnimatedContainer` widget and the `AnimatedOpacity` widget to make a simple animation in Flutter!

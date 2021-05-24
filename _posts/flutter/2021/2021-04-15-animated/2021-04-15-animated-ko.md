@@ -9,12 +9,17 @@ comments: true
 title: '[Flutter] 애니메이션'
 description: 이번 블로그 포스트에서는 Flutter에서 간단한 애니메이션을 사용하기 위해 AnimatedContainer와 AnimatedOpacity를 사용하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [Flutter 프로젝트 생성](#flutter-프로젝트-생성)
+- [AnimatedContainer](#animatedcontainer)
+- [AnimatedOpacity](#animatedopacity)
+- [완료](#완료)
 
 </div>
 
