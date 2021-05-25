@@ -15,13 +15,14 @@ image: '/assets/images/category/flutter/background.png'
 
 ## 목차
 
-- [개요](#개요)
-- [Stack](#stack)
-- [Named routes](#named-routes)
-- [popUntil](#popuntil)
-- [automaticallyImplyLeading](#automaticallyimplyleading)
-- [Swipe back](#swipe-back)
-- [완료](#완료)
+ [개요](#개요)
+ [Stack](#stack)
+ [Named routes](#named-routes)
+ [popUntil](#popuntil)
+ [automaticallyImplyLeading](#automaticallyimplyleading)
+ [Swipe back](#swipe-back)
+ [포커스](#포커스)
+ [완료](#완료)
 
 </div>
 
@@ -480,6 +481,18 @@ Widget build(BuildContext context) {
 ```
 
 위와 같이 스택 내비게이션을 사용하여 표시될 화면을 `WillPopScope` 위젯으로 감싸준 후, `onWillPop` 파라메터를 `false`로 설정하면, 스와이프 백 기능을 비활성화 할 수 있습니다.
+
+## 포커스
+
+내비게이션을 사용하다보면, 현재 화면(A)에 다른 화면(B)이 표시된 후, 다시 현재 화면(A)으로 돌아왔을 때, 특정 함수를 실행하거나 어떤 동작을 실행하고 싶을 때가 있습니다. 이때, 다음과 같이 `pushNamed` 함수를 사용할 수 있습니다.
+
+```dart
+Navigator.pushNamed(context, 'B').then((value) {
+  // Do something after widget is focused(visible).
+});
+```
+
+이렇게 `pushNamed` 함수를 사용하여 다음 페이지로 이동할 때, `then`을 사용하여 다음 페이지가 `pop`된 후, 특정 동작을 수행할 수 있는 콜백(Callback) 함수를 등록할 수 있습니다.
 
 ## 완료
 

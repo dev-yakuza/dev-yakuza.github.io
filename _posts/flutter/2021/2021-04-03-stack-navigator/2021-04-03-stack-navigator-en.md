@@ -21,6 +21,7 @@ image: '/assets/images/category/flutter/background.png'
 - [popUntil](#popuntil)
 - [automaticallyImplyLeading](#automaticallyimplyleading)
 - [Swipe back](#swipe-back)
+- [Focus](#focus)
 - [Completed](#completed)
 
 </div>
@@ -480,6 +481,18 @@ Widget build(BuildContext context) {
 ```
 
 Wrap the screen, that will be shown up by the Stack navigation, with the `WillPopScope` widget, and you can disable the Swipe back feature by passing the `false` to the `onWillPop` parameter of the `WillPopScope` widget.
+
+## Focus
+
+When you use the navigation, sometimes, you want to execute the function or actions when you move from the current screen(A) to another screen(B), and back to the current screen(A). It means when the current screen is focused, you want to call some functions. At this time, you can use the `pushNamed` function like below.
+
+```dart
+Navigator.pushNamed(context, 'B').then((value) {
+  // Do something after widget is focused(visible).
+});
+```
+
+If you use the `then` on the `pushNamed` function, you can register a callback to do some actions after the next screen is `poped`.
 
 ## Completed
 

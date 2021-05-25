@@ -21,6 +21,7 @@ image: '/assets/images/category/flutter/background.png'
 - [popUntil](#popuntil)
 - [automaticallyImplyLeading](#automaticallyimplyleading)
 - [Swipe back](#swipe-back)
+- [フォーカス](#フォーカス)
 - [完了](#完了)
 
 </div>
@@ -480,6 +481,18 @@ Widget build(BuildContext context) {
 ```
 
 上のようにスタックナビゲーションを使って表示される画面を`WillPopScope`ウィジェットにつつみむ後、`onWillPop`パラメータを`false`で設定したら、スワイプで戻る機能を無効化することができます。
+
+## フォーカス
+
+ナビゲーションを使う時、現在の画面（A）から他の画面（B）を表示した後、また現在の画面（A）に戻る時、特定な関数をコールしたり何かの動作を実行したい時があります。この時、次のように`pushNamed`関数を使って解決することができます。
+
+```dart
+Navigator.pushNamed(context, 'B').then((value) {
+  // Do something after widget is focused(visible).
+});
+```
+
+このように`pushNamed`関数使って次のページへ移動する時、`then`を使って次のページが`pop`された後、特定な動作を実行できるコールバック(Callback)関数を登録することができます。
 
 ## 完了
 
