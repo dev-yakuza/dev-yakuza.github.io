@@ -20,7 +20,7 @@ published: false
 
 ## 개요
 
-단순히 화면을 구성하는 Stateless 위젯과는 다르게, Stateful 위젯은 `라이프사이클(lifecycle - 생명주기)`을 가지고 있습니다. 이번 블로그 포스트에서는 Statefule 위젯의 라이프사이클에 대해서 살펴봅니다.
+Flutter에서는 단순히 화면을 구성하는 Stateless 위젯과는 다르게, Stateful 위젯은 `라이프사이클(lifecycle - 생명주기)`을 가지고 있습니다. 이번 블로그 포스트에서는 Stateful 위젯의 라이프사이클에 대해서 살펴봅니다.
 
 Flutter의 라이프사이클 함수의 이해를 돕기 위해 예제 소스를 제작하였다. 아래에 링크를 통해 소스 코드를 확인할 수 있다.
 
@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
 
 ### Stateless 위젯의 build
 
-위젯의 `Build` 함수는 화면에 표시될 내용을 작성합니다. 이는 `React`의 `render` 함수와 동일한 역할을 하며, 화면에 표시될 위젯들을 반환합니다.
+위젯의 `build` 함수는 화면에 표시될 내용을 작성합니다. 이는 `React`의 `render` 함수와 동일한 역할을 하며, 화면에 표시될 위젯들을 반환합니다.
 
 ```dart
 import 'package:flutter/material.dart';
