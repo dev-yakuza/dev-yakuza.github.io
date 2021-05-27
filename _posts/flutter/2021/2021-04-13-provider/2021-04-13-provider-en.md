@@ -347,7 +347,7 @@ class Buttons extends StatelessWidget {
 }
 ```
 
-Dislike the `Counter` widget, The `Buttons` widget uses `context.read<Counts>()` to call the `add` and `remove` functions to change the `count` value in Provider.
+Unlike the `Counter` widget, The `Buttons` widget uses `context.read<Counts>()` to call the `add` and `remove` functions to change the `count` value in Provider.
 
 When the `add` and `remove` functions are called in the `Buttons` widget, the Provider changes the values, and calls the `notifyListeners()` function to notify the value is changed. After changing the value like this, the widgets, which use `context.watch` or `context.select` to use Provider's value, is `re-built` and shown up with the new value.
 

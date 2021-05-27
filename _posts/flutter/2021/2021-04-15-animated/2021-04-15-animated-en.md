@@ -192,7 +192,7 @@ Lastly, when the `FloatingActionButton` is pressed, the animation values are cha
 
 ## AnimatedOpacity
 
-Dislike the `AnimatedContainer` widget, the `AnimatedOpacity` widget is simply to change the opacity with the animation. Open the `main.dart` file and modify it like below.
+Unlike the `AnimatedContainer` widget, the `AnimatedOpacity` widget is simply to change the opacity with the animation. Open the `main.dart` file and modify it like below.
 
 ```dart
 import 'package:flutter/material.dart';
