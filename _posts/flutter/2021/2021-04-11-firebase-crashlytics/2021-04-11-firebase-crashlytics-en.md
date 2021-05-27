@@ -68,7 +68,7 @@ To use Firebase Crashlytics in Flutter project, we need to install the `firebase
 flutter pub pub add firebase_crashlytics
 ```
 
-## Edit Gradle
+## Edit Gradle for Android
 
 To use Crashlytics in Android of the Flutter project, we need to modify the `Gradle` file. First, open the `android/app/build.gradle` file and add the code below to the bottom of the file.
 
@@ -94,6 +94,22 @@ buildscript {
 
 Done! we're ready to use Crathlytics in Android of the Flutte project.
 
+## Add script on iOS
+
+To use Crashlytics on iOS, we need to add the start script of Crashlytics. To add the Crashlytics script, execute the `./ios/Runner.xcworkspace` file.
+
+![Add crashlytics script to ios](/assets/images/category/flutter/2021/crashlytics/configure_crashlytics_ios.jpg)
+
+After opening Xcode, click the `Runners` on the left top, and click the `Build Phases` tab on the right side. And then, click the `+` button and select the `New Run Script Phase` menu to add `Run Script`.
+
+Lastly, click the added `Run Script`, and add the code below.
+
+```bash
+${PODS_ROOT}/FirebaseCrashlytics/run
+```
+
+{% include in-feed-ads.html %}
+
 ## How to use firebase_crashlytics
 
 If you use the code below to use the `firebase_crashlytics` package in Flutter, when the app is crashed, you can report it to Firebase Crashlytics.
@@ -115,8 +131,6 @@ Future<void> main() async {
 
 We can report the app crash to Firebase Crashlytics by using `runZonedCuarded`.
 
-{% include in-feed-ads.html %}
-
 ## App crash test
 
 You can make the app crash forcely by using the code below.
@@ -131,7 +145,11 @@ You should test it on the real device, and after the crash, you should open the 
 
 If you report the app crash via this way to Firebase Crashlytics, you can see the screen like below on Firebase Crashlytics.
 
-![crashlytics integration](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-integration.jpg)
+![crashlytics error message list](/assets/images/category/flutter/2021/crashlytics/message_list.jpg)
+
+Also, when you click the error message, you can see the test message(`This is a test crash caused by calling .crash() in Dart`) like the below.
+
+![crashlytics error message list](/assets/images/category/flutter/2021/crashlytics/result_test.jpg)
 
 ## Android multiDexEnabled
 

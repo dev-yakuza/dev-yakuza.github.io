@@ -68,7 +68,7 @@ FlutterプロジェクトでFirebase Crashlyticsを使うためには`firebase_c
 flutter pub pub add firebase_crashlytics
 ```
 
-## Gradle修正
+## アンドロイドGradle修正
 
 FlutterプロジェクトのアンドロイドでCrashlyticsを使うためには`Gradle`ファイルを修正する必要があります。まず、`android/app/build.gradle`ファイルを開いてファイルの下を次のように修正します。
 
@@ -94,6 +94,22 @@ buildscript {
 
 これでFlutterプロジェクトのアンドロイドでCrashlyticsを使う準備ができました。
 
+## iOSスクリプト追加
+
+iOSでCrashlyticsを使うためにはCrashlyticsを実行するスクリプトを追加する必要があります。Crashlyticsを実行するスクリプトを追加するため`./ios/Runner.xcworkspace`ファイルを実行します。
+
+![Add crashlytics script to ios](/assets/images/category/flutter/2021/crashlytics/configure_crashlytics_ios.jpg)
+
+上のようにXcodeが実行されたら、左上にある`Runners`を選択して、右にある`Build Phases`タブを選択します。その後、下にある`+`ボタンを押して、`New Run Script Phase`メニューを選択して`Run Script`を追加します。
+
+最後に追加された`Run Script`をクリックして、次のコードを追加します。
+
+```bash
+${PODS_ROOT}/FirebaseCrashlytics/run
+```
+
+{% include in-feed-ads.html %}
+
 ## firebase_crashlyticsの使い方
 
 Flutterで次のように`firebase_crashlytics`を使うと、アプリが強制終了された時、Firebase Crashlyticsにこれを報告することができます。
@@ -115,8 +131,6 @@ Future<void> main() async {
 
 `runZonedCuarded`を使って、アプリが実行中強制終了された時Firebase Crashlyticsに報告するように設定しました。
 
-{% include in-feed-ads.html %}
-
 ## 強制終了テスト
 
 次のコードを使うとアプリを強制終了させることができます。
@@ -131,7 +145,11 @@ FirebaseCrashlytics.instance.crash();
 
 このように強制終了をしてFirebase Crashlyticsに報告をしたら、FirebaseのCrashlytics画面が次のように変更されたことが確認できます。
 
-![crashlytics integration](/assets/images/category/react-native/2020/react-native-firebase-v6-crashlytics/crashlytics-integration.jpg)
+![crashlytics error message list](/assets/images/category/flutter/2021/crashlytics/message_list.jpg)
+
+また、Crashlyticsのエラーメッセージを選択すると次のように`This is a test crash caused by calling .crash() in Dart`と言うテストメッセージを確認することができます。
+
+![crashlytics error message list](/assets/images/category/flutter/2021/crashlytics/result_test.jpg)
 
 ## アンドロイドのmultiDexEnabled
 
