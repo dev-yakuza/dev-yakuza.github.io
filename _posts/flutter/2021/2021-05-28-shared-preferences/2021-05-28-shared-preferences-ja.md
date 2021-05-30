@@ -9,12 +9,20 @@ comments: true
 title: '[Flutter] Shared preferences'
 description: 今回のブログポストではFlutterでローカルに簡単なデータを保存するためShared preferencesパッケージを使う方法について説明します。
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [Shared preferencesパッケージのインストール](#shared-preferencesパッケージのインストール)
+- [Shared preferencesの使い方](#shared-preferencesの使い方)
+  - [データの保存](#データの保存)
+  - [データの読み取り](#データの読み取り)
+  - [データの削除](#データの削除)
+- [ユニットテスト](#ユニットテスト)
+- [完了](#完了)
 
 </div>
 
@@ -91,7 +99,7 @@ prefs.remove('counter');
 prefs.clear();
 ```
 
-## テスト
+## ユニットテスト
 
 `Shared preferences`パッケージを使うコードをユニットテスト（Unit Test）をする時、次のように`Shared preferences`が提供する`setMockInitialValues`を使ってデータを初期化することができます。
 

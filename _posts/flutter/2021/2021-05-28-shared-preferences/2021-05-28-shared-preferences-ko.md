@@ -9,12 +9,20 @@ comments: true
 title: '[Flutter] Shared preferences'
 description: 이번 블로그 포스트에서는 Flutter에서 로컬에 간단한 데이터를 저장하기 위해 Shared preferences 패키지를 사용하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [Shared preferences 패키지 설치](#shared-preferences-패키지-설치)
+- [Shared preferences의 사용법](#shared-preferences의-사용법)
+  - [데이터 저장](#데이터-저장)
+  - [데이터 읽기](#데이터-읽기)
+  - [데이터 삭제](#데이터-삭제)
+- [유닛 테스트](#유닛-테스트)
+- [완료](#완료)
 
 </div>
 
@@ -91,7 +99,7 @@ prefs.remove('counter');
 prefs.clear();
 ```
 
-## 테스트
+## 유닛 테스트
 
 `Shared preferences` 패키지를 사용하는 코드를 유닛 테스트(Unit Test)할 때, 다음과 같이 `Shared preferences`가 제공하는 `setMockInitialValues`을 사용하여 데이터를 초기화 할 수 있습니다.
 
