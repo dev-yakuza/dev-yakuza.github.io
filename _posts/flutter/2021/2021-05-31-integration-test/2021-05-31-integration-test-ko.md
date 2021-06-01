@@ -20,11 +20,13 @@ published: false
 
 ## 개요
 
-Flutter에서 개발한 앱의 통합 테스트(Integration Test)를 하는 방법에 대해서 알아보려고 합니다. Flutter의 공식문서에서도 사용법이 자세히 나와 있으니 참고하시기 바랍니다.
+Flutter에서 개발한 앱의 통합 테스트(Integration Test)를 하는 방법에 대해서 알아보려고 합니다. Flutter의 공식 문서에서도 사용법이 자세히 나와 있으니 참고하시기 바랍니다.
 
 - 공식 문서: [An introduction to integration testing](https://flutter.dev/docs/cookbook/testing/integration/introduction){:rel="nofollow noreferrer" target="_blank"}
 
-이번 블로그는 공식 문서의 내용을 참고하였으며, 통합 테스트를 하기 위한 내용을 정리하였습니다..
+이번 블로그는 공식 문서의 내용을 참고하였으며, 통합 테스트를 하기 위한 내용을 정리하였습니다. 이곳에서 소개하는 소스코드는 아래에 링크에서 확인할 수 있습니다.
+
+- GitHub: [Integration Test Example](https://github.com/dev-yakuza/study-flutter/tree/main/test/integration_test_example){:rel="nofollow noreferrer" target="_blank"}
 
 ## integration_test 패키지 설치
 
@@ -42,7 +44,11 @@ dev_dependencies:
 ...
 ```
 
-## 안드로이드 설정
+## 설정
+
+통합 테스트는, 안드로이드의 에뮬레이터나 iOS의 시뮬레이터, 또는 디바이스에서 실제로 앱을 실행시킨 후, 테스트 시나리오대로 테스트를 진행하게 됩니다. 따라서 `integration_test` 패키지를 사용하여 Flutter에서 통합 테스트를 하기 위해서는, 각 OS에 맞는 설정을 할 필요가 있습니다.
+
+### 안드로이드 설정
 
 이제 `integration_test` 패키지를 사용하여 Flutter에서 통합 테스트를 하기 위해 안드로이드를 설정하는 방법에 대해서 알아봅시다.
 
@@ -101,7 +107,7 @@ dev_dependencies:
 
   ![Flutter integration test - unit testing bundle](/assets/images/category/flutter/2021/integration-test/unit-testing-bundle.jpg)
 
-1. `Product Name`에 `RunnerTests`를 입력합니다. `Organization Identifier`를 입력합니다. `Language`를 `Objective-C`를 선택합니다. 그리고 `Finish`를 선택하여 `Unit Testing Bundle`을 생성합니다.
+1. `Product Name`에 `RunnerTests`를 입력합니다. `Organization Identifier`를 입력합니다. `Language`를 `Objective-C`를 변경합니다. 그리고 `Finish`를 선택하여 `Unit Testing Bundle`을 생성합니다.
 
   ![Flutter integration test - unit testing](/assets/images/category/flutter/2021/integration-test/unit-testing.jpg)
 
@@ -252,4 +258,4 @@ killall "iOS Simulator"
 
 ## 완료
 
-이것으로 Flutter에서 통합 테스트를 하기 위한 준비와, 통합 테스트를 작성하는 방법, 그리고 통합 테스트를 실행하는 방법에 대해서 알아보았습니다. 이제 여러분도 실제 사용자 환경에서 여러분의 앱을 테스트해 보시기 바랍니다.
+이것으로 Flutter에서 통합 테스트를 하기 위한 준비와, 통합 테스트를 작성하는 방법, 그리고 통합 테스트를 실행하는 방법에 대해서 알아보았습니다. 이제 여러분도 실제 환경에서 여러분의 앱을 테스트해 보시기 바랍니다.
