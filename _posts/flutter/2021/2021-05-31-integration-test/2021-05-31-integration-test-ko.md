@@ -9,12 +9,25 @@ comments: true
 title: '[Flutter] 통합 테스트(Integration Test)'
 description: 이번 블로그 포스트에서는 Flutter에서 통합 테스트(Integration Test)를 하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [integration_test 패키지 설치](#integration_test-패키지-설치)
+- [설정](#설정)
+  - [안드로이드 설정](#안드로이드-설정)
+  - [iOS 설정](#ios-설정)
+- [테스트 코드 작성](#테스트-코드-작성)
+  - [드라이버](#드라이버)
+  - [테스트 코드](#테스트-코드)
+  - [스크롤](#스크롤)
+- [테스트 코드 실행](#테스트-코드-실행)
+  - [안드로이드 통합 테스트](#안드로이드-통합-테스트)
+  - [iOS 통합 테스트](#ios-통합-테스트)
+- [완료](#완료)
 
 </div>
 
@@ -72,7 +85,7 @@ dev_dependencies:
   ...
   ```
 
-1. `./android/app/src/androidTest/java/com/example/[Project Name]/MainActivityTest.java` 파일을 생성하고 다음과 같이 수정합니다.(Project Name 부분을 자신의 Flutter 프로젝트 이름으로 변경합니다.)
+1. `./android/app/src/androidTest/java/com/example/[Project Name]/MainActivityTest.java` 파일을 생성하고 다음과 같이 수정합니다.(`Project Name` 부분을 자신의 Flutter 프로젝트 이름으로 변경합니다.)
 
   ```java
   package com.example.[Project Name];
@@ -204,6 +217,20 @@ void main() {
 }
 ```
 
+### 스크롤
+
+스크롤이 있는 화면에서 통합 테스트를 할 때, 화면에 보이지 않는 위젯을 누르면, 에러가 발생합니다. 따라서 해당 위젯이 화면에 보일 때까지, 화면을 스크롤할 필요가 있습니다.
+
+통합 테스트에서 화면을 스크롤할 때, 다음과 같은 코드를 사용합니다.
+
+```dart
+...
+await tester.scrollUntilVisible(find.text('Cancel'), -40);
+...
+```
+
+위의 통합 테스트 코드는 `Cancel`이라는 글자가 보일때까지, 스크롤을 `40px`씩 이동시킵니다.
+
 ## 테스트 코드 실행
 
 그럼 이렇게 작성한 테스트 코드를 실행해 봅시다.
@@ -233,8 +260,6 @@ flutter test integration_test/
 ```bash
 adb emu kill
 ```
-
-{% include in-feed-ads.html %}
 
 ### iOS 통합 테스트
 

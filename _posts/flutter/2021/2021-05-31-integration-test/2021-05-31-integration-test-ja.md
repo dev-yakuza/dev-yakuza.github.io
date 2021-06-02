@@ -9,12 +9,25 @@ comments: true
 title: '[Flutter] 統合テスト(Integration Test)'
 description: 今回のブログポストではFlutterで統合テスト(Integration Test)をする方法を説明します。
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [integration_testパッケージインストール](#integration_testパッケージインストール)
+- [設定](#設定)
+  - [アンドロイド設定](#アンドロイド設定)
+  - [iOSの設定](#iosの設定)
+- [テストコード作成](#テストコード作成)
+  - [ドライバー](#ドライバー)
+  - [テストコード](#テストコード)
+  - [スクロール](#スクロール)
+- [テストコードの実行](#テストコードの実行)
+  - [アンドロイドの統合テスト](#アンドロイドの統合テスト)
+  - [iOSの統合テスト](#iosの統合テスト)
+- [完了](#完了)
 
 </div>
 
@@ -72,7 +85,7 @@ dev_dependencies:
   ...
   ```
 
-1. `./android/app/src/androidTest/java/com/example/[Project Name]/MainActivityTest.java`ファイルを生成して次のように修正します。(Project Nameの部分を自分のFlutterプロジェクトの名前で変更します。)
+1. `./android/app/src/androidTest/java/com/example/[Project Name]/MainActivityTest.java`ファイルを生成して次のように修正します。(`Project Name`の部分を自分のFlutterプロジェクトの名前で変更します。)
 
   ```java
   package com.example.[Project Name];
@@ -204,6 +217,20 @@ void main() {
 }
 ```
 
+### スクロール
+
+スクロールがある画面で統合テストをする時、画面に見えないウィジェットを押すと、エラーが発生します。したがって、該当ウィジェットが画面に見えるまで、画面をスクロールする必要があります。
+
+統合テストで画面をスクロールする時、次のようなコードを使います。
+
+```dart
+...
+await tester.scrollUntilVisible(find.text('Cancel'), -40);
+...
+```
+
+上の統合テストコードは`Cancel`と言う文字が見えるまで、スクロールを`40px`づつ移動させます。
+
 ## テストコードの実行
 
 次はこのように作成したテストコードを実行してみましょう。
@@ -233,8 +260,6 @@ flutter test integration_test/
 ```bash
 adb emu kill
 ```
-
-{% include in-feed-ads.html %}
 
 ### iOSの統合テスト
 
