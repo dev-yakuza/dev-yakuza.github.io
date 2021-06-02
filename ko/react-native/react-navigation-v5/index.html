@@ -1,0 +1,944 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="euc-kr"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="react-navigation V5"/><meta name="twitter:description" content="react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>react-navigation V5 - react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.</title><meta name="description" content="react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/react-native/react-navigation-v5/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/react-native/react-navigation-v5/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/"/><meta name="generator" content="Jekyll v3.9.0"/><meta property="og:title" content="react-navigation V5"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다."/><meta property="og:description" content="react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다."/><link rel="canonical" href="https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/react-navigation-v5/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/2018/react-navigation-v5/background.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2018-10-06T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/2018/react-navigation-v5/background.jpg"/><meta property="twitter:title" content="react-navigation V5"/><script type="application/ld+json">
+{"url":"https://dev-yakuza.posstree.com/react-native/react-navigation-v5/","image":"https://dev-yakuza.posstree.com/assets/images/category/react-native/2018/react-navigation-v5/background.jpg","headline":"react-navigation V5","dateModified":"2020-12-16T11:10:57+09:00","datePublished":"2018-10-06T00:00:00+09:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/react-native/react-navigation-v5/"},"description":"react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.","@type":"BlogPosting","@context":"https://schema.org"}</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet"/><link rel="stylesheet" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/ko/assets/main.css?v=20210603"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/ko/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "맥(Mac)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 맥(Mac)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":1,"url": "https://dev-yakuza.posstree.com/ko/react-native/install-on-mac/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "윈도우(Windows)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 윈도우(Windows)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":2,"url": "https://dev-yakuza.posstree.com/ko/react-native/install-on-windows/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "RN 설치",
+          "description" : "react-native를 설치하고 프로젝트가 동작하는지 확인한다.",
+          "position":3,"url": "https://dev-yakuza.posstree.com/ko/react-native/installation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "typescript",
+          "description" : "react-native 프로젝트에 typescript를 적용하여 개발해 보자.",
+          "position":4,"url": "https://dev-yakuza.posstree.com/ko/react-native/typescript/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 ESLint, Prettier를 프로처럼 사용하기",
+          "description" : "React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.",
+          "position":5,"url": "https://dev-yakuza.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "react-native 스타일링을 위해 styled-components 라이브러리를 활용하는 방법에 대해 알아보자.",
+          "position":6,"url": "https://dev-yakuza.posstree.com/ko/react-native/styled-components/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "react-navigation을 활용하여 어플을 개발해 보자.",
+          "position":7,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.",
+          "position":8,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "generator-rn-toolbox을 이용하여 앱 아이콘을 생성해보자.",
+          "position":9,"url": "https://dev-yakuza.posstree.com/ko/react-native/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splash 이미지",
+          "description" : "generator-rn-toolbox을 이용하여 Splash 이미지를 설정하자.",
+          "position":10,"url": "https://dev-yakuza.posstree.com/ko/react-native/splash-image/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "기본 Component UI에 NativeBase 라이브러리를 사용해보자.",
+          "position":11,"url": "https://dev-yakuza.posstree.com/ko/react-native/nativebase/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "react-native-vector-icons 라이브러리를 사용하여 아이콘을 표시해보자.",
+          "position":12,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-vector-icons/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "유저의 디바이스 정보를 얻기 위해 react-native-device-info 라이브러리를 사용해보자",
+          "position":13,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-device-info/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "react-native-tts를 사용하여 text-to-speech 기능을 구현해보자.",
+          "position":14,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-tts/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "구글 애드몹",
+          "description" : "구글 애드몹(google admob) 광고를 사용하기 위해 react-native-admob 라이브러리를 사용해 보자.",
+          "position":15,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOS 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 디바이스에서 테스트해 봅시다.",
+          "position":16,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":17,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 개발자 등록",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 앱 스토어(App store)에 등록하기 위해 애플 개발자 프로그램(Apple Developer Program)에 등록하는 방법에 대해서 알아봅시다.",
+          "position":18,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-enroll-developer-program/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS 인증서(Certification)",
+          "description" : "애플 개발자 프로그램(Apple Developer Program) 등록을 완료했다면, 개발자 인증서(Certification)을 설정하는 방법에 대해 알아봅니다.",
+          "position":19,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-certification/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "iOS의 TestFlight를 이용하여 개발한 어플을 테스터를 통해 테스트해 보자.",
+          "position":20,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-testflight/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "iOS App store 등록",
+          "description" : "iOS 앱 스토어(App Store)에 등록하기 위해 필요한 항목에 대해 알아봅니다.",
+          "position":21,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-store/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "RN(react native)로 개발한 앱을 구글 애널리틱스(Google Analytics)를 이용하여 앱을 분석해 봅시다.",
+          "position":22,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-analytics-bridge/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.",
+          "position":23,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android) 디바이스에서 테스트해 봅시다.",
+          "position":24,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android)용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":25,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 시뮬레이터 변경",
+          "description" : "RN(react native)을 iOS에서 시뮬레이터로 테스트할 때 시뮬레이터를 변경하는 방법에 대해서 알아봅시다.",
+          "position":26,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-change-simulator/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "react-native-firebase 라이브러리를 사용하여 좀 더 자세하게 앱을 분석해 보자",
+          "position":27,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-analytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash 분석",
+          "description" : "iOS App crash 로그(Log)를 분석하는 방법에 대해서 알아봅니다.",
+          "position":28,"url": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-crash-debugging/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "react-native-firebase를 사용하여 파이어베이스(Firebase)의 Crashlytics로 앱에서 crash가 발생했을 때 내용을 수집해봅시다.",
+          "position":29,"url": "https://dev-yakuza.posstree.com/ko/react-native/firebase-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "react-native-animatable을 사용해서 간단하게 RN(react native)에 애니메이션을 추가해 보자.",
+          "position":30,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-animatable/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 개발자 등록",
+          "description" : "안드로이드 앱(Android App)을 등록하기 위해 안드로이드 개발자 등록을 해봅시다.",
+          "position":31,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-enroll-google-play-developer/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 앱 스토어 등록",
+          "description" : "RN(React Native)로 개발한 안드로이드 앱(Android App)을 안드로이드 앱 스토어(Google Play)에 등록해 봅시다.",
+          "position":32,"url": "https://dev-yakuza.posstree.com/ko/react-native/android-google-play/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "사용자 음성 인식",
+          "description" : "RN(React Native) 프로젝트에서 react-native-voice 라이브러리를 사용하여 사용자 음성을 인식하여 문자로 변환해주는 기능을 추가해 봅시다.",
+          "position":33,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-voice/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "이메일 발송 기능",
+          "description" : "RN(React Native) 프로젝트에서 react-native-mail 라이브러리를 사용하여 단말기에 설치되어 있는 이메일 앱을 실행하고 이메일(email)을 보내봅시다.",
+          "position":34,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-mail/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "파일 시스템 사용",
+          "description" : "RN(React Native) 프로젝트에서 react-native-fs 라이브러리를 사용하여 파일을 읽고 써봅시다.",
+          "position":35,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "애프터이펙트(AEF) 사용",
+          "description" : "RN(React Native) 프로젝트에서 어도비 애프터이펙트(Adobe After Effects)로 제작한 애니메이션을 적용해 보자.",
+          "position":36,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-lottie/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "스와이프 감지",
+          "description" : "RN(React Native) 프로젝트에서 유저가 화면에서 어느 방향으로 스와이프(Swipe) 했는지 감지하기 위해 react-native-swipe-gestures를 사용해 보자",
+          "position":37,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-swipe-gestures/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "그라데이션(Gradient)",
+          "description" : "RN(React Native) 프로젝트에서 react-native-linear-gradient을 사용해서 그라데이션(Gradient) 백그라운드(background)를 만들어 보자.",
+          "position":38,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-linear-gradient/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash 스크린",
+          "description" : "RN(React Native) 프로젝트에서 react-native-splash-screen를 사용하여 Splash 스크린을 원하는 시간에 종료하도록 만들어 보자.",
+          "position":39,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "앱 스토어 리뷰",
+          "description" : "RN(React Native) 프로젝트에서 react-native-rate를 사용하여 앱 스토어의 리뷰를 작성하도록 유도하는 방법에 대해서 설명합니다.",
+          "position":40,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-rate/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunes 파일 공유 기능",
+          "description" : "iTunes를 통해 RN(React Native)으로 제작한 앱에 파일을 공유하는 방법에 대해서 알아봅니다.",
+          "position":41,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-itunes-share-file/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "StatusBar 다루기",
+          "description" : "RN(React Native)에서 StatusBar를 다루는 방법에 대해서 설명합니다.",
+          "position":42,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-status-bar/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve) 태블릿 지원하기",
+          "description" : "RN(React Native) 프로젝트에서 태블릿 지원하는 방법에 대해서 알아봅시다.",
+          "position":43,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-support-tablet/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 sqlite 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 sqlite 데이터베이스를 사용하는 방법에 대해서 알아봅시다.",
+          "position":44,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-sqlite-storage/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 커스텀 폰트 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 커스텀 폰트를 적용하고 사용하는 방법에 대해서 알아봅시다.",
+          "position":45,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-custom-font/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "RN(React Native)에서 root import하기",
+          "description" : "RN(React Native) 프로젝트에서 import를 할때, root 폴더 기준으로 import할 수 있도록 프로젝트를 설정해 봅시다.",
+          "position":46,"url": "https://dev-yakuza.posstree.com/ko/react-native/root-import/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "특정 파일로 앱 열기",
+          "description" : "웹이나 이메일로 받은 특정 파일(엑셀, 파워포인트 등)을 RN(React Native)로 제작한 앱으로 공유하는 방법에 대해서 설명합니다.",
+          "position":47,"url": "https://dev-yakuza.posstree.com/ko/react-native/open-file-with-app/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notification",
+          "description" : "react-native-push-notification 라이브러리를 이용하여 Local Push Notification, 즉 앱(App) 자체에서 알림을 보내는 방법에 대해서 알아보겠습니다.",
+          "position":48,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-push-notification/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 App 아이콘 & Splash 이미지 만들기",
+          "description" : "react-native-make 라이브러리를 이용하여 App 아이콘과 Splash 이미지를 생성하는 방법에 대해서 알아봅니다.",
+          "position":49,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-make/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 현재 위치 정보 가져오기",
+          "description" : "react-native-geolocation-service 라이브러리를 이용하여 React Native에서 현재 위치 정보를 가져오는 방법에 대해서 알아봅시다.",
+          "position":50,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-geolocation-service/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 지도 표시하기",
+          "description" : "react-native-maps 라이브러리를 이용하여 React Native에서 지도를 사용하는 방법에 대해서 알아봅시다.",
+          "position":51,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-maps/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Fastlane을 통한 앱 자동 배포",
+          "description" : "Fastlane을 사용해서 React native로 만든 앱을 자동으로 배포해 보자",
+          "position":52,"url": "https://dev-yakuza.posstree.com/ko/react-native/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "react-native-image-modal을 사용해서 이미지를 전체 화면으로 표시해보고, pinch 확대, 축소 등을 사용해 보자",
+          "position":53,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-modal/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "react-native-image-picker을 사용해서 사진을 찍거나, 카메라 롤에서 사진을 가져오는 방법에 대해서 알아봅시다.",
+          "position":54,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-picker/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase(V5)를 이용한 Push message",
+          "description" : "React Native에서 푸시 메시지를 구현하기 위해, react-native-firebase(V5) 라이브러리를 사용하여 FCM(Firebase Cloud Messaging)을 사용해 봅시다.",
+          "position":55,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-fcm/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "React Native용 오픈소스 만들기",
+          "description" : "React Native용 오픈 소스를 제작하는 방법에 대해서 공유합니다.",
+          "position":56,"url": "https://dev-yakuza.posstree.com/ko/react-native/make-opensource-library/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "React Native에 Multidex 설정하기",
+          "description" : "React Naitve 프로젝트에서 안드로이드에 Multidex를 설정하는 방법에 대해서 알아봅시다.",
+          "position":57,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-multidex/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 설치",
+          "description" : "React Native에서 Firebase를 사용하기 위해 react-native-firebase(V6)을 설치하는 방법에 대해서 알아봅시다.",
+          "position":58,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-installation/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Crashlytics를 사용하는 방법에 대해서 알아봅시다.",
+          "position":59,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Admob을 사용하는 방법에 대해서 알아봅시다.",
+          "position":60,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-admob/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Youtube 재생하기",
+          "description" : "React Native에서 Youtube를 재생하기 위해서 react-native-youtube를 사용하는 방법에 대해서 알아봅시다.",
+          "position":61,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-youtube/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Admob의 Native Advanced 광고 사용하기",
+          "description" : "React Native에서 Admob의 Native Advanced 광고를 사용하기 위해 react-native-admob-native-ads 라이브러리를 사용하는 방법에 대해서 알아봅시다.",
+          "position":62,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob-native-ads/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 인앱 결제 구현하기",
+          "description" : "React Native에서 인앱 결제를 구현하기 위해 react-native-iap를 사용하는 방법에 대해서 알아봅시다.",
+          "position":63,"url": "https://dev-yakuza.posstree.com/ko/react-native/react-native-iap/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub Actions와 Fastlane을 사용해서 React Native 앱 배포하기",
+          "description" : "GitHub Actions와 Fastlane을 사용해서 React Native로 개발한 앱을 자동으로 배포해 봅시다.",
+          "position":64,"url": "https://dev-yakuza.posstree.com/ko/react-native/github-actions-fastlane/",
+          "item": "https://dev-yakuza.posstree.com/ko/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="stylesheet" href="/ko/assets/highlight/railscasts.css"/><script src="/assets/highlight/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="/assets//vendor/lazysizes/lazysizes.min.js" async=""></script><script data-ad-client="ca-pub-7987914246691031" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/ko/"><img src="/assets/images/icon.png" alt="dev.yakuza blog logo"/> ヤクザ </a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/django/">장고(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/react-navigation-v5/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/react-navigation-v5/">English</a><a class="dropdown-item menu-ja" href="/ko/react-native/react-navigation-v5/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/django/">장고(django)</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div></div></nav><script>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/2018/react-navigation-v5/background.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>react-navigation V5</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-16 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/react-navigation-v5/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="top-ads"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/react-native/react-navigation-v5/"><span itemprop="name">react-navigation V5</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#개요">개요</a></li><li><a href="#react-native-프로젝트-생성">react-native 프로젝트 생성</a></li><li><a href="#react-navigation-v5-설치">react-navigation V5 설치</a></li><li><a href="#추가로-필요한-navigation-설치">추가로 필요한 Navigation 설치</a><ul><li><a href="#stack-navigation">Stack Navigation</a></li><li><a href="#drawer-navigation">Drawer Navigation</a></li><li><a href="#bottom-tab-navigation">Bottom Tab Navigation</a></li><li><a href="#material-bottom-tab-navigation">Material Bottom Tab Navigation</a></li><li><a href="#material-top-tab-navigation">Material Top Tab Navigation</a></li></ul></li><li><a href="#사용법">사용법</a><ul><li><a href="#react-native-gesture-handler">react-native-gesture-handler</a></li><li><a href="#navigationcontainer">NavigationContainer</a></li><li><a href="#auth-처리">Auth 처리</a></li><li><a href="#stack-navigation-사용법">Stack Navigation 사용법</a></li><li><a href="#drawer-navigation-사용법">Drawer Navigation 사용법</a></li><li><a href="#bottom-tab-navigation-사용법">Bottom Tab Navigation 사용법</a></li><li><a href="#material-bottom-tab-navigation-사용법">Material Bottom Tab Navigation 사용법</a></li><li><a href="#material-top-tab-navigation-사용법">Material Top Tab Navigation 사용법</a></li><li><a href="#drawer-open">Drawer Open</a></li><li><a href="#draweractions">DrawerActions</a></li><li><a href="#setparams--getparams">setParams / getParams</a></li></ul></li><li><a href="#typescript">Typescript</a><ul><li><a href="#navigation">navigation</a></li><li><a href="#route">route</a></li></ul></li><li><a href="#완료">완료</a></li><li><a href="#참고">참고</a></li></ul></div><h2 id="개요">개요</h2><p>react-navigation의 버전 V5는 정말 많은 것이 바뀌었네요. V3과 V4는 그래도 조금 비슷한 느낌이 있었는데, V5는 전혀 다른 Navigation이라는 느낌입니다. 그래서 이렇게 react-navigation V5에 관한 블로그 포스트를 작성하게 되었네요.</p><p>이전 버전(V3, V4)에 관해서 궁금하신 분들은 이전 블로그 포스트를 참고하시기 바랍니다.</p><ul><li><a href="https://dev-yakuza.posstree.com/ko/react-native/react-navigation/" target="_blank">react-navigation</a></li></ul><p>react-navigation의 V5에 관한 공식 사이트는 아래와 같습니다.</p><ul><li>공식 홈페이지: <a href="https://reactnavigation.org" rel="nofollow noreferrer" target="_blank">https://reactnavigation.org</a></li></ul><p>이번 블로그 포스트에서는 react-navigation V5를 사용하는 방법에 대해서 알아봅니다.</p><h2 id="react-native-프로젝트-생성">react-native 프로젝트 생성</h2><p>여기서 소개하는 소스코드는 typescript와 styled-components가 적용되었습니다. React Native에 typescript와 styled-components를 적용하는 방법은 이전 블로그를 참고하세요.</p><ul><li><a href="https://dev-yakuza.posstree.com/ko/react-native/typescript/" target="_blank">typescript</a></li><li><a href="https://dev-yakuza.posstree.com/ko/react-native/styled-components/" target="_blank">styled-components</a></li><li><a href="https://dev-yakuza.posstree.com/ko/react-native/root-import/" target="_blank">root-import</a></li></ul><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h2 id="react-navigation-v5-설치">react-navigation V5 설치</h2><p>react-navigation v5 라이브러리를 아래에 명령어를 통해 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/native
+</code></pre></div></div><p>또한 react-navigation v5를 사용하기 위한 라이브러리들을 아래에 명령어로 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+</code></pre></div></div><p>설치가 완료되면 iOS 폴더에 가서 아래에 명령어를 실행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+pod <span class="nb">install</span>
+</code></pre></div></div><h2 id="추가로-필요한-navigation-설치">추가로 필요한 Navigation 설치</h2><p>react-navigation V4부터 Navigation을 사용하기 위해서는, 필요한 Navigation을 따로따로 설치해야합니다. V5도 역시 필요한 Navigation을 사용하기 위해서는 추가적으로 Navigation 라이브러리를 설치해야 합니다.</p><h3 id="stack-navigation">Stack Navigation</h3><p>한 화면 위에, 다른 화면을 쌓아 올리듯 화면 전환을 하는 Navigation을 Stack Navigation이라고 합니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/stack.gif" alt="React Navigation V5 Stack Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/stack-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>Stack Navigation을 사용하기 위해서는 아래와 같은 명령어로 추가 라이브러리를 설치해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/stack
+</code></pre></div></div><h3 id="drawer-navigation">Drawer Navigation</h3><p>주로 메뉴에 사용되는 Navigation으로 사용자의 Swipe 액션에 반응하여 화면에 표시되는 Navigation입니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/drawer.gif" alt="React Navigation V5 drawer Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/drawer-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>Drawer Navigation을 사용하기 위해서는 아래와 같은 명령어로 추가 라이브러리를 설치해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/drawer
+</code></pre></div></div><h3 id="bottom-tab-navigation">Bottom Tab Navigation</h3><p>화면 하단에서 Tab으로 화면을 전환하는 Navigation입니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/bottom-tabs-demo.gif" alt="React Navigation V5 bottom-tabs-demo Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/bottom-tab-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>Bottom Tab Navigation을 사용하기 위해서는 아래와 같은 명령어로 추가 라이브러리를 설치해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/bottom-tabs
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="material-bottom-tab-navigation">Material Bottom Tab Navigation</h3><p>Bottom Tab Navigation과 동일하게 화면 하단에서 Tab으로 화면을 전환하는 Navigation입니다. 여기에 Google의 Material 디자인이 적용된 Navigation 입니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/material-bottom-tabs.gif" alt="React Navigation V5 Material Bottom Tab Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/material-bottom-tab-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>Material Bottom Tab Navigation을 사용하기 위해서는 아래와 같은 명령어로 추가 라이브러리를 설치해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/material-bottom-tabs react-native-paper
+</code></pre></div></div><p>이 Navigation은 <code class="language-plaintext highlighter-rouge">react-native-vector-icons</code>라는 라이브러리가 추가적으로 필요합니다. react-native-vector-icons를 설치하는 방법에 대해서는 아래에 링크를 참고하시기 바랍니다.</p><ul><li><a href="https://dev-yakuza.posstree.com/ko/react-native/react-native-vector-icons/" target="_blank">react-native-vector-icons</a></li></ul><h3 id="material-top-tab-navigation">Material Top Tab Navigation</h3><p>Google의 Material 디자인이 적용된 Navigation으로써, 화면 상단에서 Tab으로 화면을 전환하는 Navigation입니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/material-top-tabs.gif" alt="React Navigation V5 material-top-tabs Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/material-top-tab-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>Material Top Tab Navigation을 사용하기 위해서는 아래와 같은 명령어로 추가 라이브러리를 설치해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-navigation/material-top-tabs react-native-tab-view
+</code></pre></div></div><h2 id="사용법">사용법</h2><p>react-navigation를 사용하는 여러가지 방법들이 공식 홈페이지에 자세히 나와있습니다. 자세한 내용은 링크를 참고해주세요.</p><ul><li>공식 홈페이지: <a href="https://reactnavigation.org/docs" rel="nofollow noreferrer" target="_blank">https://reactnavigation.org/docs</a></li></ul><p>이 블로그에서는 공식 홈페이지를 참고하여 기본적인 사용법을 정리한 저장소(Repository)를 만들었습니다. <code class="language-plaintext highlighter-rouge">react-navigation</code>을 사용하기 전에 이 저장소(Repository)를 확인한다면 기본적인 구조를 잡을 때, 도움이 될거 같습니다.</p><ul><li>react-navigation-exercise V5: <a href="https://github.com/dev-yakuza/react-navigation-v5-exercise" rel="nofollow noreferrer" target="_blank">https://github.com/dev-yakuza/react-navigation-v5-exercise</a></li></ul><p>이 저장소(Repository)에 구현된 내용을 설명하도록 하겠습니다.</p><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="react-native-gesture-handler">react-native-gesture-handler</h3><p>react-navigation을 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">react-native-gesture-handler</code>를 import할 필요가 있습니다. <code class="language-plaintext highlighter-rouge">index.js</code> 파일 또는 <code class="language-plaintext highlighter-rouge">App.js</code> 파일(react-navigation을 사용하는 컴포넌트의 최상위 컴포넌트)을 아래와 같이 수정합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">react-native-gesture-handler</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+</code></pre></div></div><h3 id="navigationcontainer">NavigationContainer</h3><p>V4에서 Navigation을 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">createAppContainer</code>을 마지막에 사용해야 했습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createAppContainer</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-navigation</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">createAppContainer</span><span class="p">(</span>
+  <span class="p">...</span>
+<span class="p">);</span>
+
+</code></pre></div></div><p>V5에서는 V4와 비슷하게 마지막에는 <code class="language-plaintext highlighter-rouge">NavigationContainer</code>라는 컴포넌트를 제공할 필요가 있습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">NavigationContainer</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">NavigationContainer</span><span class="o">&gt;</span>
+      <span class="p">...</span>
+    <span class="o">&lt;</span><span class="sr">/NavigationContainer</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>벌써부터 차이점이 느껴지시나요? 기존의 react-navigation은 설정을 하는 느낌이였다면, V5는 React의 컴포넌트를 사용하는 느낌입니다.</p><h3 id="auth-처리">Auth 처리</h3><p>V4에서는 Auth 부분을 처리하기 위해 <code class="language-plaintext highlighter-rouge">createSwitchNavigator</code>라는 Navigation을 별도로 제공하였습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createSwitchNavigator</span><span class="p">,</span> <span class="nx">createAppContainer</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-navigation</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">import</span> <span class="nx">AuthLoading</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./AuthLoading</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Auth</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Auth</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">createAppContainer</span><span class="p">(</span>
+  <span class="nx">createSwitchNavigator</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="nx">AuthLoading</span><span class="p">,</span>
+      <span class="nx">Auth</span><span class="p">,</span>
+      <span class="nx">MainNavi</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">initialRouteName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">AuthLoading</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">),</span>
+<span class="p">);</span>
+
+</code></pre></div></div><p>createSwitchNavigator는 위와 같이 사용이 가능한데, AuthLoading이라는 React 컴포넌트에서 로그인 여부를 확인하고, 로그인이 되지 않은 경우 Auth 화면으로, 로그인을 했다면, MainNavi로 화면을 전환하였습니다.</p><p>V5에서는 <code class="language-plaintext highlighter-rouge">createSwitchNavigator</code>가 없어졌습니다. 위와 같은 Auth 처리를 구현하기 위해서는 아래와 같이 react-navigation을 사용할 필요가 있습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">NavigationContainer</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">UserContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">~/Context/User</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">userInfo</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="o">&lt;</span><span class="nx">IUserContext</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">NavigationContainer</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">userInfo</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">MainNavi</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">LoginStackNavi</span> <span class="o">/&gt;</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/NavigationContainer</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>V5에서는 createSwitchNavigator가 없습니다. 그대신 V4와 다르게 React 컴포넌트 형식이므로, Navigation안에서 직접 로그인 여부를 판단하고 화면에 표시할 Navigation을 결정하게 됩니다. 공식 홈페이지에서도 위와 같은 방법을 안내하고 있으니 참고해 보시기 바랍니다.</p><ul><li>공식 홈페이지: <a href="https://reactnavigation.org/docs/auth-flow" rel="nofollow noreferrer" target="_blank">react-navigation - Auth flow</a></li></ul><h3 id="stack-navigation-사용법">Stack Navigation 사용법</h3><p>react-navigation V4에서는 아래와 같이 Stack Navigation을 사용하였습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createStackNavigator</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-navigation-stack</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MainNavi</span> <span class="o">=</span> <span class="nx">createStackNavigator</span><span class="p">({</span>
+  <span class="na">MainTab</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">screen</span><span class="p">:</span> <span class="nx">MainTab</span><span class="p">,</span>
+    <span class="na">navigationOptions</span><span class="p">:</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">header</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="p">}),</span>
+  <span class="p">},</span>
+  <span class="nx">FullDetail</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>react-navigation V5에서는 아래와 같이 Stack Navigation을 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">createStackNavigator</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/stack</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">Stack</span> <span class="o">=</span> <span class="nx">createStackNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">LoginStackNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">screenOptions</span><span class="o">=</span><span class="p">{{</span>
+        <span class="na">headerStyle</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">backgroundColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#f4511e</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">headerTintColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#fff</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">headerTitleStyle</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">fontWeight</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bold</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">SignIn</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">SignIn</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">headerShown</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">SignUp</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">SignUp</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span><span class="na">headerBackTitleVisible</span><span class="p">:</span> <span class="kc">false</span><span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">ResetPassword</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">ResetPassword</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Stack.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>react-navigation V5에서 Stack Navigation 전체에 공통적으로 속성을 적용하고 싶으면 <code class="language-plaintext highlighter-rouge">Stack.Navigator</code>의 <code class="language-plaintext highlighter-rouge">screenOptions</code>을 사용합니다.</p><p>반대로, 각 화면에만 속성을 적용하고 싶으면 <code class="language-plaintext highlighter-rouge">Stack.Screen</code>의 <code class="language-plaintext highlighter-rouge">options</code>를 사용합니다.</p><p>위에 예제에서는 자주 사용하는 Header Bar를 숨기기 위해 <code class="language-plaintext highlighter-rouge">options</code>의 <code class="language-plaintext highlighter-rouge">headerShown</code>을 사용하였습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span>
+  <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">SignIn</span><span class="dl">"</span>
+  <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">SignIn</span><span class="p">}</span>
+  <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+    <span class="na">headerShown</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">}}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span>
+</code></pre></div></div><p>또한 뒤로 돌아가는 버튼의 타이틀을 숨기기 위해 <code class="language-plaintext highlighter-rouge">options</code>의 <code class="language-plaintext highlighter-rouge">headerBackTitleVisible</code>도 사용해 보았습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span>
+  <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">SignUp</span><span class="dl">"</span>
+  <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">SignUp</span><span class="p">}</span>
+  <span class="nx">options</span><span class="o">=</span><span class="p">{{</span><span class="na">headerBackTitleVisible</span><span class="p">:</span> <span class="kc">false</span><span class="p">}}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span>
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="drawer-navigation-사용법">Drawer Navigation 사용법</h3><p>react-navigation V5에서는 아래와 같이 Drawer Navigation을 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">createDrawerNavigator</span><span class="p">,</span>
+  <span class="nx">DrawerContentScrollView</span><span class="p">,</span>
+  <span class="nx">DrawerItemList</span><span class="p">,</span>
+  <span class="nx">DrawerItem</span><span class="p">,</span>
+  <span class="nx">DrawerContentComponentProps</span><span class="p">,</span>
+  <span class="nx">DrawerContentOptions</span><span class="p">,</span>
+  <span class="nx">DrawerNavigationProp</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/drawer</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">Drawer</span> <span class="o">=</span> <span class="nx">createDrawerNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">CustomDrawerContent</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">props</span><span class="p">:</span> <span class="nx">DrawerContentComponentProps</span><span class="o">&lt;</span><span class="nx">DrawerContentOptions</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">logout</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">DrawerContentScrollView</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">DrawerItemList</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">DrawerItem</span> <span class="nx">label</span><span class="o">=</span><span class="dl">"</span><span class="s2">Logout</span><span class="dl">"</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">logout</span><span class="p">()}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/DrawerContentScrollView</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">DrawNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">logout</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="o">&lt;</span><span class="nx">IUserContext</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">drawerContent</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="nx">CustomDrawerContent</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">logout</span><span class="p">)}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTopTabNaviStackNavi</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTopTabNaviStackNavi</span><span class="p">}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Drawer.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>여기에서는 <code class="language-plaintext highlighter-rouge">Logout</code> 기능을 구현하기 위해 조금 복잡해졌습니다. Logout 기능을 빼고 보면 아래와 같습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">createDrawerNavigator</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/drawer</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">Drawer</span> <span class="o">=</span> <span class="nx">createDrawerNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">DrawNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTopTabNaviStackNavi</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTopTabNaviStackNavi</span><span class="p">}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Drawer.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>Stack Navigation과 굉장히 비슷합니다. 위에 예제에서는 여기에 <code class="language-plaintext highlighter-rouge">Logout</code>이라는 항목을 추가로 표시하고 Logout 항목을 선택하면 Logout되도록 추가하면서 좀 복잡한 형태를 가지게 되었습니다.</p><h3 id="bottom-tab-navigation-사용법">Bottom Tab Navigation 사용법</h3><p>react-navigation V5에서는 Bottom Tab Navigation은 아래와 같이 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createBottomTabNavigator</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/bottom-tabs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Icon</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native-vector-icons/MaterialIcons</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">Tab</span> <span class="o">=</span> <span class="nx">createBottomTabNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">TabNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFirstStackNavi</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFirstStackNavi</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Frist</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">home</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">,
+</span>        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabSecond</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabSecond</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Second</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">people</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabThird</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabThird</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Third</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFourth</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFourth</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fourth</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">settings</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Tab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>위에 예제에서는 Tab의 Label과 Icon을 각각 표시하기 위해 <code class="language-plaintext highlighter-rouge">Tab.Screen</code>의 <code class="language-plaintext highlighter-rouge">options</code>를 사용하였습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">Tab</span><span class="p">.</span><span class="nx">Screen</span>
+  <span class="p">...</span>
+  <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+    <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fourth</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">settings</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">),</span>
+  <span class="p">}}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span>
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="material-bottom-tab-navigation-사용법">Material Bottom Tab Navigation 사용법</h3><p>react-navigation V5에서 Material Bottom Tab Navigation은 아래와 같이 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createMaterialBottomTabNavigator</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/material-bottom-tabs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Icon</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native-vector-icons/MaterialIcons</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTab</span> <span class="o">=</span> <span class="nx">createMaterialBottomTabNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTabNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFirstStackNavi</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFirstStackNavi</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#281b39</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Frist</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">home</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">,
+</span>        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabSecond</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabSecond</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#0e141d</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Second</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">people</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabThird</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabThird</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#E64A19</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Third</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFourth</span><span class="dl">"</span>
+        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFourth</span><span class="p">}</span>
+        <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+          <span class="na">tabBarColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#524365</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarLabel</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fourth</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">settings</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">),</span>
+        <span class="p">}}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/MaterialTab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>Material Bottom Tab Navigation를 사용할 때는 Tab Bar에 Icon을 설정해야 합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+  <span class="p">...</span>
+  <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+    <span class="p">...</span>
+    <span class="na">tabBarIcon</span><span class="p">:</span> <span class="p">({</span><span class="nx">color</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">settings</span><span class="dl">"</span> <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="nx">color</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">26</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">),</span>
+  <span class="p">}}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span>
+</code></pre></div></div><p>또한 각 탭을 선택할 때마다, 색상을 변경하고 싶다면, <code class="language-plaintext highlighter-rouge">tabBarColor</code>를 설정하면 됩니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">MaterialTab</span><span class="p">.</span><span class="nx">Screen</span>
+  <span class="p">...</span>
+  <span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
+    <span class="p">...</span>
+    <span class="na">tabBarColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#524365</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span>
+</code></pre></div></div><p>tabBarIcon은 필수적으로 추가해야하지만, tabBarColor는 필요한 상황에서만 사용하시면 됩니다.</p><h3 id="material-top-tab-navigation-사용법">Material Top Tab Navigation 사용법</h3><p>react-navigation V5에서 Material Top Tab Navigation은 아래와 같이 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">createMaterialTopTabNavigator</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/material-top-tabs</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterailTopTab</span> <span class="o">=</span> <span class="nx">createMaterialTopTabNavigator</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFirst</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFirst</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabSecond</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabSecond</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabThird</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabThird</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFourth</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFourth</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/MaterailTopTab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNaviStackNavi</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">DrawerProp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">screenOptions</span><span class="o">=</span><span class="p">{{</span>
+        <span class="na">headerLeft</span><span class="p">:</span> <span class="p">(</span><span class="na">props</span><span class="p">:</span> <span class="nx">StackHeaderLeftButtonProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">IconButton</span>
+            <span class="nx">iconName</span><span class="o">=</span><span class="dl">"</span><span class="s2">menu</span><span class="dl">"</span>
+            <span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">openDrawer</span><span class="p">()}</span>
+            <span class="nx">color</span><span class="o">=</span><span class="dl">"</span><span class="s2">black</span><span class="dl">"</span>
+          <span class="o">/&gt;</span>
+        <span class="p">),</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTopTabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTopTabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Stack.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>Material Top Tab Navigation은 아래와 같이 간단하게 선언하여 사용할 수 있습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFirst</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFirst</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabSecond</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabSecond</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabThird</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabThird</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFourth</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFourth</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/MaterailTopTab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>하지만, <code class="language-plaintext highlighter-rouge">Notch Design</code>에서는 Navigation이 제대로 보이지 않습니다.</p><p><img src="/assets/images/category/react-native/2018/react-navigation-v5/notch-design-material-top-navigation-problem.jpg" alt="notch design에서 material top navigation의 문제점"/></p><p>이 문제를 해결하기 위해, Stack Navigation으로 감싸서 제공하기를 권장합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNavi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Navigator</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFirst</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFirst</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabSecond</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabSecond</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabThird</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabThird</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">MaterailTopTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">TabFourth</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">TabFourth</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/MaterailTopTab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNaviStackNavi</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">DrawerProp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">screenOptions</span><span class="o">=</span><span class="p">{{</span>
+        <span class="na">headerLeft</span><span class="p">:</span> <span class="p">(</span><span class="na">props</span><span class="p">:</span> <span class="nx">StackHeaderLeftButtonProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">IconButton</span>
+            <span class="nx">iconName</span><span class="o">=</span><span class="dl">"</span><span class="s2">menu</span><span class="dl">"</span>
+            <span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">openDrawer</span><span class="p">()}</span>
+            <span class="nx">color</span><span class="o">=</span><span class="dl">"</span><span class="s2">black</span><span class="dl">"</span>
+          <span class="o">/&gt;</span>
+        <span class="p">),</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTopTabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTopTabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Stack.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre></div></div><p>Stack Navigation으로 감싸서 제공하면 아래와 같은 화면을 볼 수 있습니다.</p><p><img src="/assets/images/category/react-native/2018/react-navigation-v5/solution-notch-design-material-top-navigation-problem.jpg" alt="notch design에서 material top navigation의 문제점 해결"/></p><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="drawer-open">Drawer Open</h3><p>보통 Drawer Navigation만 사용하면 아래와 같은 화면을 볼 수 있습니다.</p><div class="half_image_container"><img class="half_image" src="/assets/images/category/react-native/2018/react-navigation-v5/drawer.gif" alt="React Navigation V5 drawer Navigation"/></div><p>[그림: <a href="https://reactnavigation.org/docs/drawer-navigator" rel="nofollow noreferrer" target="_blank">reactnavigation.org 공식 홈페이지</a>]</p><p>위와 같이 왼쪽에서 오른쪽으로 Swipe를 해야 Drawer Navigation을 확인할 수 있습니다.</p><p>하지만 보통, Navigation의 Header에 메뉴 아이콘을 표시하고, 메뉴를 선택하면 Drawer Navigation을 표시하도록 만듭니다.</p><p>이렇게 하기 위해서는 Stack Navigation으로 Navigation Header를 표시하고, Header의 왼쪽에 메뉴 아이콘을 표시한 후, 메뉴 아이콘을 선택하면 <code class="language-plaintext highlighter-rouge">openDrawer</code>라는 함수를 사용하여 Drawer Navigation을 열도록 구현해야 합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">DrawerNavigationProp</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/drawer</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">type</span> <span class="nx">TypeDrawerProp</span> <span class="o">=</span> <span class="nx">DrawerNavigationProp</span><span class="o">&lt;</span>
+  <span class="p">{</span>
+    <span class="na">TabNavi</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="nl">MaterialTabNavi</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="nl">MaterialTopTabNaviStackNavi</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="nl">Logout</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="dl">'</span><span class="s1">TabNavi</span><span class="dl">'</span>
+<span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">DrawerProp</span> <span class="p">{</span>
+  <span class="nl">navigation</span><span class="p">:</span> <span class="nx">TypeDrawerProp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MaterialTopTabNaviStackNavi</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">DrawerProp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">screenOptions</span><span class="o">=</span><span class="p">{{</span>
+        <span class="na">headerLeft</span><span class="p">:</span> <span class="p">(</span><span class="na">props</span><span class="p">:</span> <span class="nx">StackHeaderLeftButtonProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">IconButton</span>
+            <span class="nx">iconName</span><span class="o">=</span><span class="dl">"</span><span class="s2">menu</span><span class="dl">"</span>
+            <span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">openDrawer</span><span class="p">()}</span>
+            <span class="nx">color</span><span class="o">=</span><span class="dl">"</span><span class="s2">black</span><span class="dl">"</span>
+          <span class="o">/&gt;</span>
+        <span class="p">),</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Stack</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MaterialTopTabNavi</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MaterialTopTabNavi</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Stack.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><h3 id="draweractions">DrawerActions</h3><p>위에 예제처럼 Drawer Navigation에 직접 연결된 화면에서는 navigation의 Props를 사용하여 Drawer를 열고 닫을 수 있습니다. 하지만 아래와 같이 Drawer Navigation에 직접 연결되지 않은 경우에는 navigation의 Props를 사용하여 Drawer를 열고 닫을 수 없습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MainTabs</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Navigator</span> <span class="nx">tabBarOptions</span><span class="o">=</span><span class="p">{{</span><span class="na">activeTintColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">black</span><span class="dl">'</span><span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MyFeed</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MyFeed</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">Feeds</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Feeds</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">Upload</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Upload</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">Notification</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Notification</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">BottomTab</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">Profile</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Profile</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/BottomTab.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MainNavigator</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Navigator</span>
+      <span class="nx">drawerPosition</span><span class="o">=</span><span class="dl">"</span><span class="s2">right</span><span class="dl">"</span>
+      <span class="nx">drawerType</span><span class="o">=</span><span class="dl">"</span><span class="s2">slide</span><span class="dl">"</span>
+      <span class="nx">drawerContent</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">CustomDrawer</span> <span class="nx">props</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">}</span> <span class="sr">/&gt;}</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Drawer</span><span class="p">.</span><span class="nx">Screen</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">MainTabs</span><span class="dl">"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">MainTabs</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Drawer.Navigator</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+</code></pre></div></div><p>그 이유는 Screen에서 받는 navigation의 Props는 바로 상위에 있는 Navigation에서 Props를 전달 받기 때문입니다. 위에 예제에서 <code class="language-plaintext highlighter-rouge">MainTab</code>에 있는 <code class="language-plaintext highlighter-rouge">Profile</code> 화면의 navigation Props는 Drawer Navigation이 아닌 Bottom Tab Navigation의 Props가 됩니다. 따라서 Profile 화면에서는 <code class="language-plaintext highlighter-rouge">navigation.openDrawer()</code>를 사용할 수 없습니다.</p><p>이와 같은 경우 사용하는 것이 <code class="language-plaintext highlighter-rouge">DrawerActions</code>입니다.</p><p>Drawer Navigation의 바로 하단에 있지는 않지만, 위와 같이 상단에 Drawer Navigation을 사용할 때, 아래와 같이 Drawer를 열고 닫을 수 있습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">DrawerActions</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">StackNavigationProp</span><span class="o">&lt;</span><span class="nx">ProfileTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Profile</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">navigation</span><span class="p">:</span> <span class="nx">NavigationProp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">Profile</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ScrollView</span><span class="o">&gt;</span>
+      <span class="p">...</span>
+      <span class="o">&lt;</span><span class="nx">IconButton</span>
+        <span class="nx">iconName</span><span class="o">=</span><span class="dl">"</span><span class="s2">menu</span><span class="dl">"</span>
+        <span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">DrawerActions</span><span class="p">.</span><span class="nx">openDrawer</span><span class="p">())}</span>
+      <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">...</span>
+    <span class="o">&lt;</span><span class="sr">/ScrollView</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Profile</span><span class="p">;</span>
+
+</code></pre></div></div><p>위와 같이 <code class="language-plaintext highlighter-rouge">navigation.dispatch(DrawerActions.openDrawer())</code>을 사용하여 Drawer Navigation을 열 수 있습니다. 그 외에도 아래와 같은 함수를 지원합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">navigation</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">DrawerActions</span><span class="p">.</span><span class="nx">openDrawer</span><span class="p">());</span>
+<span class="nx">navigation</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">DrawerActions</span><span class="p">.</span><span class="nx">closeDrawer</span><span class="p">());</span>
+<span class="nx">navigation</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">DrawerActions</span><span class="p">.</span><span class="nx">toggleDrawer</span><span class="p">());</span>
+</code></pre></div></div><div class="in-feed-ads"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><h3 id="setparams--getparams">setParams / getParams</h3><p>react-navigation V4에서는 아래와 같이 화면간 데이터를 주고 받을 수 있었습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nx">navigation</span><span class="p">.</span><span class="nx">setParams</span><span class="p">({</span>
+  <span class="na">showSearch</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">showSearch</span> <span class="o">=</span> <span class="nx">navigation</span><span class="p">.</span><span class="nx">getParam</span><span class="p">(</span><span class="dl">'</span><span class="s1">showSearch</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div><p>react-navigation V5에서는 <code class="language-plaintext highlighter-rouge">setParams</code>는 사용할 수 있지만, <code class="language-plaintext highlighter-rouge">getParams</code>는 사용할 수 없습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">navigation</span><span class="p">.</span><span class="nx">setParams</span><span class="p">({</span>
+  <span class="na">showSearch</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div><p>react-navigation V5에서는 <code class="language-plaintext highlighter-rouge">getParams</code> 대신 <code class="language-plaintext highlighter-rouge">route.params</code>을 사용하게 됩니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RouteProp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="nx">type</span> <span class="nx">ProfileScreenRouteProp</span> <span class="o">=</span> <span class="nx">RouteProp</span><span class="o">&lt;</span><span class="nx">MovieNaviParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">MovieDetail</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">route</span><span class="p">:</span> <span class="nx">ProfileScreenRouteProp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">MovieDetail</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">route</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MovieDetail</span><span class="p">;</span>
+</code></pre></div></div><p>typescript가 적용이 되어 조금 복잡해 보이지만,</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MovieDetail</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">route</span><span class="p">,</span> <span class="nx">navigation</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div><p>위와 같이 navigation Props와 함께 오는 route Props를 사용하여 데이터를 습득하게 됩니다.</p><h2 id="typescript">Typescript</h2><p>react-navigation v5에서 typescript를 사용하는 방법에 대해서 알아봅니다.</p><h3 id="navigation">navigation</h3><p>화면을 전환하기 위해서는 navigation Props를 아래와 같이 사용하게 됩니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Feeds</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="dl">'</span><span class="s1">FeedListOnly</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div><p>이 때, Props는 아래와 같이 작성합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">StackNavigationProp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/stack</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// Stack Navigation</span>
+<span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">StackNavigationProp</span><span class="o">&lt;</span><span class="nx">FeedsTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Feeds</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">navigation</span><span class="p">:</span> <span class="nx">NavigationProp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">Feeds</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="dl">'</span><span class="s1">FeedListOnly</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div><p>위에 예제에서 FeedsTabParamList는 같은 Stack Navigation에서도 사용하게 되므로 <code class="language-plaintext highlighter-rouge">@types/index.d.ts</code> 파일을 생성하고 아래와 같이 선언합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">FeedsTabParamList</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Feeds</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+  <span class="nl">FeedListOnly</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div><p>이 Stack Navigation은 <code class="language-plaintext highlighter-rouge">Feeds</code>라는 화면과 <code class="language-plaintext highlighter-rouge">FeedListOnly</code>라는 화면을 가지고 있으며, 화면을 전환할 때, 특별히 전달할 파라메터가 없으므로 <code class="language-plaintext highlighter-rouge">undefined</code>를 대입하였습니다.</p><p>만약 화면 전환시 파라메터가 필요한 경우,</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">FeedsTabParamList</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Feeds</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+  <span class="nl">FeedListOnly</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div><p>위와 같이 필요한 파라메터를 정의한 후,</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Feeds</span> <span class="o">=</span> <span class="p">({</span><span class="nx">navigation</span><span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="dl">'</span><span class="s1">FeedListOnly</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div><p>위와 같이 파라메터를 전달할 수 있습니다. 이렇게 복잡하게 하는 이유는 전달하는 파라메터의 타입을 정확하게 체크하기 위해서입니다.</p><p>위에서는 Stack Navigation을 소개하였지만 아래와 같이 각 Navigation별로 Props를 사용할 수 있습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">BottomTabNavigationProp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/bottom-tabs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">DrawerNavigationProp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/drawer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">MaterialBottomTabNavigationProp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/material-bottom-tabs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">MaterialTopTabBarProps</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/material-top-tabs</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div><p>사용법은 Stack Navigation과 동일합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">BottomTabNavigationProp</span><span class="o">&lt;</span><span class="nx">FeedsTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Feeds</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">DrawerNavigationProp</span><span class="o">&lt;</span><span class="nx">FeedsTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Feeds</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">MaterialBottomTabNavigationProp</span><span class="o">&lt;</span><span class="nx">FeedsTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Feeds</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">type</span> <span class="nx">NavigationProp</span> <span class="o">=</span> <span class="nx">MaterialTopTabBarProps</span><span class="o">&lt;</span><span class="nx">FeedsTabParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Feeds</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div></div><h3 id="route">route</h3><p>위에서 설명하였지만 <code class="language-plaintext highlighter-rouge">navigation.setParams</code>를 활용하여 화면간 데이터를 주고 받을 수 있습니다. 이때, 데이터를 받는 쪽에서는 <code class="language-plaintext highlighter-rouge">route.params</code>를 사용하게 됩니다.</p><p>이 <code class="language-plaintext highlighter-rouge">route</code> 파라메터를 사용하기 위해서는 아래와 같이 typescript를 사용합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RouteProp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@react-navigation/native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">type</span> <span class="nx">ProfileScreenRouteProp</span> <span class="o">=</span> <span class="nx">RouteProp</span><span class="o">&lt;</span><span class="nx">MovieNaviParamList</span><span class="p">,</span> <span class="dl">'</span><span class="s1">MovieDetail</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">route</span><span class="p">:</span> <span class="nx">ProfileScreenRouteProp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">MovieDetail</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">route</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MovieDetail</span><span class="p">;</span>
+</code></pre></div></div><p>여기서 <code class="language-plaintext highlighter-rouge">MovieNaviParamList</code>도 여러 화면에서 사용되기 때문에 별도의 <code class="language-plaintext highlighter-rouge">@types/index.d.ts</code> 파일을 만들고 작성합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">MovieNaviParamList</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">MovieHome</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+  <span class="nl">MovieDetail</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div><h2 id="완료">완료</h2><p>이것으로 react-navigation V5를 설치하는 방법과 사용하는 방법에 대해서 알아보았습니다. V4만 사용하다가 V5를 보니, 많이 달라진 점때문에 놀랐습니다. 하지만 React 컴포넌트를 사용하는 형태로 변경되면서, 좀 더 React에 친화적인 형태로 개발이 된거 같다고 느꼈습니다.</p><p>기존에 사용하던 기능들이 모두 구현 가능하다고 생각합니다. 일단 react-navigation V4 예제에서 구현한 모든 내용을 react-navigation V5에서도 구현해 보았습니다. react-navigation V5를 사용하고자 하시는 분들은 아래에 예제 소스를 꼭 참고해 보시기 바랍니다.</p><ul><li>react-navigation-exercise V5: <a href="https://github.com/dev-yakuza/react-navigation-v5-exercise" rel="nofollow noreferrer" target="_blank">https://github.com/dev-yakuza/react-navigation-v5-exercise</a></li></ul><h2 id="참고">참고</h2><ul><li>공식 홈페이지: <a href="https://reactnavigation.org/docs" rel="nofollow noreferrer" target="_blank">react-navigation</a></li></ul><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 제 블로그가 도움이 되셨나요? 하단의 댓글을 달아주시면 저에게 큰 힘이 됩니다! </code></p><h2>책 홍보</h2><div class="book-greeting"> 저도 블로그를 시작한지 1년만에...책을 다 써봅니다...인생에서 이런 날도 오는군요...타국에서 책 출판도 할 수 있고, 참 좋은 세상입니다.<br/><br/> 이번에 쓴 책은 <code class="highlighter-rouge">스무디 한 잔 마시며 끝내는 React Native</code>입니다. 다양한 예제를 통해 리액트 네이티브를 공부할 수 있도록 구성해 보았습니다. 또한 설치부터 배포까지 실전에서도 사용할 수 있는 내용들을 담고 있습니다.<br/><br/> 아래 링크를 통해 제가 쓴 책을 구매하실 수 있습니다.<br/> 많은 분들에게 도움이 되면 좋겠네요.<br/><br/><div style="display: flex; align-items: center; justify-content: center; margin-bottom: 40px;"><div style="margin-right: 20px;"><a href="https://coupa.ng/bMMos6" target="_blank"><img src="https://static.coupangcdn.com/image/affiliate/banner/b95772cbabc4ca68f13398b6d001d523@2x.jpg" alt="스무디 한 잔 마시며 끝내는 React Native, 비제이퍼블릭" style="width: 140px;"/></a></div><div><ul><li> yes24: <a target="_blank" rel="noopener" href="http://www.yes24.com/Product/Goods/82895471?Acode=101">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190014625&orderClick=LEa&Kc=">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=216744127">구매하기</a></li><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/bMMos6">구매하기</a></li></ul></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/ko/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="url" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=react-navigation V5&url=https://dev-yakuza.posstree.com/react-native/react-navigation-v5/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/react-native/react-navigation-v5/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/ko/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2021 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script src="/assets/scripts.js?v=20210603"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"></body></html>
