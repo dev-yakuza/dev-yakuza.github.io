@@ -56,7 +56,7 @@ layout: default
               <a
                 itemtype="http://schema.org/Thing"
                 itemprop="item"
-                href="{{ site.url }}/"
+                href="/"
               >
                 <span itemprop="name">Home</span>
               </a>
@@ -71,7 +71,7 @@ layout: default
               <a
                 itemtype="http://schema.org/Thing"
                 itemprop="item"
-                href="{{ site.url }}/{{ page.categories[0] }}"
+                href="/{{ page.categories[0] }}"
               >
                 <span itemprop="name">{{ page.categories[0] }}</span>
               </a>
@@ -87,7 +87,7 @@ layout: default
               <a
                 itemtype="http://schema.org/Thing"
                 itemprop="item"
-                href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}"
+                href="{{ page.url | replace: 'index.html', '' }}"
               >
                 <span itemprop="name">{{ page.title }}</span>
               </a>
