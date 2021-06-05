@@ -9,12 +9,17 @@ comments: true
 title: Jekyllブログにコメント機能
 description: utterancesのサービスを使ってJekyllのプロジェクトへコメント機能を追加してみましょう。
 image: '/assets/images/category/jekyll/2021/utterances/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [utterances連動](#utterances連動)
+- [スクリプト生成](#スクリプト生成)
+- [Jekyllブログに適用](#jekyllブログに適用)
+- [完了](#完了)
 
 </div>
 

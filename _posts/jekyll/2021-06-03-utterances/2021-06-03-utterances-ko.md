@@ -9,12 +9,17 @@ comments: true
 title: Jekyll 블로그에 댓글 기능 넣기
 description: utterances 서비스를 이용하여 Jekyll 프로젝트에 댓글 기능을 추가해 보자.
 image: '/assets/images/category/jekyll/2021/utterances/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [utterances 연동](#utterances-연동)
+- [스크립트 생성](#스크립트-생성)
+- [Jekyll 블로그에 적용](#jekyll-블로그에-적용)
+- [완료](#완료)
 
 </div>
 
