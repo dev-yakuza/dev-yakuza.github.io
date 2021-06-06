@@ -1,7 +1,7 @@
 ---
 layout: 'post'
-permalink: '/flutter/widget/shared-preferences/'
-paginate_path: '/flutter/:num/widget/shared-preferences/'
+permalink: '/flutter/shared-preferences/'
+paginate_path: '/flutter/:num/shared-preferences/'
 lang: 'ko'
 categories: 'flutter'
 comments: true

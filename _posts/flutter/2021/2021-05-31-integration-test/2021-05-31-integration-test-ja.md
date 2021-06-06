@@ -1,7 +1,7 @@
 ---
 layout: 'post'
-permalink: '/flutter/widget/integration-test/'
-paginate_path: '/flutter/:num/widget/integration-test/'
+permalink: '/flutter/integration-test/'
+paginate_path: '/flutter/:num/integration-test/'
 lang: 'ja'
 categories: 'flutter'
 comments: true
