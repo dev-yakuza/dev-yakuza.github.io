@@ -2,43 +2,43 @@
 layout: 'post'
 permalink: '/flutter/widget/sqflite/'
 paginate_path: '/flutter/:num/widget/sqflite/'
-lang: 'ko'
+lang: 'ja'
 categories: 'flutter'
 comments: true
 
 title: '[Flutter] SQLite'
-description: 이번 블로그 포스트에서는 Flutter에서 SQLite를 사용하는 방법에 대해서 살펴봅시다.
+description: 今回のブログポストではFlutterでSQLiteを使う方法について説明します。
 image: '/assets/images/category/flutter/background.png'
 published: false
 ---
 
 <div id="contents_list" markdown="1">
 
-## 목차
+## 目次
 
 </div>
 
-## 개요
+## 概要
 
-이번 블로그 포스트에서는, Flutter에서 사용자 디바이스에 데이터를 저장하기 위해 `SQLite`를 사용하는 방법에 대해서 알아봅시다. Flutter에서 `SQLite`를 사용하기 위해서는 `sqflite` 패키지를 사용합니다.
+このブログポストでは、Flutterでユーザデバイスにデータを保存するため`SQLite`を使う方法について説明します。Flutterで`SQLite`を使うためには`sqflite`パッケージを使います。
 
 - sqflite: [https://pub.dev/packages/sqflite](https://pub.dev/packages/sqflite){:rel="nofollow noreferrer" target="_blank"}
 
-Flutter의 공식 문서에도 `sqflite`을 사용하는 방법에 대해 나와있습니다. 아래에 링크를 통해 공식 문서를 참고하시기 바랍니다.
+Flutterの公式ドキュメントでも`sqflite`を使う方法について書いております。下記のリンクで公式ドキュメントも参考してみてください。
 
-- 공식 문서: [https://flutter.dev/docs/cookbook/persistence/sqlite](https://flutter.dev/docs/cookbook/persistence/sqlite){:rel="nofollow noreferrer" target="_blank"}
+- 公式ドキュメント: [https://flutter.dev/docs/cookbook/persistence/sqlite](https://flutter.dev/docs/cookbook/persistence/sqlite){:rel="nofollow noreferrer" target="_blank"}
 
 ## Shared preferences
 
-SQLite는 복잡한 데이터를 사용자의 디바이스에 저장하기 위해 사용됩니다. 사용자의 디바이스의 간단한 데이터를 `키-값` 형태를 저장할 때에는 `shared_preferences` 패키지를 사용합니다.
+SQLiteは複雑なデータをユーザのデバイスに保存する時使います。ユーザのデバイスに簡単なデータを`Key-Value`の形式で保存する時には`shared_preferences`パッケージを使います。
 
-`shared_preferences` 패키지를 사용하는 방법에 대해서는 아래에 링크를 참고하시기 바랍니다.
+`shared_preferences`パッケージを使う方法については下記のリンクを参考してください。
 
 - [[Flutter] Shared preferences]({{site.url}}/{{page.categories}}/shared-preferences/){:target="_blank"}
 
-## sqflite 설치
+## sqfliteインストール
 
-Flutter에서 SQLite를 사용하기 위해 `sqflite` 패키지를 설치할 필요가 있습니다. 다음 명령어를 실행하여 `sqflite` 패키지를 설치합니다.
+FlutterでSQLiteを使うため`sqflite`パッケージをインストールする必要があります。次のコマンドを使って`sqflite`パッケージをインストールします。
 
 ```bash
 flutter pub add sqflite
@@ -46,13 +46,13 @@ flutter pub add sqflite
 
 {% include in-feed-ads.html %}
 
-## DB 준비
+## DB準備
 
-Flutter에서 `sqflite` 패키지를 사용하여 SQLite DB를 사용하기 위해 DB를 준비하는 방법에 대해서 알아봅시다.
+Flutterで`sqflite`パッケージを使ってSQLite DBを使うため、DBを準備する方法について説明します。
 
-### DB 열기
+### DBオープン
 
-SQLite를 사용하기 위해서는 SQLite DB를 열어야 합니다. 다음 코드를 사용하여 SQLite DB를 열 수 있습니다.
+SQLiteを使うためにはSQLite DBをオープンする必要があります。次のコードを使ってSQLite DBをオープンすることができます。
 
 ```dart
 import 'package:sqflite/sqflite.dart';
@@ -61,11 +61,11 @@ var db = await openDatabase('my_db.db');
 ...
 ```
 
-`openDatabase`에 지정한 위치에 DB 파일이 존재하면, 해당 DB를 열며, 존재하지 않는 경우 DB 파일을 생성하고 DB를 열게 됩니다. DB 파일은 안드로이드에 경우는 기본 database 디렉토리에, iOS인 경우 dcouments 디렉토리에 생성됩니다.
+`openDatabase`に指定したDBファイルが存在すると、当該DBをオープンします。存在しない場合は、DBファイルを生成してDBをオープンします。DBファイルはアンドロイドの場合、基本Databaseディレクトリに、iOSの場合はdcoumentsディレクトリに生成されます。
 
-### DB 닫기
+### DBクローズ
 
-`sqflite` 패키지의 `openDatabase`을 사용하여 SQLite 데이터베이스를 열어 사용한 경우, 앱이 종료되면, 열었던 DB 접속은 자동으로 닫힙니다. 만약, 앱 종료와 함께 DB 접속을 닫는 것이 아니라, 특정 타이밍에 접속을 닫고 싶은 경우, 다음과 같은 코드를 사용할 수 있습니다.
+`sqflite`パッケージの`openDatabase`を使ってSQLiteデータベースをオープンして使う場合、アプリが終了されると、オープンされたDBのアクセスも自動でクローズされます。もし、アプリ終了と一緒にDBのアクセスをクローズするではなく、特定したタイミングでクローズしたい場合、次のコードを使います。
 
 ```dart
 ...
@@ -73,16 +73,16 @@ await db.close();
 ...
 ```
 
-### 기존 DB 사용하기
+### 既存DBを使う場合
 
-`sqflite` 패키지를 사용하여, 미리 만든 SQLite DB를 사용할 수 있습니다. 우선, 미리 만든 SQLite DB를 `assets/` 폴더에 복사합니다. 그런 다음, `pubspec.yaml` 파일을 열고 다음과 같이 수정합니다.
+`sqflite`パッケージを使って、事前に作ったSQLite DBを使うこともできます。まず、事前に作ったSQLite DBを`assets/`フォルダにコピーします。その後、`pubspec.yaml`ファイルを開いて下記のように修正します。
 
 ```yaml
 assets:
   - assets/data.db
 ```
 
-그리고 다음과 같이 SQLite DB가 존재하지 않는 경우, 미리 준비한 DB를 복사하여 사용하도록 할 수 있습니다.
+そして、次のようにSQLite DBが存在しない場合、事前に作ったDBをコピーして使えるようにすることができます。
 
 ```dart
 import 'dart:io';
@@ -115,15 +115,15 @@ Future<Database> getDB() async {
 
 {% include in-feed-ads.html %}
 
-## 사용 방법
+## 使い方
 
-`sqflite`을 사용하여 SQLite DB에 데이터를 CRUD(Create, Read, Update, Delete)하는 방법에 대해서 알아봅시다.
+`sqflite`を使ってSQLite DBにデータをCRUD(Create, Read, Update, Delete)する方法について説明します。
 
-### 모델 클래스
+### モデルクラス
 
-Flutter에서 SQLite에 데이터를 저장하거나 사용하기 위해 모델 클래스를 정의할 수 있습니다. 이는 SQLite를 사용하기 위한 필수 조건은 아니지만, SQLite로 부터 가져온 데이터를 사용할 때, 또는 데이터를 추가할 때에 좀 더 명확하게 사용할 수 있습니다.
+FlutterでSQLiteにデータを保存したり使うためモデルクラスを定義して使うことができます。こレはSQLiteを使うため必須条件ではなく、SQLiteからデータを取ってくる時、またはデータを追加する時、もっt明確にするため使います。
 
-모델로 사용할 클래스는 다음과 같이 작성할 수 있습니다.
+モデルを使うクラスは下記のように作成します。
 
 ```dart
 class Dog {
@@ -154,7 +154,7 @@ class Dog {
 
 ### Select
 
-다음과 같이 모델 클래스와 `sqflite`을 사용하여 SQLite DB에 저장된 데이터를 가져올 수 있습니다.
+次のようにモデルクラスと`sqflite`を使ってSQLite DBに保存されたデータを取ってくることができます。
 
 ```dart
 final List<Map<String, dynamic>> maps = await db.query('dogs');
@@ -175,7 +175,7 @@ return List.generate(maps.length, (i) {
 
 ### Insert
 
-다음과 같이 모델 클래스와 `sqflite`을 사용하여 SQLite DB에 데이터를 추가할 수 있습니다.
+次のようにモデルクラスと`sqflite`を使ってSQLite DBにデータを追加することができます。
 
 ```dart
 var dog = Dog(
@@ -190,7 +190,7 @@ await db.insert('dogs', dog.toMap());
 
 ### Update
 
-다음과 같이 모델 클래스와 `sqflite`을 사용하여 SQLite DB에 데이터를 업데이트할 수 있습니다.
+次のようにモデルクラスと`sqflite`を使ってSQLite DBにデータを更新することができます。
 
 ```dart
 await db.update('dogs', dog.toMap(), where: 'id = ?', whereArgs: [dog.id]);
@@ -199,22 +199,22 @@ await db.update('dogs', dog.toMap(), where: 'id = ?', whereArgs: [dog.id]);
 
 ### Delete
 
-다음과 같이 `sqflite`을 사용하여 SQLite DB에 있는 데이터를 삭제할 수 있습니다.
+次のように`sqflite`を使ってSQLite DBにあるデータを削除することができます。
 
 ```dart
 await db.delete('dogs', where: 'id = ?', whereArgs: [id]);
 // await database.rawDelete('DELETE FROM dogs WHERE id = ?', [id]);
 ```
 
-## 테스트
+## テスト
 
-SQLite는 기본적으로 사용자의 디바이스에 DB가 생성되고, `sqflite` 패키지는 디바이스에서 동작되도록 설계되어 유닛 테스트(Unit Test)를 할 수가 없습니다.
+SQLiteは基本的ユーザのデバイスにDBが生成されて、`sqflite`パッケージはデバイスで動作されるように設計されてますので、ユニットテスト(Unit Test)することができません。
 
-하지만, `sqflite_ffi`을 사용하면, 테스트 코드에서 직접 DB를 열고, CRUD 쿼리(Query)를 테스트할 수 있습니다.
+しかし、`sqflite_ffi`を使って、テストコードで直接DBをオープンしてCRUDクエリ(Query)をテストすることはできます。
 
-### 준비
+### 準備
 
-다음과 같이 실제 사용되는 SQLite DB를 복사하고, `sqflite_ffi`을 초기화하여, 테스트할 환경을 준비합니다.
+次のように実際使ってるSQLite DBをコピーと`sqflite_ffi`を初期化して、テストする環境を準備します。
 
 ```dart
 import 'dart:io';
@@ -239,9 +239,9 @@ void main() {
 
 {% include in-feed-ads.html %}
 
-### Select 테스트
+### Selectテスト
 
-다음과 같이 `sqflite_ffi`을 사용하여 Select 쿼리를 테스트 할 수 있습니다.
+次のように`sqflite_ffi`を使ってSelectクエリをテストすることができます。
 
 ```dart
 ...
@@ -266,9 +266,9 @@ void main() {
 }
 ```
 
-### Insert 테스트
+### Insertテスト
 
-다음과 같이 `sqflite_ffi`을 사용하여 Insert 쿼리를 테스트 할 수 있습니다.
+次のように`sqflite_ffi`を使ってInsertクエリをテストすることができます。
 
 ```dart
 ...
@@ -296,9 +296,9 @@ void main() {
 
 {% include in-feed-ads.html %}
 
-### Update 테스트
+### Updateテスト
 
-다음과 같이 `sqflite_ffi`을 사용하여 Update 쿼리를 테스트 할 수 있습니다.
+次のように`sqflite_ffi`を使ってUpdateクエリをテストすることができます。
 
 ```dart
 ...
@@ -324,9 +324,9 @@ void main() {
 }
 ```
 
-### Delete 테스트
+### Deleteテスト
 
-다음과 같이 `sqflite_ffi`을 사용하여 Delete 쿼리를 테스트 할 수 있습니다.
+次のように`sqflite_ffi`を使ってDeleteクエリをテストすることができます。
 
 ```dart
 ...
@@ -351,6 +351,6 @@ void main() {
 }
 ```
 
-## 완료
+## 完了
 
-이것으로 Flutter에서 SQLite를 사용하기 위해 `sqflite` 패키지를 사용하는 방법에 대해서 알아보았습니다. 여러분도 SQLite를 사용하여 사용자의 디바이스에 데이터를 저장하고 사용해 보시기 바랍니다.
+これでFlutterでSQLiteを使うため`sqflite`パッケージを使う方法についてみてみました。皆さんもSQLiteを使ってユーザのデバイスにデータを保存して使ってみてください。
