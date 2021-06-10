@@ -15,14 +15,15 @@ image: '/assets/images/category/flutter/background.png'
 
 ## 목차
 
- [개요](#개요)
- [Stack](#stack)
- [Named routes](#named-routes)
- [popUntil](#popuntil)
- [automaticallyImplyLeading](#automaticallyimplyleading)
- [Swipe back](#swipe-back)
- [포커스](#포커스)
- [완료](#완료)
+- [개요](#개요)
+- [Stack](#stack)
+- [Named routes](#named-routes)
+- [popUntil](#popuntil)
+- [automaticallyImplyLeading](#automaticallyimplyleading)
+- [Swipe back](#swipe-back)
+- [포커스](#포커스)
+- [Full modal](#full-modal)
+- [완료](#완료)
 
 </div>
 
@@ -493,6 +494,22 @@ Navigator.pushNamed(context, 'B').then((value) {
 ```
 
 이렇게 `pushNamed` 함수를 사용하여 다음 페이지로 이동할 때, `then`을 사용하여 다음 페이지가 `pop`된 후, 특정 동작을 수행할 수 있는 콜백(Callback) 함수를 등록할 수 있습니다.
+
+## Full modal
+
+기본적으로 스택 내비게이션은 오른쪽에서 왼쪽으로 슬라이드되면서 화면에 표시됩니다. 다음 코드를 사용하면 스택 내비게이션을 하단에서 위로 슬라이드되면서 표시되도록 할 수 있습니다.
+
+```dart
+import 'package:flutter/cupertino.dart';
+...
+Navigator.push(
+  context,
+  CupertinoPageRoute(
+    fullscreenDialog: true,
+    builder: (_) => SecondScreen(),
+  ),
+);
+```
 
 ## 완료
 

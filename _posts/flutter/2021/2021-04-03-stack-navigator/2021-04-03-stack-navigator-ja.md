@@ -22,6 +22,7 @@ image: '/assets/images/category/flutter/background.png'
 - [automaticallyImplyLeading](#automaticallyimplyleading)
 - [Swipe back](#swipe-back)
 - [フォーカス](#フォーカス)
+- [フルモーダル](#フルモーダル)
 - [完了](#完了)
 
 </div>
@@ -493,6 +494,22 @@ Navigator.pushNamed(context, 'B').then((value) {
 ```
 
 このように`pushNamed`関数使って次のページへ移動する時、`then`を使って次のページが`pop`された後、特定な動作を実行できるコールバック(Callback)関数を登録することができます。
+
+## フルモーダル
+
+基本的スタックナビゲーションは右から左にスライドしながら画面に表示されます。次のコードを使うとスタックナビゲーションを下から上にスライドしながら表示させることができます。
+
+```dart
+import 'package:flutter/cupertino.dart';
+...
+Navigator.push(
+  context,
+  CupertinoPageRoute(
+    fullscreenDialog: true,
+    builder: (_) => SecondScreen(),
+  ),
+);
+```
 
 ## 完了
 

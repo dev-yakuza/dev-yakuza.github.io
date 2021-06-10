@@ -22,7 +22,8 @@ image: '/assets/images/category/flutter/background.png'
 - [automaticallyImplyLeading](#automaticallyimplyleading)
 - [Swipe back](#swipe-back)
 - [Focus](#focus)
-- [Completed](#completed)
+- [Full modal](#full-modal)
+- [Completed]
 
 </div>
 
@@ -493,6 +494,22 @@ Navigator.pushNamed(context, 'B').then((value) {
 ```
 
 If you use the `then` on the `pushNamed` function, you can register a callback to do some actions after the next screen is `poped`.
+
+## Full modal
+
+The stack navigation is shown up with the slide animation from the right side to the left side. If you use the code below, you can make the stack navigation shown from the bottom to the top.
+
+```dart
+import 'package:flutter/cupertino.dart';
+...
+Navigator.push(
+  context,
+  CupertinoPageRoute(
+    fullscreenDialog: true,
+    builder: (_) => SecondScreen(),
+  ),
+);
+```
 
 ## Completed
 
