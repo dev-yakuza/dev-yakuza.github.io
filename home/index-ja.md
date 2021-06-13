@@ -7,7 +7,7 @@ pagination:
 
 title: 'プログラミングでアートを夢見る.'
 # 우리는 코드로 말한다.
-description: '『プログラミングアーチスト、ヤクザ』'
+description: '『プログラミングアーチスト、DeKu』'
 categories: 'home'
 image: '/assets/images/main.jpg'
 no_search_result: '検索結果がありません。'

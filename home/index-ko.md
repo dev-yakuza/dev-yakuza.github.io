@@ -7,7 +7,7 @@ pagination:
 
 title: '프로그래밍으로 예술을 꿈꾼다'
 # 우리는 코드로 말한다.
-description: '『프로그래밍 예술가 ヤクザ』'
+description: '『프로그래밍 예술가, DeKu』'
 categories: 'home'
 image: '/assets/images/main.jpg'
 no_search_result: '검색 결과가 없습니다.'

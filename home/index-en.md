@@ -7,7 +7,7 @@ pagination:
 
 title: 'Dreams the art through programming'
 # 우리는 코드로 말한다.
-description: '『Programming Artist ヤクザ』'
+description: '『Programming Artist, DeKu』'
 categories: 'home'
 image: '/assets/images/main.jpg'
 no_search_result: 'There is no search result.'

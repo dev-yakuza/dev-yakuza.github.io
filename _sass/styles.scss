@@ -410,10 +410,16 @@ table {
   margin-left: 40px;
   & img {
     width: auto;
-    height: 40px;
+    height: 35px;
     position: absolute;
     left: -44px;
-    top: -2px;
+    top: 0;
+  }
+  .name {
+    color: #212529;
+    position: relative;
+    top: 6px;
+    left: 6px;
   }
 }
 
