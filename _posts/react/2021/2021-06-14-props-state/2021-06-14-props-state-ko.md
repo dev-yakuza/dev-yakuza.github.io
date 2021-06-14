@@ -6,7 +6,7 @@ lang: 'ko'
 categories: 'react'
 comments: true
 
-title: '[React] Props State'
+title: '[React] Props와 State'
 description: 'React에서 데이터를 다루는 주요 개념인 Props와 State에 관해 이해해 봅시다.'
 image: '/assets/images/category/react/background.jpg'
 published: false
@@ -20,7 +20,11 @@ published: false
 
 ## 개요
 
-React에서 컴포넌트가 데이터를 다루는 방법으로 `Props`와 `State`가 있습니다. 이번 블로그 포스트에서는 Porps와 State에 관한 개념을 정리해 보도록 하겠습니다.
+React에서 컴포넌트가 데이터를 다루는 방법으로 `Props`, `State` 그리고 `Context`  있습니다. 이번 블로그 포스트에서는 Porps와 State에 관한 개념을 정리해 보도록 하겠습니다.
+
+React에서 Context를 다루기 위해 Context API를 사용하는 방법에 대해서는 아래에 링크를 참고하시기 바랍니다.
+
+- [[React] Context API]({{site.url}}/{{page.categories}}/context-api/){:target="_blank"}
 
 ## Props
 

@@ -22,9 +22,9 @@ published: false
 
 이 블로그 포스트는 시리즈로 제작되었습니다. 다음은 블로그 시리즈 리스트입니다.
 
-- [Prettier]({{site.url}}/{{page.categories}}/prettier/){:target="_blank"}
-- [ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
-- Husky, lint-staged
+- [[React] Prettier]({{site.url}}/{{page.categories}}/prettier/){:target="_blank"}
+- [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
+- [React] Husky, lint-staged
 
 ## 개요
 
