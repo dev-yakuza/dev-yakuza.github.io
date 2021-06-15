@@ -26,6 +26,10 @@ React에서 Props와 State 개념과 사용 방법에 대해서는 아래에 링
 
 - [[React] Props와 State]({{site.url}}/{{page.categories}}/props-state/){:target="_blank"}
 
+여기서 소개하는 소스 코드는 아래에 링크를 통해 확인할 수 있습니다.
+
+- GitHub: [context_example](https://github.com/dev-yakuza/study-create-react-app/tree/main/example/context_exmaple){:rel="noopener" target="_blank"}
+
 ## Context
 
 React에서 Props와 State는 부모 컴포넌트와 자식 컴포넌트 또는 한 컴포넌트 안에서 데 이터를 다루기 위해 사용됩니다. 이 Props와 State를 사용하게 되면 부모 컴포넌트에서 자식 컴포넌트, 즉, 위에서 아래, 한쪽으로 데이터가 흐르게 됩니다.
