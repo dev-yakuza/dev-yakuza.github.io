@@ -7,7 +7,7 @@ categories: 'react'
 comments: true
 
 title: '[React] Context API'
-description: 'React에서 데이터를 다루는 개념중 하나인 Context API를 사용하는 방법에 대해서 알아봅시다..'
+description: 'React에서 데이터를 다루는 개념중 하나인 Context API를 사용하는 방법에 대해서 알아봅시다.'
 image: '/assets/images/category/react/background.jpg'
 published: false
 ---
