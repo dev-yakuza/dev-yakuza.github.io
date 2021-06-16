@@ -28,6 +28,10 @@ published: false
 
 - [React란]({{site.url}}/{{page.categories}}/create-react-app/react/){:target="_blank"}
 
+여기서 소개하는 코드는 아래의 링크에서 확인하실 수 있습니다.
+
+- GitHub: [react_router_example](https://github.com/dev-yakuza/study-create-react-app/tree/main/example/react_router_example){:rel="noopener" target="_blank"}
+
 ## 프로젝트 준비
 
 React에서 react-router를 사용하여 페이지 전환 기능을 구현해 보기 위해, React 프로젝트를 생성할 예정입니다. 이 블로그에서는 CRA(create-react-app)과 TypeScript를 사용하여 React 프로젝트를 생성합니다.
