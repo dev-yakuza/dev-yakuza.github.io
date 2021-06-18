@@ -6,7 +6,7 @@ lang: 'ko'
 categories: 'git'
 comments: true
 
-title: [Git] Master에서 Main으로 설정
+title: "[Git] Master에서 Main으로 설정"
 description: Git을 사용할 때, 기본 브랜치를 Master에서 Main으로 변경하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/git/2021/default-branch/background.jpg'
 published: false
