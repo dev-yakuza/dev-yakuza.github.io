@@ -25,6 +25,7 @@ published: false
 - [React] Prettier
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [[React] Husky, lint-staged]({{site.url}}/{{page.categories}}/husky-lint-staged/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
 
 ## 개요
 
