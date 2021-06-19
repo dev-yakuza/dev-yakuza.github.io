@@ -141,16 +141,16 @@ All matched files use Prettier code style!
 ```json
 "scripts": {
   ...
-  "format:check": "prettier --check ./src",
-  "format": "prettier --write ./src"
+  "format": "prettier --check ./src",
+  "format:fix": "prettier --write ./src"
 },
 ```
 
 이렇게 `package.json` 파일을 수정하였다면, 이제 다음 명령어를 사용하여 Prettier를 사용할 수 있습니다
 
 ```bash
-npm run format:check
 npm run format
+npm run format:fix
 ```
 
 {% include in-feed-ads.html %}
