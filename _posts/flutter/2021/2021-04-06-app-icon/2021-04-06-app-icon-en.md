@@ -50,7 +50,7 @@ To use the flutter_launcher_icons package, of course, we need to install the flu
 Execute the command below to install the flutter_launcher_icons package.
 
 ```bash
-flutter pub add flutter_launcher_icons
+flutter pub add flutter_launcher_icons --dev
 ```
 
 ## Configure App icon

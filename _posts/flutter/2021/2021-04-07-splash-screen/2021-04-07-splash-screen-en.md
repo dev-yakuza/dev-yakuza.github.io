@@ -54,7 +54,7 @@ Store the file to `assets/splash.png`.
 To use the flutter_native_splash package, we need to install the flutter_native_splash pacakge. Execute the command below to install the flutter_native_splash pageckage.
 
 ```bash
-flutter pub add flutter_native_splash
+flutter pub add flutter_native_splash --dev
 ```
 
 ## Configure Splash image

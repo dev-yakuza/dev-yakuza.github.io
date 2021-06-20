@@ -50,7 +50,7 @@ flutter_launcher_iconsパッケージを使うため、flutter_launcher_iconsパ
 下記のコマンドを実行してflutter_launcher_iconsパッケージをインストールします。
 
 ```bash
-flutter pub add flutter_launcher_icons
+flutter pub add flutter_launcher_icons --dev
 ```
 
 ## アプリのアイコン設定
