@@ -115,7 +115,7 @@ v12.6.0
 When Nodejs is installed, basically, npm (Node Package Manager) is also installed. Execute the command below to check npm is installed well.
 
 ```bash
-npm --versrion
+npm --version
 ```
 
 If npm is installed well, you can see npm version like below.

@@ -115,7 +115,7 @@ v12.6.0
 Nodejs를 설치하면, 기본적으로 Nodejs 패키지 매니저인 npm(Node Package Manager)도 같이 설치됩니다. npm도 잘 설치가 되었는지 확인하기 위해 아래의 명령어를 실행합니다.
 
 ```bash
-npm --versrion
+npm --version
 ```
 
 npm도 문제없이 잘 설치되었다면, 아래와 같이 npm의 버전을 확인할 수 있습니다.
