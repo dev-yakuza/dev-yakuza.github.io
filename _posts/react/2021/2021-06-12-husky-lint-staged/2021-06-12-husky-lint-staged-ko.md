@@ -16,6 +16,13 @@ published: false
 
 ## 목차
 
+- [개요](#개요)
+- [프로젝트 준비](#프로젝트-준비)
+- [husky](#husky)
+- [lint-staged](#lint-staged)
+- [husky와 lint-staged 설정](#husky와-lint-staged-설정)
+- [완료](#완료)
+
 </div>
 
 ## 블로그 시리즈
@@ -31,7 +38,7 @@ published: false
 
 이전 블로그 시리즈에서 create-react-app으로 생성한 React 프로젝트에 Prettier와 ESLint를 설치하고 설정하는 방법에 대해서 알아보았습니다.
 
-이번 블로그 포스트에서는 `husky`와 `lint-staged`를 사용하여 Prettier와 ESlint를 활용하는 방법에 대해서 알아봅시다.
+이번 블로그 포스트에서는 `husky`와 `lint-staged`를 사용하여 Prettier와 ESLint를 활용하는 방법에 대해서 알아봅시다.
 
 ## 프로젝트 준비
 

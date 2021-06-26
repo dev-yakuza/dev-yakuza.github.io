@@ -16,6 +16,13 @@ published: false
 
 ## 目次
 
+- [概要](#概要)
+- [プロジェクト準備](#プロジェクト準備)
+- [husky](#husky)
+- [lint-staged](#lint-staged)
+- [huskyとlint-stagedの設定](#huskyとlint-stagedの設定)
+- [完了](#完了)
+
 </div>
 
 ## ブログシリーズ
