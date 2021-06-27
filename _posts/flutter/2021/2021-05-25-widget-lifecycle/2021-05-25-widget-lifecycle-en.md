@@ -7,7 +7,7 @@ categories: 'flutter'
 comments: true
 
 title: '[Flutter] Lifecycle'
-description: In this blog post, I will introduce the Lifecycl of the widget in Flutter.
+description: In this blog post, I will introduce the Lifecycle of the widget in Flutter.
 image: '/assets/images/category/flutter/background.png'
 ---
 
