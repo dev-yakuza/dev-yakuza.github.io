@@ -9,7 +9,6 @@ comments: true
 title: '[React] Prettier'
 description: Let's see how to keep the same code format by Prettier in React.
 image: '/assets/images/category/react/2021/prettier/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
@@ -35,7 +34,7 @@ This blog post is a series. You can see the other posts on the link below.
 - [React] Prettier
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [[React] Husky, lint-staged]({{site.url}}/{{page.categories}}/husky-lint-staged/){:target="_blank"}
-- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/prettier-eslint/){:target="_blank"}
 
 ## Outline
 

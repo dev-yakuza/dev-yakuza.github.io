@@ -1,20 +1,24 @@
 ---
 layout: 'post'
-permalink: '/react/github-pages/'
-paginate_path: '/react/:num/github-pages/'
+permalink: '/react/github-actions/prettier-eslint/'
+paginate_path: '/react/:num/github-actions/prettier-eslint/'
 lang: 'ko'
 categories: 'react'
 comments: true
 
-title: '[React] GitHub Actions'
+title: '[React] GitHub Actions으로 Prettier와 ESLint 사용하기'
 description: 'React 프로젝트에 설정한 Prettier와 ESLint를 GitHub Actions를 사용하여 실행해 봅시다.'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [GitHub Actions](#github-actions)
+- [확인](#확인)
+- [완료](#완료)
 
 </div>
 
@@ -29,7 +33,7 @@ published: false
 
 ## 개요
 
-지금까지 create-react-app으로 생성한 React 프로젝트에 Prettier와 ESLint를 설정하고, Husky와 lint-staged를 사용하여 Prettier와 ESLint를 자동으로 실행하도록 만들어 보았습니다. 이번 블로그 포스트에서는 GitHub Actions를 사용하여, Pull Request가 만들어졌을 때, Prettier와 ESLint를 실행하도록 해볼 예정입니다.
+지금까지 create-react-app으로 생성한 React 프로젝트에 Prettier와 ESLint를 설정하고, husky와 lint-staged를 사용하여 Prettier와 ESLint를 자동으로 실행하도록 만들어 보았습니다. 이번 블로그 포스트에서는 GitHub Actions를 사용하여, Pull Request가 만들어졌을 때, Prettier와 ESLint를 실행하도록 해볼 예정입니다.
 
 - GitHub 공식 사이트: [Actions](https://github.com/features/actions){:rel="noopener" target="_blank"}
 
@@ -152,7 +156,7 @@ const App = (): JSX.Element => {
 };
 ```
 
-그런 다음 다음 명령어를 실행하여 해당 내용을 GitHub에 올립니다
+그런 다음, 다음 명령어를 실행하여 해당 내용을 GitHub에 올립니다
 
 ```bash
 git add .
@@ -160,7 +164,7 @@ git commit -m 'Add test code'
 git push origin test-pr
 ```
 
-만약 앞에서 설정한 Husky와 lint-staged때문에 `Commit`이 안되는 경우, `./package.json` 파일에서 아래 내용을 찾아 삭제합니다.
+만약 앞에서 설정한 husky와 lint-staged때문에 `Commit`이 안되는 경우, `./package.json` 파일에서 아래 내용을 찾아 삭제합니다.
 
 ```json
 {

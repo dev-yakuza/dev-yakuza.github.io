@@ -9,7 +9,6 @@ comments: true
 title: '[React] husky, lint-staged'
 description: 'React에서 husky와 lint-staged를 사용하여 Git에 커밋할 때, ESLint와 Prettier를 실행하도록 설정해 봅시다.'
 image: '/assets/images/category/react/2021/husky-lint-staged/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
@@ -32,7 +31,7 @@ published: false
 - [[React] Prettier]({{site.url}}/{{page.categories}}/prettier/){:target="_blank"}
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [React] Husky, lint-staged
-- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/prettier-eslint/){:target="_blank"}
 
 ## 개요
 
@@ -88,8 +87,6 @@ lint-staged는 Staged된 파일을 수정한 후 다시 git add를 하지 않아
 ```bash
 npm install --save-dev lint-staged
 ```
-
-{% include in-feed-ads.html %}
 
 ## husky와 lint-staged 설정
 

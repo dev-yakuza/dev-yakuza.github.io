@@ -9,7 +9,6 @@ comments: true
 title: '[React] husky, lint-staged'
 description: Let's see how to use husky and lint-staged to execute ESLint and Prettier automatically when you commit the code to Git.
 image: '/assets/images/category/react/2021/husky-lint-staged/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
@@ -32,7 +31,7 @@ This blog post is a series. You can see the other posts on the link below.
 - [[React] Prettier]({{site.url}}/{{page.categories}}/prettier/){:target="_blank"}
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [React] Husky, lint-staged
-- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/prettier-eslint/){:target="_blank"}
 
 ## Outline
 
@@ -88,8 +87,6 @@ Execute the command below to install lint-sgated to use it with husky.
 ```bash
 npm install --save-dev lint-staged
 ```
-
-{% include in-feed-ads.html %}
 
 ## configure husky and lint-staged
 

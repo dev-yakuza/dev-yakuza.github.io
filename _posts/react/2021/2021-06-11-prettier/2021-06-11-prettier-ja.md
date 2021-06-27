@@ -9,7 +9,6 @@ comments: true
 title: '[React] Prettier'
 description: 'ReactでPrettierを使ってコードのフォーマットを同一する方法を説明します。'
 image: '/assets/images/category/react/2021/prettier/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
@@ -35,7 +34,7 @@ published: false
 - [React] Prettier
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [[React] Husky, lint-staged]({{site.url}}/{{page.categories}}/husky-lint-staged/){:target="_blank"}
-- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/prettier-eslint/){:target="_blank"}
 
 ## 概要
 

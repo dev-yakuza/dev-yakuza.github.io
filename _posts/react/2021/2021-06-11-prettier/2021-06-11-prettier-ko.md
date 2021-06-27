@@ -9,7 +9,6 @@ comments: true
 title: '[React] Prettier'
 description: 'React에서 Prettier를 사용하여 코드의 포맷을 일정하게 유지시켜 보자.'
 image: '/assets/images/category/react/2021/prettier/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
@@ -35,7 +34,7 @@ published: false
 - [React] Prettier
 - [[React] ESLint]({{site.url}}/{{page.categories}}/eslint/){:target="_blank"}
 - [[React] Husky, lint-staged]({{site.url}}/{{page.categories}}/husky-lint-staged/){:target="_blank"}
-- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/){:target="_blank"}
+- [[React] GitHub Actions]({{site.url}}/{{page.categories}}/github-actions/prettier-eslint/){:target="_blank"}
 
 ## 개요
 
