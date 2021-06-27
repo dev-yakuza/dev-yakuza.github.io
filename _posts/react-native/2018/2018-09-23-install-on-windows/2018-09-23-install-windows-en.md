@@ -260,7 +260,7 @@ Click `Configure > SDK Manger` menu on the right botton to go to Android SDK con
 
 When the screen is shown up like below, select `Show Pacakge Details` option on the right bottom. find and select the options below on the list.
 
-- Android SDK Platform 28
+- Android SDK Platform 29
 - Intel x86 Atom System Image
 - Google APIs Intel x86 Atom System Image
 - Google APIs Intel x86 Atom_64 System Image
@@ -313,16 +313,10 @@ Installed as /Users/jeonghean_kim/Library/Android/sdk/platform-tools/adb
 
 ## Create & Check react-native Project
 
-Sometimes, the react-native app is not working or can't be built after updating the version. Therefore, it's recommended to execute the npm command below to lock the version when you develop the app with react-native.
+Execute React Native CLI command below to create react-native project.
 
 ```bash
-npm config set save-exact=true
-```
-
-execute React Native CLI command below to create react-native project.
-
-```bash
-react-native init SampleApp
+npx react-native init SampleApp
 ```
 
 ### Check on Android

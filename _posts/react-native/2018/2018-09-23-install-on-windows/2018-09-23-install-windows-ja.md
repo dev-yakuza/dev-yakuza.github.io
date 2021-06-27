@@ -261,7 +261,7 @@ OKボタンを押してアンドロイドスタジオを実行したら、下記
 
 上のような画面が見えたら、右下の`Show Pacakge Details`を選択します。そしてリストで下記の内容を探して選択します。
 
-- Android SDK Platform 28
+- Android SDK Platform 29
 - Intel x86 Atom System Image
 - Google APIs Intel x86 Atom System Image
 - Google APIs Intel x86 Atom_64 System Image
@@ -312,16 +312,10 @@ Installed as /Users/jeonghean_kim/Library/Android/sdk/platform-tools/adb
 
 ## react-nativeプロジェクト生成や確認
 
-react-nativeはバージョンにによって、うまく起動出来たアプリが急に起動出来なくなったり、ビルドする時エラーが出たりしたりなど、色んな問題が発生する可能性が高いです。したがって、react-nativeでアプリを開発する時は、下記のようにnpmコマンドでバージョンを固定して使うことをお勧めします。
-
-```bash
-npm config set save-exact=true
-```
-
 次は下記のReact Native CLIコマンドでreact-nativeプロジェクトを生成します。
 
 ```bash
-react-native init SampleApp
+npx react-native init SampleApp SampleApp
 ```
 
 ### アンドロイドで確認
