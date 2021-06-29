@@ -16,11 +16,16 @@ published: false
 
 ## 목차
 
+- [개요](#개요)
+- [Props](#props)
+- [State](#state)
+- [완료](#완료)
+
 </div>
 
 ## 개요
 
-React에서 컴포넌트가 데이터를 다루는 방법으로 `Props`, `State` 그리고 `Context`가 있습니다. 이번 블로그 포스트에서는 Porps와 State에 관한 개념을 정리해 보도록 하겠습니다.
+React에서 컴포넌트가 데이터를 다루는 방법으로 `Props`, `State` 그리고 `Context`가 있습니다. 이번 블로그 포스트에서는 Props와 State에 관한 개념을 정리해 보도록 하겠습니다.
 
 React에서 Context를 다루기 위해 Context API를 사용하는 방법에 대해서는 아래에 링크를 참고하시기 바랍니다.
 
