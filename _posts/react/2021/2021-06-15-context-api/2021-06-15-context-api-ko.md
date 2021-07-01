@@ -311,7 +311,7 @@ npm start
 
 React 프로젝트가 실행되면 다음과 같이 `0`과 `+ 1` 버튼을 확인할 수 있습니다.
 
-![React Context example: Count](/assets/images/category/react/2021/context-api/count.npg)
+![React Context example: Count](/assets/images/category/react/2021/context-api/count.jpg)
 
 `+ 1` 버튼을 누르면, 다음과 같이 카운트가 증가되는 것을 확인할 수 있습니다.
 
