@@ -9,7 +9,6 @@ comments: true
 title: '[React] Props와 State'
 description: 'React에서 데이터를 다루는 주요 개념인 Props와 State가 무엇인지 알아보고, 사용하는 방법에 대해서 살펴봅시다.'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">

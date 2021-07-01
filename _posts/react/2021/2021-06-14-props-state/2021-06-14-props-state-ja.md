@@ -9,7 +9,6 @@ comments: true
 title: '[React] PropsとState'
 description: 'Reactでデータを扱う重要な概念であるPropsとStateが何なのか説明して、使う方法について説明します。'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">

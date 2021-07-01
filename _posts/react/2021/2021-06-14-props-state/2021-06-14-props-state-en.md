@@ -9,7 +9,6 @@ comments: true
 title: '[React] Props and State'
 description: Let's see what Props and State are and how to use Props and State to manage the data in React.
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
