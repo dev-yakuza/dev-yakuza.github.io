@@ -86,6 +86,7 @@ npx create-react-app context_example --template=typescript
 そして、グローバルデータを保存するためContextを生成してみましょう。`./src/Contexts/Count/index.tsx`ファイルを生成して下記のように修正します。
 
 ```js
+{% raw %}
 import { createContext, useState } from 'react';
 
 const CountContext = createContext({
@@ -116,6 +117,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 };
 
 export { CountContext, CountProvider };
+{% endraw %}
 ```
 
 ReactでContextを生成するためにはcreateContextを使います。また、Contextも1つのReactコンポーネントなので、コンポーネント中で変更可能なデータを扱うためStateを使う必要があります。
@@ -152,6 +154,7 @@ export { CountContext, CountProvider };
 Contextは1つのReactコンポーネントです。したがって、内部的に変更可能なデータを使うためにはuseStateを使ってStateを使う必要があります。
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   const [count, setCount] = useState(0);
 
@@ -160,6 +163,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
   };
   ...
 };
+{% endraw %}
 ```
 
 このように作ったStateをContextのProviderに提供します。

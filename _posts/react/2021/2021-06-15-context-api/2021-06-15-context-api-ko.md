@@ -87,6 +87,7 @@ npx create-react-app context_example --template=typescript
 그럼 전역 데이터를 저장하기 위한 Context를 생성해 보도록 합시다. `./src/Contexts/Count/index.tsx` 파일을 생성하고 다음과 같이 수정합니다.
 
 ```js
+{% raw %}
 import { createContext, useState } from 'react';
 
 const CountContext = createContext({
@@ -117,6 +118,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 };
 
 export { CountContext, CountProvider };
+{% endraw %}
 ```
 
 React에서 Context를 생성하기 위해서는 createContext를 사용해야 합니다. 또한 Context도 하나의 React 컴포넌트이므로, 컴포넌트안에서 변경 가능한 데이터를 다루기 위해 State를 사용해야 합니다.
@@ -153,6 +155,7 @@ export { CountContext, CountProvider };
 Context는 하나의 React 컴포넌트입니다. 따라서 내부적으로 변경 가능한 데이터를 사용하려면 useState를 사용하여 State를 사용해야 합니다.
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   const [count, setCount] = useState(0);
 
@@ -161,6 +164,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
   };
   ...
 };
+{% endraw %}
 ```
 
 이렇게 만든 State를 Context의 Provider에 제공합니다.

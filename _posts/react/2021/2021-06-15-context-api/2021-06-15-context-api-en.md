@@ -86,6 +86,7 @@ npx create-react-app context_example --template=typescript
 Next, let's create a Context to store global data. Create`./src/Contexts/Count/index.tsx` file and modify it like the below.
 
 ```js
+{% raw %}
 import { createContext, useState } from 'react';
 
 const CountContext = createContext({
@@ -116,6 +117,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 };
 
 export { CountContext, CountProvider };
+{% endraw %}
 ```
 
 To create Context in React, we need to use `createContext`. Also, Context is also a React component, so we need to use State to handle the mutable data in the component.
@@ -152,6 +154,7 @@ export { CountContext, CountProvider };
 Context is also the React component. So, when we use the changeable data in Context, we need to use useState to create State.
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   const [count, setCount] = useState(0);
 
@@ -160,6 +163,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
   };
   ...
 };
+{% endraw %}
 ```
 
 And then, we need to provide State to Context Provider.
