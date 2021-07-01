@@ -169,6 +169,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 And then, we need to provide State to Context Provider.
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   ...
   return (
@@ -181,6 +182,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
     </CountContext.Provider>
   );
 };
+{% endraw %}
 ```
 
 Lastly, export Context created by createContext and the React component created by Context Provider. the React component created by Context Provider will be used on the common parent component, and Context created by createContext will be used to consume data.

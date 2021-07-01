@@ -170,6 +170,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 이렇게 만든 State를 Context의 Provider에 제공합니다.
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   ...
   return (
@@ -182,6 +183,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
     </CountContext.Provider>
   );
 };
+{% endraw %}
 ```
 
 마지막으로 createContext를 사용하여 생성한 Context와 Context의 Provider를 사용하여 만든 React 컴포넌트를 내보냅니다. Context의 Provider를 사용하여 만든 React 컴포넌트는 공통 부모 컴포넌트에 제공할 예정이며, createContext로 생성한 Context는 데이터를 소비할 때, 사용할 예정입니다.

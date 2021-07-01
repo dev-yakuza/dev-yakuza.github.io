@@ -169,6 +169,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
 このように作ったStateをContextのProviderに提供します。
 
 ```js
+{% raw %}
 const CountProvider = ({ children }: Props): JSX.Element => {
   ...
   return (
@@ -181,6 +182,7 @@ const CountProvider = ({ children }: Props): JSX.Element => {
     </CountContext.Provider>
   );
 };
+{% endraw %}
 ```
 
 最後にcreateContextを使って生成したContextとContextのProviderを使って作ったReactコンポーネントをエクスポートします。ContextのProviderを使って作ったReactコンポーネントは共通親コンポーネントに提供する予定で、createContextで生成したContextはデータを消費する時、使う予定です。
