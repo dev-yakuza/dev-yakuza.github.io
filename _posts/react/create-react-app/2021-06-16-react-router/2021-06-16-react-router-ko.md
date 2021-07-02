@@ -1,13 +1,13 @@
 ---
 layout: 'post'
-permalink: '/react/react-router/'
-paginate_path: '/react/:num/react-router/'
+permalink: '/react/create-react-app/react-router/'
+paginate_path: '/react/:num/create-react-app/react-router/'
 lang: 'ko'
 categories: 'react'
 comments: true
 
-title: '[React] React Router'
-description: 'React에서 페이지 전환 기능을 구현하기 위해 react-router를 사용하는 방법에 대해서 알아봅시다.'
+title: 'create-react-app에서 React Router 사용하기'
+description: 'create-react-app로 생성한 React에서 페이지 전환 기능을 구현하기 위해 react-router를 사용하는 방법에 대해서 알아봅시다.'
 image: '/assets/images/category/react/background.jpg'
 published: false
 ---
@@ -20,7 +20,7 @@ published: false
 
 ## 개요
 
-리액트는 UI 자바스크립트 라이브러리로써 싱글 페이지 애플리케이션의 UI(User Interface)를 생성하는데 집중한 라이브러리입니다. 따라서, UI와 관련이 없는 페이지 전환 기능은 기본적으로 제공하고 있지 않습니다. 이번 블로그 포스트에서는 React에서 페이지 전환을 위해 주로 사용되는 `react-router`에 대해서 알아보도록 하겠습니다.
+React는 UI 자바스크립트 라이브러리로써 싱글 페이지 애플리케이션의 UI(User Interface)를 생성하는데 집중한 라이브러리입니다. 따라서, UI와 관련이 없는 페이지 전환 기능은 기본적으로 제공하고 있지 않습니다. 그래서 React에서 페이지 전환 기능을 구현하기 위해서는 외부 라이브러리에 의존해야 합니다. 이번 블로그 포스트에서는 React에서 페이지 전환을 위해 주로 사용되는 `react-router`에 대해서 알아보도록 하겠습니다.
 
 - React Router 공식 사이트: [react-router](https://reactrouter.com/){:rel="noopener" target="_blank"}
 
@@ -81,7 +81,7 @@ react-router의 기능을 사용하는 컴포넌트는 항상 `Router`안에 선
 
 ### Switch-Route
 
-react-router를 사용하여 페이지 전환을 하기 위해서는 `Switch`와 `Route`를 사용해야 합니다. 그럼 `Switch`와 `Route`의 사용 방법을 확인하기 위해 `./src/App.tsx` 파일을 열고 다음과 같이 수정합니다.
+react-router를 사용하여 페이지 전환을 하기 위해서는 `Switch`와 `Route`를 사용해서 페이지를 정의할 필요가 있습니다. 그럼 `Switch`와 `Route`의 사용 방법을 확인하기 위해 `./src/App.tsx` 파일을 열고 다음과 같이 수정합니다.
 
 ```js
 import { Switch, Route } from 'react-router-dom';
@@ -131,7 +131,7 @@ import { Detail } from './Pages/Detail';
 
 기본적으로 Route는 Switch 안에서 사용되어야 합니다. 그리고 `path` Props를 사용하여, 해당 페이지의 URL을 선언합니다. 마지막으로 자식 컴포넌트로 해당 URL의 페이지 컴포넌트를 추가합니다.
 
-이렇게 사용하면, 각각의 URL에 맞는 페이지를 표시할 수 있습니다. 만약, 페이지에 동적인 데이터가 포함되어 있다면, `/detail/:id`와 같이 선언하여 사용해야 합니다.
+이렇게 사용하면, 각각의 URL에 맞는 페이지를 표시할 수 있습니다. 만약, 페이지 URL에 동적인 데이터가 포함되어 있다면, `/detail/:id`와 같이 선언하여 사용해야 합니다.
 
 ```js
 <div>
@@ -171,7 +171,7 @@ react-router에서 페이지 이동을 위한 링크는 `<a/>` 태그 대신 rea
 
 ### useHistory와 useParams
 
-다음으로 Detail 페이지 컴포넌트를 만들면서 `useHistory`와 `useParams` 훅을 사용해 봅시다. `./src/Pages/Detail/index.tsx` 파일을 생성하고 다음과 같이 수정합니다.
+다음으로 Detail 페이지 컴포넌트를 만들면서 `useHistory`와 `useParams` 훅을 사용하는 방법에 대해서 알아봅시다. `./src/Pages/Detail/index.tsx` 파일을 생성하고 다음과 같이 수정합니다.
 
 ```js
 import { useHistory, useParams } from 'react-router-dom';
