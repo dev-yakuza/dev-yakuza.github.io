@@ -9,12 +9,21 @@ comments: true
 title: 'create-react-appでReact Routerを使う方法'
 description: 'create-react-appで生成したReactでページ移動機能を実装するためreact-routerを使う方法について説明します。'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [プロジェクトの準備](#プロジェクトの準備)
+- [react-routerのインストール](#react-routerのインストール)
+- [react-routerの使い方](#react-routerの使い方)
+  - [Router](#router)
+  - [Switch-Route](#switch-route)
+  - [Link](#link)
+  - [useHistoryとuseParams](#usehistoryとuseparams)
+- [完了](#完了)
 
 </div>
 
@@ -37,7 +46,7 @@ ReactはUIのJavaScriptライブラリでシングルページアプリケーシ
 Reactでreact-routerを使ってページ移動機能を実装するためには、Reactプロジェクトを生成する予定です。このブログではCRA(create-react-app)とTypeScriptを使ってReactプロジェクトを生成する予定です。
 
 - [create-react-app]({{site.url}}/{{page.categories}}/create-react-app/start/){:target="_blank"}
-- [create-react-app에서 TypeScript]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
+- [create-react-appでTypeScriptを使う方法]({{site.url}}/{{page.categories}}/create-react-app/typescript/){:target="_blank"}
 
 そしたら次のコマンドを実行してTypeScriptベースのReactプロジェクトを生成します。
 
