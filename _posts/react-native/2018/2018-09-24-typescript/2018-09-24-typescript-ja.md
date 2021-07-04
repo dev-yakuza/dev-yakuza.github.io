@@ -6,8 +6,8 @@ lang: 'ja'
 categories: 'react-native'
 comments: true
 
-title: 'typescript'
-description: 'RNプロジェクトへtypescriptを適用して開発してみよう。'
+title: 'React NativeでTypeScriptを使う方法'
+description: 'React NativeプロジェクトへTypeScriptを適用して開発してみよう。'
 image: '/assets/images/category/react-native/typescript.jpg'
 ---
 
@@ -16,63 +16,84 @@ image: '/assets/images/category/react-native/typescript.jpg'
 
 ## 目次
 
-1. [リアクトネイティブ(React Native)プロジェクト生成](#リアクトネイティブreact-nativeプロジェクト生成)
-1. [typescriptへ必要なライブラリをインストール](#typescriptへ必要なライブラリをインストール)
-    - [typescript ライブラリ](#typescript-ライブラリ)
-1. [typescript設定](#typescript設定)
-    - [tsconfig.jsonを作る](#tsconfigjsonを作る)
-1. [React Native CLIでTypescriptを始める](#react-native-cliでtypescriptを始める)
-1. [typescriptでコーディングする。](#typescriptでコーディングする)
+- [React Nativeプロジェクト生成](#react-nativeプロジェクト生成)
+- [TypeScriptへ必要なライブラリをインストール](#typescriptへ必要なライブラリをインストール)
+  - [TypeScriptライブラリ](#typescriptライブラリ)
+- [TypeScript設定](#typescript設定)
+  - [tsconfig.jsonを作る](#tsconfigjsonを作る)
+- [React Native CLIでTypeScriptを始める](#react-native-cliでtypescriptを始める)
+- [TypeScriptでコーディングする](#typescriptでコーディングする)
+- [完了](#完了)
 
 </div>
 
-## リアクトネイティブ(React Native)プロジェクト生成
+## React Nativeプロジェクト生成
 
-下記のコマンドを使ってリアクトネイティブ(React Native)のプロジェクトを生成します。
+下記のコマンドを使ってReact Nativeのプロジェクトを生成します。
 
-{% include_cached react-native/create_new_project.md %}
+```bash
+react-native init proejct-name
+```
 
-## typescriptへ必要なライブラリをインストール
+## TypeScriptへ必要なライブラリをインストール
 
-typescriptが動作出来るようにするため必要なライブラリをインストールします。
+TypeScriptが動作出来るようにするため必要なライブラリをインストールします。
 
-{% include_relative common/install_modules.md %}
+```bash
+npm install typescript @types/react @types/react-native --save-dev
+```
 
-### typescript ライブラリ
+### TypeScriptライブラリ
 
-- typescript: typescriptをインストール。
-- @types/react: typescriptへ必要なreactのtypeをインストール。
-- @types/react-native: typescriptへ必要なリアクトネイティブ(React Native)のtypeをインストール。
+- typescript: TypeScriptをインストール。
+- @types/react: TypeScriptへ必要なreactのtypeをインストール。
+- @types/react-native: TypeScriptへ必要なReact Nativeのtypeをインストール。
 
 {% include in-feed-ads.html %}
 
-## typescript設定
+## TypeScript設定
 
-typescriptを設定してリアクトネイティブ(React Native)が動作出来るようにします。
+TypeScriptを設定してReact Nativeが動作出来るようにします。
 
 ### tsconfig.jsonを作る
 
 プロジェクトのrootフォルダへ```tsconfig.json```ファイルを作成して下記の内容をコピペします。
 
-{% include_relative common/tsconfig_json.md %}
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6", "es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}
+```
 
 詳しい内容は公式ホームページを参考してください。
 
-- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
-- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
+- [TypeScript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
+- [TypeScript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
 
-## React Native CLIでTypescriptを始める
+## React Native CLIでTypeScriptを始める
 
-(0.60.2にバグがあるみたいです。)
-このような設定がやりたくない場合、下記のReact Native CLIコマンドでTypescriptをベースにするReact Nativeプロジェクトを生成することが出来ます。
+このような設定がやりたくない場合、下記のReact Native CLIコマンドでTypeScriptをベースにするReact Nativeプロジェクトを生成することが出来ます。
 
 ```bash
-react-native init SampleProject --template typescript
+npx react-native init SampleProject --template react-native-template-typescript
 ```
 
-## typescriptでコーディングする。
+## TypeScriptでコーディングする
 
-App.jsをApp.tsxにファイル名を変更してtypescriptスタイルでコーディングします。
+App.jsをApp.tsxにファイル名を変更してTypeScriptスタイルでコーディングします。
 
 - Class Component
 
@@ -85,7 +106,7 @@ interface State {}
 export default class App extends React.Component<Props, State> {
 ```
 
-- Functional Component
+- Function Component
 
 ```js
 import React from 'react';
@@ -95,3 +116,7 @@ interface Props {}
 const App = ({  }: Props) => {
 ...
 ```
+
+## 完了
+
+これでReact NativeでTypeScriptを適用してTypeScriptを使う方法についてみてみました。今からReact NativeプロジェクトでもTypeScriptを使ってタイプをチェックしてみてください。

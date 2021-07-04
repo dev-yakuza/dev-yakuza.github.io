@@ -6,8 +6,8 @@ lang: 'en'
 categories: 'react-native'
 comments: true
 
-title: 'typescript'
-description: 'create react-native project and  develop it by applying typescript.'
+title: 'How to use TypeScript in React Native'
+description: Let's see how to configure TypeScript and how to use TypeScript in React Native.
 image: '/assets/images/category/react-native/typescript.jpg'
 ---
 
@@ -15,63 +15,84 @@ image: '/assets/images/category/react-native/typescript.jpg'
 
 ## Contents
 
-1. [create react-native project](#create-react-native-project)
-1. [install required libraries for typescript](#install-required-libraries-for-typescript)
-    - [typescript libraries](#typescript-libraries)
-1. [typescript configuration](#typescript-configuration)
-    - [create tsconfig.json](#create-tsconfigjson)
-1. [Make typescript project via React Native CLI](#make-typescript-project-via-react-native-cli)
-1. [code with typescript](#code-with-typescript)
+- [create react-native project](#create-react-native-project)
+- [install required libraries for TypeScript](#install-required-libraries-for-typescript)
+  - [TypeScript libraries](#typescript-libraries)
+- [TypeScript configuration](#typescript-configuration)
+  - [create tsconfig.json](#create-tsconfigjson)
+- [Make TypeScript project via React Native CLI](#make-typescript-project-via-react-native-cli)
+- [code with TypeScript](#code-with-typescript)
+- [Completed](#completed)
 
 </div>
 
 ## create react-native project
 
-create RN project with below command.
+create React Native project with below command.
 
-{% include_cached react-native/create_new_project.md %}
+```bash
+npm install typescript @types/react @types/react-native --save-dev
+```
 
-## install required libraries for typescript
+## install required libraries for TypeScript
 
-install required libraries for applying typescript to the project.
+install required libraries for applying TypeScript to the project.
 
-{% include_relative common/install_modules.md %}
+```bash
+react-native init proejct-name
+```
 
-### typescript libraries
+### TypeScript libraries
 
-- typescript: intsall typescript.
-- @types/react: intsll react types for typescript.
-- @types/react-native: intall RN type for typescript.
+- typescript: intsall TypeScript.
+- @types/react: intsll react types for TypeScript.
+- @types/react-native: intall RN type for TypeScript.
 
-## typescript configuration
+## TypeScript configuration
 
-configure typescript to make react-native work.
+configure TypeScript to make react-native work.
 
 ### create tsconfig.json
 
 create ```tsconfig.json``` in the project root folder and copy-paste below contents.
 
-{% include_relative common/tsconfig_json.md %}
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6", "es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}
+```
 
 if you want more detail, see official website.
 
-- [typescript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
-- [typescript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
+- [TypeScript - tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html){:rel="nofollow noreferrer" target="_blank"}
+- [TypeScript - compile options](https://www.typescriptlang.org/docs/handbook/compiler-options.html){:rel="nofollow noreferrer" target="_blank"}
 
 {% include in-feed-ads.html %}
 
-## Make typescript project via React Native CLI
+## Make TypeScript project via React Native CLI
 
-(0.60.2 version has some bugs.)
-If you feel bothered to configure these all settings, you can use React Native CLI to make React Native project based on Typescript to use the command below.
+If you feel bothered to configure these all settings, you can use React Native CLI to make React Native project based on TypeScript to use the command below.
 
 ```bash
-react-native init SampleProject --template typescript
+npx react-native init SampleProject --template react-native-template-typescript
 ```
 
-## code with typescript
+## code with TypeScript
 
-change App.js filename to App.tsx and code with typescript style.
+change App.js filename to App.tsx and code with TypeScript style.
 
 - Class Component
 
@@ -84,7 +105,7 @@ interface State {}
 export default class App extends React.Component<Props, State> {
 ```
 
-- Functional Component
+- Function Component
 
 ```js
 import React from 'react';
@@ -94,3 +115,7 @@ interface Props {}
 const App = ({  }: Props) => {
 ...
 ```
+
+## Completed
+
+Done! we've seen how to apply TypeScript to React Native, and how to use TypeScript in React Native. Form now, let's use TypeScript in React Native to check the types!

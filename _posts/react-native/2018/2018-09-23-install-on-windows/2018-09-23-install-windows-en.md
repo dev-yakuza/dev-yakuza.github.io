@@ -140,7 +140,7 @@ npm install -g react-native-cli
 After installing, execute the command below to check React Native CLI is installed well.
 
 ```bash
-react-native --version
+npx react-native --version
 ```
 
 If React Native CLI is installed well, you can see React Native CLI version like below.
