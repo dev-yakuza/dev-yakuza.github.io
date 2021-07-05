@@ -7,7 +7,7 @@ categories: 'react'
 comments: true
 
 title: 'create-react-appでTypeScriptを使う方法'
-description: 'create-react-appで生成したReactプロジェクトでTypescriptを使う方法について説明します。'
+description: 'create-react-appで生成したReactプロジェクトでTypeScriptを使う方法について説明します。'
 image: '/assets/images/category/react/background.jpg'
 ---
 

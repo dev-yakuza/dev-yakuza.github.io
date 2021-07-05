@@ -7,7 +7,7 @@ categories: 'react'
 comments: true
 
 title: 'create-react-app에서 TypeScript'
-description: 'create-react-app으로 생성한 React 프로젝트에 Typescript를 적용하는 방법에 대해서 알아봅시다.'
+description: 'create-react-app으로 생성한 React 프로젝트에 TypeScript를 적용하는 방법에 대해서 알아봅시다.'
 image: '/assets/images/category/react/background.jpg'
 ---
 
