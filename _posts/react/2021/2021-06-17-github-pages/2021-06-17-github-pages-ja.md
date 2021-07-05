@@ -9,12 +9,23 @@ comments: true
 title: '[React] GitHub Pagesにデプロイ'
 description: 'create-react-appで作ったReactプロジェクトをGitHub Pagesにデプロイしてみましょう。'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [プロジェクト準備](#プロジェクト準備)
+- [Build](#build)
+- [アップロード](#アップロード)
+  - [Public repository](#public-repository)
+  - [Private Repository](#private-repository)
+- [GitHub Pagesの設定](#github-pagesの設定)
+- [問題解決](#問題解決)
+  - [PUBLIC_URL](#public_url)
+  - [404ページ](#404ページ)
+- [完了](#完了)
 
 </div>
 

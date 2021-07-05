@@ -9,12 +9,23 @@ comments: true
 title: '[React] GitHub Pages에 배포'
 description: 'create-react-app으로 만든 React 프로젝트를 GitHub Pages에 배포해 보도록 합시다.'
 image: '/assets/images/category/react/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [프로젝트 준비](#프로젝트-준비)
+- [Build](#build)
+- [업로드](#업로드)
+  - [Public repository](#public-repository)
+  - [Private Repository](#private-repository)
+- [GitHub Pages 설정](#github-pages-설정)
+- [문제 해결](#문제-해결)
+  - [PUBLIC_URL](#public_url)
+  - [404 페이지](#404-페이지)
+- [완료](#완료)
 
 </div>
 
