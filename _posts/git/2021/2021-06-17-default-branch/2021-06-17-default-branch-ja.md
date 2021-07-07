@@ -9,13 +9,15 @@ comments: true
 title: "[Git] デフォルトブランチをmasterからmainに設定する方法"
 description: Gitを使う時、基本ブランチをmasterからmainに変更する方法について説明します。
 image: '/assets/images/category/git/2021/default-branch/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
 
+- [概要](#概要)
+- [Git config](#git-config)
+- [完了](#完了)
 
 </div>
 

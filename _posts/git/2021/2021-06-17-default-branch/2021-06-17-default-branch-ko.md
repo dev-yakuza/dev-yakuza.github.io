@@ -9,13 +9,15 @@ comments: true
 title: "[Git] 기본 브랜치를 master에서 main으로 설정하기"
 description: Git을 사용할 때, 기본 브랜치를 master에서 main으로 변경하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/git/2021/default-branch/background.jpg'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
 
+- [개요](#개요)
+- [Git config](#git-config)
+- [완료](#완료)
 
 </div>
 
