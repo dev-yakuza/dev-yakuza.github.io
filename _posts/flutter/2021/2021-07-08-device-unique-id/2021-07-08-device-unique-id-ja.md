@@ -9,12 +9,16 @@ comments: true
 title: '[Flutter] Device Unique ID'
 description: Flutterでユーザの端末のユニークIDを取得するため、device_info_plusパッケージを使う方法について説明します。
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 目次
+
+- [概要](#概要)
+- [device_info_plusのインストール](#device_info_plusのインストール)
+- [Device unique IDの取得](#device-unique-idの取得)
+- [完了](#完了)
 
 </div>
 

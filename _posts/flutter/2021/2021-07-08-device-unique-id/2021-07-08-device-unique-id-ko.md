@@ -9,12 +9,16 @@ comments: true
 title: '[Flutter] Device Unique ID'
 description: Flutter에서 사용자 단말기의 고유 식별 ID를 얻기 위해, device_info_plus 패키지를 사용하는 방법에 대해서 알아봅시다.
 image: '/assets/images/category/flutter/background.png'
-published: false
 ---
 
 <div id="contents_list" markdown="1">
 
 ## 목차
+
+- [개요](#개요)
+- [device_info_plus 설치](#device_info_plus-설치)
+- [Device unique ID 가져오기](#device-unique-id-가져오기)
+- [완료](#완료)
 
 </div>
 
