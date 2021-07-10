@@ -1,7 +1,7 @@
 ---
 layout: 'post'
-permalink: '/flutter/widget/device-unique-id/'
-paginate_path: '/flutter/:num/widget/device-unique-id/'
+permalink: '/flutter/device-unique-id/'
+paginate_path: '/flutter/:num/device-unique-id/'
 lang: 'en'
 categories: 'flutter'
 comments: true
