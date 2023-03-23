@@ -1,0 +1,684 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] Admob"/><meta name="twitter:description" content="今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] Admob - 今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。</title><meta name="description" content="今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/flutter/admob/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/flutter/admob/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/flutter/admob/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/flutter/admob/"/><meta name="generator" content="Jekyll v3.9.2"/><meta property="og:title" content="[Flutter] Admob"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。"/><meta property="og:description" content="今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。"/><link rel="canonical" href="https://dev-yakuza.posstree.com/flutter/admob/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/flutter/admob/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2021-04-08T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] Admob"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2021-04-08T00:00:00+09:00","description":"今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。","headline":"[Flutter] Admob","image":"https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/flutter/admob/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.posstree.com/flutter/admob/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="preload" as="style" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/assets/main.css?v=20230323"/><link rel="stylesheet" href="/assets/main.css?v=20230323"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "[MacOS] Flutterのインストール",
+          "description" : "MacOSへFlutterをインストールする方法を説明します。",
+          "position":1,"url": "https://dev-yakuza.posstree.com/flutter/installation/",
+          "item": "https://dev-yakuza.posstree.com/flutter/installation/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの変数",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの変数について説明します。",
+          "position":2,"url": "https://dev-yakuza.posstree.com/flutter/dart/variable/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/variable/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの演算子",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの演算子について説明します。",
+          "position":3,"url": "https://dev-yakuza.posstree.com/flutter/dart/operator/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/operator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] DartのStatement",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartでif/else、for/whileなどStatementを使う方法について説明します。",
+          "position":4,"url": "https://dev-yakuza.posstree.com/flutter/dart/statement/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/statement/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの関数",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの関数について説明します。",
+          "position":5,"url": "https://dev-yakuza.posstree.com/flutter/dart/function/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/function/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartのクラス",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartでクラスを使う方法について説明します。",
+          "position":6,"url": "https://dev-yakuza.posstree.com/flutter/dart/class/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/class/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 始まり",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。このブログポストではFlutterのプロジェクトを生成して、主なファイルやフォルダを調べてみます。",
+          "position":7,"url": "https://dev-yakuza.posstree.com/flutter/start/",
+          "item": "https://dev-yakuza.posstree.com/flutter/start/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Linter",
+          "description" : "Flutterでコードのスタイルを統一して、バグが出る可能性を探すためLinterを設定する方法について説明します。",
+          "position":8,"url": "https://dev-yakuza.posstree.com/flutter/linter/",
+          "item": "https://dev-yakuza.posstree.com/flutter/linter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみましょう。今回のブログポストではFlutterで使えるウィジェットに関して説明します。",
+          "position":9,"url": "https://dev-yakuza.posstree.com/flutter/widget/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] レイアウト",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。このブログポストではFlutterで画面のレイアウトを担当するウィジェットについて説明します。",
+          "position":10,"url": "https://dev-yakuza.posstree.com/flutter/layout/",
+          "item": "https://dev-yakuza.posstree.com/flutter/layout/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Imageウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。今回のブログポストではFlutterでイメージを表示するためImageウィジェットを使う方法について説明します。",
+          "position":11,"url": "https://dev-yakuza.posstree.com/flutter/widget/image/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/image/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Snackbarウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。今回のブログポストではFlutterでスナックバーを表示するためSnackbarウィジェットを使う方法について説明します。",
+          "position":12,"url": "https://dev-yakuza.posstree.com/flutter/widget/snackbar/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] スタックナビゲーション",
+          "description" : "Flutterを使ってアプリを開発しています。このブログポストではFlutterで生成したプロジェクトにスタックナビゲーションを使う方法について説明します。",
+          "position":13,"url": "https://dev-yakuza.posstree.com/flutter/navigator/stack/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/stack/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Drawerナビゲーション",
+          "description" : "Flutterを使ってアプリを開発してみましょう。今回のブログポストではFlutterで作ったプロジェクトでドロワーナビゲーションを使う方法について説明します。",
+          "position":14,"url": "https://dev-yakuza.posstree.com/flutter/navigator/drawer/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/drawer/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Textfieldウィジェット",
+          "description" : "今回のブログポストではFlutterでユーザの入力をもらえるTextfieldウィジェットを使う方法について説明します。",
+          "position":15,"url": "https://dev-yakuza.posstree.com/flutter/widget/textfield/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/textfield/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アプリのアイコン変更",
+          "description" : "今回のブログポストではFlutterでアプリのアイコンを変更する方法について説明します。",
+          "position":16,"url": "https://dev-yakuza.posstree.com/flutter/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-icon/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] スプラッシュスクリーン",
+          "description" : "今回のブログポストではFlutterでスプラッシュスクリーンを変更する方法について説明します。",
+          "position":17,"url": "https://dev-yakuza.posstree.com/flutter/splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/flutter/splash-screen/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Admob",
+          "description" : "今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。",
+          "position":18,"url": "https://dev-yakuza.posstree.com/flutter/admob/",
+          "item": "https://dev-yakuza.posstree.com/flutter/admob/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase core",
+          "description" : "今回ブログポストではFlutterでFirebaseを連動する方法について説明します。",
+          "position":19,"url": "https://dev-yakuza.posstree.com/flutter/firebase/core/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/core/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Analytics",
+          "description" : "今回のブログポストではFlutterでFirebaseのAnalyticsを連動する方法について説明します。",
+          "position":20,"url": "https://dev-yakuza.posstree.com/flutter/firebase/analytics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/analytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Crashlytics",
+          "description" : "今回のブログポストではFlutterでFirebaseのCrashlyticsを連動して使う方法について説明します。",
+          "position":21,"url": "https://dev-yakuza.posstree.com/flutter/firebase/crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/crashlytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] TTS - Text To Speech",
+          "description" : "今回のブログポストではFlutterでTTS(Text To Speech)機能を使う方法について説明します。",
+          "position":22,"url": "https://dev-yakuza.posstree.com/flutter/tts/",
+          "item": "https://dev-yakuza.posstree.com/flutter/tts/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Provider",
+          "description" : "今回のブログポストではFlutterでグローバル状態（State）、またはウィジェットたちの間で状態（State）を共有するためProviderを使う方法について説明します。",
+          "position":23,"url": "https://dev-yakuza.posstree.com/flutter/provider/",
+          "item": "https://dev-yakuza.posstree.com/flutter/provider/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アプリの名前変更",
+          "description" : "今回のブログポストではFlutterで生成したアプリの名前を変更する方法について説明します。",
+          "position":24,"url": "https://dev-yakuza.posstree.com/flutter/app-name/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-name/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Application IDの変更",
+          "description" : "Flutterで生成したアプリのApplication IDを変更する方法について説明します。",
+          "position":25,"url": "https://dev-yakuza.posstree.com/flutter/app-id/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-id/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アニメーション",
+          "description" : "今回のブログポストではFlutterで簡単なアニメーションを使うためAnimatedContainerとAnimatedOpacityを使う方法について説明します。",
+          "position":26,"url": "https://dev-yakuza.posstree.com/flutter/widget/animated/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/animated/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ライフサイクル",
+          "description" : "今回のブログポストではFlutterのウィジェットのライフサイクル(lifecycle)について説明します。",
+          "position":27,"url": "https://dev-yakuza.posstree.com/flutter/widget/lifecycle/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/lifecycle/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Shared preferences",
+          "description" : "今回のブログポストではFlutterでローカルに簡単なデータを保存するためShared preferencesパッケージを使う方法について説明します。",
+          "position":28,"url": "https://dev-yakuza.posstree.com/flutter/shared-preferences/",
+          "item": "https://dev-yakuza.posstree.com/flutter/shared-preferences/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 統合テスト(Integration Test)",
+          "description" : "今回のブログポストではFlutterで統合テスト(Integration Test)をする方法を説明します。",
+          "position":29,"url": "https://dev-yakuza.posstree.com/flutter/integration-test/",
+          "item": "https://dev-yakuza.posstree.com/flutter/integration-test/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] SQLite",
+          "description" : "今回のブログポストではFlutterでSQLiteを使う方法について説明します。",
+          "position":30,"url": "https://dev-yakuza.posstree.com/flutter/widget/sqflite/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/sqflite/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Device Unique ID",
+          "description" : "Flutterでユーザの端末のユニークIDを取得するため、device_info_plusパッケージを使う方法について説明します。",
+          "position":31,"url": "https://dev-yakuza.posstree.com/flutter/device-unique-id/",
+          "item": "https://dev-yakuza.posstree.com/flutter/device-unique-id/"},{
+          "@type":"ListItem",
+          "name": "[Dart] 切り上げ、切り捨て、丸め",
+          "description" : "Flutterで小数点について切り上げ、切り捨て、丸めをする方法について説明します。",
+          "position":32,"url": "https://dev-yakuza.posstree.com/flutter/dart/ceil-floor-round/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/ceil-floor-round/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ナビゲーションでパラメータを渡す",
+          "description" : "Flutterでナビゲーションを使って画面を移動する時、パラメータを渡す方法について説明します。",
+          "position":33,"url": "https://dev-yakuza.posstree.com/flutter/navigator/parameters/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/parameters/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 状態管理",
+          "description" : "FlutterでGetXを使って状態管理をする方法について説明します。",
+          "position":34,"url": "https://dev-yakuza.posstree.com/flutter/getx/state/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/state/"},{
+          "@type":"ListItem",
+          "name": "[GetX] ルート管理",
+          "description" : "FlutterでGetXを使ってルートを管理する方法について説明します。",
+          "position":35,"url": "https://dev-yakuza.posstree.com/flutter/getx/route/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/route/"},{
+          "@type":"ListItem",
+          "name": "[GetX] ディペンデンシー管理",
+          "description" : "FlutterでGetXを使ってディペンデンシーを管理する方法について説明します。",
+          "position":36,"url": "https://dev-yakuza.posstree.com/flutter/getx/dependency/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/dependency/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 多言語",
+          "description" : "FlutterでGetXを使って多言語を提供する方法について説明します。",
+          "position":37,"url": "https://dev-yakuza.posstree.com/flutter/getx/localization/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/localization/"},{
+          "@type":"ListItem",
+          "name": "[GetX] テーマ",
+          "description" : "FlutterでGetXを使ってテーマを使う方法について説明します。",
+          "position":38,"url": "https://dev-yakuza.posstree.com/flutter/getx/theme/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/theme/"},{
+          "@type":"ListItem",
+          "name": "[GetX] BottomSheet",
+          "description" : "FlutterでGetXを使ってBottomSheetを使う方法について説明します。",
+          "position":39,"url": "https://dev-yakuza.posstree.com/flutter/getx/bottom_sheet/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/bottom_sheet/"},{
+          "@type":"ListItem",
+          "name": "[GetX] Dialog",
+          "description" : "FlutterでGetXを使ってDialogを使う方法について説明します。",
+          "position":40,"url": "https://dev-yakuza.posstree.com/flutter/getx/dialog/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/dialog/"},{
+          "@type":"ListItem",
+          "name": "[GetX] スナックバー",
+          "description" : "FlutterでGetXを使ってスナックバーを表示する方法について説明します。",
+          "position":41,"url": "https://dev-yakuza.posstree.com/flutter/getx/snackbar/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[GetX] プラットフォームやデバイスの情報",
+          "description" : "FlutterでGetXを使ってプラットフォームやデバイスの情報を使う方法について説明します。",
+          "position":42,"url": "https://dev-yakuza.posstree.com/flutter/getx/utils/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/utils/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] url_launcherを使ってブラウザを開く",
+          "description" : "Flutterでurl_launcherを使ってブラウザを開いたり、メールや電話などを送るためアプリを開く方法について説明します。￥",
+          "position":43,"url": "https://dev-yakuza.posstree.com/flutter/url_launcher/",
+          "item": "https://dev-yakuza.posstree.com/flutter/url_launcher/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] iOSでurl_launcherを使って外部ブラウザを開く",
+          "description" : "Flutterのurl_launcherを使ってiOSでウェブリンクをアプリ内ブラウザではなく、アプリ外部の基本ブラウザで開く方法について説明します。",
+          "position":44,"url": "https://dev-yakuza.posstree.com/flutter/url_launcher/external_link/",
+          "item": "https://dev-yakuza.posstree.com/flutter/url_launcher/external_link/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] package_info_plusを使ってパッケージ情報取得",
+          "description" : "Flutterでpackage_info_plusを使ってアプリの名前、パッケージ名やバージョン情報を取得する方法について説明します。",
+          "position":45,"url": "https://dev-yakuza.posstree.com/flutter/package_info_plus/",
+          "item": "https://dev-yakuza.posstree.com/flutter/package_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] device_info_plusを使ってデバイスの情報取得",
+          "description" : "Flutterでdevice_info_plusを使ってデバイス名、デバイスモデル名、デバイスシステム名など、デバイスに関する情報を取得する方法について説明します。",
+          "position":46,"url": "https://dev-yakuza.posstree.com/flutter/device_info_plus/",
+          "item": "https://dev-yakuza.posstree.com/flutter/device_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] httpでAPIを呼び出す方法",
+          "description" : "Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。",
+          "position":47,"url": "https://dev-yakuza.posstree.com/flutter/http/",
+          "item": "https://dev-yakuza.posstree.com/flutter/http/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] in_app_review",
+          "description" : "Flutterでin_app_reviewを使ってアプリ内でアプリレビューを作成できるようにする方法について説明します。",
+          "position":48,"url": "https://dev-yakuza.posstree.com/flutter/in_app_review/",
+          "item": "https://dev-yakuza.posstree.com/flutter/in_app_review/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ローカルプッシュ通知",
+          "description" : "Flutterでflutter_local_notificationsを使って端末自体から特定時間にプッシュ通知を表示する方法について説明します。",
+          "position":49,"url": "https://dev-yakuza.posstree.com/flutter/flutter_local_notifications/",
+          "item": "https://dev-yakuza.posstree.com/flutter/flutter_local_notifications/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウェブビュー(WebView)",
+          "description" : "Flutterでwebview_flutterを使ってアプリ内でウェブビュー(WebView)でWebページを表示する方法について説明します。",
+          "position":50,"url": "https://dev-yakuza.posstree.com/flutter/webview_flutter/",
+          "item": "https://dev-yakuza.posstree.com/flutter/webview_flutter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] webview_flutterでクッキーを使う方法",
+          "description" : "Flutterでwebview_flutterを使ってウェブビュー(WebView)を表示して表示したウェブページのクッキーを扱う方法について説明します。",
+          "position":51,"url": "https://dev-yakuza.posstree.com/flutter/webview_flutter/cookie/",
+          "item": "https://dev-yakuza.posstree.com/flutter/webview_flutter/cookie/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Actionsでコード検査",
+          "description" : "GitHubのActionsを使ってPull requestが生成されたら、FlutterのLinterを実行してコードのスタイルを検査したり、テストコードを実行してコードの問題がないか確認する方法について説明します。",
+          "position":52,"url": "https://dev-yakuza.posstree.com/flutter/github-actions/code-quality/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github-actions/code-quality/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Dependabot",
+          "description" : "GitHubのDependabotを使って自動でFlutterパッケージのバージョンを検討してアップデータがある場合、Pull requestを自動で生成する方法について説明します。",
+          "position":53,"url": "https://dev-yakuza.posstree.com/flutter/github/dependabot/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github/dependabot/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] テストカバレッジ",
+          "description" : "Flutterでテストカバレッジを生成してテストカバレッジを確認してテストコードが作成されてない部分を探す方法について説明します。",
+          "position":54,"url": "https://dev-yakuza.posstree.com/flutter/test-coverage/",
+          "item": "https://dev-yakuza.posstree.com/flutter/test-coverage/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] flutter_colorpicker",
+          "description" : "Flutterでflutter_colorpickerを使ってユーザが簡単に色を選択できる機能を実装する方法について説明します。",
+          "position":55,"url": "https://dev-yakuza.posstree.com/flutter/flutter_colorpicker/",
+          "item": "https://dev-yakuza.posstree.com/flutter/flutter_colorpicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] VSCodeの設定",
+          "description" : "VSCodeを使ってFlutterでアプリを開発する時、役に立つ設定を紹介します。",
+          "position":56,"url": "https://dev-yakuza.posstree.com/flutter/vscode-settings/",
+          "item": "https://dev-yakuza.posstree.com/flutter/vscode-settings/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Fastlaneを使ってデプロイを自動化する",
+          "description" : "Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。",
+          "position":57,"url": "https://dev-yakuza.posstree.com/flutter/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/flutter/fastlane/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub ActionsとFastlaneを使ってFlutterアプリをデプロイする",
+          "description" : "Fastlaneが設定されたFlutterプロジェクトをGitHub Actionsを使ってデプロイする方法について説明します。",
+          "position":58,"url": "https://dev-yakuza.posstree.com/flutter/github-actions/deployment/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github-actions/deployment/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウィジェット中でインライン条件文とインラインループ文を使う方法",
+          "description" : "インライン条件文を使ってウィジェットを表示するかどうかを決めたり、インラインループ文を使ってウィジェットをループしながら表示させる方法について説明します。",
+          "position":59,"url": "https://dev-yakuza.posstree.com/flutter/inline-if-statement-and-inline-loop/",
+          "item": "https://dev-yakuza.posstree.com/flutter/inline-if-statement-and-inline-loop/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 画面が消えないようにする",
+          "description" : "Flutterで作ったアプリが起動してる時、またはアプリ内で特定な機能が使われる時、携帯の画面が消えないようにするためwakelockパッケージを使う方法について説明します。",
+          "position":60,"url": "https://dev-yakuza.posstree.com/flutter/wakelock/",
+          "item": "https://dev-yakuza.posstree.com/flutter/wakelock/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 引っ張って更新(Pull to refresh)",
+          "description" : "Flutterで作ったアプリでリストを表示して引っ張って更新(Pull to refresh)を使ってリストを更新する方法について説明します。",
+          "position":61,"url": "https://dev-yakuza.posstree.com/flutter/widget/RefreshIndicator/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/RefreshIndicator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] textScaleFactorでフォントのサイズを를 사용해서 폰트 크기 고정하기",
+          "description" : "Flutterで作ったアプリでユーザが端末の設定を使ってフォントを拡大した場合も、 アプリ内のフォントサイズを固定する方法について説明します。",
+          "position":62,"url": "https://dev-yakuza.posstree.com/flutter/widget/textScaleFactor/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/textScaleFactor/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] DatePicker",
+          "description" : "Flutterアプリでユーザが日付を入力する時カレンダー(DatePicker)を表示して日付を入れるようにする方法について説明します。",
+          "position":63,"url": "https://dev-yakuza.posstree.com/flutter/widget/showDatePicker/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/showDatePicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] AppBarのバックボタンを隠す",
+          "description" : "FlutterのAppBarで自動で生成されたバックボタンを隠す方法について説明します。",
+          "position":64,"url": "https://dev-yakuza.posstree.com/flutter/widget/hide_back_button/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/hide_back_button/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] テストコードの中で親ウィジェットやチャイルドウィジェットを探す",
+          "description" : "Flutterでテストコードを作成する時、親ウィジェット探したり、チャイルドウィジェットを探したりして値を確認するテストコードを作成する方法について説明します。",
+          "position":65,"url": "https://dev-yakuza.posstree.com/flutter/test/find_child_and_parent_widget/",
+          "item": "https://dev-yakuza.posstree.com/flutter/test/find_child_and_parent_widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] チャイルドウィジェットのサイズと関係なくスクロールする",
+          "description" : "SingleChildScrollViewウィジェットでチャイルドウィジェットのサイズと関係なく、いつもスクロールができるようにする方法について説明します。",
+          "position":66,"url": "https://dev-yakuza.posstree.com/flutter/AlwaysScrollableScrollPhysics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/AlwaysScrollableScrollPhysics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] サーバーデータの日本語、韓国語の文字化けの修正",
+          "description" : "Flutterでhttpパッケージを使ってサーバーからJSONデータをもらう時、JSONデータ中にある日本語や韓国語が文字化けされ画面に表示される問題を解決する方法について説明します。",
+          "position":67,"url": "https://dev-yakuza.posstree.com/flutter/http_response_decode/",
+          "item": "https://dev-yakuza.posstree.com/flutter/http_response_decode/"}]
+    }
+  </script><link rel="preload" as="style" href="/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;</script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/flutter/admob/">한국어</a><a class="dropdown-item menu-en" href="/en/flutter/admob/">English</a><a class="dropdown-item menu-ja" href="/flutter/admob/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="scrollNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="scrollNavbarDropdown"><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/flutter/background.png')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>[Flutter] Admob</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-03-18 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/flutter/admob/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left top-left-ads" aria-hidden="true"><script>var topLeftAds=document.getElementsByClassName("top-left-ads")[0];null!=topLeftAds.offsetParent&&setTimeout(function(){topLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center top-center-ads" aria-hidden="true"><script>var topCenterAds=document.getElementsByClassName("top-center-ads")[0];null!=topCenterAds.offsetParent&&setTimeout(function(){topCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right top-right-ads" aria-hidden="true"><script>var topRightAds=document.getElementsByClassName("top-right-ads")[0];null!=topRightAds.offsetParent&&setTimeout(function(){topRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/flutter"><span itemprop="name">flutter</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/flutter/admob/"><span itemprop="name">[Flutter] Admob</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-xl-block left-ads" aria-hidden="true"><script>var leftAds=document.getElementsByClassName("left-ads")[0];null!=leftAds.offsetParent&&setTimeout(function(){leftAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#概要">概要</a></li><li><a href="#admobの設定">Admobの設定</a><ul><li><a href="#グーグルアドモブの会員登録">グーグルアドモブの会員登録</a></li><li><a href="#admobの生成">Admobの生成</a></li></ul></li><li><a href="#プロジェクト生成">プロジェクト生成</a></li><li><a href="#google_mobile_adsパッケージインストール">google_mobile_adsパッケージインストール</a></li><li><a href="#app-id設定">App ID設定</a><ul><li><a href="#androidでapp-idの設定">AndroidでApp IDの設定</a></li><li><a href="#iosでapp-idの設定">iOSでApp IDの設定</a></li></ul></li><li><a href="#google_mobile_adsの使い方">google_mobile_adsの使い方</a></li><li><a href="#イシュー">イシュー</a><ul><li><a href="#await-mobileadsinstanceinitialize">await MobileAds.instance.initialize()</a></li><li><a href="#ad-failed-to-load--3">Ad failed to load : 3</a></li></ul></li><li><a href="#完了">完了</a></li></ul></div><h2 id="概要">概要</h2><p>このブログポストでは<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>パッケージを使ってAdmobの広告を表示する方法について説明します。</p><ul><li><a href="https://pub.dev/packages/google_mobile_ads" rel="nofollow noreferrer" target="_blank">google_mobile_ads</a></li></ul><p>このブログポストではAdmobのバナー広告を表示する方法について説明する予定です。ソースコードは下記のリンクで確認できます。</p><ul><li>GitHub: <a href="https://github.com/dev-yakuza/study-flutter/tree/main/packages/admob_example" rel="nofollow noreferrer" target="_blank">https://github.com/dev-yakuza/study-flutter/tree/main/packages/admob_example</a></li></ul><h2 id="admobの設定">Admobの設定</h2><p>FlutterプロジェクトでAdmobを使うためには、Admobのサービスを使う必要があります。</p><h3 id="グーグルアドモブの会員登録">グーグルアドモブの会員登録</h3><p>グーグルアドモブ(Google Admob)のサイトに移動して会員登録をします。一般的な会員登録やログインの手続きなので説明は省略します。</p><ul><li>グーグルアドモブ(Google Admob)のサイト: <a href="https://www.google.com/admob/" rel="nofollow noreferrer" target="_blank">https://www.google.com/admob/</a></li></ul><h3 id="admobの生成">Admobの生成</h3><p>グーグルアドモブ(Google Admob)の使い方についてみてみましょう。グーグルアドモブ(Google Admob)を使うために、グーグルアドモブ(Google Admob)のサイトに会員登録をしてログインをすると下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/signin_google_admob.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/signin_google_admob.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/signin_google_admob.jpg" alt="signin google admob"/></picture><p>下にある<code class="language-plaintext highlighter-rouge">GET STARTED</code>ボタンを押してグーグルアドモブ(Google Admob)を使い始めます。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_admob.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_admob.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_admob.jpg" alt="configure admob"/></picture><p>既にアプリがマーケットに登録されたかを選べます。私たちはまだアプリを登録してない状態なので<code class="language-plaintext highlighter-rouge">NO</code>を選択します。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_app_name.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_app_name.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/configure_app_name.jpg" alt="configure app name on admob"/></picture><p>グーグルアドモブ(Google Admob)を使うためアプリの名前を作成して使うプラットフォームを選択します。私たちはまず、<code class="language-plaintext highlighter-rouge">iOS</code>を選択して進めます。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/completed_configure.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/completed_configure.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/completed_configure.jpg" alt="completed to configure"/></picture><p>グーグルアドモブ(Google Admob)の登録を完了しました。親切に下に次にやることについて説明が書いております。</p><ol><li>FlutterにAdmobを設定するため必要な<code class="language-plaintext highlighter-rouge">App ID</code>をコピーします。</li><li>広告タイプ(ad unit)をグーグルアドモブ(Google Admob)で設定します。</li><li>アプリをアプリストアに登録したらグーグルアドモブ(Google Admob)に連結する必要があります。</li></ol><p>下にある<code class="language-plaintext highlighter-rouge">NEXT: CREATE AD UNIT</code>を押して広告のタイプを設定する画面に移動します。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/select_ad_uni.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/select_ad_uni.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/select_ad_uni.jpg" alt="select advertisement type"/></picture><p>私たちは一旦バナー広告を使う予定です。<code class="language-plaintext highlighter-rouge">Banner</code>の下にある<code class="language-plaintext highlighter-rouge">SELECT</code>ボタンを選択します。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/set_banner_name.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/set_banner_name.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/set_banner_name.jpg" alt="input banner name"/></picture><p>当該バナーの名前を設定します。グーグルアドモブ(Google Admob)のサービスで当該バナーを簡単に探すための名前なので、自分がわかりやすい名前で設定します。入力を完了したら<code class="language-plaintext highlighter-rouge">CREATE AD UNIT</code>ボタンを押して設定を完了します。</p><picture><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/finished_configuration.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/finished_configuration.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/react-native-firebase-v6-admob/finished_configuration.jpg" alt="finished configuration"/></picture><p>グーグルアドモブ(Google Admob)のバナーの設定を完了しました。次に出るApp IDとバナーのAd Unit IDをコピーしておきます。</p><p>アンドロイドも上と同じ方法でバナー広告を生成してApp IDとAd Unit IDを生成します。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="プロジェクト生成">プロジェクト生成</h2><p>そしたら<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>パッケージを使ってAdmobの広告を表示するため、Flutterプロジェクトを新しく作ってみましょう。次のコマンドを実行してFlutterプロジェクトを生成します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter create admob_example
+<span class="nb">cd </span>admob_example
+</code></pre></div></div><h2 id="google_mobile_adsパッケージインストール">google_mobile_adsパッケージインストール</h2><p>FlutterプロジェクトでAdmob広告を表示するため<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>のパッケージをインストールする必要があります。次のコマンドを実行して<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>をインストールします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter pub add google_mobile_ads
+</code></pre></div></div><h2 id="app-id設定">App ID設定</h2><p>次は<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>を使ってAdmobの広告を表示するため、iOS/Androidに<code class="language-plaintext highlighter-rouge">App ID</code>を設定する必要があります。</p><h3 id="androidでapp-idの設定">AndroidでApp IDの設定</h3><p>アンドロイドでAdmobeの<code class="language-plaintext highlighter-rouge">App ID</code>を設定するため、<code class="language-plaintext highlighter-rouge">android/app/src/main/AndroidManifest.xml</code>ファイルを開いて下記のように修正します。</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">package=</span><span class="s">"com.example.admob_example"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;application</span>
+        <span class="err">...</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta-data</span>
+              <span class="na">android:name=</span><span class="s">"com.google.android.gms.ads.APPLICATION_ID"</span>
+              <span class="na">android:value=</span><span class="s">"[YOUR ANDROID APP ID]"</span><span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div></div><h3 id="iosでapp-idの設定">iOSでApp IDの設定</h3><p>iOSでAdmobの<code class="language-plaintext highlighter-rouge">App ID</code>を設定するため、<code class="language-plaintext highlighter-rouge">ios/Runner/Info.plist</code>ファイルを開いて下記のように修正します。</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+  ...
+  <span class="nt">&lt;key&gt;</span>GADApplicationIdentifier<span class="nt">&lt;/key&gt;</span>
+  <span class="nt">&lt;string&gt;</span>[YOUR iOS APP ID]<span class="nt">&lt;/string&gt;</span>
+  <span class="nt">&lt;key&gt;</span>LSRequiresIPhoneOS<span class="nt">&lt;/key&gt;</span>
+  <span class="nt">&lt;true/&gt;</span>
+  <span class="nt">&lt;key&gt;</span>SKAdNetworkItems<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;array&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>cstr6suwn9.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>4fzdc2evr5.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>2fnua5tdw4.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>ydx93a7ass.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>5a6flpkh64.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>p78axxw29g.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>v72qych5uu.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>c6k4g5qg8m.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>s39g8k73mm.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>3qy4746246.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>3sh42y64q3.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>f38h382jlk.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>hs6bdukanm.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>prcb7njmu6.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>v4nxqhlyqp.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>wzmmz9fp6w.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>yclnxrl5pm.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>t38b2kh725.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>7ug5zh24hu.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>9rd848q2bz.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>n6fk4nfna4.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>kbd757ywx3.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>9t245vhmpl.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>4468km3ulz.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>2u9pt9hc89.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>8s468mfl3y.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>av6w8kgt66.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>klf5c3l5u5.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>ppxm28t8ap.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>424m5254lk.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>uw77j35x4d.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>578prtvx9j.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>4dzt52r2t5.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>e5fvkxwrpn.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>8c4e2ghe7u.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>zq492l623r.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+      <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>SKAdNetworkIdentifier<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>3qcr597p9d.skadnetwork<span class="nt">&lt;/string&gt;</span>
+      <span class="nt">&lt;/dict&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="google_mobile_adsの使い方">google_mobile_adsの使い方</h2><p>次は<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>を使ってAdmobeの広告を表示するため、<code class="language-plaintext highlighter-rouge">main.dart</code>ファイルを開いて下記のように修正します。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:flutter/material.dart'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="s">'package:flutter/foundation.dart'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="s">'package:google_mobile_ads/google_mobile_ads.dart'</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">&gt;</span> <span class="n">UNIT_ID</span> <span class="o">=</span> <span class="n">kReleaseMode</span>
+    <span class="o">?</span> <span class="o">{</span>
+        <span class="s">'ios'</span><span class="o">:</span> <span class="s">'[YOUR iOS AD UNIT ID]'</span><span class="o">,</span>
+        <span class="s">'android'</span><span class="o">:</span> <span class="s">'[YOUR ANDROID AD UNIT ID]'</span><span class="o">,</span>
+      <span class="o">}</span>
+    <span class="o">:</span> <span class="o">{</span>
+        <span class="s">'ios'</span><span class="o">:</span> <span class="s">'ca-app-pub-3940256099942544/2934735716'</span><span class="o">,</span>
+        <span class="s">'android'</span><span class="o">:</span> <span class="s">'ca-app-pub-3940256099942544/6300978111'</span><span class="o">,</span>
+      <span class="o">};</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">main</span><span class="o">()</span> <span class="n">async</span> <span class="o">{</span>
+  <span class="n">WidgetsFlutterBinding</span><span class="o">.</span><span class="na">ensureInitialized</span><span class="o">();</span>
+  <span class="n">MobileAds</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">initialize</span><span class="o">();</span>
+
+  <span class="n">runApp</span><span class="o">(</span><span class="n">MyApp</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="s">'Flutter Demo'</span><span class="o">,</span>
+      <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="o">(</span>
+        <span class="nl">primarySwatch:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">blue</span><span class="o">,</span>
+      <span class="o">),</span>
+      <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="o">,</span>
+      <span class="nl">home:</span> <span class="n">Home</span><span class="o">(),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Home</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">TargetPlatform</span> <span class="n">os</span> <span class="o">=</span> <span class="n">Theme</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">platform</span><span class="o">;</span>
+
+    <span class="n">BannerAd</span> <span class="n">banner</span> <span class="o">=</span> <span class="n">BannerAd</span><span class="o">(</span>
+      <span class="nl">listener:</span> <span class="n">BannerAdListener</span><span class="o">(</span>
+        <span class="nl">onAdFailedToLoad:</span> <span class="o">(</span><span class="n">Ad</span> <span class="n">ad</span><span class="o">,</span> <span class="n">LoadAdError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{},</span>
+        <span class="nl">onAdLoaded:</span> <span class="o">(</span><span class="n">_</span><span class="o">)</span> <span class="o">{},</span>
+      <span class="o">),</span>
+      <span class="nl">size:</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">banner</span><span class="o">,</span>
+      <span class="nl">adUnitId:</span> <span class="n">UNIT_ID</span><span class="o">[</span><span class="n">os</span> <span class="o">==</span> <span class="n">TargetPlatform</span><span class="o">.</span><span class="na">iOS</span> <span class="o">?</span> <span class="s">'ios'</span> <span class="o">:</span> <span class="s">'android'</span><span class="o">]!,</span>
+      <span class="nl">request:</span> <span class="n">AdRequest</span><span class="o">(),</span>
+    <span class="o">)..</span><span class="na">load</span><span class="o">();</span>
+
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+      <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+        <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">'Admob'</span><span class="o">),</span>
+      <span class="o">),</span>
+      <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+        <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span>
+          <span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+          <span class="nl">child:</span> <span class="n">AdWidget</span><span class="o">(</span>
+            <span class="nl">ad:</span> <span class="n">banner</span><span class="o">,</span>
+          <span class="o">),</span>
+        <span class="o">),</span>
+      <span class="o">),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><p>ソースコードを一つづつ詳しくみてみましょう。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:flutter/foundation.dart'</span><span class="o">;</span>
+</code></pre></div></div><p>Admobの広告は開発環境の場合、自分の<code class="language-plaintext highlighter-rouge">AD UNIT ID</code>を使うとダメです。自分の開発環境で自分の<code class="language-plaintext highlighter-rouge">AD UNIT ID</code>を使う場合、実際の広告トラピックではなく不正トラピックになるので、いっぱい使うと広告掲載をブロックされる可能性があります。したがって、今回の例では<code class="language-plaintext highlighter-rouge">kReleaseMode</code>を使って現在実行してる環境が<code class="language-plaintext highlighter-rouge">debug</code>か<code class="language-plaintext highlighter-rouge">release</code>かを区別する予定です。<code class="language-plaintext highlighter-rouge">kReleaseMode</code>を使うためには<code class="language-plaintext highlighter-rouge">foundation.dart</code>を使う必要があります。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:google_mobile_ads/google_mobile_ads.dart'</span><span class="o">;</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">google_mobile_ads</code>を使うため、追加します。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">&gt;</span> <span class="n">UNIT_ID</span> <span class="o">=</span> <span class="n">kReleaseMode</span>
+    <span class="o">?</span> <span class="o">{</span>
+        <span class="s">'ios'</span><span class="o">:</span> <span class="s">'[YOUR iOS AD UNIT ID]'</span><span class="o">,</span>
+        <span class="s">'android'</span><span class="o">:</span> <span class="s">'[YOUR ANDROID AD UNIT ID]'</span><span class="o">,</span>
+      <span class="o">}</span>
+    <span class="o">:</span> <span class="o">{</span>
+        <span class="s">'ios'</span><span class="o">:</span> <span class="s">'ca-app-pub-3940256099942544/2934735716'</span><span class="o">,</span>
+        <span class="s">'android'</span><span class="o">:</span> <span class="s">'ca-app-pub-3940256099942544/6300978111'</span><span class="o">,</span>
+      <span class="o">};</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">kReleaseMode</code>を使って現在の環境が<code class="language-plaintext highlighter-rouge">release</code>の場合、私たちが作った<code class="language-plaintext highlighter-rouge">AD UNIT ID</code>を使えるように設定しました。そうでない場合は、Admobが提供するテスト用の<code class="language-plaintext highlighter-rouge">AD UNIT ID</code>を使えるようにしました。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">main</span><span class="o">()</span> <span class="n">async</span> <span class="o">{</span>
+  <span class="n">WidgetsFlutterBinding</span><span class="o">.</span><span class="na">ensureInitialized</span><span class="o">();</span>
+  <span class="n">MobileAds</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">initialize</span><span class="o">();</span>
+
+  <span class="n">runApp</span><span class="o">(</span><span class="n">MyApp</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">google_mobile_ads</code>を使ってAdmobの広告を表示するため<code class="language-plaintext highlighter-rouge">MobileAds</code>を初期化する必要があります。<code class="language-plaintext highlighter-rouge">WidgetsFlutterBinding.ensureInitialized();</code>を使ってFlutterが初期化されたかを確認した後、<code class="language-plaintext highlighter-rouge">MobileAds.instance.initialize();</code>をコールして<code class="language-plaintext highlighter-rouge">MobileAds</code>を初期化します。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="s">'Flutter Demo'</span><span class="o">,</span>
+      <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="o">(</span>
+        <span class="nl">primarySwatch:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">blue</span><span class="o">,</span>
+      <span class="o">),</span>
+      <span class="nl">debugShowCheckedModeBanner:</span> <span class="kc">false</span><span class="o">,</span>
+      <span class="nl">home:</span> <span class="n">Home</span><span class="o">(),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Home</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre></div></div><p>簡単なサンプルコードを作成するため<code class="language-plaintext highlighter-rouge">Stateless</code>ウィジェットを生成しました。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><p>次は実際バナー広告を表示するソースコードを詳しくみてみましょう。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@override</span>
+<span class="n">Widget</span> <span class="nf">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">TargetPlatform</span> <span class="n">os</span> <span class="o">=</span> <span class="n">Theme</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">platform</span><span class="o">;</span>
+
+  <span class="n">BannerAd</span> <span class="n">banner</span> <span class="o">=</span> <span class="n">BannerAd</span><span class="o">(</span>
+    <span class="nl">listener:</span> <span class="n">BannerAdListener</span><span class="o">(</span>
+      <span class="nl">onAdFailedToLoad:</span> <span class="o">(</span><span class="n">Ad</span> <span class="n">ad</span><span class="o">,</span> <span class="n">LoadAdError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{},</span>
+      <span class="nl">onAdLoaded:</span> <span class="o">(</span><span class="n">_</span><span class="o">)</span> <span class="o">{},</span>
+    <span class="o">),</span>
+    <span class="nl">size:</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">banner</span><span class="o">,</span>
+    <span class="nl">adUnitId:</span> <span class="n">UNIT_ID</span><span class="o">[</span><span class="n">os</span> <span class="o">==</span> <span class="n">TargetPlatform</span><span class="o">.</span><span class="na">iOS</span> <span class="o">?</span> <span class="s">'ios'</span> <span class="o">:</span> <span class="s">'android'</span><span class="o">]!,</span>
+    <span class="nl">request:</span> <span class="n">AdRequest</span><span class="o">(),</span>
+  <span class="o">)..</span><span class="na">load</span><span class="o">();</span>
+
+  <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+    <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">'Admob'</span><span class="o">),</span>
+    <span class="o">),</span>
+    <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+      <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span>
+        <span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+        <span class="nl">child:</span> <span class="n">AdWidget</span><span class="o">(</span>
+          <span class="nl">ad:</span> <span class="n">banner</span><span class="o">,</span>
+        <span class="o">),</span>
+      <span class="o">),</span>
+    <span class="o">),</span>
+  <span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div><p>各プラットフォームより<code class="language-plaintext highlighter-rouge">AD UNIT ID</code>が違うので、現在のFlutterが実行されてるプラットフォームを識別する必要があります。このため<code class="language-plaintext highlighter-rouge">TargetPlatform</code>を使います。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TargetPlatform</span> <span class="n">os</span> <span class="o">=</span> <span class="n">Theme</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">platform</span><span class="o">;</span>
+</code></pre></div></div><p>そして<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>で提供されてる<code class="language-plaintext highlighter-rouge">BannerAd</code>クラスを使ってバナー広告を生成しましたし、<a href="https://dev-yakuza.posstree.com/flutter/dart/class/#cascade-operator" target="_blank">Cascade operator</a>を使って生成と同時に<code class="language-plaintext highlighter-rouge">load()</code>関数を実行して広告を取ってきました。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BannerAd</span> <span class="n">banner</span> <span class="o">=</span> <span class="n">BannerAd</span><span class="o">(</span>
+  <span class="nl">listener:</span> <span class="n">BannerAdListener</span><span class="o">(</span>
+    <span class="nl">onAdFailedToLoad:</span> <span class="o">(</span><span class="n">Ad</span> <span class="n">ad</span><span class="o">,</span> <span class="n">LoadAdError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{},</span>
+    <span class="nl">onAdLoaded:</span> <span class="o">(</span><span class="n">_</span><span class="o">)</span> <span class="o">{},</span>
+  <span class="o">),</span>
+  <span class="nl">size:</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">banner</span><span class="o">,</span>
+  <span class="nl">adUnitId:</span> <span class="n">UNIT_ID</span><span class="o">[</span><span class="n">os</span> <span class="o">==</span> <span class="n">TargetPlatform</span><span class="o">.</span><span class="na">iOS</span> <span class="o">?</span> <span class="s">'ios'</span> <span class="o">:</span> <span class="s">'android'</span><span class="o">]!,</span>
+  <span class="nl">request:</span> <span class="n">AdRequest</span><span class="o">(),</span>
+<span class="o">)..</span><span class="na">load</span><span class="o">();</span>
+</code></pre></div></div><p>この時、<code class="language-plaintext highlighter-rouge">AdListener</code>を使って広告に関するイベントにコールバック関数を登録することができまし、<code class="language-plaintext highlighter-rouge">AdRequest</code>の色んなパラメータを使ってもっと効率的な広告を表示することができます。</p><p>このように生成した広告を<code class="language-plaintext highlighter-rouge">AdWidget</code>を使って画面に表示します。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AdWidget</span><span class="o">(</span>
+  <span class="nl">ad:</span> <span class="n">banner</span><span class="o">,</span>
+<span class="o">)</span>
+</code></pre></div></div><p>現在の例題は簡単に広告を表示する方法を<code class="language-plaintext highlighter-rouge">Stateless</code>ウィジェットを使ってみてみました。もし、<code class="language-plaintext highlighter-rouge">Stateful</code>ウィジェットを使ったら、次のようにウィジェットが消える時、広告も削除しなきゃならないです。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@override</span>
+<span class="kt">void</span> <span class="nf">dispose</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">super</span><span class="o">.</span><span class="na">dispose</span><span class="o">();</span>
+  <span class="n">_banner</span><span class="o">.</span><span class="na">dispose</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div><h2 id="イシュー">イシュー</h2><p><code class="language-plaintext highlighter-rouge">google_mobile_ads</code>で広告を表示する時経験したイシューを共有します。</p><h3 id="await-mobileadsinstanceinitialize">await MobileAds.instance.initialize()</h3><p>私は<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>のバージョンを<code class="language-plaintext highlighter-rouge">0.13.4</code>で設定して使っています。このバージョンより上のバージョンを使う場合、アンドロイドの一部端末で<code class="language-plaintext highlighter-rouge">await MobileAds.instance.initialize()</code>部分が終わらなくなって、アプリが強制終了される問題が発生しています。</p><ul><li>公式Repositoryのイシュー: <a href="https://github.com/googleads/googleads-mobile-flutter/issues/429" rel="nofollow noreferrer" target="_blank">[Android] Using await MobileAds.instance.initialize() the app fails to load #429</a></li></ul><p>したがって、私はまだ<code class="language-plaintext highlighter-rouge">0.13.4</code>でバージョンを固定して使っています。</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="s">...</span>
+  <span class="s">google_mobile_ads</span><span class="pi">:</span> <span class="s">0.13.4</span>
+</code></pre></div></div><h3 id="ad-failed-to-load--3">Ad failed to load : 3</h3><p>開発中のアプリをエミューレーターで<code class="language-plaintext highlighter-rouge">test unit id</code>を使ってバーナー広告を表示すると、<code class="language-plaintext highlighter-rouge">Ad failed to load : 3</code>のエラーメッセージが出って、広告が表示されない問題があります。</p><p>私はこの問題を解決するため、開発中のアプリでも<code class="language-plaintext highlighter-rouge">test unit id</code>ではなく実際の<code class="language-plaintext highlighter-rouge">unit id</code>を使っています。実際の<code class="language-plaintext highlighter-rouge">unit id</code>を使っても<code class="language-plaintext highlighter-rouge">Test mode</code>と一緒に問題なく広告が表示されることを確認しました。</p><p><code class="language-plaintext highlighter-rouge">Test mode</code>が表示されてるので、不正広告トラピックではないと思ってるので、問題ないと判断して開発する時も実際の<code class="language-plaintext highlighter-rouge">unit id</code>を使っています。</p><p>もし、実際の<code class="language-plaintext highlighter-rouge">unit id</code>を使っても同じエラーメッセージが発生すると、そのアプリを実際のデバイスに上げて、実際トラピックを発生してみます。<code class="language-plaintext highlighter-rouge">Ad failed to load : 3</code>メッセージはエラーではなく広告が準備できてたいことを意味します。したがって、設定は問題ないことです。しかし、色んな理由で画面に表示する広告がまだ準備できてないことを意味します。実際のトラピックも広告を準備することに影響があるので、実際デバイスでアプリを動作して実際トラピックを発生してみてください。</p><h2 id="完了">完了</h2><p>これで<code class="language-plaintext highlighter-rouge">google_mobile_ads</code>パッケージを使ってAdmobの広告を表示する方法についてみてみました。今から皆さんも、皆さんのアプリへ広告を追加して履歴をだしてみてください！</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 私のブログが役に立ちましたか？下にコメントを残してください。それは私にとって大きな大きな力になります！ </code></p><h2>アプリ広報</h2><div class="book-greeting"> 今見てるブログを作成た<code class="highlighter-rouge">Deku</code>が開発したアプリを使ってみてください。<br/><code class="highlighter-rouge">Deku</code>が開発したアプリはFlutterで開発されています。<br/><br/> 興味がある方はアプリをダウンロードしてアプリを使ってくれると本当に助かります。<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/blaboo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="子供向け単語勉強アプリ、ブラブー"/><div><div class="app_description">子供向け単語勉強アプリ</div><div class="app_title">ブラブー</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik12/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik12.png" alt="TOPIK試験向け単語アプリ、TOPIK単語1/2"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語1/2</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik34/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik34.png" alt="TOPIK試験向け単語アプリ、TOPIK単語3/4"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語3/4</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik56/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik56.png" alt="TOPIK試験向け単語アプリ、TOPIK単語5/6"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語5/6</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/kantanbenkyo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/kantanbenkyo.png" alt="韓国語単語アプリ、カンタン勉強"/><div><div class="app_description">韓国語単語アプリ</div><div class="app_title">カンタン勉強</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/toeicwordsjp/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/toeicwordsjp.png" alt="TOEIC試験向け単語アプリ、TOEIC英語単語帳"/><div><div class="app_description">TOEIC試験向け単語アプリ</div><div class="app_title">TOEIC英語単語帳</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/centerenglish/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/centerenglish.png" alt="センター試験向け単語アプリ、センター英語単語"/><div><div class="app_description">センター試験向け単語アプリ</div><div class="app_title">センター英語単語</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-xl-block right-ads" aria-hidden="true"><script>var rightAds=document.getElementsByClassName("right-ads")[0];null!=rightAds.offsetParent&&setTimeout(function(){rightAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left bottom-left-ads" aria-hidden="true"><script>var bottomLeftAds=document.getElementsByClassName("bottom-left-ads")[0];null!=bottomLeftAds.offsetParent&&setTimeout(function(){bottomLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center bottom-center-ads" aria-hidden="true"><script>var bottomCenterAds=document.getElementsByClassName("bottom-center-ads")[0];null!=bottomCenterAds.offsetParent&&setTimeout(function(){bottomCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right bottom-right-ads" aria-hidden="true"><script>var bottomRightAds=document.getElementsByClassName("bottom-right-ads")[0];null!=bottomRightAds.offsetParent&&setTimeout(function(){bottomRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/api/flutter/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=[Flutter] Admob&url=https://dev-yakuza.posstree.com/flutter/admob/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/flutter/admob/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright"> Copyright &copy; dev.yakuza@gmail.com 2023 </p></div></div></div></footer><link href="/assets/vendor/jquery/jquery.min.js" rel="preload" as="script"/><script async src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20230323"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script><script>for(var adsList=document.getElementsByClassName("in-feed-left-ads"),i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}adsList=document.getElementsByClassName("in-feed-right-ads");for(var i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}</script></body></html>

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "lighthouse": "lhci autorun"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.11.0",
+    "xml-js": "^1.6.11"
+  }
+}

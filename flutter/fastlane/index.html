@@ -1,0 +1,861 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] Fastlaneを使ってデプロイを自動化する"/><meta name="twitter:description" content="Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] Fastlaneを使ってデプロイを自動化する - Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。</title><meta name="description" content="Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/flutter/fastlane/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/flutter/fastlane/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/flutter/fastlane/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/flutter/fastlane/"/><meta name="generator" content="Jekyll v3.9.2"/><meta property="og:title" content="[Flutter] Fastlaneを使ってデプロイを自動化する"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。"/><meta property="og:description" content="Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。"/><link rel="canonical" href="https://dev-yakuza.posstree.com/flutter/fastlane/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/flutter/fastlane/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-10-28T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] Fastlaneを使ってデプロイを自動化する"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2022-10-28T00:00:00+09:00","description":"Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。","headline":"[Flutter] Fastlaneを使ってデプロイを自動化する","image":"https://dev-yakuza.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/flutter/fastlane/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.posstree.com/flutter/fastlane/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="preload" as="style" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/assets/main.css?v=20230323"/><link rel="stylesheet" href="/assets/main.css?v=20230323"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "[MacOS] Flutterのインストール",
+          "description" : "MacOSへFlutterをインストールする方法を説明します。",
+          "position":1,"url": "https://dev-yakuza.posstree.com/flutter/installation/",
+          "item": "https://dev-yakuza.posstree.com/flutter/installation/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの変数",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの変数について説明します。",
+          "position":2,"url": "https://dev-yakuza.posstree.com/flutter/dart/variable/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/variable/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの演算子",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの演算子について説明します。",
+          "position":3,"url": "https://dev-yakuza.posstree.com/flutter/dart/operator/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/operator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] DartのStatement",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartでif/else、for/whileなどStatementを使う方法について説明します。",
+          "position":4,"url": "https://dev-yakuza.posstree.com/flutter/dart/statement/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/statement/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartの関数",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartの関数について説明します。",
+          "position":5,"url": "https://dev-yakuza.posstree.com/flutter/dart/function/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/function/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dartのクラス",
+          "description" : "Flutterでアプリを開発するためFlutterの開発言語であるDartについて説明します。今回のブログポストではDartでクラスを使う方法について説明します。",
+          "position":6,"url": "https://dev-yakuza.posstree.com/flutter/dart/class/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/class/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 始まり",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。このブログポストではFlutterのプロジェクトを生成して、主なファイルやフォルダを調べてみます。",
+          "position":7,"url": "https://dev-yakuza.posstree.com/flutter/start/",
+          "item": "https://dev-yakuza.posstree.com/flutter/start/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Linter",
+          "description" : "Flutterでコードのスタイルを統一して、バグが出る可能性を探すためLinterを設定する方法について説明します。",
+          "position":8,"url": "https://dev-yakuza.posstree.com/flutter/linter/",
+          "item": "https://dev-yakuza.posstree.com/flutter/linter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみましょう。今回のブログポストではFlutterで使えるウィジェットに関して説明します。",
+          "position":9,"url": "https://dev-yakuza.posstree.com/flutter/widget/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] レイアウト",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。このブログポストではFlutterで画面のレイアウトを担当するウィジェットについて説明します。",
+          "position":10,"url": "https://dev-yakuza.posstree.com/flutter/layout/",
+          "item": "https://dev-yakuza.posstree.com/flutter/layout/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Imageウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。今回のブログポストではFlutterでイメージを表示するためImageウィジェットを使う方法について説明します。",
+          "position":11,"url": "https://dev-yakuza.posstree.com/flutter/widget/image/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/image/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Snackbarウィジェット",
+          "description" : "Flutterを使ってアプリを開発してみようかと思います。今回のブログポストではFlutterでスナックバーを表示するためSnackbarウィジェットを使う方法について説明します。",
+          "position":12,"url": "https://dev-yakuza.posstree.com/flutter/widget/snackbar/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] スタックナビゲーション",
+          "description" : "Flutterを使ってアプリを開発しています。このブログポストではFlutterで生成したプロジェクトにスタックナビゲーションを使う方法について説明します。",
+          "position":13,"url": "https://dev-yakuza.posstree.com/flutter/navigator/stack/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/stack/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Drawerナビゲーション",
+          "description" : "Flutterを使ってアプリを開発してみましょう。今回のブログポストではFlutterで作ったプロジェクトでドロワーナビゲーションを使う方法について説明します。",
+          "position":14,"url": "https://dev-yakuza.posstree.com/flutter/navigator/drawer/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/drawer/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Textfieldウィジェット",
+          "description" : "今回のブログポストではFlutterでユーザの入力をもらえるTextfieldウィジェットを使う方法について説明します。",
+          "position":15,"url": "https://dev-yakuza.posstree.com/flutter/widget/textfield/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/textfield/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アプリのアイコン変更",
+          "description" : "今回のブログポストではFlutterでアプリのアイコンを変更する方法について説明します。",
+          "position":16,"url": "https://dev-yakuza.posstree.com/flutter/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-icon/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] スプラッシュスクリーン",
+          "description" : "今回のブログポストではFlutterでスプラッシュスクリーンを変更する方法について説明します。",
+          "position":17,"url": "https://dev-yakuza.posstree.com/flutter/splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/flutter/splash-screen/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Admob",
+          "description" : "今回ブログポストではFlutterで生成したアプリにgoogle_mobile_adsパッケージを使ってAdmobの広告を表示する方法について説明します。",
+          "position":18,"url": "https://dev-yakuza.posstree.com/flutter/admob/",
+          "item": "https://dev-yakuza.posstree.com/flutter/admob/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase core",
+          "description" : "今回ブログポストではFlutterでFirebaseを連動する方法について説明します。",
+          "position":19,"url": "https://dev-yakuza.posstree.com/flutter/firebase/core/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/core/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Analytics",
+          "description" : "今回のブログポストではFlutterでFirebaseのAnalyticsを連動する方法について説明します。",
+          "position":20,"url": "https://dev-yakuza.posstree.com/flutter/firebase/analytics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/analytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Crashlytics",
+          "description" : "今回のブログポストではFlutterでFirebaseのCrashlyticsを連動して使う方法について説明します。",
+          "position":21,"url": "https://dev-yakuza.posstree.com/flutter/firebase/crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/firebase/crashlytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] TTS - Text To Speech",
+          "description" : "今回のブログポストではFlutterでTTS(Text To Speech)機能を使う方法について説明します。",
+          "position":22,"url": "https://dev-yakuza.posstree.com/flutter/tts/",
+          "item": "https://dev-yakuza.posstree.com/flutter/tts/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Provider",
+          "description" : "今回のブログポストではFlutterでグローバル状態（State）、またはウィジェットたちの間で状態（State）を共有するためProviderを使う方法について説明します。",
+          "position":23,"url": "https://dev-yakuza.posstree.com/flutter/provider/",
+          "item": "https://dev-yakuza.posstree.com/flutter/provider/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アプリの名前変更",
+          "description" : "今回のブログポストではFlutterで生成したアプリの名前を変更する方法について説明します。",
+          "position":24,"url": "https://dev-yakuza.posstree.com/flutter/app-name/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-name/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Application IDの変更",
+          "description" : "Flutterで生成したアプリのApplication IDを変更する方法について説明します。",
+          "position":25,"url": "https://dev-yakuza.posstree.com/flutter/app-id/",
+          "item": "https://dev-yakuza.posstree.com/flutter/app-id/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] アニメーション",
+          "description" : "今回のブログポストではFlutterで簡単なアニメーションを使うためAnimatedContainerとAnimatedOpacityを使う方法について説明します。",
+          "position":26,"url": "https://dev-yakuza.posstree.com/flutter/widget/animated/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/animated/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ライフサイクル",
+          "description" : "今回のブログポストではFlutterのウィジェットのライフサイクル(lifecycle)について説明します。",
+          "position":27,"url": "https://dev-yakuza.posstree.com/flutter/widget/lifecycle/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/lifecycle/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Shared preferences",
+          "description" : "今回のブログポストではFlutterでローカルに簡単なデータを保存するためShared preferencesパッケージを使う方法について説明します。",
+          "position":28,"url": "https://dev-yakuza.posstree.com/flutter/shared-preferences/",
+          "item": "https://dev-yakuza.posstree.com/flutter/shared-preferences/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 統合テスト(Integration Test)",
+          "description" : "今回のブログポストではFlutterで統合テスト(Integration Test)をする方法を説明します。",
+          "position":29,"url": "https://dev-yakuza.posstree.com/flutter/integration-test/",
+          "item": "https://dev-yakuza.posstree.com/flutter/integration-test/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] SQLite",
+          "description" : "今回のブログポストではFlutterでSQLiteを使う方法について説明します。",
+          "position":30,"url": "https://dev-yakuza.posstree.com/flutter/widget/sqflite/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/sqflite/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Device Unique ID",
+          "description" : "Flutterでユーザの端末のユニークIDを取得するため、device_info_plusパッケージを使う方法について説明します。",
+          "position":31,"url": "https://dev-yakuza.posstree.com/flutter/device-unique-id/",
+          "item": "https://dev-yakuza.posstree.com/flutter/device-unique-id/"},{
+          "@type":"ListItem",
+          "name": "[Dart] 切り上げ、切り捨て、丸め",
+          "description" : "Flutterで小数点について切り上げ、切り捨て、丸めをする方法について説明します。",
+          "position":32,"url": "https://dev-yakuza.posstree.com/flutter/dart/ceil-floor-round/",
+          "item": "https://dev-yakuza.posstree.com/flutter/dart/ceil-floor-round/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ナビゲーションでパラメータを渡す",
+          "description" : "Flutterでナビゲーションを使って画面を移動する時、パラメータを渡す方法について説明します。",
+          "position":33,"url": "https://dev-yakuza.posstree.com/flutter/navigator/parameters/",
+          "item": "https://dev-yakuza.posstree.com/flutter/navigator/parameters/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 状態管理",
+          "description" : "FlutterでGetXを使って状態管理をする方法について説明します。",
+          "position":34,"url": "https://dev-yakuza.posstree.com/flutter/getx/state/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/state/"},{
+          "@type":"ListItem",
+          "name": "[GetX] ルート管理",
+          "description" : "FlutterでGetXを使ってルートを管理する方法について説明します。",
+          "position":35,"url": "https://dev-yakuza.posstree.com/flutter/getx/route/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/route/"},{
+          "@type":"ListItem",
+          "name": "[GetX] ディペンデンシー管理",
+          "description" : "FlutterでGetXを使ってディペンデンシーを管理する方法について説明します。",
+          "position":36,"url": "https://dev-yakuza.posstree.com/flutter/getx/dependency/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/dependency/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 多言語",
+          "description" : "FlutterでGetXを使って多言語を提供する方法について説明します。",
+          "position":37,"url": "https://dev-yakuza.posstree.com/flutter/getx/localization/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/localization/"},{
+          "@type":"ListItem",
+          "name": "[GetX] テーマ",
+          "description" : "FlutterでGetXを使ってテーマを使う方法について説明します。",
+          "position":38,"url": "https://dev-yakuza.posstree.com/flutter/getx/theme/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/theme/"},{
+          "@type":"ListItem",
+          "name": "[GetX] BottomSheet",
+          "description" : "FlutterでGetXを使ってBottomSheetを使う方法について説明します。",
+          "position":39,"url": "https://dev-yakuza.posstree.com/flutter/getx/bottom_sheet/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/bottom_sheet/"},{
+          "@type":"ListItem",
+          "name": "[GetX] Dialog",
+          "description" : "FlutterでGetXを使ってDialogを使う方法について説明します。",
+          "position":40,"url": "https://dev-yakuza.posstree.com/flutter/getx/dialog/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/dialog/"},{
+          "@type":"ListItem",
+          "name": "[GetX] スナックバー",
+          "description" : "FlutterでGetXを使ってスナックバーを表示する方法について説明します。",
+          "position":41,"url": "https://dev-yakuza.posstree.com/flutter/getx/snackbar/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[GetX] プラットフォームやデバイスの情報",
+          "description" : "FlutterでGetXを使ってプラットフォームやデバイスの情報を使う方法について説明します。",
+          "position":42,"url": "https://dev-yakuza.posstree.com/flutter/getx/utils/",
+          "item": "https://dev-yakuza.posstree.com/flutter/getx/utils/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] url_launcherを使ってブラウザを開く",
+          "description" : "Flutterでurl_launcherを使ってブラウザを開いたり、メールや電話などを送るためアプリを開く方法について説明します。￥",
+          "position":43,"url": "https://dev-yakuza.posstree.com/flutter/url_launcher/",
+          "item": "https://dev-yakuza.posstree.com/flutter/url_launcher/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] iOSでurl_launcherを使って外部ブラウザを開く",
+          "description" : "Flutterのurl_launcherを使ってiOSでウェブリンクをアプリ内ブラウザではなく、アプリ外部の基本ブラウザで開く方法について説明します。",
+          "position":44,"url": "https://dev-yakuza.posstree.com/flutter/url_launcher/external_link/",
+          "item": "https://dev-yakuza.posstree.com/flutter/url_launcher/external_link/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] package_info_plusを使ってパッケージ情報取得",
+          "description" : "Flutterでpackage_info_plusを使ってアプリの名前、パッケージ名やバージョン情報を取得する方法について説明します。",
+          "position":45,"url": "https://dev-yakuza.posstree.com/flutter/package_info_plus/",
+          "item": "https://dev-yakuza.posstree.com/flutter/package_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] device_info_plusを使ってデバイスの情報取得",
+          "description" : "Flutterでdevice_info_plusを使ってデバイス名、デバイスモデル名、デバイスシステム名など、デバイスに関する情報を取得する方法について説明します。",
+          "position":46,"url": "https://dev-yakuza.posstree.com/flutter/device_info_plus/",
+          "item": "https://dev-yakuza.posstree.com/flutter/device_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] httpでAPIを呼び出す方法",
+          "description" : "Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。",
+          "position":47,"url": "https://dev-yakuza.posstree.com/flutter/http/",
+          "item": "https://dev-yakuza.posstree.com/flutter/http/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] in_app_review",
+          "description" : "Flutterでin_app_reviewを使ってアプリ内でアプリレビューを作成できるようにする方法について説明します。",
+          "position":48,"url": "https://dev-yakuza.posstree.com/flutter/in_app_review/",
+          "item": "https://dev-yakuza.posstree.com/flutter/in_app_review/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ローカルプッシュ通知",
+          "description" : "Flutterでflutter_local_notificationsを使って端末自体から特定時間にプッシュ通知を表示する方法について説明します。",
+          "position":49,"url": "https://dev-yakuza.posstree.com/flutter/flutter_local_notifications/",
+          "item": "https://dev-yakuza.posstree.com/flutter/flutter_local_notifications/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウェブビュー(WebView)",
+          "description" : "Flutterでwebview_flutterを使ってアプリ内でウェブビュー(WebView)でWebページを表示する方法について説明します。",
+          "position":50,"url": "https://dev-yakuza.posstree.com/flutter/webview_flutter/",
+          "item": "https://dev-yakuza.posstree.com/flutter/webview_flutter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] webview_flutterでクッキーを使う方法",
+          "description" : "Flutterでwebview_flutterを使ってウェブビュー(WebView)を表示して表示したウェブページのクッキーを扱う方法について説明します。",
+          "position":51,"url": "https://dev-yakuza.posstree.com/flutter/webview_flutter/cookie/",
+          "item": "https://dev-yakuza.posstree.com/flutter/webview_flutter/cookie/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Actionsでコード検査",
+          "description" : "GitHubのActionsを使ってPull requestが生成されたら、FlutterのLinterを実行してコードのスタイルを検査したり、テストコードを実行してコードの問題がないか確認する方法について説明します。",
+          "position":52,"url": "https://dev-yakuza.posstree.com/flutter/github-actions/code-quality/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github-actions/code-quality/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Dependabot",
+          "description" : "GitHubのDependabotを使って自動でFlutterパッケージのバージョンを検討してアップデータがある場合、Pull requestを自動で生成する方法について説明します。",
+          "position":53,"url": "https://dev-yakuza.posstree.com/flutter/github/dependabot/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github/dependabot/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] テストカバレッジ",
+          "description" : "Flutterでテストカバレッジを生成してテストカバレッジを確認してテストコードが作成されてない部分を探す方法について説明します。",
+          "position":54,"url": "https://dev-yakuza.posstree.com/flutter/test-coverage/",
+          "item": "https://dev-yakuza.posstree.com/flutter/test-coverage/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] flutter_colorpicker",
+          "description" : "Flutterでflutter_colorpickerを使ってユーザが簡単に色を選択できる機能を実装する方法について説明します。",
+          "position":55,"url": "https://dev-yakuza.posstree.com/flutter/flutter_colorpicker/",
+          "item": "https://dev-yakuza.posstree.com/flutter/flutter_colorpicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] VSCodeの設定",
+          "description" : "VSCodeを使ってFlutterでアプリを開発する時、役に立つ設定を紹介します。",
+          "position":56,"url": "https://dev-yakuza.posstree.com/flutter/vscode-settings/",
+          "item": "https://dev-yakuza.posstree.com/flutter/vscode-settings/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Fastlaneを使ってデプロイを自動化する",
+          "description" : "Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。",
+          "position":57,"url": "https://dev-yakuza.posstree.com/flutter/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/flutter/fastlane/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub ActionsとFastlaneを使ってFlutterアプリをデプロイする",
+          "description" : "Fastlaneが設定されたFlutterプロジェクトをGitHub Actionsを使ってデプロイする方法について説明します。",
+          "position":58,"url": "https://dev-yakuza.posstree.com/flutter/github-actions/deployment/",
+          "item": "https://dev-yakuza.posstree.com/flutter/github-actions/deployment/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] ウィジェット中でインライン条件文とインラインループ文を使う方法",
+          "description" : "インライン条件文を使ってウィジェットを表示するかどうかを決めたり、インラインループ文を使ってウィジェットをループしながら表示させる方法について説明します。",
+          "position":59,"url": "https://dev-yakuza.posstree.com/flutter/inline-if-statement-and-inline-loop/",
+          "item": "https://dev-yakuza.posstree.com/flutter/inline-if-statement-and-inline-loop/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 画面が消えないようにする",
+          "description" : "Flutterで作ったアプリが起動してる時、またはアプリ内で特定な機能が使われる時、携帯の画面が消えないようにするためwakelockパッケージを使う方法について説明します。",
+          "position":60,"url": "https://dev-yakuza.posstree.com/flutter/wakelock/",
+          "item": "https://dev-yakuza.posstree.com/flutter/wakelock/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 引っ張って更新(Pull to refresh)",
+          "description" : "Flutterで作ったアプリでリストを表示して引っ張って更新(Pull to refresh)を使ってリストを更新する方法について説明します。",
+          "position":61,"url": "https://dev-yakuza.posstree.com/flutter/widget/RefreshIndicator/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/RefreshIndicator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] textScaleFactorでフォントのサイズを를 사용해서 폰트 크기 고정하기",
+          "description" : "Flutterで作ったアプリでユーザが端末の設定を使ってフォントを拡大した場合も、 アプリ内のフォントサイズを固定する方法について説明します。",
+          "position":62,"url": "https://dev-yakuza.posstree.com/flutter/widget/textScaleFactor/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/textScaleFactor/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] DatePicker",
+          "description" : "Flutterアプリでユーザが日付を入力する時カレンダー(DatePicker)を表示して日付を入れるようにする方法について説明します。",
+          "position":63,"url": "https://dev-yakuza.posstree.com/flutter/widget/showDatePicker/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/showDatePicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] AppBarのバックボタンを隠す",
+          "description" : "FlutterのAppBarで自動で生成されたバックボタンを隠す方法について説明します。",
+          "position":64,"url": "https://dev-yakuza.posstree.com/flutter/widget/hide_back_button/",
+          "item": "https://dev-yakuza.posstree.com/flutter/widget/hide_back_button/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] テストコードの中で親ウィジェットやチャイルドウィジェットを探す",
+          "description" : "Flutterでテストコードを作成する時、親ウィジェット探したり、チャイルドウィジェットを探したりして値を確認するテストコードを作成する方法について説明します。",
+          "position":65,"url": "https://dev-yakuza.posstree.com/flutter/test/find_child_and_parent_widget/",
+          "item": "https://dev-yakuza.posstree.com/flutter/test/find_child_and_parent_widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] チャイルドウィジェットのサイズと関係なくスクロールする",
+          "description" : "SingleChildScrollViewウィジェットでチャイルドウィジェットのサイズと関係なく、いつもスクロールができるようにする方法について説明します。",
+          "position":66,"url": "https://dev-yakuza.posstree.com/flutter/AlwaysScrollableScrollPhysics/",
+          "item": "https://dev-yakuza.posstree.com/flutter/AlwaysScrollableScrollPhysics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] サーバーデータの日本語、韓国語の文字化けの修正",
+          "description" : "Flutterでhttpパッケージを使ってサーバーからJSONデータをもらう時、JSONデータ中にある日本語や韓国語が文字化けされ画面に表示される問題を解決する方法について説明します。",
+          "position":67,"url": "https://dev-yakuza.posstree.com/flutter/http_response_decode/",
+          "item": "https://dev-yakuza.posstree.com/flutter/http_response_decode/"}]
+    }
+  </script><link rel="preload" as="style" href="/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;</script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/flutter/fastlane/">한국어</a><a class="dropdown-item menu-en" href="/en/flutter/fastlane/">English</a><a class="dropdown-item menu-ja" href="/flutter/fastlane/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="scrollNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="scrollNavbarDropdown"><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/flutter/background.png')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>[Flutter] Fastlaneを使ってデプロイを自動化する</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-03-18 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/flutter/fastlane/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">Fastlaneを使ってFlutterで開発したアプリをデプロイする方法について説明します。</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left top-left-ads" aria-hidden="true"><script>var topLeftAds=document.getElementsByClassName("top-left-ads")[0];null!=topLeftAds.offsetParent&&setTimeout(function(){topLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center top-center-ads" aria-hidden="true"><script>var topCenterAds=document.getElementsByClassName("top-center-ads")[0];null!=topCenterAds.offsetParent&&setTimeout(function(){topCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right top-right-ads" aria-hidden="true"><script>var topRightAds=document.getElementsByClassName("top-right-ads")[0];null!=topRightAds.offsetParent&&setTimeout(function(){topRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/flutter"><span itemprop="name">flutter</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/flutter/fastlane/"><span itemprop="name">[Flutter] Fastlaneを使ってデプロイを自動化する</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-xl-block left-ads" aria-hidden="true"><script>var leftAds=document.getElementsByClassName("left-ads")[0];null!=leftAds.offsetParent&&setTimeout(function(){leftAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#概要">概要</a></li><li><a href="#fastlane">Fastlane</a></li><li><a href="#fastlaneのインストール">Fastlaneのインストール</a></li><li><a href="#ios">iOS</a><ul><li><a href="#iosのためfastlaneの初期化">iOSのためFastlaneの初期化</a></li><li><a href="#ios用fastlaneフォルダやファイル">iOS用Fastlaneフォルダやファイル</a></li><li><a href="#ios用実行ファイル修正">iOS用実行ファイル修正</a></li><li><a href="#ios用fastlaneを実行してtestflightへデプロイ">iOS用Fastlaneを実行してTestflightへデプロイ</a></li><li><a href="#ios用fastlaneを実行してアプリストアへデプロイ">iOS用Fastlaneを実行してアプリストアへデプロイ</a></li></ul></li><li><a href="#アンドロイド">アンドロイド</a><ul><li><a href="#api-accessのためservice-account生成">API accessのためService Account生成</a></li><li><a href="#アンドロイドのためfastlaneの初期化">アンドロイドのためFastlaneの初期化</a></li><li><a href="#アンドロイド用fastlaneのフォルダやファイル">アンドロイド用Fastlaneのフォルダやファイル</a></li><li><a href="#アンドロイド用実行ファイル修正">アンドロイド用実行ファイル修正</a></li><li><a href="#ンドロイドのテスト用fastlane">ンドロイドのテスト用Fastlane</a></li><li><a href="#アンドロイドのグーグルプレイストア用fastlane">アンドロイドのグーグルプレイストア用Fastlane</a></li><li><a href="#アンドロイド用fastlaneの実行">アンドロイド用Fastlaneの実行</a></li></ul></li><li><a href="#gitignore">gitignore</a></li><li><a href="#完了">完了</a></li></ul></div><h2 id="概要">概要</h2><p>Flutterでアプリを開発したら、このように開発したアプリをユーザが使えるようにデプロイをします。Flutterの公式ドキュメントにはFlutterで開発したアプリをデプロイする方法について説明をしております。これを参考するとFlutterで開発したアプリをデプロイすることができます。</p><ul><li>アンドロイドデプロイ: <a href="https://docs.flutter.dev/deployment/android" rel="nofollow noreferrer" target="_blank">https://docs.flutter.dev/deployment/android</a></li><li>iOSデプロイ: <a href="https://docs.flutter.dev/deployment/ios" rel="nofollow noreferrer" target="_blank">https://docs.flutter.dev/deployment/ios</a></li></ul><p><code class="language-plaintext highlighter-rouge">Fastlane</code>はネーティブで開発したアプリもハイブリッドアプリ（Flutter, React Nativeなど）も簡単にデプロイできるように手伝ってくれるツールです。</p><ul><li>Fastlane: <a href="https://fastlane.tools/" rel="nofollow noreferrer" target="_blank">https://fastlane.tools/</a></li></ul><p>今回のブログポストでは<code class="language-plaintext highlighter-rouge">Fastlane</code>を使ってFlutterで開発したアプリをデプロイする方法について説明します。</p><h2 id="fastlane">Fastlane</h2><blockquote><p>fastlane is the easiest way to automate beta deployments and releases for your iOS and Android apps. It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.</p></blockquote><p><code class="language-plaintext highlighter-rouge">Fastlane</code>はiOSとアンドロイドのテスト用のデプロイまたは、リリース用のデプロイを簡単に自動化してくれるツールです。デプロイだけではなく、スクリンショット、コードサイニング、アプリストア登録情報などを生成、管理することができるツールです。</p><p>今回のブログポストではスクリンショット、アプリストア登録情報などは登録されたと仮定して、テスト用・リリース用のデプロイを自動化する部分だけを扱う予定です。</p><p>スクリンショット、アプリストア登録情報生成など、他の機能も使いたい方は公式サイトを参考してください。</p><ul><li>公式サイト: <a href="https://docs.fastlane.tools/" rel="nofollow noreferrer" target="_blank">Fastlane</a></li></ul><p>Flutterの公式サイトにも<code class="language-plaintext highlighter-rouge">CI/CD</code>のため<code class="language-plaintext highlighter-rouge">Fastlane</code>を使う方法について案内してますので、公式ドキュメントも参考してみてください。</p><ul><li>公式サイト: <a href="https://docs.flutter.dev/deployment/cd" rel="nofollow noreferrer" target="_blank">https://docs.flutter.dev/deployment/cd</a></li></ul><h2 id="fastlaneのインストール">Fastlaneのインストール</h2><p><code class="language-plaintext highlighter-rouge">Fastlane</code>を使ってFlutterで開発したアプリをデプロイするためには<code class="language-plaintext highlighter-rouge">Fastlane</code>をインストールする必要があります。次のコマンドを使って<code class="language-plaintext highlighter-rouge">Fastlane</code>をインストールしてください。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Using RubyGems</span>
+<span class="nb">sudo </span>gem <span class="nb">install </span>fastlane <span class="nt">-NV</span>
+
+<span class="c"># Alternatively using Homebrew</span>
+brew cask <span class="nb">install </span>fastlane
+</code></pre></div></div><p>公式サイトでは<code class="language-plaintext highlighter-rouge">Homebrew</code>を使ってインストールする方法と<code class="language-plaintext highlighter-rouge">RubyGems</code>を使ってインストールする方法を案内してます。</p><p>私は最初Homebrewを使ってインストールして、テストしてみましたが、うまく動作してない部分がありました。したがってRubyGemsを使ってインストールすることをお勧めします。もしHomebrewでうまく動作しなかったら、RubyGemsで再びインストールして試してみてください。</p><h2 id="ios">iOS</h2><p>Flutterで開発したiOSアプリをFastlaneを使ってデプロイする方法について説明します。</p><h3 id="iosのためfastlaneの初期化">iOSのためFastlaneの初期化</h3><p>下記のコマンドを使ってiOSのためFastlaneを初期化します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>ios
+fastlane init
+</code></pre></div></div><p>このコマンドを実行すると下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/init-ios.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/init-ios.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/init-ios.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - iOS初期化"/></picture><p>今回のブログポストではTestflight用とアプリストアにデプロイするための設定について見る予定です。したがって<code class="language-plaintext highlighter-rouge">2</code>番または<code class="language-plaintext highlighter-rouge">3</code>番を選択して進めばいいです。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. Automate beta distribution to TestFlight
+3. Automate App Store distribution
+</code></pre></div></div><p>ここではTestflight用デプロイをするため<code class="language-plaintext highlighter-rouge">2</code>番を選択して進めました。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/select-ios-project.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/select-ios-project.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/select-ios-project.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - iOSプロジェクト選択"/></picture><p>2番を選択して進むと上のようにiOSのプロジェクトを選択する画面が確認できます。Flutterで開発したアプリをデプロイする予定なので、<code class="language-plaintext highlighter-rouge">2</code>番を選択して進めます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/login-apple.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/login-apple.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/login-apple.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Appleログイン"/></picture><p>2番を選択して進むと、上のようにAppleログインのための画面が確認できます。iOSのアプリデプロイをするため使う<code class="language-plaintext highlighter-rouge">Apple store connect</code>のログインIDを入力します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/enter-ios.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/enter-ios.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/enter-ios.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - iOS設定"/></picture><p>私は既にFastlaneを使ってログインをしたことがあるので、上のような画面が表示されます。最初Fastlaneを設定する方は2段階認証の手続きが表示されます。</p><p>上のような画面以外にも何回<code class="language-plaintext highlighter-rouge">Continue by pressing Enter</code>を入力する画面が表示されます。<code class="language-plaintext highlighter-rouge">Enter</code>キーを押して進めて設定を完了させます。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="ios用fastlaneフォルダやファイル">iOS用Fastlaneフォルダやファイル</h3><p>iOSの設定を完了するとFlutterのiosフォルダ下に下記のようなフォルダやファイルが生成されることが確認できます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|- fastlane
+|  |- Appfile
+|  |- Fastfile
+|- Gemfile
+|- Gemfile.lock
+</code></pre></div></div><p>各フォルダやファイルを詳しく見てみましょう。</p><ul><li>fastlaneフォルダ: Fastlaneの設定や実行ファイルたちが入ってるフォルダです。</li><li>Gemfile, Gemfile.lock: FastlaneはRubyで開発されてます。このファイルたちはRubyでライブラリを管理するためのファイルたちです。</li></ul><p>Fastlaneを実行するため、設定内容が入ってる<code class="language-plaintext highlighter-rouge">fastlane/Appfile</code>ファイルでコメントを消すと下記のようです。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app_identifier</span><span class="p">(</span><span class="s2">"io.github.dev-yakuza.kumoncho"</span><span class="p">)</span>
+<span class="n">apple_id</span><span class="p">(</span><span class="s2">"dev.yakuza@gmail.com"</span><span class="p">)</span>
+
+<span class="n">itc_team_id</span><span class="p">(</span><span class="s2">"119423059"</span><span class="p">)</span>
+<span class="n">team_id</span><span class="p">(</span><span class="s2">"WFDJCJXQZ6"</span><span class="p">)</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Appfile</code>ファイルはiOSの自動デプロイのためのFastlane設定ファイルです。簡単なファイルなので、詳しい説明は省略します。</p><p>その次は実際アプリをデプロイするための実行ファイルである<code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code>ファイルでコメントを消すと下記のようです。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Push a new beta build to TestFlight"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span>
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"kumoncho.xcodeproj"</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span><span class="ss">workspace: </span><span class="s2">"kumoncho.xcworkspace"</span><span class="p">,</span> <span class="ss">scheme: </span><span class="s2">"kumoncho"</span><span class="p">)</span>
+    <span class="n">upload_to_testflight</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>ここで表示されたFastlaneを実行するためには次のコマンドを実行することができます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane beta
+</code></pre></div></div><p>このようにFastlaneを実行するとiOSののbuild numberを上げて(<code class="language-plaintext highlighter-rouge">increment_build_number</code>)、アプリをビルドした後(<code class="language-plaintext highlighter-rouge">build_app</code>)、Testflight用でアップロードします。(<code class="language-plaintext highlighter-rouge">upload_to_testflight</code>)</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="ios用実行ファイル修正">iOS用実行ファイル修正</h3><p>基本的に提供されるfastlaneファイルでは完璧にデプロイ自動化をすることができません。したがって、iOS用デプロイを自動化するため<code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code>ファイルを下記のように修正します。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="k">else</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/\d+.\d+.\d+/</span>
+    <span class="n">versionNum</span> <span class="o">=</span> <span class="n">version</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">versionNum</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">version_number: </span><span class="n">versionNum</span>
+      <span class="p">)</span>
+    <span class="k">elsif</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'major'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'minor'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'patch'</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">bump_type: </span><span class="n">version</span>
+      <span class="p">)</span>
+    <span class="k">else</span>
+      <span class="no">UI</span><span class="p">.</span><span class="nf">user_error!</span><span class="p">(</span><span class="s1">'[ERROR] Wrong version!!!!!!'</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:type</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'github'</span>
+      <span class="n">create_keychain</span><span class="p">(</span>
+        <span class="ss">name: </span><span class="s1">'ios_app_keychain'</span><span class="p">,</span>
+        <span class="ss">password: </span><span class="s1">'****************'</span><span class="p">,</span>
+        <span class="ss">timeout: </span><span class="mi">1800</span><span class="p">,</span>
+        <span class="ss">default_keychain: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">unlock: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">lock_when_sleeps: </span><span class="kp">false</span>
+      <span class="p">)</span>
+      <span class="n">import_certificate</span><span class="p">(</span>
+        <span class="ss">certificate_path: </span><span class="s1">'distribution.p12'</span><span class="p">,</span>
+        <span class="ss">certificate_password: </span><span class="s1">'****************'</span><span class="p">,</span>
+        <span class="ss">keychain_name: </span><span class="s1">'ios_app_keychain'</span><span class="p">,</span>
+        <span class="ss">keychain_password: </span><span class="s1">'****************'</span>
+      <span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">install_provisioning_profile</span><span class="p">(</span><span class="ss">path: </span><span class="s1">'distribution.mobileprovision'</span><span class="p">)</span>
+    <span class="n">update_project_provisioning</span><span class="p">(</span>
+      <span class="ss">xcodeproj: </span><span class="s1">'Runner.xcodeproj'</span><span class="p">,</span>
+      <span class="ss">target_filter: </span><span class="s1">'github'</span><span class="p">,</span>
+      <span class="ss">profile: </span><span class="s1">'distribution.mobileprovision'</span><span class="p">,</span>
+      <span class="ss">build_configuration: </span><span class="s1">'Release'</span>
+    <span class="p">)</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">app_store_connect_api_key</span><span class="p">(</span>
+      <span class="ss">key_id: </span><span class="s1">'**************'</span><span class="p">,</span>
+      <span class="ss">issuer_id: </span><span class="s1">'***********************'</span><span class="p">,</span>
+      <span class="ss">key_filepath: </span><span class="s1">'distribution.p8'</span>
+    <span class="p">)</span>
+    <span class="n">api_key</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Update version'</span>
+  <span class="n">lane</span> <span class="ss">:version</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s1">'Runner.xcodeproj'</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Submit review only'</span>
+  <span class="n">lane</span> <span class="ss">:submit_review</span> <span class="k">do</span> <span class="o">|</span><span class="n">_options</span><span class="o">|</span>
+    <span class="n">upload_to_app_store</span><span class="p">(</span>
+      <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_binary_upload: </span><span class="kp">true</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Push a new beta build to TestFlight'</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_testflight</span><span class="p">(</span><span class="ss">api_key: </span><span class="n">api_key</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Push a new release build to the App Store'</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_app_store</span><span class="p">(</span>
+      <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+      <span class="ss">release_notes: </span><span class="p">{</span>
+        <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+        <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+      <span class="p">},</span>
+      <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">precheck_include_in_app_purchases: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">submission_information: </span><span class="p">{</span>
+        <span class="ss">add_id_info_uses_idfa: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_uses_encryption: </span><span class="kp">false</span>
+      <span class="p">},</span>
+      <span class="ss">api_key: </span><span class="n">api_key</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>ユーザが入力したバージョンに合わせて、バージョンを修正する関数を定義しました。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="o">...</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Update version'</span>
+  <span class="n">lane</span> <span class="ss">:version</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s1">'Runner.xcodeproj'</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>Fastlaneコマンドを使ってデプロイするアプリのバージョンをアップデートすることができる<code class="language-plaintext highlighter-rouge">version</code>と言うコマンドを作りました。このコマンドは次のように実行してアプリのバージョンをアップデートすることができます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># fastlane version version:1.0.0</span>
+<span class="c"># fastlane version version:major</span>
+<span class="c"># fastlane version version:minor</span>
+fastlane version version:patch
+</code></pre></div></div><p>もし、パラーメータがを入力してない場合、ユーザの入力を待つようにしました。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+  <span class="k">else</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="o">...</span>
+</code></pre></div></div><p>Fastlaneを使ってデプロイするためには認証書(Certification)とプロビジョニングファイル(Provisioning)、そしてアプリストアコネクションAPIキー(App store connect API key)が必要です。</p><p>このファイルたちが用意できたら次のように<code class="language-plaintext highlighter-rouge">certificate</code>関数を使ってファイルを登録して、<code class="language-plaintext highlighter-rouge">API</code>キーを返すようにして必要なところで使えるように作りました。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="k">def</span> <span class="nf">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:type</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'github'</span>
+      <span class="n">create_keychain</span><span class="p">(</span>
+        <span class="ss">name: </span><span class="s1">'ios_app_keychain'</span><span class="p">,</span>
+        <span class="ss">password: </span><span class="s1">'****************'</span><span class="p">,</span>
+        <span class="ss">timeout: </span><span class="mi">1800</span><span class="p">,</span>
+        <span class="ss">default_keychain: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">unlock: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">lock_when_sleeps: </span><span class="kp">false</span>
+      <span class="p">)</span>
+      <span class="n">import_certificate</span><span class="p">(</span>
+        <span class="ss">certificate_path: </span><span class="s1">'distribution.p12'</span><span class="p">,</span>
+        <span class="ss">certificate_password: </span><span class="s1">'****************'</span><span class="p">,</span>
+        <span class="ss">keychain_name: </span><span class="s1">'ios_app_keychain'</span><span class="p">,</span>
+        <span class="ss">keychain_password: </span><span class="s1">'****************'</span>
+      <span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">install_provisioning_profile</span><span class="p">(</span><span class="ss">path: </span><span class="s1">'distribution.mobileprovision'</span><span class="p">)</span>
+    <span class="n">update_project_provisioning</span><span class="p">(</span>
+      <span class="ss">xcodeproj: </span><span class="s1">'Runner.xcodeproj'</span><span class="p">,</span>
+      <span class="ss">target_filter: </span><span class="s1">'github'</span><span class="p">,</span>
+      <span class="ss">profile: </span><span class="s1">'distribution.mobileprovision'</span><span class="p">,</span>
+      <span class="ss">build_configuration: </span><span class="s1">'Release'</span>
+    <span class="p">)</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">app_store_connect_api_key</span><span class="p">(</span>
+      <span class="ss">key_id: </span><span class="s1">'**************'</span><span class="p">,</span>
+      <span class="ss">issuer_id: </span><span class="s1">'***********************'</span><span class="p">,</span>
+      <span class="ss">key_filepath: </span><span class="s1">'distribution.p8'</span>
+    <span class="p">)</span>
+    <span class="n">api_key</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>このように作った<code class="language-plaintext highlighter-rouge">API</code>キーは次のようにTestflightやアプリストアへデプロイする時活用されます。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Push a new beta build to TestFlight'</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_testflight</span><span class="p">(</span><span class="ss">api_key: </span><span class="n">api_key</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Push a new release build to the App Store'</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_app_store</span><span class="p">(</span>
+      <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+      <span class="ss">release_notes: </span><span class="p">{</span>
+        <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+        <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+      <span class="p">},</span>
+      <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">precheck_include_in_app_purchases: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">submission_information: </span><span class="p">{</span>
+        <span class="ss">add_id_info_uses_idfa: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_uses_encryption: </span><span class="kp">false</span>
+      <span class="p">},</span>
+      <span class="ss">api_key: </span><span class="n">api_key</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>Testflight用のデプロイスクリプトを見ると、認証書を登録した後、アプリをビルどして、Fastlaneが提供する<code class="language-plaintext highlighter-rouge">upload_to_testflight</code>関数を使ってデプロイすることが確認できます。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Push a new beta build to TestFlight'</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_testflight</span><span class="p">(</span><span class="ss">api_key: </span><span class="n">api_key</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>アプリストア用でデプロイするコードもTestflight用と同じように認証書を登録した後、アプリをビルドします。その後、<code class="language-plaintext highlighter-rouge">upload_to_app_store</code>関数を使ってアプリをデプロイするようにしました。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Push a new release build to the App Store'</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">certificate</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span>
+      <span class="ss">workspace: </span><span class="s1">'Runner.xcworkspace'</span><span class="p">,</span>
+      <span class="ss">scheme: </span><span class="s1">'Runner'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">upload_to_app_store</span><span class="p">(</span>
+      <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+      <span class="ss">release_notes: </span><span class="p">{</span>
+        <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+        <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+      <span class="p">},</span>
+      <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">precheck_include_in_app_purchases: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">submission_information: </span><span class="p">{</span>
+        <span class="ss">add_id_info_uses_idfa: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">export_compliance_uses_encryption: </span><span class="kp">false</span>
+      <span class="p">},</span>
+      <span class="ss">api_key: </span><span class="n">api_key</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">upload_to_app_store</code>関数で使ったオプションは次のようです。</p><ul><li>force: Fastlaneが生成するHTML reportを生成されないようにします。</li><li>reject_if_possible: 審査待機中バージョンがある場合、キャンセルします。</li><li>skip_metadata: アプリストアの情報を登録するか決めます。自動デプロイする時、バージョンの修正内容を作成する必要があるので、情報を登録するように設定します。</li><li>skip_screenshots: 私は既にデプロイしたアプリについてデプロイ自動化をしています。なので、スクリンショットを再びアップロードする必要はないです。</li><li>languages: 現在ストアで登録されたアプリのローカライズを設定します。使える言語は<code class="language-plaintext highlighter-rouge">ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant</code>で、詳しい内容は公式サイトを参考してください。(<a href="https://docs.fastlane.tools/actions/upload_to_app_store/#available-language-codes" rel="nofollow noreferrer" target="_blank">公式サイト</a>)</li><li>release_notes: iOSはアプリを再びデプロイする時、Release notesを必ず作成する必要があります。私が使ってるスクリプトは3カ国語をサポートするアプリなので、defaultと3カ国語のRelease notesを作成するようにしました。</li><li>submit_for_review: アプリ審査に提出するようにします。</li><li>automatic_release: 審査後、アプリを自動デプロイするように設定します。この値が設定されないと、アプリ審査が通った後、開発者が手動でデプロイする必要があります。</li><li>submission_information: デプロイ前、暗号化、広告があるかどうかなどを尋ねるオプションを設定します。</li></ul><p>これ以外にもたくさんのオプションがあります。詳しい内容は公式サイトを参考してください。</p><ul><li>公式サイト: <a href="https://docs.fastlane.tools/actions/upload_to_app_store/" rel="nofollow noreferrer" target="_blank">https://docs.fastlane.tools/actions/upload_to_app_store/</a></li><li>例題: <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149" rel="nofollow noreferrer" target="_blank">submission_information</a></li></ul><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="ios用fastlaneを実行してtestflightへデプロイ">iOS用Fastlaneを実行してTestflightへデプロイ</h3><p>iOS用のFastlaneを使って自動でデプロイする準備が終わりました。次はFastlaneを使ってアプリを自動でデプロイしてみましょう。</p><p>下記のコマンドを使ってFlutterで作成したアプリをTestflightへデプロイします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane beta version:patch
+</code></pre></div></div><p>デプロイが終わるまで、かなり時間がかかります。デプロイが終わったら下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/ios-testflight.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/ios-testflight.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/ios-testflight.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - iOS Testflightデプロイ"/></picture><p>もちろんApp store connectのTestflightでも上手くデプロイされたことが確認できます。</p><h3 id="ios用fastlaneを実行してアプリストアへデプロイ">iOS用Fastlaneを実行してアプリストアへデプロイ</h3><p>次は下記のFastlaneコマンドを使ってFlutterで開発したアプリをアプリストアへデプロイしてみましょう。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane release version:patch
+</code></pre></div></div><p>デプロイが終わったら下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/ios-upload-app-store.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/ios-upload-app-store.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/ios-upload-app-store.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - iOSアプリデプロイ"/></picture><p>またApp store connectにも上手くデプロイされたことが確認できます。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="アンドロイド">アンドロイド</h2><p>次はFlutterで開発したアンドロイドアプリをFastlaneを使ってデプロイを自動化してみます。</p><h3 id="api-accessのためservice-account生成">API accessのためService Account生成</h3><p>Fastlaneを使ってアンドロイドをデプロイする時、グーグルのAPIを使うので<code class="language-plaintext highlighter-rouge">Google Developer Service Account</code>を生成する必要があります。</p><p>Google Developer Service Accountを生成するため、下記のリンクを使ってグーグルプレイコンソール(Google Play Console)へ移動します。</p><ul><li>グーグルプレイコンソール: <a href="https://play.google.com/apps/publish/" rel="nofollow noreferrer" target="_blank">https://play.google.com/apps/publish/</a></li></ul><p>グーグルプレイコンソールへ移動すると下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/google-play-console.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/google-play-console.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/google-play-console.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール"/></picture><p>左メニューの<code class="language-plaintext highlighter-rouge">Settings</code>を選択します。そして<code class="language-plaintext highlighter-rouge">Developer account</code>下にある<code class="language-plaintext highlighter-rouge">API access</code>メニューを選択します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-api-access.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール api access メニュー"/></picture><p>上のような画面が見えたら、<code class="language-plaintext highlighter-rouge">CREATE NEW PROJECT</code>ボタンを押して、新しいプロジェクトを生成します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-service-account.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-api-access-service-account.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール api access, service account"/></picture><p>新しいプロジェクトが生成されたら、上のような画面が確認できます。下にある<code class="language-plaintext highlighter-rouge">CREATE SERVICE ACCOUNT</code>ボタンを選択すると、下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール api access, how to create service account"/></picture><p>上のような画面で<code class="language-plaintext highlighter-rouge">Google API Console</code>リンクを選択します。選択したら、下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-google-api-console.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Google API Console"/></picture><p>上にある<code class="language-plaintext highlighter-rouge">CREATE SERVICE ACCOUNT</code>ボタンを選択します。選択したら下記のように新しいService accountを生成する画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-google-api-console-create-service-account.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Google API Console, service account 生成"/></picture><p>上のような画面で、<code class="language-plaintext highlighter-rouge">Service account name</code>に名前を入力して、<code class="language-plaintext highlighter-rouge">CREATE</code>ボタンを押してService accountを生成します。(私はService account nameにgoogle-play-fastlane-deploymentを入力しました。)</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-role.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-role.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-role.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Google API Console, service account 役割設定"/></picture><p>上のような画面が見えたら、<code class="language-plaintext highlighter-rouge">Role</code>を選択して<code class="language-plaintext highlighter-rouge">Service Account User</code>を検索して選択します。RoleでService Account Userを設定したら、下にある<code class="language-plaintext highlighter-rouge">CONTINUE</code>ボタンを押して次に進みます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-key.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-key.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-key.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Google API Console, service account キー生成"/></picture><p>上のような画面が見えたら、下にある<code class="language-plaintext highlighter-rouge">CREATE KEY</code>を選択して<code class="language-plaintext highlighter-rouge">JSON</code>が選択された状態で<code class="language-plaintext highlighter-rouge">CREATE</code>ボタンを押してキーを生成します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-json-key.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-json-key.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-google-api-console-service-account-create-json-key.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - Google API Console, service account JSON キー生成"/></picture><p>CREATEボタンを押してキーを生成したらJSON形でファイルが自動でダウンロードされます。このファイルをFlutterプロジェクトの<code class="language-plaintext highlighter-rouge">android</code>フォルダの中にコピーします。最後に<code class="language-plaintext highlighter-rouge">DONE</code>ボタンを押してService Accountを生成します。</p><p>そして元の画面に戻って右下にある<code class="language-plaintext highlighter-rouge">DONE</code>ボタンを押してService Account生成を終了します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-api-access-how-to-create-service-account.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール api access, how to create service account"/></picture><p>そしたら以前と違って下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-finish-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-finish-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-finish-to-create-service-account.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール Service Account 生成完了"/></picture><p>次は権限を与えるため、右下の<code class="language-plaintext highlighter-rouge">GRANT ACCESS</code>ボタンを選択します。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-service-account-grant-access.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-service-account-grant-access.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-service-account-grant-access.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - グーグルプレイコンソール Service Account 権限設定"/></picture><p>上のような画面が出たら下にスクロールして<code class="language-plaintext highlighter-rouge">ADD USER</code>を選択してユーザを登録します。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="アンドロイドのためfastlaneの初期化">アンドロイドのためFastlaneの初期化</h3><p>次はアンドロイド用のFastlaneを生成しててみましょう。下記のコマンドを実行してアンドロイド用のFastlaneを生成します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>android
+fastlane init
+</code></pre></div></div><p>上のコマンドを実行したら下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-package-name.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-package-name.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-package-name.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - アンドロイド初期化: package name"/></picture><p>アンドロイドプロジェクトの<code class="language-plaintext highlighter-rouge">Package Name</code>を入力します。(ex&gt; io.github.dev.yakuza.kumoncho)そしたら、次のようにJSONファイルのパスを入力する画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-json-path.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-json-path.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-json-path.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - アンドロイド初期化: JSON path"/></picture><p>Service Accountを生成した時、ダウンロードしたJSONファイルを<code class="language-plaintext highlighter-rouge">android</code>フォルダへコピーしました。ここではこのパスを指定します。(ex&gt; <code class="language-plaintext highlighter-rouge">app-xxx.json</code>)</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-download-metadata.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-download-metadata.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-download-metadata.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - アンドロイド初期化: ダウンロード metadata"/></picture><p>次はアンドロイドをデプロイする時、登録したストア情報(metadata)をダウンロードするかどうかを聞いてくれます。私は既にデプロイしたアプリを自動化してるので、ストアの情報を更新する必要がないです。したがって、<code class="language-plaintext highlighter-rouge">n</code>を入力してストア情報をダウンロードしないようにしました。</p><p>上のような画面以外にも何回も<code class="language-plaintext highlighter-rouge">Continue by pressing Enter</code>を入力する画面が表示されます。Enterキーを押して進めて設定を完了します。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="アンドロイド用fastlaneのフォルダやファイル">アンドロイド用Fastlaneのフォルダやファイル</h3><p>アンドロイドの設定を完了したらFlutterのandroidフォルダ下に下記のようなフォルダやファイルが生成されることが確認できます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|- fastlane
+|  |- Appfile
+|  |- Fastfile
+|- Gemfile
+|- Gemfile.lock
+</code></pre></div></div><p>各フォルダやファイルを詳しく見てみましょう。</p><ul><li>fastlaneフォルダ: Fastlaneの設定や実行ファイルが入ってるフォルダです。</li><li>Gemfile, Gemfile.lock: FastlaneはRubyで開発されてます。このファイルたちはRubyでライブラリを管理するためのファイルたちです。</li></ul><p>Fastlaneを実行するため設定内容が入ってる<code class="language-plaintext highlighter-rouge">fastlane/Appfile</code>ファイルでコメントを消して確認すると下記のようです。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_key_file</span><span class="p">(</span><span class="s2">"api-xxx.json"</span><span class="p">)</span>
+<span class="n">package_name</span><span class="p">(</span><span class="s2">"io.github.dev.yakuza.kumoncho"</span><span class="p">)</span>
+</code></pre></div></div><p>私たちが設定したPacakge NameとJSONファイルのパスが設定されたことが確認できます。次は、実際アプリをデプロイするための実行ファイルである<code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code>ファイルでコメントを消すと下記のようです。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:android</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Runs all the tests"</span>
+  <span class="n">lane</span> <span class="ss">:test</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"test"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Submit a new Beta"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean assembleRelease"</span><span class="p">)</span>
+    <span class="n">crashlytics</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Deploy a new version to the Google Play"</span>
+  <span class="n">lane</span> <span class="ss">:deploy</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean assembleRelease"</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>iOSとは違って<code class="language-plaintext highlighter-rouge">beta</code>と<code class="language-plaintext highlighter-rouge">deploy</code>、二つのlaneが生成されたことが確認できます。このFastlaneも下記のようなコマンドで実行できます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane beta
+fastlane deploy
+</code></pre></div></div><p>しかし、完璧な自動化のためにはFastfileを修正する必要があります。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="アンドロイド用実行ファイル修正">アンドロイド用実行ファイル修正</h3><p>基本的提供されるfastlaneファイルでは完璧に自動化をすることができないです。したがって、アンドロイド用デプロイを自動化するため<code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code>ファイルを下記のように修正します。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="n">default_platform</span><span class="p">(</span><span class="ss">:android</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">increment_version_code</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionCode\s+(\d+)/</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">versionCode</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">versionCode</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nf">to_s</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">increment_version_number</span><span class="p">(</span><span class="ss">bump_type: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">version_number: </span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionName\s+("\d+.\d+.\d+")/</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">versionName</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">gsub!</span><span class="p">(</span><span class="s1">'"'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+
+    <span class="n">major</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">minor</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">patch</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">to_i</span>
+
+    <span class="k">if</span> <span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'major'</span>
+      <span class="n">major</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elsif</span> <span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'minor'</span>
+      <span class="n">minor</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elsif</span> <span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'patch'</span>
+      <span class="n">patch</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+
+    <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="k">if</span> <span class="n">version_number</span>
+                 <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">version_number</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+               <span class="k">else</span>
+                 <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">patch</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+               <span class="k">end</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+    <span class="n">increment_version_code</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span> <span class="o">||</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/\d+.\d+.\d+/</span>
+    <span class="n">versionNum</span> <span class="o">=</span> <span class="n">version</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">versionNum</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">version_number: </span><span class="n">versionNum</span>
+      <span class="p">)</span>
+    <span class="k">elsif</span> <span class="sx">%w[major minor patch]</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">bump_type: </span><span class="n">version</span>
+      <span class="p">)</span>
+    <span class="k">else</span>
+      <span class="no">UI</span><span class="p">.</span><span class="nf">user_error!</span><span class="p">(</span><span class="s1">'[ERROR] Wrong version!!!!!!'</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Update version'</span>
+  <span class="n">lane</span> <span class="ss">:version</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Submit a new Beta'</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">_options</span><span class="o">|</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s1">'clean bundleRelease'</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">track: </span><span class="s1">'internal'</span><span class="p">,</span>
+      <span class="ss">aab: </span><span class="s1">'../build/app/outputs/bundle/release/app-release.aab'</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">'Deploy a new version to the Google Play'</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">_options</span><span class="o">|</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s1">'clean bundleRelease'</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">aab: </span><span class="s1">'../build/app/outputs/bundle/release/app-release.aab'</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>追加した内容を詳しく見てみましょう。アンドロイドはiOSとは違ってアプリのバージョンをアップデートする機能を提供してないです。（私が見つけてないかもしれないです。もし、してる方はフィードバックお願いします。）したがって、アンドロイドのversionCodeとversionNameをアップデートする機能を実装しました。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">increment_version_code</span>
+    <span class="o">...</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">increment_version_number</span><span class="p">(</span><span class="ss">bump_type: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">version_number: </span><span class="kp">nil</span><span class="p">)</span>
+    <span class="o">...</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="o">...</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>バージョンをアップデートする<code class="language-plaintext highlighter-rouge">updateVersion</code>関数は<code class="language-plaintext highlighter-rouge">iOS</code>で説明したので、詳しい説明は省略します。</p><h3 id="ンドロイドのテスト用fastlane">ンドロイドのテスト用Fastlane</h3><p>テスト用でアプリをデプロイするためのFastlaneを見てみましょう。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Submit a new Beta'</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">_options</span><span class="o">|</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s1">'clean bundleRelease'</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">track: </span><span class="s1">'internal'</span><span class="p">,</span>
+      <span class="ss">aab: </span><span class="s1">'../build/app/outputs/bundle/release/app-release.aab'</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+  <span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div><p>アンドロイドはGradleの<code class="language-plaintext highlighter-rouge">clean</code>と<code class="language-plaintext highlighter-rouge">bundleRelease</code>でアプリをビルドするようにしました。(<code class="language-plaintext highlighter-rouge">assembleRelease</code>ではない)また、<code class="language-plaintext highlighter-rouge">upload_to_play_store</code>の関数で<code class="language-plaintext highlighter-rouge">track: 'internal'</code>を使ってinternal test用でデプロイするようにしました。</p><p>アンドロイドはiOSと違ってRelease notes(change log)を作成する必要がないので、スタアに関数流全ての機能はskipするように設定しました。</p><p>最後に<code class="language-plaintext highlighter-rouge">bundleRelease</code>を使ってaabファイルを生成してアップロードする予定なので、<code class="language-plaintext highlighter-rouge">skip_upload_apk</code>を<code class="language-plaintext highlighter-rouge">true</code>で設定しました。</p><h3 id="アンドロイドのグーグルプレイストア用fastlane">アンドロイドのグーグルプレイストア用Fastlane</h3><p>次はグーグルストアへデプロイするためのFastlaneコードを見てみましょう。</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="o">...</span>
+  <span class="n">desc</span> <span class="s1">'Deploy a new version to the Google Play'</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">_options</span><span class="o">|</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s1">'clean bundleRelease'</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">aab: </span><span class="s1">'../build/app/outputs/bundle/release/app-release.aab'</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>iOSと同じようにするため<code class="language-plaintext highlighter-rouge">lane :deploy</code>を<code class="language-plaintext highlighter-rouge">lane :release</code>に名前を変更しました。<code class="language-plaintext highlighter-rouge">upload_to_play_store</code>関数の<code class="language-plaintext highlighter-rouge">track</code>パラメータがないこと以外にはbeta用と同じなので詳しい説明は省略します。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="アンドロイド用fastlaneの実行">アンドロイド用Fastlaneの実行</h3><p>Fastlaneを使ってアンドロイドで自動でデプロイする準備が終わりました。次はFastlaneを使ってアプリを自動デプロイしてみましょう。</p><p>下記のコマンドを使ってFlutterで作成したアプリをinternal testへデプロイしてみます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane beta version:patch
+</code></pre></div></div><p>デプロイが完了されるまで、少し時間が掛かります。デプロイが完了されると下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-fastlane-beta.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-fastlane-beta.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-fastlane-beta.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - アンドロイドinternal testデプロイ"/></picture><p>もちろんPlay store consoleでもinternal testへ上手くデプロイされたことが確認できます。</p><p>そして次のコマンドを実行して実際デプロイをしてみます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane release version:patch
+</code></pre></div></div><p>デプロイが完了されたら下記のような画面が確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/fastlane/android-fastlane-release.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/fastlane/android-fastlane-release.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/fastlane/android-fastlane-release.jpg" alt="Fastlaneを使ってFlutterアプリ自動デプロイ - アンドロイドアプリストアデプロイ"/></picture><p>また、Google Play storeでも上手くデプロイされたことが確認できます。</p><h2 id="gitignore">gitignore</h2><p>Fastlaneを使ってデプロイをすると、それによるファイルたちが生成されます。このファイル中でGitで管理する必要がないファイルたちを<code class="language-plaintext highlighter-rouge">.gitignore</code>ファイルを開いて下記のように追加します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># fastlane</span>
+ios/<span class="k">*</span>.mobileprovision
+ios/<span class="k">*</span>.cer
+ios/<span class="k">*</span>.dSYM.zip
+android/fastlane/README.md
+ios/fastlane/README.md
+</code></pre></div></div><h2 id="完了">完了</h2><p>これでFastlaneを使ってFlutterで作成したアプリを自動でデプロイする方法について見てみました。今回のブログポストで説明した内容はもちろんNativeで開発したアプリでも活用できるので多くの方にお役に立つと思います。</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 私のブログが役に立ちましたか？下にコメントを残してください。それは私にとって大きな大きな力になります！ </code></p><h2>アプリ広報</h2><div class="book-greeting"> 今見てるブログを作成た<code class="highlighter-rouge">Deku</code>が開発したアプリを使ってみてください。<br/><code class="highlighter-rouge">Deku</code>が開発したアプリはFlutterで開発されています。<br/><br/> 興味がある方はアプリをダウンロードしてアプリを使ってくれると本当に助かります。<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/blaboo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="子供向け単語勉強アプリ、ブラブー"/><div><div class="app_description">子供向け単語勉強アプリ</div><div class="app_title">ブラブー</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik12/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik12.png" alt="TOPIK試験向け単語アプリ、TOPIK単語1/2"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語1/2</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik34/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik34.png" alt="TOPIK試験向け単語アプリ、TOPIK単語3/4"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語3/4</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik56/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik56.png" alt="TOPIK試験向け単語アプリ、TOPIK単語5/6"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語5/6</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/kantanbenkyo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/kantanbenkyo.png" alt="韓国語単語アプリ、カンタン勉強"/><div><div class="app_description">韓国語単語アプリ</div><div class="app_title">カンタン勉強</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/toeicwordsjp/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/toeicwordsjp.png" alt="TOEIC試験向け単語アプリ、TOEIC英語単語帳"/><div><div class="app_description">TOEIC試験向け単語アプリ</div><div class="app_title">TOEIC英語単語帳</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/centerenglish/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/centerenglish.png" alt="センター試験向け単語アプリ、センター英語単語"/><div><div class="app_description">センター試験向け単語アプリ</div><div class="app_title">センター英語単語</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-xl-block right-ads" aria-hidden="true"><script>var rightAds=document.getElementsByClassName("right-ads")[0];null!=rightAds.offsetParent&&setTimeout(function(){rightAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left bottom-left-ads" aria-hidden="true"><script>var bottomLeftAds=document.getElementsByClassName("bottom-left-ads")[0];null!=bottomLeftAds.offsetParent&&setTimeout(function(){bottomLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center bottom-center-ads" aria-hidden="true"><script>var bottomCenterAds=document.getElementsByClassName("bottom-center-ads")[0];null!=bottomCenterAds.offsetParent&&setTimeout(function(){bottomCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right bottom-right-ads" aria-hidden="true"><script>var bottomRightAds=document.getElementsByClassName("bottom-right-ads")[0];null!=bottomRightAds.offsetParent&&setTimeout(function(){bottomRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/api/flutter/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=[Flutter] Fastlaneを使ってデプロイを自動化する&url=https://dev-yakuza.posstree.com/flutter/fastlane/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/flutter/fastlane/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright"> Copyright &copy; dev.yakuza@gmail.com 2023 </p></div></div></div></footer><link href="/assets/vendor/jquery/jquery.min.js" rel="preload" as="script"/><script async src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20230323"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script><script>for(var adsList=document.getElementsByClassName("in-feed-left-ads"),i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}adsList=document.getElementsByClassName("in-feed-right-ads");for(var i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}</script></body></html>

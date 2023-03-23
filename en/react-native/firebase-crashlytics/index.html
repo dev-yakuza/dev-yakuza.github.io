@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/en/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/en/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/en/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/en/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/en/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/en/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/en/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/en/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/en/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/en/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/en/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/en/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/en/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/en/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/en/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="Firebase Crashlytics"/><meta name="twitter:description" content="let's see how to use react-native-firebase to gather crash logs on Filebase Crashlytics."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>Firebase Crashlytics - let's see how to use react-native-firebase to gather crash logs on Filebase Crashlytics.</title><meta name="description" content="let&#39;s see how to use react-native-firebase to gather crash logs on Filebase Crashlytics."/><meta http-equiv="Content-Language" content="en"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/react-native/firebase-crashlytics/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/"/><meta name="generator" content="Jekyll v3.9.2"/><meta property="og:title" content="Firebase Crashlytics"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="en"/><meta name="description" content="let’s see how to use react-native-firebase to gather crash logs on Filebase Crashlytics."/><meta property="og:description" content="let’s see how to use react-native-firebase to gather crash logs on Filebase Crashlytics."/><link rel="canonical" href="https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/firebase-crashlytics.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2018-12-12T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/firebase-crashlytics.jpg"/><meta property="twitter:title" content="Firebase Crashlytics"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2018-12-12T00:00:00+09:00","description":"let’s see how to use react-native-firebase to gather crash logs on Filebase Crashlytics.","headline":"Firebase Crashlytics","image":"https://dev-yakuza.posstree.com/assets/images/category/react-native/firebase-crashlytics.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="preload" as="style" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/en/assets/main.css?v=20230323"/><link rel="stylesheet" href="/en/assets/main.css?v=20230323"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/en/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "How to install React Native on Mac",
+          "description" : "Let's see how to install and configure react-native development environment on Mac, and create react native project to check the environment is set well.",
+          "position":1,"url": "https://dev-yakuza.posstree.com/en/react-native/install-on-mac/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "How to install React Native on Windows",
+          "description" : "Let's see how to install and configure react-native development environment on Windows, and create react native project to check the environment is set well.",
+          "position":2,"url": "https://dev-yakuza.posstree.com/en/react-native/install-on-windows/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "RN installation",
+          "description" : "install react-native and check how to make a project.",
+          "position":3,"url": "https://dev-yakuza.posstree.com/en/react-native/installation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "How to use TypeScript in React Native",
+          "description" : "Let's see how to configure TypeScript and how to use TypeScript in React Native.",
+          "position":4,"url": "https://dev-yakuza.posstree.com/en/react-native/typescript/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "Use ESLint, Prettier like Pro on React Native",
+          "description" : "Let's see how to use ESLint and Prettier on React Native project, and Let's see how to use Husky and lint-staged to use ESLint and Prettier like Pro.",
+          "position":5,"url": "https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "this blog is about how to use styled-component library for react-native styling.",
+          "position":6,"url": "https://dev-yakuza.posstree.com/en/react-native/styled-components/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "use react-navigation for developing an application.",
+          "position":7,"url": "https://dev-yakuza.posstree.com/en/react-native/react-navigation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "Let's see how to install react-navigaion V5 and how to use it.",
+          "position":8,"url": "https://dev-yakuza.posstree.com/en/react-native/react-navigation-v5/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "try to make app icon by using generator-rn-toolbox",
+          "position":9,"url": "https://dev-yakuza.posstree.com/en/react-native/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splash image",
+          "description" : "generate and apply splash image by using generator-rn-toolbox",
+          "position":10,"url": "https://dev-yakuza.posstree.com/en/react-native/splash-image/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "use NativeBase library for basic component UI.",
+          "position":11,"url": "https://dev-yakuza.posstree.com/en/react-native/nativebase/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "let's display icons to use react-native-vector-icons library.",
+          "position":12,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-vector-icons/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "use react-native-device-info for getting user's device informations.",
+          "position":13,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-device-info/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "implement text-to-speech to use react-native-tts",
+          "position":14,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-tts/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "Google Admob",
+          "description" : "use react-native-admob to add google admob advertisement to react-native.",
+          "position":15,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOS device test",
+          "description" : "let's test RN(react native) project on iOS devices",
+          "position":16,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS build and test",
+          "description" : "let's build RN(react native) for iOS production and test it on the device.",
+          "position":17,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "enroll iOS developer",
+          "description" : "let's see how to enroll Apple Developer Program for registering RN(react native) app to iOS App store.",
+          "position":18,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-enroll-developer-program/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS Certification",
+          "description" : "if you enrolled Apple Developer Program, let's see how to configure iOS developer Certification.",
+          "position":19,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-certification/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "let's test the app by tester via TestFlight..",
+          "position":20,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-testflight/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "register iOS App store",
+          "description" : "let's see what we need to register iOS App Store.",
+          "position":21,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-app-store/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "let's analyze RN(react native) app using Google Analytics.",
+          "position":22,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-analytics-bridge/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "let's use react-native-firebase library to display Google Admob.",
+          "position":23,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "Android device test",
+          "description" : "let's test RN(react native) project on Android devices",
+          "position":24,"url": "https://dev-yakuza.posstree.com/en/react-native/android-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "Android build and test",
+          "description" : "introduce how to build and test RN(react native) project on Android device.",
+          "position":25,"url": "https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "change simulator on iOS",
+          "description" : "let's see how to change the simulator on iOS when we test RN(react native) on iOS.",
+          "position":26,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-change-simulator/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "let's analyze the app more detail using react-native-firebase.",
+          "position":27,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-analytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash analysis",
+          "description" : "let's see how to analyze iOS App crash log.",
+          "position":28,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-app-crash-debugging/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "let's see how to use react-native-firebase to gather crash logs on Filebase Crashlytics.",
+          "position":29,"url": "https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "let's see how to use react-native-animatable to add simply animations to RN(react native).",
+          "position":30,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-animatable/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "enroll Android developer",
+          "description" : "let's enroll Android developer to register Android App to Google Playstore.",
+          "position":31,"url": "https://dev-yakuza.posstree.com/en/react-native/android-enroll-google-play-developer/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "register Android App store",
+          "description" : "we'll introduce how to register RN(React Native) Android App to Android App store(Google Play).",
+          "position":32,"url": "https://dev-yakuza.posstree.com/en/react-native/android-google-play/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "recognize user voice",
+          "description" : "let's see how to add the feature to recognize user voice and transform to text by react-native-voice on RN(React Native)",
+          "position":33,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-voice/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "sending email feature",
+          "description" : "let's see how to execute the email app installed basically on the phone at RN(React Native) project.",
+          "position":34,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-mail/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "Use Filesystem",
+          "description" : "let's read and write the file by react-native-fs on RN(React Native) project.",
+          "position":35,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-fs/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "use After Effects",
+          "description" : "let's see how to apply the animation created by Adobe After Effects, to RN(React Native) project.",
+          "position":36,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-lottie/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "Swipe Detection",
+          "description" : "let's see how to use react-native-swipe-gestures to detect user swipe event on RN(React Native) project",
+          "position":37,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-swipe-gestures/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "Gradient",
+          "description" : "let's see how to use react-native-linear-gradient to make the gradient background on RN(React Native) project.",
+          "position":38,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-linear-gradient/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash Screen",
+          "description" : "let's make Splash screen end at the desired time by using react-native-splash-screen on RN(React Native) project.",
+          "position":39,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "App Store Rating",
+          "description" : "let's see how to induce users to give the rating by react-native-rate library on RN(React Native) project.",
+          "position":40,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-rate/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunes file sharing feature",
+          "description" : "let's see how to share files via iTunes on RN(React Native) project.",
+          "position":41,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-itunes-share-file/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "Control StatusBar",
+          "description" : "let's see how to control the StatusBar in RN(React Native)",
+          "position":42,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-status-bar/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve) Support Tablets",
+          "description" : "let's see how to make RN(React Native) project support tablets",
+          "position":43,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-support-tablet/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "How to use sqlite in RN(Reacct Native)",
+          "description" : "let's see how to use sqlite database in RN(React Native).",
+          "position":44,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-sqlite-storage/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "Apply custom font to RN(Reacct Native)",
+          "description" : "let's see how to apply custom font to RN(React Native) and how to use custom font.",
+          "position":45,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-custom-font/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "Make Import path based on Root in RN(React Native)",
+          "description" : "let's make Import path based on Root in RN(React Native)",
+          "position":46,"url": "https://dev-yakuza.posstree.com/en/react-native/root-import/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "Open the app with the specific file",
+          "description" : "this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc).",
+          "position":47,"url": "https://dev-yakuza.posstree.com/en/react-native/open-file-with-app/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notificatoin",
+          "description" : "let's see how to implement Local Push Notification by using react-native-push-notification.",
+          "position":48,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-push-notification/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "App icon & Splash image in React Native",
+          "description" : "Let's see how to make App icon and Splash image via react-native-make library in React Native.",
+          "position":49,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-make/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "Geolocation in React Native",
+          "description" : "Let's see how to get user current geolocation to use react-native-geolocation-service library in React Native.",
+          "position":50,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-geolocation-service/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "Show Map on React Native",
+          "description" : "Let's see how to use react-native-maps to display a map on React Native",
+          "position":51,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-maps/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Deploy automatically applications via Fastlane",
+          "description" : "Let's see how to deploy automatically React Native application via Fastlane",
+          "position":52,"url": "https://dev-yakuza.posstree.com/en/react-native/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "let's see how to use react-native-image-modal to show full size image modal and pinch zoom in/out.",
+          "position":53,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-modal/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "Let's see how to take a photo and how to get the image from the Camera-roll via react-native-image-picker.",
+          "position":54,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-picker/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "Push message via react-native-firebase(V5)",
+          "description" : "Let's see how to use FCM(Firebase Cloud Messaging) via react-native-firebase(V5) to implement Push message on React Native.",
+          "position":55,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-fcm/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "Make Opensource for React Native",
+          "description" : "Let's see how to make an opensource for React Naitve.",
+          "position":56,"url": "https://dev-yakuza.posstree.com/en/react-native/make-opensource-library/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "Configure Multidex on React Native",
+          "description" : "Let's see how to configure Multidex on Android in React Naitve project.",
+          "position":57,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-multidex/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 installation",
+          "description" : "To use Firebase on React Native, Let's see how to install react-native-firebase(V6).",
+          "position":58,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-installation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "Let's see how to use react-native-firebase(V6) for Firebase Crashlytics.",
+          "position":59,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "Let's how to use react-native-firebase(V6) for Firebase Admob.",
+          "position":60,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "Play Youtube on React Native",
+          "description" : "To play Youtube video on React Native, let's see how to use react-native-youtube!",
+          "position":61,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-youtube/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "Admob Native Advanced on React Native",
+          "description" : "Let's see how to use react-native-admob-native-ads to display Admob Native Advanced on React Native.",
+          "position":62,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob-native-ads/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "In-App Purchases in React Native",
+          "description" : "Let's see how to use react-native-iap to implement IAP(In-App Purchases) in React Native.",
+          "position":63,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-iap/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub Actions and Fastlane for deploying React Native App",
+          "description" : "Let's see how to deploy React Native App with GitHub Actions and Fastlane.",
+          "position":64,"url": "https://dev-yakuza.posstree.com/en/react-native/github-actions-fastlane/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="preload" as="style" href="/en/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;</script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/en/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/firebase-crashlytics/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/firebase-crashlytics/">English</a><a class="dropdown-item menu-ja" href="/en/react-native/firebase-crashlytics/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="scrollNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="scrollNavbarDropdown"><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/firebase-crashlytics.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>Firebase Crashlytics</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-03-18 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/firebase-crashlytics/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">let's see how to use react-native-firebase to gather crash logs on Filebase Crashlytics.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left top-left-ads" aria-hidden="true"><script>var topLeftAds=document.getElementsByClassName("top-left-ads")[0];null!=topLeftAds.offsetParent&&setTimeout(function(){topLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center top-center-ads" aria-hidden="true"><script>var topCenterAds=document.getElementsByClassName("top-center-ads")[0];null!=topCenterAds.offsetParent&&setTimeout(function(){topCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right top-right-ads" aria-hidden="true"><script>var topRightAds=document.getElementsByClassName("top-right-ads")[0];null!=topRightAds.offsetParent&&setTimeout(function(){topRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react-native/firebase-crashlytics/"><span itemprop="name">Firebase Crashlytics</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-xl-block left-ads" aria-hidden="true"><script>var leftAds=document.getElementsByClassName("left-ads")[0];null!=leftAds.offsetParent&&setTimeout(function(){leftAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><article class="col-lg-8 col-md-10 mx-auto"><h2 id="outline">outline</h2><p>we’ve introduced how to analyze App crash Log from App review rejection at previous blog(<a href="https://dev-yakuza.posstree.com/en/react-native/ios-app-crash-debugging/" target="_blank">iOS App crash analysis</a>). however, if App is in user environment not review status and crashed, we can’t know App is crashed. so we’ll explain how to gather and analyze App crash on Firebase Crashlytics. in this blog, we will use react-native-firebase library. if you didn’t set react-native-firebase, see our previous blog about how to install and set the library.</p><ul><li><a href="https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/" target="_blank">Firebase Admob</a></li></ul><h2 id="configure-ios">configure iOS</h2><p>let’s see how to configure react-native-firebase on iOS to use Firebase Crashlytics.</p><h3 id="firebase-settings">Firebase Settings</h3><p>click the link below to open Firebase Console and select the project.</p><ul><li>Firebase Console: <a href="https://console.firebase.google.com/" rel="nofollow noreferrer noopener" target="_blank">https://console.firebase.google.com/</a></li></ul><p>select <code class="language-plaintext highlighter-rouge">Crasylytics</code> on the left menu.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.jpg" alt="Firbase Console Crashlytics menu"/></picture><p>when you see the screen like above, select <code class="language-plaintext highlighter-rouge">Set up Crashlytics</code>.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.jpg" alt="Firbase Console Crashlytics step 1"/></picture><p>select <code class="language-plaintext highlighter-rouge">No, this app does not have any version of the Crashlytics SDK installed</code> and <code class="language-plaintext highlighter-rouge">Next</code> on the screen like above.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.jpg" alt="Firbase Console Crashlytics step 2"/></picture><p>select <code class="language-plaintext highlighter-rouge">Go to Crashlytics docs</code> on the screen like above. and then, a new tab is opened with Crashlytics installation. close the tab. you can see the screen below on Firebase Console.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.jpg" alt="Firbase Console Crashlytics step 3"/></picture><p>do the configuration below in this state. if you did the app setting first, do the configuration above and execute the app that is configured Crashlytics. after it, you can see the dashboard like below.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.jpg" alt="Firbase Console Crashlytics dashboard"/></picture><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="set-and-install-required-libraries">set and install required libraries</h3><p>add required libraries to <code class="language-plaintext highlighter-rouge">Podfile</code> like below.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">pod</span> <span class="s1">'Firebase/Core'</span>
+<span class="n">pod</span> <span class="s1">'Firebase/AdMob'</span>
+<span class="n">pod</span> <span class="s1">'Fabric'</span>
+<span class="n">pod</span> <span class="s1">'Crashlytics'</span>
+<span class="o">...</span>
+</code></pre></div></div><p>use below <code class="language-plaintext highlighter-rouge">pod</code> command to install added libraries.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+pod <span class="nb">install</span>
+<span class="c"># pod update</span>
+</code></pre></div></div><h3 id="add-crashlytics-executing-script">add Crashlytics executing script</h3><p>we need to add Crashlytics executing script to use Firebase Crashlytics.</p><p>execute Xcode to select <code class="language-plaintext highlighter-rouge">ios/[AppName].xcworkspace</code> on RN(react native) project folder.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/execute_xcode.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/execute_xcode.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/execute_xcode.jpg" alt="execute xcode"/></picture><p>select own your project on left file explorer and <code class="language-plaintext highlighter-rouge">TARGETS</code>. adn select <code class="language-plaintext highlighter-rouge">Build Phases</code> on the top menu.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/build_phases.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/build_phases.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/build_phases.jpg" alt="xcode build phases"/></picture><p>click <code class="language-plaintext highlighter-rouge">+</code> button on Build Phases tab and select <code class="language-plaintext highlighter-rouge">New Run Script Phase</code>.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/new_run_script.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/new_run_script.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/new_run_script.jpg" alt="new run script menu on build phases"/></picture><p>insert below command to <code class="language-plaintext highlighter-rouge"># Type a script...</code> under <code class="language-plaintext highlighter-rouge">Shell</code> on <code class="language-plaintext highlighter-rouge">Run Script</code>;</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"</span><span class="k">${</span><span class="nv">PODS_ROOT</span><span class="k">}</span><span class="s2">/Fabric/run"</span>
+</code></pre></div></div><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/add_run_script.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/add_run_script.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/add_run_script.jpg" alt="add Run Script"/></picture><h3 id="test">test</h3><p>insert below code to where you want to test Firebase Crashlytics.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">firebase</span><span class="p">.</span><span class="nx">crashlytics</span><span class="p">().</span><span class="nx">crash</span><span class="p">();</span>
+</code></pre></div></div><p>this code forcely makes App crash. if App is crashed and exited, execute App again to report to Firebase Crashlytics.</p><p>execute below command or xcode to start the simulator.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native run-ios
+</code></pre></div></div><p>if you use xcode to start the simulator, you should close xcode and execute App again. if xcode is executed and App is crashed, xcode treats the crash, not to report to Crashlytics.</p><p>after crashing, execute App again. after a while, you can see crash report at Firebase Console Crashlytics like below.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics.jpg" alt="Firebase Console Crashlytics"/></picture><p>wraning: remove test code (<code class="language-plaintext highlighter-rouge">firebase.crashlytics().crash();</code>) after test.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="configure-android">configure Android</h2><p>configure react-native-firebase on Android to use Firebase Crashlytics.</p><h3 id="firebase-settings-1">Firebase Settings</h3><p>click the link below to open Firebase Console and select the project.</p><ul><li>Firebase Console: <a href="https://console.firebase.google.com/" rel="nofollow noreferrer noopener" target="_blank">https://console.firebase.google.com/</a></li></ul><p>select <code class="language-plaintext highlighter-rouge">Crasylytics</code> on the left menu.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/menu-crashlytics.jpg" alt="Firbase Console Crashlytics menu"/></picture><p>when you see the screen like above, select <code class="language-plaintext highlighter-rouge">Set up Crashlytics</code>.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-1.jpg" alt="Firbase Console Crashlytics step 1"/></picture><p>select <code class="language-plaintext highlighter-rouge">No, this app does not have any version of the Crashlytics SDK installed</code> and <code class="language-plaintext highlighter-rouge">Next</code> on the screen like above.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-2.jpg" alt="Firbase Console Crashlytics step 2"/></picture><p>select <code class="language-plaintext highlighter-rouge">Go to Crashlytics docs</code> on the screen like above. and then, a new tab is opened with Crashlytics installation. close the tab. you can see the screen below on Firebase Console.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-step-3.jpg" alt="Firbase Console Crashlytics step 3"/></picture><p>do the configuration below in this state. if you did the app setting first, do the configuration above and execute the app that is configured Crashlytics. after it, you can see the dashboard like below.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/crashlytics-dashboard.jpg" alt="Firbase Console Crashlytics dashboard"/></picture><h3 id="set-and-install-required-libraries-1">set and install required libraries</h3><p>modify <code class="language-plaintext highlighter-rouge">android/app/build.gradle</code> file like below.</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apply plugin: "com.android.application"
+apply plugin: 'io.fabric'
+...
+dependencies {
+  ...
+  implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+    transitive = true
+  }
+}
+...
+</code></pre></div></div><p>modify <code class="language-plaintext highlighter-rouge">android/build.gradle</code> file like below.</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+buildscript {
+  ...
+  dependencies {
+    ...
+    classpath 'com.google.gms:google-services:4.0.1'
+    classpath 'io.fabric.tools:gradle:1.25.4'
+  }
+  ...
+  repositories {
+    ...
+    jcenter()
+    maven {
+        url 'https://maven.fabric.io/public'
+    }
+  }
+  ...
+}
+...
+</code></pre></div></div><p>modify <code class="language-plaintext highlighter-rouge">android/app/src/main/java/com/[app name]/MainApplication.java</code> file like below.</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.RNFirebasePackage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage</span><span class="o">;</span>
+<span class="o">...</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span> <span class="nf">getPackages</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.&lt;</span><span class="nc">ReactPackage</span><span class="o">&gt;</span><span class="n">asList</span><span class="o">(</span>
+          <span class="o">...</span>
+          <span class="k">new</span> <span class="nf">RNFirebasePackage</span><span class="o">(),</span>
+          <span class="k">new</span> <span class="nf">RNFirebaseCrashlyticsPackage</span><span class="o">(),</span>
+          <span class="o">...</span>
+      <span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">...</span>
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="test-1">test</h3><p>add below code to where you want to test Firebase Crashlytics.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">firebase</span><span class="p">.</span><span class="nx">crashlytics</span><span class="p">().</span><span class="nx">crash</span><span class="p">();</span>
+</code></pre></div></div><p>when we started Android emulator and execute <code class="language-plaintext highlighter-rouge">react-native run-android</code> to make App crash, red error screen was appeared so App crash was not reported. so we tested to install built file on the emulator. if you don’t know how to build and test on Android, see our previous blog - <a href="https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/" target="_blank">Android build and test</a>.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native bundle <span class="nt">--platform</span> android <span class="nt">--dev</span> <span class="nb">false</span> <span class="nt">--entry-file</span> index.js <span class="nt">--bundle-output</span> android/app/src/main/assets/index.android.bundle
+</code></pre></div></div><p>build javascript by above command, and execute below command to install on the emulator.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native run-android <span class="nt">--variant</span><span class="o">=</span>release
+</code></pre></div></div><p>and then test, we can see App crash report like below.</p><picture><source srcset="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics_android.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics_android.webp" type="image/webp"/><img src="/assets/images/category/react-native/firebase-crashlytics/firebase_crashlytics_android.jpg" alt="Firebase Console Crashlytics android"/></picture><p>warning: remove test code (<code class="language-plaintext highlighter-rouge">firebase.crashlytics().crash();</code>) after test.</p><h2 id="reference">reference</h2><ul><li><a href="https://firebase.google.com/docs/crashlytics/get-started" rel="nofollow noreferrer" target="_blank">https://firebase.google.com/docs/crashlytics/get-started</a></li><li><a href="https://rnfirebase.io/docs/v5.x.x/crashlytics/ios" rel="nofollow noreferrer" target="_blank">https://rnfirebase.io/docs/v5.x.x/crashlytics/ios</a></li></ul><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> Was my blog helpful? Please leave a comment at the bottom. it will be a great help to me! </code></p><h2>App promotion</h2><div class="book-greeting"> You can use the applications that are created by this blog writer <code class="highlighter-rouge">Deku</code>.<br/><code class="highlighter-rouge">Deku</code> created the applications with Flutter.<br/><br/> If you have interested, please try to download them for free.<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/blaboo/en/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="word learning app for kids, BlaBoo"/><div><div class="app_description">word learning app for kids</div><div class="app_title">BlaBoo</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/koreanwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/koreanwords.png" alt="Korean vocabulary, TOPIK words"/><div><div class="app_description">Korean TOPIK vocabulary app</div><div class="app_title">TOPIK words</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/japanesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/japanesewords.png" alt="Japanese vocabulary app"/><div><div class="app_description">Japanese vocabulary app</div><div class="app_title">Japanese words</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/chinesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/hskwordsen.png" alt="Chinese HSK vocabulary app"/><div><div class="app_description">Chinese HSK vocabulary app</div><div class="app_title">HSK words</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-xl-block right-ads" aria-hidden="true"><script>var rightAds=document.getElementsByClassName("right-ads")[0];null!=rightAds.offsetParent&&setTimeout(function(){rightAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left bottom-left-ads" aria-hidden="true"><script>var bottomLeftAds=document.getElementsByClassName("bottom-left-ads")[0];null!=bottomLeftAds.offsetParent&&setTimeout(function(){bottomLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center bottom-center-ads" aria-hidden="true"><script>var bottomCenterAds=document.getElementsByClassName("bottom-center-ads")[0];null!=bottomCenterAds.offsetParent&&setTimeout(function(){bottomCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right bottom-right-ads" aria-hidden="true"><script>var bottomRightAds=document.getElementsByClassName("bottom-right-ads")[0];null!=bottomRightAds.offsetParent&&setTimeout(function(){bottomRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/en/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=Firebase Crashlytics&url=https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/react-native/firebase-crashlytics/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/en/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright"> Copyright &copy; dev.yakuza@gmail.com 2023 </p></div></div></div></footer><link href="/en/assets/vendor/jquery/jquery.min.js" rel="preload" as="script"/><script async src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20230323"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script><script>for(var adsList=document.getElementsByClassName("in-feed-left-ads"),i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}adsList=document.getElementsByClassName("in-feed-right-ads");for(var i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}</script></body></html>

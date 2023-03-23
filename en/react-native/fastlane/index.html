@@ -1,0 +1,771 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/en/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/en/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/en/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/en/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/en/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/en/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/en/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/en/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/en/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/en/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/en/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/en/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/en/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/en/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="dev-yakuza blog"/><link rel="apple-touch-icon" href="/en/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="Deploy automatically applications via Fastlane"/><meta name="twitter:description" content="Let's see how to deploy automatically React Native application via Fastlane"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>Deploy automatically applications via Fastlane - Let's see how to deploy automatically React Native application via Fastlane</title><meta name="description" content="Let&#39;s see how to deploy automatically React Native application via Fastlane"/><meta http-equiv="Content-Language" content="en"><link rel="alternate" hreflang="ja" href="https://dev-yakuza.posstree.com/react-native/fastlane/"/><link rel="alternate" hreflang="ko" href="https://dev-yakuza.posstree.com/ko/react-native/fastlane/"/><link rel="alternate" hreflang="en" href="https://dev-yakuza.posstree.com/en/react-native/fastlane/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/en/react-native/fastlane/"/><meta name="generator" content="Jekyll v3.9.2"/><meta property="og:title" content="Deploy automatically applications via Fastlane"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="en"/><meta name="description" content="Let’s see how to deploy automatically React Native application via Fastlane"/><meta property="og:description" content="Let’s see how to deploy automatically React Native application via Fastlane"/><link rel="canonical" href="https://dev-yakuza.posstree.com/en/react-native/fastlane/"/><meta property="og:url" content="https://dev-yakuza.posstree.com/react-native/fastlane/"/><meta property="og:site_name" content="dev-yakuza"/><meta property="og:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/2020/fastlane/background.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2020-01-18T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://dev-yakuza.posstree.com/assets/images/category/react-native/2020/fastlane/background.jpg"/><meta property="twitter:title" content="Deploy automatically applications via Fastlane"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2020-01-18T00:00:00+09:00","description":"Let’s see how to deploy automatically React Native application via Fastlane","headline":"Deploy automatically applications via Fastlane","image":"https://dev-yakuza.posstree.com/assets/images/category/react-native/2020/fastlane/background.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://dev-yakuza.posstree.com/react-native/fastlane/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://dev-yakuza.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://dev-yakuza.posstree.com/react-native/fastlane/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="preload" as="style" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/en/assets/main.css?v=20230323"/><link rel="stylesheet" href="/en/assets/main.css?v=20230323"/><link rel="alternate" type="application/rss+xml" title="dev-yakuza" href="/en/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://dev-yakuza.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://dev-yakuza.posstree.com/",
+      "logo": "https://dev-yakuza.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "How to install React Native on Mac",
+          "description" : "Let's see how to install and configure react-native development environment on Mac, and create react native project to check the environment is set well.",
+          "position":1,"url": "https://dev-yakuza.posstree.com/en/react-native/install-on-mac/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "How to install React Native on Windows",
+          "description" : "Let's see how to install and configure react-native development environment on Windows, and create react native project to check the environment is set well.",
+          "position":2,"url": "https://dev-yakuza.posstree.com/en/react-native/install-on-windows/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "RN installation",
+          "description" : "install react-native and check how to make a project.",
+          "position":3,"url": "https://dev-yakuza.posstree.com/en/react-native/installation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "How to use TypeScript in React Native",
+          "description" : "Let's see how to configure TypeScript and how to use TypeScript in React Native.",
+          "position":4,"url": "https://dev-yakuza.posstree.com/en/react-native/typescript/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "Use ESLint, Prettier like Pro on React Native",
+          "description" : "Let's see how to use ESLint and Prettier on React Native project, and Let's see how to use Husky and lint-staged to use ESLint and Prettier like Pro.",
+          "position":5,"url": "https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "this blog is about how to use styled-component library for react-native styling.",
+          "position":6,"url": "https://dev-yakuza.posstree.com/en/react-native/styled-components/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "use react-navigation for developing an application.",
+          "position":7,"url": "https://dev-yakuza.posstree.com/en/react-native/react-navigation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "Let's see how to install react-navigaion V5 and how to use it.",
+          "position":8,"url": "https://dev-yakuza.posstree.com/en/react-native/react-navigation-v5/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "try to make app icon by using generator-rn-toolbox",
+          "position":9,"url": "https://dev-yakuza.posstree.com/en/react-native/app-icon/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splash image",
+          "description" : "generate and apply splash image by using generator-rn-toolbox",
+          "position":10,"url": "https://dev-yakuza.posstree.com/en/react-native/splash-image/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "use NativeBase library for basic component UI.",
+          "position":11,"url": "https://dev-yakuza.posstree.com/en/react-native/nativebase/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "let's display icons to use react-native-vector-icons library.",
+          "position":12,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-vector-icons/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "use react-native-device-info for getting user's device informations.",
+          "position":13,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-device-info/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "implement text-to-speech to use react-native-tts",
+          "position":14,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-tts/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "Google Admob",
+          "description" : "use react-native-admob to add google admob advertisement to react-native.",
+          "position":15,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOS device test",
+          "description" : "let's test RN(react native) project on iOS devices",
+          "position":16,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS build and test",
+          "description" : "let's build RN(react native) for iOS production and test it on the device.",
+          "position":17,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "enroll iOS developer",
+          "description" : "let's see how to enroll Apple Developer Program for registering RN(react native) app to iOS App store.",
+          "position":18,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-enroll-developer-program/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS Certification",
+          "description" : "if you enrolled Apple Developer Program, let's see how to configure iOS developer Certification.",
+          "position":19,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-certification/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "let's test the app by tester via TestFlight..",
+          "position":20,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-testflight/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "register iOS App store",
+          "description" : "let's see what we need to register iOS App Store.",
+          "position":21,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-app-store/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "let's analyze RN(react native) app using Google Analytics.",
+          "position":22,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-analytics-bridge/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "let's use react-native-firebase library to display Google Admob.",
+          "position":23,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "Android device test",
+          "description" : "let's test RN(react native) project on Android devices",
+          "position":24,"url": "https://dev-yakuza.posstree.com/en/react-native/android-test-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "Android build and test",
+          "description" : "introduce how to build and test RN(react native) project on Android device.",
+          "position":25,"url": "https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "change simulator on iOS",
+          "description" : "let's see how to change the simulator on iOS when we test RN(react native) on iOS.",
+          "position":26,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-change-simulator/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "let's analyze the app more detail using react-native-firebase.",
+          "position":27,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-analytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash analysis",
+          "description" : "let's see how to analyze iOS App crash log.",
+          "position":28,"url": "https://dev-yakuza.posstree.com/en/react-native/ios-app-crash-debugging/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "let's see how to use react-native-firebase to gather crash logs on Filebase Crashlytics.",
+          "position":29,"url": "https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "let's see how to use react-native-animatable to add simply animations to RN(react native).",
+          "position":30,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-animatable/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "enroll Android developer",
+          "description" : "let's enroll Android developer to register Android App to Google Playstore.",
+          "position":31,"url": "https://dev-yakuza.posstree.com/en/react-native/android-enroll-google-play-developer/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "register Android App store",
+          "description" : "we'll introduce how to register RN(React Native) Android App to Android App store(Google Play).",
+          "position":32,"url": "https://dev-yakuza.posstree.com/en/react-native/android-google-play/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "recognize user voice",
+          "description" : "let's see how to add the feature to recognize user voice and transform to text by react-native-voice on RN(React Native)",
+          "position":33,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-voice/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "sending email feature",
+          "description" : "let's see how to execute the email app installed basically on the phone at RN(React Native) project.",
+          "position":34,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-mail/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "Use Filesystem",
+          "description" : "let's read and write the file by react-native-fs on RN(React Native) project.",
+          "position":35,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-fs/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "use After Effects",
+          "description" : "let's see how to apply the animation created by Adobe After Effects, to RN(React Native) project.",
+          "position":36,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-lottie/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "Swipe Detection",
+          "description" : "let's see how to use react-native-swipe-gestures to detect user swipe event on RN(React Native) project",
+          "position":37,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-swipe-gestures/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "Gradient",
+          "description" : "let's see how to use react-native-linear-gradient to make the gradient background on RN(React Native) project.",
+          "position":38,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-linear-gradient/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash Screen",
+          "description" : "let's make Splash screen end at the desired time by using react-native-splash-screen on RN(React Native) project.",
+          "position":39,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-splash-screen/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "App Store Rating",
+          "description" : "let's see how to induce users to give the rating by react-native-rate library on RN(React Native) project.",
+          "position":40,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-rate/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunes file sharing feature",
+          "description" : "let's see how to share files via iTunes on RN(React Native) project.",
+          "position":41,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-itunes-share-file/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "Control StatusBar",
+          "description" : "let's see how to control the StatusBar in RN(React Native)",
+          "position":42,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-status-bar/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve) Support Tablets",
+          "description" : "let's see how to make RN(React Native) project support tablets",
+          "position":43,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-support-tablet/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "How to use sqlite in RN(Reacct Native)",
+          "description" : "let's see how to use sqlite database in RN(React Native).",
+          "position":44,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-sqlite-storage/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "Apply custom font to RN(Reacct Native)",
+          "description" : "let's see how to apply custom font to RN(React Native) and how to use custom font.",
+          "position":45,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-custom-font/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "Make Import path based on Root in RN(React Native)",
+          "description" : "let's make Import path based on Root in RN(React Native)",
+          "position":46,"url": "https://dev-yakuza.posstree.com/en/react-native/root-import/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "Open the app with the specific file",
+          "description" : "this blog post is about how to open RN(React Native) app with the specific file(like excel, powerpoint, etc).",
+          "position":47,"url": "https://dev-yakuza.posstree.com/en/react-native/open-file-with-app/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notificatoin",
+          "description" : "let's see how to implement Local Push Notification by using react-native-push-notification.",
+          "position":48,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-push-notification/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "App icon & Splash image in React Native",
+          "description" : "Let's see how to make App icon and Splash image via react-native-make library in React Native.",
+          "position":49,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-make/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "Geolocation in React Native",
+          "description" : "Let's see how to get user current geolocation to use react-native-geolocation-service library in React Native.",
+          "position":50,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-geolocation-service/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "Show Map on React Native",
+          "description" : "Let's see how to use react-native-maps to display a map on React Native",
+          "position":51,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-maps/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Deploy automatically applications via Fastlane",
+          "description" : "Let's see how to deploy automatically React Native application via Fastlane",
+          "position":52,"url": "https://dev-yakuza.posstree.com/en/react-native/fastlane/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "let's see how to use react-native-image-modal to show full size image modal and pinch zoom in/out.",
+          "position":53,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-modal/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "Let's see how to take a photo and how to get the image from the Camera-roll via react-native-image-picker.",
+          "position":54,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-picker/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "Push message via react-native-firebase(V5)",
+          "description" : "Let's see how to use FCM(Firebase Cloud Messaging) via react-native-firebase(V5) to implement Push message on React Native.",
+          "position":55,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-fcm/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "Make Opensource for React Native",
+          "description" : "Let's see how to make an opensource for React Naitve.",
+          "position":56,"url": "https://dev-yakuza.posstree.com/en/react-native/make-opensource-library/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "Configure Multidex on React Native",
+          "description" : "Let's see how to configure Multidex on Android in React Naitve project.",
+          "position":57,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-multidex/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 installation",
+          "description" : "To use Firebase on React Native, Let's see how to install react-native-firebase(V6).",
+          "position":58,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-installation/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "Let's see how to use react-native-firebase(V6) for Firebase Crashlytics.",
+          "position":59,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "Let's how to use react-native-firebase(V6) for Firebase Admob.",
+          "position":60,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-admob/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "Play Youtube on React Native",
+          "description" : "To play Youtube video on React Native, let's see how to use react-native-youtube!",
+          "position":61,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-youtube/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "Admob Native Advanced on React Native",
+          "description" : "Let's see how to use react-native-admob-native-ads to display Admob Native Advanced on React Native.",
+          "position":62,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob-native-ads/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "In-App Purchases in React Native",
+          "description" : "Let's see how to use react-native-iap to implement IAP(In-App Purchases) in React Native.",
+          "position":63,"url": "https://dev-yakuza.posstree.com/en/react-native/react-native-iap/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub Actions and Fastlane for deploying React Native App",
+          "description" : "Let's see how to deploy React Native App with GitHub Actions and Fastlane.",
+          "position":64,"url": "https://dev-yakuza.posstree.com/en/react-native/github-actions-fastlane/",
+          "item": "https://dev-yakuza.posstree.com/en/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="preload" as="style" href="/en/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><script type="text/javascript">function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;</script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/en/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/fastlane/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/fastlane/">English</a><a class="dropdown-item menu-ja" href="/en/react-native/fastlane/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="scrollNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="scrollNavbarDropdown"><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/2020/fastlane/background.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>Deploy automatically applications via Fastlane</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-03-18 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/fastlane/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">Let's see how to deploy automatically React Native application via Fastlane</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left top-left-ads" aria-hidden="true"><script>var topLeftAds=document.getElementsByClassName("top-left-ads")[0];null!=topLeftAds.offsetParent&&setTimeout(function(){topLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center top-center-ads" aria-hidden="true"><script>var topCenterAds=document.getElementsByClassName("top-center-ads")[0];null!=topCenterAds.offsetParent&&setTimeout(function(){topCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right top-right-ads" aria-hidden="true"><script>var topRightAds=document.getElementsByClassName("top-right-ads")[0];null!=topRightAds.offsetParent&&setTimeout(function(){topRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react-native/fastlane/"><span itemprop="name">Deploy automatically applications via Fastlane</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-xl-block left-ads" aria-hidden="true"><script>var leftAds=document.getElementsByClassName("left-ads")[0];null!=leftAds.offsetParent&&setTimeout(function(){leftAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="content">Content</h2><ol><li><a href="#outline">Outline</a></li><li><a href="#fastlane">Fastlane</a></li><li><a href="#installation">Installation</a></li><li><a href="#ios">iOS</a><ul><li><a href="#initialization-of-faslane-for-ios">Initialization of Faslane for iOS</a></li><li><a href="#ios-fastlane-folders-and-files">iOS Fastlane folders and files</a></li><li><a href="#modify-the-executing-file-for-ios">Modify the executing file for iOS</a></li><li><a href="#excute-ios-fastlane">Excute iOS Fastlane</a></li></ul></li><li><a href="#android">Android</a><ul><li><a href="#create-service-account-for-api-access">Create Service Account for API access</a></li><li><a href="#initialization-of-faslane-for-android">Initialization of Faslane for Android</a></li><li><a href="#android-fastlane-folders-and-files">Android Fastlane folders and files</a></li><li><a href="#modify-the-executing-file-for-android">Modify the executing file for Android</a></li><li><a href="#execute-android-fastlane">Execute Android Fastlane</a></li></ul></li><li><a href="#packagejson">package.json</a></li><li><a href="#gitignore">gitignore</a></li><li><a href="#completed">Completed</a></li></ol></div><h2 id="outline">Outline</h2><p>My hobby is developing applications with React Native, so I have many applications and take much time when I deploy the applications.</p><ul><li>My hobby application list: <a href="https://dev-yakuza.posstree.com/en/app/list/en" target="_blank">App List</a></li></ul><p>So, I searched about how to deploy automatically the applications and finally, I found <code class="language-plaintext highlighter-rouge">Fastlane</code> tool.</p><ul><li>Official site: <a href="https://docs.fastlane.tools/" rel="nofollow noreferrer" target="_blank">Fastlane</a></li></ul><p>In this blog post, you can see how to deploy automatically an application, which is developed by React Native, via <code class="language-plaintext highlighter-rouge">Fastlane</code> (Not only React Native apps but also Native app can be deployed, so If you’re Native application developer, it’s also helpful.)</p><p>If you don’t know details about React Native deployment, see the previous blog posts.</p><ul><li>iOS <ul><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-running-on-device/" target="_blank">iOS build and test</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-test-on-device/" target="_blank">iOS device test</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-enroll-developer-program/" target="_blank">enroll iOS developer</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-certification/" target="_blank">iOS Certification</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-testflight/" target="_blank">iOS TestFlight</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/ios-app-store/" target="_blank">register iOS App store</a></li></ul></li><li>Android <ul><li><a href="https://dev-yakuza.posstree.com/en/react-native/android-test-on-device/" target="_blank">Android device test</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/android-running-on-device/" target="_blank">Android build and test</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/android-enroll-google-play-developer/" target="_blank">enroll Android developer</a></li><li><a href="https://dev-yakuza.posstree.com/en/react-native/android-google-play/" target="_blank">register Android App store</a></li></ul></li></ul><h2 id="fastlane">Fastlane</h2><blockquote><p>fastlane is the easiest way to automate beta deployments and releases for your iOS and Android apps. It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.</p></blockquote><p>You can simply make automatically deployment scripts of test and release for iOS and Android. Not only deployment but also screenshots, code signing and app store info can be changed via Fastlane.</p><p>This blog post will only cover the beta/release deployment part not include screenshots and app store info.</p><p>If you want to know how to make screenshots and register app store info, see the official stie.</p><ul><li>Official site: <a href="https://docs.fastlane.tools/" rel="nofollow noreferrer" target="_blank">Fastlane</a></li></ul><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="installation">Installation</h2><p>You can install <code class="language-plaintext highlighter-rouge">Fastlane</code> via executing the command below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Using RubyGems</span>
+<span class="nb">sudo </span>gem <span class="nb">install </span>fastlane <span class="nt">-NV</span>
+
+<span class="c"># Alternatively using Homebrew</span>
+brew cask <span class="nb">install </span>fastlane
+</code></pre></div></div><p>The official site introduces the installation via <code class="language-plaintext highlighter-rouge">Homebrew</code> and <code class="language-plaintext highlighter-rouge">RubyGems</code>.</p><p>In my case, I installed via Homebrew and tested it, but not working well. So, I re-installed via RubyGems and working well. Therefore, I recommend you to install via RubyGems. If you try to install via Homebrew and not working well, try to re-install via RubyGems.</p><h2 id="ios">iOS</h2><p>Let’s make automatic deployment of the application developed by React Native via Fastlane</p><h3 id="initialization-of-faslane-for-ios">Initialization of Faslane for iOS</h3><p>execute the command below to initialize Fastlane for iOS.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>ios
+fastlane init
+</code></pre></div></div><p>After executing, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/init-ios.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/init-ios.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/init-ios.jpg" alt="deploy automatically React Native app via Fastlane - iOS initialization"/></picture><p>You can simply select <code class="language-plaintext highlighter-rouge">2</code> for Testflight deployment and <code class="language-plaintext highlighter-rouge">3</code> for App store deployment.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. Automate beta distribution to TestFlight
+3. Automate App Store distribution
+</code></pre></div></div><p>In here, I selected <code class="language-plaintext highlighter-rouge">2</code>.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/select-ios-project.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/select-ios-project.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/select-ios-project.jpg" alt="deploy automatically React Native app via Fastlane - select iOS project"/></picture><p>After selecting 2, you can see the screen like below to select iOS project. If you don’t develop TV app, select <code class="language-plaintext highlighter-rouge">2</code> for React Native iOS project.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/login-apple.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/login-apple.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/login-apple.jpg" alt="deploy automatically React Native app via Fastlane - Apple login"/></picture><p>After selecting React Native iOS project, you can see the Apple login screen like above. Insert your login ID when you login Apple store connect.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/enter-ios.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/enter-ios.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/enter-ios.jpg" alt="deploy automatically React Native app via Fastlane - iOS setting"/></picture><p>In my case, I’ve already logged in, so I can see the screen like above. If you login at the first time, you can see Two-factor authentication process. Just follow instructions to finish it.</p><p>After it, you can see <code class="language-plaintext highlighter-rouge">Continue by pressing Enter</code> on the screen many times. Press Enter key to finish the configuration.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="ios-fastlane-folders-and-files">iOS Fastlane folders and files</h3><p>After the configuration, you can see the folders and files in React Native ios folder like below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|- fastlane
+|  |- Appfile
+|  |- Fastfile
+|- Gemfile
+|- Gemfile.lock
+</code></pre></div></div><p>Let’s see the details about them.</p><ul><li>fastlane folder: the folder includes Fastlane configuration file and executing file.</li><li>Gemfile, Gemfile.lock: Fastlane is made of Ruby. These files are the library installation files for executing Fastlane.</li></ul><p>The <code class="language-plaintext highlighter-rouge">fastlane/Appfile</code> file is the configuration file to execute Fastlane. You can see the contents like below after removing the comment out.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app_identifier</span><span class="p">(</span><span class="s2">"io.github.dev-yakuza.kumoncho"</span><span class="p">)</span>
+<span class="n">apple_id</span><span class="p">(</span><span class="s2">"dev.yakuza@gmail.com"</span><span class="p">)</span>
+
+<span class="n">itc_team_id</span><span class="p">(</span><span class="s2">"119423059"</span><span class="p">)</span>
+<span class="n">team_id</span><span class="p">(</span><span class="s2">"WFDJCJXQZ6"</span><span class="p">)</span>
+</code></pre></div></div><p>Appfile is the Fastlane configuration file for iOS depoyment. this is a very simple file, so I just skip to introduce this file.</p><p>The <code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code> file is the executing file for deploying the app. After removing the comment out, you can see the contents like below.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Push a new beta build to TestFlight"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span>
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"kumoncho.xcodeproj"</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span><span class="ss">workspace: </span><span class="s2">"kumoncho.xcworkspace"</span><span class="p">,</span> <span class="ss">scheme: </span><span class="s2">"kumoncho"</span><span class="p">)</span>
+    <span class="n">upload_to_testflight</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>You can execute the file via the command below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane beta
+</code></pre></div></div><p>If you execute the command like above to execute Fastlane, Fastlane will update iOS app build number(<code class="language-plaintext highlighter-rouge">increment_build_number</code>), build the app(<code class="language-plaintext highlighter-rouge">build_app</code>) and upload it to Testflight(<code class="language-plaintext highlighter-rouge">upload_to_testflight</code>).</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="modify-the-executing-file-for-ios">Modify the executing file for iOS</h3><p>We can not automatically deploy perfectly the app by the basically provided file. so, modify <code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code> like below.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:ios</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="k">else</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/\d+.\d+.\d+/</span>
+    <span class="n">versionNum</span> <span class="o">=</span> <span class="n">version</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">versionNum</span><span class="p">)</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">version_number: </span><span class="n">versionNum</span>
+      <span class="p">)</span>
+    <span class="k">elsif</span> <span class="p">(</span><span class="n">version</span> <span class="o">==</span> <span class="s1">'major'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'minor'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'patch'</span><span class="p">)</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">bump_type: </span><span class="n">version</span>
+      <span class="p">)</span>
+    <span class="k">else</span>
+      <span class="no">UI</span><span class="p">.</span><span class="nf">user_error!</span><span class="p">(</span><span class="s2">"[ERROR] Wrong version!!!!!!"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Push a new beta build to TestFlight"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">cert</span>
+    <span class="n">sigh</span><span class="p">(</span><span class="ss">force: </span><span class="kp">true</span><span class="p">)</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"kumoncho.xcodeproj"</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span><span class="ss">workspace: </span><span class="s2">"kumoncho.xcworkspace"</span><span class="p">,</span> <span class="ss">scheme: </span><span class="s2">"kumoncho"</span><span class="p">)</span>
+    <span class="n">upload_to_testflight</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Push a new release build to the App Store"</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">cert</span>
+    <span class="n">sigh</span><span class="p">(</span><span class="ss">force: </span><span class="kp">true</span><span class="p">)</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"kumoncho.xcodeproj"</span><span class="p">)</span>
+    <span class="n">build_app</span><span class="p">(</span><span class="ss">workspace: </span><span class="s2">"kumoncho.xcworkspace"</span><span class="p">,</span> <span class="ss">scheme: </span><span class="s2">"kumoncho"</span><span class="p">)</span>
+    <span class="n">upload_to_app_store</span><span class="p">(</span>
+      <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+      <span class="ss">release_notes: </span><span class="p">{</span>
+        <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+        <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+        <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+      <span class="p">},</span>
+      <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">submission_information: </span><span class="p">{</span>
+        <span class="ss">add_id_info_uses_idfa: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">add_id_info_serves_ads: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">add_id_info_tracks_install: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">add_id_info_tracks_action: </span><span class="kp">false</span><span class="p">,</span>
+        <span class="ss">add_id_info_limits_tracking: </span><span class="kp">true</span><span class="p">,</span>
+        <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>Let’s see the details about it.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+  <span class="k">else</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">re</span> <span class="o">=</span> <span class="sr">/\d+.\d+.\d+/</span>
+  <span class="n">versionNum</span> <span class="o">=</span> <span class="n">version</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">versionNum</span><span class="p">)</span>
+    <span class="n">increment_version_number</span><span class="p">(</span>
+      <span class="ss">version_number: </span><span class="n">versionNum</span>
+    <span class="p">)</span>
+  <span class="k">elsif</span> <span class="p">(</span><span class="n">version</span> <span class="o">==</span> <span class="s1">'major'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'minor'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'patch'</span><span class="p">)</span>
+    <span class="n">increment_version_number</span><span class="p">(</span>
+      <span class="ss">bump_type: </span><span class="n">version</span>
+    <span class="p">)</span>
+  <span class="k">else</span>
+    <span class="no">UI</span><span class="p">.</span><span class="nf">user_error!</span><span class="p">(</span><span class="s2">"[ERROR] Wrong version!!!!!!"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>I defined the function that makes the user insert the app version.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+  <span class="n">cert</span>
+  <span class="n">sigh</span><span class="p">(</span><span class="ss">force: </span><span class="kp">true</span><span class="p">)</span>
+  <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="o">...</span>
+</code></pre></div></div><p>Added <code class="language-plaintext highlighter-rouge">|options|</code> to get the parameters when the user executes the command and send it to the function we defined above.</p><p>You can execute the new script to execute the command like below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># fastlane beta version:1.0.0</span>
+<span class="c"># fastlane beta version:major</span>
+<span class="c"># fastlane beta version:minor</span>
+fastlane beta version:patch
+</code></pre></div></div><p>If you don’t insert the version, the script will wait for user input.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+  <span class="k">else</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="o">...</span>
+</code></pre></div></div><p>Also, I used <code class="language-plaintext highlighter-rouge">cert</code> to get the certification and <code class="language-plaintext highlighter-rouge">sigh(force: true)</code> to connect the provisioning profile.</p><p>Until now, we talked about Testflight deployment. Let’s see the details about the release deployment.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">desc</span> <span class="s2">"Push a new release build to the App Store"</span>
+<span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+  <span class="n">cert</span>
+  <span class="n">sigh</span><span class="p">(</span><span class="ss">force: </span><span class="kp">true</span><span class="p">)</span>
+  <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+  <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"kumoncho.xcodeproj"</span><span class="p">)</span>
+  <span class="n">build_app</span><span class="p">(</span><span class="ss">workspace: </span><span class="s2">"kumoncho.xcworkspace"</span><span class="p">,</span> <span class="ss">scheme: </span><span class="s2">"kumoncho"</span><span class="p">)</span>
+  <span class="n">upload_to_app_store</span><span class="p">(</span>
+    <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+    <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+    <span class="ss">release_notes: </span><span class="p">{</span>
+      <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+      <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+      <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+      <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+    <span class="p">},</span>
+    <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">submission_information: </span><span class="p">{</span>
+      <span class="ss">add_id_info_uses_idfa: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">add_id_info_serves_ads: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">add_id_info_tracks_install: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">add_id_info_tracks_action: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">add_id_info_limits_tracking: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div><p>It’s the same until the build app that we’ve seen in Testflight script. I added the script below to upload the built app to App store.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">upload_to_app_store</span><span class="p">(</span>
+  <span class="ss">force: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">reject_if_possible: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">skip_metadata: </span><span class="kp">false</span><span class="p">,</span>
+  <span class="ss">skip_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">languages: </span><span class="p">[</span><span class="s1">'en-US'</span><span class="p">,</span> <span class="s1">'ja'</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">],</span>
+  <span class="ss">release_notes: </span><span class="p">{</span>
+    <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+    <span class="s2">"en-US"</span> <span class="o">=&gt;</span> <span class="s2">"bug fixed"</span><span class="p">,</span>
+    <span class="s2">"ja"</span> <span class="o">=&gt;</span> <span class="s2">"バグ修正"</span><span class="p">,</span>
+    <span class="s2">"ko"</span> <span class="o">=&gt;</span> <span class="s2">"버그 수정"</span>
+  <span class="p">},</span>
+  <span class="ss">submit_for_review: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">automatic_release: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">submission_information: </span><span class="p">{</span>
+    <span class="ss">add_id_info_uses_idfa: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">add_id_info_serves_ads: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">add_id_info_tracks_install: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">add_id_info_tracks_action: </span><span class="kp">false</span><span class="p">,</span>
+    <span class="ss">add_id_info_limits_tracking: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">export_compliance_encryption_updated: </span><span class="kp">false</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div><ul><li>force: make Fastlane not to generate HTML report(true)</li><li>reject_if_possible: if the app is already waiting for the review and not reviewing yet, cancel it(true)</li><li>skip_metadata: skip modifying App store info(metadata). We need to insert the release note, so we need to set it modifiable(false)</li><li>skip_screenshots: I already have the deployed app and make an automatic deployment script for it, so I don’t need to upload the screenshots.(true)</li><li>languages: the localization of the app store info. You can use the languages like <code class="language-plaintext highlighter-rouge">ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant</code>. you can see more details on the offical site.(<a href="https://docs.fastlane.tools/actions/upload_to_app_store/#available-language-codes" rel="nofollow noreferrer" target="_blank">official site</a>)</li><li>release_notes: we must insert Release notes when we deploy iOS app. My app store localized by 3 languages, so the Release notes includes the default and 3 languages.</li><li>submit_for_review: submit the app for review.(true)</li><li>automatic_release: After reviewing, deploy automatically. If you don’t set this value, after reviewing, the developer will deploy manually it via the app store connect.(true)</li><li>submission_information: it’s the answer to the encryption and advertising questions.</li></ul><p>There are many options. You can see other options in the official site.</p><ul><li>Officail stie: <a href="https://docs.fastlane.tools/actions/upload_to_app_store/" rel="nofollow noreferrer" target="_blank">https://docs.fastlane.tools/actions/upload_to_app_store/</a></li><li>Exmaple: <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149" rel="nofollow noreferrer" target="_blank">submission_information</a></li></ul><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="excute-ios-fastlane">Excute iOS Fastlane</h3><p>We’re ready to deploy iOS via Fastlane. Let’s deploy automatically the app via Fastlane.</p><p>Execute the command below to deploy the React Native app to Testflight.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane beta version:patch
+</code></pre></div></div><p>It takes a long time to finish the deployment. After deploying, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/ios-testflight.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/ios-testflight.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/ios-testflight.jpg" alt="deploy automatically React Native app via Fastlane - iOS Testflight deployment"/></picture><p>Of course, you can see the deployed well to Testflight on the App store connect.</p><p>Let’s execute the command below to deploy to App store.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd ios</span>
+fastlane release version:patch
+</code></pre></div></div><p>You can see the screen like below after deploying.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/ios-upload-app-store.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/ios-upload-app-store.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/ios-upload-app-store.jpg" alt="deploy automatically React Native app via Fastlane - iOS app deployment"/></picture><p>Also, you can see the deployed well on App store connect.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="android">Android</h2><p>Let’s make Fastlane deploy automatically the React Native Android app.</p><h3 id="create-service-account-for-api-access">Create Service Account for API access</h3><p>When we deploy Android app via Fastlane, Fastlane uses Google API, so we need to create <code class="language-plaintext highlighter-rouge">Google Developer Service Account</code>.</p><p>For createing Google Developer Service Account, click the link below to go to Google Play Console.</p><ul><li>Google Play Console: <a href="https://play.google.com/apps/publish/" rel="nofollow noreferrer" target="_blank">https://play.google.com/apps/publish/</a></li></ul><p>You can see the screen like below when you go to Google Play Console.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/google-play-console.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/google-play-console.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/google-play-console.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console"/></picture><p>Select <code class="language-plaintext highlighter-rouge">Settings</code> menu on the left. And then, select <code class="language-plaintext highlighter-rouge">API access</code> menu under <code class="language-plaintext highlighter-rouge">Developer account</code>.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-api-access.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console api access menu"/></picture><p>If you can see the screen like above, click <code class="language-plaintext highlighter-rouge">CREATE NEW PROJECT</code> button to create new project.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-service-account.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-api-access-service-account.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console api access, service account"/></picture><p>After creating new project, you can see the screen like above. When you click <code class="language-plaintext highlighter-rouge">CREATE SERVICE ACCOUNT</code> button on the bottom, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console api access, how to create service account"/></picture><p>Click <code class="language-plaintext highlighter-rouge">Google API Console</code> link on the screen above. After it, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-google-api-console.jpg" alt="deploy automatically React Native app via Fastlane - Google API Console"/></picture><p>Click <code class="language-plaintext highlighter-rouge">CREATE SERVICE ACCOUNT</code> button on the top. After selecting, you can see the screen of createing Service account like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-google-api-console-create-service-account.jpg" alt="deploy automatically React Native app via Fastlane - Google API Console, create service account"/></picture><p>on the screen above, insert <code class="language-plaintext highlighter-rouge">Service account name</code> and click <code class="language-plaintext highlighter-rouge">CREATE</code> button to create Service account.(In my case, I inserted google-play-fastlane-deployment to Service account name)</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-role.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-role.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-role.jpg" alt="deploy automatically React Native app via Fastlane - Google API Console, set service account role"/></picture><p>When you see the screen above, click <code class="language-plaintext highlighter-rouge">Role</code> and search <code class="language-plaintext highlighter-rouge">Service Account User</code>. After setting Service Account User to Role, click <code class="language-plaintext highlighter-rouge">CONTINUE</code> button.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-key.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-key.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-key.jpg" alt="deploy automatically React Native app via Fastlane - Google API Console, create service account key"/></picture><p>If you see the screen like above, click <code class="language-plaintext highlighter-rouge">CREATE KEY</code> on the bottom. check <code class="language-plaintext highlighter-rouge">JSON</code> and click <code class="language-plaintext highlighter-rouge">CREATE</code> button to create the key.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-json-key.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-json-key.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-google-api-console-service-account-create-json-key.jpg" alt="deploy automatically React Native app via Fastlane - Google API Console, create service account JSON key"/></picture><p>After clicking CREATE button to create the ky, JSON file is donwloaded automatically. Copy this file to React Native project <code class="language-plaintext highlighter-rouge">android</code> folder. And then, click <code class="language-plaintext highlighter-rouge">DONE</code> button to create Service Account.</p><p>And then, come back to the original screen, and clcik <code class="language-plaintext highlighter-rouge">DONE</code> button on the right bottom to finish to create Service Account.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-api-access-how-to-create-service-account.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console api access, how to create service account"/></picture><p>After it, you can see the different screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-finish-to-create-service-account.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-finish-to-create-service-account.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-finish-to-create-service-account.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console completed to create Service Account"/></picture><p>Click <code class="language-plaintext highlighter-rouge">GRANT ACCESS</code> button on the right bottom for granting permissions.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-service-account-grant-access.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-service-account-grant-access.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-service-account-grant-access.jpg" alt="deploy automatically React Native app via Fastlane - Google Play Console Service Account permission setting"/></picture><p>On the screen liek above, scroll to the bottom and select <code class="language-plaintext highlighter-rouge">ADD USER</code> to register the user.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="initialization-of-faslane-for-android">Initialization of Faslane for Android</h3><p>Let’s create Fastlane for Android. Execute the command below to create Fastlane for Android.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>android
+fastlane init
+</code></pre></div></div><p>After executing, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-package-name.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-package-name.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-package-name.jpg" alt="deploy automatically React Native app via Fastlane - initialization of Android fastlnae: package name"/></picture><p>Insert <code class="language-plaintext highlighter-rouge">Pacakage Name</code> of Android project.(ex&gt; io.github.dev.yakuza.kumoncho) After then, you can see the JSON file path screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-json-path.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-json-path.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-json-path.jpg" alt="deploy automatically React Native app via Fastlane - initialization of Android fastlnae: JSON path"/></picture><p>we downloaded JSON file and copied it to <code class="language-plaintext highlighter-rouge">android</code> folder when we created Service Account. insert this file path.(ex&gt; <code class="language-plaintext highlighter-rouge">app-xxx.json</code>)</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-download-metadata.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-download-metadata.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-download-metadata.jpg" alt="deploy automatically React Native app via Fastlane - initialization of Android fastlnae: download metadata"/></picture><p>Next, Fastlane asks you to download Store info(metadata). I have already the deployed app and just make automatic deployment, so I don’t need to update Store info. Therefore, insert <code class="language-plaintext highlighter-rouge">n</code> to skip downloading the store info.</p><p>After it, you can see the <code class="language-plaintext highlighter-rouge">Continue by pressing Enter</code> screen many times. Just press Enter key to complete the configuration.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="android-fastlane-folders-and-files">Android Fastlane folders and files</h3><p>After the configuration, you can see the folders and files in React Native android folder like below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|- fastlane
+|  |- Appfile
+|  |- Fastfile
+|- Gemfile
+|- Gemfile.lock
+</code></pre></div></div><p>Let’s see the details about them.</p><ul><li>fastlane folder: the folder includes Fastlane configuration file and executing file.</li><li>Gemfile, Gemfile.lock: Fastlane is made of Ruby. These files are the library installation files for executing Fastlane.</li></ul><p>The <code class="language-plaintext highlighter-rouge">fastlane/Appfile</code> file is the configuration file to execute Fastlane. You can see the contents like below after removing the comment out.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_key_file</span><span class="p">(</span><span class="s2">"api-xxx.json"</span><span class="p">)</span>
+<span class="n">package_name</span><span class="p">(</span><span class="s2">"io.github.dev.yakuza.kumoncho"</span><span class="p">)</span>
+</code></pre></div></div><p>We can see the Package Name and JSON file path what we configured before.</p><p>The <code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code> file is the executing file for deploying the app. After removing the comment out, you can see the contents like below.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:android</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Runs all the tests"</span>
+  <span class="n">lane</span> <span class="ss">:test</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"test"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Submit a new Beta Build to Crashlytics Beta"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean assembleRelease"</span><span class="p">)</span>
+    <span class="n">crashlytics</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Deploy a new version to the Google Play"</span>
+  <span class="n">lane</span> <span class="ss">:deploy</span> <span class="k">do</span>
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean assembleRelease"</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>we can see <code class="language-plaintext highlighter-rouge">beta</code> and <code class="language-plaintext highlighter-rouge">deploy</code>, two lanes different from iOS. Of course, you can execute Fastlane by executing the command below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane beta
+fastlane deploy
+</code></pre></div></div><p>However, we need to modify Fastfile for the perfect automatic deployment.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="modify-the-executing-file-for-android">Modify the executing file for Android</h3><p>We can not automatically deploy perfectly the app by the basically provided file. so, modify <code class="language-plaintext highlighter-rouge">fastlane/Fastfile</code> like below.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_platform</span><span class="p">(</span><span class="ss">:android</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="ss">:android</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">increment_version_code</span><span class="p">()</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionCode\s+(\d+)/</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">versionCode</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">versionCode</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nf">to_s</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">increment_version_number</span><span class="p">(</span><span class="ss">bump_type: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">version_number: </span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionName\s+("\d+.\d+.\d+")/</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">versionName</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">gsub!</span><span class="p">(</span><span class="s1">'"'</span><span class="p">,</span><span class="s1">''</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+
+    <span class="n">major</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">minor</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+    <span class="n">patch</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">to_i</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'major'</span><span class="p">)</span>
+        <span class="n">major</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elsif</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'minor'</span><span class="p">)</span>
+        <span class="n">minor</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elsif</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'patch'</span><span class="p">)</span>
+        <span class="n">patch</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">version_number</span><span class="p">)</span>
+      <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">version_number</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+    <span class="k">else</span>
+      <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">patch</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+    <span class="k">end</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+    <span class="n">increment_version_code</span><span class="p">()</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:version</span><span class="p">]</span>
+    <span class="k">else</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="ss">text: </span><span class="s2">"Enter the version type or specific version</span><span class="se">\n</span><span class="s2">(major, minor, patch or 1.0.0): "</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">re</span> <span class="o">=</span> <span class="sr">/\d+.\d+.\d+/</span>
+    <span class="n">versionNum</span> <span class="o">=</span> <span class="n">version</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">versionNum</span><span class="p">)</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">version_number: </span><span class="n">versionNum</span>
+      <span class="p">)</span>
+    <span class="k">elsif</span> <span class="p">(</span><span class="n">version</span> <span class="o">==</span> <span class="s1">'major'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'minor'</span> <span class="o">||</span> <span class="n">version</span> <span class="o">==</span> <span class="s1">'patch'</span><span class="p">)</span>
+      <span class="n">increment_version_number</span><span class="p">(</span>
+        <span class="ss">bump_type: </span><span class="n">version</span>
+      <span class="p">)</span>
+    <span class="k">else</span>
+      <span class="no">UI</span><span class="p">.</span><span class="nf">user_error!</span><span class="p">(</span><span class="s2">"[ERROR] Wrong version!!!!!!"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Submit a new Beta Build to Crashlytics Beta"</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean bundleRelease"</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_changelogs: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">track: </span><span class="s1">'internal'</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Deploy a new version to the Google Play"</span>
+  <span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+    <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean bundleRelease"</span><span class="p">)</span>
+    <span class="n">upload_to_play_store</span><span class="p">(</span>
+      <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_changelogs: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+      <span class="ss">skip_upload_apk: </span><span class="kp">true</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div><p>Let’s see the details about it.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">increment_version_code</span><span class="p">()</span>
+  <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+  <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionCode\s+(\d+)/</span>
+
+  <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+  <span class="n">versionCode</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+  <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">versionCode</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nf">to_s</span>
+
+  <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+  <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">increment_version_number</span><span class="p">(</span><span class="ss">bump_type: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">version_number: </span><span class="kp">nil</span><span class="p">)</span>
+  <span class="n">path</span> <span class="o">=</span> <span class="s1">'../app/build.gradle'</span>
+  <span class="n">re</span> <span class="o">=</span> <span class="sr">/versionName\s+("\d+.\d+.\d+")/</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+  <span class="n">versionName</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">gsub!</span><span class="p">(</span><span class="s1">'"'</span><span class="p">,</span><span class="s1">''</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+
+  <span class="n">major</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_i</span>
+  <span class="n">minor</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">to_i</span>
+  <span class="n">patch</span> <span class="o">=</span> <span class="n">versionName</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">to_i</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'major'</span><span class="p">)</span>
+      <span class="n">major</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">elsif</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'minor'</span><span class="p">)</span>
+      <span class="n">minor</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">patch</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">elsif</span> <span class="p">(</span><span class="n">bump_type</span> <span class="o">==</span> <span class="s1">'patch'</span><span class="p">)</span>
+      <span class="n">patch</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="n">version_number</span><span class="p">)</span>
+    <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">version_number</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+  <span class="k">else</span>
+    <span class="n">s</span><span class="p">[</span><span class="n">re</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\"</span><span class="si">#{</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">patch</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+  <span class="k">end</span>
+
+  <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+  <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+  <span class="n">increment_version_code</span><span class="p">()</span>
+<span class="k">end</span>
+</code></pre></div></div><p>Fastlane doesn’t provide the update feature of the version unlike iOS.(Maybe I didn’t find it. If you find or know it, please give me feedback.) So I implement the function to update Android versionCode and versionName.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<span class="o">...</span>
+</code></pre></div></div><p>I already mentioned about updateVersion function on the iOS part, so I skip to explain it again.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+  <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+  <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean bundleRelease"</span><span class="p">)</span>
+  <span class="n">upload_to_play_store</span><span class="p">(</span>
+    <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_changelogs: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_apk: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">track: </span><span class="s1">'internal'</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div><p>use gradle clean and bundleRelease to build the app on Android.(it’s not <code class="language-plaintext highlighter-rouge">assembleRelease</code>) Also, set <code class="language-plaintext highlighter-rouge">track: 'internal'</code> in upload_to_play_store to deploy the app to internal test.</p><p>We don’t need to write Release notes(change log) on Android unlike iOS, so I set to skip all features.</p><p>Lastly, I’ll make aab file via bundleRelease and upload it, so I set true to skip_upload_apk.</p><div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">desc</span> <span class="s2">"Deploy a new version to the Google Play"</span>
+<span class="n">lane</span> <span class="ss">:release</span> <span class="k">do</span> <span class="o">|</span><span class="n">options</span><span class="o">|</span>
+  <span class="n">updateVersion</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+  <span class="n">gradle</span><span class="p">(</span><span class="ss">task: </span><span class="s2">"clean bundleRelease"</span><span class="p">)</span>
+  <span class="n">upload_to_play_store</span><span class="p">(</span>
+    <span class="ss">skip_upload_metadata: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_changelogs: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_screenshots: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_images: </span><span class="kp">true</span><span class="p">,</span>
+    <span class="ss">skip_upload_apk: </span><span class="kp">true</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div><p>It’s deployment script for Google Play store. To make same with iOS, modify <code class="language-plaintext highlighter-rouge">lane :deploy</code> to <code class="language-plaintext highlighter-rouge">lane :release</code>.</p><p>it’s same with beta script except no track parameter in upload_to_play_store, so I skip to explain.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h3 id="execute-android-fastlane">Execute Android Fastlane</h3><p>We’re ready to deploy Android via Fastlane. Let’s deploy automatically the app via Fastlane.</p><p>Execute the command below to deploy the React Native app to internal test.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane beta version:patch
+</code></pre></div></div><p>It takes a long time to finish the deployment. After deploying, you can see the screen like below.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-fastlane-beta.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-fastlane-beta.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-fastlane-beta.jpg" alt="deploy automatically React Native app via Fastlane - Android internal test deployment"/></picture><p>Of course, you can see the deployed well to internal test on the Play store console</p><p>Let’s execute the command below to deploy to release.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd android</span>
+fastlane release version:patch
+</code></pre></div></div><p>You can see the screen like below after deploying.</p><picture><source srcset="/assets/images/category/react-native/2020/fastlane/android-fastlane-release.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2020/fastlane/android-fastlane-release.webp" type="image/webp"/><img src="/assets/images/category/react-native/2020/fastlane/android-fastlane-release.jpg" alt="deploy automatically React Native app via Fastlane - Android app store release"/></picture><p>Also, you can see the deployed well on Google Play store.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left in-feed-left-ads" aria-hidden="true"></div><div class="ads-block ads-center in-feed-left-ads" aria-hidden="true"></div></div><h2 id="packagejson">package.json</h2><p>I make the scripts in package.json like below to use Fastlane what I made.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"beta:android"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run prebuild-android &amp;&amp; cd ./android &amp;&amp; bundle exec fastlane beta version:patch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"beta:ios"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cd ./ios &amp;&amp; bundle exec fastlane beta version:patch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"beta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run beta:android &amp;&amp; npm run beta:ios"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"release:android"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run prebuild-android &amp;&amp; cd ./android &amp;&amp; bundle exec fastlane release version:patch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"release:ios"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cd ./ios &amp;&amp; bundle exec fastlane release version:patch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"release"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run release:android &amp;&amp; npm run release:ios"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div><h2 id="gitignore">gitignore</h2><p>After deploying via Fastlane, some files are generated. Add the contents below to <code class="language-plaintext highlighter-rouge">.gitignore</code> not to manage them by git.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="c"># fastlane</span>
+ios/<span class="k">*</span>.mobileprovision
+ios/<span class="k">*</span>.cer
+ios/<span class="k">*</span>.dSYM.zip
+android/fastlane/README.md
+ios/fastlane/README.md
+</code></pre></div></div><h2 id="completed">Completed</h2><p>We’ve seen about how to use Fastlane to deploy automatically React Native apps. You can use this blog post content for the Native app, too. So I hope this blog post helps many developers.</p><p>I can save wasted time and the deployment is simple! so I recommend you guys use Fastlane!</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #0E0C23 !important; background-color: #FEDD03 !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> Was my blog helpful? Please leave a comment at the bottom. it will be a great help to me! </code></p><h2>App promotion</h2><div class="book-greeting"> You can use the applications that are created by this blog writer <code class="highlighter-rouge">Deku</code>.<br/><code class="highlighter-rouge">Deku</code> created the applications with Flutter.<br/><br/> If you have interested, please try to download them for free.<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/blaboo/en/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="word learning app for kids, BlaBoo"/><div><div class="app_description">word learning app for kids</div><div class="app_title">BlaBoo</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/koreanwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/koreanwords.png" alt="Korean vocabulary, TOPIK words"/><div><div class="app_description">Korean TOPIK vocabulary app</div><div class="app_title">TOPIK words</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/japanesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/japanesewords.png" alt="Japanese vocabulary app"/><div><div class="app_description">Japanese vocabulary app</div><div class="app_title">Japanese words</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/chinesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/hskwordsen.png" alt="Chinese HSK vocabulary app"/><div><div class="app_description">Chinese HSK vocabulary app</div><div class="app_title">HSK words</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-xl-block right-ads" aria-hidden="true"><script>var rightAds=document.getElementsByClassName("right-ads")[0];null!=rightAds.offsetParent&&setTimeout(function(){rightAds.innerHTML='<ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="ads-container" style="height: 280px !important;"><div class="ads-block ads-left bottom-left-ads" aria-hidden="true"><script>var bottomLeftAds=document.getElementsByClassName("bottom-left-ads")[0];null!=bottomLeftAds.offsetParent&&setTimeout(function(){bottomLeftAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-center bottom-center-ads" aria-hidden="true"><script>var bottomCenterAds=document.getElementsByClassName("bottom-center-ads")[0];null!=bottomCenterAds.offsetParent&&setTimeout(function(){bottomCenterAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div><div class="ads-block ads-right bottom-right-ads" aria-hidden="true"><script>var bottomRightAds=document.getElementsByClassName("bottom-right-ads")[0];null!=bottomRightAds.offsetParent&&setTimeout(function(){bottomRightAds.innerHTML='<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400);</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/en/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=Deploy automatically applications via Fastlane&url=https://dev-yakuza.posstree.com/react-native/fastlane/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://dev-yakuza.posstree.com/react-native/fastlane/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://dev-yakuza.posstree.com/en/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright"> Copyright &copy; dev.yakuza@gmail.com 2023 </p></div></div></div></footer><link href="/en/assets/vendor/jquery/jquery.min.js" rel="preload" as="script"/><script async src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20230323"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script><script>for(var adsList=document.getElementsByClassName("in-feed-left-ads"),i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}adsList=document.getElementsByClassName("in-feed-right-ads");for(var i=0;i<adsList.length;i++){var ads=adsList[i];null!=ads.offsetParent&&setTimeout(function(){ads.innerHTML='<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({})},400)}</script></body></html>
