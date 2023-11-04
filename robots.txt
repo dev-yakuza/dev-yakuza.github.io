@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+Sitemap: https://deku.posstree.com/sitemap.xml
+Sitemap: https://deku.posstree.com/en/sitemap.xml
+Sitemap: https://deku.posstree.com/ko/sitemap.xml

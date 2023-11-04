@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  commands:
+    optimize_images:
+      files: git diff --name-only HEAD | grep "assets/" || echo ''
+      run: python scripts/git_hook.py

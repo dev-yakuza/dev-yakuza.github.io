@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="ko"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[MacOS] Flutter 설치"/><meta name="twitter:description" content="MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[MacOS] Flutter 설치 - MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다.</title><meta name="description" content="MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/installation/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/installation/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/installation/"/><meta property="og:url" content="https://deku.posstree.com/ko/flutter/installation/"/><meta name="generator" content="Jekyll v3.9.3"/><meta property="og:title" content="[MacOS] Flutter 설치"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다."/><meta property="og:description" content="MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다."/><link rel="canonical" href="https://deku.posstree.com/ko/flutter/installation/"/><meta property="og:url" content="https://deku.posstree.com/flutter/installation/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2021-03-23T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[MacOS] Flutter 설치"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2021-03-28T17:09:36+09:00","datePublished":"2021-03-23T00:00:00+09:00","description":"MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다.","headline":"[MacOS] Flutter 설치","image":"https://deku.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/flutter/installation/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/flutter/installation/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="preload" as="style" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/ko/assets/main.css?v=20231104"/><link rel="stylesheet" href="/ko/assets/main.css?v=20231104"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/ko/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://deku.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://deku.posstree.com/",
+      "logo": "https://deku.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "[MacOS] Flutter 설치",
+          "description" : "MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다.",
+          "position":1,"url": "https://deku.posstree.com/ko/flutter/installation/",
+          "item": "https://deku.posstree.com/ko/flutter/installation/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dart에서 변수",
+          "description" : "Flutter로 앱을 개발하기 위해서 Flutter의 개발 언어인 Dart에 대해서 알아봅시다. 이번 블로그 포스트에서는 Dart의 변수에 대해서 알아봅니다.",
+          "position":2,"url": "https://deku.posstree.com/ko/flutter/dart/variable/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/variable/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dart에서 연산자",
+          "description" : "Flutter로 앱을 개발하기 위해서 Flutter의 개발 언어인 Dart에 대해서 알아봅시다. 이번 블로그 포스트에서는 Dart의 연산자에 대해서 알아봅니다.",
+          "position":3,"url": "https://deku.posstree.com/ko/flutter/dart/operator/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/operator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dart에서 Statement",
+          "description" : "Flutter로 앱을 개발하기 위해서 Flutter의 개발 언어인 Dart에 대해서 알아봅시다. 이번 블로그 포스트에서는 Dart에서 if/else, for/while등 Statement를 사용하는 방법에 대해서 알아봅니다.",
+          "position":4,"url": "https://deku.posstree.com/ko/flutter/dart/statement/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/statement/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dart에서 함수",
+          "description" : "Flutter로 앱을 개발하기 위해서 Flutter의 개발 언어인 Dart에 대해서 알아봅시다. 이번 블로그 포스트에서는 Dart에서 함수를 사용하는 방법에 대해서 알아봅니다.",
+          "position":5,"url": "https://deku.posstree.com/ko/flutter/dart/function/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/function/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Dart에서 클래스",
+          "description" : "Flutter로 앱을 개발하기 위해서 Flutter의 개발 언어인 Dart에 대해서 알아봅시다. 이번 블로그 포스트에서는 Dart에서 클래스를 사용하는 방법에 대해서 알아봅니다.",
+          "position":6,"url": "https://deku.posstree.com/ko/flutter/dart/class/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/class/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 시작하기",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter 프로젝트를 생성하고, 주요 파일과 폴더를 살펴보도록 하겠습니다.",
+          "position":7,"url": "https://deku.posstree.com/ko/flutter/start/",
+          "item": "https://deku.posstree.com/ko/flutter/start/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Linter",
+          "description" : "Flutter에서 코드의 스타일을 통일하고, 잠재적인 버그를 찾기 위해 Linter를 설정하는 방법에 대해서 알아봅시다.",
+          "position":8,"url": "https://deku.posstree.com/ko/flutter/linter/",
+          "item": "https://deku.posstree.com/ko/flutter/linter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 위젯",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 사용되는 위젯에 관해서 알아봅시다.",
+          "position":9,"url": "https://deku.posstree.com/ko/flutter/widget/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 레이아웃",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 화면의 레이아웃을 담당하는 위젯들에 대해서 알아보도록 하겠습니다.",
+          "position":10,"url": "https://deku.posstree.com/ko/flutter/layout/",
+          "item": "https://deku.posstree.com/ko/flutter/layout/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Image 위젯",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 이미지를 표시하기 위해 Image 위젯을 사용하는 방법에 대해서 알아봅니다.",
+          "position":11,"url": "https://deku.posstree.com/ko/flutter/widget/image/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/image/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Snackbar 위젯",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter에서 스낵바를 표시하기 위해 Snackbar 위젯을 사용하는 방법에 대해서 알아봅니다.",
+          "position":12,"url": "https://deku.posstree.com/ko/flutter/widget/snackbar/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 스택 내비게이션",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 스택 내비게이션을 사용하는 방법에 대해서 알아봅니다.",
+          "position":13,"url": "https://deku.posstree.com/ko/flutter/navigator/stack/",
+          "item": "https://deku.posstree.com/ko/flutter/navigator/stack/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Drawer 내비게이션",
+          "description" : "Flutter를 이용하여 앱을 개발해 봅시다. 이번 블로그 포스트에서는 Flutter로 생성한 프로젝트에서 드로어 내비게이션을 사용하는 방법에 대해서 알아봅니다.",
+          "position":14,"url": "https://deku.posstree.com/ko/flutter/navigator/drawer/",
+          "item": "https://deku.posstree.com/ko/flutter/navigator/drawer/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Textfield 위젯",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 사용자 입력을 받기 위한 Textfield 위젯을 사용하는 방법에 대해서 알아봅니다.",
+          "position":15,"url": "https://deku.posstree.com/ko/flutter/widget/textfield/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/textfield/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 앱 아이콘 변경",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 앱 아이콘을 변경하는 방법에 대해서 알아봅시다.",
+          "position":16,"url": "https://deku.posstree.com/ko/flutter/app-icon/",
+          "item": "https://deku.posstree.com/ko/flutter/app-icon/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 스플래시 스크린",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 스플래시 스크린을 변경하는 방법에 대해서 알아봅시다.",
+          "position":17,"url": "https://deku.posstree.com/ko/flutter/splash-screen/",
+          "item": "https://deku.posstree.com/ko/flutter/splash-screen/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Admob",
+          "description" : "이번 블로그 포스트에서는 Flutter로 생성한 앱에 google_mobile_ads 패키지를 사용해서 Admob 광고를 표시하는 방법에 대해서 살펴봅시다.",
+          "position":18,"url": "https://deku.posstree.com/ko/flutter/admob/",
+          "item": "https://deku.posstree.com/ko/flutter/admob/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase core",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 Firebase를 연동하는 방법에 대해서 알아보겠습니다.",
+          "position":19,"url": "https://deku.posstree.com/ko/flutter/firebase/core/",
+          "item": "https://deku.posstree.com/ko/flutter/firebase/core/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Analytics",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 Firebase의 Analytics를 연동하고 사용하는 방법에 대해서 알아보겠습니다.",
+          "position":20,"url": "https://deku.posstree.com/ko/flutter/firebase/analytics/",
+          "item": "https://deku.posstree.com/ko/flutter/firebase/analytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Firebase Crashlytics",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 Firebase의 Crashlytics를 연동하고 사용하는 방법에 대해서 알아보겠습니다.",
+          "position":21,"url": "https://deku.posstree.com/ko/flutter/firebase/crashlytics/",
+          "item": "https://deku.posstree.com/ko/flutter/firebase/crashlytics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] TTS - Text To Speech",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 TTS(Text To Speech) 기능를 사용하는 방법에 대해서 알아보겠습니다.",
+          "position":22,"url": "https://deku.posstree.com/ko/flutter/tts/",
+          "item": "https://deku.posstree.com/ko/flutter/tts/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Provider",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 전역 상태 또는 위젯끼리 상태를 공유하기 위해 Provider를 사용하는 방법에 대해서 알아보겠습니다.",
+          "position":23,"url": "https://deku.posstree.com/ko/flutter/provider/",
+          "item": "https://deku.posstree.com/ko/flutter/provider/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 앱 이름 변경",
+          "description" : "이번 블로그 포스트에서는 Flutter로 생성한 앱의 이름을 변경하는 방법에 대해서 살펴보겠습니다.",
+          "position":24,"url": "https://deku.posstree.com/ko/flutter/app-name/",
+          "item": "https://deku.posstree.com/ko/flutter/app-name/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Application ID 변경",
+          "description" : "Flutter로 생성한 앱의 Application ID를 변경하는 방법에 대해서 살펴보겠습니다.",
+          "position":25,"url": "https://deku.posstree.com/ko/flutter/app-id/",
+          "item": "https://deku.posstree.com/ko/flutter/app-id/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 애니메이션",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 간단한 애니메이션을 사용하기 위해 AnimatedContainer와 AnimatedOpacity를 사용하는 방법에 대해서 알아봅시다.",
+          "position":26,"url": "https://deku.posstree.com/ko/flutter/widget/animated/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/animated/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 라이프사이클",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 위젯의 라이프사이클(lifecycle)에 대해서 알아봅시다.",
+          "position":27,"url": "https://deku.posstree.com/ko/flutter/widget/lifecycle/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/lifecycle/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Shared preferences",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 로컬에 간단한 데이터를 저장하기 위해 Shared preferences 패키지를 사용하는 방법에 대해서 알아봅시다.",
+          "position":28,"url": "https://deku.posstree.com/ko/flutter/shared-preferences/",
+          "item": "https://deku.posstree.com/ko/flutter/shared-preferences/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 통합 테스트(Integration Test)",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 통합 테스트(Integration Test)를 하는 방법에 대해서 알아봅시다.",
+          "position":29,"url": "https://deku.posstree.com/ko/flutter/integration-test/",
+          "item": "https://deku.posstree.com/ko/flutter/integration-test/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] SQLite",
+          "description" : "이번 블로그 포스트에서는 Flutter에서 SQLite를 사용하는 방법에 대해서 살펴봅시다.",
+          "position":30,"url": "https://deku.posstree.com/ko/flutter/widget/sqflite/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/sqflite/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Device Unique ID",
+          "description" : "Flutter에서 사용자 단말기의 고유 식별 ID를 얻기 위해, device_info_plus 패키지를 사용하는 방법에 대해서 알아봅시다.",
+          "position":31,"url": "https://deku.posstree.com/ko/flutter/device-unique-id/",
+          "item": "https://deku.posstree.com/ko/flutter/device-unique-id/"},{
+          "@type":"ListItem",
+          "name": "[Dart] 올림, 버림, 반올림",
+          "description" : "Flutter에서 소수점에 대해 올림, 버림, 반올림을 하는 방법에 대해서 알아봅시다.",
+          "position":32,"url": "https://deku.posstree.com/ko/flutter/dart/ceil-floor-round/",
+          "item": "https://deku.posstree.com/ko/flutter/dart/ceil-floor-round/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 내비게이션에서 파라메터 전달",
+          "description" : "Flutter에서 내비게이션을 사용하여 화면을 이동할 때, 파라메터를 전달하는 방법에 대해서 알아봅시다.",
+          "position":33,"url": "https://deku.posstree.com/ko/flutter/navigator/parameters/",
+          "item": "https://deku.posstree.com/ko/flutter/navigator/parameters/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 상태 관리",
+          "description" : "Flutter에서 GetX를 사용하여 상태 관리를 하는 방법에 대해서 알아봅시다.",
+          "position":34,"url": "https://deku.posstree.com/ko/flutter/getx/state/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/state/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 라우트 관리",
+          "description" : "Flutter에서 GetX를 사용하여 라우트 관리를 하는 방법에 대해서 알아봅시다.",
+          "position":35,"url": "https://deku.posstree.com/ko/flutter/getx/route/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/route/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 종속성 관리",
+          "description" : "Flutter에서 GetX를 사용하여 종속성을 관리하는 방법에 대해서 알아봅시다.",
+          "position":36,"url": "https://deku.posstree.com/ko/flutter/getx/dependency/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/dependency/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 다국어 지원",
+          "description" : "Flutter에서 GetX를 사용하여 다국어를 지원하는 방법에 대해서 알아봅시다.",
+          "position":37,"url": "https://deku.posstree.com/ko/flutter/getx/localization/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/localization/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 테마",
+          "description" : "Flutter에서 GetX를 사용하여 테마를 사용하는 방법에 대해서 알아봅시다.",
+          "position":38,"url": "https://deku.posstree.com/ko/flutter/getx/theme/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/theme/"},{
+          "@type":"ListItem",
+          "name": "[GetX] BottomSheet",
+          "description" : "Flutter에서 GetX를 사용하여 BottomSheet를 사용하는 방법에 대해서 알아봅시다.",
+          "position":39,"url": "https://deku.posstree.com/ko/flutter/getx/bottom_sheet/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/bottom_sheet/"},{
+          "@type":"ListItem",
+          "name": "[GetX] Dialog",
+          "description" : "Flutter에서 GetX를 사용하여 Dialog를 사용하는 방법에 대해서 알아봅시다.",
+          "position":40,"url": "https://deku.posstree.com/ko/flutter/getx/dialog/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/dialog/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 스낵바",
+          "description" : "Flutter에서 GetX를 사용하여 스낵바를 표시하는 방법에 대해서 알아봅시다.",
+          "position":41,"url": "https://deku.posstree.com/ko/flutter/getx/snackbar/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/snackbar/"},{
+          "@type":"ListItem",
+          "name": "[GetX] 플랫폼 및 디바이스 정보",
+          "description" : "Flutter에서 GetX를 사용하여 플랫폼 정보와 디바이스 정보를 사용하는 방법에 대해서 알아봅시다.",
+          "position":42,"url": "https://deku.posstree.com/ko/flutter/getx/utils/",
+          "item": "https://deku.posstree.com/ko/flutter/getx/utils/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] url_launcher를 사용하여 브라우저 열기",
+          "description" : "Flutter에서 url_launcher를 사용하여 브라우저를 열거나, 메일, 전화 등을 보내기 위해 앱을 실행하는 방법에 대해서 알아봅시다.",
+          "position":43,"url": "https://deku.posstree.com/ko/flutter/url_launcher/",
+          "item": "https://deku.posstree.com/ko/flutter/url_launcher/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] iOS에서 url_launcher를 사용하여 외부 브라우저 열기",
+          "description" : "Flutter의 url_launcher를 사용하여 iOS에서 웹 링크를 앱 내부 브라우저가 아닌, 앱 외부의 기본 브라우저로 열어주는 방법을 알아보겠습니다.",
+          "position":44,"url": "https://deku.posstree.com/ko/flutter/url_launcher/external_link/",
+          "item": "https://deku.posstree.com/ko/flutter/url_launcher/external_link/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] package_info_plus를 사용하여 패키지 정보 가져오기",
+          "description" : "Flutter에서 package_info_plus를 사용하여 앱 이름, 패키지명 또는 버전 정보를 가져오는 방법에 대해서 알아봅시다.",
+          "position":45,"url": "https://deku.posstree.com/ko/flutter/package_info_plus/",
+          "item": "https://deku.posstree.com/ko/flutter/package_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] device_info_plus를 사용하여 디바이스 정보 가져오기",
+          "description" : "Flutter에서 device_info_plus를 사용하여 디바이스명, 디바이스 모델명, 디바이스 시스템명 등 디바이스에 관한 정보를 가져오는 방법에 대해서 알아봅시다.",
+          "position":46,"url": "https://deku.posstree.com/ko/flutter/device_info_plus/",
+          "item": "https://deku.posstree.com/ko/flutter/device_info_plus/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] http로 API 호출하기",
+          "description" : "Flutter에서 http 패키지를 사용하여 서버 API를 호출하는 방법에 대해서 알아봅시다.",
+          "position":47,"url": "https://deku.posstree.com/ko/flutter/http/",
+          "item": "https://deku.posstree.com/ko/flutter/http/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] in_app_review",
+          "description" : "Flutter에서 in_app_review를 사용하여 앱내에서 앱 리뷰를 작성할 수 있도록 만들어 봅시다.",
+          "position":48,"url": "https://deku.posstree.com/ko/flutter/in_app_review/",
+          "item": "https://deku.posstree.com/ko/flutter/in_app_review/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 로컬 푸시 노티피케이션",
+          "description" : "Flutter에서 flutter_local_notifications를 사용하여 기기 자체에서 특정 시간에 푸시 메시지를 표시하는 방법에 대해서 알아봅시다.",
+          "position":49,"url": "https://deku.posstree.com/ko/flutter/flutter_local_notifications/",
+          "item": "https://deku.posstree.com/ko/flutter/flutter_local_notifications/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 웹뷰(WebView)",
+          "description" : "Flutter에서 webview_flutter를 사용하여 앱 내에서 웹뷰(WebView)로 웹 페이지를 표시하는 방법에 대해서 알아봅시다.",
+          "position":50,"url": "https://deku.posstree.com/ko/flutter/webview_flutter/",
+          "item": "https://deku.posstree.com/ko/flutter/webview_flutter/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] webview_flutter에서 쿠키 사용하기",
+          "description" : "Flutter에서 webview_flutter를 사용하여 웹뷰(WebView)를 표시하고 표시한 웹 페이지의 쿠키를 다루는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":51,"url": "https://deku.posstree.com/ko/flutter/webview_flutter/cookie/",
+          "item": "https://deku.posstree.com/ko/flutter/webview_flutter/cookie/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Actions로 코드 검사",
+          "description" : "GitHub의 Actions를 사용하여 Pull request가 생성되면, Flutter의 Linter를 실행하여 코드의 스타일을 검사하고, 테스트 코드를 실행하여 코드가 문제가 없는지 확인하는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":52,"url": "https://deku.posstree.com/ko/flutter/github-actions/code-quality/",
+          "item": "https://deku.posstree.com/ko/flutter/github-actions/code-quality/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Dependabot",
+          "description" : "GitHub의 Dependabot을 사용하여 자동으로 Flutter 패키지의 버전을 검토하고 업데이트가 있는 경우, 자동으로 Pull request를 생성하는 방법에 대해서 알아봅시다.",
+          "position":53,"url": "https://deku.posstree.com/ko/flutter/github/dependabot/",
+          "item": "https://deku.posstree.com/ko/flutter/github/dependabot/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 테스트 커버리지",
+          "description" : "Flutter에서 테스트 커버리지 생성하고 테스트 커버리지를 확인하여 테스트 코드가 작성되지 않는 부분을 찾는 방법에 대해서 알아봅시다.",
+          "position":54,"url": "https://deku.posstree.com/ko/flutter/test-coverage/",
+          "item": "https://deku.posstree.com/ko/flutter/test-coverage/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] flutter_colorpicker",
+          "description" : "Flutter에서 flutter_colorpicker를 사용하여 사용자가 쉽게 색상을 선택할 수 있는 기능을 구현해 보도록 합시다.",
+          "position":55,"url": "https://deku.posstree.com/ko/flutter/flutter_colorpicker/",
+          "item": "https://deku.posstree.com/ko/flutter/flutter_colorpicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] VSCode 설정",
+          "description" : "VSCode를 사용하여 Flutter로 앱을 개발할 때, 도움이 되는 설정들에 대해서 알아봅시다.",
+          "position":56,"url": "https://deku.posstree.com/ko/flutter/vscode-settings/",
+          "item": "https://deku.posstree.com/ko/flutter/vscode-settings/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] Fastlane을 사용하여 배포 자동화하기",
+          "description" : "Fastlane을 사용하여 Flutter로 개발한 앱을 배포하는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":57,"url": "https://deku.posstree.com/ko/flutter/fastlane/",
+          "item": "https://deku.posstree.com/ko/flutter/fastlane/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기",
+          "description" : "Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":58,"url": "https://deku.posstree.com/ko/flutter/github-actions/deployment/",
+          "item": "https://deku.posstree.com/ko/flutter/github-actions/deployment/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 위젯안에서 인라인 조건문과 인라인 반복문 사용하기",
+          "description" : "인라인 조건문을 사용하여 위젯을 표시할지 여부를 결정하거나 인라인 반복문을 사용하여 위젯을 표시하는 방법에 대해서 알아봅시다.",
+          "position":59,"url": "https://deku.posstree.com/ko/flutter/inline-if-statement-and-inline-loop/",
+          "item": "https://deku.posstree.com/ko/flutter/inline-if-statement-and-inline-loop/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 화면이 꺼지지 않게 하기",
+          "description" : "Flutter로 만든 앱을 실행하고 있을 때 또는 앱 내에서 특정 기능을 수행할 때 휴대폰의 화면이 꺼지지 않게 하기 위해 wakelock 패키지를 사용하는 방법에 대해서 알아봅시다.",
+          "position":60,"url": "https://deku.posstree.com/ko/flutter/wakelock/",
+          "item": "https://deku.posstree.com/ko/flutter/wakelock/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 당겨서 새로고침",
+          "description" : "Flutter로 만든 앱에서 리스트를 표시하고 당겨서 새로고침(Pull to refresh)을 사용하여 리스트를 갱신하는 방법에 대해서 알아봅시다.",
+          "position":61,"url": "https://deku.posstree.com/ko/flutter/widget/RefreshIndicator/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/RefreshIndicator/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] textScaleFactor를 사용해서 폰트 크기 고정하기",
+          "description" : "Flutter 앱에서 사용자가 기기 설정을 통해 폰트를 확대한 경우에도, 앱내의 폰트 크기를 고정하는 방법에 대해서 알아봅시다.",
+          "position":62,"url": "https://deku.posstree.com/ko/flutter/widget/textScaleFactor/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/textScaleFactor/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] DatePicker",
+          "description" : "Flutter 앱에서 사용자로부터 날짜를 입력받기 위해 달력(DatePicker)을 표시하는 방법에 대해서 알아봅시다.",
+          "position":63,"url": "https://deku.posstree.com/ko/flutter/widget/showDatePicker/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/showDatePicker/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] AppBar의 뒤로가기 버튼 없애기",
+          "description" : "Flutter의 AppBar에서 자동으로 생성하는 뒤로가기 버튼을 없애는 방법에 대해서 알아보겠습니다.",
+          "position":64,"url": "https://deku.posstree.com/ko/flutter/widget/hide_back_button/",
+          "item": "https://deku.posstree.com/ko/flutter/widget/hide_back_button/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 테스트 코드에서 부모 위젯이나 자식 위젯 찾기",
+          "description" : "Flutter에서 테스트 코드를 작성할 때, 부모 위젯을 찾거나 자식 위젯을 찾아 값을 확인하는 테스트 코드를 작성하는 방법에 대해서 알아보겠습니다.",
+          "position":65,"url": "https://deku.posstree.com/ko/flutter/test/find_child_and_parent_widget/",
+          "item": "https://deku.posstree.com/ko/flutter/test/find_child_and_parent_widget/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 자식 위젯의 크기와 상관없이 스크롤하기",
+          "description" : "SingleChildScrollView 위젯에서 자식 위젯의 크기와 상관없이 언제나 스크롤이 가능하도록 만드는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":66,"url": "https://deku.posstree.com/ko/flutter/AlwaysScrollableScrollPhysics/",
+          "item": "https://deku.posstree.com/ko/flutter/AlwaysScrollableScrollPhysics/"},{
+          "@type":"ListItem",
+          "name": "[Flutter] 서버 데이터의 한글, 일본어 깨짐 수정",
+          "description" : "Flutter에서 http 패키지를 사용하여 서버로부터 JSON 데이터를 받을 때, JSON 데이터안에 한글이나 일본어가 깨져서 화면에 표시되는 문제를 해결하는 방법에 대해서 알아보도록 하겠습니다.",
+          "position":67,"url": "https://deku.posstree.com/ko/flutter/http_response_decode/",
+          "item": "https://deku.posstree.com/ko/flutter/http_response_decode/"}]
+    }
+  </script><link rel="preload" as="style" href="/ko/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/ko/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" rel="preload" as="script"/><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/ko/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/vue/">Vue</a><a class="dropdown-item" href="/ko/code_quality/">Code Quality</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/golang/">Golang</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/django/">장고(django)</a><a class="dropdown-item" href="/ko/web/">웹에 관한 지식</a><a class="dropdown-item" href="/ko/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/flutter/installation/">한국어</a><a class="dropdown-item menu-en" href="/en/flutter/installation/">English</a><a class="dropdown-item menu-ja" href="/ko/flutter/installation/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/vue/">Vue</a><a class="dropdown-item" href="/ko/code_quality/">Code Quality</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/golang/">Golang</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/django/">장고(django)</a><a class="dropdown-item" href="/ko/web/">웹에 관한 지식</a><a class="dropdown-item" href="/ko/react-native/">React Native</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/flutter/background.png')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>[MacOS] Flutter 설치</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-28 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/flutter/installation/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">MacOS에 Flutter를 설치하는 방법에 대해서 알아봅시다.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/flutter"><span itemprop="name">flutter</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/flutter/installation/"><span itemprop="name">[MacOS] Flutter 설치</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#개요">개요</a></li><li><a href="#vscode">VScode</a></li><li><a href="#xcode">Xcode</a></li><li><a href="#android-studio">Android Studio</a></li><li><a href="#flutter-sdk-설치">Flutter SDK 설치</a></li><li><a href="#경로-설정">경로 설정</a></li><li><a href="#의존성-설치">의존성 설치</a></li><li><a href="#확인">확인</a></li><li><a href="#완료">완료</a></li></ul></div><h2 id="개요">개요</h2><p>Flutter는 React Native와 같이 하나에 언어로 iOS와 안드로이드 앱, 모두를 개발할 수 있는 크로스 플랫폼 모바일 앱 개발 플랫폼입니다. 최근에는 웹까지 확장되면서 점점 그 영역을 확대해 나가고 있습니다.</p><ul><li>Flutter: <a href="https://flutter.dev/" rel="nofollow noreferrer" target="_blank">공식 홈페이지</a></li></ul><p>이번 블로그 포스트에서는 맥에서 Flutter로 앱을 개발하기 위해서, Flutter를 맥에 설치하는 방법에 대해서 알아보려고 합니다. 다른 OS에 Flutter를 설치하는 방법은 공식 홈페이지를 참고하시기 바랍니다.</p><ul><li>공식 홈페이지: <a href="https://flutter.dev/docs/get-started/install" rel="nofollow noreferrer" target="_blank">https://flutter.dev/docs/get-started/install</a></li></ul><h2 id="vscode">VScode</h2><p>저는 Flutter를 개발할 때, VSCode를 사용합니다. 혹시 다른 툴을 사용하고 계시지 않는다면, VSCode를 사용하시기를 추천합니다. 다음 명령어를 사용하여 VSCode를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>visual-studio-code
+<span class="nb">sudo </span>xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
+</code></pre></div></div><p>그리고 다음 명령어를 사용하여 Flutter 개발에 필요한 Extension을 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code <span class="nt">--install-extension</span> dart-code.flutter
+</code></pre></div></div><h2 id="xcode">Xcode</h2><p>Flutter는 크로스 플랫폼 모바일 앱 개발 플랫폼이므로 iOS 앱을 개발할 수 있습니다. iOS 앱을 개발할 때에는 iOS의 시뮬레이터를 사용하며, 배포할 때에는 Xcode를 사용해야 합니다. 따라서 Flutter로 앱을 개발할 때에도 Xcode는 설치해야합니다</p><ul><li>Xcode: <a href="https://developer.apple.com/xcode/" rel="nofollow noreferrer" target="_blank">Web</a></li><li>Xcode: <a href="https://itunes.apple.com/us/app/xcode/id497799835" rel="nofollow noreferrer" target="_blank">Mac App Store</a></li></ul><p>위에 링크를 통해 Xcod를 설치하였다면, 아래 명령어를 실행하여 Xcode를 설정합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>xcode-select <span class="nt">--switch</span> /Applications/Xcode.app/Contents/Developer
+<span class="nb">sudo </span>xcodebuild <span class="nt">-runFirstLaunch</span>
+<span class="nb">sudo </span>xcodebuild <span class="nt">-license</span>
+<span class="nb">sudo </span>gem <span class="nb">install </span>cocoapods
+</code></pre></div></div><h2 id="android-studio">Android Studio</h2><p>역시 Flutter로 안드로이드 앱을 개발할 수 있습니다. 하지만, 안드로이드 에뮬레이터를 사용하고 앱을 배포하기 위해서는 Android Studio가 필요합니다.</p><p>다음 링크를 통해 Android Studio를 다운로드 받고, 설치합니다.</p><ul><li><a href="https://developer.android.com/studio" rel="nofollow noreferrer" target="_blank">Android Studio</a></li></ul><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="flutter-sdk-설치">Flutter SDK 설치</h2><p>Flutter로 앱을 개발하기 위해서는 Flutter의 SDK를 설치할 필요가 있습니다. 우선 다음 명령어를 사용하여 Flutter SDK를 다운로드할 폴더를 생성합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/development
+<span class="nb">cd</span> ~/development
+</code></pre></div></div><p>이렇게 Flutter SDK를 다운로드할 폴더를 생성하였다면, 아래에 명령어를 사용하여 Flutter SDK를 Clone합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/flutter/flutter.git <span class="nt">-b</span> stable
+</code></pre></div></div><p>또는, 다음 명령어를 사용하여 웹을 통해 배포하는 Flutter SDK를 다운로드 할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-O</span> https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_2.0.3-stable.zip
+unzip flutter_macos_2.0.3-stable.zip
+</code></pre></div></div><h2 id="경로-설정">경로 설정</h2><p>Flutter SDK를 사용하기 위해서는 Flutter SDK의 경로를 설정할 필요가 있습니다. 다음 명령어를 사용하여 경로를 추가하기 위한 파일을 수정합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code ~/.zshrc
+</code></pre></div></div><p>그리고 파일의 제일 하단에 다음의 내용을 추가합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/development/flutter/bin:<span class="nv">$PATH</span>
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="의존성-설치">의존성 설치</h2><p>이제 Flutter로 앱을 개발하기 위해 필요한 SDK 및 Tool을 설치해야 합니다. 다음 명령어를 실행하여 Flutter로 앱을 개발하기 위해 필요한 것들을 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter doctor
+</code></pre></div></div><p>Flutter SDK를 <code class="language-plaintext highlighter-rouge">git clone</code>으로 복사한 경우 SDK를 빌드하므로 많은 시간이 소요됩니다. SDK를 웹에서 다운로드한 경우, 빌드된 내용도 포함되어 있으므로 조금 더 빠르게 진행할 수 있습니다.</p><p>실행이 완료되면 다음과 같은 결과를 확인할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>✓] Flutter <span class="o">(</span>Channel stable, 2.0.3, on macOS 11.2.3 20D91 darwin-x64, locale en<span class="o">)</span>
+<span class="o">[!]</span> Android toolchain - develop <span class="k">for </span>Android devices <span class="o">(</span>Android SDK version 29.0.3<span class="o">)</span>
+    <span class="o">!</span> Some Android licenses not accepted.  To resolve this, run: flutter doctor <span class="nt">--android-licenses</span>
+<span class="o">[</span>✓] Xcode - develop <span class="k">for </span>iOS and macOS
+<span class="o">[</span>✓] Chrome - develop <span class="k">for </span>the web
+<span class="o">[</span>✓] Android Studio <span class="o">(</span>version 3.6<span class="o">)</span>
+<span class="o">[</span>✓] VS Code <span class="o">(</span>version 1.54.2<span class="o">)</span>
+<span class="o">[</span>✓] Connected device <span class="o">(</span>1 available<span class="o">)</span>
+</code></pre></div></div><p>저는 <code class="language-plaintext highlighter-rouge">Android toolchain</code>에서 실패하였네요. 실패와 함께 표시된 명령어를 실행하여 <code class="language-plaintext highlighter-rouge">Android toolchain</code>을 설정합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter doctor <span class="nt">--android-licenses</span>
+</code></pre></div></div><p>그리고 다시 <code class="language-plaintext highlighter-rouge">flutter doctor</code>를 실행하면 다음과 같이 모두 잘 설치된 것을 확인할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Doctor summary <span class="o">(</span>to see all details, run flutter doctor <span class="nt">-v</span><span class="o">)</span>:
+<span class="o">[</span>✓] Flutter <span class="o">(</span>Channel stable, 2.0.3, on macOS 11.2.3 20D91 darwin-x64, locale en<span class="o">)</span>
+<span class="o">[</span>✓] Android toolchain - develop <span class="k">for </span>Android devices <span class="o">(</span>Android SDK version 29.0.3<span class="o">)</span>
+<span class="o">[</span>✓] Xcode - develop <span class="k">for </span>iOS and macOS
+<span class="o">[</span>✓] Chrome - develop <span class="k">for </span>the web
+<span class="o">[</span>✓] Android Studio <span class="o">(</span>version 3.6<span class="o">)</span>
+<span class="o">[</span>✓] VS Code <span class="o">(</span>version 1.54.2<span class="o">)</span>
+<span class="o">[</span>✓] Connected device <span class="o">(</span>1 available<span class="o">)</span>
+</code></pre></div></div><p>이렇게 <code class="language-plaintext highlighter-rouge">flutter doctor</code>는 Flutter 앱 개발에 필요한 SDK나 툴을 설치할 수 있게 해줍니다.</p><h2 id="확인">확인</h2><p>이렇게 모든 설치가 완료되었다면, 간단하게 Flutter 앱을 생성해 보고, 앱이 잘 실행되는지 확인해 봅시다. 다음 명령어를 실행하여 Flutter로 통해 개발할 앱을 생성합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter create my_app
+</code></pre></div></div><p>그리고 안드로이드 애뮬레이터나 iOS 시뮬레이터를 실행시킨 다음 명령어를 통해 생성된 앱을 실행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>my_app
+flutter run
+</code></pre></div></div><p>iOS 시뮬레이터는 다음 명령어로 실행할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open <span class="nt">-a</span> Simulator
+</code></pre></div></div><p>아래 명령어로 안드로이드 애뮬레이터를 실행할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>emulator <span class="nt">-list-avds</span>
+emulator <span class="nt">-avd</span> @name-of-your-emulator
+</code></pre></div></div><h2 id="완료">완료</h2><p>이것으로 Flutter로 앱을 개발하기 위한 준비가 완료되었습니다. 이제 Dart를 배워보고 Flutter로 앱을 개발해 봅시다.</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 제 블로그가 도움이 되셨나요? 하단의 댓글을 달아주시면 저에게 큰 힘이 됩니다! </code></p><h2>앱 홍보</h2><div class="book-greeting"> 지금 보고 계신 블로그를 작성하는 <code class="highlighter-rouge">Deku</code>가 개발한 앱을 한번 사용해보세요.<br/><code class="highlighter-rouge">Deku</code>가 개발한 앱은 Flutter로 개발되었습니다.<br/><br/> 관심있으신 분들은 앱을 다운로드하여 사용해 주시면 정말 감사하겠습니다.<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/blaboo/ko/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="어린이용 단어 공부앱, 블라부"/><div><div class="app_description">어린이용 단어 공부 앱</div><div class="app_title">블라부</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/clog/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/clog.png" alt="세상의 모든 정보를 모아보다, 씨로그"/><div><div class="app_description">세상의 모든 정보를 모아보다</div><div class="app_title">씨로그</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/ildangongbu/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/ildangongbu.png" alt="JLPT 일본어 단어앱, 일단 공부"/><div><div class="app_description">JLPT 일본어 단어앱</div><div class="app_title">일단 공부</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/toeicwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/toeicwords.png" alt="토익 영어 단어앱, 토익 단어앱"/><div><div class="app_description">토익 영어 단어앱</div><div class="app_title">토익 단어앱</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/secondaryenglish/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/secondaryenglish.png" alt="중고등 영어 단어앱, 중고등 영단어앱"/><div><div class="app_description">중고등 영어 단어앱</div><div class="app_title">중고등 영단어앱</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/hskwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/hskwords.png" alt="HSK 중국어 단어앱, 중국어 단어앱"/><div><div class="app_description">HSK 중국어 단어앱</div><div class="app_title">중국어 단어앱</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/germanwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/germanwords.png" alt="독일어 단어앱, 독일어 단어장"/><div><div class="app_description">독일어 단어앱</div><div class="app_title">독일어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/russianwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/russianwords.png" alt="러시아어 단어앱, 러시아어 단어장"/><div><div class="app_description">러시아어 단어앱</div><div class="app_title">러시아어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/arabicwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/arabicwords.png" alt="아랍어 단어앱, 아랍어 단어장"/><div><div class="app_description">아랍어 단어앱</div><div class="app_title">아랍어 단어장</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/indonesianwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/indonesianwords.png" alt="인도네시아 단어앱, 인도네시아 단어장"/><div><div class="app_description">인도네시아 단어앱</div><div class="app_title">인도네시아 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/frenchwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/frenchwords.png" alt="프랑스어 단어앱, 프랑스어 단어장"/><div><div class="app_description">프랑스어 단어앱</div><div class="app_title">프랑스어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/spanishwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/spanishwords.png" alt="스페인어 단어앱, 스페인어 단어장"/><div><div class="app_description">스페인어 단어앱</div><div class="app_title">스페인어 단어장</div></div></a></div></div></div><h2>책 홍보</h2><div class="book-greeting"><code class="highlighter-rouge">스무디 한 잔 마시며 끝내는 React Native</code> 책을 출판한지 벌써 2년이 다되었네요.<br/> 이번에도 좋은 기회가 있어서 <code class="highlighter-rouge">스무디 한 잔 마시며 끝내는 리액트 + TDD</code> 책을 출판하게 되었습니다. <br/><br/> 아래 링크를 통해 제가 쓴 책을 구매하실 수 있습니다.<br/> 많은 분들에게 도움이 되면 좋겠네요.<br/><br/><div class="row" style="display: flex; justify-content: center;"><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"><div><a href="https://coupa.ng/bMMos6" target="_blank" referrerpolicy="unsafe-url"><img src="https://static.coupangcdn.com/image/affiliate/banner/b95772cbabc4ca68f13398b6d001d523@2x.jpg" alt="스무디 한 잔 마시며 끝내는 React Native, 비제이퍼블릭" style="width: 140px;"/></a></div><div><ul><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/bMMos6" referrerpolicy="unsafe-url" style="display: inline-block;">구매하기</a></li><li> yes24: <a target="_blank" rel="noopener" href="http://www.yes24.com/Product/Goods/82895471?Acode=101" style="display: inline-block;">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190014625&orderClick=LEa&Kc=" style="display: inline-block;">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=216744127" style="display: inline-block;">구매하기</a></li></ul></div></div><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"><div><a href="https://coupa.ng/b2q2jo" target="_blank" referrerpolicy="unsafe-url"><img src="https://static.coupangcdn.com/image/affiliate/banner/b1adb4aa04d9020b64437a41d0eb5d56@2x.jpg" alt="스무디 한 잔 마시며 끝내는 리액트 + TDD, 비제이퍼블릭" style="width: 140px;"></a></div><div><ul><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/b2qM3D" referrerpolicy="unsafe-url" style="display: inline-block;">구매하기</a></li><li> yes24: <a target="_blank" rel="noopener" href="http://www.yes24.com/Product/Goods/102280451" style="display: inline-block;">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791165920715&orderClick=LAG&Kc=" style="display: inline-block;">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=273805547" style="display: inline-block;">구매하기</a></li></ul></div></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/ko/api/flutter/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=[MacOS] Flutter 설치&url=https://deku.posstree.com/flutter/installation/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://deku.posstree.com/flutter/installation/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://deku.posstree.com/ko/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2023 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20231104"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script></body></html>
