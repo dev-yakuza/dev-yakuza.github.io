@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><meta name="twitter:description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기 - Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다.</title><meta name="description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><meta name="generator" content="Jekyll v3.9.3"/><meta property="og:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta property="og:description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><link rel="canonical" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/flutter/github-actions/deployment/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-11-17T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><script type="application/ld+json">
+<!DOCTYPE html><html lang="ko"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><meta name="twitter:description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기 - Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다.</title><meta name="description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><meta property="og:description" content="Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다."/><link rel="canonical" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/flutter/github-actions/deployment/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-11-17T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기"/><script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2022-11-27T11:06:50+09:00","datePublished":"2022-11-17T00:00:00+09:00","description":"Fastlane이 구성된 Flutter 프로젝트를 GitHub Actions를 사용하여 배포하는 방법에 대해서 알아보도록 하겠습니다.","headline":"[Flutter] GitHub Actions과 Fastlane을 사용하여 Flutter 앱 배포하기","image":"https://deku.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/flutter/github-actions/deployment/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/flutter/github-actions/deployment/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="preload" as="style" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/ko/assets/main.css?v=20240429"/><link rel="stylesheet" href="/ko/assets/main.css?v=20240429"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/ko/feed.xml"/><script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -413,7 +413,7 @@
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">maxim-lobanov/setup-xcode@v1</span>
         <span class="na">with</span><span class="pi">:</span>
           <span class="na">xcode-version</span><span class="pi">:</span> <span class="s">latest-stable</span>
@@ -422,47 +422,47 @@
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
-        <span class="na">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">flutter-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3.8'</span>
-      <span class="s">...</span>
+  <span class="err">    </span><span class="s">...</span>
 </code></pre></div></div><p>그런 다음, 코드를 가져오기 위한 <code class="language-plaintext highlighter-rouge">checkout</code>과 Flutter 프로젝트를 빌드하기 위해 <code class="language-plaintext highlighter-rouge">Flutter</code>를 설치합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1.2'</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
+  <span class="err">    </span><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; bundle install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Fastlane</code>은 Ruby로 개발되었으므로, <code class="language-plaintext highlighter-rouge">Fastlane</code>을 설치하고 실행하기 위해서는 <code class="language-plaintext highlighter-rouge">Ruby</code>를 설치할 필요가 있습니다. 이렇게 설치한 <code class="language-plaintext highlighter-rouge">Ruby</code>를 사용하여 <code class="language-plaintext highlighter-rouge">Fastlane</code>과 필요한 라이브러리를 설치합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Install packages</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter pub get</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install pods</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; pod install &amp;&amp; cd ..</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install packages</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter pub get</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install pods</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd ios &amp;&amp; pod install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p>이제 <code class="language-plaintext highlighter-rouge">Flutter</code> 프로젝트를 빌드하기 위해 필요한 라이브러리를 설치하고, iOS용 라이브러리도 함께 설치해 줍니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Prebuild</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter build ios --release --no-codesign</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Execute Fastlane command</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; fastlane release type:github</span>
-        <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">40</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Prebuild</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter build ios --release --no-codesign</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Execute Fastlane command</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd ios &amp;&amp; fastlane release type:github</span>
+        <span class="s">timeout-minutes</span><span class="err">:</span> <span class="m">40</span>
 </code></pre></div></div><p>마지막으로, <code class="language-plaintext highlighter-rouge">Flutter</code> 명령어를 사용하여 Flutter 프로젝트의 iOS 앱을 배포용으로 빌드합니다. 그리고, <code class="language-plaintext highlighter-rouge">Fastlane</code>을 사용하여 앱을 배포합니다.</p><p><code class="language-plaintext highlighter-rouge">Fastlane</code>을 사용하여 앱을 배포할 때, 많은 시간이 소요됩니다. 저는 무료로 사용할 수 있는 <code class="language-plaintext highlighter-rouge">GitHub Actions</code> 시간을 최대 5번 사용할 수 있도록 보장하기 위해 타임 아웃을 <code class="language-plaintext highlighter-rouge">40분</code>으로 설정하였습니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="안드로이드를-위한-fastlane을-실행하는-github-actions">안드로이드를 위한 Fastlane을 실행하는 GitHub Actions</h2><p>Flutter 앱을 안드로이드의 구글 플레이에 배포하기 위해 구성한 <code class="language-plaintext highlighter-rouge">Fastlane</code>을 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 사용하여 배포하기 위해 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 만들어 봅시다. <code class="language-plaintext highlighter-rouge">./.github/workflows/main.yml</code> 파일을 열고 다음과 같이 수정합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Publish iOS and Android App to App Store and Play Store</span>
 <span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
@@ -506,7 +506,7 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-java@v3</span>
         <span class="na">with</span><span class="pi">:</span>
@@ -519,24 +519,24 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">flutter-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3.8'</span>
-      <span class="s">...</span>
+  <span class="err">    </span><span class="s">...</span>
 </code></pre></div></div><p>그런 다음 Flutter 프로젝트를 빌드를 위해 <code class="language-plaintext highlighter-rouge">Flutter</code>를 설치합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1.2'</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
+  <span class="err">    </span><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">cd android &amp;&amp; bundle install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Fastlane</code>은 Ruby로 개발되었으므로, <code class="language-plaintext highlighter-rouge">Fastlane</code>을 설치하고 실행하기 위해서는 <code class="language-plaintext highlighter-rouge">Ruby</code>를 설치할 필요가 있습니다. 이렇게 설치한 <code class="language-plaintext highlighter-rouge">Ruby</code>를 사용하여 <code class="language-plaintext highlighter-rouge">Fastlane</code>과 필요한 라이브러리를 설치합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
@@ -545,10 +545,10 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Install packages</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter pub get</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install packages</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter pub get</span>
       <span class="s">...</span>
 </code></pre></div></div><p>이제 <code class="language-plaintext highlighter-rouge">Flutter</code> 프로젝트를 빌드하기 위해 필요한 라이브러리를 설치합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
@@ -556,12 +556,12 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Prebuild</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter build appbundle</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Execute Fastlane command</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd android &amp;&amp; fastlane release</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Prebuild</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter build appbundle</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Execute Fastlane command</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd android &amp;&amp; fastlane release</span>
 </code></pre></div></div><p>마지막으로, <code class="language-plaintext highlighter-rouge">Flutter</code> 명령어를 사용하여 Flutter 프로젝트의 안드로이드 앱을 빌드합니다. 그리고, <code class="language-plaintext highlighter-rouge">Fastlane</code>을 사용하여 앱을 배포합니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="전체-github-actions-코드">전체 GitHub Actions 코드</h2><p>지금까지 소개한 <code class="language-plaintext highlighter-rouge">GitHub Actions</code> 코드는 정리하면 다음과 같습니다. 이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code> 코드를 사용하여 Flutter 앱 배포에 활용해 보시기 바랍니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Deploy iOS and Android App to App Store and Play Store</span>
 <span class="na">on</span><span class="pi">:</span>
   <span class="na">push</span><span class="pi">:</span>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] httpでAPIを呼び出す方法"/><meta name="twitter:description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] httpでAPIを呼び出す方法 - Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。</title><meta name="description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/http/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/http/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/http/"/><meta property="og:url" content="https://deku.posstree.com/flutter/http/"/><meta name="generator" content="Jekyll v3.9.3"/><meta property="og:title" content="[Flutter] httpでAPIを呼び出す方法"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta property="og:description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><link rel="canonical" href="https://deku.posstree.com/flutter/http/"/><meta property="og:url" content="https://deku.posstree.com/flutter/http/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-02-03T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] httpでAPIを呼び出す方法"/><script type="application/ld+json">
+<!DOCTYPE html><html lang="ja"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] httpでAPIを呼び出す方法"/><meta name="twitter:description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] httpでAPIを呼び出す方法 - Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。</title><meta name="description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/http/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/http/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/http/"/><meta property="og:url" content="https://deku.posstree.com/flutter/http/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="[Flutter] httpでAPIを呼び出す方法"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><meta property="og:description" content="Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。"/><link rel="canonical" href="https://deku.posstree.com/flutter/http/"/><meta property="og:url" content="https://deku.posstree.com/flutter/http/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-02-03T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] httpでAPIを呼び出す方法"/><script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2022-02-03T00:00:00+09:00","description":"Flutterでhttpパッケージを使ってサーバのAPIを呼び出す方法について説明します。","headline":"[Flutter] httpでAPIを呼び出す方法","image":"https://deku.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/flutter/http/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/flutter/http/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="preload" as="style" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/assets/main.css?v=20240429"/><link rel="stylesheet" href="/assets/main.css?v=20240429"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/feed.xml"/><script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -373,95 +373,95 @@
 </code></pre></div></div><p>その後、次のコマンドを実行して<code class="language-plaintext highlighter-rouge">http</code>パッケージをインストールします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter pub add http
 </code></pre></div></div><p>このようにインストールしたhttpを使う方法について説明します。</p><h2 id="使い方">使い方</h2><p><code class="language-plaintext highlighter-rouge">http</code>を使って次のように<code class="language-plaintext highlighter-rouge">GET/POST</code>の方法でサーバのAPIを呼び出すことができます。</p><ul><li>get</li></ul><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:http/http.dart'</span> <span class="k">as</span> <span class="n">http</span><span class="o">;</span>
 
-<span class="kd">final</span> <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="o">);</span>
-<span class="kd">final</span> <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="nl">body:</span> <span class="o">{</span>
-  <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="o">,</span>
-<span class="o">});</span>
+<span class="kd">final</span> <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="p">);</span>
+<span class="kd">final</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nl">body:</span> <span class="p">{</span>
+  <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="p">,</span>
+<span class="p">});</span>
 
-<span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-<span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
+<span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
 </code></pre></div></div><ul><li>post</li></ul><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:http/http.dart'</span> <span class="k">as</span> <span class="n">http</span><span class="o">;</span>
 
-<span class="kd">final</span> <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span>
-  <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="o">,</span>
-<span class="o">);</span>
-<span class="kd">final</span> <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+<span class="kd">final</span> <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span>
+  <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">final</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
 
-<span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-<span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
+<span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
 </code></pre></div></div><h2 id="例題">例題</h2><p>httpの使い方を確認するため、<code class="language-plaintext highlighter-rouge">lib/main.dart</code>ファイルを開いて下記のように修正します。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ignore_for_file: avoid_print</span>
 
 <span class="kn">import</span> <span class="s">'package:flutter/material.dart'</span><span class="o">;</span>
 <span class="kn">import</span> <span class="s">'package:http/http.dart'</span> <span class="k">as</span> <span class="n">http</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">runApp</span><span class="o">(</span><span class="kd">const</span> <span class="n">MyApp</span><span class="o">());</span>
-<span class="o">}</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">runApp</span><span class="p">(</span><span class="kd">const</span> <span class="n">MyApp</span><span class="p">());</span>
+<span class="p">}</span>
 
-<span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
-  <span class="kd">const</span> <span class="n">MyApp</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
-
-  <span class="nd">@override</span>
-  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
-      <span class="nl">title:</span> <span class="s">'Flutter Demo'</span><span class="o">,</span>
-      <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="o">(</span>
-        <span class="nl">primarySwatch:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">blue</span><span class="o">,</span>
-      <span class="o">),</span>
-      <span class="nl">home:</span> <span class="kd">const</span> <span class="n">MyHomePage</span><span class="o">(),</span>
-    <span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">MyHomePage</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
-  <span class="kd">const</span> <span class="n">MyHomePage</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
-
-  <span class="kt">void</span> <span class="n">_callAPI</span><span class="o">()</span> <span class="n">async</span> <span class="o">{</span>
-    <span class="kd">var</span> <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span>
-      <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="o">,</span>
-    <span class="o">);</span>
-    <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
-    <span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-    <span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
-
-    <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="o">);</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="nl">body:</span> <span class="o">{</span>
-      <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="o">,</span>
-    <span class="o">});</span>
-    <span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-    <span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
-  <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="n">MyApp</span><span class="p">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="p">})</span> <span class="o">:</span> <span class="k">super</span><span class="p">(</span><span class="nl">key:</span> <span class="n">key</span><span class="p">);</span>
 
   <span class="nd">@override</span>
-  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
-      <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
-        <span class="nl">title:</span> <span class="kd">const</span> <span class="n">Text</span><span class="o">(</span><span class="s">'http Example'</span><span class="o">),</span>
-      <span class="o">),</span>
-      <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
-        <span class="nl">child:</span> <span class="n">ElevatedButton</span><span class="o">(</span>
-          <span class="nl">onPressed:</span> <span class="n">_callAPI</span><span class="o">,</span>
-          <span class="nl">child:</span> <span class="kd">const</span> <span class="n">Text</span><span class="o">(</span><span class="s">'Call API'</span><span class="o">),</span>
-        <span class="o">),</span>
-      <span class="o">),</span>
-    <span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div><p>例題を実行すると次のように<code class="language-plaintext highlighter-rouge">Call API</code>ボタンが真ん中に表示されることが確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/http/http_example.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/http/http_example.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/http/http_example.jpg" alt="Flutter - http example"/></picture><p>当該ボタンを押すと次のように<code class="language-plaintext highlighter-rouge">http</code>パッケージを使ってAPIをコールします。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">_callAPI</span><span class="p">(</span><span class="o">)</span> <span class="n">async</span> <span class="o">{</span>
-  <span class="kd">var</span> <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span>
-    <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="o">,</span>
-  <span class="o">);</span>
-  <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
-  <span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-  <span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="p">(</span>
+      <span class="nl">title:</span> <span class="s">'Flutter Demo'</span><span class="p">,</span>
+      <span class="nl">theme:</span> <span class="n">ThemeData</span><span class="p">(</span>
+        <span class="nl">primarySwatch:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">blue</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="nl">home:</span> <span class="kd">const</span> <span class="n">MyHomePage</span><span class="p">(),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-  <span class="n">url</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="o">);</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="nl">body:</span> <span class="o">{</span>
-    <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="o">,</span>
-  <span class="o">});</span>
-  <span class="n">print</span><span class="o">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="o">);</span>
-  <span class="n">print</span><span class="o">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">MyHomePage</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="n">MyHomePage</span><span class="p">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="p">})</span> <span class="o">:</span> <span class="k">super</span><span class="p">(</span><span class="nl">key:</span> <span class="n">key</span><span class="p">);</span>
+
+  <span class="kt">void</span> <span class="n">_callAPI</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span>
+      <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="p">);</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nl">body:</span> <span class="p">{</span>
+      <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="p">(</span>
+      <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="p">(</span>
+        <span class="nl">title:</span> <span class="kd">const</span> <span class="n">Text</span><span class="p">(</span><span class="s">'http Example'</span><span class="p">),</span>
+      <span class="p">),</span>
+      <span class="nl">body:</span> <span class="n">Center</span><span class="p">(</span>
+        <span class="nl">child:</span> <span class="n">ElevatedButton</span><span class="p">(</span>
+          <span class="nl">onPressed:</span> <span class="n">_callAPI</span><span class="p">,</span>
+          <span class="nl">child:</span> <span class="kd">const</span> <span class="n">Text</span><span class="p">(</span><span class="s">'Call API'</span><span class="p">),</span>
+        <span class="p">),</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>例題を実行すると次のように<code class="language-plaintext highlighter-rouge">Call API</code>ボタンが真ん中に表示されることが確認できます。</p><picture><source srcset="/assets/images/category/flutter/2022/http/http_example.avif" type="image/avif"/><source srcset="/assets/images/category/flutter/2022/http/http_example.webp" type="image/webp"/><img src="/assets/images/category/flutter/2022/http/http_example.jpg" alt="Flutter - http example"/></picture><p>当該ボタンを押すと次のように<code class="language-plaintext highlighter-rouge">http</code>パッケージを使ってAPIをコールします。</p><div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">_callAPI</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span>
+    <span class="s">'https://raw.githubusercontent.com/dev-yakuza/users/master/api.json'</span><span class="p">,</span>
+  <span class="p">);</span>
+  <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+  <span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+  <span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
+
+  <span class="n">url</span> <span class="o">=</span> <span class="kt">Uri</span><span class="o">.</span><span class="na">parse</span><span class="p">(</span><span class="s">'https://reqbin.com/sample/post/json'</span><span class="p">);</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="na">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nl">body:</span> <span class="p">{</span>
+    <span class="s">'key'</span><span class="o">:</span> <span class="s">'value'</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="n">print</span><span class="p">(</span><span class="s">'Response status: </span><span class="si">${response.statusCode}</span><span class="s">'</span><span class="p">);</span>
+  <span class="n">print</span><span class="p">(</span><span class="s">'Response body: </span><span class="si">${response.body}</span><span class="s">'</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div><p>httpパッケージを使って問題なくAPIをコールしたら、<code class="language-plaintext highlighter-rouge">Debug console</code>に次のような結果が確認できます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flutter: Response status: 200
 flutter: Response body: <span class="o">[</span>
   <span class="o">{</span>

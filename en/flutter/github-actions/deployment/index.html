@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/en/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/en/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/en/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/en/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/en/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/en/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/en/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/en/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/en/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/en/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/en/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/en/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/en/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/en/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/en/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><meta name="twitter:description" content="Let's see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane - Let's see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions.</title><meta name="description" content="Let&#39;s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta http-equiv="Content-Language" content="en"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta name="generator" content="Jekyll v3.9.3"/><meta property="og:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="en"/><meta name="description" content="Let’s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta property="og:description" content="Let’s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><link rel="canonical" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/flutter/github-actions/deployment/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-11-17T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><script type="application/ld+json">
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/en/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/en/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/en/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/en/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/en/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/en/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/en/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/en/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/en/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/en/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/en/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/en/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/en/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/en/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/en/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><meta name="twitter:description" content="Let's see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane - Let's see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions.</title><meta name="description" content="Let&#39;s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta http-equiv="Content-Language" content="en"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/flutter/github-actions/deployment/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="en"/><meta name="description" content="Let’s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><meta property="og:description" content="Let’s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions."/><link rel="canonical" href="https://deku.posstree.com/en/flutter/github-actions/deployment/"/><meta property="og:url" content="https://deku.posstree.com/flutter/github-actions/deployment/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2022-11-17T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/flutter/background.png"/><meta property="twitter:title" content="[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane"/><script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2022-11-27T11:06:50+09:00","datePublished":"2022-11-17T00:00:00+09:00","description":"Let’s see how to deploy the Flutter app that is configured Fastlane by using GitHub Actions.","headline":"[Flutter] Deploy Flutter app witn GitHub Actions and Fastlane","image":"https://deku.posstree.com/assets/images/category/flutter/background.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/flutter/github-actions/deployment/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/flutter/github-actions/deployment/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="preload" as="style" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/en/assets/main.css?v=20240429"/><link rel="stylesheet" href="/en/assets/main.css?v=20240429"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/en/feed.xml"/><script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -413,7 +413,7 @@
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">maxim-lobanov/setup-xcode@v1</span>
         <span class="na">with</span><span class="pi">:</span>
           <span class="na">xcode-version</span><span class="pi">:</span> <span class="s">latest-stable</span>
@@ -422,47 +422,47 @@
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
-        <span class="na">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">flutter-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3.8'</span>
-      <span class="s">...</span>
+  <span class="err">    </span><span class="s">...</span>
 </code></pre></div></div><p>And then, install <code class="language-plaintext highlighter-rouge">checkout</code> for getting the code and <code class="language-plaintext highlighter-rouge">Flutter</code> for building the Flutter project.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1.2'</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
+  <span class="err">    </span><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; bundle install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Fastlane</code> is developed by Ruby, so to install and execute <code class="language-plaintext highlighter-rouge">Fastlane</code>, we need to install <code class="language-plaintext highlighter-rouge">Ruby</code>. Install <code class="language-plaintext highlighter-rouge">Fastlane</code> and required libraries by using <code class="language-plaintext highlighter-rouge">Ruby</code> installed.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Install packages</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter pub get</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install pods</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; pod install &amp;&amp; cd ..</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install packages</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter pub get</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install pods</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd ios &amp;&amp; pod install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p>Next, install the required packages for building the <code class="language-plaintext highlighter-rouge">Flutter</code> project and libraries for iOS.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Prebuild</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter build ios --release --no-codesign</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Execute Fastlane command</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd ios &amp;&amp; fastlane release type:github</span>
-        <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">40</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Prebuild</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter build ios --release --no-codesign</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Execute Fastlane command</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd ios &amp;&amp; fastlane release type:github</span>
+        <span class="s">timeout-minutes</span><span class="err">:</span> <span class="m">40</span>
 </code></pre></div></div><p>Lastly, use the <code class="language-plaintext highlighter-rouge">Flutter</code> command to build the iOS app of the Flutter project for the release. And then, deploy the app by using <code class="language-plaintext highlighter-rouge">Fastlane</code>.</p><p>Deploying an app using <code class="language-plaintext highlighter-rouge">Fastlane</code> takes a lot of time. I set the timeout to <code class="language-plaintext highlighter-rouge">40 minutes</code> to ensure that I can use the free time of <code class="language-plaintext highlighter-rouge">GitHub Actions</code> up to 5 times.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="github-actions-to-execute-fastlane-for-android">GitHub Actions to execute Fastlane for Android</h2><p>Let’s create <code class="language-plaintext highlighter-rouge">GitHub Actions</code> to execute <code class="language-plaintext highlighter-rouge">Fastlane</code> which is configured to deploy Flutter apps to Android’s Google Play. Open the <code class="language-plaintext highlighter-rouge">./.github/workflows/main.yml</code> file and modify it like the following.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Publish iOS and Android App to App Store and Play Store</span>
 <span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
@@ -506,7 +506,7 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-java@v3</span>
         <span class="na">with</span><span class="pi">:</span>
@@ -519,24 +519,24 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">subosito/flutter-action@v2.8.0</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">flutter-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3.8'</span>
-      <span class="s">...</span>
+  <span class="err">    </span><span class="s">...</span>
 </code></pre></div></div><p>And then, install <code class="language-plaintext highlighter-rouge">Flutter</code> for building the Flutter project.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">release-ios</span><span class="pi">:</span>
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="s">with</span><span class="pi">:</span>
+      <span class="s">- uses</span><span class="err">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="s">with</span><span class="err">:</span>
           <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1.2'</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
+  <span class="err">    </span><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Fastlane</span>
         <span class="na">run</span><span class="pi">:</span> <span class="s">cd android &amp;&amp; bundle install &amp;&amp; cd ..</span>
       <span class="s">...</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Fastlane</code> is developed by Ruby, so to install and execute <code class="language-plaintext highlighter-rouge">Fastlane</code>, we need to install <code class="language-plaintext highlighter-rouge">Ruby</code>. Install <code class="language-plaintext highlighter-rouge">Fastlane</code> and required libraries by using <code class="language-plaintext highlighter-rouge">Ruby</code> installed.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
@@ -545,10 +545,10 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Install packages</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter pub get</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Install packages</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter pub get</span>
       <span class="s">...</span>
 </code></pre></div></div><p>Next, install the required packages for building the <code class="language-plaintext highlighter-rouge">Flutter</code> project.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 <span class="na">jobs</span><span class="pi">:</span>
@@ -556,12 +556,12 @@
     <span class="s">...</span>
   <span class="na">release-android</span><span class="pi">:</span>
     <span class="s">...</span>
-    <span class="s">steps</span><span class="pi">:</span>
+    <span class="s">steps</span><span class="err">:</span>
       <span class="s">...</span>
-      <span class="s">- name</span><span class="pi">:</span> <span class="s">Prebuild</span>
-        <span class="s">run</span><span class="pi">:</span> <span class="s">flutter build appbundle</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Execute Fastlane command</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">cd android &amp;&amp; fastlane release</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Prebuild</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">flutter build appbundle</span>
+      <span class="s">- name</span><span class="err">:</span> <span class="s">Execute Fastlane command</span>
+        <span class="s">run</span><span class="err">:</span> <span class="s">cd android &amp;&amp; fastlane release</span>
 </code></pre></div></div><p>Lastly, use the <code class="language-plaintext highlighter-rouge">Flutter</code> command to build the Android app of the Flutter project for the release. And then, deploy the app by using <code class="language-plaintext highlighter-rouge">Fastlane</code>.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="github-actions-full-code">GitHub Actions full code</h2><p>The full code of <code class="language-plaintext highlighter-rouge">GitHub Actions</code> introduced above is like the following. Use this <code class="language-plaintext highlighter-rouge">GitHub Actions</code> code to deploy your Flutter app.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Deploy iOS and Android App to App Store and Play Store</span>
 <span class="na">on</span><span class="pi">:</span>
   <span class="na">push</span><span class="pi">:</span>
