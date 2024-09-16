@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="ko"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/ko/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/ko/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/ko/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/ko/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/ko/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/ko/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/ko/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/ko/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/ko/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/ko/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/ko/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/ko/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/ko/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/ko/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/ko/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="React Native에서 ESLint, Prettier를 프로처럼 사용하기"/><meta name="twitter:description" content="React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>React Native에서 ESLint, Prettier를 프로처럼 사용하기 - React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.</title><meta name="description" content="React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다."/><meta http-equiv="Content-Language" content="ko"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/"/><meta property="og:url" content="https://deku.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="React Native에서 ESLint, Prettier를 프로처럼 사용하기"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ko"/><meta name="description" content="React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다."/><meta property="og:description" content="React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다."/><link rel="canonical" href="https://deku.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"/><meta property="og:url" content="https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/background.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2018-09-25T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/background.jpg"/><meta property="twitter:title" content="React Native에서 ESLint, Prettier를 프로처럼 사용하기"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-03-18T10:37:27+09:00","datePublished":"2018-09-25T00:00:00+09:00","description":"React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.","headline":"React Native에서 ESLint, Prettier를 프로처럼 사용하기","image":"https://deku.posstree.com/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/background.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"/><link rel="preload" as="style" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/ko/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/ko/assets/main.css?v=20240916"/><link rel="stylesheet" href="/ko/assets/main.css?v=20240916"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/ko/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://deku.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://deku.posstree.com/",
+      "logo": "https://deku.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "맥(Mac)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 맥(Mac)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":1,"url": "https://deku.posstree.com/ko/react-native/install-on-mac/",
+          "item": "https://deku.posstree.com/ko/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "윈도우(Windows)에 react native 개발 환경 구축하기",
+          "description" : "react-native로 앱을 개발하기 위해 윈도우(Windows)에 개발 환경을 구축해 보고, react-native로 생성한 프로젝트가 잘 동작하는지 확인해 봅니다.",
+          "position":2,"url": "https://deku.posstree.com/ko/react-native/install-on-windows/",
+          "item": "https://deku.posstree.com/ko/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "RN 설치",
+          "description" : "react-native를 설치하고 프로젝트가 동작하는지 확인한다.",
+          "position":3,"url": "https://deku.posstree.com/ko/react-native/installation/",
+          "item": "https://deku.posstree.com/ko/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 TypeScript 사용하기",
+          "description" : "react-native 프로젝트에 TypeScript를 적용하여 개발해 보자.",
+          "position":4,"url": "https://deku.posstree.com/ko/react-native/typescript/",
+          "item": "https://deku.posstree.com/ko/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 ESLint, Prettier를 프로처럼 사용하기",
+          "description" : "React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.",
+          "position":5,"url": "https://deku.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://deku.posstree.com/ko/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "react-native 스타일링을 위해 styled-components 라이브러리를 활용하는 방법에 대해 알아보자.",
+          "position":6,"url": "https://deku.posstree.com/ko/react-native/styled-components/",
+          "item": "https://deku.posstree.com/ko/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "react-navigation을 활용하여 어플을 개발해 보자.",
+          "position":7,"url": "https://deku.posstree.com/ko/react-native/react-navigation/",
+          "item": "https://deku.posstree.com/ko/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "react-navigation V5를 설치하고 사용하는 방법에 대해서 공유합니다.",
+          "position":8,"url": "https://deku.posstree.com/ko/react-native/react-navigation-v5/",
+          "item": "https://deku.posstree.com/ko/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "generator-rn-toolbox을 이용하여 앱 아이콘을 생성해보자.",
+          "position":9,"url": "https://deku.posstree.com/ko/react-native/app-icon/",
+          "item": "https://deku.posstree.com/ko/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splash 이미지",
+          "description" : "generator-rn-toolbox을 이용하여 Splash 이미지를 설정하자.",
+          "position":10,"url": "https://deku.posstree.com/ko/react-native/splash-image/",
+          "item": "https://deku.posstree.com/ko/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "기본 Component UI에 NativeBase 라이브러리를 사용해보자.",
+          "position":11,"url": "https://deku.posstree.com/ko/react-native/nativebase/",
+          "item": "https://deku.posstree.com/ko/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "react-native-vector-icons 라이브러리를 사용하여 아이콘을 표시해보자.",
+          "position":12,"url": "https://deku.posstree.com/ko/react-native/react-native-vector-icons/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "유저의 디바이스 정보를 얻기 위해 react-native-device-info 라이브러리를 사용해보자",
+          "position":13,"url": "https://deku.posstree.com/ko/react-native/react-native-device-info/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "react-native-tts를 사용하여 text-to-speech 기능을 구현해보자.",
+          "position":14,"url": "https://deku.posstree.com/ko/react-native/react-native-tts/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "구글 애드몹",
+          "description" : "구글 애드몹(google admob) 광고를 사용하기 위해 react-native-admob 라이브러리를 사용해 보자.",
+          "position":15,"url": "https://deku.posstree.com/ko/react-native/react-native-admob/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOS 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 디바이스에서 테스트해 봅시다.",
+          "position":16,"url": "https://deku.posstree.com/ko/react-native/ios-test-on-device/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":17,"url": "https://deku.posstree.com/ko/react-native/ios-running-on-device/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 개발자 등록",
+          "description" : "RN(react native)로 개발한 프로젝트를 iOS 앱 스토어(App store)에 등록하기 위해 애플 개발자 프로그램(Apple Developer Program)에 등록하는 방법에 대해서 알아봅시다.",
+          "position":18,"url": "https://deku.posstree.com/ko/react-native/ios-enroll-developer-program/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS 인증서(Certification)",
+          "description" : "애플 개발자 프로그램(Apple Developer Program) 등록을 완료했다면, 개발자 인증서(Certification)을 설정하는 방법에 대해 알아봅니다.",
+          "position":19,"url": "https://deku.posstree.com/ko/react-native/ios-certification/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "iOS의 TestFlight를 이용하여 개발한 어플을 테스터를 통해 테스트해 보자.",
+          "position":20,"url": "https://deku.posstree.com/ko/react-native/ios-testflight/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "iOS App store 등록",
+          "description" : "iOS 앱 스토어(App Store)에 등록하기 위해 필요한 항목에 대해 알아봅니다.",
+          "position":21,"url": "https://deku.posstree.com/ko/react-native/ios-app-store/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "RN(react native)로 개발한 앱을 구글 애널리틱스(Google Analytics)를 이용하여 앱을 분석해 봅시다.",
+          "position":22,"url": "https://deku.posstree.com/ko/react-native/react-native-analytics-bridge/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "react-native-firebase 라이브러리를 사용하여 Google Admob을 표시해보자.",
+          "position":23,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-admob/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 디바이스 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android) 디바이스에서 테스트해 봅시다.",
+          "position":24,"url": "https://deku.posstree.com/ko/react-native/android-test-on-device/",
+          "item": "https://deku.posstree.com/ko/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 빌드 및 테스트",
+          "description" : "RN(react native)로 개발한 프로젝트를 안드로이드(Android)용으로 빌드하고 디바이스에서 테스트해봅시다.",
+          "position":25,"url": "https://deku.posstree.com/ko/react-native/android-running-on-device/",
+          "item": "https://deku.posstree.com/ko/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS 시뮬레이터 변경",
+          "description" : "RN(react native)을 iOS에서 시뮬레이터로 테스트할 때 시뮬레이터를 변경하는 방법에 대해서 알아봅시다.",
+          "position":26,"url": "https://deku.posstree.com/ko/react-native/ios-change-simulator/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "react-native-firebase 라이브러리를 사용하여 좀 더 자세하게 앱을 분석해 보자",
+          "position":27,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-analytics/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash 분석",
+          "description" : "iOS App crash 로그(Log)를 분석하는 방법에 대해서 알아봅니다.",
+          "position":28,"url": "https://deku.posstree.com/ko/react-native/ios-app-crash-debugging/",
+          "item": "https://deku.posstree.com/ko/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "react-native-firebase를 사용하여 파이어베이스(Firebase)의 Crashlytics로 앱에서 crash가 발생했을 때 내용을 수집해봅시다.",
+          "position":29,"url": "https://deku.posstree.com/ko/react-native/firebase-crashlytics/",
+          "item": "https://deku.posstree.com/ko/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "react-native-animatable을 사용해서 간단하게 RN(react native)에 애니메이션을 추가해 보자.",
+          "position":30,"url": "https://deku.posstree.com/ko/react-native/react-native-animatable/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 개발자 등록",
+          "description" : "안드로이드 앱(Android App)을 등록하기 위해 안드로이드 개발자 등록을 해봅시다.",
+          "position":31,"url": "https://deku.posstree.com/ko/react-native/android-enroll-google-play-developer/",
+          "item": "https://deku.posstree.com/ko/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "안드로이드 앱 스토어 등록",
+          "description" : "RN(React Native)로 개발한 안드로이드 앱(Android App)을 안드로이드 앱 스토어(Google Play)에 등록해 봅시다.",
+          "position":32,"url": "https://deku.posstree.com/ko/react-native/android-google-play/",
+          "item": "https://deku.posstree.com/ko/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "사용자 음성 인식",
+          "description" : "RN(React Native) 프로젝트에서 react-native-voice 라이브러리를 사용하여 사용자 음성을 인식하여 문자로 변환해주는 기능을 추가해 봅시다.",
+          "position":33,"url": "https://deku.posstree.com/ko/react-native/react-native-voice/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "이메일 발송 기능",
+          "description" : "RN(React Native) 프로젝트에서 react-native-mail 라이브러리를 사용하여 단말기에 설치되어 있는 이메일 앱을 실행하고 이메일(email)을 보내봅시다.",
+          "position":34,"url": "https://deku.posstree.com/ko/react-native/react-native-mail/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "파일 시스템 사용",
+          "description" : "RN(React Native) 프로젝트에서 react-native-fs 라이브러리를 사용하여 파일을 읽고 써봅시다.",
+          "position":35,"url": "https://deku.posstree.com/ko/react-native/react-native-fs/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "애프터이펙트(AEF) 사용",
+          "description" : "RN(React Native) 프로젝트에서 어도비 애프터이펙트(Adobe After Effects)로 제작한 애니메이션을 적용해 보자.",
+          "position":36,"url": "https://deku.posstree.com/ko/react-native/react-native-lottie/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "스와이프 감지",
+          "description" : "RN(React Native) 프로젝트에서 유저가 화면에서 어느 방향으로 스와이프(Swipe) 했는지 감지하기 위해 react-native-swipe-gestures를 사용해 보자",
+          "position":37,"url": "https://deku.posstree.com/ko/react-native/react-native-swipe-gestures/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "그라데이션(Gradient)",
+          "description" : "RN(React Native) 프로젝트에서 react-native-linear-gradient을 사용해서 그라데이션(Gradient) 백그라운드(background)를 만들어 보자.",
+          "position":38,"url": "https://deku.posstree.com/ko/react-native/react-native-linear-gradient/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash 스크린",
+          "description" : "RN(React Native) 프로젝트에서 react-native-splash-screen를 사용하여 Splash 스크린을 원하는 시간에 종료하도록 만들어 보자.",
+          "position":39,"url": "https://deku.posstree.com/ko/react-native/react-native-splash-screen/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "앱 스토어 리뷰",
+          "description" : "RN(React Native) 프로젝트에서 react-native-rate를 사용하여 앱 스토어의 리뷰를 작성하도록 유도하는 방법에 대해서 설명합니다.",
+          "position":40,"url": "https://deku.posstree.com/ko/react-native/react-native-rate/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunes 파일 공유 기능",
+          "description" : "iTunes를 통해 RN(React Native)으로 제작한 앱에 파일을 공유하는 방법에 대해서 알아봅니다.",
+          "position":41,"url": "https://deku.posstree.com/ko/react-native/react-native-itunes-share-file/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "StatusBar 다루기",
+          "description" : "RN(React Native)에서 StatusBar를 다루는 방법에 대해서 설명합니다.",
+          "position":42,"url": "https://deku.posstree.com/ko/react-native/react-native-status-bar/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve) 태블릿 지원하기",
+          "description" : "RN(React Native) 프로젝트에서 태블릿 지원하는 방법에 대해서 알아봅시다.",
+          "position":43,"url": "https://deku.posstree.com/ko/react-native/react-native-support-tablet/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 sqlite 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 sqlite 데이터베이스를 사용하는 방법에 대해서 알아봅시다.",
+          "position":44,"url": "https://deku.posstree.com/ko/react-native/react-native-sqlite-storage/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)에서 커스텀 폰트 사용하기",
+          "description" : "RN(React Native) 프로젝트에서 커스텀 폰트를 적용하고 사용하는 방법에 대해서 알아봅시다.",
+          "position":45,"url": "https://deku.posstree.com/ko/react-native/react-native-custom-font/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "RN(React Native)에서 root import하기",
+          "description" : "RN(React Native) 프로젝트에서 import를 할때, root 폴더 기준으로 import할 수 있도록 프로젝트를 설정해 봅시다.",
+          "position":46,"url": "https://deku.posstree.com/ko/react-native/root-import/",
+          "item": "https://deku.posstree.com/ko/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "특정 파일로 앱 열기",
+          "description" : "웹이나 이메일로 받은 특정 파일(엑셀, 파워포인트 등)을 RN(React Native)로 제작한 앱으로 공유하는 방법에 대해서 설명합니다.",
+          "position":47,"url": "https://deku.posstree.com/ko/react-native/open-file-with-app/",
+          "item": "https://deku.posstree.com/ko/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notification",
+          "description" : "react-native-push-notification 라이브러리를 이용하여 Local Push Notification, 즉 앱(App) 자체에서 알림을 보내는 방법에 대해서 알아보겠습니다.",
+          "position":48,"url": "https://deku.posstree.com/ko/react-native/react-native-push-notification/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 App 아이콘 & Splash 이미지 만들기",
+          "description" : "react-native-make 라이브러리를 이용하여 App 아이콘과 Splash 이미지를 생성하는 방법에 대해서 알아봅니다.",
+          "position":49,"url": "https://deku.posstree.com/ko/react-native/react-native-make/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 현재 위치 정보 가져오기",
+          "description" : "react-native-geolocation-service 라이브러리를 이용하여 React Native에서 현재 위치 정보를 가져오는 방법에 대해서 알아봅시다.",
+          "position":50,"url": "https://deku.posstree.com/ko/react-native/react-native-geolocation-service/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 지도 표시하기",
+          "description" : "react-native-maps 라이브러리를 이용하여 React Native에서 지도를 사용하는 방법에 대해서 알아봅시다.",
+          "position":51,"url": "https://deku.posstree.com/ko/react-native/react-native-maps/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Fastlane을 통한 앱 자동 배포",
+          "description" : "Fastlane을 사용해서 React native로 만든 앱을 자동으로 배포해 보자",
+          "position":52,"url": "https://deku.posstree.com/ko/react-native/fastlane/",
+          "item": "https://deku.posstree.com/ko/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "react-native-image-modal을 사용해서 이미지를 전체 화면으로 표시해보고, pinch 확대, 축소 등을 사용해 보자",
+          "position":53,"url": "https://deku.posstree.com/ko/react-native/react-native-image-modal/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "react-native-image-picker을 사용해서 사진을 찍거나, 카메라 롤에서 사진을 가져오는 방법에 대해서 알아봅시다.",
+          "position":54,"url": "https://deku.posstree.com/ko/react-native/react-native-image-picker/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase(V5)를 이용한 Push message",
+          "description" : "React Native에서 푸시 메시지를 구현하기 위해, react-native-firebase(V5) 라이브러리를 사용하여 FCM(Firebase Cloud Messaging)을 사용해 봅시다.",
+          "position":55,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-fcm/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "React Native용 오픈소스 만들기",
+          "description" : "React Native용 오픈 소스를 제작하는 방법에 대해서 공유합니다.",
+          "position":56,"url": "https://deku.posstree.com/ko/react-native/make-opensource-library/",
+          "item": "https://deku.posstree.com/ko/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "React Native에 Multidex 설정하기",
+          "description" : "React Naitve 프로젝트에서 안드로이드에 Multidex를 설정하는 방법에 대해서 알아봅시다.",
+          "position":57,"url": "https://deku.posstree.com/ko/react-native/react-native-multidex/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 설치",
+          "description" : "React Native에서 Firebase를 사용하기 위해 react-native-firebase(V6)을 설치하는 방법에 대해서 알아봅시다.",
+          "position":58,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-installation/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Crashlytics를 사용하는 방법에 대해서 알아봅시다.",
+          "position":59,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "react-native-firebase(V6)을 사용하여 Firebase의 Admob을 사용하는 방법에 대해서 알아봅시다.",
+          "position":60,"url": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-admob/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Youtube 재생하기",
+          "description" : "React Native에서 Youtube를 재생하기 위해서 react-native-youtube를 사용하는 방법에 대해서 알아봅시다.",
+          "position":61,"url": "https://deku.posstree.com/ko/react-native/react-native-youtube/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 Admob의 Native Advanced 광고 사용하기",
+          "description" : "React Native에서 Admob의 Native Advanced 광고를 사용하기 위해 react-native-admob-native-ads 라이브러리를 사용하는 방법에 대해서 알아봅시다.",
+          "position":62,"url": "https://deku.posstree.com/ko/react-native/react-native-admob-native-ads/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "React Native에서 인앱 결제 구현하기",
+          "description" : "React Native에서 인앱 결제를 구현하기 위해 react-native-iap를 사용하는 방법에 대해서 알아봅시다.",
+          "position":63,"url": "https://deku.posstree.com/ko/react-native/react-native-iap/",
+          "item": "https://deku.posstree.com/ko/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub Actions와 Fastlane을 사용해서 React Native 앱 배포하기",
+          "description" : "GitHub Actions와 Fastlane을 사용해서 React Native로 개발한 앱을 자동으로 배포해 봅시다.",
+          "position":64,"url": "https://deku.posstree.com/ko/react-native/github-actions-fastlane/",
+          "item": "https://deku.posstree.com/ko/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="preload" as="style" href="/ko/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/ko/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" rel="preload" as="script"/><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/ko/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/vue/">Vue</a><a class="dropdown-item" href="/ko/code_quality/">Code Quality</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/ko/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/ko/golang/">Golang</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/essay/">에세이</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/web/">웹에 관한 지식</a><a class="dropdown-item" href="/ko/django/">장고(django)</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/eslint-prettier-husky-lint-staged/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/eslint-prettier-husky-lint-staged/">English</a><a class="dropdown-item menu-ja" href="/ko/react-native/eslint-prettier-husky-lint-staged/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/ko/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/ko/clog/">Clog</a><a class="dropdown-item" href="/ko/ildangongbu/">일단공부</a><a class="dropdown-item" href="/ko/vue/">Vue</a><a class="dropdown-item" href="/ko/code_quality/">Code Quality</a><a class="dropdown-item" href="/ko/git/">git</a><a class="dropdown-item" href="/ko/books/">책 집필</a><a class="dropdown-item" href="/ko/environment/">개발 환경</a><a class="dropdown-item" href="/ko/share/">공유</a><a class="dropdown-item" href="/ko/flutter/">Flutter</a><a class="dropdown-item" href="/ko/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/ko/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/ko/golang/">Golang</a><a class="dropdown-item" href="/ko/ruby/">Ruby</a><a class="dropdown-item" href="/ko/jest/">Jest</a><a class="dropdown-item" href="/ko/kumoncho/">kumoncho</a><a class="dropdown-item" href="/ko/blaboo/">BlaBoo</a><a class="dropdown-item" href="/ko/jekyll/">jekyll blog</a><a class="dropdown-item" href="/ko/essay/">에세이</a><a class="dropdown-item" href="/ko/react/">React</a><a class="dropdown-item" href="/ko/web/">웹에 관한 지식</a><a class="dropdown-item" href="/ko/django/">장고(django)</a><a class="dropdown-item" href="/ko/react-native/">React Native</a><a class="dropdown-item" href="/ko/laravel/">Laravel</a><a class="dropdown-item" href="/ko/kubernetes/">쿠버네티스</a><a class="dropdown-item" href="/ko/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/ko/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/ko/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/background.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>React Native에서 ESLint, Prettier를 프로처럼 사용하기</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-03-18 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/eslint-prettier-husky-lint-staged/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">React Native 프로젝트에 ESLint와 Prettier를 적용하는 방법과 Husky, lint-staged로 프로처럼 사용하는 방법에 대해서 알아봅니다.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/ko/react-native/eslint-prettier-husky-lint-staged/"><span itemprop="name">React Native에서 ESLint, Prettier를 프로처럼 사용하기</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#개요">개요</a></li><li><a href="#react-native-프로젝트-준비">React Native 프로젝트 준비</a></li><li><a href="#eslint">ESLint</a><ul><li><a href="#eslint-설치하기">ESLint 설치하기</a></li><li><a href="#eslint-설정하기">ESLint 설정하기</a></li><li><a href="#eslint-상세-설정">ESLint 상세 설정</a></li><li><a href="#eslint-실행-준비">ESLint 실행 준비</a></li><li><a href="#eslint-실행">ESLint 실행</a></li><li><a href="#eslint---fix">eslint –fix</a></li><li><a href="#vscode에서-eslint-사용하기">VSCode에서 ESLint 사용하기</a></li></ul></li><li><a href="#prettier">Prettier</a><ul><li><a href="#prettier-설치하기">Prettier 설치하기</a></li><li><a href="#prettier-설정하기">Prettier 설정하기</a></li><li><a href="#eslint에-prettier-설정하기">ESLint에 Prettier 설정하기</a></li><li><a href="#prettier-실행-준비">Prettier 실행 준비</a></li><li><a href="#prettier-실행">Prettier 실행</a></li><li><a href="#prettier---write">prettier –write</a></li><li><a href="#vscode에서-prettier-사용하기">VSCode에서 Prettier 사용하기</a></li></ul></li><li><a href="#eslint와-prettier를-프로처럼-사용하기">ESLint와 Prettier를 프로처럼 사용하기</a><ul><li><a href="#husky">Husky</a></li><li><a href="#lint-staged">lint-staged</a></li><li><a href="#husky와-lint-staged를-사용하기">Husky와 lint-staged를 사용하기</a></li></ul></li><li><a href="#문제-해결">문제 해결</a></li><li><a href="#완료">완료</a></li></ul></div><h2 id="개요">개요</h2><p>이번 블로그 포스트에서 ESLint와 Prettier가 무엇인지 알아보고, React Native에서 ESLint와 Prettier를 사용하는 방법에 대해서 알아보려고 합니다.</p><p>또한 Husky와 lint-staged를 알아보고, 프로처럼 사용하기 위한 설정을 살펴보도록 하겠습니다.</p><p>여기서 사용한 ESLint와 Prettier는 아래에 Github 저장소에서 확인하실 수 있습니다.</p><ul><li>Github: <a href="https://github.com/dev-yakuza/react-native-eslintrc-prettier" rel="nofollow noreferrer" target="_blank">react-native-eslintrc-prettier</a></li></ul><h2 id="react-native-프로젝트-준비">React Native 프로젝트 준비</h2><p>이번 블로그 포스트에서 소개하는 내용은, React Native에 TypeScript가 적용된 상태에서 ESLint를 적용하는 방법에 대해서 설명합니다.</p><p>React Native에 TypeScript를 적용하는 방법에 대해서는 아래에 링크를 확인하시기 바랍니다.</p><ul><li><a href="https://deku.posstree.com/ko/react-native/typescript/" target="_blank">React Native에 TypeScript를 적용하는 방법</a></li></ul><h2 id="eslint">ESLint</h2><p>ESLint란 ES(EcmaScript) + Lint(에러 코드 표식) 합성어로 <code class="language-plaintext highlighter-rouge">JavaScript</code> 코드를 분석하고, 코드의 스타일을 통일하도록 도와주는 툴입니다.</p><h3 id="eslint-설치하기">ESLint 설치하기</h3><p>아래에 명령어를 사용하여 ESLint를 React Native 프로젝트에 설치합니다. (React Native에는 기본적으로 ESLint가 설치되어있으므로 이 명령어는 스킵하셔도 됩니다.)</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd SampleApp</span>
+npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="eslint-설정하기">ESLint 설정하기</h3><p>이제 React Native 프로젝트에 ESLint를 설정하는 방법에 대해서 알아봅시다.</p><p>아래에 명령어를 사용하여 ESLint를 초기화합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd SampleApp</span>
+npx eslint <span class="nt">--init</span>
+</code></pre></div></div><p>위에 명령어를 실행하면, 아래와 같은 화면을 확인할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? How would you like to use ESLint? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+  To check syntax only
+  To check syntax and find problems
+❯ To check syntax, find problems, and enforce code style
+</code></pre></div></div><p>여기서는 문법 체크뿐만 아니라, 자동으로 수정까지 하게 하기 위해 <code class="language-plaintext highlighter-rouge">To check syntax, find problems, and enforce code style</code>를 선택합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What <span class="nb">type </span>of modules does your project use? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+❯ JavaScript modules <span class="o">(</span>import/export<span class="o">)</span>
+  CommonJS <span class="o">(</span>require/exports<span class="o">)</span>
+  None of these
+</code></pre></div></div><p>React Native에서는 주로 <code class="language-plaintext highlighter-rouge">import/export</code>을 사용하므로 <code class="language-plaintext highlighter-rouge">JavaScript modules (import/export)</code>을 선택하고 다음으로 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Which framework does your project use? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+❯ React
+  Vue.js
+  None of these
+</code></pre></div></div><p>React Native는 React를 기반으로 하기 때문에 <code class="language-plaintext highlighter-rouge">React</code>를 선택하고 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Does your project use TypeScript? <span class="o">(</span>y/N<span class="o">)</span>
+</code></pre></div></div><p>이 블로그 포스트에서는 <code class="language-plaintext highlighter-rouge">TypeScript</code>가 적용된 React Native 프로젝트에 ESLint를 설정하고 있는 중이기 때문에, <code class="language-plaintext highlighter-rouge">y</code>를 눌러 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Where does your code run? <span class="o">(</span>Press &lt;space&gt; to <span class="k">select</span>, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection<span class="o">)</span>
+ ◯ Browser
+❯◉ Node
+</code></pre></div></div><p>ESLint를 적용하려는 소스코드가 브라우저에서 실행이 되는지 여부를 물어보는 화면입니다. React Native는 브라우저에서 실행하지 않으므로 <code class="language-plaintext highlighter-rouge">Node</code>을 선택하고 진행합니다.</p><p>다른 선택지와는 다르게 Browser에서 스페이스바를 한번 누르고 Node에서 한번 더 눌러서 선택합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? How would you like to define a style <span class="k">for </span>your project? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+  Use a popular style guide
+❯ Answer questions about your style
+  Inspect your JavaScript file<span class="o">(</span>s<span class="o">)</span>
+</code></pre></div></div><p>어떤 스타일 가이드를 따를지 선택하는 화면입니다. 저는 <code class="language-plaintext highlighter-rouge">Answer questions about your style</code>을 선택하여 제가 사용하고 싶은 스타일을 적용하도록 선택하였습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What format <span class="k">do </span>you want your config file to be <span class="k">in</span>? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+❯ JavaScript
+  YAML
+  JSON
+</code></pre></div></div><p>ESLint에 설정 내용을 저장할 파일 형식을 선택하는 화면입니다. React Native에는 이미 <code class="language-plaintext highlighter-rouge">.eslintrc.js</code> 파일이 존재합니다. 이 파일을 덮어쓰기 위해 <code class="language-plaintext highlighter-rouge">JavaScript</code>를 선택하고 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What style of indentation <span class="k">do </span>you use? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+  Tabs
+❯ Spaces
+</code></pre></div></div><p>Indentation에 Tab을 사용할지 Space를 사용할지 여부를 물어봅니다. 저는 Space를 선호함으로 <code class="language-plaintext highlighter-rouge">Spaces</code>를 선택하고 진행하였습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What quotes <span class="k">do </span>you use <span class="k">for </span>strings? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+  Double
+❯ Single
+</code></pre></div></div><p>문자열에 Double Quotes(<code class="language-plaintext highlighter-rouge">"</code>)를 사용할지 Single Quote(<code class="language-plaintext highlighter-rouge">'</code>)를 사용할지 물어봅니다. 저는 Single Quote를 선호함으로 <code class="language-plaintext highlighter-rouge">Single</code>을 선택하고 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What line endings <span class="k">do </span>you use? <span class="o">(</span>Use arrow keys<span class="o">)</span>
+❯ Unix
+  Windows
+</code></pre></div></div><p>Line ending에 사용되는 형식을 선택하는 질문이 나옵니다. 저는 Mac 유저이므로 <code class="language-plaintext highlighter-rouge">Unix</code>를 선택하고 진행합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Do you require semicolons? <span class="o">(</span>Y/n<span class="o">)</span>
+</code></pre></div></div><p>마지막으로 Semicolon(<code class="language-plaintext highlighter-rouge">;</code>) 사용여부를 물어봅니다. 저는 Semicolon 사용을 선호하므로 <code class="language-plaintext highlighter-rouge">Y</code>를 눌러 진행하였습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The config that you<span class="s1">'ve selected requires the following dependencies:
+
+eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
+Successfully created .eslintrc.js file in /Users/dev-yakuza/projects/poma_app
+</span></code></pre></div></div><p>모든 설정이 완료되면 위와 같은 화면을 볼 수 있습니다. 위에 메세지에서도 알수 있지만 Warning이 표시되고 있습니다. 이런 문제들을 해결하기위해 상세 설정을 진행해야합니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="eslint-상세-설정">ESLint 상세 설정</h3><p>저는 <code class="language-plaintext highlighter-rouge">Answer questions about your style</code>을 선택해서 ESLint를 설정하였습니다. 기본적인 설정만 되었기 때문에 <code class="language-plaintext highlighter-rouge">React</code>와 <code class="language-plaintext highlighter-rouge">TypeScript</code>를 사용하기 위한 상세 설정을 해야합니다.</p><p>아래에 명령어로 설정에 필요한 추가 플러그인을 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-plugin-react @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react-hooks
+</code></pre></div></div><p>상세 설정을 하기 위해, <code class="language-plaintext highlighter-rouge">.eslintrc.js</code> 파일을 열고 아래와 같이 수정합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">env</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">es6</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">node</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">jest</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">extends</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">eslint:recommended</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">plugin:react/recommended</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">plugin:react-hooks/recommended</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">plugin:@typescript-eslint/eslint-recommended</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">plugin:@typescript-eslint/recommended</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">plugin:@typescript-eslint/recommended-requiring-type-checking</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">parserOptions</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">project</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./tsconfig.json</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">react-hooks</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">@typescript-eslint</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">rules</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">indent</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span> <span class="na">SwitchCase</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}],</span>
+    <span class="na">quotes</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">single</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">avoidEscape</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}],</span>
+    <span class="p">...,</span>
+    <span class="dl">'</span><span class="s1">no-empty-function</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">off</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">@typescript-eslint/no-empty-function</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">off</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">react/display-name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">off</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">react/prop-types</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">off</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">settings</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">react</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">version</span><span class="p">:</span> <span class="dl">'</span><span class="s1">detect</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div><h3 id="eslint-실행-준비">ESLint 실행 준비</h3><p>이제 ESLint로 React Native 프로젝트를 검사하기 위해 아래와 같이 <code class="language-plaintext highlighter-rouge">package.json</code> 파일을 수정합니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"lint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eslint --ext .tsx --ext .ts src/"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><p>저는 모든 소스코드를 <code class="language-plaintext highlighter-rouge">src</code> 폴더에 넣고 관리하기 때문에 위와 같이 특정 폴더를 지정하였습니다. 만약 root 폴더에서 파일을 관리한다면 아래와 같이 기본 설정을 그대로 사용하시면 됩니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"lint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eslint ."</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="eslint-실행">ESLint 실행</h3><p>이제 아래에 명령어를 통해 ESLint를 실행해 봅니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run lint
+</code></pre></div></div><p>그러면 아래와 같은 결과를 얻을 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   1:8   error  A space is required after <span class="s1">'{'</span>                             object-curly-spacing
+   1:50  error  A space is required before <span class="s1">'}'</span>                            object-curly-spacing
+   2:8   error  A space is required after <span class="s1">'{'</span>                             object-curly-spacing
+   2:29  error  A space is required before <span class="s1">'}'</span>                            object-curly-spacing
+   ...
+  11:25  error  Unable to resolve path to module <span class="s1">'./RequestSite'</span>          import/no-unresolved
+  11:25  error  Missing file extension <span class="k">for</span> <span class="s2">"./RequestSite"</span>                import/extensions
+  12:25  error  Unable to resolve path to module <span class="s1">'./CheckServer'</span>          import/no-unresolved
+  12:25  error  Missing file extension <span class="k">for</span> <span class="s2">"./CheckServer"</span>                import/extensions
+
+✖ 22 problems <span class="o">(</span>22 errors, 0 warnings<span class="o">)</span>
+  4 errors and 0 warnings potentially fixable with the <span class="sb">`</span><span class="nt">--fix</span><span class="sb">`</span> option.
+</code></pre></div></div><p>위와 같이 우리가 설정한 ESLint 설정에 따른 소스코드의 문제점들을 확인할 수 있습니다.</p><h3 id="eslint-fix">eslint –fix</h3><p>위에 표시된 에러는 ESLint의 설정을 지키지 않았기 때문에 발생하였습니다. 물론 소스코드를 열고 하나씩 수정해도 되지만, 아래에 명령어를 사용하여 모든 에러를 빠르게 고칠 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npx eslint . --fix</span>
+npx eslint ./src/<span class="k">**</span>/<span class="k">*</span>.tsx <span class="nt">--fix</span>
+</code></pre></div></div><p>많은 에러가 나오겠지만, 자동으로 수정해줍니다. 정말로 수정이 되었는지 확인하기 위해 아래에 명령어를 실행해 봅니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run lint
+</code></pre></div></div><p>그럼 이전과는 다르게 아무 메세지도 표시되지 않는 것을 확인할 수 있습니다.</p><p>만약, 아직도 에러메세지가 나온다면, 해당 소스코드를 열고 수정하시기 바랍니다!</p><h3 id="vscode에서-eslint-사용하기">VSCode에서 ESLint 사용하기</h3><p>만약, 여러분이 VSCode를 사용하신다면 <code class="language-plaintext highlighter-rouge">ESLint</code> Extension을 사용하시길 권장합니다. ESLint Extension을 설치하면 파일을 저장할 때, <code class="language-plaintext highlighter-rouge">eslint --fix</code>와 동일하게 ESLint에 규칙에 맞게 자동으로 수정할 수 있습니다.</p><picture><source srcset="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-eslint-extension.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-eslint-extension.webp" type="image/webp"/><img src="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-eslint-extension.jpg" alt="VSCode ESLint Extension"/></picture><p>설치가 완료되었다면 VSCode의 설정파일을 열고 아래와 같이 수정합니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"editor.codeActionsOnSave"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"source.fixAll.eslint"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><p>이렇게 수정하면 파일을 저장할 때, ESLint의 설정에 맞게 자동으로 수정해 줍니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="prettier">Prettier</h2><p>Prettier란 Code Formatter로써, 정해진 규칙에 따라 코드 스타일을 통일 시켜줍니다. ESLint가 JavaScript에 한정된 Code Formatter였다면, Prettier는 전체 코드 스타일을 다루는 Code Formatter입니다.</p><h3 id="prettier-설치하기">Prettier 설치하기</h3><p>아래에 명령어로 Prettier를 사용하기 위한 라이브러리를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> prettier eslint-plugin-prettier
+</code></pre></div></div><h3 id="prettier-설정하기">Prettier 설정하기</h3><p>React Native로 프로젝트를 생성하면 기본적으로 <code class="language-plaintext highlighter-rouge">.prettierrc.js</code> 파일이 생성됩니다. 해당 파일을 열어보면 다음과 같습니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">bracketSpacing</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div><p>이 파일을 <code class="language-plaintext highlighter-rouge">ESLint</code>와 함께 사용하기 위해 다음과 같이 수정합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">printWidth</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="eslint에-prettier-설정하기">ESLint에 Prettier 설정하기</h3><p>Prettier를 ESLint와 함께 사용하기 위해서는 ESLint 설정에 Prettier를 설정할 필요가 있습니다. <code class="language-plaintext highlighter-rouge">.eslintrc.js</code> 파일을 열고 아래와 같이 수정합니다.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">react-hooks</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">@typescript-eslint</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">prettier</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">rules</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="dl">'</span><span class="s1">prettier/prettier</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></div><h3 id="prettier-실행-준비">Prettier 실행 준비</h3><p>이제 Prettier로 소스코드를 Formatting하기 위해 아래와 같이 <code class="language-plaintext highlighter-rouge">package.json</code> 파일을 수정합니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prettier --check ./src"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="prettier-실행">Prettier 실행</h3><p>이제 아래에 명령어를 통해 Prettier를 실행해 봅니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run format
+</code></pre></div></div><p>그러면 아래와 같은 결과를 얻을 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+src/Screen/ResetPassword/index.tsx
+src/Screen/SignUp/index.tsx
+src/Screen/SiteViewer/index.tsx
+src/Util/Validation/index.tsx
+Code style issues found <span class="k">in </span>the above file<span class="o">(</span>s<span class="o">)</span><span class="nb">.</span> Forgot to run Prettier?
+</code></pre></div></div><p>Prettier는 위와 같이 Formatting이 잘못된 파일 리스트들을 찾아줍니다.</p><h3 id="prettier-write">prettier –write</h3><p>위에 표시된 파일 리스트는 Prettier의 설정을 지키지 않았기 때문에 발생하였습니다. 이렇게 문제가 있는 파일들은 아래에 명령어를 사용하여 고칠 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx prettier <span class="nt">--write</span> ./src
+</code></pre></div></div><p>수정이 완료되면 아래와 같은 결과 화면을 볼 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+src/Screen/RequestSite/index.tsx 235ms
+src/Screen/ResetPassword/index.tsx 92ms
+src/Screen/SignUp/index.tsx 174ms
+src/Screen/SiteViewer/index.tsx 124ms
+src/Theme.tsx 12ms
+src/Util/Validation/index.tsx 11ms
+</code></pre></div></div><p>다시 아래에 명령어를 사용하여 코드를 검사해 봅니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run format
+</code></pre></div></div><p>이전과는 다르게 아래와 같은 메세지를 확인할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+Checking formatting...
+All matched files use Prettier code style!
+</code></pre></div></div><h3 id="vscode에서-prettier-사용하기">VSCode에서 Prettier 사용하기</h3><p>만약, 여러분이 VSCode를 사용하신다면 <code class="language-plaintext highlighter-rouge">Prettier</code> Extension을 사용하시길 권장합니다. Prettier Extension을 설치하면 파일을 저장할 때, <code class="language-plaintext highlighter-rouge">prettier --write</code>와 동일하게 Prettier에 규칙에 맞게 자동으로 수정할 수 있습니다.</p><picture><source srcset="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-prettier-extension.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-prettier-extension.webp" type="image/webp"/><img src="/assets/images/category/react-native/2018/eslint-prettier-husky-lint-staged/vscode-prettier-extension.jpg" alt="VSCode Prettier Extension"/></picture><p>설치가 완료되었다면 VSCode의 설정파일을 열고 아래와 같이 수정합니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"editor.formatOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><p>이렇게 수정하면 파일을 저장할 때, Prettier의 설정에 맞게 자동으로 수정해 줍니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="eslint와-prettier를-프로처럼-사용하기">ESLint와 Prettier를 프로처럼 사용하기</h2><p>지금까지 ESLint와 Prettier가 무엇인지, 그리고 어떻게 사용하는지에 대해서 알아보았습니다. 이제 실전에서 프로처럼 사용하기 위해 <code class="language-plaintext highlighter-rouge">Husky</code>와 <code class="language-plaintext highlighter-rouge">lint-staged</code>를 활용하는 방법에 대해서 알아보도록 하겠습니다.</p><h3 id="husky">Husky</h3><p>Git는 Hook이라는 기능을 가지고 있습니다. Git에서 특정 이벤트(커밋, 푸쉬 등)를 실행할 때, 그 이벤트에 Hook을 설정하여 Hook에 설정된 스크립트를 실행할 수 있습니다.</p><p>Husky란 Git Hook을 간편하게 사용할 수 있도록 도와주는 툴입니다.</p><p>그럼 Husky를 사용하기 위해 아래에 명령어로 Husky를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> husky
+</code></pre></div></div><h3 id="lint-staged">lint-staged</h3><p>Husky와 함께 자주 사용되는 <code class="language-plaintext highlighter-rouge">lint-staged</code>는 Git의 Staged된 상태에 파일들에 특정 명령어를 실행할 수 있도록 해주는 툴입니다.</p><p>Git의 Staged된 상태란 <code class="language-plaintext highlighter-rouge">git add</code> 명령어로 수정된 파일을 커밋하기 위해 추가한 상태를 말합니다. 이렇게 Staged 상태에 파일들은 다시 수정하게 되면 <code class="language-plaintext highlighter-rouge">git add</code>로 다시 추가해 주어야 합니다.</p><p>lint-staged는 Staged된 파일을 수정한 후 다시 git add를 하지 않아도 문제가 없도록 도와주는 툴입니다.</p><p>그럼 Husky와 함께 <code class="language-plaintext highlighter-rouge">lint-staged</code>를 사용하기 위해 아래에 명령어로 lint-staged를 설치합니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> lint-staged
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="husky와-lint-staged를-사용하기">Husky와 lint-staged를 사용하기</h3><p>이제 Husky와 lint-staged를 사용하여 Git의 Commit을 사용할 때, ESLint와 Prettier를 실행하도록 설정해 보도록 하겠습니다.</p><p>Husky와 lint-staged를 설정하기 위해 <code class="language-plaintext highlighter-rouge">package.json</code> 파일을 열고 아래와 같이 수정합니다.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"lint-staged"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"src/**/*.{ts,tsx}"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"eslint --ext .tsx --ext .ts src/ --fix"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"./src/**"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"prettier --write ."</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"husky"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"hooks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lint-staged"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><p>Husky를 사용하여 Git의 Commit을 실행하기 전(<code class="language-plaintext highlighter-rouge">pre-commit</code>)에 lint-staged를 실행하도록 하였습니다. lint-staged 설정에는 소스코드(<code class="language-plaintext highlighter-rouge">src/**/*.{ts,tsx}</code>, <code class="language-plaintext highlighter-rouge">*</code>)가 추가/변경된 경우, <code class="language-plaintext highlighter-rouge">eslint --fix</code>와 <code class="language-plaintext highlighter-rouge">prettier --write</code>를 실행하도록 하였습니다.</p><p>이제 Git의 Commit을 사용하여 소스코드를 저장소(Repository)에 올리기 전에 ESLint와 Prettier를 실행하여 소스코드를 항상 잘 정리된 상태로 관리할 수 있게 되었습니다.</p><h2 id="문제-해결">문제 해결</h2><p>위에 설정을 사용하는 React Native에서 아래와 같은 에러가 발생하였습니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>husky <span class="o">&gt;</span> pre-commit <span class="o">(</span>node v13.8.0<span class="o">)</span>
+  ✔ Preparing...
+  ❯ Running tasks...
+    ↓ Running tasks <span class="k">for </span>src/<span class="k">**</span>/<span class="k">*</span>.<span class="o">{</span>ts,tsx<span class="o">}</span> <span class="o">[</span>skipped]
+      → No staged files match src/<span class="k">**</span>/<span class="k">*</span>.<span class="o">{</span>ts,tsx<span class="o">}</span>
+    ❯ Running tasks <span class="k">for</span> <span class="k">*</span>
+      ✖ prettier <span class="nt">--write</span> <span class="nb">.</span>
+  ↓ Applying modifications... <span class="o">[</span>skipped]
+    → Skipped because of errors from tasks.
+  ✔ Reverting to original state...
+  ✔ Cleaning up...
+...
+src/Theme.tsx 4ms
+tsconfig.json 5ms
+<span class="o">[</span>error] No parser could be inferred <span class="k">for </span>file: src/image.jpg
+</code></pre></div></div><p>이렇게 <code class="language-plaintext highlighter-rouge">Prettier</code>가 분석을 할 수 없는 파일이거나, 체크를 할 필요가 없는 파일들 때문에 문제가 발생할 경우가 있습니다. 이런 경우 <code class="language-plaintext highlighter-rouge">.prettierignore</code> 파일을 생성하고 아래와 같이 수정해 줍니다.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">*</span>.jpg
+</code></pre></div></div><p>저는 우선 <code class="language-plaintext highlighter-rouge">.prettierignore</code> 파일을 만들고 <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일의 내용을 복사하였습니다. 그리고 하단에 추가로 에러가 발생하는 파일을 추가하였습니다.</p><h2 id="완료">완료</h2><p>이것으로 React Native 프로젝트에 ESLint와 Prettier를 설정하고 Husky와 lint-staged를 통해 자동화하는 방법에 대해서 알아보았습니다.</p><p>위에서 설명한 ESLint 설정과 Prettier 설정은 아래에 Github 저장소에서 확인이 가능합니다. 혹시 궁금하신 분들은 아래에 링크를 참고하시기 바랍니다.</p><ul><li>Github: <a href="https://github.com/dev-yakuza/react-native-eslintrc-prettier" rel="nofollow noreferrer" target="_blank">react-native-eslintrc-prettier</a></li></ul><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 제 블로그가 도움이 되셨나요? 하단의 댓글을 달아주시면 저에게 큰 힘이 됩니다! </code></p><h2>앱 홍보</h2><div class="book-greeting"> 지금 보고 계신 블로그를 작성하는 <code class="highlighter-rouge">Deku</code>가 개발한 앱을 한번 사용해보세요.<br/><code class="highlighter-rouge">Deku</code>가 개발한 앱은 Flutter로 개발되었습니다.<br/><br/> 관심있으신 분들은 앱을 다운로드하여 사용해 주시면 정말 감사하겠습니다.<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/blaboo/ko/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="어린이용 단어 공부앱, 블라부"/><div><div class="app_description">어린이용 단어 공부 앱</div><div class="app_title">블라부</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/clog/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/clog.png" alt="세상의 모든 정보를 모아보다, 씨로그"/><div><div class="app_description">세상의 모든 정보를 모아보다</div><div class="app_title">씨로그</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/ildangongbu/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/ildangongbu.png" alt="JLPT 일본어 단어앱, 일단 공부"/><div><div class="app_description">JLPT 일본어 단어앱</div><div class="app_title">일단 공부</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/toeicwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/toeicwords.png" alt="토익 영어 단어앱, 토익 단어앱"/><div><div class="app_description">토익 영어 단어앱</div><div class="app_title">토익 단어앱</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/secondaryenglish/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/secondaryenglish.png" alt="중고등 영어 단어앱, 중고등 영단어앱"/><div><div class="app_description">중고등 영어 단어앱</div><div class="app_title">중고등 영단어앱</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/hskwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/hskwords.png" alt="HSK 중국어 단어앱, 중국어 단어앱"/><div><div class="app_description">HSK 중국어 단어앱</div><div class="app_title">중국어 단어앱</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/germanwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/germanwords.png" alt="독일어 단어앱, 독일어 단어장"/><div><div class="app_description">독일어 단어앱</div><div class="app_title">독일어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/russianwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/russianwords.png" alt="러시아어 단어앱, 러시아어 단어장"/><div><div class="app_description">러시아어 단어앱</div><div class="app_title">러시아어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/arabicwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/arabicwords.png" alt="아랍어 단어앱, 아랍어 단어장"/><div><div class="app_description">아랍어 단어앱</div><div class="app_title">아랍어 단어장</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/indonesianwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/indonesianwords.png" alt="인도네시아 단어앱, 인도네시아 단어장"/><div><div class="app_description">인도네시아 단어앱</div><div class="app_title">인도네시아 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/frenchwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/frenchwords.png" alt="프랑스어 단어앱, 프랑스어 단어장"/><div><div class="app_description">프랑스어 단어앱</div><div class="app_title">프랑스어 단어장</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/ko/app/spanishwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/spanishwords.png" alt="스페인어 단어앱, 스페인어 단어장"/><div><div class="app_description">스페인어 단어앱</div><div class="app_title">스페인어 단어장</div></div></a></div></div></div><h2>책 홍보</h2><div class="book-greeting"> 블로그를 운영하면서 좋은 기회가 생겨 책을 출판하게 되었습니다. <br/><br/> 아래 링크를 통해 제가 쓴 책을 구매하실 수 있습니다.<br/> 많은 분들에게 도움이 되면 좋겠네요.<br/><br/><div class="row" style="display: flex; justify-content: center;"><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"><div><a href="https://coupa.ng/bMMos6" target="_blank" referrerpolicy="unsafe-url"><img src="https://static.coupangcdn.com/image/affiliate/banner/b95772cbabc4ca68f13398b6d001d523@2x.jpg" alt="스무디 한 잔 마시며 끝내는 React Native, 비제이퍼블릭" style="width: 140px;"/></a></div><div><ul><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/bMMos6" referrerpolicy="unsafe-url" style="display: inline-block;">구매하기</a></li><li> yes24: <a target="_blank" rel="noopener" href="https://www.yes24.com/Product/Goods/82895471" style="display: inline-block;">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="https://product.kyobobook.co.kr/detail/S000001934238" style="display: inline-block;">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=216744127" style="display: inline-block;">구매하기</a></li></ul></div></div><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"><div><a href="https://coupa.ng/b2q2jo" target="_blank" referrerpolicy="unsafe-url"><img src="https://static.coupangcdn.com/image/affiliate/banner/b1adb4aa04d9020b64437a41d0eb5d56@2x.jpg" alt="스무디 한 잔 마시며 끝내는 리액트 + TDD, 비제이퍼블릭" style="width: 140px;"></a></div><div><ul><li> 쿠팡: <a target="_blank" rel="noopener" href="https://coupa.ng/b2qM3D" referrerpolicy="unsafe-url" style="display: inline-block;">구매하기</a></li><li> yes24: <a target="_blank" rel="noopener" href="https://www.yes24.com/Product/Goods/102280451" style="display: inline-block;">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="https://product.kyobobook.co.kr/detail/S000001842185" style="display: inline-block;">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=273805547" style="display: inline-block;">구매하기</a></li></ul></div></div></div><div class="row" style="display: flex; justify-content: center;"><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"><div><a href="https://link.coupang.com/a/blh8s3" target="_blank" referrerpolicy="unsafe-url"><img src="https://img1c.coupangcdn.com/image/affiliate/banner/7cba8cb0601eebaf88a17a0c3cf65a63@2x.jpg" alt="[심통]현장에서 바로 써먹는 리액트 with 타입스크립트 : 리액트와 스토리북으로 배우는 컴포넌트 주도 개발, 심통" style="width: 140px;"/></a></div><div><ul><li> 쿠팡: <a target="_blank" rel="noopener" href="https://link.coupang.com/a/blh8s3" referrerpolicy="unsafe-url" style="display: inline-block;">구매하기</a></li><li> yes24: <a target="_blank" rel="noopener" href="https://www.yes24.com/Product/Goods/119695609" style="display: inline-block;">구매하기</a></li><li> 교보문고: <a target="_blank" rel="noopener" href="https://product.kyobobook.co.kr/detail/S000202707764" style="display: inline-block;">구매하기</a></li><li> 알라딘: <a target="_blank" rel="noopener" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=319109984" style="display: inline-block;">구매하기</a></li></ul></div></div><div class="col-lg-6 col-md-6 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;"></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/ko/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=React Native에서 ESLint, Prettier를 프로처럼 사용하기&url=https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://deku.posstree.com/ko/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2024 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20240916"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script></body></html>

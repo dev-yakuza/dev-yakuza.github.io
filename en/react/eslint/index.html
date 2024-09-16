@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/en/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/en/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/en/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/en/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/en/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/en/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/en/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/en/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/en/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/en/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/en/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/en/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/en/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/en/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/en/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="[React] ESLint"/><meta name="twitter:description" content="Let's see how to use ESLint in React to find errors and bugs by analyzing the source code."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>[React] ESLint - Let's see how to use ESLint in React to find errors and bugs by analyzing the source code.</title><meta name="description" content="Let&#39;s see how to use ESLint in React to find errors and bugs by analyzing the source code."/><meta http-equiv="Content-Language" content="en"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/react/eslint/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/react/eslint/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/react/eslint/"/><meta property="og:url" content="https://deku.posstree.com/en/react/eslint/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="[React] ESLint"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="en"/><meta name="description" content="Let’s see how to use ESLint in React to find errors and bugs by analyzing the source code."/><meta property="og:description" content="Let’s see how to use ESLint in React to find errors and bugs by analyzing the source code."/><link rel="canonical" href="https://deku.posstree.com/en/react/eslint/"/><meta property="og:url" content="https://deku.posstree.com/react/eslint/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/react/2021/eslint/background.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2021-06-12T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/react/2021/eslint/background.jpg"/><meta property="twitter:title" content="[React] ESLint"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-01-25T13:22:36+09:00","datePublished":"2021-06-12T00:00:00+09:00","description":"Let’s see how to use ESLint in React to find errors and bugs by analyzing the source code.","headline":"[React] ESLint","image":"https://deku.posstree.com/assets/images/category/react/2021/eslint/background.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/react/eslint/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/react/eslint/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"/><link rel="preload" as="style" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/en/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/en/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/en/assets/main.css?v=20240916"/><link rel="stylesheet" href="/en/assets/main.css?v=20240916"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/en/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://deku.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://deku.posstree.com/",
+      "logo": "https://deku.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "Start React With Webpack",
+          "description" : "let's see how to configure Webpack for starting React, and let's make simple React project.",
+          "position":1,"url": "https://deku.posstree.com/en/react/start/",
+          "item": "https://deku.posstree.com/en/react/start/"},{
+          "@type":"ListItem",
+          "name": "Use Typescript In React",
+          "description" : "let's see how to set Typescript in React, and how to use Typescript in Recat simply",
+          "position":2,"url": "https://deku.posstree.com/en/react/typescript/",
+          "item": "https://deku.posstree.com/en/react/typescript/"},{
+          "@type":"ListItem",
+          "name": "Use styled-components in React",
+          "description" : "let's see how to use styled-components in React.",
+          "position":3,"url": "https://deku.posstree.com/en/react/styled-components/",
+          "item": "https://deku.posstree.com/en/react/styled-components/"},{
+          "@type":"ListItem",
+          "name": "Make Import path based on Root in React",
+          "description" : "when import Component in React, let's make import path based on Root.",
+          "position":4,"url": "https://deku.posstree.com/en/react/root-import/",
+          "item": "https://deku.posstree.com/en/react/root-import/"},{
+          "@type":"ListItem",
+          "name": "React Router",
+          "description" : "let's see how to use react-router to route the page in React.",
+          "position":5,"url": "https://deku.posstree.com/en/react/react-router/",
+          "item": "https://deku.posstree.com/en/react/react-router/"},{
+          "@type":"ListItem",
+          "name": "Images And Web Font in React",
+          "description" : "let's see how to use Images and Web Font in React project based on Webpack.",
+          "position":6,"url": "https://deku.posstree.com/en/react/image-and-font/",
+          "item": "https://deku.posstree.com/en/react/image-and-font/"},{
+          "@type":"ListItem",
+          "name": "What is React",
+          "description" : "Let's see what React is and what the characteristics of React are.",
+          "position":7,"url": "https://deku.posstree.com/en/react/create-react-app/react/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/react/"},{
+          "@type":"ListItem",
+          "name": "create-react-app",
+          "description" : "Let's see how to use create-react-app to create a new React project",
+          "position":8,"url": "https://deku.posstree.com/en/react/create-react-app/start/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/start/"},{
+          "@type":"ListItem",
+          "name": "TypeScript in create-react-app",
+          "description" : "Let's see how to apply TypeScript to the React project created by create-react-app.",
+          "position":9,"url": "https://deku.posstree.com/en/react/create-react-app/typescript/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/typescript/"},{
+          "@type":"ListItem",
+          "name": "[TypeScript] Make Import path based on Root in create-react-app",
+          "description" : "Let's see how to use the absolute path for importing components in the create-react-app project with TypeScript.",
+          "position":10,"url": "https://deku.posstree.com/en/react/create-react-app/root-import/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/root-import/"},{
+          "@type":"ListItem",
+          "name": "styled-components in create-react-app",
+          "description" : "Let's see how to apply and use styled-components to the React project created by create-react-app.",
+          "position":11,"url": "https://deku.posstree.com/en/react/create-react-app/styled-components/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/styled-components/"},{
+          "@type":"ListItem",
+          "name": "Jest",
+          "description" : "create-react-app uses Jest for the testing. So, let's see how to use Jest.",
+          "position":12,"url": "https://deku.posstree.com/en/react/create-react-app/jest/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/jest/"},{
+          "@type":"ListItem",
+          "name": "Test with react-testing-library in create-react-app",
+          "description" : "Let's see how to use react-testing-library to test the React project created by create-react-app.",
+          "position":13,"url": "https://deku.posstree.com/en/react/create-react-app/react-testing-library/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/react-testing-library/"},{
+          "@type":"ListItem",
+          "name": "[React] Prettier",
+          "description" : "Let's see how to keep the same code format by Prettier in React.",
+          "position":14,"url": "https://deku.posstree.com/en/react/prettier/",
+          "item": "https://deku.posstree.com/en/react/prettier/"},{
+          "@type":"ListItem",
+          "name": "[React] ESLint",
+          "description" : "Let's see how to use ESLint in React to find errors and bugs by analyzing the source code.",
+          "position":15,"url": "https://deku.posstree.com/en/react/eslint/",
+          "item": "https://deku.posstree.com/en/react/eslint/"},{
+          "@type":"ListItem",
+          "name": "[React] husky, lint-staged",
+          "description" : "Let's see how to use husky and lint-staged to execute ESLint and Prettier automatically when you commit the code to Git.",
+          "position":16,"url": "https://deku.posstree.com/en/react/husky-lint-staged/",
+          "item": "https://deku.posstree.com/en/react/husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "[React] GitHub Actions for Prettier and ESLint",
+          "description" : "Let's see how to execute Prettier and ESLint by GitHub Actions in React.",
+          "position":17,"url": "https://deku.posstree.com/en/react/github-actions/prettier-eslint/",
+          "item": "https://deku.posstree.com/en/react/github-actions/prettier-eslint/"},{
+          "@type":"ListItem",
+          "name": "[React] Props and State",
+          "description" : "Let's see what Props and State are and how to use Props and State to manage the data in React.",
+          "position":18,"url": "https://deku.posstree.com/en/react/props-state/",
+          "item": "https://deku.posstree.com/en/react/props-state/"},{
+          "@type":"ListItem",
+          "name": "[React] Context API",
+          "description" : "Let's see how to use Context API to manage the global data in React.",
+          "position":19,"url": "https://deku.posstree.com/en/react/context-api/",
+          "item": "https://deku.posstree.com/en/react/context-api/"},{
+          "@type":"ListItem",
+          "name": "React Router in create-react-app",
+          "description" : "Let's see how to use react-router in the React project with create-react-app.",
+          "position":20,"url": "https://deku.posstree.com/en/react/create-react-app/react-router/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/react-router/"},{
+          "@type":"ListItem",
+          "name": "[React] Deploy to GitHub Pages",
+          "description" : "Let's deploy the React project created by create-react-app to GitHub Pages.",
+          "position":21,"url": "https://deku.posstree.com/en/react/github-pages/",
+          "item": "https://deku.posstree.com/en/react/github-pages/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Getting Started",
+          "description" : "Let's see how to create and start the React project with Next.js.",
+          "position":22,"url": "https://deku.posstree.com/en/react/nextjs/start/",
+          "item": "https://deku.posstree.com/en/react/nextjs/start/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] TypeScript",
+          "description" : "Let's see how to apply and use TypeScript in the Next.js project.",
+          "position":23,"url": "https://deku.posstree.com/en/react/nextjs/typescript/",
+          "item": "https://deku.posstree.com/en/react/nextjs/typescript/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Prettier",
+          "description" : "Let's see how to configure Prettier in Next.js.",
+          "position":24,"url": "https://deku.posstree.com/en/react/nextjs/prettier/",
+          "item": "https://deku.posstree.com/en/react/nextjs/prettier/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Absolute path",
+          "description" : "Let's see how to use absolute path to import components in Next.js with TypeScript.",
+          "position":25,"url": "https://deku.posstree.com/en/react/nextjs/absolute_path/",
+          "item": "https://deku.posstree.com/en/react/nextjs/absolute_path/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Test",
+          "description" : "Let's see how to configure Jest and React Testing Library to test the Next.js project based on TypeScript.",
+          "position":26,"url": "https://deku.posstree.com/en/react/nextjs/test/",
+          "item": "https://deku.posstree.com/en/react/nextjs/test/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Storybook",
+          "description" : "Le's see how to use Storybook in Next.js based on TypeScript for Component Driven Development.",
+          "position":27,"url": "https://deku.posstree.com/en/react/nextjs/storybook/start/",
+          "item": "https://deku.posstree.com/en/react/nextjs/storybook/start/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Change Storybook background color",
+          "description" : "Let's see how to change the Storybook background color in the TypeScript based Next.js project.",
+          "position":28,"url": "https://deku.posstree.com/en/react/nextjs/storybook/background_color/",
+          "item": "https://deku.posstree.com/en/react/nextjs/storybook/background_color/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] Localization",
+          "description" : "Let's see how to use next-translate for the localization on the Next.js project based on TypeScript.",
+          "position":29,"url": "https://deku.posstree.com/en/react/nextjs/localization/",
+          "item": "https://deku.posstree.com/en/react/nextjs/localization/"},{
+          "@type":"ListItem",
+          "name": "[Next.js] MUI",
+          "description" : "Let's see how to add and use MUI(Material UI) that is the UI library in the Next.js project based on TypeScript.",
+          "position":30,"url": "https://deku.posstree.com/en/react/nextjs/mui/",
+          "item": "https://deku.posstree.com/en/react/nextjs/mui/"},{
+          "@type":"ListItem",
+          "name": "[Emotion] How to solve React does not recognize the XXXXX prop on a DOM element",
+          "description" : "Let's see how to solve React does not recognize the XXXXX prop on a DOM element when use Emotion.",
+          "position":31,"url": "https://deku.posstree.com/en/react/emotion/does-not-recognize-props/",
+          "item": "https://deku.posstree.com/en/react/emotion/does-not-recognize-props/"},{
+          "@type":"ListItem",
+          "name": "Custom template for create-react-app",
+          "description" : "Let's see how to create the custom template for create-react-app and make a React project with the custom template.",
+          "position":32,"url": "https://deku.posstree.com/en/react/create-react-app/template/",
+          "item": "https://deku.posstree.com/en/react/create-react-app/template/"},{
+          "@type":"ListItem",
+          "name": "[Vite] Getting started with TypeScript-based React project",
+          "description" : "Let's see how to start a TypeScript-based React project using Vite.",
+          "position":33,"url": "https://deku.posstree.com/en/react/vite/react-typescript/start/",
+          "item": "https://deku.posstree.com/en/react/vite/react-typescript/start/"},{
+          "@type":"ListItem",
+          "name": "[Vite] Configure test environment in TypeScript-based React project",
+          "description" : "Let's see how to configure a test environment in a TypeScript-based React project created using Vite.",
+          "position":34,"url": "https://deku.posstree.com/en/react/vite/react-typescript/test/",
+          "item": "https://deku.posstree.com/en/react/vite/react-typescript/test/"},{
+          "@type":"ListItem",
+          "name": "[Vite] Configure Prettier in TypeScript-based React project",
+          "description" : "Let's see how to add Prettier to a TypeScript-based React project created using Vite to manage code format consistently.",
+          "position":35,"url": "https://deku.posstree.com/en/react/vite/react-typescript/prettier/",
+          "item": "https://deku.posstree.com/en/react/vite/react-typescript/prettier/"},{
+          "@type":"ListItem",
+          "name": "[Vite] Configure Stylelint(CSS-in-JS) in TypeScript-based React project",
+          "description" : "Let's see how to add Stylelint to a TypeScript-based React project created using Vite to manage styles (CSS) in the CSS-in-JS environment.",
+          "position":36,"url": "https://deku.posstree.com/en/react/vite/react-typescript/stylelint/",
+          "item": "https://deku.posstree.com/en/react/vite/react-typescript/stylelint/"}]
+    }
+  </script><link rel="preload" as="style" href="/en/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/en/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" rel="preload" as="script"/><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/en/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/essay/">Essay</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/react-native/">React Native</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react/eslint/">한국어</a><a class="dropdown-item menu-en" href="/en/react/eslint/">English</a><a class="dropdown-item menu-ja" href="/en/react/eslint/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/en/clog/">Clog</a><a class="dropdown-item" href="/en/ildangongbu/">일단공부(Il-Dan-Gong-Bu)</a><a class="dropdown-item" href="/en/vue/">Vue</a><a class="dropdown-item" href="/en/code_quality/">Code Quality</a><a class="dropdown-item" href="/en/git/">git</a><a class="dropdown-item" href="/en/books/">Writing Books</a><a class="dropdown-item" href="/en/environment/">dev environment</a><a class="dropdown-item" href="/en/share/">Share</a><a class="dropdown-item" href="/en/flutter/">Flutter</a><a class="dropdown-item" href="/en/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/en/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/en/golang/">Golang</a><a class="dropdown-item" href="/en/ruby/">Ruby</a><a class="dropdown-item" href="/en/jest/">Jest</a><a class="dropdown-item" href="/en/kumoncho/">kumoncho</a><a class="dropdown-item" href="/en/blaboo/">BlaBoo</a><a class="dropdown-item" href="/en/jekyll/">jekyll blog</a><a class="dropdown-item" href="/en/essay/">Essay</a><a class="dropdown-item" href="/en/react/">React</a><a class="dropdown-item" href="/en/web/">Knowledge about Web</a><a class="dropdown-item" href="/en/django/">django</a><a class="dropdown-item" href="/en/react-native/">React Native</a><a class="dropdown-item" href="/en/laravel/">Laravel</a><a class="dropdown-item" href="/en/kubernetes/">Kubernetes</a><a class="dropdown-item" href="/en/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/en/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react/2021/eslint/background.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>[React] ESLint</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-01-25 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react/eslint/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">Let's see how to use ESLint in React to find errors and bugs by analyzing the source code.</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react"><span itemprop="name">react</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/en/react/eslint/"><span itemprop="name">[React] ESLint</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><h2 id="contents">Contents</h2><ul><li><a href="#outline">Outline</a></li><li><a href="#prepare-proejct">Prepare proejct</a></li><li><a href="#eslint-installation">ESLint installation</a></li><li><a href="#eslint-configuration">ESLint configuration</a></li><li><a href="#eslint-rules">ESLint rules</a></li><li><a href="#check-by-eslint">Check by ESLint</a></li><li><a href="#fix-by-eslint">Fix by ESLint</a></li><li><a href="#configure-packagejson">Configure package.json</a></li><li><a href="#completed">Completed</a></li></ul></div><h2 id="blog-series">Blog series</h2><p>This blog post is a series. You can see the other posts on the link below.</p><ul><li><a href="https://deku.posstree.com/en/react/prettier/" target="_blank">[React] Prettier</a></li><li>[React] ESLint</li><li><a href="https://deku.posstree.com/en/react/husky-lint-staged/" target="_blank">[React] Husky, lint-staged</a></li><li><a href="https://deku.posstree.com/en/react/github-actions/prettier-eslint/" target="_blank">[React] GitHub Actions</a></li></ul><h2 id="outline">Outline</h2><p>ESLint is the compound language of ES(EcmaScript) + Lint(show error code), and supports to find potential errors or bugs by analyzing the source code.</p><ul><li>ESLint official site: <a href="https://eslint.org/" rel="noopener" target="_blank">https://eslint.org/</a></li></ul><p>Int this blog post, I will show you how to configure ESLint and how to use ESLint in the React project with <code class="language-plaintext highlighter-rouge">create-react-app</code>.</p><h2 id="prepare-proejct">Prepare proejct</h2><p>To use ESLint in React, let’s create a new project with <code class="language-plaintext highlighter-rouge">create-react-app</code>. If you want to know more details about <code class="language-plaintext highlighter-rouge">create-react-app</code>, see the link below.</p><ul><li><a href="https://deku.posstree.com/en/react/create-react-app/start/" target="_blank">create-react-app</a></li></ul><p>Execute the command below to create a new React project for ESLint.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx create-react-app eslint_example <span class="nt">--template</span><span class="o">=</span>typescript
+</code></pre></div></div><p>Normally, I use <code class="language-plaintext highlighter-rouge">TypeScript</code> with React, so I use <code class="language-plaintext highlighter-rouge">--template=typescript</code> option to create the React project.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="eslint-installation">ESLint installation</h2><p>To use ESLint in React, we need to install the ESLint library. Execute the command below to install the ESLint library.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd eslint_example</span>
+npm <span class="nb">install </span>eslint <span class="nt">--save-dev</span>
+</code></pre></div></div><h2 id="eslint-configuration">ESLint configuration</h2><p>Next, we need to configure ESLint to use it in React. Execute the command below to start the ESLint configuration.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx eslint <span class="nt">--init</span>
+</code></pre></div></div><p>After executing, you can see the question on the screen like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? How would you like to use ESLint? …
+  To check syntax only
+❯ To check syntax and find problems
+  To check syntax, find problems, and enforce code style
+</code></pre></div></div><p>Select the option that you want. I selected <code class="language-plaintext highlighter-rouge">To check syntax and find problems</code>. And then, you can see the question on the screen like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What <span class="nb">type </span>of modules does your project use? …
+❯ JavaScript modules <span class="o">(</span>import/export<span class="o">)</span>
+  CommonJS <span class="o">(</span>require/exports<span class="o">)</span>
+  None of these
+</code></pre></div></div><p>Basically, React uses <code class="language-plaintext highlighter-rouge">import/export</code>, so select the <code class="language-plaintext highlighter-rouge">JavaScript modules (import/export)</code> option. Next, you can see the question like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Which framework does your project use? …
+❯ React
+  Vue.js
+  None of these
+</code></pre></div></div><p>We’ll use ESLint on React, so select <code class="language-plaintext highlighter-rouge">React</code>. And then, you can see the question like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Does your project use TypeScript? › No / Yes
+</code></pre></div></div><p>I use TypeScript when I develop with React, so I selected <code class="language-plaintext highlighter-rouge">Yes</code>. If you don’t use TypeScript, select <code class="language-plaintext highlighter-rouge">No</code> here. Next, you can see the screen like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? Where does your code run? …  <span class="o">(</span>Press &lt;space&gt; to <span class="k">select</span>, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection<span class="o">)</span>
+✔ Browser
+✔ Node
+</code></pre></div></div><p>React will run on Browser, so select <code class="language-plaintext highlighter-rouge">Browser</code>. Next, you can see the screen like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>? What format <span class="k">do </span>you want your config file to be <span class="k">in</span>? …
+❯ JavaScript
+  YAML
+  JSON
+</code></pre></div></div><p>You can save the configuration to various formats of files. I prefer to store it in the <code class="language-plaintext highlighter-rouge">JavaScript</code> format, so I select <code class="language-plaintext highlighter-rouge">JavaScript</code> here.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+? Would you like to <span class="nb">install </span>them now with npm? › No / Yes
+</code></pre></div></div><p>Lastly, we need to install some libraries for this configuration, so select <code class="language-plaintext highlighter-rouge">Yes</code> to install them.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="eslint-rules">ESLint rules</h2><p>On the ESLint official site and the TypeScript official page, you can see the ESLint rules that you can configure.</p><ul><li>ESLint Official site: <a href="https://eslint.org/docs/rules/" rel="noopener" target="_blank">Rules</a></li><li>ESLint Plugin TypeScript: <a href="https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules" rel="noopener" target="_blank">Rules</a></li></ul><p>Check the rules and set them to your project. The configuration below is the rules that I use.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports <span class="o">=</span> <span class="o">{</span>
+  <span class="nb">env</span>: <span class="o">{</span>
+    browser: <span class="nb">true</span>,
+    es2021: <span class="nb">true</span>,
+  <span class="o">}</span>,
+  extends: <span class="o">[</span>
+    <span class="s1">'eslint:recommended'</span>,
+    <span class="s1">'plugin:react/recommended'</span>,
+    <span class="s1">'plugin:@typescript-eslint/recommended'</span>,
+    <span class="s1">'plugin:storybook/recommended'</span>,
+  <span class="o">]</span>,
+  parser: <span class="s1">'@typescript-eslint/parser'</span>,
+  parserOptions: <span class="o">{</span>
+    ecmaFeatures: <span class="o">{</span>
+      jsx: <span class="nb">true</span>,
+    <span class="o">}</span>,
+    ecmaVersion: 12,
+    sourceType: <span class="s1">'module'</span>,
+    project: <span class="s1">'./tsconfig.json'</span>,
+  <span class="o">}</span>,
+  plugins: <span class="o">[</span><span class="s1">'react'</span>, <span class="s1">'@typescript-eslint'</span>, <span class="s1">'functional'</span>, <span class="s1">'import'</span><span class="o">]</span>,
+  settings: <span class="o">{</span>
+    react: <span class="o">{</span>
+      version: <span class="s1">'detect'</span>,
+    <span class="o">}</span>,
+  <span class="o">}</span>,
+  rules: <span class="o">{</span>
+    // General
+    <span class="s1">'no-console'</span>: <span class="o">[</span><span class="s1">'error'</span>, <span class="o">{</span> allow: <span class="o">[</span><span class="s1">'debug'</span>, <span class="s1">'warn'</span>, <span class="s1">'error'</span><span class="o">]</span> <span class="o">}]</span>,
+    // TypeScript
+    <span class="s1">'@typescript-eslint/consistent-type-imports'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/explicit-function-return-type'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/explicit-member-accessibility'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/indent'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/member-delimiter-style'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-confusing-void-expression'</span>: <span class="o">[</span>
+      <span class="s1">'error'</span>,
+      <span class="o">{</span>
+        ignoreArrowShorthand: <span class="nb">true</span>,
+        ignoreVoidOperator: <span class="nb">true</span>,
+      <span class="o">}</span>,
+    <span class="o">]</span>,
+    <span class="s1">'no-duplicate-imports'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-duplicate-imports'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-implicit-any-catch'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-invalid-this'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-invalid-this'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-invalid-void-type'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-loop-func'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-loop-func'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-loss-of-precision'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-loss-of-precision'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-parameter-properties'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'no-redeclare'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-redeclare'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-shadow'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-shadow'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-throw-literal'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-throw-literal'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-unnecessary-boolean-literal-compare'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-unnecessary-condition'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-unnecessary-type-arguments'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-unused-expressions'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/no-unused-expressions'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-unused-vars'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/no-use-before-define'</span>: <span class="o">[</span>
+      <span class="s1">'error'</span>,
+      <span class="o">{</span>
+        variables: <span class="nb">false</span>,
+      <span class="o">}</span>,
+    <span class="o">]</span>,
+    <span class="s1">'@typescript-eslint/prefer-enum-initializers'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-for-of'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-includes'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-nullish-coalescing'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-optional-chain'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-reduce-type-parameter'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-string-starts-ends-with'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/prefer-ts-expect-error'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/promise-function-async'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'no-return-await'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'@typescript-eslint/return-await'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/strict-boolean-expressions'</span>: <span class="s1">'error'</span>,
+    <span class="s1">'@typescript-eslint/switch-exhaustiveness-check'</span>: <span class="s1">'error'</span>,
+    // React
+    <span class="s1">'react/jsx-boolean-value'</span>: <span class="s1">'warn'</span>,
+    <span class="s1">'react/jsx-curly-brace-presence'</span>: <span class="s1">'warn'</span>,
+    <span class="s1">'react/jsx-fragments'</span>: <span class="s1">'warn'</span>,
+    <span class="s1">'react/jsx-no-useless-fragment'</span>: <span class="s1">'warn'</span>,
+    <span class="s1">'react/jsx-uses-react'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'react/prefer-stateless-function'</span>: <span class="s1">'warn'</span>,
+    <span class="s1">'react/prop-types'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'react/react-in-jsx-scope'</span>: <span class="s1">'off'</span>,
+    // Functional
+    <span class="s1">'functional/prefer-readonly-type'</span>: <span class="o">[</span>
+      <span class="s1">'error'</span>,
+      <span class="o">{</span>
+        allowLocalMutation: <span class="nb">true</span>,
+        allowMutableReturnType: <span class="nb">true</span>,
+        ignoreClass: <span class="nb">true</span>,
+      <span class="o">}</span>,
+    <span class="o">]</span>,
+    <span class="s1">'import/order'</span>: <span class="o">[</span>
+      <span class="s1">'error'</span>,
+      <span class="o">{</span>
+        <span class="nb">groups</span>: <span class="o">[</span><span class="s1">'builtin'</span>, <span class="s1">'external'</span>, <span class="s1">'internal'</span><span class="o">]</span>,
+        pathGroups: <span class="o">[</span>
+          <span class="o">{</span>
+            pattern: <span class="s1">'{react,react-dom/**}'</span>,
+            group: <span class="s1">'external'</span>,
+            position: <span class="s1">'before'</span>,
+          <span class="o">}</span>,
+        <span class="o">]</span>,
+        pathGroupsExcludedImportTypes: <span class="o">[</span><span class="s1">'react'</span><span class="o">]</span>,
+        <span class="s1">'newlines-between'</span>: <span class="s1">'always'</span>,
+        alphabetize: <span class="o">{</span>
+          order: <span class="s1">'asc'</span>,
+          caseInsensitive: <span class="nb">true</span>,
+        <span class="o">}</span>,
+      <span class="o">}</span>,
+    <span class="o">]</span>,
+    <span class="s1">'react/react-in-jsx-scope'</span>: <span class="s1">'off'</span>,
+    <span class="s1">'linebreak-style'</span>: <span class="o">[</span><span class="s1">'error'</span>, <span class="s1">'unix'</span><span class="o">]</span>,
+    eqeqeq: <span class="o">[</span><span class="s1">'error'</span>, <span class="s1">'always'</span>, <span class="o">{</span> null: <span class="s1">'ignore'</span> <span class="o">}]</span>,
+    camelcase: <span class="o">[</span><span class="s1">'error'</span>, <span class="o">{</span> properties: <span class="s1">'never'</span> <span class="o">}]</span>,
+    quotes: <span class="o">[</span><span class="s1">'error'</span>, <span class="s1">'single'</span>, <span class="o">{</span> avoidEscape: <span class="nb">true</span> <span class="o">}]</span>,
+  <span class="o">}</span>,
+<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div><p>For using the rule above, you should install the <code class="language-plaintext highlighter-rouge">eslint-plugin-functional</code> library. Execute the command below to install it.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-plugin-functional
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="check-by-eslint">Check by ESLint</h2><p>You can check the files follow the ESLint rules, that we’ve defined above, or not by executing the command below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx eslint ./src
+</code></pre></div></div><p>After executing, you can see the file list which didn’t follow the rules.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/eslint_test/src/App.tsx
+  5:1  warning  Missing <span class="k">return </span><span class="nb">type </span>on <span class="k">function</span>  @typescript-eslint/explicit-module-boundary-types
+
+/eslint_test/src/reportWebVitals.ts
+  1:1   error    All imports <span class="k">in </span>the declaration are only used as types. Use <span class="sb">`</span>import <span class="nb">type</span><span class="sb">`</span>  @typescript-eslint/consistent-type-imports
+  3:25  warning  Missing <span class="k">return </span><span class="nb">type </span>on <span class="k">function</span>                                           @typescript-eslint/explicit-module-boundary-types
+
+✖ 3 problems <span class="o">(</span>1 error, 2 warnings<span class="o">)</span>
+  1 error and 0 warnings potentially fixable with the <span class="sb">`</span><span class="nt">--fix</span><span class="sb">`</span> option.
+</code></pre></div></div><h2 id="fix-by-eslint">Fix by ESLint</h2><p>If you execute the command below, you can make the files follow the ESLint rules.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx eslint <span class="nt">--fix</span> ./src
+</code></pre></div></div><p>When you execute the command, ESLit will fix the files that it can fix, and if ESLint couldn’t fix, the file list will be shown up like the below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/eslint_test/src/App.tsx
+  5:1  warning  Missing <span class="k">return </span><span class="nb">type </span>on <span class="k">function</span>  @typescript-eslint/explicit-module-boundary-types
+
+/eslint_test/src/reportWebVitals.ts
+  3:25  warning  Missing <span class="k">return </span><span class="nb">type </span>on <span class="k">function</span>  @typescript-eslint/explicit-module-boundary-types
+</code></pre></div></div><p>If you have the files which ESLint couldn’t fix, open the files and fix them by yourself.</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// code ./src/App.tsx</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">():</span> <span class="nx">JSX</span><span class="p">.</span><span class="nx">Element</span> <span class="p">{</span>
+<span class="c1">// code ./src/reportWebVitals.tsx</span>
+<span class="kd">const</span> <span class="nx">reportWebVitals</span> <span class="o">=</span> <span class="p">(</span><span class="nx">onPerfEntry</span><span class="p">?:</span> <span class="nx">ReportHandler</span><span class="p">):</span> <span class="k">void</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code></pre></div></div><p>After fixing, when you check it again by executing the command below, you can see there are no error and warning.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx eslint ./src
+</code></pre></div></div><p>Now, we can know all files follow the ESLit well.</p><p>Normally, I don’t use the <code class="language-plaintext highlighter-rouge">--fix</code> option to fix the issues by ESLin automatically. Because it’s important to know the reason of the wrong code and sometimes, ESLit fixes wrong way.</p><h2 id="configure-packagejson">Configure package.json</h2><p>You can configure the <code class="language-plaintext highlighter-rouge">package.json</code> file like the below to use the <code class="language-plaintext highlighter-rouge">check</code> command and the <code class="language-plaintext highlighter-rouge">fix</code> command easily.</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"lint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eslint ./src"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lint:fix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eslint --fix ./src"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div><p>After modifying the <code class="language-plaintext highlighter-rouge">package.json</code> file, you can execute ESLint by using the command below.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run lint
+npm run lint:fix
+</code></pre></div></div><h2 id="completed">Completed</h2><p>Done! we’ve seen how to cnofigure ESLint and how to use ESLint in the React project. From now, please use ESLint to find the potential bugs and erros!</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> Was my blog helpful? Please leave a comment at the bottom. it will be a great help to me! </code></p><h2>App promotion</h2><div class="book-greeting"> You can use the applications that are created by this blog writer <code class="highlighter-rouge">Deku</code>.<br/><code class="highlighter-rouge">Deku</code> created the applications with Flutter.<br/><br/> If you have interested, please try to download them for free.<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/blaboo/en/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="word learning app for kids, BlaBoo"/><div><div class="app_description">word learning app for kids</div><div class="app_title">BlaBoo</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/koreanwords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/koreanwords.png" alt="Korean vocabulary, TOPIK words"/><div><div class="app_description">Korean TOPIK vocabulary app</div><div class="app_title">TOPIK words</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/japanesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/japanesewords.png" alt="Japanese vocabulary app"/><div><div class="app_description">Japanese vocabulary app</div><div class="app_title">Japanese words</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/en/app/chinesewords/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/hskwordsen.png" alt="Chinese HSK vocabulary app"/><div><div class="app_description">Chinese HSK vocabulary app</div><div class="app_title">HSK words</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/en/api/react/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=[React] ESLint&url=https://deku.posstree.com/react/eslint/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://deku.posstree.com/react/eslint/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://deku.posstree.com/en/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2024 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20240916"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script></body></html>

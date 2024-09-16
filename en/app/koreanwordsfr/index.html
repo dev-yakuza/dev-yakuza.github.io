@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>
+      Vocabulaire coréen, application de mots TOPIK - Êtes-vous débutant à
+      étudier le coréen? Avez-vous déjà du mal à lire le vocabulaire coréen? Ne
+      vous en faites pas! Le vocabulaire coréen, l'application TOPIK fournit la
+      prononciation et la voix des mots coréens. Vous pouvez étudier le
+      vocabulaire coréen même si vous ne connaissez pas le coréen avec
+      l'application TOPIK.
+    </title>
+
+    <meta
+      name="twitter:title"
+      content="Vocabulaire coréen, application de mots TOPIK - Êtes-vous débutant à étudier le coréen? Avez-vous déjà du mal à lire le vocabulaire coréen? Ne vous en faites pas! Le vocabulaire coréen, l'application TOPIK fournit la prononciation et la voix des mots coréens. Vous pouvez étudier le vocabulaire coréen même si vous ne connaissez pas le coréen avec le vocabulaire coréen, TOPIK words app."
+    />
+    <meta
+      name="twitter:description"
+      content="répéter est la meilleure chose importante pour étudier le vocabulaire! Vous pouvez revoir le vocabulaire coréen que vous avez étudié par Partie et Unité. La fonction de révision affiche souvent des mots coréens incorrects, de sorte que plus vous utilisez le vocabulaire coréen, l'application TOPIK words, plus votre propre application devient votre propre vocabulaire!"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DevYakuza" />
+    <meta name="twitter:creator" content="@DevYakuza" />
+    <meta
+      name="description"
+      content="répéter est la meilleure chose importante pour étudier le vocabulaire! Vous pouvez revoir le vocabulaire coréen que vous avez étudié par Partie et Unité. La fonction de révision affiche souvent des mots coréens incorrects, de sorte que plus vous utilisez le vocabulaire coréen, l'application TOPIK words, plus votre propre application devient votre propre vocabulaire!"
+    />
+    <meta name="author" content="dev.yakuza@gmail.com" />
+    <meta
+      property="og:url"
+      content="https://deku.posstree.com/app/koreanwordsfr/"
+    />
+    <meta
+      property="og:title"
+      content="Vocabulaire coréen, application de mots TOPIK - Êtes-vous débutant à étudier le coréen? Avez-vous déjà du mal à lire le vocabulaire coréen? Ne vous en faites pas! Le vocabulaire coréen, l'application TOPIK fournit la prononciation et la voix des mots coréens. Vous pouvez étudier le vocabulaire coréen même si vous ne connaissez pas le coréen avec le vocabulaire coréen, TOPIK words app."
+    />
+    <meta property="og:locale" content="en" />
+    <meta
+      property="og:description"
+      content="répéter est la meilleure chose importante pour étudier le vocabulaire! Vous pouvez revoir le vocabulaire coréen que vous avez étudié par Partie et Unité. La fonction de révision affiche souvent des mots coréens incorrects, de sorte que plus vous utilisez le vocabulaire coréen, l'application TOPIK words, plus votre propre application devient votre propre vocabulaire!"
+    />
+    <meta
+      property="og:site_name"
+      content="Vocabulaire coréen, application de mots TOPIK - Êtes-vous débutant à étudier le coréen? Avez-vous déjà du mal à lire le vocabulaire coréen? Ne vous en faites pas! Le vocabulaire coréen, l'application TOPIK fournit la prononciation et la voix des mots coréens. Vous pouvez étudier le vocabulaire coréen même si vous ne connaissez pas le coréen avec le vocabulaire coréen, TOPIK words app."
+    />
+    <meta
+      property="og:image"
+      content="https://deku.posstree.com/app/koreanwordsfr/img/share.png"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125408913-1');
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+KR"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="page-wrap">
+      <div id="fh5co-hero-wrapper">
+        <nav
+          class="container navbar navbar-expand-lg main-navbar-nav navbar-light"
+        >
+          <a class="navbar-brand" href="">coréens mots</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="$('#fh5co-features').goTo();return false;"
+                  >Features</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="$('#fh5co-download').goTo();return false;"
+                  >Download</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="container fh5co-hero-inner">
+          <h1 class="animated fadeIn wow" data-wow-delay="0.4s">
+            Vocabulaire coréen, mots TOPIK app
+          </h1>
+          <p class="animated fadeIn wow" data-wow-delay="0.67s">
+            Vocabulaire coréen, application de mots TOPIK fournit le vocabulaire
+            coréen par partie et unité. l'application fournit des mots que vous
+            pouvez mémoriser facilement par jour. Vous pouvez également revoir
+            les mots que vous avez étudiés au moyen d'une fonction de test.
+          </p>
+          <div class="download-button-container">
+            <a
+              class="ios-download btn btn-md wow fadeInLeft animated"
+              data-wow-delay="0.85s"
+              href="https://apps.apple.com/app/koreanwordsfr/id1531861771"
+              target="_blank"
+              ><img
+                src="img/app-store-icon.png"
+                alt="Vocabulaire coréen, mots TOPIK app iOS téléchargement"
+            /></a>
+            <a
+              class="android-download btn btn-md wow fadeInLeft animated"
+              data-wow-delay="0.85s"
+              href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.koreanwordsfr"
+              target="_blank"
+              ><img
+                src="img/google-play-icon.png"
+                alt="Vocabulaire coréen, mots TOPIK téléchargement d'app android"
+            /></a>
+          </div>
+          <!-- <button
+            class="btn btn-md download-btn-first wow fadeInLeft animated"
+            data-wow-delay="0.85s"
+            onclick="$('#fh5co-download').goTo();return false;"
+          >
+            Download
+          </button>
+          <button
+            class="btn btn-md features-btn-first animated fadeInLeft wow"
+            data-wow-delay="0.95s"
+            onclick="$('#fh5co-features').goTo();return false;"
+          >
+            Features
+          </button> -->
+          <img
+            class="fh5co-hero-smartphone animated fadeInRight wow"
+            data-wow-delay="1s"
+            src="img/phone1.png"
+            alt="Vocabulaire coréen, mots TOPIK app"
+          />
+        </div>
+      </div>
+      <!-- first section wrapper -->
+
+      <!-- ==========================================================================================================
+													 ADVANTAGES
+		 ========================================================================================================== -->
+
+      <div class="fh5co-advantages-outer">
+        <div class="container">
+          <h2 class="second-title">
+            <span class="span-perfect">1531861771</span>
+            <span class="span-features">Features</span>
+          </h2>
+          <small>Application gratuite de vocabulaire coréen</small>
+
+          <div
+            class="row fh5co-advantages-grid-columns wow animated fadeIn"
+            data-wow-delay="0.36s"
+          >
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/stairs.png"
+                alt="Vocabulaire coréen, mots TOPIK app - par partie / unité"
+              />
+              <h1 class="grid-title">par partie / unité</h1>
+              <p class="grid-desc">
+                Vous pouvez étudier le vocabulaire coréen par partie et par
+                unité dans le test TOPIK. De plus, l'application contient les
+                mots que vous pouvez étudier facilement par jour. Étudions le
+                vocabulaire coréen tous les jours.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/test.png"
+                alt="Vocabulaire coréen, application TOPIK - Test and Review"
+              />
+              <h1 class="grid-title">Essai et examen</h1>
+              <p class="grid-desc">
+                Vous pouvez vérifier combien de mots vous avez mémorisés au
+                moyen de la fonction test. De plus, l'application fournit la
+                fonction d'examen de la partie et de l'unité, de sorte que vous
+                pouvez vérifier les mots coréens que vous avez mémorisés jusqu'à
+                maintenant.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <img
+                class="grid-image"
+                src="img/audio.png"
+                alt="Vocabulaire coréen, application de mots TOPIK - Caractéristique vocale"
+              />
+              <h1 class="grid-title">Caractéristique vocale</h1>
+              <p class="grid-desc">
+                Ne savez-vous pas prononcer des mots coréens? Ne vous en faites
+                pas! Vocabulaire coréen, application de mots TOPIK fournit la
+                prononciation et la voix. Vous pouvez étudier en voyant et en
+                écoutant des mots coréens.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+													  SLIDER
+		 ========================================================================================================== -->
+
+      <div class="fh5co-slider-outer wow fadeIn" data-wow-delay="0.36s">
+        <h1>Capture d'écran de l'application</h1>
+        <small>Présentation de l'applications</small>
+        <div class="container fh5co-slider-inner">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <img
+                src="img/appstore_1.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 1"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_2.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 2"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_3.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 3"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_4.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 4"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_5.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 5"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_6.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 6"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="img/appstore_7.png"
+                alt="Vocabulaire coréen, mots TOPIK app - capture d'écran de l'application 7"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+													  FEATURES
+		 ========================================================================================================== -->
+
+      <div
+        class="curved-bg-div wow animated fadeIn"
+        data-wow-delay="0.15s"
+      ></div>
+      <div id="fh5co-features" class="fh5co-features-outer">
+        <div class="container">
+          <div class="row fh5co-features-grid-columns">
+            <div
+              class="col-sm-6 in-order-1 wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <div class="col-sm-image-container">
+                <img
+                  class="img-float-left"
+                  src="img/phone1.png"
+                  alt="Vocabulaire coréen, mots TOPIK app - Fournit des mots par partie/unité"
+                />
+              </div>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-2 sm-6-content wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <h1>Fournir des mots de la partie ou de l'unité</h1>
+              <p>
+                L'application TOPIK fournit 5600 mots coréens dans le test
+                TOPIK. Étudions les mots coréens d'une partie ou d'une unité! De
+                plus, vous pouvez voir l'état actuel de vos études. Vous vous
+                demandez combien il serait bon de mémoriser en une journée?
+                Vocabulaire coréen, application de mots TOPIK fournissent des
+                mots coréens répartis par jour. Étudions les mots coréens tous
+                les jours.
+              </p>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-3 sm-6-content wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <h1>Sens, prononciation et voix</h1>
+              <p>
+                Lorsque vous étudiez les mots avec le livre, vous pouvez voir
+                les mots et le sens de la vie, alors ne vous sentez-vous pas
+                agaçant? Vous pouvez montrer et cacher le sens des mots dans le
+                vocabulaire coréen, TOPIK words app. L'application TOPIK fournit
+                également la prononciation et la voix du vocabulaire coréen, de
+                sorte que vous pouvez étudier facilement la prononciation
+                coréenne.
+              </p>
+            </div>
+
+            <div
+              class="col-sm-6 in-order-4 wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <img
+                class="img-float-right"
+                src="img/iPhone_words_list.png"
+                alt="Vocabulaire coréen, mots TOPIK app - signification, prononciation et caractéristique vocale"
+              />
+            </div>
+
+            <div
+              class="col-sm-6 in-order-5 wow animated fadeInLeft"
+              data-wow-delay="0.22s"
+            >
+              <div class="col-sm-image-container">
+                <img
+                  class="img-float-left"
+                  src="img/iPhone_word_review.png"
+                  alt="Vocabulaire coréen, application de mots TOPIK - test et examen"
+                />
+              </div>
+            </div>
+            <div
+              class="col-sm-6 in-order-6 sm-6-content wow animated fadeInRight"
+              data-wow-delay="0.22s"
+            >
+              <h1>Caractéristiques d'essai et d'examen</h1>
+              <p>
+                Il est préférable de répéter pour étudier les mots. Vous pouvez
+                passer en revue les mots appris aujourd'hui au moyen des
+                caractéristiques de test. Après la fin de la partie ou de
+                l'unité, vous pouvez revoir les mots avec la fonction d'examen.
+                Dans la fonction d'examen, il y a plus de mots erronés, plus
+                d'indications. Donc, si vous utilisez plus de vocabulaire
+                coréen, application de mots TOPIK, l'application deviendra votre
+                propre application de vocabulaire.
+              </p>
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+                                                 BOTTOM
+    ========================================================================================================== -->
+
+      <div id="fh5co-download" class="fh5co-bottom-outer">
+        <div class="overlay">
+          <div class="container fh5co-bottom-inner">
+            <div class="row">
+              <div class="col-sm-6">
+                <h1>
+                  Vocabulaire coréen, application de mots TOPIK est totalement
+                  gratuit.
+                </h1>
+                <p>
+                  Vous pouvez étudier les mots coréens dans le test TOPIK avec
+                  le vocabulaire coréen, les mots TOPIK gratuitement. Vous
+                  pouvez télécharger gratuitement sur Android et iPhone.
+                </p>
+                <a
+                  class="ios-download wow fadeIn animated"
+                  data-wow-delay="0.25s"
+                  href="https://apps.apple.com/app/koreanwordsfr/id1531861771"
+                  target="_blank"
+                  ><img
+                    class="app-store-btn"
+                    src="img/app-store-icon.png"
+                    alt="Vocabulaire coréen, mots TOPIK app iOS téléchargement"
+                /></a>
+                <a
+                  class="android-download wow fadeIn animated"
+                  data-wow-delay="0.67s"
+                  href="https://play.google.com/store/apps/details?id=io.github.dev.yakuza.koreanwordsfr"
+                  target="_blank"
+                  ><img
+                    class="google-play-btn"
+                    src="img/google-play-icon.png"
+                    alt="Vocabulaire coréen, mots TOPIK téléchargement d'app android"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================================================
+                                               SECTION 7 - SUB FOOTER
+    ========================================================================================================== -->
+
+      <footer class="footer-outer">
+        <div class="container footer-inner">
+          <div
+            class="footer-three-grid wow fadeIn animated"
+            data-wow-delay="0.66s"
+          >
+            <div class="column-1-3">
+              <h1>coréens mots</h1>
+            </div>
+            <div class="column-2-3">
+              <nav class="footer-nav">
+                <ul>
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-hero-wrapper').goTo();return false;"
+                    ><li>Home</li></a
+                  >
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-features').goTo();return false;"
+                    ><li>Features</li></a
+                  >
+                  <a
+                    href="#"
+                    onclick="$('#fh5co-download').goTo();return false;"
+                    ><li class="active">Download</li></a
+                  >
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <span class="border-bottom-footer"></span>
+
+          <p class="copyright">
+            &copy; 2018 App. All rights reserved. Design by
+            <a
+              href="https://freehtml5.co"
+              rel="nofollow noreferrer"
+              target="_blank"
+              >FreeHTML5</a
+            >.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- main page wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

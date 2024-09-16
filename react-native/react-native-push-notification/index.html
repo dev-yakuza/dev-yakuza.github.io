@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://www.googletagmanager.com/"/><link rel="preconnect" href="https://pagead2.googlesyndication.com/"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="google-site-verification" content="rHTd8BRbOeSqAskkyVusn529XiwZ2eHbv1tnB1IDnjA"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"/><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/><link rel="manifest" href="/assets/favicon/manifest.json"/><meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png"/><meta name="theme-color" content="#ffffff"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="apple-mobile-web-app-title" content="DeKu blog"/><link rel="apple-touch-icon" href="/assets/favicon/android-icon-144x144.png"/><meta name="twitter:title" content="Local Push Notificatoin"/><meta name="twitter:description" content="react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@DevYakuza"/><meta name="twitter:creator" content="@DevYakuza"/><title>Local Push Notificatoin - react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。</title><meta name="description" content="react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。"/><meta http-equiv="Content-Language" content="ja"><link rel="alternate" hreflang="ja" href="https://deku.posstree.com/react-native/react-native-push-notification/"/><link rel="alternate" hreflang="ko" href="https://deku.posstree.com/ko/react-native/react-native-push-notification/"/><link rel="alternate" hreflang="en" href="https://deku.posstree.com/en/react-native/react-native-push-notification/"/><meta property="og:url" content="https://deku.posstree.com/react-native/react-native-push-notification/"/><meta name="generator" content="Jekyll v3.9.5"/><meta property="og:title" content="Local Push Notificatoin"/><meta name="author" content="dev.yakuza@gmail.com"/><meta property="og:locale" content="ja"/><meta name="description" content="react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。"/><meta property="og:description" content="react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。"/><link rel="canonical" href="https://deku.posstree.com/react-native/react-native-push-notification/"/><meta property="og:url" content="https://deku.posstree.com/react-native/react-native-push-notification/"/><meta property="og:site_name" content="Deku"/><meta property="og:image" content="https://deku.posstree.com/assets/images/category/react-native/2019/react-native-push-notification/background.jpg"/><meta property="og:type" content="article"/><meta property="article:published_time" content="2019-06-13T00:00:00+09:00"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:image" content="https://deku.posstree.com/assets/images/category/react-native/2019/react-native-push-notification/background.jpg"/><meta property="twitter:title" content="Local Push Notificatoin"/><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dev.yakuza@gmail.com"},"dateModified":"2023-10-17T10:00:58+09:00","datePublished":"2019-06-13T00:00:00+09:00","description":"react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。","headline":"Local Push Notificatoin","image":"https://deku.posstree.com/assets/images/category/react-native/2019/react-native-push-notification/background.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://deku.posstree.com/react-native/react-native-push-notification/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://deku.posstree.com/assets/images/icon.jpg"},"name":"dev.yakuza@gmail.com"},"url":"https://deku.posstree.com/react-native/react-native-push-notification/"}</script><link href="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1" rel="preload" as="script"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-125408913-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125408913-1");</script><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"/><link rel="preload" as="style" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/><link rel="preload" as="style" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css"/><link rel="preload" as="style" href="/assets/main.css?v=20240916"/><link rel="stylesheet" href="/assets/main.css?v=20240916"/><link rel="alternate" type="application/rss+xml" title="Deku" href="/feed.xml"/><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "dev.yakuza",
+      "url": "https://deku.posstree.com/",
+      "sameAs": [
+        "https://www.facebook.com/yakuza.dev.54",
+        "https://www.instagram.com/dev_yakuza/",
+        "https://twitter.com/DevYakuza"
+      ]
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://deku.posstree.com/",
+      "logo": "https://deku.posstree.com/assets/images/icon.jpg"
+    }
+  </script><script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[{
+          "@type":"ListItem",
+          "name": "マック(Mac)にreact nativeの開発環境を構築する方法",
+          "description" : "react-nativeでアプリを開発するためマック(Mac)に開発環境を構築して見て、react-nativeのプロジェクトがうまく起動できるか確認して見ます。",
+          "position":1,"url": "https://deku.posstree.com/react-native/install-on-mac/",
+          "item": "https://deku.posstree.com/react-native/install-on-mac/"},{
+          "@type":"ListItem",
+          "name": "ウィンドウ(Windows)にreact nativeの開発環境を構築する方法",
+          "description" : "react-nativeでアプリを開発するためウィンドウ(Windows)に開発環境を構築して見て、react-nativeのプロジェクトがうまく起動できるか確認して見ます。",
+          "position":2,"url": "https://deku.posstree.com/react-native/install-on-windows/",
+          "item": "https://deku.posstree.com/react-native/install-on-windows/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(RN)インストール",
+          "description" : "react-nativeをインストールしてプロジェクトが起動するか確認しましょう。",
+          "position":3,"url": "https://deku.posstree.com/react-native/installation/",
+          "item": "https://deku.posstree.com/react-native/installation/"},{
+          "@type":"ListItem",
+          "name": "React NativeでTypeScriptを使う方法",
+          "description" : "React NativeプロジェクトへTypeScriptを適用して開発してみよう。",
+          "position":4,"url": "https://deku.posstree.com/react-native/typescript/",
+          "item": "https://deku.posstree.com/react-native/typescript/"},{
+          "@type":"ListItem",
+          "name": "React NativeでESLint, Prettierを使う方法",
+          "description" : "React NativeのプロジェクトへESLintとPrettierを適用する方法と、Husky, lint-stagedでプロみたいに使う方法について説明します。",
+          "position":5,"url": "https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/",
+          "item": "https://deku.posstree.com/react-native/eslint-prettier-husky-lint-staged/"},{
+          "@type":"ListItem",
+          "name": "styled-components",
+          "description" : "react-nativeスタイリングのためstyled-componentsライブラリを活用する方法について説明します。",
+          "position":6,"url": "https://deku.posstree.com/react-native/styled-components/",
+          "item": "https://deku.posstree.com/react-native/styled-components/"},{
+          "@type":"ListItem",
+          "name": "react-navigation",
+          "description" : "react-navigationを使ってアプリを開発して見ましょう。",
+          "position":7,"url": "https://deku.posstree.com/react-native/react-navigation/",
+          "item": "https://deku.posstree.com/react-native/react-navigation/"},{
+          "@type":"ListItem",
+          "name": "react-navigation V5",
+          "description" : "react-navigation V5をインストールして使う方法について共有します。",
+          "position":8,"url": "https://deku.posstree.com/react-native/react-navigation-v5/",
+          "item": "https://deku.posstree.com/react-native/react-navigation-v5/"},{
+          "@type":"ListItem",
+          "name": "App icon",
+          "description" : "generator-rn-toolboxを使ってアプリアイコンを作って見ましょう。",
+          "position":9,"url": "https://deku.posstree.com/react-native/app-icon/",
+          "item": "https://deku.posstree.com/react-native/app-icon/"},{
+          "@type":"ListItem",
+          "name": "Splashイメージ",
+          "description" : "generator-rn-toolboxを使ってSplashイメージを設定して見ましょう。",
+          "position":10,"url": "https://deku.posstree.com/react-native/splash-image/",
+          "item": "https://deku.posstree.com/react-native/splash-image/"},{
+          "@type":"ListItem",
+          "name": "NativeBase",
+          "description" : "基本Component UIでNativeBaseライブラリを使って見ましょう。",
+          "position":11,"url": "https://deku.posstree.com/react-native/nativebase/",
+          "item": "https://deku.posstree.com/react-native/nativebase/"},{
+          "@type":"ListItem",
+          "name": "react-native-vector-icons",
+          "description" : "react-native-vector-iconsライブラリを使ってアイコンを表示して見ましょう。",
+          "position":12,"url": "https://deku.posstree.com/react-native/react-native-vector-icons/",
+          "item": "https://deku.posstree.com/react-native/react-native-vector-icons/"},{
+          "@type":"ListItem",
+          "name": "react-native-device-info",
+          "description" : "ユーザーのデバイスの情報を取得するためreact-native-device-infoライブラリを使って見ましょう。",
+          "position":13,"url": "https://deku.posstree.com/react-native/react-native-device-info/",
+          "item": "https://deku.posstree.com/react-native/react-native-device-info/"},{
+          "@type":"ListItem",
+          "name": "react-native-tts",
+          "description" : "react-native-ttsを使ってtext-to-speech機能を作って見ましょう。",
+          "position":14,"url": "https://deku.posstree.com/react-native/react-native-tts/",
+          "item": "https://deku.posstree.com/react-native/react-native-tts/"},{
+          "@type":"ListItem",
+          "name": "グーグルアドモブ",
+          "description" : "グーグルアドモブ(google admob)広告を使うためreact-native-admobライブラリを使ってみましょう。",
+          "position":15,"url": "https://deku.posstree.com/react-native/react-native-admob/",
+          "item": "https://deku.posstree.com/react-native/react-native-admob/"},{
+          "@type":"ListItem",
+          "name": "iOSデバイステスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOSデバイスでテストしてみましょう。",
+          "position":16,"url": "https://deku.posstree.com/react-native/ios-test-on-device/",
+          "item": "https://deku.posstree.com/react-native/ios-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOSビルドやテスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOS用でビルドしてデバイスでテストしてみましょう。",
+          "position":17,"url": "https://deku.posstree.com/react-native/ios-running-on-device/",
+          "item": "https://deku.posstree.com/react-native/ios-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOS開発者登録",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをiOSアップストア(App store)へ登録するためアップル開発者プログラム(Apple Developer Program)へ登録する方法について説明します。",
+          "position":18,"url": "https://deku.posstree.com/react-native/ios-enroll-developer-program/",
+          "item": "https://deku.posstree.com/react-native/ios-enroll-developer-program/"},{
+          "@type":"ListItem",
+          "name": "iOS 証明書(Certification)",
+          "description" : "アップル開発者プログラム(Apple Developer Program)の登録を完了したら、開発者証明書(Certification)を設定する方法について説明します。",
+          "position":19,"url": "https://deku.posstree.com/react-native/ios-certification/",
+          "item": "https://deku.posstree.com/react-native/ios-certification/"},{
+          "@type":"ListItem",
+          "name": "iOS TestFlight",
+          "description" : "iOSのTestFlightを使って作ったアプリをテスターに送ってテストしてみましょう。",
+          "position":20,"url": "https://deku.posstree.com/react-native/ios-testflight/",
+          "item": "https://deku.posstree.com/react-native/ios-testflight/"},{
+          "@type":"ListItem",
+          "name": "iOS App store 登録",
+          "description" : "iOSアプリストア(App Store)へ登録するため必要な項目について説明します。",
+          "position":21,"url": "https://deku.posstree.com/react-native/ios-app-store/",
+          "item": "https://deku.posstree.com/react-native/ios-app-store/"},{
+          "@type":"ListItem",
+          "name": "Google Analytics",
+          "description" : "リアクトネイティブ(React Native)で開発したアプリをグーグルアナリティクス(Google Analytics)を使ってアプリを分析してみましょう。",
+          "position":22,"url": "https://deku.posstree.com/react-native/react-native-analytics-bridge/",
+          "item": "https://deku.posstree.com/react-native/react-native-analytics-bridge/"},{
+          "@type":"ListItem",
+          "name": "Firebase Admob",
+          "description" : "react-native-firebaseライブラリを使ってグーグルアドモブ(Google Admob)を表示してみましょう。",
+          "position":23,"url": "https://deku.posstree.com/react-native/react-native-firebase-admob/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-admob/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドデバイステスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをアンドロイド(Android)デバイスでテストしてみましょう。",
+          "position":24,"url": "https://deku.posstree.com/react-native/android-test-on-device/",
+          "item": "https://deku.posstree.com/react-native/android-test-on-device/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドビルドやテスト",
+          "description" : "リアクトネイティブ(React Native)で開発したプロジェクトをアンドロイド(Android)用でビルドしてデバイスでテストしてみましょう。",
+          "position":25,"url": "https://deku.posstree.com/react-native/android-running-on-device/",
+          "item": "https://deku.posstree.com/react-native/android-running-on-device/"},{
+          "@type":"ListItem",
+          "name": "iOSシミュレータ変更",
+          "description" : "リアクトネイティブ(React Native)をiOSでシミュレータでテストする時シミュレータを変更する方法を紹介します。",
+          "position":26,"url": "https://deku.posstree.com/react-native/ios-change-simulator/",
+          "item": "https://deku.posstree.com/react-native/ios-change-simulator/"},{
+          "@type":"ListItem",
+          "name": "Firebase Analytics",
+          "description" : "react-native-firebaseライブラリを使ってもっと詳しくアプリを分析してみましょう。",
+          "position":27,"url": "https://deku.posstree.com/react-native/react-native-firebase-analytics/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-analytics/"},{
+          "@type":"ListItem",
+          "name": "iOS App crash分析",
+          "description" : "iOS App crashログ(Log)を分析する方法について説明します。",
+          "position":28,"url": "https://deku.posstree.com/react-native/ios-app-crash-debugging/",
+          "item": "https://deku.posstree.com/react-native/ios-app-crash-debugging/"},{
+          "@type":"ListItem",
+          "name": "Firebase Crashlytics",
+          "description" : "react-native-firebaseを使ってファイアベース(Firebase)のCrashlyticsでアプリのCrashが発生したらその情報を取得してみましょう。",
+          "position":29,"url": "https://deku.posstree.com/react-native/firebase-crashlytics/",
+          "item": "https://deku.posstree.com/react-native/firebase-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-animatable",
+          "description" : "react-native-animatableを使って簡単にリアクトネイティブ(React Native)へアニメーションを追加してみましょう。",
+          "position":30,"url": "https://deku.posstree.com/react-native/react-native-animatable/",
+          "item": "https://deku.posstree.com/react-native/react-native-animatable/"},{
+          "@type":"ListItem",
+          "name": "アンドロイド開発者登録",
+          "description" : "アンドロイドアプリ(Android App)を登録するためアンドロイド開発者登録をして見ましょう。",
+          "position":31,"url": "https://deku.posstree.com/react-native/android-enroll-google-play-developer/",
+          "item": "https://deku.posstree.com/react-native/android-enroll-google-play-developer/"},{
+          "@type":"ListItem",
+          "name": "アンドロイドアプリストア登録",
+          "description" : "リアクトネイティブ(React Native)で開発したアンドロイドアプリ(Android App)をアンドロイドアプリストア(Google Play)に登録して見ましょう。",
+          "position":32,"url": "https://deku.posstree.com/react-native/android-google-play/",
+          "item": "https://deku.posstree.com/react-native/android-google-play/"},{
+          "@type":"ListItem",
+          "name": "ユーザ音声認識",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-voiceライブラリを使ってユーザの音声を認識して文字で変換する機能を追加してみます。",
+          "position":33,"url": "https://deku.posstree.com/react-native/react-native-voice/",
+          "item": "https://deku.posstree.com/react-native/react-native-voice/"},{
+          "@type":"ListItem",
+          "name": "メール送信機能",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-mailライブラリを使って端末にインストールされてあるメールアプリを起動してメールを送信してみましょう。",
+          "position":34,"url": "https://deku.posstree.com/react-native/react-native-mail/",
+          "item": "https://deku.posstree.com/react-native/react-native-mail/"},{
+          "@type":"ListItem",
+          "name": "ファイルシステム使用",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-fsライブラリを使ってファイルを読んだり書いたりしてみましょう。",
+          "position":35,"url": "https://deku.posstree.com/react-native/react-native-fs/",
+          "item": "https://deku.posstree.com/react-native/react-native-fs/"},{
+          "@type":"ListItem",
+          "name": "アフターエフェクト(AEF)",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでアドビのアフターエフェクト(Adobe After Effects)で作ったアニメーションを適用してみましょう",
+          "position":36,"url": "https://deku.posstree.com/react-native/react-native-lottie/",
+          "item": "https://deku.posstree.com/react-native/react-native-lottie/"},{
+          "@type":"ListItem",
+          "name": "スワイプ検知",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでユーザが画面でどの方向でスワイプ(Swipe)したか検知するためreact-native-swipe-gesturesを使ってみましょう。 ",
+          "position":37,"url": "https://deku.posstree.com/react-native/react-native-swipe-gestures/",
+          "item": "https://deku.posstree.com/react-native/react-native-swipe-gestures/"},{
+          "@type":"ListItem",
+          "name": "グラデーション(Gradient)",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-linear-gradientを使ってグラデーション(Gradient)バックグラウンド(background)を作ってみましょう。",
+          "position":38,"url": "https://deku.posstree.com/react-native/react-native-linear-gradient/",
+          "item": "https://deku.posstree.com/react-native/react-native-linear-gradient/"},{
+          "@type":"ListItem",
+          "name": "App Splash スクリーン",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-splash-screenを使ってSplashスクリーンを好きな時間に終了するように作ってみましょう。",
+          "position":39,"url": "https://deku.posstree.com/react-native/react-native-splash-screen/",
+          "item": "https://deku.posstree.com/react-native/react-native-splash-screen/"},{
+          "@type":"ListItem",
+          "name": "アプリストアレビュー",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでreact-native-rateを使ってアプリストアのレビューを作成するように誘導する方法について説明します。",
+          "position":40,"url": "https://deku.posstree.com/react-native/react-native-rate/",
+          "item": "https://deku.posstree.com/react-native/react-native-rate/"},{
+          "@type":"ListItem",
+          "name": "iTunesファイルシェア機能",
+          "description" : "iTunesを使ってリアクトネイティブ(React Native)で開発したアプリへファイルをシェアする方法について説明します。",
+          "position":41,"url": "https://deku.posstree.com/react-native/react-native-itunes-share-file/",
+          "item": "https://deku.posstree.com/react-native/react-native-itunes-share-file/"},{
+          "@type":"ListItem",
+          "name": "StatusBarコントロール",
+          "description" : "リアクトネイティブ(React Native)でStatusBarをコントロールする方法について説明します。",
+          "position":42,"url": "https://deku.posstree.com/react-native/react-native-status-bar/",
+          "item": "https://deku.posstree.com/react-native/react-native-status-bar/"},{
+          "@type":"ListItem",
+          "name": "RN(React Naitve)タブレット対応",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでタブレットを対応する方法について説明します。",
+          "position":43,"url": "https://deku.posstree.com/react-native/react-native-support-tablet/",
+          "item": "https://deku.posstree.com/react-native/react-native-support-tablet/"},{
+          "@type":"ListItem",
+          "name": "RN(Reacct Native)でsqliteを使う方法",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでsqliteデータベースを使う方法について説明します。",
+          "position":44,"url": "https://deku.posstree.com/react-native/react-native-sqlite-storage/",
+          "item": "https://deku.posstree.com/react-native/react-native-sqlite-storage/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(React Native)でカスタムフォントを使う方法",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでカスタムフォントを適用して使う方法について説明します。",
+          "position":45,"url": "https://deku.posstree.com/react-native/react-native-custom-font/",
+          "item": "https://deku.posstree.com/react-native/react-native-custom-font/"},{
+          "@type":"ListItem",
+          "name": "リアクトネイティブ(React Native)でrootからimportする",
+          "description" : "リアクトネイティブ(React Native)プロジェクトでimportをする時、rootフォルダを基準にしてimportが出来るようにプロジェクトを設定してみましょう。",
+          "position":46,"url": "https://deku.posstree.com/react-native/root-import/",
+          "item": "https://deku.posstree.com/react-native/root-import/"},{
+          "@type":"ListItem",
+          "name": "特定のファイルでアプリを開く",
+          "description" : "ウェブやメールでダウンロードした特定なファイルを(エクセル, パワーポイントなど)をリアクトネイティブ(React Native)で作成したアプリに入れる方法について説明します。",
+          "position":47,"url": "https://deku.posstree.com/react-native/open-file-with-app/",
+          "item": "https://deku.posstree.com/react-native/open-file-with-app/"},{
+          "@type":"ListItem",
+          "name": "Local Push Notificatoin",
+          "description" : "react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。",
+          "position":48,"url": "https://deku.posstree.com/react-native/react-native-push-notification/",
+          "item": "https://deku.posstree.com/react-native/react-native-push-notification/"},{
+          "@type":"ListItem",
+          "name": "React NaitveでAppアイコン & Splashイメージを作る方法",
+          "description" : "react-native-makeライブラリを使ってAppアイコンやSplashイメージを生成する方法について説明します。",
+          "position":49,"url": "https://deku.posstree.com/react-native/react-native-make/",
+          "item": "https://deku.posstree.com/react-native/react-native-make/"},{
+          "@type":"ListItem",
+          "name": "React Nativeで現在位置情報を取得する方法",
+          "description" : "react-native-geolocation-serviceライブラリを使ってReact Nativeで現在位置を取得する方法について調べてみましょう。",
+          "position":50,"url": "https://deku.posstree.com/react-native/react-native-geolocation-service/",
+          "item": "https://deku.posstree.com/react-native/react-native-geolocation-service/"},{
+          "@type":"ListItem",
+          "name": "React Nativeへ地図を表示する方法",
+          "description" : "react-native-mapsライブラリを使ってReact Nativeへ地図を使う方法について調べてみます。",
+          "position":51,"url": "https://deku.posstree.com/react-native/react-native-maps/",
+          "item": "https://deku.posstree.com/react-native/react-native-maps/"},{
+          "@type":"ListItem",
+          "name": "Fastlaneを使ってアプリのデプロイを自動化する",
+          "description" : "Fastlaneを使ってReact nativeで作ったアプリをを自動でデプロイしてみましょう。",
+          "position":52,"url": "https://deku.posstree.com/react-native/fastlane/",
+          "item": "https://deku.posstree.com/react-native/fastlane/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-modal",
+          "description" : "react-native-image-modalを使ってイメージを全体画面で表示して、pinch拡大、縮小などをしてみましょう。",
+          "position":53,"url": "https://deku.posstree.com/react-native/react-native-image-modal/",
+          "item": "https://deku.posstree.com/react-native/react-native-image-modal/"},{
+          "@type":"ListItem",
+          "name": "react-native-image-picker",
+          "description" : "react-native-image-pickerを使って写真を取ったり、カメラロールから写真を取得する方法について説明します。",
+          "position":54,"url": "https://deku.posstree.com/react-native/react-native-image-picker/",
+          "item": "https://deku.posstree.com/react-native/react-native-image-picker/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase(V5)を使ってPush Message",
+          "description" : "React Nativeでプッシュメッセージを使うため、react-native-firebase(V5)のライブラリを使ってFCM(Firebase Cloud Messaging)を使う方法について説明します。",
+          "position":55,"url": "https://deku.posstree.com/react-native/react-native-firebase-fcm/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-fcm/"},{
+          "@type":"ListItem",
+          "name": "React Native用オープンソースを作る方法",
+          "description" : "React Native用のオープンソースを作る方法について説明します。",
+          "position":56,"url": "https://deku.posstree.com/react-native/make-opensource-library/",
+          "item": "https://deku.posstree.com/react-native/make-opensource-library/"},{
+          "@type":"ListItem",
+          "name": "React NativeでMultidexの設定",
+          "description" : "React NaitveのプロジェクトのアンドロイドへMultidexを設定する方法について説明します。",
+          "position":57,"url": "https://deku.posstree.com/react-native/react-native-multidex/",
+          "item": "https://deku.posstree.com/react-native/react-native-multidex/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6インストール",
+          "description" : "React NativeでFirebaseを使うため、react-native-firebase(V6)をインストールする方法について説明します。",
+          "position":58,"url": "https://deku.posstree.com/react-native/react-native-firebase-v6-installation/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-v6-installation/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Crashlytics",
+          "description" : "react-native-firebase(V6)を使ってFirebaseのCrashlyticsを使う方法について説明します。",
+          "position":59,"url": "https://deku.posstree.com/react-native/react-native-firebase-v6-crashlytics/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-v6-crashlytics/"},{
+          "@type":"ListItem",
+          "name": "react-native-firebase V6 Admob",
+          "description" : "react-native-firebase(V6)を使ってFirebaseのAdmobを使う方法について説明します。",
+          "position":60,"url": "https://deku.posstree.com/react-native/react-native-firebase-v6-admob/",
+          "item": "https://deku.posstree.com/react-native/react-native-firebase-v6-admob/"},{
+          "@type":"ListItem",
+          "name": "React NativeでYoutubeを表示する",
+          "description" : "React NativeでYoutubeを表示するため、react-native-youtubeを使う方法について説明します。",
+          "position":61,"url": "https://deku.posstree.com/react-native/react-native-youtube/",
+          "item": "https://deku.posstree.com/react-native/react-native-youtube/"},{
+          "@type":"ListItem",
+          "name": "React NativeでAdmobのNative Advanced広告を使う方法",
+          "description" : "React NativeでAdmobのNative Advanced広告を使うため、react-native-admob-native-adsライブラリを使う方法について説明します。",
+          "position":62,"url": "https://deku.posstree.com/react-native/react-native-admob-native-ads/",
+          "item": "https://deku.posstree.com/react-native/react-native-admob-native-ads/"},{
+          "@type":"ListItem",
+          "name": "React Nativeでアプリ内課金を実装する",
+          "description" : "React Nativeでアプリ内課金を実装するためreact-native-iapを使う方法について説明します。",
+          "position":63,"url": "https://deku.posstree.com/react-native/react-native-iap/",
+          "item": "https://deku.posstree.com/react-native/react-native-iap/"},{
+          "@type":"ListItem",
+          "name": "GitHub ActionsとFastlaneを使ってReact Nativeアプリをデプロイする",
+          "description" : "GitHub ActionsとFastlaneを使ってReact Nativeで開発したアプリを自動でデプロイする",
+          "position":64,"url": "https://deku.posstree.com/react-native/github-actions-fastlane/",
+          "item": "https://deku.posstree.com/react-native/github-actions-fastlane/"}]
+    }
+  </script><link rel="preload" as="style" href="/assets/highlight/railscasts.css"/><link rel="stylesheet" href="/assets/highlight/railscasts.css"/><script async src="/assets//vendor/lazysizes/lazysizes.min.js" async></script><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" rel="preload" as="script"/><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"><div class="container"><a class="navbar-brand" href="/"><img src="/assets/images/deku.svg" alt="[DeKu] DevYakuza blog logo"/><span class="name">DeKu</span></a><div class="navbar-menu-container"><div class="collapse navbar-collapse"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/essay/">エッセイ</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/react-native/">React Native</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div><div class="btn-group-sm btn-translate-group dropdown"><button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="change language button"><i class="fa fa-language" aria-hidden="true"></i></button><div class="dropdown-menu"><a class="dropdown-item menu-ko" href="/ko/react-native/react-native-push-notification/">한국어</a><a class="dropdown-item menu-en" href="/en/react-native/react-native-push-notification/">English</a><a class="dropdown-item menu-ja" href="/react-native/react-native-push-notification/">日本語</a></div></div><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i></button></div><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/clog/">Clog</a><a class="dropdown-item" href="/ildangongbu/">일단공부（イルタンゴンブ）</a><a class="dropdown-item" href="/vue/">Vue</a><a class="dropdown-item" href="/code_quality/">Code Quality</a><a class="dropdown-item" href="/git/">git</a><a class="dropdown-item" href="/books/">本の執筆</a><a class="dropdown-item" href="/environment/">開発環境</a><a class="dropdown-item" href="/share/">共有</a><a class="dropdown-item" href="/flutter/">Flutter</a><a class="dropdown-item" href="/tensorflow/">TensorFlow</a><a class="dropdown-item" href="/github_actions/">GitHub Actions</a><a class="dropdown-item" href="/golang/">Golang</a><a class="dropdown-item" href="/ruby/">Ruby</a><a class="dropdown-item" href="/jest/">Jest</a><a class="dropdown-item" href="/kumoncho/">kumoncho</a><a class="dropdown-item" href="/blaboo/">BlaBoo</a><a class="dropdown-item" href="/jekyll/">jekyll blog</a><a class="dropdown-item" href="/essay/">エッセイ</a><a class="dropdown-item" href="/react/">React</a><a class="dropdown-item" href="/web/">ウェブに関する情報</a><a class="dropdown-item" href="/django/">ジャンゴ(django)</a><a class="dropdown-item" href="/react-native/">React Native</a><a class="dropdown-item" href="/laravel/">Laravel</a><a class="dropdown-item" href="/kubernetes/">クバネティス</a><a class="dropdown-item" href="/ruby-on-rails/">Ruby on Rails</a></div></li><li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href=" /app/list/">Apps</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li></ul></div></div></nav><script defer>document.addEventListener("DOMContentLoaded",function(){var e=window.location.pathname;e.indexOf("/en/")>=0?($(".menu-ko").prop("href",e.replace("/en/","/ko/")),$(".menu-en").prop("href",e),$(".menu-ja").prop("href",e.replace("/en/","/"))):e.indexOf("/ko/")>=0?($(".menu-ko").prop("href",e),$(".menu-en").prop("href",e.replace("/ko/","/en/")),$(".menu-ja").prop("href",e.replace("/ko/","/"))):($(".menu-ko").prop("href","/ko"+e),$(".menu-en").prop("href","/en"+e),$(".menu-ja").prop("href",e)),$("body").on("show.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideDown()}),$("body").on("hide.bs.dropdown",".dropdown",function(){$(this).find(".dropdown-menu").first().stop(!0,!0).slideUp()})});</script><header class="masthead" style="background-image: url('/assets/images/category/react-native/2019/react-native-push-notification/background.jpg')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1>Local Push Notificatoin</h1><div class="heading-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-10-17 <img style="width: inherit;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdev-yakuza.github.io%2F/react-native/react-native-push-notification/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hit count image"/></div><h2 class="subheading">react-native-push-notificationライブラリを使ってLocal Push Notification, つまりアプリ(App)自体からお知らせを送る方法について説明します。</h2><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div></div></div></div></div></header><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3850742490" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1496496025" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="3797155229" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="container container-contents"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><nav aria-label="breadcrumb"><ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/react-native"><span itemprop="name">react-native</span></a><meta itemprop="position" content="2"/></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemtype="http://schema.org/Thing" itemprop="item" href="/react-native/react-native-push-notification/"><span itemprop="name">Local Push Notificatoin</span></a><meta itemprop="position" content="3"/></li></ol></nav></div></div><div class="row"><div class="col-lg-2 col-md-1 d-none d-lg-block left-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1333703444" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><article class="col-lg-8 col-md-10 mx-auto"><div id="contents_list"><ol><li><a href="#概要">概要</a></li><li><a href="#ライブラリインストール">ライブラリインストール</a><ul><li><a href="#060以上ライブラリリンク">0.60以上ライブラリリンク</a></li><li><a href="#059以下ライブラリリンク">0.59以下ライブラリリンク</a></li></ul></li><li><a href="#アンドロイド権限設定">アンドロイド権限設定</a></li><li><a href="#react-native-push-notificationの使い方">react-native-push-notificationの使い方</a></li><li><a href="#アプリappに適用する">アプリ(App)に適用する</a></li><li><a href="#アンドロイドのic_launcherアイコン">アンドロイドのic_launcherアイコン</a></li><li><a href="#確認">確認</a></li><li><a href="#問題点">問題点</a></li><li><a href="#完了">完了</a></li></ol></div><h2 id="概要">概要</h2><p>一人で開発した単語勉強アプリがダウンロードは多くなりましたが、DAU(Daily Active User, アクティブユーザー)がそんなに多くないことを見つけました。それでDAU(Daily Active User, アクティブユーザー)を上げるためメッセージ送信(Push Notification)を適用することにしました。しかし、貧乏な開発者なので、サーバーを利用するメッセージ送信(Push Notification)じゃなくアプリ(App)自体からメッセージを送信する方法(Local Push Notification)で実装することにしました。ここで紹介する方法が適用された私のアプリです。もし、興味がある方はダウンロードして見てください。</p><ul><li>일본어 단어 공부, 일단 공부: <a href="https://deku.posstree.com/app/ildangongbu/" target="_blank">https://deku.posstree.com/app/ildangongbu/</a></li><li>韓国語単語勉強、カンタン勉強: <a href="https://deku.posstree.com/app/kantanbenkyo/" target="_blank">https://deku.posstree.com/app/kantanbenkyo/</a></li><li>TOPIK単語勉強、TOPIK単語1/2: <a href="https://deku.posstree.com/app/topik12/" target="_blank">https://deku.posstree.com/app/topik12/</a></li><li>TOPIK単語勉強、TOPIK単語3/4: <a href="https://deku.posstree.com/app/topik34/" target="_blank">https://deku.posstree.com/app/topik34/</a></li><li>TOPIK単語勉強、TOPIK単語5/6: <a href="https://deku.posstree.com/app/topik56/" target="_blank">https://deku.posstree.com/app/topik56/</a></li></ul><p>このブログポストでは<code class="language-plaintext highlighter-rouge">react-native-push-notification</code>のライブラリを使ってアプリ(App)自体からメッセージを送信する方法(Local Push Notification)について説明します。</p><ul><li>react-native-push-notification: <a href="https://github.com/zo0r/react-native-push-notification" rel="nofollow noreferrer" target="_blank">https://github.com/zo0r/react-native-push-notification</a></li></ul><h2 id="ライブラリインストール">ライブラリインストール</h2><p>下記のコマンドで<code class="language-plaintext highlighter-rouge">react-native-push-notification</code>のライブラリをインストールします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> react-native-push-notification
+</code></pre></div></div><h3 id="060以上ライブラリリンク">0.60以上ライブラリリンク</h3><p>下記のコマンドで<code class="language-plaintext highlighter-rouge">react-native-push-notification</code>を使うため追加ライブラリをインストールします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @react-native-community/push-notification-ios
+</code></pre></div></div><p>そして下記のコマンドでインストールした<code class="language-plaintext highlighter-rouge">@react-native-community/push-notification-ios</code>ライブラリをリンクします。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native <span class="nb">link</span> @react-native-community/push-notification-ios
+</code></pre></div></div><p>最後に、下記のコマンドを実行します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>ios
+pod <span class="nb">install
+cd</span> ..
+</code></pre></div></div><h3 id="059以下ライブラリリンク">0.59以下ライブラリリンク</h3><p>下記のコマンドで<code class="language-plaintext highlighter-rouge">react-native-push-notification</code>のライブラリを連結(Link)します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native <span class="nb">link </span>react-native-push-notification
+</code></pre></div></div><p>上の実行したコマンドの結果を見たら分かると思いますが、アンドロイド(Android)だけ連結(Link)されました。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>info Linking <span class="s2">"react-native-push-notification"</span> Android dependency
+info Android module <span class="s2">"react-native-push-notification"</span> has been successfully linked
+</code></pre></div></div><p>iOSは下記のリンクを参考して進める必要があります。</p><ul><li>iOS manual Installation: <a href="https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking" rel="nofollow noreferrer" target="_blank">https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking</a></li></ul><p>まず、<code class="language-plaintext highlighter-rouge">/ios/[project-name].xcworkspace</code>や<code class="language-plaintext highlighter-rouge">/ios/[project-name].xcodeproj</code>を実行してxcodeを起動します。</p><picture><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/add-library.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/add-library.webp" type="image/webp"/><img src="/assets/images/category/react-native/2019/react-native-push-notification/add-library.jpg" alt="react-native-push-notificationライブラリiOS連結(link)"/></picture><p>上のように<code class="language-plaintext highlighter-rouge">node_modules/react-native/libraries/PushNotificationIOS/RCTPushNotification.xcodeproj</code>をxcodeのプロジェクト名下の<code class="language-plaintext highlighter-rouge">libraries</code>にドラックして追加します。注意点はnode_modulesのreact-native-push-notificationではなく<code class="language-plaintext highlighter-rouge">react-native</code>です。</p><p>次は下記のように<code class="language-plaintext highlighter-rouge">プロジェクト名 &gt; Build Phases &gt; Link Binary with Libraries</code>を選択します。</p><picture><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/build-phases.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/build-phases.webp" type="image/webp"/><img src="/assets/images/category/react-native/2019/react-native-push-notification/build-phases.jpg" alt="react-native-push-notificationライブラリiOS連結(link) - build phases"/></picture><p>下にある<code class="language-plaintext highlighter-rouge">+</code>ボタンを押して<code class="language-plaintext highlighter-rouge">Push</code>で検索します。検索結果にある<code class="language-plaintext highlighter-rouge">libRCTPushNotification.a</code>を選択して<code class="language-plaintext highlighter-rouge">Add</code>を押して追加します。</p><picture><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/add-library-to-build-phases.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/add-library-to-build-phases.webp" type="image/webp"/><img src="/assets/images/category/react-native/2019/react-native-push-notification/add-library-to-build-phases.jpg" alt="react-native-push-notificationライブラリiOS連結(link) - build phasesへライブラリ追加"/></picture><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="アンドロイド権限設定">アンドロイド権限設定</h2><p>アンドロイドでlocal push messageを使うためには、<code class="language-plaintext highlighter-rouge">./android/app/src/main/AndroidManifest.xml</code>ファイルを開いて下記のように修正します。</p><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">package=</span><span class="s">"CHANGE YOUR INFO!!"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.VIBRATE"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.RECEIVE_BOOT_COMPLETED"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;application</span>
+      <span class="na">android:name=</span><span class="s">".MainApplication"</span>
+      <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+      <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+      <span class="na">android:allowBackup=</span><span class="s">"false"</span>
+      <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;meta-data</span>  <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.notification_channel_name"</span>
+            <span class="na">android:value=</span><span class="s">"CHANGE YOUR INFO!!"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;meta-data</span>  <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.notification_channel_description"</span>
+                  <span class="na">android:value=</span><span class="s">"CHANGE YOUR INFO!!"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;intent-filter&gt;</span>
+              <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.BOOT_COMPLETED"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/intent-filter&gt;</span>
+      <span class="nt">&lt;/receiver&gt;</span>
+      <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;service</span>
+          <span class="na">android:name=</span><span class="s">"com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"</span>
+          <span class="na">android:exported=</span><span class="s">"false"</span> <span class="nt">&gt;</span>
+          <span class="nt">&lt;intent-filter&gt;</span>
+              <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"com.google.firebase.MESSAGING_EVENT"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/intent-filter&gt;</span>
+      <span class="nt">&lt;/service&gt;</span>
+
+      <span class="nt">&lt;activity</span>
+        <span class="na">android:name=</span><span class="s">".MainActivity"</span>
+      <span class="err">...</span>
+<span class="err">&lt;/manifest</span><span class="nt">&gt;</span>
+</code></pre></div></div><p>上記のように修正したら、<code class="language-plaintext highlighter-rouge">CHANGE YOUR INFO!!</code>の部分へ自分の情報を入力します。私は3つ、全てPacakage IDで変更して使っています。</p><h2 id="react-native-push-notificationの使い方">react-native-push-notificationの使い方</h2><p>下記のコードは実際私が使ってるコードです。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppState</span><span class="p">,</span> <span class="nx">PushNotificationIOS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PushNotification</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native-push-notification</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">_handleAppStateChange</span> <span class="o">=</span> <span class="nx">nextAppState</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">nextAppState</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">_registerLocalNotification</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">_registerLocalNotification</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">setApplicationIconBadgeNumber</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">cancelAllLocalNotifications</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">ちょっと時間を作って韓国語を勉強するのはどうですか?</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">今日韓国語は勉強しましたか?</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">韓国語の単語を勉強しましょう</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">単語の勉強は毎日毎日するのが重要です。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">新しい単語や暗記した単語を復習してみてください。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">韓国語を勉強する時間です。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">テスト機能であなたの実力を試してみてください。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">韓国語単語たちがあなたを待っています。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">韓国語、難しくないです。勉強して見ましょう。</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">韓国語マスターになるため！</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+
+  <span class="kd">let</span> <span class="nx">nextHour</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="nx">nextHour</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nx">nextHour</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">localNotificationSchedule</span><span class="p">({</span>
+    <span class="cm">/* Android Only Properties */</span>
+    <span class="na">vibrate</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">vibration</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="na">priority</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">visibility</span><span class="p">:</span> <span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="cm">/* iOS and Android properties */</span>
+    <span class="nx">message</span><span class="p">,</span> <span class="c1">// (required)</span>
+    <span class="na">playSound</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">actions</span><span class="p">:</span> <span class="dl">'</span><span class="s1">["OK"]</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="c1">// for production</span>
+    <span class="na">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">day</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// (optional) Repeating interval. Check 'Repeating Notifications' section for more info.</span>
+    <span class="na">date</span><span class="p">:</span> <span class="nx">nextHour</span><span class="p">,</span>
+
+    <span class="c1">// test to trigger each miniute</span>
+    <span class="c1">// repeatType: 'minute',</span>
+    <span class="c1">// date: new Date(Date.now()),</span>
+
+    <span class="c1">// test to trigger one time</span>
+    <span class="c1">// date: new Date(Date.now() + 20 * 1000),</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">register</span><span class="p">:</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
+      <span class="na">onNotification</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">notification</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">notification</span><span class="p">.</span><span class="nx">finish</span><span class="p">(</span><span class="nx">PushNotificationIOS</span><span class="p">.</span><span class="nx">FetchResult</span><span class="p">.</span><span class="nx">NoData</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="na">popInitialNotification</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">});</span>
+
+    <span class="nx">_registerLocalNotification</span><span class="p">();</span>
+
+    <span class="nx">AppState</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="nx">_handleAppStateChange</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">unregister</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">AppState</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="nx">_handleAppStateChange</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div><p>一つずつ詳しく見て見ましょう。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">PushNotification</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native-push-notification</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">register</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
+      <span class="na">onNotification</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">notification</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">notification</span><span class="p">.</span><span class="nx">finish</span><span class="p">(</span><span class="nx">PushNotificationIOS</span><span class="p">.</span><span class="nx">FetchResult</span><span class="p">.</span><span class="nx">NoData</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="na">popInitialNotification</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="nx">_registerLocalNotification</span><span class="p">();</span>
+    <span class="p">...</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></div><p>まず、このソースコードをモジュール化しました。<code class="language-plaintext highlighter-rouge">register()</code>のファンクションを実行すると<code class="language-plaintext highlighter-rouge">PushNotification</code>を初期化してアプリ(App)自体お知らせ(Local Push Notification)を登録するファンクションを呼びます。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">_registerLocalNotification</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">setApplicationIconBadgeNumber</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">cancelAllLocalNotifications</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">...</span>
+  <span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+
+  <span class="kd">let</span> <span class="nx">nextHour</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="nx">nextHour</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nx">nextHour</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+
+  <span class="nx">PushNotification</span><span class="p">.</span><span class="nx">localNotificationSchedule</span><span class="p">({</span>
+    <span class="cm">/* Android Only Properties */</span>
+    <span class="na">vibrate</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">vibration</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="na">priority</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">visibility</span><span class="p">:</span> <span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="cm">/* iOS and Android properties */</span>
+    <span class="nx">message</span><span class="p">,</span> <span class="c1">// (required)</span>
+    <span class="na">playSound</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">actions</span><span class="p">:</span> <span class="dl">'</span><span class="s1">["OK"]</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="c1">// for production</span>
+    <span class="na">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">day</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// (optional) Repeating interval. Check 'Repeating Notifications' section for more info.</span>
+    <span class="na">date</span><span class="p">:</span> <span class="nx">nextHour</span><span class="p">,</span>
+
+    <span class="c1">// test to trigger each miniute</span>
+    <span class="c1">// repeatType: 'minute',</span>
+    <span class="c1">// date: new Date(Date.now()),</span>
+
+    <span class="c1">// test to trigger one time</span>
+    <span class="c1">// date: new Date(Date.now() + 20 * 1000),</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div><p>アプリ(App)自体お知らせ(Local Push Notification)を登録するため<code class="language-plaintext highlighter-rouge">_registerLocalNotification</code>のファンクションを実行すると、</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">PushNotification</span><span class="p">.</span><span class="nx">setApplicationIconBadgeNumber</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">PushNotification</span><span class="p">.</span><span class="nx">cancelAllLocalNotifications</span><span class="p">();</span>
+</code></pre></div></div><p>バッジ(Badge)を初期化して、既存に登録したお知らせ(Notification)を全て無くします。既存のお知らせ(Notification)を無くした理由はアプリを実行するたびに登録をして重複されて同じメッセージが発信される問題がありました。AsyncStorageを使ってコントロールするかとも思いましたが、ただ全てを無くして新しく登録する方法を採用しました。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="kd">const</span> <span class="nx">messages</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">...</span>
+<span class="p">];</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+
+<span class="kd">let</span> <span class="nx">nextHour</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">nextHour</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">nextHour</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="nx">nextHour</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">...</span>
+</code></pre></div></div><p>お知らせのメッセージをランダムで表示するため変数と、アプリ(App)が実装された時間を基準に次の日同じ時間より１時間早くお知らせを送るように設定しました。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">PushNotification</span><span class="p">.</span><span class="nx">localNotificationSchedule</span><span class="p">({</span>
+    <span class="cm">/* Android Only Properties */</span>
+    <span class="na">vibrate</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">vibration</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="na">priority</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">visibility</span><span class="p">:</span> <span class="dl">'</span><span class="s1">public</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hight</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="cm">/* iOS and Android properties */</span>
+    <span class="nx">message</span><span class="p">,</span> <span class="c1">// (required)</span>
+    <span class="na">playSound</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">actions</span><span class="p">:</span> <span class="dl">'</span><span class="s1">["OK"]</span><span class="dl">'</span><span class="p">,</span>
+
+    <span class="c1">// for production</span>
+    <span class="na">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">day</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// (optional) Repeating interval. Check 'Repeating Notifications' section for more info.</span>
+    <span class="na">date</span><span class="p">:</span> <span class="nx">nextHour</span><span class="p">,</span>
+
+    <span class="c1">// test to trigger each miniute</span>
+    <span class="c1">// repeatType: 'minute',</span>
+    <span class="c1">// date: new Date(Date.now()),</span>
+
+    <span class="c1">// test to trigger one time</span>
+    <span class="c1">// date: new Date(Date.now() + 20 * 1000),</span>
+<span class="p">});</span>
+</code></pre></div></div><p>アプリ自体お知らせ(Local Push Notification)を登録します。色んなオプションがあります。下記のリンクを参考してください。</p><ul><li><a href="https://github.com/zo0r/react-native-push-notification#local-notifications" rel="nofollow noreferrer" target="_blank">https://github.com/zo0r/react-native-push-notification#local-notifications</a></li></ul><p>私は本番(Production)では</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">day</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// (optional) Repeating interval. Check 'Repeating Notifications' section for more info.</span>
+<span class="nx">date</span><span class="p">:</span> <span class="nx">nextHour</span><span class="p">,</span>
+</code></pre></div></div><p>毎日、最後に起動した時間より1時間早くメッセージ(Local Push Notification)を表示するようにしました。テストする時は、</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// test to trigger one time</span>
+<span class="nx">date</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+</code></pre></div></div><p>20秒後メッセージ(Local Push Notification)を表示するようにするか</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// test to trigger each miniute</span>
+<span class="nx">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">minute</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">date</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()),</span>
+</code></pre></div></div><p>今から毎分、メッセージを表示してテストしました。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppState</span><span class="p">,</span> <span class="nx">PushNotificationIOS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">_handleAppStateChange</span> <span class="o">=</span> <span class="nx">nextAppState</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">nextAppState</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">_registerLocalNotification</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">register</span><span class="p">:</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="p">...</span>
+    <span class="nx">AppState</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="nx">_handleAppStateChange</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">unregister</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">AppState</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="nx">_handleAppStateChange</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div><p>AppStateを使ってアプリ(App)がバックグラウンド(Background)から戻ってくる時、アクティブ(Active)になる時をチェックしてアプリ(App)内部お知らせ機能(Local Push Notification)を再登録するようにしました。このようにした理由はアプリのメッセージ(Local Push Notification)をランダムに表示するためです。</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="アプリappに適用する">アプリ(App)に適用する</h2><p>上で作ったモジュール化したアプリ(App)内部お知らせ機能(Local Push Notification)を使うためアプリ(App)が実行される時必ず実行されるコンポーネント(Component)に下記のように使っています。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="nx">LocalNotification</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">~/Util/LocalNotification</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">LevelScreen</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="nx">State</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nx">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">LocalNotification</span><span class="p">.</span><span class="nx">unregister</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">LocalNotification</span><span class="p">.</span><span class="nx">register</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><h2 id="アンドロイドのic_launcherアイコン">アンドロイドのic_launcherアイコン</h2><p>アンドロイド(Android)のお知らせ(Push Notification)を見ると左上に小さいアイコンが表示されることが確認できます。このアイコンを作るため<code class="language-plaintext highlighter-rouge">generator-rn-toolbox</code>を使いました。</p><ul><li>generator-rn-toolbox: <a href="https://github.com/bamlab/generator-rn-toolbox/blob/master/generators/assets/README.md#generate-android-notification-icons" rel="nofollow noreferrer" target="_blank">https://github.com/bamlab/generator-rn-toolbox/blob/master/generators/assets/README.md#generate-android-notification-icons</a></li></ul><p>96x96 pxサイズのpngファイルを作って下記のサイズでこのイメージがic_launcherとしてうまく表示されるか確認します。</p><ul><li>icons-notification: <a href="http://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&amp;source.space.trim=0&amp;source.space.pad=-0.1&amp;name=ic_stat_ic_notification" rel="nofollow noreferrer" target="_blank">http://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&amp;source.space.trim=0&amp;source.space.pad=-0.1&amp;name=ic_stat_ic_notification</a></li></ul><p>最後に、下記のコマンドでic_launcherアイコンを生成します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yo rn-toolbox:assets <span class="nt">--android-notification-icon</span> icon.jpg
+</code></pre></div></div><p>generator-rn-toolboxのインストールや使い方については以前のブログポストを参考してください。</p><ul><li><a href="https://deku.posstree.com/react-native/app-icon/" target="_blank">App icon</a></li><li><a href="https://deku.posstree.com/react-native/splash-image/" target="_blank">Splashイメージ</a></li></ul><h2 id="確認">確認</h2><p>確認のためアプリ(App)内部お知らせ機能(Local Push Notification)を登録する時、下記のオプションを使いました。</p><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">repeatType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">minute</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">date</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()),</span>
+</code></pre></div></div><p>アプリ(App)を実行して、アプリ(App)を無効化(終了やバックグラウンド)すると、1分後下記のようにメッセージ(Local Push Notification)が表示されることが確認できます。</p><picture><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/local-push-notification.avif" type="image/avif"/><source srcset="/assets/images/category/react-native/2019/react-native-push-notification/local-push-notification.webp" type="image/webp"/><img src="/assets/images/category/react-native/2019/react-native-push-notification/local-push-notification.jpg" alt="react-native-push-notification アプリ(App)内部お知らせ機能(Local Push Notification)確認"/></picture><p>アプリ(App)を必ず実行する必要があることとアプリ(App)を無効化する必要があることを注意してください。</p><h2 id="問題点">問題点</h2><p>アプリ(App)を実行する時、アプリ(App)内部お知らせ(Local Push Notification)が登録されます。この時メッセージも一緒に登録されますが、アプリ(App)を再起動させてアプリ(App)内部お知らせ(Local Push Notification)を再登録しないといつも同じメッセージが表示されます。</p><p>もっと色んなメッセージを表示したいですが、アプリ(App)を再起動しないユーザーにはいつも同じメッセージが見える不便さがあります。</p><h2 id="完了">完了</h2><p>結構いいライブラリと思います。アプリ(App)内部メッセージ以外も外部メッセージ(Push Notification)も処理することができるみたいです。後でこの貧乏をだ脱出すると、サーバーを使ってメッセージ(Push Notification)も実装して見たいですね。</p><p>また, この機能でDAU(Daily Active User, アクティブユーザー)が上がるかイライラさせてアプリ(App)を削除することになるかもうちょっと見てみる必要があります。</p><div class="sponsor_container"><a href="https://github.com/sponsors/dev-yakuza" target="_blank" rel="noopener" style=" background-color: #e6ebf1; background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%); background-position: -0.5em; color: #24292e; text-decoration: none; border: 1px solid rgba(27, 31, 35, 0.35); padding: 6px 10px; user-select: none; background-repeat: repeat-x; background-position: -1px -1px; background-size: 110% 110%; border: 1px solid rgba(27, 31, 35, 0.2); border-radius: 0.25em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; white-space: nowrap; vertical-align: middle; font-size: 17px; font-family: 'Lato', sans-serif !important; margin: 10px; display: inline-block; "><svg style="color: #ea4aaa; vertical-align: text-bottom !important;" viewBox="0 0 12 16" version="1.1" width="16" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg> Github Sponsor </a><style> .bmc-button img { width: 27px !important; margin-bottom: 1px !important; border: none !important; vertical-align: middle !important; } .bmc-button { line-height: 36px !important; height: 37px !important; text-decoration: none !important; display: inline-block !important; color: #ffffff !important; background-color: #ff813f !important; border-radius: 3px !important; border: 1px solid transparent !important; padding: 0px 9px !important; font-size: 17px !important; letter-spacing: -0.08px !important; margin: 10px !important; font-family: 'Lato', sans-serif !important; -webkit-box-sizing: border-box !important; box-sizing: border-box !important; -o-transition: 0.3s all linear !important; -webkit-transition: 0.3s all linear !important; -moz-transition: 0.3s all linear !important; -ms-transition: 0.3s all linear !important; transition: 0.3s all linear !important; } .bmc-button:hover, .bmc-button:active, .bmc-button:focus { -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; text-decoration: none !important; box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important; opacity: 0.85 !important; color: #ffffff !important; }</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"/><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"/><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/j0cXhWiza" rel="noopener noreferrer nofollow"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span style="margin-left:5px">Buy me a coffee</span></a></div><p><code class="language-plaintext highlighter-rouge"> 私のブログが役に立ちましたか？下にコメントを残してください。それは私にとって大きな大きな力になります！ </code></p><h2>アプリ広報</h2><div class="book-greeting"> 今見てるブログを作成た<code class="highlighter-rouge">Deku</code>が開発したアプリを使ってみてください。<br/><code class="highlighter-rouge">Deku</code>が開発したアプリはFlutterで開発されています。<br/><br/> 興味がある方はアプリをダウンロードしてアプリを使ってくれると本当に助かります。<br/><br/><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/blaboo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/blaboo.png" alt="子供向け単語勉強アプリ、ブラブー"/><div><div class="app_description">子供向け単語勉強アプリ</div><div class="app_title">ブラブー</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik12/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik12.png" alt="TOPIK試験向け単語アプリ、TOPIK単語1/2"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語1/2</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik34/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik34.png" alt="TOPIK試験向け単語アプリ、TOPIK単語3/4"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語3/4</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/topik56/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/topik56.png" alt="TOPIK試験向け単語アプリ、TOPIK単語5/6"/><div><div class="app_description">TOPIK試験向け単語アプリ</div><div class="app_title">TOPIK単語5/6</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/kantanbenkyo/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/kantanbenkyo.png" alt="韓国語単語アプリ、カンタン勉強"/><div><div class="app_description">韓国語単語アプリ</div><div class="app_title">カンタン勉強</div></div></a></div><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/toeicwordsjp/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/toeicwordsjp.png" alt="TOEIC試験向け単語アプリ、TOEIC英語単語帳"/><div><div class="app_description">TOEIC試験向け単語アプリ</div><div class="app_title">TOEIC英語単語帳</div></div></a></div></div><div class="row" style="display: flex;"><div class="col-lg-4 col-md-4 col-sm-auto col-auto" style="margin-bottom: 40px; display: flex; align-items: center;"><a class="app_container" href="/app/centerenglish/" target="_blank"><img class="app_logo_image" src="/assets/images/logo/centerenglish.png" alt="センター試験向け単語アプリ、センター英語単語"/><div><div class="app_description">センター試験向け単語アプリ</div><div class="app_title">センター英語単語</div></div></a></div></div></div></article><div class="col-lg-2 col-md-1 d-none d-lg-block right-ads"><ins class="adsbygoogle sticky-top" style="display:block; padding-top: 80px; margin-bottom: 80px;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9858937018" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1936214968" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="1507571483" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-right"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-7987914246691031" data-ad-slot="9369594845" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-list-container"><div class="header"><div class="header-title">Posts</div><div id="search-bar"><label for="search" style="width: 0; height: 0; overflow: hidden; float: left;">Search</label><i class="fa fa-search" aria-hidden="true"></i><input id="search" type="text" placeholder="Search..."/></div></div><div class="body"><div class="list-group"></div></div><div class="footer"><ul class="pagination"><li class="page-item page-item--previous"><div class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></div></li><li class="page-item page-item--next"><div class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></div></li></ul></div></div><script defer type="text/javascript">document.addEventListener("DOMContentLoaded",function(){function e(e,a){$(".page").remove(),$(".page-item--link").remove();var t=$(".post-list-container .body .list-group");e.forEach(function(e,i){var s=Math.floor(i/8)+1,n=t.find(".page-"+s),o=!1===a&&e.url.indexOf(location.pathname)>=0?"active":"",l="";if(l+='<a href="'+e.url+'" class="list-group-item list-group-item-action flex-column align-items-start '+o+'">',l+='  <div class="d-flex w-100 justify-content-between">',l+='    <div class="mb-1">'+e.title+"</div>",l+="  </div>",l+='  <div class="body-text">'+e.description+"</div>",l+="</a>",n.length>0)n.addClass(!0===a&&1===s?"active":o),n.append(l);else{var p="";p+='<div class="page page-'+s+" "+(!0===a&&1===s?"active":o)+'">',p+=l,p+="</div>",t.append(p)}var d="";d+='<li class="page-item page-item--link '+o+'" data-page="'+s+'">',d+='  <div class="page-link" data-page="'+s+'">',d+=s,d+="  </div>",d+="</li>",0===$('.post-list-container .footer .page-item[data-page="'+s+'"]').length&&$(".post-list-container .footer .page-item--next").before(d),!0===a?$("li[data-page=1]").addClass("active"):"active"===o&&$("li[data-page="+s+"]").addClass(o),s>1&&$(".footer").css("display","flex")})}var a=[];$.get("/api/react-native/posts.json",function(t){a=t,t.length>0&&($(".post-list-container").show(),e(t,!1))}),$("body").on("click",".page-link",function(){var e=$(".post-list-container .body .list-group"),a=$(".footer .pagination"),t=a.find(".page-item.active"),i=t.find(".page-link").data("page"),s=$(this).data("page");if($(this).closest(".page-item").hasClass("page-item--previous"))s=i>1?i-1:1;else if($(this).closest(".page-item").hasClass("page-item--next")){var n=a.find(".page-item--link").length;s=i<n?i+1:n}else var s=$(this).data("page");e.find(".page").removeClass("active"),e.find(".page-"+s).addClass("active"),a.find(".page-item").removeClass("active"),a.find('.page-link[data-page="'+s+'"]').closest(".page-item").addClass("active")}),$("#search").on("keyup",function(){var t=this.value.toLowerCase(),i=[];if($(".footer .pagination"),t.length>0){for(var s=0;s<a.length;s++){var n=a[s];(n.title.toLowerCase().indexOf(t)>=0||n.description.toLowerCase().indexOf(t)>=0)&&i.push(n)}e(i,!0)}else e(a,!1)})});</script></div><div class="col-lg-8 col-md-10 mx-auto"><hr/><script src="https://utteranc.es/client.js" repo="dev-yakuza/dev-yakuza.github.io" issue-term="title" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div></div><footer><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto share-title"> SHARE </div><div class="col-lg-8 col-md-10 mx-auto"><ul class="list-inline text-center"><li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text=Local Push Notificatoin&url=https://deku.posstree.com/react-native/react-native-push-notification/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Twitter </div></a></li><li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=https://deku.posstree.com/react-native/react-native-push-notification/" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> Facebook </div></a></li><li class="list-inline-item"><a href="https://deku.posstree.com/feed.xml" rel="nofollow noreferrer noopener" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss-square fa-stack-1x fa-inverse" aria-hidden="true"></i></span><div style="width: 0; height: 0; overflow: hidden; float: left;"> RSS </div></a></li></ul><p class="copyright text-muted"> Copyright &copy; dev.yakuza@gmail.com 2024 </p></div></div></div></footer><script src="/assets/vendor/jquery/jquery.min.js"></script><script async src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script async src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script><script async src="/assets/scripts.js?v=20240916"></script><link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css"><script defer src="/assets/highlight/highlight.pack.js"></script><script defer>document.addEventListener("DOMContentLoaded",function(){hljs.initHighlightingOnLoad()});</script></body></html>
