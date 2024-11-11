@@ -1,4 +1,185 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/" rel="alternate" type="text/html"/><updated>2024-11-11T06:01:45+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ja"><title type="html">[GitHub Actions] Composite Actionを使ってGitHub Actionsの重複を減らす</title><link href="https://deku.posstree.com/github_actions/composite-action/" rel="alternate" type="text/html" title="[GitHub Actions] Composite Actionを使ってGitHub Actionsの重複を減らす"/><published>2024-10-22T00:00:00+09:00</published><updated>2024-11-04T21:02:31+09:00</updated><id>https://deku.posstree.com/github_actions/composite-actions-ja</id><content type="html" xml:base="https://deku.posstree.com/github_actions/composite-action/"><![CDATA[<div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#%E6%A6%82%E8%A6%81">概要</a></li><li><a href="#composite-action%E3%81%A8%E3%81%AF">Composite Actionとは</a></li><li><a href="#%E9%87%8D%E8%A4%87%E3%82%B3%E3%83%BC%E3%83%89%E3%81%8C%E3%81%82%E3%82%8Bgithub-action%E3%81%AE%E4%BE%8B">重複コードがあるGitHub Actionの例</a></li><li><a href="#composite-action%E3%82%92%E4%BD%9C%E3%82%8B">Composite Actionを作る</a></li><li><a href="#composite-action%E3%82%92%E4%BD%BF%E3%81%86">Composite Actionを使う</a></li><li><a href="#composite-action%E3%81%AEinputs">Composite Actionのinputs</a></li><li><a href="#composite-action%E3%81%AEoutputs">Composite Actionのoutputs</a></li><li><a href="#%E5%AE%8C%E4%BA%86">完了</a></li></ul></div><h2 id="概要">概要</h2><p>GitHub Actionsを使って開発をする際にActionで共通で使う部分が出てくることがあります。この時、Composite Actionを使うと共通で使う部分を一つのActionにまとめて再利用性を高めることができます。</p><p>このブログポストではComposite Actionを使ってGitHub Actionsの再利用性を高める方法について紹介します。</p><h2 id="composite-actionとは">Composite Actionとは</h2><p>Composite Actionは複数のActionを一つのActionにまとめて使うことができる機能です。Composite Actionを使うと複数のActionで共通で使う部分を一つのActionにまとめて再利用性を高めることができます。</p><ul><li>公式ドキュメント: <a href="https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action" rel="nofollow noreferrer" target="_blank">Composite Action</a></li></ul><h2 id="重複コードがあるgithub-actionの例">重複コードがあるGitHub Actionの例</h2><p>Reactを使うプロジェクトで次のようなGitHub Actionsを使うことができます。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Check</span><span class="nv"> </span><span class="s">code'</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/" rel="alternate" type="text/html"/><updated>2024-11-11T20:56:16+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ja"><title type="html">[GitHub Actions] Jestの実行Actionsのパフォーマンスを改善する</title><link href="https://deku.posstree.com/github_actions/improve-test-performance/" rel="alternate" type="text/html" title="[GitHub Actions] Jestの実行Actionsのパフォーマンスを改善する"/><published>2024-10-23T00:00:00+09:00</published><updated>2024-11-11T20:56:07+09:00</updated><id>https://deku.posstree.com/github_actions/improve-test-performance-ja</id><content type="html" xml:base="https://deku.posstree.com/github_actions/improve-test-performance/"><![CDATA[<div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li><li><a href="#%E6%A6%82%E8%A6%81">概要</a></li><li><a href="#%E5%95%8F%E9%A1%8C%E7%82%B9">問題点</a></li><li><a href="#%E6%80%A7%E8%83%BD%E6%94%B9%E5%96%84">性能改善</a><ul><li><a href="#dependencies-cache">Dependencies Cache</a></li><li><a href="#actions%E5%88%86%E9%9B%A2">Actions分離</a></li><li><a href="#jest%E3%81%AEbail">Jestのbail</a></li><li><a href="#jest%E3%81%AEshard%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">Jestのshardオプション</a></li></ul></li><li><a href="#%E5%AE%8C%E4%BA%86">完了</a></li></ul></div><h2 id="概要">概要</h2><p>最近、会社でテストコードが増えてきたため、<code class="language-plaintext highlighter-rouge">GitHub Actions</code>でコードをチェックするActionに時間がかかるようになりました。この問題を解決するために、<code class="language-plaintext highlighter-rouge">Jest</code>を実行するActionのパフォーマンスを改善した内容を共有したいと思います。</p><h2 id="問題点">問題点</h2><p>現在、次のようなActionを使用してPRをチェックしています。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">check-code</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Check Code</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Prettier</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn format</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">CSpell</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn cspell</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ESLint</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn lint</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Stylelint</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn stylelint</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">yarn test:ci</span>
+          <span class="s">yarn test:storybook</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">yarn build</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build SCSS</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">yarn typegen:scss</span>
+
+          <span class="s"># Get the changed files</span>
+          <span class="s">CHANGED_FILES=$(git diff --name-only HEAD)</span>
+          <span class="s"># Check if there are changes in the generated files</span>
+          <span class="s">if [ -n "$CHANGED_FILES" ]; then</span>
+            <span class="s">echo "Error: There are changes in the following files: $CHANGED_FILES"</span>
+            <span class="s">exit 1</span>
+          <span class="s">fi</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">PR</code>が作成されるたびに<code class="language-plaintext highlighter-rouge">Prettier</code>、<code class="language-plaintext highlighter-rouge">CSpell</code>、<code class="language-plaintext highlighter-rouge">ESLint</code>、<code class="language-plaintext highlighter-rouge">Stylelint</code>、<code class="language-plaintext highlighter-rouge">Test</code>、<code class="language-plaintext highlighter-rouge">Build</code>、<code class="language-plaintext highlighter-rouge">Build SCSS</code>が実行されています。このActionは約25分かかります。</p><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/check-code-actions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/check-code-actions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/check-code-actions.png" alt="GitHub Actions - Improve Jest test performance"/></picture><h2 id="性能改善">性能改善</h2><p>PRを生成するたびに25分かかるのは非常に非効率的です。このブログポストでは、<code class="language-plaintext highlighter-rouge">Jest</code>を実行するActionのパフォーマンスを改善する方法について説明します。</p><h3 id="dependencies-cache">Dependencies Cache</h3><p>一番最初に行ったのは、<code class="language-plaintext highlighter-rouge">yarn install</code>でインストールされる<code class="language-plaintext highlighter-rouge">Dependencies</code>をキャッシュすることです。これにより、<code class="language-plaintext highlighter-rouge">Dependencies</code>を再インストールする時間を短縮できます。</p><p>この部分は他の<code class="language-plaintext highlighter-rouge">Actions</code>でも使用できるため、<code class="language-plaintext highlighter-rouge">Composite Action</code>として作成しました。<code class="language-plaintext highlighter-rouge">Composite Action</code>については、次のリンクを参照してください。</p><ul><li><a href="https://deku.posstree.com/github_actions/composite-action/" target="_blank">[GitHub Actions] Composite Actionを使ってGitHub Actionsの重複を減らす</a></li></ul><p>キャッシュは<code class="language-plaintext highlighter-rouge">actions/cache</code>を使って行いました。</p><ul><li><code class="language-plaintext highlighter-rouge">actions/cache</code>の公式ドキュメント: <a href="https://github.com/actions/cache" rel="nofollow noreferrer" target="_blank">https://github.com/actions/cache</a></li></ul><p><code class="language-plaintext highlighter-rouge">actions/cache</code>を使って<code class="language-plaintext highlighter-rouge">Dependencies</code>をキャッシュする<code class="language-plaintext highlighter-rouge">Composite Action</code>は次のようになります。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Install</span><span class="nv"> </span><span class="s">Dependencies'</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Install</span><span class="nv"> </span><span class="s">Dependencies'</span>
+<span class="na">runs</span><span class="pi">:</span>
+  <span class="na">using</span><span class="pi">:</span> <span class="s1">'</span><span class="s">composite'</span>
+  <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Setup node</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v4</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">node-version</span><span class="pi">:</span> <span class="s">20.3.0</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Enable Yarn 3.7.0</span>
+      <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="s">corepack enable</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Get yarn cache directory path</span>
+      <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">yarn-cache-dir-path</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="s">echo "dir=$(yarn config get cacheFolder)" &gt;&gt; $GITHUB_OUTPUT</span>
+    <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/cache@v4</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">yarn-cache</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">node_modules</span>
+          <span class="s">**/node_modules</span>
+          <span class="s">${{ steps.yarn-cache-dir-path.outputs.dir }}</span>
+        <span class="na">key</span><span class="pi">:</span> <span class="s">${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}</span>
+        <span class="na">restore-keys</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">${{ runner.os }}-yarn-</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+      <span class="na">if</span><span class="pi">:</span> <span class="s">steps.yarn-cache.outputs.cache-hit != 'true'</span>
+      <span class="na">shell</span><span class="pi">:</span> <span class="s">bash</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="s">yarn install --frozen-lockfile</span>
+
+</code></pre></div></div><p>私たちのチームは<code class="language-plaintext highlighter-rouge">Yarn</code>の<code class="language-plaintext highlighter-rouge">3.7.0</code>バージョンを使っています。そのため、<code class="language-plaintext highlighter-rouge">corepack enable</code>を追加し、<code class="language-plaintext highlighter-rouge">Yarn 3.7.0</code>のキャッシュフォルダを取得して<code class="language-plaintext highlighter-rouge">node_modules</code>と一緒にキャッシュしました。</p><p>また、プロジェクトがモノレポであるため、<code class="language-plaintext highlighter-rouge">**/node_modules</code>を使ってサブプロジェクトの<code class="language-plaintext highlighter-rouge">node_modules</code>もキャッシュしました。</p><p>もし、皆さんのプロジェクトがモノレポではなく、<code class="language-plaintext highlighter-rouge">Yarn 3.7.0</code>も使っていない場合は、公式ドキュメントを参照して適切な設定を行ってください。</p><ul><li>公式ドキュメント: <a href="https://github.com/actions/cache?tab=readme-ov-file#implementation-examples" rel="nofollow noreferrer" target="_blank">https://github.com/actions/cache?tab=readme-ov-file#implementation-examples</a></li></ul><p>この変更により、パフォーマンスが少し向上しました。</p><ul><li>Before: 1m 25s</li></ul><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/before-cache-actions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/before-cache-actions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/before-cache-actions.png" alt="GitHub Actions - Before using actions/cache for dependencies"/></picture><ul><li>After: 9s</li></ul><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/after-cache-actions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/after-cache-actions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/after-cache-actions.png" alt="GitHub Actions - After using actions/cache for dependencies"/></picture><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="actions分離">Actions分離</h3><p><code class="language-plaintext highlighter-rouge">Prettier</code>、<code class="language-plaintext highlighter-rouge">CSpell</code>、<code class="language-plaintext highlighter-rouge">ESLint</code>、<code class="language-plaintext highlighter-rouge">Stylelint</code>、<code class="language-plaintext highlighter-rouge">Test</code>、<code class="language-plaintext highlighter-rouge">Build</code>、<code class="language-plaintext highlighter-rouge">Build SCSS</code>をすべて1つの<code class="language-plaintext highlighter-rouge">Action</code>で実行していました。その中で最も時間がかかったのが<code class="language-plaintext highlighter-rouge">Test</code>の実行でした。</p><p>なので、<code class="language-plaintext highlighter-rouge">Test</code>が実行される間に他の<code class="language-plaintext highlighter-rouge">Actions</code>を実行できるように<code class="language-plaintext highlighter-rouge">Actions</code>を分離しました。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">cspell</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">CSpell</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">CSpell</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn cspell</span>
+  <span class="na">remark</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Remark-lint</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Remark-lint</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn remark:service_1</span>
+  <span class="na">eslint</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">ESLint</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ESLint</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn lint:service_1</span>
+  <span class="na">stylelint</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Stylelint</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Stylelint</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn stylelint:service_1</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Build</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn build:service_1</span>
+  <span class="na">test-service_1</span><span class="pi">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Test service_1</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn test:ci:service_1</span>
+</code></pre></div></div><p>モノレポを使っているため、このような<code class="language-plaintext highlighter-rouge">GitHub Actions</code>はサービスごとに存在し、<code class="language-plaintext highlighter-rouge">if</code>文を使ってそのサービスだけが実行されるようにしています。</p><p>分離する前には、この<code class="language-plaintext highlighter-rouge">Action</code>は約25分かかりました。</p><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/check-code-actions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/check-code-actions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/check-code-actions.png" alt="GitHub Actions - Before sperating actions"/></picture><p>分離した後、この<code class="language-plaintext highlighter-rouge">Action</code>は約13分程度で性能が改善されました。</p><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" alt="GitHub Actions - After sperating actions"/></picture><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h3 id="jestのbail">Jestのbail</h3><p><code class="language-plaintext highlighter-rouge">Jest</code>の<code class="language-plaintext highlighter-rouge">bail</code>オプションを使うと、テスト中に1つでもテストが失敗した場合にテストを中止するように設定できます。</p><p>このオプションを追加することで、テストが失敗した場合にすぐにすべてのテストを実行せずに中止することができ、時間を短縮できます。</p><p><code class="language-plaintext highlighter-rouge">Jest</code>の<code class="language-plaintext highlighter-rouge">bail</code>オプションを設定するために、<code class="language-plaintext highlighter-rouge">jest</code>を実行するコマンドが含まれる<code class="language-plaintext highlighter-rouge">package.json</code>ファイルを開いて、次のように変更します。</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"test:ci"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jest --ci --bail"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div><h3 id="jestのshardオプション">Jestのshardオプション</h3><p><code class="language-plaintext highlighter-rouge">Jest</code>の<code class="language-plaintext highlighter-rouge">shard</code>オプションを使うと、テストを並列で実行できます。<code class="language-plaintext highlighter-rouge">shard</code>を使ってテストを並列で実行するために、<code class="language-plaintext highlighter-rouge">Jest</code>を実行する<code class="language-plaintext highlighter-rouge">Action</code>を開いて次のように変更します。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">...</span>
+  <span class="s">test-service_1</span><span class="err">:</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">contains(github.head_ref, 'service_1') || contains(github.head_ref, 'npm_and_yarn') || contains(github.head_ref, 'github_actions') || contains(github.head_ref, 'components') || contains(github.head_ref, 'config') || contains(github.head_ref, 'common')</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Test service_1</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">strategy</span><span class="pi">:</span>
+      <span class="na">matrix</span><span class="pi">:</span>
+        <span class="na">shard</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">1</span><span class="pi">,</span> <span class="nv">2</span><span class="pi">,</span> <span class="nv">3</span><span class="pi">,</span> <span class="nv">4</span><span class="pi">,</span> <span class="nv">5</span><span class="pi">,</span> <span class="nv">6</span><span class="pi">,</span> <span class="nv">7</span><span class="pi">,</span> <span class="nv">8</span><span class="pi">,</span> <span class="nv">9</span><span class="pi">,</span> <span class="nv">10</span><span class="pi">]</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">fetch-depth</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/install_dependencies</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">yarn test:ci:service_1 -- --shard=$/10</span>
+</code></pre></div></div><p>このプロジェクトでは、モノレポを管理するために<code class="language-plaintext highlighter-rouge">Turborepo</code>を使っています。</p><ul><li><code class="language-plaintext highlighter-rouge">Turborepo</code>公式ドキュメント: <a href="https://turborepo.com/" rel="nofollow noreferrer">https://turborepo.com/</a></li></ul><p>この<code class="language-plaintext highlighter-rouge">Action</code>で実行する<code class="language-plaintext highlighter-rouge">yarn test:ci:service_1</code>は<code class="language-plaintext highlighter-rouge">turbo test:ci --parallel --filter=service_1</code>コマンドを実行します。そのため、<code class="language-plaintext highlighter-rouge">Jest</code>の<code class="language-plaintext highlighter-rouge">--shard</code>オプションを渡すために<code class="language-plaintext highlighter-rouge">--</code>を使ってオプションを渡しました。</p><p><code class="language-plaintext highlighter-rouge">shard</code>オプションを追加する前のテストは約13分かかりました。</p><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/after-separating-actions" alt="GitHub Actions - After sperating action"/></picture><p><code class="language-plaintext highlighter-rouge">shard</code>オプションを追加した後、テストは約2~3分かかりました。</p><picture><source srcset="/assets/images/category/github_actions/improve-test-performance/jest-shard-option.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/improve-test-performance/jest-shard-option.webp" type="image/webp"/><img src="/assets/images/category/github_actions/improve-test-performance/jest-shard-option.png" alt="GitHub Actions - Use Jest shard option"/></picture><h2 id="完了">完了</h2><p>このブログポストでは、<code class="language-plaintext highlighter-rouge">Jest</code>を実行する<code class="language-plaintext highlighter-rouge">Action</code>のパフォーマンスを改善する方法について説明しました。パフォーマンス改善前には約25分かかりましたが、パフォーマンス改善後には約2~3分かかるようになりました。</p><p>皆さんも<code class="language-plaintext highlighter-rouge">Cache</code>、<code class="language-plaintext highlighter-rouge">Actions分離</code>、<code class="language-plaintext highlighter-rouge">shard</code>オプションを使って<code class="language-plaintext highlighter-rouge">Jest</code>を実行する<code class="language-plaintext highlighter-rouge">Action</code>のパフォーマンスを改善してみてください。</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[GitHub ActionsでJestを実行するActionのパフォーマンスを改善する方法について紹介します。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ja"><title type="html">[GitHub Actions] Composite Actionを使ってGitHub Actionsの重複を減らす</title><link href="https://deku.posstree.com/github_actions/composite-action/" rel="alternate" type="text/html" title="[GitHub Actions] Composite Actionを使ってGitHub Actionsの重複を減らす"/><published>2024-10-22T00:00:00+09:00</published><updated>2024-11-04T21:02:31+09:00</updated><id>https://deku.posstree.com/github_actions/composite-actions-ja</id><content type="html" xml:base="https://deku.posstree.com/github_actions/composite-action/"><![CDATA[<div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#%E6%A6%82%E8%A6%81">概要</a></li><li><a href="#composite-action%E3%81%A8%E3%81%AF">Composite Actionとは</a></li><li><a href="#%E9%87%8D%E8%A4%87%E3%82%B3%E3%83%BC%E3%83%89%E3%81%8C%E3%81%82%E3%82%8Bgithub-action%E3%81%AE%E4%BE%8B">重複コードがあるGitHub Actionの例</a></li><li><a href="#composite-action%E3%82%92%E4%BD%9C%E3%82%8B">Composite Actionを作る</a></li><li><a href="#composite-action%E3%82%92%E4%BD%BF%E3%81%86">Composite Actionを使う</a></li><li><a href="#composite-action%E3%81%AEinputs">Composite Actionのinputs</a></li><li><a href="#composite-action%E3%81%AEoutputs">Composite Actionのoutputs</a></li><li><a href="#%E5%AE%8C%E4%BA%86">完了</a></li></ul></div><h2 id="概要">概要</h2><p>GitHub Actionsを使って開発をする際にActionで共通で使う部分が出てくることがあります。この時、Composite Actionを使うと共通で使う部分を一つのActionにまとめて再利用性を高めることができます。</p><p>このブログポストではComposite Actionを使ってGitHub Actionsの再利用性を高める方法について紹介します。</p><h2 id="composite-actionとは">Composite Actionとは</h2><p>Composite Actionは複数のActionを一つのActionにまとめて使うことができる機能です。Composite Actionを使うと複数のActionで共通で使う部分を一つのActionにまとめて再利用性を高めることができます。</p><ul><li>公式ドキュメント: <a href="https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action" rel="nofollow noreferrer" target="_blank">Composite Action</a></li></ul><h2 id="重複コードがあるgithub-actionの例">重複コードがあるGitHub Actionの例</h2><p>Reactを使うプロジェクトで次のようなGitHub Actionsを使うことができます。</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Check</span><span class="nv"> </span><span class="s">code'</span>
 
 <span class="na">on</span><span class="pi">:</span>
   <span class="na">pull_request</span><span class="pi">:</span>
@@ -902,153 +1083,4 @@ GITHUB_COMPANY_ACCOUNT_EMAIL
 fix<span class="o">(</span>SERVICE2<span class="o">)</span>: Fix bug
 refactor<span class="o">(</span>common<span class="o">)</span>: Refactor code
 ...
-</code></pre></div></div><p>モノレポを使っているため、<code class="language-plaintext highlighter-rouge">Conventional Commits</code>の<code class="language-plaintext highlighter-rouge">Scope</code>領域にサービス名を設定し、これをチェックするように設定しました。</p><ul><li><a href="https://www.conventionalcommits.org/en/v1.0.0/" rel="nofollow noreferrer" target="\_blank">Conventional Commits</a></li></ul><h2 id="完了">完了</h2><p>これで<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使ってPRを作成した際、PRのタイトルをチェックする方法について説明しました。<a href="https://github.com/aslafy-z/conventional-pr-title-action/tree/v3/" rel="nofollow noreferrer" target="\_blank">Conventional PR Title Action</a>でも正規表現チェックが可能ですが、設定が簡単ではないため、<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使うことにしました。</p><p>皆さんも簡単に正規表現でPRタイトルをチェックしたい場合は、<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使ってみてください。</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[モノレポ環境でGitHub Actionsを使ってPR(Pull Request)を作成した際、PRのタイトルをチェックする方法について説明します。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ja"><title type="html">[GitHub Actions] GitHub Actionsでブランチ名をチェックする方法</title><link href="https://deku.posstree.com/github_actions/check-branch-name" rel="alternate" type="text/html" title="[GitHub Actions] GitHub Actionsでブランチ名をチェックする方法"/><published>2024-09-02T00:00:00+09:00</published><updated>2024-09-09T09:52:51+09:00</updated><id>https://deku.posstree.com/github_actions/check-branch-name-ja</id><content type="html" xml:base="https://deku.posstree.com/github_actions/check-branch-name"><![CDATA[<div id="contents_list"><h2 id="section">目次</h2><ul><li><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li><li><a href="#%E6%A6%82%E8%A6%81">概要</a></li><li><a href="#github-actions">GitHub Actions</a></li><li><a href="#%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E5%A4%89%E6%9B%B4">ブランチ名の変更</a></li><li><a href="#git-hooks">Git hooks</a><ul><li><a href="#%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E7%A2%BA%E8%AA%8Dscript%E3%81%AE%E4%BD%9C%E6%88%90">ブランチ名の確認scriptの作成</a></li><li><a href="#husky%E3%81%AE%E8%A8%AD%E5%AE%9A">Huskyの設定</a></li><li><a href="#lefthook%E3%81%AE%E8%A8%AD%E5%AE%9A">Lefthookの設定</a></li></ul></li><li><a href="#%E5%AE%8C%E4%BA%86">完了</a></li></ul></div><h2 id="概要">概要</h2><p>Gitを使ってプロジェクトを開発する際、次のリンクのようにブランチ戦略を使うことがあります。</p><ul><li><a href="https://deku.posstree.com/environment/branch-strategy/" target="\_blank">ソフトウェア開発のためのブランチ戦略</a></li></ul><p>この時、ブランチ戦略に合わせてブランチを作っているか管理が必要な時があります。</p><p>今回のブログポストでは、GitHub Actionsを使ってPRを作った時、ブランチ名をチェックする方法について説明します。</p><h2 id="github-actions">GitHub Actions</h2><p>ブランチ名をチェックするGitHub Actionsを作成するために、<code class="language-plaintext highlighter-rouge">.github/workflows/check-branch-name.yml</code>ファイルを作成し、次のように修正します。</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Check Branch Name</span>
-
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">pull_request</span><span class="pi">:</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">check-branch-name</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">1</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Extract branch and service name</span>
-        <span class="na">id</span><span class="pi">:</span> <span class="s">extract_branch_and_service_name</span>
-        <span class="na">run </span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">FULL_BRANCH_NAME=$</span>
-
-          <span class="s">BRANCH_NAME=""</span>
-          <span class="s">SERVICE_NAME=""</span>
-
-          <span class="s">if [[ $FULL_BRANCH_NAME == "main" || $FULL_BRANCH_NAME == "develop" ]]; then</span>
-            <span class="s">BRANCH_NAME="$FULL_BRANCH_NAME"</span>
-            <span class="s">SERVICE_NAME="$FULL_BRANCH_NAME"</span>
-          <span class="s">else</span>
-            <span class="s"># Split the branch name by "/"</span>
-            <span class="s">IFS='/' read -ra BRANCH_PARTS &lt;&lt;&lt; "$FULL_BRANCH_NAME"</span>
-
-            <span class="s"># Check if the length of the array is greater than 1</span>
-            <span class="s">if [ "${#BRANCH_PARTS[@]}" -gt 1 ]; then</span>
-              <span class="s"># Assign the second part as the service name</span>
-              <span class="s">BRANCH_NAME=${BRANCH_PARTS[0]}</span>
-              <span class="s">SERVICE_NAME=${BRANCH_PARTS[1]}</span>
-            <span class="s">else</span>
-              <span class="s"># If the length is 1, raise an error</span>
-              <span class="s">echo "[Error] Branch name does not contain a valid service name."</span>
-              <span class="s">echo "Please check the branch name and try again."</span>
-              <span class="s">echo "You can change the branch name by running the following command:"</span>
-              <span class="s">echo "git branch -m &lt;new-branch-name&gt;"</span>
-              <span class="s">exit 1</span>
-            <span class="s">fi</span>
-          <span class="s">fi</span>
-
-          <span class="s">echo "BRANCH_NAME=$BRANCH_NAME" &gt;&gt; $GITHUB_ENV</span>
-          <span class="s">echo "SERVICE_NAME=$SERVICE_NAME" &gt;&gt; $GITHUB_ENV</span>
-          <span class="s">echo "FULL_BRANCH_NAME=$FULL_BRANCH_NAME" &gt;&gt; $GITHUB_ENV</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Check Branch Name</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">BRANCH_NAMES=("dependabot" "hotfix" "release" "review" "feature" "fix" "sub-feature")</span>
-          <span class="s">SERVICE_NAMES=("npm_and_yarn" "github_actions" "SERVICE_1" "SERVICE_2" "template" "components" "config" "common")</span>
-
-          <span class="s">if [[ $BRANCH_NAME == "main" || $BRANCH_NAME == "develop" ]]; then</span>
-            <span class="s">echo "Branch name is valid."</span>
-          <span class="s">elif printf '%s\n' "${BRANCH_NAMES[@]}" | grep -qx "${BRANCH_NAME}" &amp;&amp; printf '%s\n' "${SERVICE_NAMES[@]}" | grep -qx "${SERVICE_NAME}"; then</span>
-            <span class="s">echo "Branch name is valid."</span>
-          <span class="s">else</span>
-            <span class="s">echo "[Error] Branch name must contain valid branch names and service names."</span>
-            <span class="s">echo "- Current branch: $BRANCH_NAME"</span>
-            <span class="s">echo "- Branch names: main develop ${BRANCH_NAMES[@]}"</span>
-            <span class="s">echo "- Service names: ${SERVICE_NAMES[@]}"</span>
-            <span class="s">exit 1</span>
-          <span class="s">fi</span>
-</code></pre></div></div><p>このGitHub Actionsをもっと見てみましょう。</p><p>私はモノレポでプロジェクトを管理しています。</p><ul><li><a href="https://deku.posstree.com/environment/repository_strategy/" target="\_blank">[プロジェクト管理] リポジトリ戦略</a></li></ul><p>そのため、次のようなブランチ名を使っています。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>feature/:SERVICE_NAME/:BRANCH_NAME
-release/:SERVICE_NAME/:BRANCH_NAME
-fix/:SERVICE_NAME/:BRANCH_NAME
-...
-</code></pre></div></div><p>この時、ブランチ名が<code class="language-plaintext highlighter-rouge">dependabot</code>、<code class="language-plaintext highlighter-rouge">hotfix</code><code class="language-plaintext highlighter-rouge">release</code>、<code class="language-plaintext highlighter-rouge">review</code>、<code class="language-plaintext highlighter-rouge">feature</code>、<code class="language-plaintext highlighter-rouge">fix</code>、<code class="language-plaintext highlighter-rouge">sub-feature</code>などで始まっているか確認し、<code class="language-plaintext highlighter-rouge">SERVICE_NAME</code>を抽出して事前に定義した名前を使っているか確認しています。</p><p>なので、次のようにサービス名とブランチ名を事前に抽出して環境変数に保存しています。</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Extract branch and service name</span>
-        <span class="na">id</span><span class="pi">:</span> <span class="s">extract_branch_and_service_name</span>
-        <span class="na">run </span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">FULL_BRANCH_NAME=$</span>
-
-          <span class="s">BRANCH_NAME=""</span>
-          <span class="s">SERVICE_NAME=""</span>
-
-          <span class="s">if [[ $FULL_BRANCH_NAME == "main" || $FULL_BRANCH_NAME == "develop" ]]; then</span>
-            <span class="s">BRANCH_NAME="$FULL_BRANCH_NAME"</span>
-            <span class="s">SERVICE_NAME="$FULL_BRANCH_NAME"</span>
-          <span class="s">else</span>
-            <span class="s"># Split the branch name by "/"</span>
-            <span class="s">IFS='/' read -ra BRANCH_PARTS &lt;&lt;&lt; "$FULL_BRANCH_NAME"</span>
-
-            <span class="s"># Check if the length of the array is greater than 1</span>
-            <span class="s">if [ "${#BRANCH_PARTS[@]}" -gt 1 ]; then</span>
-              <span class="s"># Assign the second part as the service name</span>
-              <span class="s">BRANCH_NAME=${BRANCH_PARTS[0]}</span>
-              <span class="s">SERVICE_NAME=${BRANCH_PARTS[1]}</span>
-            <span class="s">else</span>
-              <span class="s"># If the length is 1, raise an error</span>
-              <span class="s">echo "[Error] Branch name does not contain a valid service name."</span>
-              <span class="s">echo "Please check the branch name and try again."</span>
-              <span class="s">echo "You can change the branch name by running the following command:"</span>
-              <span class="s">echo "git branch -m &lt;new-branch-name&gt;"</span>
-              <span class="s">exit 1</span>
-            <span class="s">fi</span>
-          <span class="s">fi</span>
-
-          <span class="s">echo "BRANCH_NAME=$BRANCH_NAME" &gt;&gt; $GITHUB_ENV</span>
-          <span class="s">echo "SERVICE_NAME=$SERVICE_NAME" &gt;&gt; $GITHUB_ENV</span>
-          <span class="s">echo "FULL_BRANCH_NAME=$FULL_BRANCH_NAME" &gt;&gt; $GITHUB_ENV</span>
-<span class="s">...</span>
-</code></pre></div></div><p>このように抽出したブランチ名とサービス名を使って、次のようにブランチ名とサービス名が有効か確認しています。</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Check Branch Name</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">BRANCH_NAMES=("dependabot" "hotfix" "release" "review" "feature" "fix" "sub-feature")</span>
-          <span class="s">SERVICE_NAMES=("npm_and_yarn" "github_actions" "SERVICE_1" "SERVICE_2" "template" "components" "config" "common")</span>
-
-          <span class="s">if [[ $BRANCH_NAME == "main" || $BRANCH_NAME == "develop" ]]; then</span>
-            <span class="s">echo "Branch name is valid."</span>
-          <span class="s">elif printf '%s\n' "${BRANCH_NAMES[@]}" | grep -qx "${BRANCH_NAME}" &amp;&amp; printf '%s\n' "${SERVICE_NAMES[@]}" | grep -qx "${SERVICE_NAME}"; then</span>
-            <span class="s">echo "Branch name is valid."</span>
-          <span class="s">else</span>
-            <span class="s">echo "[Error] Branch name must contain valid branch names and service names."</span>
-            <span class="s">echo "- Current branch: $BRANCH_NAME"</span>
-            <span class="s">echo "- Branch names: main develop ${BRANCH_NAMES[@]}"</span>
-            <span class="s">echo "- Service names: ${SERVICE_NAMES[@]}"</span>
-            <span class="s">exit 1</span>
-          <span class="s">fi</span>
-<span class="s">...</span>
-</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="ブランチ名の変更">ブランチ名の変更</h2><p>このGitHub Actionsを使って、事前に定義した規則に合わないブランチ名でPRを作成するとエラーが発生します。この時は次のようにブランチ名を変更します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout &lt;current-branch-name&gt;
-git branch <span class="nt">-m</span> &lt;new-branch-name&gt;
-</code></pre></div></div><p>また、次のように変更することができます。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-m</span> &lt;current-branch-name&gt; &lt;new-branch-name&gt;
-</code></pre></div></div><p>このようにブランチ名を変更した場合、新しいPRを作成し、古いPRを閉じる必要があります。</p><h2 id="git-hooks">Git hooks</h2><p>間違ったブランチ名を使った場合、このGitHub Actionsで確認が可能ですが、PRを作成しないと確認ができません。また、ブランチ名が間違っている場合は、既存のPRを閉じて新しいPRを作成する必要があります。</p><p>このような場合、Git hooksを使うとPRを作成する前にブランチ名を確認することができて、不要な作業を減らすことができます。</p><h3 id="ブランチ名の確認scriptの作成">ブランチ名の確認scriptの作成</h3><p>ブランチ名を確認するscriptを作成するために、<code class="language-plaintext highlighter-rouge">scripts/check-branch-name.sh</code>ファイルを作成し、次のように修正します。</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env sh</span>
-
-<span class="nv">pattern</span><span class="o">=</span><span class="s1">'^(dependabot|hotfix|release|review|feature|fix|sub-feature)/(npm_and_yarn|github_actions|SERVICE_1|SERVICE_2|template|components|config|common)/.*'</span>
-<span class="nv">errorMessage</span><span class="o">=</span><span class="s1">'Invalid branch name. Please follow the correct naming convention.'</span>
-
-<span class="k">if</span> <span class="o">!</span> git rev-parse <span class="nt">--is-inside-work-tree</span> <span class="o">&gt;</span>/dev/null 2&gt;&amp;1<span class="p">;</span> <span class="k">then
-  </span><span class="nb">echo</span> <span class="s2">"Error: Not inside Git working tree."</span>
-  <span class="nb">exit </span>1
-<span class="k">fi
-
-</span><span class="nv">branches</span><span class="o">=</span><span class="si">$(</span>git branch | <span class="nb">grep</span> <span class="s1">'^\*'</span> | <span class="nb">sed</span> <span class="s1">'s/^\* //'</span><span class="si">)</span>
-
-<span class="k">if </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$branches</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-Eq</span> <span class="s2">"</span><span class="nv">$pattern</span><span class="s2">"</span><span class="p">;</span> <span class="k">then
-  </span><span class="nb">printf</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[32mPassed</span><span class="se">\n</span><span class="s2">Branch Name: %s</span><span class="se">\n</span><span class="s2">Pattern: %s</span><span class="se">\0</span><span class="s2">33[0m</span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$branches</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$pattern</span><span class="s2">"</span>
-<span class="k">else
-  </span><span class="nb">printf</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[31mResult: failed</span><span class="se">\n</span><span class="s2">Error Msg: %s</span><span class="se">\n</span><span class="s2">Branch Name: %s</span><span class="se">\n</span><span class="s2">Pattern: %s</span><span class="se">\0</span><span class="s2">33[0m</span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$errorMessage</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$branches</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$pattern</span><span class="s2">"</span>
-  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$errorMessage</span><span class="s2">"</span>
-  <span class="nb">exit </span>1
-<span class="k">fi</span>
-</code></pre></div></div><h3 id="huskyの設定">Huskyの設定</h3><p>Huskyを使ってGit hooksを設定する場合、次のように<code class="language-plaintext highlighter-rouge">.husky/pre-commit</code>ファイルを修正します。</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="w"> </span><span class="err">Run</span><span class="w"> </span><span class="err">validation</span><span class="w"> </span><span class="err">branch</span><span class="w"> </span><span class="err">name</span><span class="w">
-</span><span class="err">.</span><span class="w"> </span><span class="s2">"$(dirname -- "</span><span class="err">$</span><span class="mi">0</span><span class="s2">")/scripts/validateBranchName.sh"</span><span class="w">
-
-</span><span class="err">#</span><span class="w"> </span><span class="err">Run</span><span class="w"> </span><span class="err">lint-staged</span><span class="w">
-</span><span class="err">yarn</span><span class="w"> </span><span class="err">lint-staged</span><span class="w">
-</span></code></pre></div></div><p>この時、先に作成した<code class="language-plaintext highlighter-rouge">check-branch-name.sh</code>ファイルは<code class="language-plaintext highlighter-rouge">.husky/scripts/validateBranchName.sh</code>に移動させる必要があります。</p><h3 id="lefthookの設定">Lefthookの設定</h3><p>Lefthookを使ってGit hooksを設定する場合、次のように<code class="language-plaintext highlighter-rouge">.lefthook.yml</code>ファイルを修正します。</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">pre-push</span><span class="pi">:</span>
-  <span class="na">scripts</span><span class="pi">:</span>
-    <span class="s2">"</span><span class="s">validateBranchName.sh"</span><span class="err">:</span>
-      <span class="na">runner</span><span class="pi">:</span> <span class="s">bash</span>
-</code></pre></div></div><p>この時、先に作成した<code class="language-plaintext highlighter-rouge">check-branch-name.sh</code>ファイルは<code class="language-plaintext highlighter-rouge">.lefthook/pre-commit/validateBranchName.sh</code>に移動させる必要があります。</p><h2 id="完了">完了</h2><p>これでGitHub Actionsを使ってPRを作った時、ブランチ名をチェックする方法について説明しました。また、Git hooksを使ってPRを作成する前にブランチ名を確認する方法についても説明しました。</p><p>もし、私のようにプロジェクトでブランチ名が重要な役割を果たす場合は、このGitHub ActionsとGit hooksを使ってブランチ名を確認してみてください。</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[GitHub Actionsを使ってPRを作った時、ブランチ名をチェックする方法について説明します。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
+</code></pre></div></div><p>モノレポを使っているため、<code class="language-plaintext highlighter-rouge">Conventional Commits</code>の<code class="language-plaintext highlighter-rouge">Scope</code>領域にサービス名を設定し、これをチェックするように設定しました。</p><ul><li><a href="https://www.conventionalcommits.org/en/v1.0.0/" rel="nofollow noreferrer" target="\_blank">Conventional Commits</a></li></ul><h2 id="完了">完了</h2><p>これで<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使ってPRを作成した際、PRのタイトルをチェックする方法について説明しました。<a href="https://github.com/aslafy-z/conventional-pr-title-action/tree/v3/" rel="nofollow noreferrer" target="\_blank">Conventional PR Title Action</a>でも正規表現チェックが可能ですが、設定が簡単ではないため、<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使うことにしました。</p><p>皆さんも簡単に正規表現でPRタイトルをチェックしたい場合は、<code class="language-plaintext highlighter-rouge">action-check-pr-title</code>を使ってみてください。</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[モノレポ環境でGitHub Actionsを使ってPR(Pull Request)を作成した際、PRのタイトルをチェックする方法について説明します。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
