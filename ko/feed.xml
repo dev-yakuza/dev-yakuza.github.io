@@ -1,4 +1,433 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/ko/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/ko/" rel="alternate" type="text/html"/><updated>2024-12-16T08:10:08+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ko"><title type="html">효과적인 직원 교육을 위한 강사 선정 방법</title><link href="https://deku.posstree.com/ko/essay/effective-employee-training/" rel="alternate" type="text/html" title="효과적인 직원 교육을 위한 강사 선정 방법"/><published>2024-11-14T00:00:00+09:00</published><updated>2024-12-03T20:54:19+09:00</updated><id>https://deku.posstree.com/essay/effective-employee-training-ko</id><content type="html" xml:base="https://deku.posstree.com/essay/effective-employee-training/"><![CDATA[<p>대부분의 기업들이 직원 교육에 많은 비용을 투자한다. 직원들이 성장할수록 회사도 성장할 수 있기 때문이다. 하지만 많은 기업들이 교육을 통해서 실질적으로 큰 효과를 얻지 못하고 있다. 왜 기업들은 교육에 많은 비용을 투자하지만, 실제로 큰 효과를 얻지 못하는 걸까?</p><p>기업들은 교육을 통해 직원들이 성장하고 그 성장이 회사에 영향을 주기를 바라면서 교육을 실시한다. 하지만, 대부분의 기업들이 올해 어떤 교육을 몇명이 수료했는지 확인하는 걸로 교육에 대한 성과를 측정한다. 직원들이 실질적으로 얼마나 도움을 받았는지, 얼마나 성장했는지는 측정하지 않는다.</p><p>기업에서의 교육, 훈련 효과에 대한 메타분석 연구에 따르면 대부분의 교육은 6개월 정도 지나면 효과가 거의 사라진다고 한다. 교육을 수료한 시점에서는 직원들의 만족도도 높고 업무에 굉장히 도움이 된다고 느낌을 받지만, 실제로는 큰 효과가 없다.</p><p>이런 문제가 발생하는 가장 큰 이유는 교육을 하는 강사에 있다. 회사는 강사를 선택할 때, 주로 얼마나 많은 지식을 가지고 있는지를 고려하여 선정한다.</p><p>하지만, 존 해티의 연구 결과에 따르면 강사의 지식 수준의 효과는 0.09로 학업 성취도에 영향을 끼치는 150여개의 요인들 중에 135위에 그친다. 즉, 강사가 얼마나 많은 전문 지식을 가지고 있느냐는 학습 성취도에 거의 영향을 미치지 못한다.</p><blockquote><p>의료계의 연구를 보면, 전문가가 특정 수술법을 학생에게 가르칠 때, 의료적 지식, 무엇을 어떻게 해야 할지에 대한 행동 단계, 의사 결정 단계 등 자신이 해당 과제를 수행할 때 사용하는 지식중 <code class="language-plaintext highlighter-rouge">70%는 가르치지 않는다</code>는 연구 결과가 많다.</p></blockquote><p>의학이라는 전문 분야에서 전문가가 학생에게 가르칠 때에 사용하는 지식중 <code class="language-plaintext highlighter-rouge">70%는 가르치지 않는다</code>라는 연구 결과가 많다.</p><p>흔히 뛰어난 선생은 해당 분야에 대해 많이 그리고 깊이 있는 지식을 가지고 있는 사람이라고 생각한다. 하지만 교육은 궁극적으로 학생이 <code class="language-plaintext highlighter-rouge">더 잘하게</code> 도와주는 것이 목표이기 때문에, 교육이라는 맥락하에서는 선생이 가진 지식은 크게 도움이 되지 않는다.</p><p>지식이 많은 사람이라고 해서 꼭 좋은 선생이라고 할 수 없으며 지식이 많은 사람에게 배웠다고 학생의 실력이 느는 것은 아니다.</p><blockquote><p>가르치는 능력을 인정받고 한 번 이상의 탁월한 교육상을 받은 사람임에도 그랬고, 되도록 단계나 지식을 빠짐없이 가르쳐 주라는 특별한 주문을 받았음에도 그러했습니다. 심지어는 수업이 끝나고 “혹시 빠트린 것이 있습니까” 하고 물은 후 그걸 추가해도 여전히 70% 정도는 빠트렸습니다.</p></blockquote><p>전문가, 탁월한 교육상을 받은 사람일지라도 학생에게 해당 기술을 성공적으로 해내기 위해 필요한 것의 30%만 가르쳐 놓고 자신은 다 가르쳤다고 생각한다는 것이다.</p><p>이 문제를 해결하기 위해서는 선생과 학생이 함께 노력해야 한다. 선생의 인지적 분석에 능숙한 정도가 학생들의 학업 성취도에 미치는 영향은 1.29이다. 즉, 이 인지적 분석 능력이 뛰어나는 선생이 잘 가르치는 것이다.</p><p>선생은 다음과 같이 메타인지를 높이는 노력을 할 수 있다.</p><blockquote><p>“내가 이 문제를 해결할 때 어떤 과정을 거치는 가”를 생각하며 자신의 머릿속을 관찰하고, 질문을 던지고 분석하는 것이다. 그리고 학생들이 이걸 배우면서 어떤 생각을 하는가를 직접 관찰하고 질문을 던지고 분석할 수 있다.</p></blockquote><p>학생은 이런 인지적 작업 분석을 잘하는 선생을 선택할 수 있다. 또 선생의 인지적 작업 분석을 돕기 위해 자기가 어떻게 이 문제를 풀었는지, 그 인지적 과정을 선생에게 알려주는 것도 매우 효과적인 방법이다. 또는 선생이 그 문제를 푼 인지적 과정을 알려달라고 요청할 수도 있다. 인지적 작업 분석에 대해서는 다음 글을 참고하면 도움이 될 것이다.</p><ul><li><a href="https://deku.posstree.com/ko/essay/cognitibe-task-analysis/" target="\_blank">인지적 작업 분석을 통한 전문가의 전문성 뽑아내기</a></li></ul><p>다른 사람을 가르치거나 배우는 자리에서 이런 부분을 생각하며 참여하면 학습 효과가 증가하는 것들을 확인할 수 있을 것이다. 회사는 단순히 강사가 지식을 전달하는 학습이 아니라, 강사와 직원이 함께 인지적 작업 분석을 통해 학습할 수 있는 환경을 만들어야 한다. 그렇지 않으면 교육에 투자한 비용 대비 큰 효과를 얻지 못할 것이다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[많은 기업들이 직원 교육에 많은 비용을 투자한다. 하지만 실질적으로 큰 효과를 얻지 못하고 있다. 왜 기업들은 교육에 많은 비용을 투자하지만, 실제로 큰 효과를 얻지 못하는 걸까?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ko"><title type="html">[GitHub Actions] Jest 실행 Action 성능 개선하기</title><link href="https://deku.posstree.com/ko/github_actions/improve-test-performance/" rel="alternate" type="text/html" title="[GitHub Actions] Jest 실행 Action 성능 개선하기"/><published>2024-10-23T00:00:00+09:00</published><updated>2024-11-11T20:56:07+09:00</updated><id>https://deku.posstree.com/github_actions/improve-test-performance-ko</id><content type="html" xml:base="https://deku.posstree.com/github_actions/improve-test-performance/"><![CDATA[<div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#%EB%AA%A9%EC%B0%A8">목차</a></li><li><a href="#%EA%B0%9C%EC%9A%94">개요</a></li><li><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90">문제점</a></li><li><a href="#%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0">성능 개선</a><ul><li><a href="#dependencies-cache">Dependencies Cache</a></li><li><a href="#actions-%EB%B6%84%EB%A6%AC">Actions 분리</a></li><li><a href="#jest%EC%9D%98-bail">Jest의 bail</a></li><li><a href="#jest%EC%9D%98-shard-%EC%98%B5%EC%85%98">Jest의 shard 옵션</a></li></ul></li><li><a href="#%EC%99%84%EB%A3%8C">완료</a></li></ul></div><h2 id="개요">개요</h2><p>회사에서 테스트 코드가 많아지면서 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서 코드를 체크하는 Action에 시간이 오래 걸리는 문제가 발생했습니다. 이 문제를 해결하기 위해 <code class="language-plaintext highlighter-rouge">Jest</code>를 실행하는 Action의 성능을 개선한 내용을 공유하고자 합니다.</p><h2 id="문제점">문제점</h2><p>현재 다음과 같은 Action를 사용하여 PR을 체크하고 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/ko/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/ko/" rel="alternate" type="text/html"/><updated>2024-12-16T21:08:25+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="ko"><title type="html">효과적인 직원 교육을 위한 강사 선정 방법</title><link href="https://deku.posstree.com/ko/essay/effective-employee-training/" rel="alternate" type="text/html" title="효과적인 직원 교육을 위한 강사 선정 방법"/><published>2024-11-14T00:00:00+09:00</published><updated>2024-12-03T20:54:19+09:00</updated><id>https://deku.posstree.com/essay/effective-employee-training-ko</id><content type="html" xml:base="https://deku.posstree.com/essay/effective-employee-training/"><![CDATA[<p>대부분의 기업들이 직원 교육에 많은 비용을 투자한다. 직원들이 성장할수록 회사도 성장할 수 있기 때문이다. 하지만 많은 기업들이 교육을 통해서 실질적으로 큰 효과를 얻지 못하고 있다. 왜 기업들은 교육에 많은 비용을 투자하지만, 실제로 큰 효과를 얻지 못하는 걸까?</p><p>기업들은 교육을 통해 직원들이 성장하고 그 성장이 회사에 영향을 주기를 바라면서 교육을 실시한다. 하지만, 대부분의 기업들이 올해 어떤 교육을 몇명이 수료했는지 확인하는 걸로 교육에 대한 성과를 측정한다. 직원들이 실질적으로 얼마나 도움을 받았는지, 얼마나 성장했는지는 측정하지 않는다.</p><p>기업에서의 교육, 훈련 효과에 대한 메타분석 연구에 따르면 대부분의 교육은 6개월 정도 지나면 효과가 거의 사라진다고 한다. 교육을 수료한 시점에서는 직원들의 만족도도 높고 업무에 굉장히 도움이 된다고 느낌을 받지만, 실제로는 큰 효과가 없다.</p><p>이런 문제가 발생하는 가장 큰 이유는 교육을 하는 강사에 있다. 회사는 강사를 선택할 때, 주로 얼마나 많은 지식을 가지고 있는지를 고려하여 선정한다.</p><p>하지만, 존 해티의 연구 결과에 따르면 강사의 지식 수준의 효과는 0.09로 학업 성취도에 영향을 끼치는 150여개의 요인들 중에 135위에 그친다. 즉, 강사가 얼마나 많은 전문 지식을 가지고 있느냐는 학습 성취도에 거의 영향을 미치지 못한다.</p><blockquote><p>의료계의 연구를 보면, 전문가가 특정 수술법을 학생에게 가르칠 때, 의료적 지식, 무엇을 어떻게 해야 할지에 대한 행동 단계, 의사 결정 단계 등 자신이 해당 과제를 수행할 때 사용하는 지식중 <code class="language-plaintext highlighter-rouge">70%는 가르치지 않는다</code>는 연구 결과가 많다.</p></blockquote><p>의학이라는 전문 분야에서 전문가가 학생에게 가르칠 때에 사용하는 지식중 <code class="language-plaintext highlighter-rouge">70%는 가르치지 않는다</code>라는 연구 결과가 많다.</p><p>흔히 뛰어난 선생은 해당 분야에 대해 많이 그리고 깊이 있는 지식을 가지고 있는 사람이라고 생각한다. 하지만 교육은 궁극적으로 학생이 <code class="language-plaintext highlighter-rouge">더 잘하게</code> 도와주는 것이 목표이기 때문에, 교육이라는 맥락하에서는 선생이 가진 지식은 크게 도움이 되지 않는다.</p><p>지식이 많은 사람이라고 해서 꼭 좋은 선생이라고 할 수 없으며 지식이 많은 사람에게 배웠다고 학생의 실력이 느는 것은 아니다.</p><blockquote><p>가르치는 능력을 인정받고 한 번 이상의 탁월한 교육상을 받은 사람임에도 그랬고, 되도록 단계나 지식을 빠짐없이 가르쳐 주라는 특별한 주문을 받았음에도 그러했습니다. 심지어는 수업이 끝나고 “혹시 빠트린 것이 있습니까” 하고 물은 후 그걸 추가해도 여전히 70% 정도는 빠트렸습니다.</p></blockquote><p>전문가, 탁월한 교육상을 받은 사람일지라도 학생에게 해당 기술을 성공적으로 해내기 위해 필요한 것의 30%만 가르쳐 놓고 자신은 다 가르쳤다고 생각한다는 것이다.</p><p>이 문제를 해결하기 위해서는 선생과 학생이 함께 노력해야 한다. 선생의 인지적 분석에 능숙한 정도가 학생들의 학업 성취도에 미치는 영향은 1.29이다. 즉, 이 인지적 분석 능력이 뛰어나는 선생이 잘 가르치는 것이다.</p><p>선생은 다음과 같이 메타인지를 높이는 노력을 할 수 있다.</p><blockquote><p>“내가 이 문제를 해결할 때 어떤 과정을 거치는 가”를 생각하며 자신의 머릿속을 관찰하고, 질문을 던지고 분석하는 것이다. 그리고 학생들이 이걸 배우면서 어떤 생각을 하는가를 직접 관찰하고 질문을 던지고 분석할 수 있다.</p></blockquote><p>학생은 이런 인지적 작업 분석을 잘하는 선생을 선택할 수 있다. 또 선생의 인지적 작업 분석을 돕기 위해 자기가 어떻게 이 문제를 풀었는지, 그 인지적 과정을 선생에게 알려주는 것도 매우 효과적인 방법이다. 또는 선생이 그 문제를 푼 인지적 과정을 알려달라고 요청할 수도 있다. 인지적 작업 분석에 대해서는 다음 글을 참고하면 도움이 될 것이다.</p><ul><li><a href="https://deku.posstree.com/ko/essay/cognitibe-task-analysis/" target="\_blank">인지적 작업 분석을 통한 전문가의 전문성 뽑아내기</a></li></ul><p>다른 사람을 가르치거나 배우는 자리에서 이런 부분을 생각하며 참여하면 학습 효과가 증가하는 것들을 확인할 수 있을 것이다. 회사는 단순히 강사가 지식을 전달하는 학습이 아니라, 강사와 직원이 함께 인지적 작업 분석을 통해 학습할 수 있는 환경을 만들어야 한다. 그렇지 않으면 교육에 투자한 비용 대비 큰 효과를 얻지 못할 것이다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[많은 기업들이 직원 교육에 많은 비용을 투자한다. 하지만 실질적으로 큰 효과를 얻지 못하고 있다. 왜 기업들은 교육에 많은 비용을 투자하지만, 실제로 큰 효과를 얻지 못하는 걸까?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ko"><title type="html">[GitHub Actions] Reviewer 알림을 위한 Slack 메시지 보내기</title><link href="https://deku.posstree.com/ko/github_actions/send_slack_message_for_reviewer/" rel="alternate" type="text/html" title="[GitHub Actions] Reviewer 알림을 위한 Slack 메시지 보내기"/><published>2024-11-13T00:00:00+09:00</published><updated>2024-12-16T21:08:18+09:00</updated><id>https://deku.posstree.com/github_actions/send-slack-message-ko</id><content type="html" xml:base="https://deku.posstree.com/github_actions/send_slack_message_for_reviewer/"><![CDATA[<div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#%EB%AA%A9%EC%B0%A8">목차</a></li><li><a href="#%EA%B0%9C%EC%9A%94">개요</a></li><li><a href="#slack-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0">Slack 앱 만들기</a></li><li><a href="#%EC%B1%84%EB%84%90-id">채널 ID</a></li><li><a href="#slack-github-action-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">slack-github-action 사용하기</a></li><li><a href="#composite-action">Composite Action</a></li><li><a href="#reviewer-%EC%95%8C%EB%A6%BC">Reviewer 알림</a></li><li><a href="#%EB%A7%A4%EC%9D%BC-%EC%95%84%EC%B9%A8-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B0%9C%EC%86%A1">매일 아침 메시지 발송</a></li><li><a href="#%EC%99%84%EB%A3%8C">완료</a></li></ul></div><h2 id="개요">개요</h2><p>GitHub Actions를 사용하여 CI/CD를 구축하면, 빌드, 테스트가 성공 또는 실패했을 때 Slack으로 메시지를 보내고 싶을 때가 있습니다. 이번 블로그 포스트에서는 GitHub Actions를 사용하여 Slack 메시지를 보내는 방법에 대해 알아보겠습니다.</p><h2 id="slack-앱-만들기">Slack 앱 만들기</h2><p>Slack은 대화형 메시징 플랫폼임으로, 메시지를 받는다는 의미는 누군가가 메시지를 보냈다는 것을 의미합니다. 따라서 GitHub Actions를 사용하여 Slack 메시지를 보내기 위해서는 Slack 메시지를 보내는 Slack 앱을 만들어야 합니다.</p><p>우선 다음 링크를 클릭하여 <code class="language-plaintext highlighter-rouge">Slack API</code>에 접속합니다.</p><ul><li><a href="https://api.slack.com/" rel="nofollow noreferrer" target="_blank">https://api.slack.com/</a></li></ul><p>그럼 다음과 같은 화면을 확인할 수 있습니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/slack_api.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/slack_api.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/slack_api.png" alt="GitHub Actions Send Slack message - Slack API site"/></picture><p>오른쪽 상단에 있는 <code class="language-plaintext highlighter-rouge">Your apps</code>를 선택하여 앱 생성 화면으로 이동합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/create_new_app.png" alt="GitHub Actions Send Slack message - Create new Slack app"/></picture><p><code class="language-plaintext highlighter-rouge">Create New App</code>을 선택하여 새로운 앱을 생성합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app_options.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app_options.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/create_new_app_options.png" alt="GitHub Actions Send Slack message - Create new Slack app options"/></picture><p>이때 <code class="language-plaintext highlighter-rouge">From scratch</code>를 선택하여 새로운 앱을 생성합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.png" alt="GitHub Actions Send Slack message - Enter app name and workspace"/></picture><p>그런 다음 앱의 이름을 입력하고, 이 앱을 사용할 Slack의 Workspace를 선택하고 <code class="language-plaintext highlighter-rouge">Create App</code> 버튼을 클릭합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/app_created.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/app_created.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/app_created.png" alt="GitHub Actions Send Slack message - App created"/></picture><p>그럼 위와 같이 앱이 잘 생성되는 것을 확인할 수 있습니다.</p><p>이제 이 앱에 메시지를 보낼 수 있는 권한을 설정할 필요가 있습니다. 앱 목록 화면에서 새로 만든 앱의 이름을 선택하여 앱 상세 페이지로 이동합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.png" alt="GitHub Actions Send Slack message - OAuth and Permissions"/></picture><p>그런 다음 왼쪽 메뉴에서 <code class="language-plaintext highlighter-rouge">OAuth &amp; Permissions</code> 메뉴를 선택하여 <code class="language-plaintext highlighter-rouge">OAuth &amp; Permissions</code> 화면으로 이동합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.png" alt="GitHub Actions Send Slack message - OAuth and Permissions scopes"/></picture><p>조금 스크롤하여 <code class="language-plaintext highlighter-rouge">Scopes</code> 섹션에서 <code class="language-plaintext highlighter-rouge">Add an OAuth Scope</code> 버튼을 클릭한 후 <code class="language-plaintext highlighter-rouge">chat:write</code> 권한을 추가합니다.</p><p>마지막으로 <code class="language-plaintext highlighter-rouge">OAuth Tokens</code> 섹션으로 이동한 후, <code class="language-plaintext highlighter-rouge">Install to (workspace)</code> 버튼을 클릭하여 Slack 앱을 설치합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.png" alt="GitHub Actions Send Slack message - OAuth and Permissions install app"/></picture><p>앱을 설치하고 나면 다음과 같이 <code class="language-plaintext highlighter-rouge">Bot User OAuth Access Token</code>이 생성되는 것을 확인할 수 있습니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.png" alt="GitHub Actions Send Slack message - OAuth and Permissions Bot User OAuth Access Token"/></picture><p>이제 이렇게 만든 토큰을 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서 사용하기 위해 <code class="language-plaintext highlighter-rouge">GitHub</code>의 <code class="language-plaintext highlighter-rouge">Secrets</code>에 저장해야 합니다. <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 발송하고 싶은 <code class="language-plaintext highlighter-rouge">GitHub</code> 저장소(Repository)로 이동합니다.</p><p>그 다음 <code class="language-plaintext highlighter-rouge">Settings &gt; Secrets and variables &gt; Actions</code> 메뉴로 클릭하여 <code class="language-plaintext highlighter-rouge">Actions secrets and variables</code> 페이지로 이동합니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.png" alt="GitHub Actions Send Slack message - GitHub secrets and variables"/></picture><p>화면에 표시된 <code class="language-plaintext highlighter-rouge">Repository secrets</code>의 <code class="language-plaintext highlighter-rouge">New repository secret</code> 버튼을 클릭하고, <code class="language-plaintext highlighter-rouge">Name</code>에 <code class="language-plaintext highlighter-rouge">SLACK_BOT_TOKEN</code>을 입력하고, <code class="language-plaintext highlighter-rouge">Value</code>에 <code class="language-plaintext highlighter-rouge">Slack API</code> 사이트에서 만든 토큰을 입력한 후 <code class="language-plaintext highlighter-rouge">Add secret</code> 버튼을 클릭하여 저장합니다.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="채널-id">채널 ID</h2><p><code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 사용하여 Slack의 채널에 메시지를 보내기 위해서는 <code class="language-plaintext highlighter-rouge">CHANNEL_ID</code>가 필요합니다.</p><p><code class="language-plaintext highlighter-rouge">CHANNEL_ID</code>는 <code class="language-plaintext highlighter-rouge">Slack</code>에서 습득할 수 있습니다. 개인에게 직접 보내고 싶은 경우, 다음과 같이 개인 프로필에서 <code class="language-plaintext highlighter-rouge">Copy member ID</code>를 클릭하여 <code class="language-plaintext highlighter-rouge">CHANNEL_ID</code>를 얻을 수 있습니다.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.png" alt="GitHub Actions Send Slack message - Copy Slack member channel ID"/></picture><p>만약, 특정 채널에 메시지를 보내고 싶다면, <code class="language-plaintext highlighter-rouge">Open channel details</code>를 클릭하여 채널 상세 정보로 이동한 후,</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.png" alt="GitHub Actions Send Slack message - Copy Slack channel ID"/></picture><p>하단에 표시된 <code class="language-plaintext highlighter-rouge">Channel ID</code>를 복사하여 사용하면 됩니다.</p><h2 id="slack-github-action-사용하기">slack-github-action 사용하기</h2><p><code class="language-plaintext highlighter-rouge">Slack</code>에서 공식으로 제공하는 <code class="language-plaintext highlighter-rouge">slack-github-action</code>을 사용하면 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서 <code class="language-plaintext highlighter-rouge">Slack</code>으로 메시지를 보낼 수 있습니다.</p><ul><li>slack-github-action: <a href="https://github.com/slackapi/slack-github-action" rel="nofollow noreferrer" target="_blank">https://github.com/slackapi/slack-github-action</a></li></ul><p><code class="language-plaintext highlighter-rouge">GitHub Actions</code>에 다음과 같이 <code class="language-plaintext highlighter-rouge">slack-github-action</code>를 사용하도록 수정하면 <code class="language-plaintext highlighter-rouge">Slack</code>으로 메시지를 보낼 수 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Post to a Slack channel</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">slack</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">slackapi/slack-github-action@v1.27.0</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">channel-id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">CHANNEL_ID'</span>
+    <span class="na">payload</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">{</span>
+        <span class="s">"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",</span>
+        <span class="s">"blocks": [</span>
+          <span class="s">{</span>
+            <span class="s">"type": "section",</span>
+            <span class="s">"text": {</span>
+              <span class="s">"type": "mrkdwn",</span>
+              <span class="s">"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"</span>
+            <span class="s">}</span>
+          <span class="s">}</span>
+        <span class="s">]</span>
+      <span class="s">}</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+
+</code></pre></div></div><p>간단한 메시지를 발송할 때는 이 <code class="language-plaintext highlighter-rouge">slack-github-action</code>을 사용하면 편리하게 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보낼 수 있습니다.</p><h2 id="composite-action">Composite Action</h2><p>회사에서는 <code class="language-plaintext highlighter-rouge">slack-github-action</code>을 사용하지 않고, 다음과 같이 <code class="language-plaintext highlighter-rouge">Composite Action</code>을 사용하여 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보내는 방법을 사용하고 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Send</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Send</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+
+<span class="na">inputs</span><span class="pi">:</span>
+  <span class="na">GITHUB_TOKEN</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">token</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">GitHub</span><span class="nv"> </span><span class="s">API'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Token</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">bot'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">MESSAGES</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(JSON)</span><span class="nv"> </span><span class="s">Multiple</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">runs</span><span class="pi">:</span>
+  <span class="na">using</span><span class="pi">:</span> <span class="s1">'</span><span class="s">composite'</span>
+  <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ inputs.GITHUB_TOKEN }}</span>
+        <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">const slackToken = process.env.SLACK_TOKEN</span>
+          <span class="s">const messages = JSON.parse(Buffer.from(process.env.MESSAGES, 'base64').toString('utf-8'));</span>
+          <span class="s">const channelIDs = {</span>
+            <span class="s">'GITHUB_USER_NAME_1': 'USER_CHANNEL_ID_1',</span>
+            <span class="s">'GITHUB_USER_NAME_2': 'USER_CHANNEL_ID_2',</span>
+            <span class="s">'GITHUB_USER_NAME_2': 'USER_CHANNEL_ID_2',</span>
+            <span class="s">'GITHUB_USER_NAME_3': 'USER_CHANNEL_ID_3',</span>
+            <span class="s">'GITHUB_USER_NAME_3': 'USER_CHANNEL_ID_3',</span>
+            <span class="s">'GITHUB_USER_NAME_4': 'USER_CHANNEL_ID_4',</span>
+          <span class="s">}</span>
+
+          <span class="s">for (const message of messages) {</span>
+            <span class="s">const { userName, messages: blocks } = message</span>
+            <span class="s">const channel = channelIDs[userName]</span>
+            <span class="s">fetch('https://slack.com/api/chat.postMessage', {</span>
+              <span class="s">method: 'POST',</span>
+              <span class="s">headers: {</span>
+                <span class="s">'Content-Type': 'application/json',</span>
+                <span class="s">'Authorization': `Bearer ${slackToken}`,</span>
+              <span class="s">},</span>
+              <span class="s">body: JSON.stringify({</span>
+                <span class="s">channel,</span>
+                <span class="s">blocks,</span>
+              <span class="s">})</span>
+            <span class="s">})</span>
+            <span class="s">.then(response =&gt; response.json())</span>
+            <span class="s">.then(data =&gt; {</span>
+              <span class="s">if (!data.ok) {</span>
+                <span class="s">throw new Error(`Slack API error: ${data.error}`);</span>
+              <span class="s">}</span>
+              <span class="s">console.log('Message sent to Slack successfully');</span>
+            <span class="s">})</span>
+            <span class="s">.catch(error =&gt; {</span>
+              <span class="s">console.error('Error sending message to Slack:', error);</span>
+            <span class="s">});</span>
+          <span class="s">}</span>
+      <span class="na">env</span><span class="pi">:</span>
+        <span class="na">SLACK_TOKEN</span><span class="pi">:</span> <span class="s">${{ inputs.SLACK_BOT_TOKEN }}</span>
+        <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ inputs.MESSAGES }}</span>
+
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Composite Action</code>을 사용하면 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보내는 부분을 공통화하여 사용할 수 있습니다. <code class="language-plaintext highlighter-rouge">Composite Action</code>에 대해서는 다음 링크를 참고해 주시기 바랍니다.</p><ul><li><a href="https://deku.posstree.com/ko/github_actions/composite-action/" target="_blank">[GitHub Actions] Composite Action를 사용하여 GitHub Action 중복 제거하기</a></li></ul><h2 id="reviewer-알림">Reviewer 알림</h2><p>이렇게 만든 <code class="language-plaintext highlighter-rouge">Composite Action</code>을 사용하여 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 사용하여 Reviewer에 지정된 경우 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보내는 방법에 대해 알아보겠습니다.</p><p><code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서는 Reviewer에 지정된 경우, Slack의 개인 채널로 메시지를 보내기 위해 다음과 같이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 작성할 수 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Reviewer</span><span class="nv"> </span><span class="s">assigned'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">review_requested</span><span class="pi">]</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">notify_for_reviewer</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const prNumber = context.payload.pull_request.number;</span>
+            <span class="s">const prTitle = context.payload.pull_request.title;</span>
+            <span class="s">const prLink = context.payload.pull_request.html_url;</span>
+            <span class="s">const { data: reviewers } = await github.rest.pulls.listRequestedReviewers({</span>
+              <span class="s">owner: context.repo.owner,</span>
+              <span class="s">repo: context.repo.repo,</span>
+              <span class="s">pull_number: prNumber,</span>
+            <span class="s">});</span>
+
+            <span class="s">let slackMessages = []</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+              <span class="s">const message = `*Reviewer notification*\n\nYou are assigned to new PR.\n\n- title: ${prTitle}\n- link: ${prLink}`</span>
+              <span class="s">slackMessages.push({</span>
+                <span class="s">userName,</span>
+                <span class="s">messages: [</span>
+                  <span class="s">{</span>
+                    <span class="s">type: 'section',</span>
+                    <span class="s">text: {</span>
+                      <span class="s">type: 'mrkdwn',</span>
+                      <span class="s">text: message,</span>
+                    <span class="s">}</span>
+                  <span class="s">}</span>
+                <span class="s">]</span>
+              <span class="s">})</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><p>이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 좀 더 자세히 살펴보도록 하겠습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Reviewer</span><span class="nv"> </span><span class="s">assigned'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">review_requested</span><span class="pi">]</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>는 <code class="language-plaintext highlighter-rouge">pull_request</code> 이벤트의 <code class="language-plaintext highlighter-rouge">review_requested</code>를 사용하여 PR에 Reviewer가 지정된 경우에만 실행됩니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Composite Action</code>는 <code class="language-plaintext highlighter-rouge">Git</code>에서 관리되기 때문에, <code class="language-plaintext highlighter-rouge">actions/checkout@v4</code>를 사용하여 레포지토리를 체크아웃해야 합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const prNumber = context.payload.pull_request.number;</span>
+            <span class="s">const prTitle = context.payload.pull_request.title;</span>
+            <span class="s">const prLink = context.payload.pull_request.html_url;</span>
+            <span class="s">const { data: reviewers } = await github.rest.pulls.listRequestedReviewers({</span>
+              <span class="s">owner: context.repo.owner,</span>
+              <span class="s">repo: context.repo.repo,</span>
+              <span class="s">pull_number: prNumber,</span>
+            <span class="s">});</span>
+
+            <span class="s">let slackMessages = []</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+              <span class="s">const message = `*Reviewer notification*\n\nYou are assigned to new PR.\n\n- title: ${prTitle}\n- link: ${prLink}`</span>
+              <span class="s">slackMessages.push({</span>
+                <span class="s">userName,</span>
+                <span class="s">messages: [</span>
+                  <span class="s">{</span>
+                    <span class="s">type: 'section',</span>
+                    <span class="s">text: {</span>
+                      <span class="s">type: 'mrkdwn',</span>
+                      <span class="s">text: message,</span>
+                    <span class="s">}</span>
+                  <span class="s">}</span>
+                <span class="s">]</span>
+              <span class="s">})</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="s">...</span>
+
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">actions/github-script@v7</code>를 사용하여 Reviewer에게 메시지를 보내기 위한 메시지를 만듭니다. PR의 제목, 링크를 가져와서 Reviewer용 메시지를 만듭니다.</p><div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reviewer notification
+You are assigned to new PR.
+- title: PR title
+- link: https://...
+</code></pre></div></div><p>이 메시지는 PR에 지정된 Reviewers 모두에게 메시지를 보내게 됩니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>이렇게 만든 메시지를 <code class="language-plaintext highlighter-rouge">JSON</code>을 그대로 전달하면 문제가 발생합니다. 그래서 <code class="language-plaintext highlighter-rouge">Buffer</code>를 사용하여 <code class="language-plaintext highlighter-rouge">base64</code>로 인코딩하여 <code class="language-plaintext highlighter-rouge">core.setOutput</code>을 사용하여 <code class="language-plaintext highlighter-rouge">MESSAGES</code>에 저장해서 전달하도록 했습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>마지막은 이전에 만든 <code class="language-plaintext highlighter-rouge">Composite Action</code>을 사용하여 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보냈습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><h2 id="매일-아침-메시지-발송">매일 아침 메시지 발송</h2><p>리뷰어가 Slack 메시지를 받은 후, PR을 리뷰하는 경우도 있지만, 바빠서 PR을 리뷰하지 못하는 경우도 있습니다. 이런 경우, 매일 아침에 리뷰어에게 메시지를 보내어 PR을 리뷰하도록 유도할 수 있습니다.</p><p>다음과 같이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 만들면, 평일 아침(월~금) 9시 30분(일본 시간 기준)에 리뷰어에게 메시지를 보낼 수 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Every</span><span class="nv"> </span><span class="s">weekday</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">9:30</span><span class="nv"> </span><span class="s">AM'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">1-5'</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">notify_reviewers_every_weekday</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+            <span class="s">const escapeForSlack = (text) =&gt; {</span>
+              <span class="s">return text</span>
+                <span class="s">.replace(/&amp;/g, '&amp;amp;')   // &amp; → &amp;amp;</span>
+                <span class="s">.replace(/&lt;/g, '&amp;lt;')    // &lt; → &amp;lt;</span>
+                <span class="s">.replace(/&gt;/g, '&amp;gt;')    // &gt; → &amp;gt;</span>
+                <span class="s">.replace(/"/g, '&amp;quot;')  // " → &amp;quot;</span>
+                <span class="s">.replace(/'/g, '&amp;#39;');  // ' → &amp;#39;</span>
+            <span class="s">}</span>
+
+            <span class="s">// Get All PRs</span>
+            <span class="s">const prList = []</span>
+            <span class="s">let pageIndex = 1</span>
+            <span class="s">let hasMorePages = true</span>
+            <span class="s">while (hasMorePages) {</span>
+              <span class="s">const result = await github.rest.pulls.list({</span>
+                <span class="s">owner: context.repo.owner,</span>
+                <span class="s">repo: context.repo.repo,</span>
+                <span class="s">state: 'open',</span>
+                <span class="s">per_page: 100,</span>
+                <span class="s">page: pageIndex,</span>
+              <span class="s">})</span>
+              <span class="s">if (result.data.length &gt; 0) {</span>
+                <span class="s">prList.push(...result.data)</span>
+                <span class="s">pageIndex += 1</span>
+              <span class="s">} else {</span>
+                <span class="s">hasMorePages = false</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">let slackMessages = []</span>
+            <span class="s">for (const userName of userList) {</span>
+              <span class="s">const reviewerPRList = prList.filter(pr =&gt; pr.user.login !== 'dependabot[bot]' &amp;&amp;</span>
+                <span class="s">pr.requested_reviewers.some(reviewer =&gt; reviewer.login === userName)</span>
+              <span class="s">);</span>
+              <span class="s">if (reviewerPRList.length &gt; 0) {</span>
+                <span class="s">let message = '*Reviewer notification*\n\nYou have assigned PRs. Please review when you have time.\n'</span>
+                <span class="s">reviewerPRList.forEach(pr =&gt; {</span>
+                  <span class="s">message += `\n- &lt;${pr.html_url}|${escapeForSlack(pr.title)}&gt;`;</span>
+                <span class="s">});</span>
+                <span class="s">slackMessages.push({</span>
+                  <span class="s">userName,</span>
+                  <span class="s">messages: [</span>
+                    <span class="s">{</span>
+                      <span class="s">type: 'section',</span>
+                      <span class="s">text: {</span>
+                        <span class="s">type: 'mrkdwn',</span>
+                        <span class="s">text: message,</span>
+                      <span class="s">}</span>
+                    <span class="s">}</span>
+                  <span class="s">]</span>
+                <span class="s">})</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><p>이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 좀 더 자세히 살펴보도록 하겠습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Every</span><span class="nv"> </span><span class="s">weekday</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">9:30</span><span class="nv"> </span><span class="s">AM'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">1-5'</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>이 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>는 평일(1-5) 9시 30분(일본 시간)에 실행됩니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">Composite Action</code>는 <code class="language-plaintext highlighter-rouge">Git</code>에서 관리되기 때문에, <code class="language-plaintext highlighter-rouge">actions/checkout@v4</code>를 사용하여 레포지토리를 체크아웃해야 합니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+            <span class="s">const escapeForSlack = (text) =&gt; {</span>
+              <span class="s">return text</span>
+                <span class="s">.replace(/&amp;/g, '&amp;amp;')   // &amp; → &amp;amp;</span>
+                <span class="s">.replace(/&lt;/g, '&amp;lt;')    // &lt; → &amp;lt;</span>
+                <span class="s">.replace(/&gt;/g, '&amp;gt;')    // &gt; → &amp;gt;</span>
+                <span class="s">.replace(/"/g, '&amp;quot;')  // " → &amp;quot;</span>
+                <span class="s">.replace(/'/g, '&amp;#39;');  // ' → &amp;#39;</span>
+            <span class="s">}</span>
+
+            <span class="s">// Get All PRs</span>
+            <span class="s">const prList = []</span>
+            <span class="s">let pageIndex = 1</span>
+            <span class="s">let hasMorePages = true</span>
+            <span class="s">while (hasMorePages) {</span>
+              <span class="s">const result = await github.rest.pulls.list({</span>
+                <span class="s">owner: context.repo.owner,</span>
+                <span class="s">repo: context.repo.repo,</span>
+                <span class="s">state: 'open',</span>
+                <span class="s">per_page: 100,</span>
+                <span class="s">page: pageIndex,</span>
+              <span class="s">})</span>
+              <span class="s">if (result.data.length &gt; 0) {</span>
+                <span class="s">prList.push(...result.data)</span>
+                <span class="s">pageIndex += 1</span>
+              <span class="s">} else {</span>
+                <span class="s">hasMorePages = false</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">let slackMessages = []</span>
+            <span class="s">for (const userName of userList) {</span>
+              <span class="s">const reviewerPRList = prList.filter(pr =&gt; pr.user.login !== 'dependabot[bot]' &amp;&amp;</span>
+                <span class="s">pr.requested_reviewers.some(reviewer =&gt; reviewer.login === userName)</span>
+              <span class="s">);</span>
+              <span class="s">if (reviewerPRList.length &gt; 0) {</span>
+                <span class="s">let message = '*Reviewer notification*\n\nYou have assigned PRs. Please review when you have time.\n'</span>
+                <span class="s">reviewerPRList.forEach(pr =&gt; {</span>
+                  <span class="s">message += `\n- &lt;${pr.html_url}|${escapeForSlack(pr.title)}&gt;`;</span>
+                <span class="s">});</span>
+                <span class="s">slackMessages.push({</span>
+                  <span class="s">userName,</span>
+                  <span class="s">messages: [</span>
+                    <span class="s">{</span>
+                      <span class="s">type: 'section',</span>
+                      <span class="s">text: {</span>
+                        <span class="s">type: 'mrkdwn',</span>
+                        <span class="s">text: message,</span>
+                      <span class="s">}</span>
+                    <span class="s">}</span>
+                  <span class="s">]</span>
+                <span class="s">})</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="s">...</span>
+
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">actions/github-script@v7</code>를 사용하여 Reviewer에게 메시지를 보내기 위한 메시지를 만듭니다. 각각의 GitHub의 사용자가 할당된 모든 PR을 가져와서 리뷰어에게 보낼 메시지를 만듭니다.</p><div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reviewer notification
+You have assigned PRs. Please review when you have time.
+- PR title1: https://...
+- PR title2: https://...
+- PR title3: https://...
+- PR title4: https://...
+</code></pre></div></div><p>이 메시지는 미리 작성한 GitHub 사용자 목록에 있는 모든 사용자에게 메시지를 보내게 됩니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>이렇게 만든 메시지를 <code class="language-plaintext highlighter-rouge">JSON</code>을 그대로 전달하면 문제가 발생합니다. 그래서 <code class="language-plaintext highlighter-rouge">Buffer</code>를 사용하여 <code class="language-plaintext highlighter-rouge">base64</code>로 인코딩하여 <code class="language-plaintext highlighter-rouge">core.setOutput</code>을 사용하여 <code class="language-plaintext highlighter-rouge">MESSAGES</code>에 저장해서 전달하도록 했습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>마지막은 이전에 만든 <code class="language-plaintext highlighter-rouge">Composite Action</code>을 사용하여 <code class="language-plaintext highlighter-rouge">Slack</code> 메시지를 보냈습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><h2 id="완료">완료</h2><p>이것으로 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>를 사용하여 리뷰어에 지정된 경우 Slack 메시지를 보내는 방법과 매일 아침에 리뷰어에게 PR 목록을 Slack 메시지로 발송하는 방법에 대해서 알아보았습니다.</p><p>리뷰어에 지정된 것이 인식되지 않아서 리뷰가 계속 지연되는 문제가 있는 경우, 이러한 방법을 사용하여 리뷰어에게 메시지를 보내어 리뷰를 유도해 보시기 바랍니다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[GitHub Actions를 사용하여 Reviewer에 지정된 경우 Slack 메시지를 보내는 방법과 매일 아침에 리뷰어에게 PR 목록을 Slack 메시지로 발송하는 방법에 대해 알아보겠습니다.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ko"><title type="html">[GitHub Actions] Jest 실행 Action 성능 개선하기</title><link href="https://deku.posstree.com/ko/github_actions/improve-test-performance/" rel="alternate" type="text/html" title="[GitHub Actions] Jest 실행 Action 성능 개선하기"/><published>2024-10-23T00:00:00+09:00</published><updated>2024-11-11T20:56:07+09:00</updated><id>https://deku.posstree.com/github_actions/improve-test-performance-ko</id><content type="html" xml:base="https://deku.posstree.com/github_actions/improve-test-performance/"><![CDATA[<div id="contents_list"><h2 id="section">목차</h2><ul><li><a href="#%EB%AA%A9%EC%B0%A8">목차</a></li><li><a href="#%EA%B0%9C%EC%9A%94">개요</a></li><li><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90">문제점</a></li><li><a href="#%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0">성능 개선</a><ul><li><a href="#dependencies-cache">Dependencies Cache</a></li><li><a href="#actions-%EB%B6%84%EB%A6%AC">Actions 분리</a></li><li><a href="#jest%EC%9D%98-bail">Jest의 bail</a></li><li><a href="#jest%EC%9D%98-shard-%EC%98%B5%EC%85%98">Jest의 shard 옵션</a></li></ul></li><li><a href="#%EC%99%84%EB%A3%8C">완료</a></li></ul></div><h2 id="개요">개요</h2><p>회사에서 테스트 코드가 많아지면서 <code class="language-plaintext highlighter-rouge">GitHub Actions</code>에서 코드를 체크하는 Action에 시간이 오래 걸리는 문제가 발생했습니다. 이 문제를 해결하기 위해 <code class="language-plaintext highlighter-rouge">Jest</code>를 실행하는 Action의 성능을 개선한 내용을 공유하고자 합니다.</p><h2 id="문제점">문제점</h2><p>현재 다음과 같은 Action를 사용하여 PR을 체크하고 있습니다.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
   <span class="na">check-code</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> <span class="s">Check Code</span>
     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
@@ -966,4 +1395,4 @@ GITHUB_COMPANY_ACCOUNT_EMAIL
   <span class="p">});</span>
 <span class="p">}</span>
 <span class="p">...</span>
-</code></pre></div></div><p>마지막으로, 응답이 실패한 경우를 테스트하였습니다.</p><h2 id="완료">완료</h2><p>이것으로 Flutter에서 http 패키지의 <code class="language-plaintext highlighter-rouge">MultipartRequest</code>를 사용하여 파일을 업로드하는 방법과 이를 테스트하는 방법에 대해서 알아보았습니다.</p><p>Flutter에서 파일 업로드 기능을 구현하신다면, 이 블로그를 참고하여 구현하고, 테스트 코드를 작성해 보시기 바랍니다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="flutter"/><summary type="html"><![CDATA[Flutter에서 http 패키지의 MultipartRequest를 사용하여 파일을 업로드하는 방법과 이를 테스트하는 방법에 대해서 알아보겠습니다.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/flutter/background.png"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/flutter/background.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="ko"><title type="html">인지적 작업 분석을 통한 전문가의 전문성 뽑아내기</title><link href="https://deku.posstree.com/ko/essay/cognitibe-task-analysis/" rel="alternate" type="text/html" title="인지적 작업 분석을 통한 전문가의 전문성 뽑아내기"/><published>2024-09-17T00:00:00+09:00</published><updated>2024-10-04T20:24:08+09:00</updated><id>https://deku.posstree.com/essay/cognitibe-task-analysis-ko</id><content type="html" xml:base="https://deku.posstree.com/essay/cognitibe-task-analysis/"><![CDATA[<p>대부분의 전문가들은 자신의 전문적인 기술(스킬)을 제대로 설명하지 못하는 경우가 많다.</p><blockquote><p>미육군에서는 9년간 4천만 달러를 들여 개발한 지뢰 탐지 시스템을 취소하려고 하고 있었습니다. 프로토타입을 실제로 테스트한 결과 지뢰 탐지율이 너무 낮았기 때문이죠. 테스트에 따르면 저금속(low-metal) 대인 지뢰를 96%나 탐지에 실패하는 처참한 결과를 보였습니다. 카네기 멜론 대학교의 심리학과 교수 스타죠브스키(James Staszewski)는 지뢰 탐지에 대한 소위 아웃라이어(평균을 훌쩍 뛰어넘는 탁월한 사람)를 찾아갔습니다. 그중 하나가 플로이드 로키 락웰(Floyd Rocky Rockwell)이었습니다. 그는 새로운 장비를 갖고 저금속 지뢰를 찾을 수 있었습니다. 하지만 플로이드는 다른 대부분의 전문가들과 마찬가지로 자신이 어떻게 지뢰를 찾을 수 있는지 설명하지 못했습니다.</p></blockquote><p>이때 <code class="language-plaintext highlighter-rouge">인지적 작업 분석(Cognitibe Task Analysis)</code>을 사용하면 전문가로부터 전문성을 뽑아내는 것이 가능하다.</p><blockquote><p>스타죠프스키 교수는 수십 년 동안 개발된 인지적 작업 분석을 사용하여 그의 전문성을 끄집어냈습니다. 플로이드는 매뉴얼대로 장비를 사용하지 않았습니다. 그는 단순히 소리에 반응하는게 아니라 소리의 패턴을 잡아내고 있었고, 매뉴얼에서 제안하는 속도보다 더 느리게 진행하고, 매뉴얼에 적혀 있는 높이보다 낮은 높이에서 탐지기를 사용했고, 지속적으로 탐지기의 민감도 스위치를 조정했습니다. 스타죠프스키 교수는 플로이드 자신조차 인지하지 못하고 있던 이 비결을 다른 군인들에게 5일간 가르치고 그 효과를 측정하는 실험을 했습니다. 놀랍게도 훈련전에 10%대에 머물던 탐지율이 훈련 후 90%를 넘어서게 되었습니다.</p></blockquote><p>이런 인지적 작업 분석을 사용하면 프로그래머나 관리자뿐만 아니라 소위 전문가가 되려는 모든 사람에게 유용한 방법이다. 미해군의 연구 결과 선생과 학생들이 이 방법을 배워서 협력적으로 사용하는 것이 교육 효과를 높인다는 걸 발견했다. 그래서 교육시 이 방법을 사용하도록 하고 있다.</p><h2 id="인지적-작업-분석">인지적 작업 분석</h2><p>인지적 작업 분석은 전문가나 숙련된 사람들이 수행하는 복잡한 인지적 과정을 분석하고 설명하는 방법이다. 특히, 문제 해결, 의사 결정, 기억, 추론 등 인지적인 측면이 중요한 작업에서 사용된다. 이 분석 방법은 전문가들이 어떻게 정보를 처리하고, 어떻게 의사결정을 내리는지를 체계적으로 파악하는 데 초점을 맞추고 있다.</p><p>인지적 작업 분석은 주로 다음과 같은 상황에서 유용하게 활용된다.</p><ul><li>교육 및 훈련 프로그램 개발: 전문가들이 작업을 수행하는 방식을 분석해 초보자나 훈련생을 위한 효과적인 교육 프로그램을 설계할 수 있다. 예를 들어, 의학, 항공, 군사 분야에서는 전문가들이 사용하는 인지 전략을 학습자에게 전달하는 데 인지적 작업 분석을 활용한다.</li><li>기술 및 시스템 설계: 인지적 작업 분석은 인간-컴퓨터 상호작용(HCI)이나 인간 중심 설계(Human-Centered Design)에서 사용될 수 있다. 복잡한 시스템을 설계할 때 전문가들이 사용하는 인지적 과정에 맞춰 사용자 인터페이스나 자동화 시스템을 설계하는 데 도움을 준다.</li><li>업무 절차 개선: 전문가들의 인지적 전략을 분석하면, 업무 프로세스를 개선하거나 최적화할 수 있다. 이를 통해 효율성을 높이고 오류를 줄일 수 있다.</li></ul><p>인지적 작업 분석을 수행하기 위해서는 다음과 같은 단계를 거친다.</p><ul><li>과정 정의: 작업의 목표와 필요한 인지적 과정을 정의한다.</li><li>작업 세분화: 작업을 작은 단계로 나누고, 각 단계에서 필요한 인지적 과정을 구체적으로 분석한다.</li><li>전문가 인터뷰 및 관찰: 전문가들이 실제로 작업을 수행하는 방식을 인터뷰나 관찰을 통해 수집한다.</li><li>인지적 요구 분석: 정보를 처리하는 방법, 주의 집중 전략, 기억 전략 등을 분석한다.</li><li>결과 적용: 분석한 결과를 교육 프로그램, 기술 설계, 업무 절차 개선 등에 반영한다.</li></ul><p>인지적 작업 분석은 복잡한 작업에서 전문가들이 사용하는 무의식적이고 암묵적인 인지 과정을 명확하게 해주는 도구로서, 학습과 설계, 시스템 최적화에 중요한 역할을 한다.</p><h2 id="인지적-작업-분석의-과정">인지적 작업 분석의 과정</h2><p>인지적 작업 분석을 수행하는 과정을 좀 더 자세히 살펴보면 다음과 같다.</p><h3 id="1-목표-설정">1. 목표 설정</h3><p>인지적 작업 분석을 수행할 이유와 목표를 명확히 설정하는 단계이다. 인지적 작업 분석은 주로 복잡하고 인지적인 측면이 많이 필요한 작업을 분석할 때 사용되므로, 어떤 작업을 분석할 것인지, 그리고 이 분석이 교육, 시스템 설계, 업무 개선 등에서 어떤 도움을 줄 수 있을지를 먼저 명확히 해야 한다.</p><h3 id="2-과업-정의-및-분석">2. 과업 정의 및 분석</h3><p>작업을 세부적으로 정의하고 분석하는 단계이다. 여기서는 다음과 같은 절차를 따른다.</p><ul><li>작업 선정: 분석하려는 작업(혹은 업무)을 선정한다. 복잡하거나 인지적인 처리가 많이 필요한 작업이 적합하다.</li><li>작업 분해: 전체 작업을 세부적인 단계로 나눈다. 각 단계에서 전문가가 수행하는 행동을 식별하고, 어떤 인지적 과정(결정, 기억, 추론 등)이 사용되는지를 확인한다.</li></ul><h3 id="3-전문가-인터뷰-및-관찰">3. 전문가 인터뷰 및 관찰</h3><p>전문가들이 실제로 작업을 수행하는 방식을 관찰하거나 인터뷰하는 단계이다. 이를 통해 작업을 수행하는 동안 발생하는 암묵적 지식과 인지적 과정을 더 잘 파악할 수 있다. 일반적으로 다음과 같은 방법을 사용한다.</p><ul><li>심층 인터뷰: 전문가에게 구체적인 작업 단계와 의사 결정 과정을 설명하게 하고, 그들이 사용하는 사고 전략을 파악한다.</li><li>생각 소리 기법: 전문가가 작업을 수행할 때 자신이 무엇을 생각하고 있는지 말하도록 유도하여 인지적 과정을 외부로 드러나게 한다.</li><li>작업 관찰: 전문가가 작업을 수행하는 모습을 직접 관찰하고 기록한다. 이를 통해 작업 흐름과 인지적 요구를 명확히 할 수 있다.</li></ul><h3 id="4-인지적-요구-분석">4. 인지적 요구 분석</h3><p>전문가들의 인지적 과정에서 어떤 요소들이 중요한지 분석한다. 여기서는 작업 수행 중 필요한 정보 처리, 의사 결정, 문제 해결 전략, 주의 집중 방법 등을 명확히 파악한다.</p><ul><li>정보 처리 전략: 전문가가 어떤 정보를 어떻게 처리하는지 분석한다.</li><li>의사 결정 과정: 전문가가 어떻게 결정을 내리고, 어떤 기준을 사용하는지 파악한다.</li><li>문제 해결 전략: 예기치 않은 문제를 어떻게 해결하는지 분석한다.</li></ul><h3 id="5-과업-모델링">5. 과업 모델링</h3><p>수집한 데이터를 바탕으로 전문가의 인지적 과정과 행동을 설명하는 모델을 작성한다. 이 단계에서는 작업을 단계별로 설명하고, 각 단계에서 발생하는 인지적 요구를 구체화한다. 이를 통해 전문가들이 사용하는 무의식적인 기술과 지식을 명문화할 수 있다.</p><h3 id="6-결과-적용">6. 결과 적용</h3><p>분석 결과를 실제 업무 개선, 시스템 설계, 교육 프로그램 개발 등에 적용하는 단계이다. 분석된 인지적 과정을 바탕으로 초보자가 더 빠르게 숙련될 수 있도록 교육 자료를 만들거나, 시스템 설계에서 사용자 인터페이스를 개선하는 데 활용할 수 있다.</p><h3 id="7-검증-및-피드백">7. 검증 및 피드백</h3><p>마지막으로, 인지적 작업 분석 결과가 실제로 유용한지 검증하고 피드백을 받아 개선하는 단계이다. 인지적 작업 분석을 통해 도출된 분석이 교육이나 시스템 개선에 효과적으로 적용되었는지를 평가하고, 필요한 경우 다시 분석하거나 보완할 수 있다.</p><h2 id="결론">결론</h2><p>이와 같이 인지적 작업 분석은 전문가들이 사용하는 인지적 전략을 명확히 파악하고, 이를 교육, 시스템 설계, 업무 개선 등에 적용하는 데 유용한 방법이다. 특히, 복잡하고 인지적인 요구가 많은 작업에서 전문가의 무의식적인 지식과 기술을 명문화하고, 이를 다른 사람들에게 전달하는 데 활용할 수 있다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[인지적 작업 분석을 통해 전문가의 전문성을 뽑아내는 방법에 대해 알아보자.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/cognitibe-task-analysis/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/cognitibe-task-analysis/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
+</code></pre></div></div><p>마지막으로, 응답이 실패한 경우를 테스트하였습니다.</p><h2 id="완료">완료</h2><p>이것으로 Flutter에서 http 패키지의 <code class="language-plaintext highlighter-rouge">MultipartRequest</code>를 사용하여 파일을 업로드하는 방법과 이를 테스트하는 방법에 대해서 알아보았습니다.</p><p>Flutter에서 파일 업로드 기능을 구현하신다면, 이 블로그를 참고하여 구현하고, 테스트 코드를 작성해 보시기 바랍니다.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="flutter"/><summary type="html"><![CDATA[Flutter에서 http 패키지의 MultipartRequest를 사용하여 파일을 업로드하는 방법과 이를 테스트하는 방법에 대해서 알아보겠습니다.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/flutter/background.png"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/flutter/background.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>

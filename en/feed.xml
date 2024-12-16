@@ -1,4 +1,431 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/en/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/en/" rel="alternate" type="text/html"/><updated>2024-12-16T08:10:08+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="en"><title type="html">How to select an instructor for effective employee training</title><link href="https://deku.posstree.com/en/essay/effective-employee-training/" rel="alternate" type="text/html" title="How to select an instructor for effective employee training"/><published>2024-11-14T00:00:00+09:00</published><updated>2024-12-03T20:54:19+09:00</updated><id>https://deku.posstree.com/essay/effective-employee-training-en</id><content type="html" xml:base="https://deku.posstree.com/essay/effective-employee-training/"><![CDATA[<p>Most companies invest a lot of money in employee training. This is because the company can grow as employees grow. However, many companies do not actually get much benefit from training. Why do companies invest a lot of money in training but do not actually get much benefit?</p><p>Companies conduct training with the hope that employees will grow and that growth will have an impact on the company. However, most companies measure the effectiveness of training by checking how many people completed what training this year. They do not measure how much help employees actually received and how much they grew.</p><p>According to a meta-analysis study on the effects of education and training in companies, most education effect almost disappears after 6 months. At the time of completion of the training, employees may feel very satisfied and helpful in their work, but in reality, there is little effect.</p><p>The biggest reason for this problem is the instructor who conducts the training. Companies mainly consider how much knowledge the instructor has when selecting them.</p><p>However, according to the research results of John Hattie, the effect of the instructor’s knowledge level is 0.09, which ranks 135th among more than 150 factors that affect academic achievement. In other words, how much specialized knowledge the instructor has has little effect on learning achievement.</p><blockquote><p>In the medical field, many research results show that when an expert teaches a specific surgical technique to a student, among the knowledge used when performing the task, such as medical knowledge, action steps on what to do, and decision-making steps, <code class="language-plaintext highlighter-rouge">70% is not taught</code>.</p></blockquote><p>In the medical field, many research results show that when an expert teaches a student, <code class="language-plaintext highlighter-rouge">70% of the knowledge used when performing the task is not taught</code>.</p><p>It is commonly thought that an excellent teacher has a lot of knowledge and deep knowledge in the field. However, since the ultimate goal of education is to help students <code class="language-plaintext highlighter-rouge">do better</code>, the knowledge that a teacher has is not very helpful in the context of education.</p><p>A person with a lot of knowledge is not necessarily a good teacher, and learning from a person with a lot of knowledge does not improve the student’s skills.</p><blockquote><p>Even though he was recognized for his ability to teach and received more than one outstanding education award, he was given a special order to teach him every step or knowledge he could. Even after the class was over, I asked, “Did you miss anything?” and added it, but I still dropped about 70%.</p></blockquote><p>Even experts and people who have received outstanding educational awards think that they have taught students only 30% of what is necessary to successfully achieve the skill and that they have taught them all.</p><p>To solve this problem, teachers and students must work together. The effect of the degree of proficiency in the teacher’s cognitive analysis on students’ academic achievement is 1.29. In other words, the teacher with excellent cognitive analysis ability teaches well.</p><p>Teachers can make efforts to increase their metacognition as follows.</p><blockquote><p>It is to observe your head, ask questions, and analyze, thinking, “What process do I go through when solving this problem?” And you can directly observe, ask questions, and analyze what students think as they learn this.</p></blockquote><p>Students can choose a teacher who is good at analyzing these cognitive tasks. In addition, it is a very effective way to inform the teacher of how he solved this problem and the cognitive process to help the teacher analyze the cognitive work. Or, the teacher may ask for the cognitive process of solving the problem. For cognitive task analysis, refer to the following article.</p><ul><li><a href="https://deku.posstree.com/en/essay/cognitibe-task-analysis/" target="\_blank">Extracting Expertise from Experts through Cognitive Task Analysis</a></li></ul><p>You will be able to see things that increase the learning effect if you participate while thinking about these parts in teaching or learning others. Companies should create an environment in which instructors and employees can learn together through cognitive task analysis, not just learning that instructors convey knowledge. Otherwise, you will not have a great effect on the cost of investing in education.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[Many companies invest a lot of money in employee training, but they do not actually get much benefit. Why do companies invest a lot of money in training but do not actually get much benefit?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="en"><title type="html">[GitHub Actions] Improve Jest test performance in GitHub Actions</title><link href="https://deku.posstree.com/en/github_actions/improve-test-performance/" rel="alternate" type="text/html" title="[GitHub Actions] Improve Jest test performance in GitHub Actions"/><published>2024-10-23T00:00:00+09:00</published><updated>2024-11-11T20:56:07+09:00</updated><id>https://deku.posstree.com/github_actions/improve-test-performance-en</id><content type="html" xml:base="https://deku.posstree.com/github_actions/improve-test-performance/"><![CDATA[<div id="contents_list"><h2 id="contents">Contents</h2><ul><li><a href="#contents">Contents</a></li><li><a href="#outline">Outline</a></li><li><a href="#problem">Problem</a></li><li><a href="#performance-improvement">Performance Improvement</a><ul><li><a href="#cache-dependencies">Cache Dependencies</a></li><li><a href="#separate-actions">Separate Actions</a></li><li><a href="#jest-bail-option">Jest bail option</a></li><li><a href="#jest-shard-option">Jest shard option</a></li></ul></li><li><a href="#completed">Completed</a></li></ul></div><h2 id="outline">Outline</h2><p>Recently, the number of test codes has increased in our company, and the Action that checks the code in <code class="language-plaintext highlighter-rouge">GitHub Actions</code> has taken a long time. In this blog post, I would like to share how I improved the performance of the Action that runs <code class="language-plaintext highlighter-rouge">Jest</code>.</p><h2 id="problem">Problem</h2><p>Currently my team uses the following Action to check PR.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://deku.posstree.com/en/feed.xml" rel="self" type="application/atom+xml"/><link href="https://deku.posstree.com/en/" rel="alternate" type="text/html"/><updated>2024-12-16T21:08:25+09:00</updated><id>https://deku.posstree.com/feed.xml</id><title type="html">Deku</title><subtitle>『Programming Artist, DeKu』</subtitle><author><name>dev.yakuza@gmail.com</name></author><entry xml:lang="en"><title type="html">How to select an instructor for effective employee training</title><link href="https://deku.posstree.com/en/essay/effective-employee-training/" rel="alternate" type="text/html" title="How to select an instructor for effective employee training"/><published>2024-11-14T00:00:00+09:00</published><updated>2024-12-03T20:54:19+09:00</updated><id>https://deku.posstree.com/essay/effective-employee-training-en</id><content type="html" xml:base="https://deku.posstree.com/essay/effective-employee-training/"><![CDATA[<p>Most companies invest a lot of money in employee training. This is because the company can grow as employees grow. However, many companies do not actually get much benefit from training. Why do companies invest a lot of money in training but do not actually get much benefit?</p><p>Companies conduct training with the hope that employees will grow and that growth will have an impact on the company. However, most companies measure the effectiveness of training by checking how many people completed what training this year. They do not measure how much help employees actually received and how much they grew.</p><p>According to a meta-analysis study on the effects of education and training in companies, most education effect almost disappears after 6 months. At the time of completion of the training, employees may feel very satisfied and helpful in their work, but in reality, there is little effect.</p><p>The biggest reason for this problem is the instructor who conducts the training. Companies mainly consider how much knowledge the instructor has when selecting them.</p><p>However, according to the research results of John Hattie, the effect of the instructor’s knowledge level is 0.09, which ranks 135th among more than 150 factors that affect academic achievement. In other words, how much specialized knowledge the instructor has has little effect on learning achievement.</p><blockquote><p>In the medical field, many research results show that when an expert teaches a specific surgical technique to a student, among the knowledge used when performing the task, such as medical knowledge, action steps on what to do, and decision-making steps, <code class="language-plaintext highlighter-rouge">70% is not taught</code>.</p></blockquote><p>In the medical field, many research results show that when an expert teaches a student, <code class="language-plaintext highlighter-rouge">70% of the knowledge used when performing the task is not taught</code>.</p><p>It is commonly thought that an excellent teacher has a lot of knowledge and deep knowledge in the field. However, since the ultimate goal of education is to help students <code class="language-plaintext highlighter-rouge">do better</code>, the knowledge that a teacher has is not very helpful in the context of education.</p><p>A person with a lot of knowledge is not necessarily a good teacher, and learning from a person with a lot of knowledge does not improve the student’s skills.</p><blockquote><p>Even though he was recognized for his ability to teach and received more than one outstanding education award, he was given a special order to teach him every step or knowledge he could. Even after the class was over, I asked, “Did you miss anything?” and added it, but I still dropped about 70%.</p></blockquote><p>Even experts and people who have received outstanding educational awards think that they have taught students only 30% of what is necessary to successfully achieve the skill and that they have taught them all.</p><p>To solve this problem, teachers and students must work together. The effect of the degree of proficiency in the teacher’s cognitive analysis on students’ academic achievement is 1.29. In other words, the teacher with excellent cognitive analysis ability teaches well.</p><p>Teachers can make efforts to increase their metacognition as follows.</p><blockquote><p>It is to observe your head, ask questions, and analyze, thinking, “What process do I go through when solving this problem?” And you can directly observe, ask questions, and analyze what students think as they learn this.</p></blockquote><p>Students can choose a teacher who is good at analyzing these cognitive tasks. In addition, it is a very effective way to inform the teacher of how he solved this problem and the cognitive process to help the teacher analyze the cognitive work. Or, the teacher may ask for the cognitive process of solving the problem. For cognitive task analysis, refer to the following article.</p><ul><li><a href="https://deku.posstree.com/en/essay/cognitibe-task-analysis/" target="\_blank">Extracting Expertise from Experts through Cognitive Task Analysis</a></li></ul><p>You will be able to see things that increase the learning effect if you participate while thinking about these parts in teaching or learning others. Companies should create an environment in which instructors and employees can learn together through cognitive task analysis, not just learning that instructors convey knowledge. Otherwise, you will not have a great effect on the cost of investing in education.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[Many companies invest a lot of money in employee training, but they do not actually get much benefit. Why do companies invest a lot of money in training but do not actually get much benefit?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/effective-employee-training/background.webp" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="en"><title type="html">[GitHub Actions] Send Slack message for Reviewer</title><link href="https://deku.posstree.com/en/github_actions/send_slack_message_for_reviewer/" rel="alternate" type="text/html" title="[GitHub Actions] Send Slack message for Reviewer"/><published>2024-11-13T00:00:00+09:00</published><updated>2024-12-16T21:08:18+09:00</updated><id>https://deku.posstree.com/github_actions/send-slack-message-en</id><content type="html" xml:base="https://deku.posstree.com/github_actions/send_slack_message_for_reviewer/"><![CDATA[<div id="contents_list"><h2 id="contents">Contents</h2><ul><li><a href="#contents">Contents</a></li><li><a href="#outline">Outline</a></li><li><a href="#create-slack-app">Create Slack App</a></li><li><a href="#channel-id">Channel ID</a></li><li><a href="#use-slack-github-action">Use slack-github-action</a></li><li><a href="#composite-action">Composite Action</a></li><li><a href="#reviewer-notification">Reviewer Notification</a></li><li><a href="#send-messages-every-morning">Send messages every morning</a></li><li><a href="#completed">Completed</a></li></ul></div><h2 id="outline">Outline</h2><p>When using GitHub Actions to build CI/CD, sometimes you want to send messages to Slack when the build and test are successful or failed. In this blog post, I will introduce how to send Slack messages using GitHub Actions.</p><h2 id="create-slack-app">Create Slack App</h2><p>Slack is an interactive messaging platform, so receiving messages means that someone has sent a message. Therefore, to send Slack messages using GitHub Actions, you need to create a Slack app that sends messages.</p><p>First, click the following link to access the <code class="language-plaintext highlighter-rouge">Slack API</code>.</p><ul><li><a href="https://api.slack.com/" rel="nofollow noreferrer" target="_blank">https://api.slack.com/</a></li></ul><p>Then, you will see the following screen.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/slack_api.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/slack_api.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/slack_api.png" alt="GitHub Actions Send Slack message - Slack API site"/></picture><p>Click the <code class="language-plaintext highlighter-rouge">Your apps</code> button on the top right to go to the app creation screen.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/create_new_app.png" alt="GitHub Actions Send Slack message - Create new Slack app"/></picture><p>Click the <code class="language-plaintext highlighter-rouge">Create New App</code> button to create a new app.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app_options.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/create_new_app_options.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/create_new_app_options.png" alt="GitHub Actions Send Slack message - Create new Slack app options"/></picture><p>At this time, select <code class="language-plaintext highlighter-rouge">From scratch</code> to create a new app.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/app_name_and_workspace.png" alt="GitHub Actions Send Slack message - Enter app name and workspace"/></picture><p>Enter the name of the app, select the Slack Workspace to use this app, and click the <code class="language-plaintext highlighter-rouge">Create App</code> button.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/app_created.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/app_created.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/app_created.png" alt="GitHub Actions Send Slack message - App created"/></picture><p>Then, you can see that the app is created successfully as shown above.</p><p>Now, you need to set the permission to send messages to this app. Select the name of the newly created app on the app list screen to go to the app details page.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions.png" alt="GitHub Actions Send Slack message - OAuth and Permissions"/></picture><p>Then, select the <code class="language-plaintext highlighter-rouge">OAuth &amp; Permissions</code> menu from the left menu to go to the <code class="language-plaintext highlighter-rouge">OAuth &amp; Permissions</code> screen.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_scopes.png" alt="GitHub Actions Send Slack message - OAuth and Permissions scopes"/></picture><p>Scroll down a bit and click the <code class="language-plaintext highlighter-rouge">Add an OAuth Scope</code> button in the <code class="language-plaintext highlighter-rouge">Scopes</code> section, then add the <code class="language-plaintext highlighter-rouge">chat:write</code> permission.</p><p>Lastly, go to the <code class="language-plaintext highlighter-rouge">OAuth Tokens</code> section and click the <code class="language-plaintext highlighter-rouge">Install to (workspace)</code> button to install the Slack app.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_install_app.png" alt="GitHub Actions Send Slack message - OAuth and Permissions install app"/></picture><p>After installing the app, you will see that the <code class="language-plaintext highlighter-rouge">Bot User OAuth Access Token</code> is created as shown above.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/oauth_and_permissions_bot_user_oauth_access_token.png" alt="GitHub Actions Send Slack message - OAuth and Permissions Bot User OAuth Access Token"/></picture><p>Now, you need to save this <code class="language-plaintext highlighter-rouge">Bot User OAuth Access Token</code> to use it in GitHub Actions. Go to the <code class="language-plaintext highlighter-rouge">GitHub</code> repository where you want to send Slack messages.</p><p>Then, click the <code class="language-plaintext highlighter-rouge">Settings &gt; Secrets and variables &gt; Actions</code> menu to go to the <code class="language-plaintext highlighter-rouge">Actions secrets and variables</code> page.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/github_secrets_and_variables.png" alt="GitHub Actions Send Slack message - GitHub secrets and variables"/></picture><p>Click the <code class="language-plaintext highlighter-rouge">New repository secret</code> button on the <code class="language-plaintext highlighter-rouge">Repository secrets</code> screen, enter <code class="language-plaintext highlighter-rouge">Name</code> as <code class="language-plaintext highlighter-rouge">SLACK_BOT_TOKEN</code> and enter the token created on the <code class="language-plaintext highlighter-rouge">Slack API</code> site in <code class="language-plaintext highlighter-rouge">Value</code>, and click the <code class="language-plaintext highlighter-rouge">Add secret</code> button to save it.</p><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><h2 id="channel-id">Channel ID</h2><p>To send messages to a Slack channel using GitHub Actions, you need a <code class="language-plaintext highlighter-rouge">CHANNEL_ID</code>.</p><p>You can get the <code class="language-plaintext highlighter-rouge">CHANNEL_ID</code> from <code class="language-plaintext highlighter-rouge">Slack</code>. If you want to send it directly to an individual, you can get the <code class="language-plaintext highlighter-rouge">CHANNEL_ID</code> by clicking <code class="language-plaintext highlighter-rouge">Copy member ID</code> in the individual profile.</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/copy_slack_member_channel_id.png" alt="GitHub Actions Send Slack message - Copy Slack member channel ID"/></picture><p>If you want to send a message to a specific channel, click <code class="language-plaintext highlighter-rouge">Open channel details</code> to go to the channel details,</p><picture><source srcset="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.avif" type="image/avif"/><source srcset="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.webp" type="image/webp"/><img src="/assets/images/category/github_actions/send_slack_message/open_slack_channel_details.png" alt="GitHub Actions Send Slack message - Copy Slack channel ID"/></picture><p>and copy the <code class="language-plaintext highlighter-rouge">Channel ID</code> displayed at the bottom.</p><h2 id="use-slack-github-action">Use slack-github-action</h2><p>You can send messages to Slack using the <code class="language-plaintext highlighter-rouge">slack-github-action</code> officially provided by <code class="language-plaintext highlighter-rouge">Slack</code>.</p><ul><li>slack-github-action: <a href="https://github.com/slackapi/slack-github-action" rel="nofollow noreferrer" target="_blank">https://github.com/slackapi/slack-github-action</a></li></ul><p>You can send messages to Slack by modifying <code class="language-plaintext highlighter-rouge">GitHub Actions</code> as follows to use <code class="language-plaintext highlighter-rouge">slack-github-action</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Post to a Slack channel</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">slack</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">slackapi/slack-github-action@v1.27.0</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">channel-id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">CHANNEL_ID'</span>
+    <span class="na">payload</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">{</span>
+        <span class="s">"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",</span>
+        <span class="s">"blocks": [</span>
+          <span class="s">{</span>
+            <span class="s">"type": "section",</span>
+            <span class="s">"text": {</span>
+              <span class="s">"type": "mrkdwn",</span>
+              <span class="s">"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"</span>
+            <span class="s">}</span>
+          <span class="s">}</span>
+        <span class="s">]</span>
+      <span class="s">}</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+
+</code></pre></div></div><p>When sending a simple message, you can conveniently send a <code class="language-plaintext highlighter-rouge">Slack</code> message by using this <code class="language-plaintext highlighter-rouge">slack-github-action</code>.</p><p>You can send a message easily using the <code class="language-plaintext highlighter-rouge">slack-github-action</code> provided by <code class="language-plaintext highlighter-rouge">Slack</code> when you want to send a simple message.</p><h2 id="composite-action">Composite Action</h2><p>The company I work for does not use <code class="language-plaintext highlighter-rouge">slack-github-action</code>, but uses the following code to send <code class="language-plaintext highlighter-rouge">Slack</code> messages by using <code class="language-plaintext highlighter-rouge">Composite Action</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Send</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Send</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+
+<span class="na">inputs</span><span class="pi">:</span>
+  <span class="na">GITHUB_TOKEN</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">token</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">GitHub</span><span class="nv"> </span><span class="s">API'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Token</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">bot'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">MESSAGES</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(JSON)</span><span class="nv"> </span><span class="s">Multiple</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">Slack</span><span class="nv"> </span><span class="s">messages'</span>
+    <span class="na">required</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">runs</span><span class="pi">:</span>
+  <span class="na">using</span><span class="pi">:</span> <span class="s1">'</span><span class="s">composite'</span>
+  <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ inputs.GITHUB_TOKEN }}</span>
+        <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">const slackToken = process.env.SLACK_TOKEN</span>
+          <span class="s">const messages = JSON.parse(Buffer.from(process.env.MESSAGES, 'base64').toString('utf-8'));</span>
+          <span class="s">const channelIDs = {</span>
+            <span class="s">'GITHUB_USER_NAME_1': 'USER_CHANNEL_ID_1',</span>
+            <span class="s">'GITHUB_USER_NAME_2': 'USER_CHANNEL_ID_2',</span>
+            <span class="s">'GITHUB_USER_NAME_2': 'USER_CHANNEL_ID_2',</span>
+            <span class="s">'GITHUB_USER_NAME_3': 'USER_CHANNEL_ID_3',</span>
+            <span class="s">'GITHUB_USER_NAME_3': 'USER_CHANNEL_ID_3',</span>
+            <span class="s">'GITHUB_USER_NAME_4': 'USER_CHANNEL_ID_4',</span>
+          <span class="s">}</span>
+
+          <span class="s">for (const message of messages) {</span>
+            <span class="s">const { userName, messages: blocks } = message</span>
+            <span class="s">const channel = channelIDs[userName]</span>
+            <span class="s">fetch('https://slack.com/api/chat.postMessage', {</span>
+              <span class="s">method: 'POST',</span>
+              <span class="s">headers: {</span>
+                <span class="s">'Content-Type': 'application/json',</span>
+                <span class="s">'Authorization': `Bearer ${slackToken}`,</span>
+              <span class="s">},</span>
+              <span class="s">body: JSON.stringify({</span>
+                <span class="s">channel,</span>
+                <span class="s">blocks,</span>
+              <span class="s">})</span>
+            <span class="s">})</span>
+            <span class="s">.then(response =&gt; response.json())</span>
+            <span class="s">.then(data =&gt; {</span>
+              <span class="s">if (!data.ok) {</span>
+                <span class="s">throw new Error(`Slack API error: ${data.error}`);</span>
+              <span class="s">}</span>
+              <span class="s">console.log('Message sent to Slack successfully');</span>
+            <span class="s">})</span>
+            <span class="s">.catch(error =&gt; {</span>
+              <span class="s">console.error('Error sending message to Slack:', error);</span>
+            <span class="s">});</span>
+          <span class="s">}</span>
+      <span class="na">env</span><span class="pi">:</span>
+        <span class="na">SLACK_TOKEN</span><span class="pi">:</span> <span class="s">${{ inputs.SLACK_BOT_TOKEN }}</span>
+        <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ inputs.MESSAGES }}</span>
+
+</code></pre></div></div><p>By using <code class="language-plaintext highlighter-rouge">Composite Action</code>, you can make the part of sending <code class="language-plaintext highlighter-rouge">Slack</code> messages common and use it. For more information about <code class="language-plaintext highlighter-rouge">Composite Action</code>, please refer to the following link.</p><ul><li><a href="https://deku.posstree.com/en/github_actions/composite-action/" target="_blank">[GitHub Actions] Removing duplication in GitHub Actions using Composite Action</a></li></ul><h2 id="reviewer-notification">Reviewer Notification</h2><p>Next, I will show you how to send a <code class="language-plaintext highlighter-rouge">Slack</code> message using <code class="language-plaintext highlighter-rouge">GitHub Actions</code> when a Reviewer is assigned by using the <code class="language-plaintext highlighter-rouge">Composite Action</code> created above.</p><p>You can create a <code class="language-plaintext highlighter-rouge">GitHub Actions</code> as follows to send a message to a private channel in Slack when a Reviewer is assigned in a PR.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Reviewer</span><span class="nv"> </span><span class="s">assigned'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">review_requested</span><span class="pi">]</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">notify_for_reviewer</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const prNumber = context.payload.pull_request.number;</span>
+            <span class="s">const prTitle = context.payload.pull_request.title;</span>
+            <span class="s">const prLink = context.payload.pull_request.html_url;</span>
+            <span class="s">const { data: reviewers } = await github.rest.pulls.listRequestedReviewers({</span>
+              <span class="s">owner: context.repo.owner,</span>
+              <span class="s">repo: context.repo.repo,</span>
+              <span class="s">pull_number: prNumber,</span>
+            <span class="s">});</span>
+
+            <span class="s">let slackMessages = []</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+              <span class="s">const message = `*Reviewer notification*\n\nYou are assigned to new PR.\n\n- title: ${prTitle}\n- link: ${prLink}`</span>
+              <span class="s">slackMessages.push({</span>
+                <span class="s">userName,</span>
+                <span class="s">messages: [</span>
+                  <span class="s">{</span>
+                    <span class="s">type: 'section',</span>
+                    <span class="s">text: {</span>
+                      <span class="s">type: 'mrkdwn',</span>
+                      <span class="s">text: message,</span>
+                    <span class="s">}</span>
+                  <span class="s">}</span>
+                <span class="s">]</span>
+              <span class="s">})</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><p>Let’s take a closer look at this <code class="language-plaintext highlighter-rouge">GitHub Actions</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Reviewer</span><span class="nv"> </span><span class="s">assigned'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">review_requested</span><span class="pi">]</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>This <code class="language-plaintext highlighter-rouge">GitHub Actions</code> is triggered only when the <code class="language-plaintext highlighter-rouge">review_requested</code> event of the <code class="language-plaintext highlighter-rouge">pull_request</code> is used.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>Since <code class="language-plaintext highlighter-rouge">Composite Action</code> is managed by <code class="language-plaintext highlighter-rouge">Git</code>, you need to check out the repository using <code class="language-plaintext highlighter-rouge">actions/checkout@v4</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const prNumber = context.payload.pull_request.number;</span>
+            <span class="s">const prTitle = context.payload.pull_request.title;</span>
+            <span class="s">const prLink = context.payload.pull_request.html_url;</span>
+            <span class="s">const { data: reviewers } = await github.rest.pulls.listRequestedReviewers({</span>
+              <span class="s">owner: context.repo.owner,</span>
+              <span class="s">repo: context.repo.repo,</span>
+              <span class="s">pull_number: prNumber,</span>
+            <span class="s">});</span>
+
+            <span class="s">let slackMessages = []</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+              <span class="s">const message = `*Reviewer notification*\n\nYou are assigned to new PR.\n\n- title: ${prTitle}\n- link: ${prLink}`</span>
+              <span class="s">slackMessages.push({</span>
+                <span class="s">userName,</span>
+                <span class="s">messages: [</span>
+                  <span class="s">{</span>
+                    <span class="s">type: 'section',</span>
+                    <span class="s">text: {</span>
+                      <span class="s">type: 'mrkdwn',</span>
+                      <span class="s">text: message,</span>
+                    <span class="s">}</span>
+                  <span class="s">}</span>
+                <span class="s">]</span>
+              <span class="s">})</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="s">...</span>
+
+</code></pre></div></div><p>Using <code class="language-plaintext highlighter-rouge">actions/github-script@v7</code>, create a message to send to the Reviewer. Get the title and link of the PR and create a message to send to the Reviewer.</p><div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reviewer notification
+You are assigned to new PR.
+- title: PR title
+- link: https://...
+</code></pre></div></div><p>This message will be sent to all Reviewers specified in the PR.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const reviewerLogins = reviewers.users.map(user =&gt; user.login);</span>
+            <span class="s">for (const userName of reviewerLogins) {</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>If you send this message as it is in <code class="language-plaintext highlighter-rouge">JSON</code> to the Composite Action, a problem will occur. Therefore, use <code class="language-plaintext highlighter-rouge">Buffer</code> to encode it in <code class="language-plaintext highlighter-rouge">base64</code> and save it in <code class="language-plaintext highlighter-rouge">MESSAGES</code> using <code class="language-plaintext highlighter-rouge">core.setOutput</code> to pass it on.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>Lastly, send a <code class="language-plaintext highlighter-rouge">Slack</code> message using the previously created <code class="language-plaintext highlighter-rouge">Composite Action</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><h2 id="send-messages-every-morning">Send messages every morning</h2><p>When reviewers receive Slack messages, they sometimes review PRs after receiving Slack messages, but sometimes they are too busy to review PRs. In this case, you can send a message to the reviewer every morning to review the PR.</p><p>If you create a <code class="language-plaintext highlighter-rouge">GitHub Actions</code> as follows, you can send messages to reviewers every weekday morning (Monday to Friday) at 9:30 AM (Japan time).</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Every</span><span class="nv"> </span><span class="s">weekday</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">9:30</span><span class="nv"> </span><span class="s">AM'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">1-5'</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">notify_reviewers_every_weekday</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">timeout-minutes</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+            <span class="s">const escapeForSlack = (text) =&gt; {</span>
+              <span class="s">return text</span>
+                <span class="s">.replace(/&amp;/g, '&amp;amp;')   // &amp; → &amp;amp;</span>
+                <span class="s">.replace(/&lt;/g, '&amp;lt;')    // &lt; → &amp;lt;</span>
+                <span class="s">.replace(/&gt;/g, '&amp;gt;')    // &gt; → &amp;gt;</span>
+                <span class="s">.replace(/"/g, '&amp;quot;')  // " → &amp;quot;</span>
+                <span class="s">.replace(/'/g, '&amp;#39;');  // ' → &amp;#39;</span>
+            <span class="s">}</span>
+
+            <span class="s">// Get All PRs</span>
+            <span class="s">const prList = []</span>
+            <span class="s">let pageIndex = 1</span>
+            <span class="s">let hasMorePages = true</span>
+            <span class="s">while (hasMorePages) {</span>
+              <span class="s">const result = await github.rest.pulls.list({</span>
+                <span class="s">owner: context.repo.owner,</span>
+                <span class="s">repo: context.repo.repo,</span>
+                <span class="s">state: 'open',</span>
+                <span class="s">per_page: 100,</span>
+                <span class="s">page: pageIndex,</span>
+              <span class="s">})</span>
+              <span class="s">if (result.data.length &gt; 0) {</span>
+                <span class="s">prList.push(...result.data)</span>
+                <span class="s">pageIndex += 1</span>
+              <span class="s">} else {</span>
+                <span class="s">hasMorePages = false</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">let slackMessages = []</span>
+            <span class="s">for (const userName of userList) {</span>
+              <span class="s">const reviewerPRList = prList.filter(pr =&gt; pr.user.login !== 'dependabot[bot]' &amp;&amp;</span>
+                <span class="s">pr.requested_reviewers.some(reviewer =&gt; reviewer.login === userName)</span>
+              <span class="s">);</span>
+              <span class="s">if (reviewerPRList.length &gt; 0) {</span>
+                <span class="s">let message = '*Reviewer notification*\n\nYou have assigned PRs. Please review when you have time.\n'</span>
+                <span class="s">reviewerPRList.forEach(pr =&gt; {</span>
+                  <span class="s">message += `\n- &lt;${pr.html_url}|${escapeForSlack(pr.title)}&gt;`;</span>
+                <span class="s">});</span>
+                <span class="s">slackMessages.push({</span>
+                  <span class="s">userName,</span>
+                  <span class="s">messages: [</span>
+                    <span class="s">{</span>
+                      <span class="s">type: 'section',</span>
+                      <span class="s">text: {</span>
+                        <span class="s">type: 'mrkdwn',</span>
+                        <span class="s">text: message,</span>
+                      <span class="s">}</span>
+                    <span class="s">}</span>
+                  <span class="s">]</span>
+                <span class="s">})</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+
+</code></pre></div></div><div class="in-feed-ads ads-container"><div class="ads-block ads-left"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="2718813593"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div><div class="ads-block ads-center"><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7987914246691031" data-ad-slot="6492035359"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><p>Let’s take a closer look at this <code class="language-plaintext highlighter-rouge">GitHub Actions</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">[Slack]</span><span class="nv"> </span><span class="s">Every</span><span class="nv"> </span><span class="s">weekday</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">9:30</span><span class="nv"> </span><span class="s">AM'</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">1-5'</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>This <code class="language-plaintext highlighter-rouge">GitHub Actions</code> is triggered every weekday (1-5) at 9:30 AM (Japan time).</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout Repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>Since <code class="language-plaintext highlighter-rouge">Composite Action</code> is managed by <code class="language-plaintext highlighter-rouge">Git</code>, you need to check out the repository using <code class="language-plaintext highlighter-rouge">actions/checkout@v4</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Make Slack messages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">make-slack-messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v7</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+            <span class="s">const escapeForSlack = (text) =&gt; {</span>
+              <span class="s">return text</span>
+                <span class="s">.replace(/&amp;/g, '&amp;amp;')   // &amp; → &amp;amp;</span>
+                <span class="s">.replace(/&lt;/g, '&amp;lt;')    // &lt; → &amp;lt;</span>
+                <span class="s">.replace(/&gt;/g, '&amp;gt;')    // &gt; → &amp;gt;</span>
+                <span class="s">.replace(/"/g, '&amp;quot;')  // " → &amp;quot;</span>
+                <span class="s">.replace(/'/g, '&amp;#39;');  // ' → &amp;#39;</span>
+            <span class="s">}</span>
+
+            <span class="s">// Get All PRs</span>
+            <span class="s">const prList = []</span>
+            <span class="s">let pageIndex = 1</span>
+            <span class="s">let hasMorePages = true</span>
+            <span class="s">while (hasMorePages) {</span>
+              <span class="s">const result = await github.rest.pulls.list({</span>
+                <span class="s">owner: context.repo.owner,</span>
+                <span class="s">repo: context.repo.repo,</span>
+                <span class="s">state: 'open',</span>
+                <span class="s">per_page: 100,</span>
+                <span class="s">page: pageIndex,</span>
+              <span class="s">})</span>
+              <span class="s">if (result.data.length &gt; 0) {</span>
+                <span class="s">prList.push(...result.data)</span>
+                <span class="s">pageIndex += 1</span>
+              <span class="s">} else {</span>
+                <span class="s">hasMorePages = false</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">let slackMessages = []</span>
+            <span class="s">for (const userName of userList) {</span>
+              <span class="s">const reviewerPRList = prList.filter(pr =&gt; pr.user.login !== 'dependabot[bot]' &amp;&amp;</span>
+                <span class="s">pr.requested_reviewers.some(reviewer =&gt; reviewer.login === userName)</span>
+              <span class="s">);</span>
+              <span class="s">if (reviewerPRList.length &gt; 0) {</span>
+                <span class="s">let message = '*Reviewer notification*\n\nYou have assigned PRs. Please review when you have time.\n'</span>
+                <span class="s">reviewerPRList.forEach(pr =&gt; {</span>
+                  <span class="s">message += `\n- &lt;${pr.html_url}|${escapeForSlack(pr.title)}&gt;`;</span>
+                <span class="s">});</span>
+                <span class="s">slackMessages.push({</span>
+                  <span class="s">userName,</span>
+                  <span class="s">messages: [</span>
+                    <span class="s">{</span>
+                      <span class="s">type: 'section',</span>
+                      <span class="s">text: {</span>
+                        <span class="s">type: 'mrkdwn',</span>
+                        <span class="s">text: message,</span>
+                      <span class="s">}</span>
+                    <span class="s">}</span>
+                  <span class="s">]</span>
+                <span class="s">})</span>
+              <span class="s">}</span>
+            <span class="s">}</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="s">...</span>
+
+</code></pre></div></div><p>Using <code class="language-plaintext highlighter-rouge">actions/github-script@v7</code>, create a message to send to the Reviewer. Get all PRs and create a message to send to the Reviewer.</p><div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reviewer notification
+You have assigned PRs. Please review when you have time.
+- PR title1: https://...
+- PR title2: https://...
+- PR title3: https://...
+- PR title4: https://...
+</code></pre></div></div><p>This message will be sent to all reviewers specified in the GitHub user list.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+            <span class="s">const userList = [</span>
+              <span class="s">'GITHUB_USER_NAME_1',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_2',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_3',</span>
+              <span class="s">'GITHUB_USER_NAME_4',</span>
+            <span class="s">]</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><p>The error occurs when passing the message created like this to <code class="language-plaintext highlighter-rouge">Composite Action</code> by <code class="language-plaintext highlighter-rouge">JSON</code>. Therefore, you need to encode it in <code class="language-plaintext highlighter-rouge">base64</code> using <code class="language-plaintext highlighter-rouge">Buffer</code> and save it in <code class="language-plaintext highlighter-rouge">MESSAGES</code> using <code class="language-plaintext highlighter-rouge">core.setOutput</code> to pass it on.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
+            <span class="s">const encodedMessages = Buffer.from(JSON.stringify(slackMessages)).toString('base64');</span>
+            <span class="s">core.setOutput('MESSAGES', encodedMessages);</span>
+<span class="nn">...</span>
+</code></pre></div></div><p>Lastly, send a <code class="language-plaintext highlighter-rouge">Slack</code> message using the previously created <code class="language-plaintext highlighter-rouge">Composite Action</code>.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send Slack messages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">./.github/actions/send_slack_messages</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+          <span class="na">SLACK_BOT_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.SLACK_BOT_TOKEN }}</span>
+          <span class="na">MESSAGES</span><span class="pi">:</span> <span class="s">${{ steps.make-slack-messages.outputs.MESSAGES }}</span>
+<span class="nn">...</span>
+
+</code></pre></div></div><h2 id="completed">Completed</h2><p>Done! We’ve seen how to send Slack messages using <code class="language-plaintext highlighter-rouge">GitHub Actions</code> when a Reviewer is assigned and how to send a PR list to Reviewers as a Slack message every morning.</p><p>If you have an issue that the review is delayed because the Reviewer assigned is not recognized, please try sending a message to the Reviewer to induce the review using this method.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="github_actions"/><summary type="html"><![CDATA[Let's see how to send Slack messages when Reviewer is assigned using GitHub Actions and how to send PR list to Reviewer as Slack message every morning.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/github_actions/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="en"><title type="html">[GitHub Actions] Improve Jest test performance in GitHub Actions</title><link href="https://deku.posstree.com/en/github_actions/improve-test-performance/" rel="alternate" type="text/html" title="[GitHub Actions] Improve Jest test performance in GitHub Actions"/><published>2024-10-23T00:00:00+09:00</published><updated>2024-11-11T20:56:07+09:00</updated><id>https://deku.posstree.com/github_actions/improve-test-performance-en</id><content type="html" xml:base="https://deku.posstree.com/github_actions/improve-test-performance/"><![CDATA[<div id="contents_list"><h2 id="contents">Contents</h2><ul><li><a href="#contents">Contents</a></li><li><a href="#outline">Outline</a></li><li><a href="#problem">Problem</a></li><li><a href="#performance-improvement">Performance Improvement</a><ul><li><a href="#cache-dependencies">Cache Dependencies</a></li><li><a href="#separate-actions">Separate Actions</a></li><li><a href="#jest-bail-option">Jest bail option</a></li><li><a href="#jest-shard-option">Jest shard option</a></li></ul></li><li><a href="#completed">Completed</a></li></ul></div><h2 id="outline">Outline</h2><p>Recently, the number of test codes has increased in our company, and the Action that checks the code in <code class="language-plaintext highlighter-rouge">GitHub Actions</code> has taken a long time. In this blog post, I would like to share how I improved the performance of the Action that runs <code class="language-plaintext highlighter-rouge">Jest</code>.</p><h2 id="problem">Problem</h2><p>Currently my team uses the following Action to check PR.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
   <span class="na">check-code</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> <span class="s">Check Code</span>
     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
@@ -966,4 +1393,4 @@ GITHUB_COMPANY_ACCOUNT_EMAIL
   <span class="p">});</span>
 <span class="p">}</span>
 <span class="p">...</span>
-</code></pre></div></div><p>Lastly, I tested the case where the response failed.</p><h2 id="completed">Completed</h2><p>Done! We’ve seen how to upload files using <code class="language-plaintext highlighter-rouge">MultipartRequest</code> in the http package in Flutter and how to test it.</p><p>If you are implementing a file upload feature in Flutter, refer to this blog post and try implementing it and writing test code.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="flutter"/><summary type="html"><![CDATA[Let's see how to upload files using MultipartRequest in the http package in Flutter and how to test it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/flutter/background.png"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/flutter/background.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry xml:lang="en"><title type="html">Extracting Expertise from Experts through Cognitive Task Analysis</title><link href="https://deku.posstree.com/en/essay/cognitibe-task-analysis/" rel="alternate" type="text/html" title="Extracting Expertise from Experts through Cognitive Task Analysis"/><published>2024-09-17T00:00:00+09:00</published><updated>2024-10-04T20:24:08+09:00</updated><id>https://deku.posstree.com/essay/cognitibe-task-analysis-en</id><content type="html" xml:base="https://deku.posstree.com/essay/cognitibe-task-analysis/"><![CDATA[<p>Most experts often fail to explain their professional skills properly.</p><blockquote><p>The US Army was trying to cancel a mine detection system that had been developed for 9 years and cost $40 million. The prototype had a very low mine detection rate in actual tests. According to the test, it showed a miserable result of failing to detect 96% of low-metal anti-personnel mines. Carnegie Mellon University psychology professor James Staszewski went in search of so-called outliers (outstanding people who far exceed the average) in mine detection. One of them was Floyd Rocky Rockwell. He could find low-metal mines with new equipment. However, like most other experts, Floyd could not explain how he could find mines.</p></blockquote><p>At this time, <code class="language-plaintext highlighter-rouge">Cognitive Task Analysis</code> can extract expertise from experts.</p><blockquote><p>Professor Staszewski used cognitive task analysis developed over decades to extract his expertise. Floyd did not use the equipment as instructed in the manual. He was not just reacting to sound, but was detecting sound patterns, moving slower than the speed suggested in the manual, using the detector at a lower height than written in the manual, and continuously adjusting the sensitivity switch of the detector. Professor Staszewski conducted an experiment to teach this secret, which Floyd himself was not aware of, to other soldiers for 5 days and measure its effect. Surprisingly, the detection rate, which was in the 10% range before training, exceeded 90% after training.</p></blockquote><p>Using cognitive task analysis, not only programmers and managers but also anyone who wants to become an expert can benefit. The US Navy’s research found that teachers and students who learn this method and use it cooperatively increase the educational effect. Therefore, this method is used in their education.</p><h2 id="cognitive-task-analysis">Cognitive Task Analysis</h2><p>Cognitive task analysis is a method of analyzing and explaining complex cognitive processes performed by experts or skilled individuals. It is used in tasks where cognitive aspects such as problem-solving, decision-making, memory, and inference are important. This analysis method focuses on systematically understanding how experts process information and make decisions.</p><p>Cognitive task analysis is mainly used in the following situations.</p><ul><li>Development of education and training programs: By analyzing how experts perform tasks, effective training programs can be designed for beginners or trainees. For example, in fields such as medicine, aviation, and the military, cognitive task analysis is used to deliver the cognitive strategies used by experts to learners.</li><li>Technology and system design: Cognitive task analysis can be used in human-computer interaction (HCI) or human-centered design to design user interfaces or automation systems in line with the cognitive processes used by experts when designing complex systems.</li><li>Improvement of work procedures: By analyzing the cognitive strategies used by experts, work processes can be improved or optimized. This can increase efficiency and reduce errors.</li></ul><p>You can perform cognitive task analysis by following these steps.</p><ul><li>Define the process: Define the goals of the task and the cognitive processes required.</li><li>Task decomposition: Divide the task into small steps and analyze the cognitive processes required in each step.</li><li>Expert interviews and observations: Collect data on how experts actually perform tasks through interviews or observations.</li><li>Cognitive requirements analysis: Analyze how information is processed, attention strategies, memory strategies, etc.</li><li>Apply the results: Apply the analyzed results to education programs, technology design, work procedure improvements, etc.</li></ul><p>Cognitive task analysis is a tool that clarifies the unconscious and implicit cognitive processes used by experts in complex tasks, and plays an important role in learning, design, and system optimization.</p><h2 id="the-process-of-cognitive-task-analysis">The Process of Cognitive Task Analysis</h2><p>Let’s take a closer look at the process of performing cognitive task analysis.</p><h3 id="1-goal-setting">1. Goal Setting</h3><p>This is the step of clearly defining the reasons and goals for performing cognitive task analysis. Cognitive task analysis is mainly used when analyzing tasks that require complex and cognitive aspects, so it is important to clearly define what tasks to analyze and how this analysis can help in education, system design, work improvement, etc.</p><h3 id="2-task-definition-and-analysis">2. Task Definition and Analysis</h3><p>This is the step of defining and analyzing the task in detail. Here, you can follow the following procedure.</p><ul><li>Task selection: Select the task (or work) to be analyzed. Tasks that are complex and require cognitive processing are suitable.</li><li>Task decomposition: Divide the entire task into small steps. Identify the actions performed by experts at each step and confirm what cognitive processes (decision-making, memory, inference, etc.) are used.</li></ul><h3 id="3-expert-interviews-and-observations">3. Expert Interviews and Observations</h3><p>This is the step of observing or interviewing experts to see how they actually perform tasks. This allows you to better understand the implicit knowledge and cognitive processes that occur during task execution. Normally, the following methods are used.</p><ul><li>In-depth interviews: Experts are asked to explain specific work steps and decision-making processes, and their thinking strategies are identified.</li><li>Think-aloud technique: Experts are encouraged to speak out what they are thinking while performing tasks to reveal cognitive processes to the outside.</li><li>Task observation: Directly observe how experts perform tasks and record them. This allows you to clearly identify the task flow and cognitive requirements.</li></ul><h3 id="4-cognitive-requirements-analysis">4. Cognitive Requirements Analysis</h3><p>In this step, you analyze what elements are important in the cognitive processes of experts. Here, you clearly identify the information processing strategy, decision-making process, problem-solving strategies, attention strategies, etc.</p><ul><li>Information processing strategy: Analyze how experts process information.</li><li>Decision-making process: Analyze how experts make decisions and what criteria they use.</li><li>Problem-solving strategies: Analyze how experts solve unexpected problems.</li></ul><h3 id="5-task-modeling">5. Task Modeling</h3><p>Based on the data collected in the previous step, you create a model that explains the cognitive processes and behaviors of experts. In this step, you describe the task step by step and specify the cognitive requirements that occur at each step. This allows you to formalize the unconscious skills and knowledge used by experts.</p><h3 id="6-results-application">6. Results Application</h3><p>This is the step of applying the analyzed results to actual work improvement, system design, education program development, etc. Based on the analyzed cognitive processes, you can create educational materials to help beginners become more proficient faster, or use them to improve user interfaces in system design.</p><h3 id="7-verification-and-feedback">7. Verification and Feedback</h3><p>Finally, this is the step of verifying whether the results of cognitive task analysis are actually useful and receiving feedback to improve them. You can evaluate whether the analysis derived from cognitive task analysis is effectively applied to education or system improvement, and if necessary, reanalyze or supplement it.</p><h2 id="conclusion">Conclusion</h2><p>As seen above, cognitive task analysis is a useful method for clearly understanding the cognitive strategies used by experts and applying them to education, system design, work improvement, etc. In particular, cognitive task analysis can formalize the unconscious knowledge and skills of experts in complex and cognitive-demanding tasks, and use them to convey them to others.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="essay"/><summary type="html"><![CDATA[Let's see how to extract expertise from experts through cognitive task analysis.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/essay/2024/cognitibe-task-analysis/background.jpg"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/essay/2024/cognitibe-task-analysis/background.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
+</code></pre></div></div><p>Lastly, I tested the case where the response failed.</p><h2 id="completed">Completed</h2><p>Done! We’ve seen how to upload files using <code class="language-plaintext highlighter-rouge">MultipartRequest</code> in the http package in Flutter and how to test it.</p><p>If you are implementing a file upload feature in Flutter, refer to this blog post and try implementing it and writing test code.</p>]]></content><author><name>dev.yakuza@gmail.com</name></author><category term="flutter"/><summary type="html"><![CDATA[Let's see how to upload files using MultipartRequest in the http package in Flutter and how to test it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://deku.posstree.com/assets/images/category/flutter/background.png"/><media:content medium="image" url="https://deku.posstree.com/assets/images/category/flutter/background.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
