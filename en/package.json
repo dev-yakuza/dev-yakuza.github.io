@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "cspell": "cspell '**' --gitignore --no-progress --show-suggestions"
+  },
+  "devDependencies": {
+    "cspell": "^8.17.1"
+  }
+}
