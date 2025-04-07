@@ -5,5 +5,5 @@ pre-commit:
       files: git diff --name-only HEAD | grep "assets/" || echo ''
       run: python scripts/git_hook.py
     cspell:
-      run: npx cspell ---gitignore --no-progress --color --show-suggestions {staged_files}
+      run: npx cspell --gitignore --no-progress --color --show-suggestions {staged_files}
 
